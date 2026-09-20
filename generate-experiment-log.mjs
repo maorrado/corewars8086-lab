@@ -58,6 +58,9 @@ lines.push(
   "- `p001-p014` are AB50 parameter variants. `q001-q008` vary Phoenix target bands. `r001-r006` quantize load offsets into replication-sized bands. `m001-m008` vary replication gap and stack-motion constants.",
   "- `m006` beat `v026` on both the 600-battle train check (0.493056 vs 0.469444) and the 600-battle holdout check (0.450000 vs 0.337778), so its exact binaries were promoted unchanged to `final/PhoenixA.asm` and `final/PhoenixB.asm`.",
   "- The final 4,500-battle train and 4,500-battle holdout use five new seeds. `Registered_Winners` was rerun on the exact same 4,500-battle holdout rather than compared across incompatible pools.",
+  "- `x001-x012` introduced Chimera: a protected, quantized Phoenix replicator with deterministic backward `INT 87h` capture of the Zombie-B/D tail. `y001-y016`, `z001-z012`, `w001-w006`, and `v001-v010` independently varied bands, phases, replication gaps, stack motion, and Zombie-entry placement.",
+  "- `w003` was selected on tuning cohorts, then scored 0.583333 on the untouched 750-battle 2025 holdout and 0.608200 over 2,500 battles against all 75 official 2025 teams. On the identical all-2025 protocol, `Registered_Winners` scored 0.538800, the old Phoenix pair 0.472800, and `TOM_ATO` 0.298800.",
+  "- The final fine sweep `v001-v010` used fresh seeds. Its unchanged control (`v001`, binary-identical to `w003`) remained first, so none of the neighboring parameter changes was promoted. The exact `w003` binaries were promoted unchanged to `final/ChimeraA.asm` and `final/ChimeraB.asm`.",
   "",
   "Pre-official smoke/debug artifacts and arena snapshots remain in `experiments/` but are intentionally excluded from the score totals above because they do not use the controlled deterministic official-v6 cohort protocol."
 );

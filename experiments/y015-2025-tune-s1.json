@@ -1,0 +1,2939 @@
+{
+  "schemaVersion": 1,
+  "experimentId": "y015-2025-tune-s1",
+  "generatedAt": "2026-09-20T12:21:29.770Z",
+  "configPath": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\config-sweep-y015.json",
+  "configSha256": "f2389a38f98bb6727e1efa2dd49836392506118daeb4f12d62b18117e526920d",
+  "engineJar": {
+    "path": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+    "sha256": "15bc4da94a2159700a42bb553552b4d80b69e766e07d0d3e2dc36c1f4f4c3b93"
+  },
+  "aggregate": {
+    "battles": 240,
+    "teamPerBattle": 0.4569444458333333,
+    "warrior1PerBattle": 0.24097222208333333,
+    "warrior2PerBattle": 0.21597222291666668
+  },
+  "runs": [
+    {
+      "runId": "tune-v1-01__tune-001",
+      "cohortId": "tune-v1-01",
+      "seed": "tune-001",
+      "battles": 12,
+      "startedAt": "2026-09-20T12:21:09.888Z",
+      "elapsedSeconds": 0.9529767,
+      "command": {
+        "executable": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\tools\\temurin8-jre\\jdk8u504-b01-jre\\bin\\java.exe",
+        "args": [
+          "-jar",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+          "--headless",
+          "--comboSize",
+          "4",
+          "--battlesPerCombo",
+          "12",
+          "--seed",
+          "tune-001",
+          "--threads",
+          "4",
+          "--warriorsDir",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-01__tune-001\\survivors",
+          "--zombiesDir",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-01__tune-001\\zombies",
+          "--outputFile",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-01__tune-001\\scores.csv"
+        ]
+      },
+      "inputs": {
+        "COD_y015": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\chimera\\y015_a",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-01__tune-001\\survivors\\COD_y0151",
+            "bytes": 157,
+            "sha256": "bb9238224b48eab8da020223738477f1b003de02e0132b4430a628efac564cd7"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\chimera\\y015_b",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-01__tune-001\\survivors\\COD_y0152",
+            "bytes": 114,
+            "sha256": "a6a10207a1d52e7ed7b628c044724a9913b5d8285578771fc8ca1afc65aa5b15"
+          }
+        ],
+        "A_TOM_tson_el_akod": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\TOM_tson_el_akod1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-01__tune-001\\survivors\\A_TOM_tson_el_akod1",
+            "bytes": 13,
+            "sha256": "9198ae7381e5449f42b5f2cb80e0ec1788c4b2bd25b9ec9ed0096383c4c2085c"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\TOM_tson_el_akod2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-01__tune-001\\survivors\\A_TOM_tson_el_akod2",
+            "bytes": 13,
+            "sha256": "9198ae7381e5449f42b5f2cb80e0ec1788c4b2bd25b9ec9ed0096383c4c2085c"
+          }
+        ],
+        "A_GSA_B33": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\GSA_B331",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-01__tune-001\\survivors\\A_GSA_B331",
+            "bytes": 476,
+            "sha256": "b669a39358c457bbd739710d2a82e6c7f5bfb20125922b153207209d2bf74350"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\GSA_B332",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-01__tune-001\\survivors\\A_GSA_B332",
+            "bytes": 476,
+            "sha256": "b669a39358c457bbd739710d2a82e6c7f5bfb20125922b153207209d2bf74350"
+          }
+        ],
+        "A_TOM_2B2Team": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\TOM_2B2Team1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-01__tune-001\\survivors\\A_TOM_2B2Team1",
+            "bytes": 135,
+            "sha256": "bcc371f9a6c803da24ca9b207cc669f3ad303b115c7b6d27afdaafc1f48d0cb5"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\TOM_2B2Team2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-01__tune-001\\survivors\\A_TOM_2B2Team2",
+            "bytes": 140,
+            "sha256": "bd1a1687a4f99d4a0bb60ae23cb09a505d87c77042de95a27957b1c524df4ab0"
+          }
+        ]
+      },
+      "zombies": [
+        {
+          "name": "zom20a",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20a",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-01__tune-001\\zombies\\zom20a",
+          "bytes": 73,
+          "sha256": "a950e618ea2e127096c85f486fb555c264730d924a2192c407aa66e6e0318eb6"
+        },
+        {
+          "name": "zom20b",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20b",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-01__tune-001\\zombies\\zom20b",
+          "bytes": 382,
+          "sha256": "af6394c021ccb5e486db507e2ccd787bd5675f8fec88fd2ddbe9f834566852ce"
+        },
+        {
+          "name": "zom20c",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20c",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-01__tune-001\\zombies\\zom20c",
+          "bytes": 232,
+          "sha256": "3d3f209967f51a7344e0eab582bc04d1e694da5a73e3682a26ed483dcab7a443"
+        },
+        {
+          "name": "zom20d",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20d",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-01__tune-001\\zombies\\zom20d",
+          "bytes": 382,
+          "sha256": "923dd6abebbb7bb502ec5a02873c26175820ada5c4409d179d8464f0e90cb6fc"
+        }
+      ],
+      "scores": {
+        "groups": {
+          "A_GSA_B33": 3,
+          "A_TOM_2B2Team": 3,
+          "A_TOM_tson_el_akod": 1,
+          "COD_y015": 5
+        },
+        "warriors": {
+          "A_GSA_B331": 1.5,
+          "A_GSA_B332": 1.5,
+          "A_TOM_2B2Team1": 0.5,
+          "A_TOM_2B2Team2": 2.5,
+          "A_TOM_tson_el_akod1": 1,
+          "A_TOM_tson_el_akod2": 0,
+          "COD_y0151": 3,
+          "COD_y0152": 2
+        }
+      },
+      "candidate": {
+        "teamRaw": 5,
+        "teamPerBattle": 0.4166666666666667,
+        "warrior1Raw": 3,
+        "warrior1PerBattle": 0.25,
+        "warrior2Raw": 2,
+        "warrior2PerBattle": 0.16666666666666666
+      },
+      "rawScoreText": "Groups:\nA_GSA_B33,3.0\nA_TOM_2B2Team,3.0\nA_TOM_tson_el_akod,1.0\nCOD_y015,5.0\n\nWarriors:\nA_GSA_B331,1.5\nA_GSA_B332,1.5\nA_TOM_2B2Team1,0.5\nA_TOM_2B2Team2,2.5\nA_TOM_tson_el_akod1,1.0\nA_TOM_tson_el_akod2,0.0\nCOD_y0151,3.0\nCOD_y0152,2.0\n",
+      "stdout": "CoreWars8086 - headless mode\n\r\nLoaded warriors: [A_GSA_B33, A_TOM_2B2Team, A_TOM_tson_el_akod, COD_y015]\r\nStarting competition (12 wars) in parallel.\r\nCompetition is over. Ran 12 wars\r\nWriting scores to file C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-01__tune-001\\scores.csv\r\n"
+    },
+    {
+      "runId": "tune-v1-02__tune-001",
+      "cohortId": "tune-v1-02",
+      "seed": "tune-001",
+      "battles": 12,
+      "startedAt": "2026-09-20T12:21:10.908Z",
+      "elapsedSeconds": 0.8707125,
+      "command": {
+        "executable": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\tools\\temurin8-jre\\jdk8u504-b01-jre\\bin\\java.exe",
+        "args": [
+          "-jar",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+          "--headless",
+          "--comboSize",
+          "4",
+          "--battlesPerCombo",
+          "12",
+          "--seed",
+          "tune-001",
+          "--threads",
+          "4",
+          "--warriorsDir",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-02__tune-001\\survivors",
+          "--zombiesDir",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-02__tune-001\\zombies",
+          "--outputFile",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-02__tune-001\\scores.csv"
+        ]
+      },
+      "inputs": {
+        "COD_y015": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\chimera\\y015_a",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-02__tune-001\\survivors\\COD_y0151",
+            "bytes": 157,
+            "sha256": "bb9238224b48eab8da020223738477f1b003de02e0132b4430a628efac564cd7"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\chimera\\y015_b",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-02__tune-001\\survivors\\COD_y0152",
+            "bytes": 114,
+            "sha256": "a6a10207a1d52e7ed7b628c044724a9913b5d8285578771fc8ca1afc65aa5b15"
+          }
+        ],
+        "A_GSA_GhostBytes_0x": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\GSA_GhostBytes_0x1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-02__tune-001\\survivors\\A_GSA_GhostBytes_0x1",
+            "bytes": 512,
+            "sha256": "2cf5b8a9974e1e6e46504f5027a2f20f6329cf8944ad15397afdd0f5955d2801"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\GSA_GhostBytes_0x2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-02__tune-001\\survivors\\A_GSA_GhostBytes_0x2",
+            "bytes": 512,
+            "sha256": "08c6ac348985a5f21fecbaf1ee7d7bb56add87cd8d8af2278902df7e60b52238"
+          }
+        ],
+        "A_HRZ_TEST_ticals": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_TEST_ticals1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-02__tune-001\\survivors\\A_HRZ_TEST_ticals1",
+            "bytes": 89,
+            "sha256": "bde8d3995ed1d713bcb7a64eb6f122a3105e0549e28ee8bc3bb951737ed7aa6f"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_TEST_ticals2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-02__tune-001\\survivors\\A_HRZ_TEST_ticals2",
+            "bytes": 89,
+            "sha256": "bde8d3995ed1d713bcb7a64eb6f122a3105e0549e28ee8bc3bb951737ed7aa6f"
+          }
+        ],
+        "Y_TOM_AND_JERRY": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online-young\\TOM_AND_JERRY1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-02__tune-001\\survivors\\Y_TOM_AND_JERRY1",
+            "bytes": 32,
+            "sha256": "0f2a1799845db478549ab951df61323eb863ed496ed87d2e189b2cba510bfa43"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online-young\\TOM_AND_JERRY2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-02__tune-001\\survivors\\Y_TOM_AND_JERRY2",
+            "bytes": 20,
+            "sha256": "8699a2bb930c1d2d1178aa6c17322db31f1338b8184d6056620abbc5b1c1a65e"
+          }
+        ]
+      },
+      "zombies": [
+        {
+          "name": "zom20a",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20a",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-02__tune-001\\zombies\\zom20a",
+          "bytes": 73,
+          "sha256": "a950e618ea2e127096c85f486fb555c264730d924a2192c407aa66e6e0318eb6"
+        },
+        {
+          "name": "zom20b",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20b",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-02__tune-001\\zombies\\zom20b",
+          "bytes": 382,
+          "sha256": "af6394c021ccb5e486db507e2ccd787bd5675f8fec88fd2ddbe9f834566852ce"
+        },
+        {
+          "name": "zom20c",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20c",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-02__tune-001\\zombies\\zom20c",
+          "bytes": 232,
+          "sha256": "3d3f209967f51a7344e0eab582bc04d1e694da5a73e3682a26ed483dcab7a443"
+        },
+        {
+          "name": "zom20d",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20d",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-02__tune-001\\zombies\\zom20d",
+          "bytes": 382,
+          "sha256": "923dd6abebbb7bb502ec5a02873c26175820ada5c4409d179d8464f0e90cb6fc"
+        }
+      ],
+      "scores": {
+        "groups": {
+          "A_GSA_GhostBytes_0x": 5,
+          "A_HRZ_TEST_ticals": 0,
+          "COD_y015": 4,
+          "Y_TOM_AND_JERRY": 3
+        },
+        "warriors": {
+          "A_GSA_GhostBytes_0x1": 2,
+          "A_GSA_GhostBytes_0x2": 3,
+          "A_HRZ_TEST_ticals1": 0,
+          "A_HRZ_TEST_ticals2": 0,
+          "COD_y0151": 2,
+          "COD_y0152": 2,
+          "Y_TOM_AND_JERRY1": 2.5,
+          "Y_TOM_AND_JERRY2": 0.5
+        }
+      },
+      "candidate": {
+        "teamRaw": 4,
+        "teamPerBattle": 0.3333333333333333,
+        "warrior1Raw": 2,
+        "warrior1PerBattle": 0.16666666666666666,
+        "warrior2Raw": 2,
+        "warrior2PerBattle": 0.16666666666666666
+      },
+      "rawScoreText": "Groups:\nA_GSA_GhostBytes_0x,5.0\nA_HRZ_TEST_ticals,0.0\nCOD_y015,4.0\nY_TOM_AND_JERRY,3.0\n\nWarriors:\nA_GSA_GhostBytes_0x1,2.0\nA_GSA_GhostBytes_0x2,3.0\nA_HRZ_TEST_ticals1,0.0\nA_HRZ_TEST_ticals2,0.0\nCOD_y0151,2.0\nCOD_y0152,2.0\nY_TOM_AND_JERRY1,2.5\nY_TOM_AND_JERRY2,0.5\n",
+      "stdout": "CoreWars8086 - headless mode\n\r\nLoaded warriors: [A_GSA_GhostBytes_0x, A_HRZ_TEST_ticals, COD_y015, Y_TOM_AND_JERRY]\r\nStarting competition (12 wars) in parallel.\r\nCompetition is over. Ran 12 wars\r\nWriting scores to file C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-02__tune-001\\scores.csv\r\n"
+    },
+    {
+      "runId": "tune-v1-03__tune-001",
+      "cohortId": "tune-v1-03",
+      "seed": "tune-001",
+      "battles": 12,
+      "startedAt": "2026-09-20T12:21:11.809Z",
+      "elapsedSeconds": 0.6278974,
+      "command": {
+        "executable": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\tools\\temurin8-jre\\jdk8u504-b01-jre\\bin\\java.exe",
+        "args": [
+          "-jar",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+          "--headless",
+          "--comboSize",
+          "4",
+          "--battlesPerCombo",
+          "12",
+          "--seed",
+          "tune-001",
+          "--threads",
+          "4",
+          "--warriorsDir",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-03__tune-001\\survivors",
+          "--zombiesDir",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-03__tune-001\\zombies",
+          "--outputFile",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-03__tune-001\\scores.csv"
+        ]
+      },
+      "inputs": {
+        "COD_y015": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\chimera\\y015_a",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-03__tune-001\\survivors\\COD_y0151",
+            "bytes": 157,
+            "sha256": "bb9238224b48eab8da020223738477f1b003de02e0132b4430a628efac564cd7"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\chimera\\y015_b",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-03__tune-001\\survivors\\COD_y0152",
+            "bytes": 114,
+            "sha256": "a6a10207a1d52e7ed7b628c044724a9913b5d8285578771fc8ca1afc65aa5b15"
+          }
+        ],
+        "A_HRZ_PowerRangers": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_PowerRangers1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-03__tune-001\\survivors\\A_HRZ_PowerRangers1",
+            "bytes": 77,
+            "sha256": "52aa2ff950b861e97be698661c012ca2f2da158171aa2899c69fe1049fb1abb0"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_PowerRangers2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-03__tune-001\\survivors\\A_HRZ_PowerRangers2",
+            "bytes": 19,
+            "sha256": "d105ec96ad325832882dc8820d82a52567780dfdb1abb40a50986e011feff22c"
+          }
+        ],
+        "A_WAN_OnlyCode": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\WAN_OnlyCode1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-03__tune-001\\survivors\\A_WAN_OnlyCode1",
+            "bytes": 82,
+            "sha256": "79feca3fa250a6c0406c46fa11fb0ce604758625912695e45040a784121625d8"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\WAN_OnlyCode2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-03__tune-001\\survivors\\A_WAN_OnlyCode2",
+            "bytes": 82,
+            "sha256": "a230910890f8270ad8dcb6c2d304a47ca8c1dd25a418022b80e091e5a8c96658"
+          }
+        ],
+        "A_WAN_Full_Time_Job": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\WAN_Full_Time_Job1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-03__tune-001\\survivors\\A_WAN_Full_Time_Job1",
+            "bytes": 51,
+            "sha256": "451ccffeedd664f6814d45a712f805c71931efada682112e61b801858c3ab4f3"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\WAN_Full_Time_Job2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-03__tune-001\\survivors\\A_WAN_Full_Time_Job2",
+            "bytes": 1,
+            "sha256": "9e076ceaf246b6003d9c2680a2b4cf0bffd069805902b0b5edeebf49039fe4bd"
+          }
+        ]
+      },
+      "zombies": [
+        {
+          "name": "zom20a",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20a",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-03__tune-001\\zombies\\zom20a",
+          "bytes": 73,
+          "sha256": "a950e618ea2e127096c85f486fb555c264730d924a2192c407aa66e6e0318eb6"
+        },
+        {
+          "name": "zom20b",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20b",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-03__tune-001\\zombies\\zom20b",
+          "bytes": 382,
+          "sha256": "af6394c021ccb5e486db507e2ccd787bd5675f8fec88fd2ddbe9f834566852ce"
+        },
+        {
+          "name": "zom20c",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20c",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-03__tune-001\\zombies\\zom20c",
+          "bytes": 232,
+          "sha256": "3d3f209967f51a7344e0eab582bc04d1e694da5a73e3682a26ed483dcab7a443"
+        },
+        {
+          "name": "zom20d",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20d",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-03__tune-001\\zombies\\zom20d",
+          "bytes": 382,
+          "sha256": "923dd6abebbb7bb502ec5a02873c26175820ada5c4409d179d8464f0e90cb6fc"
+        }
+      ],
+      "scores": {
+        "groups": {
+          "A_HRZ_PowerRangers": 5,
+          "A_WAN_Full_Time_Job": 2,
+          "A_WAN_OnlyCode": 0,
+          "COD_y015": 5
+        },
+        "warriors": {
+          "A_HRZ_PowerRangers1": 1.5,
+          "A_HRZ_PowerRangers2": 3.5,
+          "A_WAN_Full_Time_Job1": 2,
+          "A_WAN_Full_Time_Job2": 0,
+          "A_WAN_OnlyCode1": 0,
+          "A_WAN_OnlyCode2": 0,
+          "COD_y0151": 1.5,
+          "COD_y0152": 3.5
+        }
+      },
+      "candidate": {
+        "teamRaw": 5,
+        "teamPerBattle": 0.4166666666666667,
+        "warrior1Raw": 1.5,
+        "warrior1PerBattle": 0.125,
+        "warrior2Raw": 3.5,
+        "warrior2PerBattle": 0.2916666666666667
+      },
+      "rawScoreText": "Groups:\nA_HRZ_PowerRangers,5.0\nA_WAN_Full_Time_Job,2.0\nA_WAN_OnlyCode,0.0\nCOD_y015,5.0\n\nWarriors:\nA_HRZ_PowerRangers1,1.5\nA_HRZ_PowerRangers2,3.5\nA_WAN_Full_Time_Job1,2.0\nA_WAN_Full_Time_Job2,0.0\nA_WAN_OnlyCode1,0.0\nA_WAN_OnlyCode2,0.0\nCOD_y0151,1.5\nCOD_y0152,3.5\n",
+      "stdout": "CoreWars8086 - headless mode\n\r\nLoaded warriors: [A_HRZ_PowerRangers, A_WAN_Full_Time_Job, A_WAN_OnlyCode, COD_y015]\r\nStarting competition (12 wars) in parallel.\r\nCompetition is over. Ran 12 wars\r\nWriting scores to file C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-03__tune-001\\scores.csv\r\n"
+    },
+    {
+      "runId": "tune-v1-04__tune-001",
+      "cohortId": "tune-v1-04",
+      "seed": "tune-001",
+      "battles": 12,
+      "startedAt": "2026-09-20T12:21:12.466Z",
+      "elapsedSeconds": 1.0243335,
+      "command": {
+        "executable": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\tools\\temurin8-jre\\jdk8u504-b01-jre\\bin\\java.exe",
+        "args": [
+          "-jar",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+          "--headless",
+          "--comboSize",
+          "4",
+          "--battlesPerCombo",
+          "12",
+          "--seed",
+          "tune-001",
+          "--threads",
+          "4",
+          "--warriorsDir",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-04__tune-001\\survivors",
+          "--zombiesDir",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-04__tune-001\\zombies",
+          "--outputFile",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-04__tune-001\\scores.csv"
+        ]
+      },
+      "inputs": {
+        "COD_y015": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\chimera\\y015_a",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-04__tune-001\\survivors\\COD_y0151",
+            "bytes": 157,
+            "sha256": "bb9238224b48eab8da020223738477f1b003de02e0132b4430a628efac564cd7"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\chimera\\y015_b",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-04__tune-001\\survivors\\COD_y0152",
+            "bytes": 114,
+            "sha256": "a6a10207a1d52e7ed7b628c044724a9913b5d8285578771fc8ca1afc65aa5b15"
+          }
+        ],
+        "A_BZV_SKYENT": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\BZV_SKYENT1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-04__tune-001\\survivors\\A_BZV_SKYENT1",
+            "bytes": 425,
+            "sha256": "71bdf7043da5f50d23bc4d8b729b13ce39a2240775937d7652476abdcbb2705d"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\BZV_SKYENT2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-04__tune-001\\survivors\\A_BZV_SKYENT2",
+            "bytes": 442,
+            "sha256": "bfca1258902ff47eef60ddc230e67f4c8528c89421377f5a696724506c2fdada"
+          }
+        ],
+        "A_OHS_cgxPro": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\OHS_cgxPro1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-04__tune-001\\survivors\\A_OHS_cgxPro1",
+            "bytes": 16,
+            "sha256": "128d6e4fb73dec09b71198963573298bb8bac99c3a2daca74759efc48b28a1ce"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\OHS_cgxPro2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-04__tune-001\\survivors\\A_OHS_cgxPro2",
+            "bytes": 16,
+            "sha256": "128d6e4fb73dec09b71198963573298bb8bac99c3a2daca74759efc48b28a1ce"
+          }
+        ],
+        "Y_SZR_BrvazimAlSteroidim": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online-young\\SZR_BrvazimAlSteroidim1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-04__tune-001\\survivors\\Y_SZR_BrvazimAlSteroidim1",
+            "bytes": 98,
+            "sha256": "dbc5b61532888cc9246691b72acfc95eb453fb6362d405f79dca61b48b4e3764"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online-young\\SZR_BrvazimAlSteroidim2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-04__tune-001\\survivors\\Y_SZR_BrvazimAlSteroidim2",
+            "bytes": 92,
+            "sha256": "6071871d772af0d529769ecf82479b93d30a388feb72df6a41e4c0845100dfd3"
+          }
+        ]
+      },
+      "zombies": [
+        {
+          "name": "zom20a",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20a",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-04__tune-001\\zombies\\zom20a",
+          "bytes": 73,
+          "sha256": "a950e618ea2e127096c85f486fb555c264730d924a2192c407aa66e6e0318eb6"
+        },
+        {
+          "name": "zom20b",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20b",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-04__tune-001\\zombies\\zom20b",
+          "bytes": 382,
+          "sha256": "af6394c021ccb5e486db507e2ccd787bd5675f8fec88fd2ddbe9f834566852ce"
+        },
+        {
+          "name": "zom20c",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20c",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-04__tune-001\\zombies\\zom20c",
+          "bytes": 232,
+          "sha256": "3d3f209967f51a7344e0eab582bc04d1e694da5a73e3682a26ed483dcab7a443"
+        },
+        {
+          "name": "zom20d",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20d",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-04__tune-001\\zombies\\zom20d",
+          "bytes": 382,
+          "sha256": "923dd6abebbb7bb502ec5a02873c26175820ada5c4409d179d8464f0e90cb6fc"
+        }
+      ],
+      "scores": {
+        "groups": {
+          "A_BZV_SKYENT": 4.1666665,
+          "A_OHS_cgxPro": 0,
+          "COD_y015": 6.8333335,
+          "Y_SZR_BrvazimAlSteroidim": 1
+        },
+        "warriors": {
+          "A_BZV_SKYENT1": 2.8333333,
+          "A_BZV_SKYENT2": 1.3333334,
+          "A_OHS_cgxPro1": 0,
+          "A_OHS_cgxPro2": 0,
+          "COD_y0151": 4,
+          "COD_y0152": 2.8333335,
+          "Y_SZR_BrvazimAlSteroidim1": 1,
+          "Y_SZR_BrvazimAlSteroidim2": 0
+        }
+      },
+      "candidate": {
+        "teamRaw": 6.8333335,
+        "teamPerBattle": 0.5694444583333333,
+        "warrior1Raw": 4,
+        "warrior1PerBattle": 0.3333333333333333,
+        "warrior2Raw": 2.8333335,
+        "warrior2PerBattle": 0.236111125
+      },
+      "rawScoreText": "Groups:\nA_BZV_SKYENT,4.1666665\nA_OHS_cgxPro,0.0\nCOD_y015,6.8333335\nY_SZR_BrvazimAlSteroidim,1.0\n\nWarriors:\nA_BZV_SKYENT1,2.8333333\nA_BZV_SKYENT2,1.3333334\nA_OHS_cgxPro1,0.0\nA_OHS_cgxPro2,0.0\nCOD_y0151,4.0\nCOD_y0152,2.8333335\nY_SZR_BrvazimAlSteroidim1,1.0\nY_SZR_BrvazimAlSteroidim2,0.0\n",
+      "stdout": "CoreWars8086 - headless mode\n\r\nLoaded warriors: [A_BZV_SKYENT, A_OHS_cgxPro, COD_y015, Y_SZR_BrvazimAlSteroidim]\r\nStarting competition (12 wars) in parallel.\r\nCompetition is over. Ran 12 wars\r\nWriting scores to file C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-04__tune-001\\scores.csv\r\n"
+    },
+    {
+      "runId": "tune-v1-05__tune-001",
+      "cohortId": "tune-v1-05",
+      "seed": "tune-001",
+      "battles": 12,
+      "startedAt": "2026-09-20T12:21:13.524Z",
+      "elapsedSeconds": 0.6391916,
+      "command": {
+        "executable": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\tools\\temurin8-jre\\jdk8u504-b01-jre\\bin\\java.exe",
+        "args": [
+          "-jar",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+          "--headless",
+          "--comboSize",
+          "4",
+          "--battlesPerCombo",
+          "12",
+          "--seed",
+          "tune-001",
+          "--threads",
+          "4",
+          "--warriorsDir",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-05__tune-001\\survivors",
+          "--zombiesDir",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-05__tune-001\\zombies",
+          "--outputFile",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-05__tune-001\\scores.csv"
+        ]
+      },
+      "inputs": {
+        "COD_y015": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\chimera\\y015_a",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-05__tune-001\\survivors\\COD_y0151",
+            "bytes": 157,
+            "sha256": "bb9238224b48eab8da020223738477f1b003de02e0132b4430a628efac564cd7"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\chimera\\y015_b",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-05__tune-001\\survivors\\COD_y0152",
+            "bytes": 114,
+            "sha256": "a6a10207a1d52e7ed7b628c044724a9913b5d8285578771fc8ca1afc65aa5b15"
+          }
+        ],
+        "A_AVI_AnotherBitInTheWall": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\AVI_AnotherBitInTheWall1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-05__tune-001\\survivors\\A_AVI_AnotherBitInTheWall1",
+            "bytes": 291,
+            "sha256": "5a78ed74829860373ab4dd7d80bb58fd50234789e3d2cba84c4f8a1cc183ab15"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\AVI_AnotherBitInTheWall2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-05__tune-001\\survivors\\A_AVI_AnotherBitInTheWall2",
+            "bytes": 271,
+            "sha256": "76b06db3e88a32e0a1f025030e1c14d19c53b9a8f7a0944c76de9d867de55fda"
+          }
+        ],
+        "A_AML_ByteReapers": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\AML_ByteReapers1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-05__tune-001\\survivors\\A_AML_ByteReapers1",
+            "bytes": 250,
+            "sha256": "e03726289c7889054f9635a8eea5a25754a819b2016bee5a39ef345f7b6cd3d7"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\AML_ByteReapers2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-05__tune-001\\survivors\\A_AML_ByteReapers2",
+            "bytes": 501,
+            "sha256": "5fe97a9902546036b12928645654fc44688e084fd7f6e3a9799fd5365f48918e"
+          }
+        ],
+        "A_HRZ_Pixar_Lamps": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_Pixar_Lamps1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-05__tune-001\\survivors\\A_HRZ_Pixar_Lamps1",
+            "bytes": 115,
+            "sha256": "500852a7240608e60b8ed36f93d14f09ec08db9f3b9f65358a4d3174a14221a8"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_Pixar_Lamps2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-05__tune-001\\survivors\\A_HRZ_Pixar_Lamps2",
+            "bytes": 32,
+            "sha256": "5ab6a833bc63e8497db71b36ae02a835ab1b9f5abef9b42dafabd07b1d671ab5"
+          }
+        ]
+      },
+      "zombies": [
+        {
+          "name": "zom20a",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20a",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-05__tune-001\\zombies\\zom20a",
+          "bytes": 73,
+          "sha256": "a950e618ea2e127096c85f486fb555c264730d924a2192c407aa66e6e0318eb6"
+        },
+        {
+          "name": "zom20b",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20b",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-05__tune-001\\zombies\\zom20b",
+          "bytes": 382,
+          "sha256": "af6394c021ccb5e486db507e2ccd787bd5675f8fec88fd2ddbe9f834566852ce"
+        },
+        {
+          "name": "zom20c",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20c",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-05__tune-001\\zombies\\zom20c",
+          "bytes": 232,
+          "sha256": "3d3f209967f51a7344e0eab582bc04d1e694da5a73e3682a26ed483dcab7a443"
+        },
+        {
+          "name": "zom20d",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20d",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-05__tune-001\\zombies\\zom20d",
+          "bytes": 382,
+          "sha256": "923dd6abebbb7bb502ec5a02873c26175820ada5c4409d179d8464f0e90cb6fc"
+        }
+      ],
+      "scores": {
+        "groups": {
+          "A_AML_ByteReapers": 1,
+          "A_AVI_AnotherBitInTheWall": 4,
+          "A_HRZ_Pixar_Lamps": 0,
+          "COD_y015": 7
+        },
+        "warriors": {
+          "A_AML_ByteReapers1": 0,
+          "A_AML_ByteReapers2": 1,
+          "A_AVI_AnotherBitInTheWall1": 1,
+          "A_AVI_AnotherBitInTheWall2": 3,
+          "A_HRZ_Pixar_Lamps1": 0,
+          "A_HRZ_Pixar_Lamps2": 0,
+          "COD_y0151": 4,
+          "COD_y0152": 3
+        }
+      },
+      "candidate": {
+        "teamRaw": 7,
+        "teamPerBattle": 0.5833333333333334,
+        "warrior1Raw": 4,
+        "warrior1PerBattle": 0.3333333333333333,
+        "warrior2Raw": 3,
+        "warrior2PerBattle": 0.25
+      },
+      "rawScoreText": "Groups:\nA_AML_ByteReapers,1.0\nA_AVI_AnotherBitInTheWall,4.0\nA_HRZ_Pixar_Lamps,0.0\nCOD_y015,7.0\n\nWarriors:\nA_AML_ByteReapers1,0.0\nA_AML_ByteReapers2,1.0\nA_AVI_AnotherBitInTheWall1,1.0\nA_AVI_AnotherBitInTheWall2,3.0\nA_HRZ_Pixar_Lamps1,0.0\nA_HRZ_Pixar_Lamps2,0.0\nCOD_y0151,4.0\nCOD_y0152,3.0\n",
+      "stdout": "CoreWars8086 - headless mode\n\r\nLoaded warriors: [A_AML_ByteReapers, A_AVI_AnotherBitInTheWall, A_HRZ_Pixar_Lamps, COD_y015]\r\nStarting competition (12 wars) in parallel.\r\nCompetition is over. Ran 12 wars\r\nWriting scores to file C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-05__tune-001\\scores.csv\r\n"
+    },
+    {
+      "runId": "tune-v1-06__tune-001",
+      "cohortId": "tune-v1-06",
+      "seed": "tune-001",
+      "battles": 12,
+      "startedAt": "2026-09-20T12:21:14.197Z",
+      "elapsedSeconds": 0.9142967,
+      "command": {
+        "executable": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\tools\\temurin8-jre\\jdk8u504-b01-jre\\bin\\java.exe",
+        "args": [
+          "-jar",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+          "--headless",
+          "--comboSize",
+          "4",
+          "--battlesPerCombo",
+          "12",
+          "--seed",
+          "tune-001",
+          "--threads",
+          "4",
+          "--warriorsDir",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-06__tune-001\\survivors",
+          "--zombiesDir",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-06__tune-001\\zombies",
+          "--outputFile",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-06__tune-001\\scores.csv"
+        ]
+      },
+      "inputs": {
+        "COD_y015": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\chimera\\y015_a",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-06__tune-001\\survivors\\COD_y0151",
+            "bytes": 157,
+            "sha256": "bb9238224b48eab8da020223738477f1b003de02e0132b4430a628efac564cd7"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\chimera\\y015_b",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-06__tune-001\\survivors\\COD_y0152",
+            "bytes": 114,
+            "sha256": "a6a10207a1d52e7ed7b628c044724a9913b5d8285578771fc8ca1afc65aa5b15"
+          }
+        ],
+        "Y_TOM_Code_Killer": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online-young\\TOM_Code_Killer1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-06__tune-001\\survivors\\Y_TOM_Code_Killer1",
+            "bytes": 78,
+            "sha256": "388479f220bd757fe9c011cb234cc52ad1e6f12e9deb01a8d247a0e5568c4e22"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online-young\\TOM_Code_Killer2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-06__tune-001\\survivors\\Y_TOM_Code_Killer2",
+            "bytes": 106,
+            "sha256": "7fc3754c18976081ccd54f3936d22a493bb1d8420706cde4a5962613f4c9bbf5"
+          }
+        ],
+        "A_HRZ_The_Rubber_Duckies": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_The_Rubber_Duckies1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-06__tune-001\\survivors\\A_HRZ_The_Rubber_Duckies1",
+            "bytes": 338,
+            "sha256": "c8270f10aa7f62682bae9ce457a087fe6b391e63107ae748695d35f615a2d72e"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_The_Rubber_Duckies2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-06__tune-001\\survivors\\A_HRZ_The_Rubber_Duckies2",
+            "bytes": 180,
+            "sha256": "d77f23e2eda8675b231d8d53a436dcde422e27fa7936d18059fd338156c58ff4"
+          }
+        ],
+        "A_AVI_Fishandpoultry": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\AVI_Fishandpoultry1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-06__tune-001\\survivors\\A_AVI_Fishandpoultry1",
+            "bytes": 75,
+            "sha256": "c8aa0e238c28c8c041cf8318d93f165b7cb2005c71cc055552244f120ea7f065"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\AVI_Fishandpoultry2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-06__tune-001\\survivors\\A_AVI_Fishandpoultry2",
+            "bytes": 113,
+            "sha256": "3718913ee7debbee757a1fa053699cb80d12cd1985d8218b3ed6cb9f4d87193d"
+          }
+        ]
+      },
+      "zombies": [
+        {
+          "name": "zom20a",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20a",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-06__tune-001\\zombies\\zom20a",
+          "bytes": 73,
+          "sha256": "a950e618ea2e127096c85f486fb555c264730d924a2192c407aa66e6e0318eb6"
+        },
+        {
+          "name": "zom20b",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20b",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-06__tune-001\\zombies\\zom20b",
+          "bytes": 382,
+          "sha256": "af6394c021ccb5e486db507e2ccd787bd5675f8fec88fd2ddbe9f834566852ce"
+        },
+        {
+          "name": "zom20c",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20c",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-06__tune-001\\zombies\\zom20c",
+          "bytes": 232,
+          "sha256": "3d3f209967f51a7344e0eab582bc04d1e694da5a73e3682a26ed483dcab7a443"
+        },
+        {
+          "name": "zom20d",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20d",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-06__tune-001\\zombies\\zom20d",
+          "bytes": 382,
+          "sha256": "923dd6abebbb7bb502ec5a02873c26175820ada5c4409d179d8464f0e90cb6fc"
+        }
+      ],
+      "scores": {
+        "groups": {
+          "A_AVI_Fishandpoultry": 2,
+          "A_HRZ_The_Rubber_Duckies": 0,
+          "COD_y015": 1,
+          "Y_TOM_Code_Killer": 9
+        },
+        "warriors": {
+          "A_AVI_Fishandpoultry1": 0,
+          "A_AVI_Fishandpoultry2": 2,
+          "A_HRZ_The_Rubber_Duckies1": 0,
+          "A_HRZ_The_Rubber_Duckies2": 0,
+          "COD_y0151": 0.5,
+          "COD_y0152": 0.5,
+          "Y_TOM_Code_Killer1": 3.5,
+          "Y_TOM_Code_Killer2": 5.5
+        }
+      },
+      "candidate": {
+        "teamRaw": 1,
+        "teamPerBattle": 0.08333333333333333,
+        "warrior1Raw": 0.5,
+        "warrior1PerBattle": 0.041666666666666664,
+        "warrior2Raw": 0.5,
+        "warrior2PerBattle": 0.041666666666666664
+      },
+      "rawScoreText": "Groups:\nA_AVI_Fishandpoultry,2.0\nA_HRZ_The_Rubber_Duckies,0.0\nCOD_y015,1.0\nY_TOM_Code_Killer,9.0\n\nWarriors:\nA_AVI_Fishandpoultry1,0.0\nA_AVI_Fishandpoultry2,2.0\nA_HRZ_The_Rubber_Duckies1,0.0\nA_HRZ_The_Rubber_Duckies2,0.0\nCOD_y0151,0.5\nCOD_y0152,0.5\nY_TOM_Code_Killer1,3.5\nY_TOM_Code_Killer2,5.5\n",
+      "stdout": "CoreWars8086 - headless mode\n\r\nLoaded warriors: [A_AVI_Fishandpoultry, A_HRZ_The_Rubber_Duckies, COD_y015, Y_TOM_Code_Killer]\r\nStarting competition (12 wars) in parallel.\r\nCompetition is over. Ran 11 wars\r\nWriting scores to file C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-06__tune-001\\scores.csv\r\n"
+    },
+    {
+      "runId": "tune-v1-07__tune-001",
+      "cohortId": "tune-v1-07",
+      "seed": "tune-001",
+      "battles": 12,
+      "startedAt": "2026-09-20T12:21:15.158Z",
+      "elapsedSeconds": 0.8346583,
+      "command": {
+        "executable": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\tools\\temurin8-jre\\jdk8u504-b01-jre\\bin\\java.exe",
+        "args": [
+          "-jar",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+          "--headless",
+          "--comboSize",
+          "4",
+          "--battlesPerCombo",
+          "12",
+          "--seed",
+          "tune-001",
+          "--threads",
+          "4",
+          "--warriorsDir",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-07__tune-001\\survivors",
+          "--zombiesDir",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-07__tune-001\\zombies",
+          "--outputFile",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-07__tune-001\\scores.csv"
+        ]
+      },
+      "inputs": {
+        "COD_y015": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\chimera\\y015_a",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-07__tune-001\\survivors\\COD_y0151",
+            "bytes": 157,
+            "sha256": "bb9238224b48eab8da020223738477f1b003de02e0132b4430a628efac564cd7"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\chimera\\y015_b",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-07__tune-001\\survivors\\COD_y0152",
+            "bytes": 114,
+            "sha256": "a6a10207a1d52e7ed7b628c044724a9913b5d8285578771fc8ca1afc65aa5b15"
+          }
+        ],
+        "Y_ELD_FriendlyFire": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online-young\\ELD_FriendlyFire1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-07__tune-001\\survivors\\Y_ELD_FriendlyFire1",
+            "bytes": 13,
+            "sha256": "9198ae7381e5449f42b5f2cb80e0ec1788c4b2bd25b9ec9ed0096383c4c2085c"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online-young\\ELD_FriendlyFire2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-07__tune-001\\survivors\\Y_ELD_FriendlyFire2",
+            "bytes": 13,
+            "sha256": "9198ae7381e5449f42b5f2cb80e0ec1788c4b2bd25b9ec9ed0096383c4c2085c"
+          }
+        ],
+        "A_GSA_ShmuelTurtles": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\GSA_ShmuelTurtles1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-07__tune-001\\survivors\\A_GSA_ShmuelTurtles1",
+            "bytes": 207,
+            "sha256": "22de4575872d077b32481da4edf814f6a72136771b931b45a1b0191001b19c3f"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\GSA_ShmuelTurtles2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-07__tune-001\\survivors\\A_GSA_ShmuelTurtles2",
+            "bytes": 13,
+            "sha256": "9198ae7381e5449f42b5f2cb80e0ec1788c4b2bd25b9ec9ed0096383c4c2085c"
+          }
+        ],
+        "A_HRZ_L": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_L1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-07__tune-001\\survivors\\A_HRZ_L1",
+            "bytes": 260,
+            "sha256": "39de1bb615fe8760c528eab9b0cdac26e934010ee5953bb3c88f1ce561cefea0"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_L2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-07__tune-001\\survivors\\A_HRZ_L2",
+            "bytes": 254,
+            "sha256": "bdd2bb9dbb0dffc2ed7c0fa4f6b1fdf7a067d9784959d26c8c615f6fc3fde901"
+          }
+        ]
+      },
+      "zombies": [
+        {
+          "name": "zom20a",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20a",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-07__tune-001\\zombies\\zom20a",
+          "bytes": 73,
+          "sha256": "a950e618ea2e127096c85f486fb555c264730d924a2192c407aa66e6e0318eb6"
+        },
+        {
+          "name": "zom20b",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20b",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-07__tune-001\\zombies\\zom20b",
+          "bytes": 382,
+          "sha256": "af6394c021ccb5e486db507e2ccd787bd5675f8fec88fd2ddbe9f834566852ce"
+        },
+        {
+          "name": "zom20c",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20c",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-07__tune-001\\zombies\\zom20c",
+          "bytes": 232,
+          "sha256": "3d3f209967f51a7344e0eab582bc04d1e694da5a73e3682a26ed483dcab7a443"
+        },
+        {
+          "name": "zom20d",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20d",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-07__tune-001\\zombies\\zom20d",
+          "bytes": 382,
+          "sha256": "923dd6abebbb7bb502ec5a02873c26175820ada5c4409d179d8464f0e90cb6fc"
+        }
+      ],
+      "scores": {
+        "groups": {
+          "A_GSA_ShmuelTurtles": 0,
+          "A_HRZ_L": 3,
+          "COD_y015": 7,
+          "Y_ELD_FriendlyFire": 2
+        },
+        "warriors": {
+          "A_GSA_ShmuelTurtles1": 0,
+          "A_GSA_ShmuelTurtles2": 0,
+          "A_HRZ_L1": 0.5,
+          "A_HRZ_L2": 2.5,
+          "COD_y0151": 3.5,
+          "COD_y0152": 3.5,
+          "Y_ELD_FriendlyFire1": 1.5,
+          "Y_ELD_FriendlyFire2": 0.5
+        }
+      },
+      "candidate": {
+        "teamRaw": 7,
+        "teamPerBattle": 0.5833333333333334,
+        "warrior1Raw": 3.5,
+        "warrior1PerBattle": 0.2916666666666667,
+        "warrior2Raw": 3.5,
+        "warrior2PerBattle": 0.2916666666666667
+      },
+      "rawScoreText": "Groups:\nA_GSA_ShmuelTurtles,0.0\nA_HRZ_L,3.0\nCOD_y015,7.0\nY_ELD_FriendlyFire,2.0\n\nWarriors:\nA_GSA_ShmuelTurtles1,0.0\nA_GSA_ShmuelTurtles2,0.0\nA_HRZ_L1,0.5\nA_HRZ_L2,2.5\nCOD_y0151,3.5\nCOD_y0152,3.5\nY_ELD_FriendlyFire1,1.5\nY_ELD_FriendlyFire2,0.5\n",
+      "stdout": "CoreWars8086 - headless mode\n\r\nLoaded warriors: [A_GSA_ShmuelTurtles, A_HRZ_L, COD_y015, Y_ELD_FriendlyFire]\r\nStarting competition (12 wars) in parallel.\r\nCompetition is over. Ran 12 wars\r\nWriting scores to file C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-07__tune-001\\scores.csv\r\n"
+    },
+    {
+      "runId": "tune-v1-08__tune-001",
+      "cohortId": "tune-v1-08",
+      "seed": "tune-001",
+      "battles": 12,
+      "startedAt": "2026-09-20T12:21:16.065Z",
+      "elapsedSeconds": 1.0258421,
+      "command": {
+        "executable": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\tools\\temurin8-jre\\jdk8u504-b01-jre\\bin\\java.exe",
+        "args": [
+          "-jar",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+          "--headless",
+          "--comboSize",
+          "4",
+          "--battlesPerCombo",
+          "12",
+          "--seed",
+          "tune-001",
+          "--threads",
+          "4",
+          "--warriorsDir",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-08__tune-001\\survivors",
+          "--zombiesDir",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-08__tune-001\\zombies",
+          "--outputFile",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-08__tune-001\\scores.csv"
+        ]
+      },
+      "inputs": {
+        "COD_y015": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\chimera\\y015_a",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-08__tune-001\\survivors\\COD_y0151",
+            "bytes": 157,
+            "sha256": "bb9238224b48eab8da020223738477f1b003de02e0132b4430a628efac564cd7"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\chimera\\y015_b",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-08__tune-001\\survivors\\COD_y0152",
+            "bytes": 114,
+            "sha256": "a6a10207a1d52e7ed7b628c044724a9913b5d8285578771fc8ca1afc65aa5b15"
+          }
+        ],
+        "A_HRZ_Code_Jokers4Life": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_Code_Jokers4Life1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-08__tune-001\\survivors\\A_HRZ_Code_Jokers4Life1",
+            "bytes": 377,
+            "sha256": "f2222e5041e6fdfe2ab35582cc9df51e3b0498b7b57d90f18c20056239d673b8"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_Code_Jokers4Life2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-08__tune-001\\survivors\\A_HRZ_Code_Jokers4Life2",
+            "bytes": 12,
+            "sha256": "7ecc90c263e5458e6ac5b880d91efd45c3e0c6345639c3e38153bc161173e8de"
+          }
+        ],
+        "A_HLS_EmoMutants": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\HLS_EmoMutants1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-08__tune-001\\survivors\\A_HLS_EmoMutants1",
+            "bytes": 501,
+            "sha256": "629b28dbff281ca175493f1f40492e52afdf6f9f3c2f8a7e06a8df08a5580711"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\HLS_EmoMutants2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-08__tune-001\\survivors\\A_HLS_EmoMutants2",
+            "bytes": 502,
+            "sha256": "36c6a4f23a988920ed0e2e7a128bd706b5f82871935b6c0dfc5d3c2cbbd65aa0"
+          }
+        ],
+        "A_HRZ_MOV_AX_WIN": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_MOV_AX_WIN1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-08__tune-001\\survivors\\A_HRZ_MOV_AX_WIN1",
+            "bytes": 47,
+            "sha256": "ef82df0d92476fa6161d81ff092ea489d4df7ddef88a0dad44705a3cf14f8dd1"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_MOV_AX_WIN2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-08__tune-001\\survivors\\A_HRZ_MOV_AX_WIN2",
+            "bytes": 46,
+            "sha256": "a1b4b8459ae6b367da93742fb5f3c8bb0fe321e3cf1174f4e7a1dc29ada2a544"
+          }
+        ]
+      },
+      "zombies": [
+        {
+          "name": "zom20a",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20a",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-08__tune-001\\zombies\\zom20a",
+          "bytes": 73,
+          "sha256": "a950e618ea2e127096c85f486fb555c264730d924a2192c407aa66e6e0318eb6"
+        },
+        {
+          "name": "zom20b",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20b",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-08__tune-001\\zombies\\zom20b",
+          "bytes": 382,
+          "sha256": "af6394c021ccb5e486db507e2ccd787bd5675f8fec88fd2ddbe9f834566852ce"
+        },
+        {
+          "name": "zom20c",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20c",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-08__tune-001\\zombies\\zom20c",
+          "bytes": 232,
+          "sha256": "3d3f209967f51a7344e0eab582bc04d1e694da5a73e3682a26ed483dcab7a443"
+        },
+        {
+          "name": "zom20d",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20d",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-08__tune-001\\zombies\\zom20d",
+          "bytes": 382,
+          "sha256": "923dd6abebbb7bb502ec5a02873c26175820ada5c4409d179d8464f0e90cb6fc"
+        }
+      ],
+      "scores": {
+        "groups": {
+          "A_HLS_EmoMutants": 2.5,
+          "A_HRZ_Code_Jokers4Life": 2.5,
+          "A_HRZ_MOV_AX_WIN": 2,
+          "COD_y015": 5
+        },
+        "warriors": {
+          "A_HLS_EmoMutants1": 0.75,
+          "A_HLS_EmoMutants2": 1.75,
+          "A_HRZ_Code_Jokers4Life1": 0.25,
+          "A_HRZ_Code_Jokers4Life2": 2.25,
+          "A_HRZ_MOV_AX_WIN1": 1,
+          "A_HRZ_MOV_AX_WIN2": 1,
+          "COD_y0151": 3,
+          "COD_y0152": 2
+        }
+      },
+      "candidate": {
+        "teamRaw": 5,
+        "teamPerBattle": 0.4166666666666667,
+        "warrior1Raw": 3,
+        "warrior1PerBattle": 0.25,
+        "warrior2Raw": 2,
+        "warrior2PerBattle": 0.16666666666666666
+      },
+      "rawScoreText": "Groups:\nA_HLS_EmoMutants,2.5\nA_HRZ_Code_Jokers4Life,2.5\nA_HRZ_MOV_AX_WIN,2.0\nCOD_y015,5.0\n\nWarriors:\nA_HLS_EmoMutants1,0.75\nA_HLS_EmoMutants2,1.75\nA_HRZ_Code_Jokers4Life1,0.25\nA_HRZ_Code_Jokers4Life2,2.25\nA_HRZ_MOV_AX_WIN1,1.0\nA_HRZ_MOV_AX_WIN2,1.0\nCOD_y0151,3.0\nCOD_y0152,2.0\n",
+      "stdout": "CoreWars8086 - headless mode\n\r\nLoaded warriors: [A_HLS_EmoMutants, A_HRZ_Code_Jokers4Life, A_HRZ_MOV_AX_WIN, COD_y015]\r\nStarting competition (12 wars) in parallel.\r\nCompetition is over. Ran 12 wars\r\nWriting scores to file C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-08__tune-001\\scores.csv\r\n"
+    },
+    {
+      "runId": "tune-v1-09__tune-001",
+      "cohortId": "tune-v1-09",
+      "seed": "tune-001",
+      "battles": 12,
+      "startedAt": "2026-09-20T12:21:17.144Z",
+      "elapsedSeconds": 0.9648756,
+      "command": {
+        "executable": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\tools\\temurin8-jre\\jdk8u504-b01-jre\\bin\\java.exe",
+        "args": [
+          "-jar",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+          "--headless",
+          "--comboSize",
+          "4",
+          "--battlesPerCombo",
+          "12",
+          "--seed",
+          "tune-001",
+          "--threads",
+          "4",
+          "--warriorsDir",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-09__tune-001\\survivors",
+          "--zombiesDir",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-09__tune-001\\zombies",
+          "--outputFile",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-09__tune-001\\scores.csv"
+        ]
+      },
+      "inputs": {
+        "COD_y015": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\chimera\\y015_a",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-09__tune-001\\survivors\\COD_y0151",
+            "bytes": 157,
+            "sha256": "bb9238224b48eab8da020223738477f1b003de02e0132b4430a628efac564cd7"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\chimera\\y015_b",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-09__tune-001\\survivors\\COD_y0152",
+            "bytes": 114,
+            "sha256": "a6a10207a1d52e7ed7b628c044724a9913b5d8285578771fc8ca1afc65aa5b15"
+          }
+        ],
+        "A_ORT_Pegasus_Hex": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\ORT_Pegasus_Hex1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-09__tune-001\\survivors\\A_ORT_Pegasus_Hex1",
+            "bytes": 100,
+            "sha256": "8c82f8dc226579917f261847d0a6606c670f47ae4adcd5d4eb41fe4807035537"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\ORT_Pegasus_Hex2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-09__tune-001\\survivors\\A_ORT_Pegasus_Hex2",
+            "bytes": 60,
+            "sha256": "4026ad9d8dd3c66933bf5cc03cd18ed3b7d707f181a054fc43bf07b2239758c1"
+          }
+        ],
+        "A_HRZ_Grindo_Holics": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_Grindo_Holics1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-09__tune-001\\survivors\\A_HRZ_Grindo_Holics1",
+            "bytes": 505,
+            "sha256": "0fd28370c9b4200dc1d4774a5ab959e76f1f5fe0243dd327626fd8f47c936b51"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_Grindo_Holics2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-09__tune-001\\survivors\\A_HRZ_Grindo_Holics2",
+            "bytes": 480,
+            "sha256": "69791f0bdb90e9ff65fc078f6e863f92c3847700efbdc8e8865e002c96f2934f"
+          }
+        ],
+        "A_HDS_NRI": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\HDS_NRI1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-09__tune-001\\survivors\\A_HDS_NRI1",
+            "bytes": 110,
+            "sha256": "8830ca6b843b0508fc2a5771068dad1bc150d2f824d2cd77d7631e523b431bb1"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\HDS_NRI2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-09__tune-001\\survivors\\A_HDS_NRI2",
+            "bytes": 477,
+            "sha256": "1cc40806e6766e591dac071b1256c8b5f325360f0aae448b188dcc87376bb9ab"
+          }
+        ]
+      },
+      "zombies": [
+        {
+          "name": "zom20a",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20a",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-09__tune-001\\zombies\\zom20a",
+          "bytes": 73,
+          "sha256": "a950e618ea2e127096c85f486fb555c264730d924a2192c407aa66e6e0318eb6"
+        },
+        {
+          "name": "zom20b",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20b",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-09__tune-001\\zombies\\zom20b",
+          "bytes": 382,
+          "sha256": "af6394c021ccb5e486db507e2ccd787bd5675f8fec88fd2ddbe9f834566852ce"
+        },
+        {
+          "name": "zom20c",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20c",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-09__tune-001\\zombies\\zom20c",
+          "bytes": 232,
+          "sha256": "3d3f209967f51a7344e0eab582bc04d1e694da5a73e3682a26ed483dcab7a443"
+        },
+        {
+          "name": "zom20d",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20d",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-09__tune-001\\zombies\\zom20d",
+          "bytes": 382,
+          "sha256": "923dd6abebbb7bb502ec5a02873c26175820ada5c4409d179d8464f0e90cb6fc"
+        }
+      ],
+      "scores": {
+        "groups": {
+          "A_HDS_NRI": 0,
+          "A_HRZ_Grindo_Holics": 8.5,
+          "A_ORT_Pegasus_Hex": 0.5,
+          "COD_y015": 3
+        },
+        "warriors": {
+          "A_HDS_NRI1": 0,
+          "A_HDS_NRI2": 0,
+          "A_HRZ_Grindo_Holics1": 4,
+          "A_HRZ_Grindo_Holics2": 4.5,
+          "A_ORT_Pegasus_Hex1": 0.5,
+          "A_ORT_Pegasus_Hex2": 0,
+          "COD_y0151": 1,
+          "COD_y0152": 2
+        }
+      },
+      "candidate": {
+        "teamRaw": 3,
+        "teamPerBattle": 0.25,
+        "warrior1Raw": 1,
+        "warrior1PerBattle": 0.08333333333333333,
+        "warrior2Raw": 2,
+        "warrior2PerBattle": 0.16666666666666666
+      },
+      "rawScoreText": "Groups:\nA_HDS_NRI,0.0\nA_HRZ_Grindo_Holics,8.5\nA_ORT_Pegasus_Hex,0.5\nCOD_y015,3.0\n\nWarriors:\nA_HDS_NRI1,0.0\nA_HDS_NRI2,0.0\nA_HRZ_Grindo_Holics1,4.0\nA_HRZ_Grindo_Holics2,4.5\nA_ORT_Pegasus_Hex1,0.5\nA_ORT_Pegasus_Hex2,0.0\nCOD_y0151,1.0\nCOD_y0152,2.0\n",
+      "stdout": "CoreWars8086 - headless mode\n\r\nLoaded warriors: [A_HDS_NRI, A_HRZ_Grindo_Holics, A_ORT_Pegasus_Hex, COD_y015]\r\nStarting competition (12 wars) in parallel.\r\nCompetition is over. Ran 12 wars\r\nWriting scores to file C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-09__tune-001\\scores.csv\r\n"
+    },
+    {
+      "runId": "tune-v1-10__tune-001",
+      "cohortId": "tune-v1-10",
+      "seed": "tune-001",
+      "battles": 12,
+      "startedAt": "2026-09-20T12:21:18.150Z",
+      "elapsedSeconds": 0.6451259,
+      "command": {
+        "executable": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\tools\\temurin8-jre\\jdk8u504-b01-jre\\bin\\java.exe",
+        "args": [
+          "-jar",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+          "--headless",
+          "--comboSize",
+          "4",
+          "--battlesPerCombo",
+          "12",
+          "--seed",
+          "tune-001",
+          "--threads",
+          "4",
+          "--warriorsDir",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-10__tune-001\\survivors",
+          "--zombiesDir",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-10__tune-001\\zombies",
+          "--outputFile",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-10__tune-001\\scores.csv"
+        ]
+      },
+      "inputs": {
+        "COD_y015": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\chimera\\y015_a",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-10__tune-001\\survivors\\COD_y0151",
+            "bytes": 157,
+            "sha256": "bb9238224b48eab8da020223738477f1b003de02e0132b4430a628efac564cd7"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\chimera\\y015_b",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-10__tune-001\\survivors\\COD_y0152",
+            "bytes": 114,
+            "sha256": "a6a10207a1d52e7ed7b628c044724a9913b5d8285578771fc8ca1afc65aa5b15"
+          }
+        ],
+        "A_KOB_KosherCode": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\KOB_KosherCode1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-10__tune-001\\survivors\\A_KOB_KosherCode1",
+            "bytes": 46,
+            "sha256": "f333c2d41cce100bb3afee9f2e60b9fda6f93d717602adc369d7719664568184"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\KOB_KosherCode2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-10__tune-001\\survivors\\A_KOB_KosherCode2",
+            "bytes": 19,
+            "sha256": "f2b704b27b426c0d25f8dc26f1e4876f14cf3d5d1b89d4e7bfbecd0b132af5ac"
+          }
+        ],
+        "A_TOM_Syntax_Terror": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\TOM_Syntax_Terror1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-10__tune-001\\survivors\\A_TOM_Syntax_Terror1",
+            "bytes": 27,
+            "sha256": "2cb2747ca3e9331b28ca609a228bfd21413a77ee98355c5e8fff4042c56a2a56"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\TOM_Syntax_Terror2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-10__tune-001\\survivors\\A_TOM_Syntax_Terror2",
+            "bytes": 65,
+            "sha256": "f39bc040a51c504af6baca86ef99bf19351717c91ac4e3af01a2e0ecad193e47"
+          }
+        ],
+        "A_HDS_GoldenLamed": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\HDS_GoldenLamed1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-10__tune-001\\survivors\\A_HDS_GoldenLamed1",
+            "bytes": 16,
+            "sha256": "f76ec20d3e5d9e5dc58734ae0aa90532090d98abbd857baeedc3179c8bd32378"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\HDS_GoldenLamed2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-10__tune-001\\survivors\\A_HDS_GoldenLamed2",
+            "bytes": 16,
+            "sha256": "f76ec20d3e5d9e5dc58734ae0aa90532090d98abbd857baeedc3179c8bd32378"
+          }
+        ]
+      },
+      "zombies": [
+        {
+          "name": "zom20a",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20a",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-10__tune-001\\zombies\\zom20a",
+          "bytes": 73,
+          "sha256": "a950e618ea2e127096c85f486fb555c264730d924a2192c407aa66e6e0318eb6"
+        },
+        {
+          "name": "zom20b",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20b",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-10__tune-001\\zombies\\zom20b",
+          "bytes": 382,
+          "sha256": "af6394c021ccb5e486db507e2ccd787bd5675f8fec88fd2ddbe9f834566852ce"
+        },
+        {
+          "name": "zom20c",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20c",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-10__tune-001\\zombies\\zom20c",
+          "bytes": 232,
+          "sha256": "3d3f209967f51a7344e0eab582bc04d1e694da5a73e3682a26ed483dcab7a443"
+        },
+        {
+          "name": "zom20d",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20d",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-10__tune-001\\zombies\\zom20d",
+          "bytes": 382,
+          "sha256": "923dd6abebbb7bb502ec5a02873c26175820ada5c4409d179d8464f0e90cb6fc"
+        }
+      ],
+      "scores": {
+        "groups": {
+          "A_HDS_GoldenLamed": 0,
+          "A_KOB_KosherCode": 3,
+          "A_TOM_Syntax_Terror": 3,
+          "COD_y015": 6
+        },
+        "warriors": {
+          "A_HDS_GoldenLamed1": 0,
+          "A_HDS_GoldenLamed2": 0,
+          "A_KOB_KosherCode1": 1,
+          "A_KOB_KosherCode2": 2,
+          "A_TOM_Syntax_Terror1": 2,
+          "A_TOM_Syntax_Terror2": 1,
+          "COD_y0151": 2.5,
+          "COD_y0152": 3.5
+        }
+      },
+      "candidate": {
+        "teamRaw": 6,
+        "teamPerBattle": 0.5,
+        "warrior1Raw": 2.5,
+        "warrior1PerBattle": 0.20833333333333334,
+        "warrior2Raw": 3.5,
+        "warrior2PerBattle": 0.2916666666666667
+      },
+      "rawScoreText": "Groups:\nA_HDS_GoldenLamed,0.0\nA_KOB_KosherCode,3.0\nA_TOM_Syntax_Terror,3.0\nCOD_y015,6.0\n\nWarriors:\nA_HDS_GoldenLamed1,0.0\nA_HDS_GoldenLamed2,0.0\nA_KOB_KosherCode1,1.0\nA_KOB_KosherCode2,2.0\nA_TOM_Syntax_Terror1,2.0\nA_TOM_Syntax_Terror2,1.0\nCOD_y0151,2.5\nCOD_y0152,3.5\n",
+      "stdout": "CoreWars8086 - headless mode\n\r\nLoaded warriors: [A_HDS_GoldenLamed, A_KOB_KosherCode, A_TOM_Syntax_Terror, COD_y015]\r\nStarting competition (12 wars) in parallel.\r\nCompetition is over. Ran 12 wars\r\nWriting scores to file C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-10__tune-001\\scores.csv\r\n"
+    },
+    {
+      "runId": "tune-v1-11__tune-001",
+      "cohortId": "tune-v1-11",
+      "seed": "tune-001",
+      "battles": 12,
+      "startedAt": "2026-09-20T12:21:18.823Z",
+      "elapsedSeconds": 0.6047881,
+      "command": {
+        "executable": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\tools\\temurin8-jre\\jdk8u504-b01-jre\\bin\\java.exe",
+        "args": [
+          "-jar",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+          "--headless",
+          "--comboSize",
+          "4",
+          "--battlesPerCombo",
+          "12",
+          "--seed",
+          "tune-001",
+          "--threads",
+          "4",
+          "--warriorsDir",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-11__tune-001\\survivors",
+          "--zombiesDir",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-11__tune-001\\zombies",
+          "--outputFile",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-11__tune-001\\scores.csv"
+        ]
+      },
+      "inputs": {
+        "COD_y015": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\chimera\\y015_a",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-11__tune-001\\survivors\\COD_y0151",
+            "bytes": 157,
+            "sha256": "bb9238224b48eab8da020223738477f1b003de02e0132b4430a628efac564cd7"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\chimera\\y015_b",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-11__tune-001\\survivors\\COD_y0152",
+            "bytes": 114,
+            "sha256": "a6a10207a1d52e7ed7b628c044724a9913b5d8285578771fc8ca1afc65aa5b15"
+          }
+        ],
+        "A_IND_BRA": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\IND_BRA1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-11__tune-001\\survivors\\A_IND_BRA1",
+            "bytes": 25,
+            "sha256": "fd42f831ef722a715fc5d89877cf830b366efd1d3a30a2e0612e565de0031015"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\IND_BRA2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-11__tune-001\\survivors\\A_IND_BRA2",
+            "bytes": 25,
+            "sha256": "fd42f831ef722a715fc5d89877cf830b366efd1d3a30a2e0612e565de0031015"
+          }
+        ],
+        "A_OHS_BatteringRAM": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\OHS_BatteringRAM1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-11__tune-001\\survivors\\A_OHS_BatteringRAM1",
+            "bytes": 212,
+            "sha256": "6db7c4932a50615520b1eed2f49a9543723d89fb1b70f7507b6241f77d0e9474"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\OHS_BatteringRAM2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-11__tune-001\\survivors\\A_OHS_BatteringRAM2",
+            "bytes": 9,
+            "sha256": "5f2531e6a569ae005357df7f8d16fdd7e49020cee96a6ccf16e85d2fb51e4bb1"
+          }
+        ],
+        "A_HRZ_InCtrl": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_InCtrl1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-11__tune-001\\survivors\\A_HRZ_InCtrl1",
+            "bytes": 50,
+            "sha256": "d7b0b84459fe2295e8a65512ef16c2e698e6d6bee50b1b3b777dc0c2b0c5b7c0"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_InCtrl2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-11__tune-001\\survivors\\A_HRZ_InCtrl2",
+            "bytes": 41,
+            "sha256": "6997d9e87f8c241b3056f8ebfb624bd4bf268ef14329f49c95d4f553146153fa"
+          }
+        ]
+      },
+      "zombies": [
+        {
+          "name": "zom20a",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20a",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-11__tune-001\\zombies\\zom20a",
+          "bytes": 73,
+          "sha256": "a950e618ea2e127096c85f486fb555c264730d924a2192c407aa66e6e0318eb6"
+        },
+        {
+          "name": "zom20b",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20b",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-11__tune-001\\zombies\\zom20b",
+          "bytes": 382,
+          "sha256": "af6394c021ccb5e486db507e2ccd787bd5675f8fec88fd2ddbe9f834566852ce"
+        },
+        {
+          "name": "zom20c",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20c",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-11__tune-001\\zombies\\zom20c",
+          "bytes": 232,
+          "sha256": "3d3f209967f51a7344e0eab582bc04d1e694da5a73e3682a26ed483dcab7a443"
+        },
+        {
+          "name": "zom20d",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20d",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-11__tune-001\\zombies\\zom20d",
+          "bytes": 382,
+          "sha256": "923dd6abebbb7bb502ec5a02873c26175820ada5c4409d179d8464f0e90cb6fc"
+        }
+      ],
+      "scores": {
+        "groups": {
+          "A_HRZ_InCtrl": 0,
+          "A_IND_BRA": 2,
+          "A_OHS_BatteringRAM": 0,
+          "COD_y015": 10
+        },
+        "warriors": {
+          "A_HRZ_InCtrl1": 0,
+          "A_HRZ_InCtrl2": 0,
+          "A_IND_BRA1": 1.5,
+          "A_IND_BRA2": 0.5,
+          "A_OHS_BatteringRAM1": 0,
+          "A_OHS_BatteringRAM2": 0,
+          "COD_y0151": 8,
+          "COD_y0152": 2
+        }
+      },
+      "candidate": {
+        "teamRaw": 10,
+        "teamPerBattle": 0.8333333333333334,
+        "warrior1Raw": 8,
+        "warrior1PerBattle": 0.6666666666666666,
+        "warrior2Raw": 2,
+        "warrior2PerBattle": 0.16666666666666666
+      },
+      "rawScoreText": "Groups:\nA_HRZ_InCtrl,0.0\nA_IND_BRA,2.0\nA_OHS_BatteringRAM,0.0\nCOD_y015,10.0\n\nWarriors:\nA_HRZ_InCtrl1,0.0\nA_HRZ_InCtrl2,0.0\nA_IND_BRA1,1.5\nA_IND_BRA2,0.5\nA_OHS_BatteringRAM1,0.0\nA_OHS_BatteringRAM2,0.0\nCOD_y0151,8.0\nCOD_y0152,2.0\n",
+      "stdout": "CoreWars8086 - headless mode\n\r\nLoaded warriors: [A_HRZ_InCtrl, A_IND_BRA, A_OHS_BatteringRAM, COD_y015]\r\nStarting competition (12 wars) in parallel.\r\nCompetition is over. Ran 12 wars\r\nWriting scores to file C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-11__tune-001\\scores.csv\r\n"
+    },
+    {
+      "runId": "tune-v1-12__tune-001",
+      "cohortId": "tune-v1-12",
+      "seed": "tune-001",
+      "battles": 12,
+      "startedAt": "2026-09-20T12:21:19.469Z",
+      "elapsedSeconds": 1.1602129,
+      "command": {
+        "executable": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\tools\\temurin8-jre\\jdk8u504-b01-jre\\bin\\java.exe",
+        "args": [
+          "-jar",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+          "--headless",
+          "--comboSize",
+          "4",
+          "--battlesPerCombo",
+          "12",
+          "--seed",
+          "tune-001",
+          "--threads",
+          "4",
+          "--warriorsDir",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-12__tune-001\\survivors",
+          "--zombiesDir",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-12__tune-001\\zombies",
+          "--outputFile",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-12__tune-001\\scores.csv"
+        ]
+      },
+      "inputs": {
+        "COD_y015": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\chimera\\y015_a",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-12__tune-001\\survivors\\COD_y0151",
+            "bytes": 157,
+            "sha256": "bb9238224b48eab8da020223738477f1b003de02e0132b4430a628efac564cd7"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\chimera\\y015_b",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-12__tune-001\\survivors\\COD_y0152",
+            "bytes": 114,
+            "sha256": "a6a10207a1d52e7ed7b628c044724a9913b5d8285578771fc8ca1afc65aa5b15"
+          }
+        ],
+        "A_HRZ_LowKey_WBB": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_LowKey_WBB1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-12__tune-001\\survivors\\A_HRZ_LowKey_WBB1",
+            "bytes": 268,
+            "sha256": "9e6f08b0cf3d7fe60b1c349ce143ed02e2f3ed01e1654164f231a4c46d2aefc9"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_LowKey_WBB2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-12__tune-001\\survivors\\A_HRZ_LowKey_WBB2",
+            "bytes": 12,
+            "sha256": "42abd17f0ecb417669bb7ad2215bfd6a4fe7477c99b1cde736205d5b207484f4"
+          }
+        ],
+        "A_ATL_R1DDLE": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\ATL_R1DDLE1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-12__tune-001\\survivors\\A_ATL_R1DDLE1",
+            "bytes": 15,
+            "sha256": "dc1e7b81a57cc7fb13be0a4b32036342b7a7b2c65614bccc28998bec70111803"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\ATL_R1DDLE2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-12__tune-001\\survivors\\A_ATL_R1DDLE2",
+            "bytes": 15,
+            "sha256": "dc1e7b81a57cc7fb13be0a4b32036342b7a7b2c65614bccc28998bec70111803"
+          }
+        ],
+        "A_GSA_callfart": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\GSA_callfart1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-12__tune-001\\survivors\\A_GSA_callfart1",
+            "bytes": 512,
+            "sha256": "dfe5017765f2522372bedc2e5e3b72af5597b99ddbfb3444c25f5bde17a4acf3"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\GSA_callfart2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-12__tune-001\\survivors\\A_GSA_callfart2",
+            "bytes": 501,
+            "sha256": "30dafcebde39ba9bf4bbcf21d83a666bc5f0a8e3e4aabcb52310905d389a4f4d"
+          }
+        ]
+      },
+      "zombies": [
+        {
+          "name": "zom20a",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20a",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-12__tune-001\\zombies\\zom20a",
+          "bytes": 73,
+          "sha256": "a950e618ea2e127096c85f486fb555c264730d924a2192c407aa66e6e0318eb6"
+        },
+        {
+          "name": "zom20b",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20b",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-12__tune-001\\zombies\\zom20b",
+          "bytes": 382,
+          "sha256": "af6394c021ccb5e486db507e2ccd787bd5675f8fec88fd2ddbe9f834566852ce"
+        },
+        {
+          "name": "zom20c",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20c",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-12__tune-001\\zombies\\zom20c",
+          "bytes": 232,
+          "sha256": "3d3f209967f51a7344e0eab582bc04d1e694da5a73e3682a26ed483dcab7a443"
+        },
+        {
+          "name": "zom20d",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20d",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-12__tune-001\\zombies\\zom20d",
+          "bytes": 382,
+          "sha256": "923dd6abebbb7bb502ec5a02873c26175820ada5c4409d179d8464f0e90cb6fc"
+        }
+      ],
+      "scores": {
+        "groups": {
+          "A_ATL_R1DDLE": 0.5,
+          "A_GSA_callfart": 6,
+          "A_HRZ_LowKey_WBB": 3,
+          "COD_y015": 2.5
+        },
+        "warriors": {
+          "A_ATL_R1DDLE1": 0.5,
+          "A_ATL_R1DDLE2": 0,
+          "A_GSA_callfart1": 3,
+          "A_GSA_callfart2": 3,
+          "A_HRZ_LowKey_WBB1": 2,
+          "A_HRZ_LowKey_WBB2": 1,
+          "COD_y0151": 0,
+          "COD_y0152": 2.5
+        }
+      },
+      "candidate": {
+        "teamRaw": 2.5,
+        "teamPerBattle": 0.20833333333333334,
+        "warrior1Raw": 0,
+        "warrior1PerBattle": 0,
+        "warrior2Raw": 2.5,
+        "warrior2PerBattle": 0.20833333333333334
+      },
+      "rawScoreText": "Groups:\nA_ATL_R1DDLE,0.5\nA_GSA_callfart,6.0\nA_HRZ_LowKey_WBB,3.0\nCOD_y015,2.5\n\nWarriors:\nA_ATL_R1DDLE1,0.5\nA_ATL_R1DDLE2,0.0\nA_GSA_callfart1,3.0\nA_GSA_callfart2,3.0\nA_HRZ_LowKey_WBB1,2.0\nA_HRZ_LowKey_WBB2,1.0\nCOD_y0151,0.0\nCOD_y0152,2.5\n",
+      "stdout": "CoreWars8086 - headless mode\n\r\nLoaded warriors: [A_ATL_R1DDLE, A_GSA_callfart, A_HRZ_LowKey_WBB, COD_y015]\r\nStarting competition (12 wars) in parallel.\r\nCompetition is over. Ran 12 wars\r\nWriting scores to file C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-12__tune-001\\scores.csv\r\n"
+    },
+    {
+      "runId": "tune-v1-13__tune-001",
+      "cohortId": "tune-v1-13",
+      "seed": "tune-001",
+      "battles": 12,
+      "startedAt": "2026-09-20T12:21:20.674Z",
+      "elapsedSeconds": 0.8693426,
+      "command": {
+        "executable": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\tools\\temurin8-jre\\jdk8u504-b01-jre\\bin\\java.exe",
+        "args": [
+          "-jar",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+          "--headless",
+          "--comboSize",
+          "4",
+          "--battlesPerCombo",
+          "12",
+          "--seed",
+          "tune-001",
+          "--threads",
+          "4",
+          "--warriorsDir",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-13__tune-001\\survivors",
+          "--zombiesDir",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-13__tune-001\\zombies",
+          "--outputFile",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-13__tune-001\\scores.csv"
+        ]
+      },
+      "inputs": {
+        "COD_y015": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\chimera\\y015_a",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-13__tune-001\\survivors\\COD_y0151",
+            "bytes": 157,
+            "sha256": "bb9238224b48eab8da020223738477f1b003de02e0132b4430a628efac564cd7"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\chimera\\y015_b",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-13__tune-001\\survivors\\COD_y0152",
+            "bytes": 114,
+            "sha256": "a6a10207a1d52e7ed7b628c044724a9913b5d8285578771fc8ca1afc65aa5b15"
+          }
+        ],
+        "A_HDS_YOY": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\HDS_YOY1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-13__tune-001\\survivors\\A_HDS_YOY1",
+            "bytes": 126,
+            "sha256": "a30854eb23928d0a2a16e32fc2db3fbf6f6dec4b843ae73fa4b5ba904eced03f"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\HDS_YOY2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-13__tune-001\\survivors\\A_HDS_YOY2",
+            "bytes": 336,
+            "sha256": "61cdca8ebd5d863f30172e0164c4d0a3d8eb6dae39815aa06465a8904a95dfa9"
+          }
+        ],
+        "A_HDS_ATW_Solo": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\HDS_ATW_Solo1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-13__tune-001\\survivors\\A_HDS_ATW_Solo1",
+            "bytes": 166,
+            "sha256": "3433de990452854bfefb8f5e76c2e898f1b4b44cfe3a2533bc54ab6f1e461fa5"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\HDS_ATW_Solo2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-13__tune-001\\survivors\\A_HDS_ATW_Solo2",
+            "bytes": 368,
+            "sha256": "1e1079248809e3c1eac0a7768e7726bfad3f6daae78f90c1fd25bb7f12c634a5"
+          }
+        ],
+        "A_RZL_YANDE": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\RZL_YANDE1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-13__tune-001\\survivors\\A_RZL_YANDE1",
+            "bytes": 338,
+            "sha256": "8e8c89070cc2d1f64bc5e16fc6dbbffb2fc72cb57bf66f16ac5bfe089d60632b"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\RZL_YANDE2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-13__tune-001\\survivors\\A_RZL_YANDE2",
+            "bytes": 18,
+            "sha256": "eba9d406edec09cd697bcb706c1bdc133a9a2b63cea3811252ddaaf54e2b8b75"
+          }
+        ]
+      },
+      "zombies": [
+        {
+          "name": "zom20a",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20a",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-13__tune-001\\zombies\\zom20a",
+          "bytes": 73,
+          "sha256": "a950e618ea2e127096c85f486fb555c264730d924a2192c407aa66e6e0318eb6"
+        },
+        {
+          "name": "zom20b",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20b",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-13__tune-001\\zombies\\zom20b",
+          "bytes": 382,
+          "sha256": "af6394c021ccb5e486db507e2ccd787bd5675f8fec88fd2ddbe9f834566852ce"
+        },
+        {
+          "name": "zom20c",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20c",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-13__tune-001\\zombies\\zom20c",
+          "bytes": 232,
+          "sha256": "3d3f209967f51a7344e0eab582bc04d1e694da5a73e3682a26ed483dcab7a443"
+        },
+        {
+          "name": "zom20d",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20d",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-13__tune-001\\zombies\\zom20d",
+          "bytes": 382,
+          "sha256": "923dd6abebbb7bb502ec5a02873c26175820ada5c4409d179d8464f0e90cb6fc"
+        }
+      ],
+      "scores": {
+        "groups": {
+          "A_HDS_ATW_Solo": 2,
+          "A_HDS_YOY": 1,
+          "A_RZL_YANDE": 0,
+          "COD_y015": 9
+        },
+        "warriors": {
+          "A_HDS_ATW_Solo1": 2,
+          "A_HDS_ATW_Solo2": 0,
+          "A_HDS_YOY1": 1,
+          "A_HDS_YOY2": 0,
+          "A_RZL_YANDE1": 0,
+          "A_RZL_YANDE2": 0,
+          "COD_y0151": 3.5,
+          "COD_y0152": 5.5
+        }
+      },
+      "candidate": {
+        "teamRaw": 9,
+        "teamPerBattle": 0.75,
+        "warrior1Raw": 3.5,
+        "warrior1PerBattle": 0.2916666666666667,
+        "warrior2Raw": 5.5,
+        "warrior2PerBattle": 0.4583333333333333
+      },
+      "rawScoreText": "Groups:\nA_HDS_ATW_Solo,2.0\nA_HDS_YOY,1.0\nA_RZL_YANDE,0.0\nCOD_y015,9.0\n\nWarriors:\nA_HDS_ATW_Solo1,2.0\nA_HDS_ATW_Solo2,0.0\nA_HDS_YOY1,1.0\nA_HDS_YOY2,0.0\nA_RZL_YANDE1,0.0\nA_RZL_YANDE2,0.0\nCOD_y0151,3.5\nCOD_y0152,5.5\n",
+      "stdout": "CoreWars8086 - headless mode\n\r\nLoaded warriors: [A_HDS_ATW_Solo, A_HDS_YOY, A_RZL_YANDE, COD_y015]\r\nStarting competition (12 wars) in parallel.\r\nCompetition is over. Ran 12 wars\r\nWriting scores to file C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-13__tune-001\\scores.csv\r\n"
+    },
+    {
+      "runId": "tune-v1-14__tune-001",
+      "cohortId": "tune-v1-14",
+      "seed": "tune-001",
+      "battles": 12,
+      "startedAt": "2026-09-20T12:21:21.601Z",
+      "elapsedSeconds": 0.8000301,
+      "command": {
+        "executable": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\tools\\temurin8-jre\\jdk8u504-b01-jre\\bin\\java.exe",
+        "args": [
+          "-jar",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+          "--headless",
+          "--comboSize",
+          "4",
+          "--battlesPerCombo",
+          "12",
+          "--seed",
+          "tune-001",
+          "--threads",
+          "4",
+          "--warriorsDir",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-14__tune-001\\survivors",
+          "--zombiesDir",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-14__tune-001\\zombies",
+          "--outputFile",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-14__tune-001\\scores.csv"
+        ]
+      },
+      "inputs": {
+        "COD_y015": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\chimera\\y015_a",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-14__tune-001\\survivors\\COD_y0151",
+            "bytes": 157,
+            "sha256": "bb9238224b48eab8da020223738477f1b003de02e0132b4430a628efac564cd7"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\chimera\\y015_b",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-14__tune-001\\survivors\\COD_y0152",
+            "bytes": 114,
+            "sha256": "a6a10207a1d52e7ed7b628c044724a9913b5d8285578771fc8ca1afc65aa5b15"
+          }
+        ],
+        "A_IND_cgx123123": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\IND_cgx1231231",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-14__tune-001\\survivors\\A_IND_cgx1231231",
+            "bytes": 70,
+            "sha256": "b6c07757f0c8b5d20a60c12de9d30c5130badc9c4e342e8a3beec5e92d6f782e"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\IND_cgx1231232",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-14__tune-001\\survivors\\A_IND_cgx1231232",
+            "bytes": 46,
+            "sha256": "a053a4c9f0b893fe84070894ed08e600964a9d63bc57719b083b8d91186e4315"
+          }
+        ],
+        "A_HDS_MAC": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\HDS_MAC1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-14__tune-001\\survivors\\A_HDS_MAC1",
+            "bytes": 39,
+            "sha256": "01fe69503bf6f9092a4df08b0cb7d29ee83a8c9532162b63d3a97ab21e36ad14"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\HDS_MAC2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-14__tune-001\\survivors\\A_HDS_MAC2",
+            "bytes": 43,
+            "sha256": "b983b54b0afc2b8ff78ed361f67745e3d133f28989140ae8da394e740ae2f6b6"
+          }
+        ],
+        "A_HRZ_TitanicSwimTeam": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_TitanicSwimTeam1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-14__tune-001\\survivors\\A_HRZ_TitanicSwimTeam1",
+            "bytes": 115,
+            "sha256": "4794558ee17f4265372dd9176b06150026d88e0bb2d481954dec55be8b3aeec0"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_TitanicSwimTeam2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-14__tune-001\\survivors\\A_HRZ_TitanicSwimTeam2",
+            "bytes": 324,
+            "sha256": "5bb33762a99debde94f5905696bf9e72c552cb9ddbd2e01391efde85b5d92ffc"
+          }
+        ]
+      },
+      "zombies": [
+        {
+          "name": "zom20a",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20a",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-14__tune-001\\zombies\\zom20a",
+          "bytes": 73,
+          "sha256": "a950e618ea2e127096c85f486fb555c264730d924a2192c407aa66e6e0318eb6"
+        },
+        {
+          "name": "zom20b",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20b",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-14__tune-001\\zombies\\zom20b",
+          "bytes": 382,
+          "sha256": "af6394c021ccb5e486db507e2ccd787bd5675f8fec88fd2ddbe9f834566852ce"
+        },
+        {
+          "name": "zom20c",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20c",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-14__tune-001\\zombies\\zom20c",
+          "bytes": 232,
+          "sha256": "3d3f209967f51a7344e0eab582bc04d1e694da5a73e3682a26ed483dcab7a443"
+        },
+        {
+          "name": "zom20d",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20d",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-14__tune-001\\zombies\\zom20d",
+          "bytes": 382,
+          "sha256": "923dd6abebbb7bb502ec5a02873c26175820ada5c4409d179d8464f0e90cb6fc"
+        }
+      ],
+      "scores": {
+        "groups": {
+          "A_HDS_MAC": 1,
+          "A_HRZ_TitanicSwimTeam": 0,
+          "A_IND_cgx123123": 5,
+          "COD_y015": 6
+        },
+        "warriors": {
+          "A_HDS_MAC1": 1,
+          "A_HDS_MAC2": 0,
+          "A_HRZ_TitanicSwimTeam1": 0,
+          "A_HRZ_TitanicSwimTeam2": 0,
+          "A_IND_cgx1231231": 1.5,
+          "A_IND_cgx1231232": 3.5,
+          "COD_y0151": 2.5,
+          "COD_y0152": 3.5
+        }
+      },
+      "candidate": {
+        "teamRaw": 6,
+        "teamPerBattle": 0.5,
+        "warrior1Raw": 2.5,
+        "warrior1PerBattle": 0.20833333333333334,
+        "warrior2Raw": 3.5,
+        "warrior2PerBattle": 0.2916666666666667
+      },
+      "rawScoreText": "Groups:\nA_HDS_MAC,1.0\nA_HRZ_TitanicSwimTeam,0.0\nA_IND_cgx123123,5.0\nCOD_y015,6.0\n\nWarriors:\nA_HDS_MAC1,1.0\nA_HDS_MAC2,0.0\nA_HRZ_TitanicSwimTeam1,0.0\nA_HRZ_TitanicSwimTeam2,0.0\nA_IND_cgx1231231,1.5\nA_IND_cgx1231232,3.5\nCOD_y0151,2.5\nCOD_y0152,3.5\n",
+      "stdout": "CoreWars8086 - headless mode\n\r\nLoaded warriors: [A_HDS_MAC, A_HRZ_TitanicSwimTeam, A_IND_cgx123123, COD_y015]\r\nStarting competition (12 wars) in parallel.\r\nCompetition is over. Ran 12 wars\r\nWriting scores to file C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-14__tune-001\\scores.csv\r\n"
+    },
+    {
+      "runId": "tune-v1-15__tune-001",
+      "cohortId": "tune-v1-15",
+      "seed": "tune-001",
+      "battles": 12,
+      "startedAt": "2026-09-20T12:21:22.446Z",
+      "elapsedSeconds": 1.1988891,
+      "command": {
+        "executable": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\tools\\temurin8-jre\\jdk8u504-b01-jre\\bin\\java.exe",
+        "args": [
+          "-jar",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+          "--headless",
+          "--comboSize",
+          "4",
+          "--battlesPerCombo",
+          "12",
+          "--seed",
+          "tune-001",
+          "--threads",
+          "4",
+          "--warriorsDir",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-15__tune-001\\survivors",
+          "--zombiesDir",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-15__tune-001\\zombies",
+          "--outputFile",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-15__tune-001\\scores.csv"
+        ]
+      },
+      "inputs": {
+        "COD_y015": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\chimera\\y015_a",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-15__tune-001\\survivors\\COD_y0151",
+            "bytes": 157,
+            "sha256": "bb9238224b48eab8da020223738477f1b003de02e0132b4430a628efac564cd7"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\chimera\\y015_b",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-15__tune-001\\survivors\\COD_y0152",
+            "bytes": 114,
+            "sha256": "a6a10207a1d52e7ed7b628c044724a9913b5d8285578771fc8ca1afc65aa5b15"
+          }
+        ],
+        "A_IND_stuxnet": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\IND_stuxnet1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-15__tune-001\\survivors\\A_IND_stuxnet1",
+            "bytes": 80,
+            "sha256": "b4c342926e63b9d8b21f22e744de9cc96312ce7bf9433f5d9c6b76d982763834"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\IND_stuxnet2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-15__tune-001\\survivors\\A_IND_stuxnet2",
+            "bytes": 65,
+            "sha256": "2f645003233d8935086b8e5867c013ff3a93d87acbda64c149805c5ba5ccd5bd"
+          }
+        ],
+        "A_GSA_TheBytes": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\GSA_TheBytes1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-15__tune-001\\survivors\\A_GSA_TheBytes1",
+            "bytes": 35,
+            "sha256": "d168c81336006cab440c719f9bf857d146ca2b8b063b95eaccbc274326d58f9b"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\GSA_TheBytes2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-15__tune-001\\survivors\\A_GSA_TheBytes2",
+            "bytes": 20,
+            "sha256": "7dfdbe1fbfeb2311ef5c1a77621fb43dc0ca5ec23abc566bdf4078d348311351"
+          }
+        ],
+        "A_HRZ_The_almogooners": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_The_almogooners1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-15__tune-001\\survivors\\A_HRZ_The_almogooners1",
+            "bytes": 512,
+            "sha256": "1beaaf660fe42f02b45b031c46d1b4dda2f7d670f99e6dc27c73c6ae45301d91"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_The_almogooners2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-15__tune-001\\survivors\\A_HRZ_The_almogooners2",
+            "bytes": 512,
+            "sha256": "1beaaf660fe42f02b45b031c46d1b4dda2f7d670f99e6dc27c73c6ae45301d91"
+          }
+        ]
+      },
+      "zombies": [
+        {
+          "name": "zom20a",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20a",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-15__tune-001\\zombies\\zom20a",
+          "bytes": 73,
+          "sha256": "a950e618ea2e127096c85f486fb555c264730d924a2192c407aa66e6e0318eb6"
+        },
+        {
+          "name": "zom20b",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20b",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-15__tune-001\\zombies\\zom20b",
+          "bytes": 382,
+          "sha256": "af6394c021ccb5e486db507e2ccd787bd5675f8fec88fd2ddbe9f834566852ce"
+        },
+        {
+          "name": "zom20c",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20c",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-15__tune-001\\zombies\\zom20c",
+          "bytes": 232,
+          "sha256": "3d3f209967f51a7344e0eab582bc04d1e694da5a73e3682a26ed483dcab7a443"
+        },
+        {
+          "name": "zom20d",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20d",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-15__tune-001\\zombies\\zom20d",
+          "bytes": 382,
+          "sha256": "923dd6abebbb7bb502ec5a02873c26175820ada5c4409d179d8464f0e90cb6fc"
+        }
+      ],
+      "scores": {
+        "groups": {
+          "A_GSA_TheBytes": 4,
+          "A_HRZ_The_almogooners": 2,
+          "A_IND_stuxnet": 3,
+          "COD_y015": 3
+        },
+        "warriors": {
+          "A_GSA_TheBytes1": 0,
+          "A_GSA_TheBytes2": 4,
+          "A_HRZ_The_almogooners1": 1.5,
+          "A_HRZ_The_almogooners2": 0.5,
+          "A_IND_stuxnet1": 2,
+          "A_IND_stuxnet2": 1,
+          "COD_y0151": 1,
+          "COD_y0152": 2
+        }
+      },
+      "candidate": {
+        "teamRaw": 3,
+        "teamPerBattle": 0.25,
+        "warrior1Raw": 1,
+        "warrior1PerBattle": 0.08333333333333333,
+        "warrior2Raw": 2,
+        "warrior2PerBattle": 0.16666666666666666
+      },
+      "rawScoreText": "Groups:\nA_GSA_TheBytes,4.0\nA_HRZ_The_almogooners,2.0\nA_IND_stuxnet,3.0\nCOD_y015,3.0\n\nWarriors:\nA_GSA_TheBytes1,0.0\nA_GSA_TheBytes2,4.0\nA_HRZ_The_almogooners1,1.5\nA_HRZ_The_almogooners2,0.5\nA_IND_stuxnet1,2.0\nA_IND_stuxnet2,1.0\nCOD_y0151,1.0\nCOD_y0152,2.0\n",
+      "stdout": "CoreWars8086 - headless mode\n\r\nLoaded warriors: [A_GSA_TheBytes, A_HRZ_The_almogooners, A_IND_stuxnet, COD_y015]\r\nStarting competition (12 wars) in parallel.\r\nCompetition is over. Ran 12 wars\r\nWriting scores to file C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-15__tune-001\\scores.csv\r\n"
+    },
+    {
+      "runId": "tune-v1-16__tune-001",
+      "cohortId": "tune-v1-16",
+      "seed": "tune-001",
+      "battles": 12,
+      "startedAt": "2026-09-20T12:21:23.708Z",
+      "elapsedSeconds": 0.9046986,
+      "command": {
+        "executable": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\tools\\temurin8-jre\\jdk8u504-b01-jre\\bin\\java.exe",
+        "args": [
+          "-jar",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+          "--headless",
+          "--comboSize",
+          "4",
+          "--battlesPerCombo",
+          "12",
+          "--seed",
+          "tune-001",
+          "--threads",
+          "4",
+          "--warriorsDir",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-16__tune-001\\survivors",
+          "--zombiesDir",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-16__tune-001\\zombies",
+          "--outputFile",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-16__tune-001\\scores.csv"
+        ]
+      },
+      "inputs": {
+        "COD_y015": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\chimera\\y015_a",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-16__tune-001\\survivors\\COD_y0151",
+            "bytes": 157,
+            "sha256": "bb9238224b48eab8da020223738477f1b003de02e0132b4430a628efac564cd7"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\chimera\\y015_b",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-16__tune-001\\survivors\\COD_y0152",
+            "bytes": 114,
+            "sha256": "a6a10207a1d52e7ed7b628c044724a9913b5d8285578771fc8ca1afc65aa5b15"
+          }
+        ],
+        "Y_BGR_theGlopyGng": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online-young\\BGR_theGlopyGng1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-16__tune-001\\survivors\\Y_BGR_theGlopyGng1",
+            "bytes": 116,
+            "sha256": "8d84a93cdcc76fb45b496184bc68c3535a3564fc9e1ea523a9fcba0c2a5fa6ac"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online-young\\BGR_theGlopyGng2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-16__tune-001\\survivors\\Y_BGR_theGlopyGng2",
+            "bytes": 103,
+            "sha256": "adfdb3915475338713a2a1e4d7c8cc27a2ff8c6e4ed0a474e6770be72836b97d"
+          }
+        ],
+        "A_ORT_TheGoats": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\ORT_TheGoats1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-16__tune-001\\survivors\\A_ORT_TheGoats1",
+            "bytes": 24,
+            "sha256": "74e7a2f5ff930e07fc75a13cc15fadf586f1af66d1f6283532ce47b7c0673a25"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\ORT_TheGoats2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-16__tune-001\\survivors\\A_ORT_TheGoats2",
+            "bytes": 28,
+            "sha256": "0ab57aed774169d420cb0b6b05414fe6145ef6e99b614b988ed8163e3b11aa42"
+          }
+        ],
+        "A_HRZ_Underflow": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_Underflow1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-16__tune-001\\survivors\\A_HRZ_Underflow1",
+            "bytes": 53,
+            "sha256": "79f994bd13bfd25b44a97d420e8a9d6e8f45311a716b21bfb9f10fdc79cde7e4"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_Underflow2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-16__tune-001\\survivors\\A_HRZ_Underflow2",
+            "bytes": 53,
+            "sha256": "7d5c20977121ffb2ac532f6a4cb6662a2c349f0e833beb9999869ad9df918840"
+          }
+        ]
+      },
+      "zombies": [
+        {
+          "name": "zom20a",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20a",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-16__tune-001\\zombies\\zom20a",
+          "bytes": 73,
+          "sha256": "a950e618ea2e127096c85f486fb555c264730d924a2192c407aa66e6e0318eb6"
+        },
+        {
+          "name": "zom20b",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20b",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-16__tune-001\\zombies\\zom20b",
+          "bytes": 382,
+          "sha256": "af6394c021ccb5e486db507e2ccd787bd5675f8fec88fd2ddbe9f834566852ce"
+        },
+        {
+          "name": "zom20c",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20c",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-16__tune-001\\zombies\\zom20c",
+          "bytes": 232,
+          "sha256": "3d3f209967f51a7344e0eab582bc04d1e694da5a73e3682a26ed483dcab7a443"
+        },
+        {
+          "name": "zom20d",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20d",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-16__tune-001\\zombies\\zom20d",
+          "bytes": 382,
+          "sha256": "923dd6abebbb7bb502ec5a02873c26175820ada5c4409d179d8464f0e90cb6fc"
+        }
+      ],
+      "scores": {
+        "groups": {
+          "A_HRZ_Underflow": 2.5,
+          "A_ORT_TheGoats": 0,
+          "COD_y015": 7,
+          "Y_BGR_theGlopyGng": 2.5
+        },
+        "warriors": {
+          "A_HRZ_Underflow1": 1,
+          "A_HRZ_Underflow2": 1.5,
+          "A_ORT_TheGoats1": 0,
+          "A_ORT_TheGoats2": 0,
+          "COD_y0151": 5,
+          "COD_y0152": 2,
+          "Y_BGR_theGlopyGng1": 1,
+          "Y_BGR_theGlopyGng2": 1.5
+        }
+      },
+      "candidate": {
+        "teamRaw": 7,
+        "teamPerBattle": 0.5833333333333334,
+        "warrior1Raw": 5,
+        "warrior1PerBattle": 0.4166666666666667,
+        "warrior2Raw": 2,
+        "warrior2PerBattle": 0.16666666666666666
+      },
+      "rawScoreText": "Groups:\nA_HRZ_Underflow,2.5\nA_ORT_TheGoats,0.0\nCOD_y015,7.0\nY_BGR_theGlopyGng,2.5\n\nWarriors:\nA_HRZ_Underflow1,1.0\nA_HRZ_Underflow2,1.5\nA_ORT_TheGoats1,0.0\nA_ORT_TheGoats2,0.0\nCOD_y0151,5.0\nCOD_y0152,2.0\nY_BGR_theGlopyGng1,1.0\nY_BGR_theGlopyGng2,1.5\n",
+      "stdout": "CoreWars8086 - headless mode\n\r\nLoaded warriors: [A_HRZ_Underflow, A_ORT_TheGoats, COD_y015, Y_BGR_theGlopyGng]\r\nStarting competition (12 wars) in parallel.\r\nCompetition is over. Ran 12 wars\r\nWriting scores to file C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-16__tune-001\\scores.csv\r\n"
+    },
+    {
+      "runId": "tune-v1-17__tune-001",
+      "cohortId": "tune-v1-17",
+      "seed": "tune-001",
+      "battles": 12,
+      "startedAt": "2026-09-20T12:21:24.653Z",
+      "elapsedSeconds": 1.1984198,
+      "command": {
+        "executable": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\tools\\temurin8-jre\\jdk8u504-b01-jre\\bin\\java.exe",
+        "args": [
+          "-jar",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+          "--headless",
+          "--comboSize",
+          "4",
+          "--battlesPerCombo",
+          "12",
+          "--seed",
+          "tune-001",
+          "--threads",
+          "4",
+          "--warriorsDir",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-17__tune-001\\survivors",
+          "--zombiesDir",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-17__tune-001\\zombies",
+          "--outputFile",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-17__tune-001\\scores.csv"
+        ]
+      },
+      "inputs": {
+        "COD_y015": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\chimera\\y015_a",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-17__tune-001\\survivors\\COD_y0151",
+            "bytes": 157,
+            "sha256": "bb9238224b48eab8da020223738477f1b003de02e0132b4430a628efac564cd7"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\chimera\\y015_b",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-17__tune-001\\survivors\\COD_y0152",
+            "bytes": 114,
+            "sha256": "a6a10207a1d52e7ed7b628c044724a9913b5d8285578771fc8ca1afc65aa5b15"
+          }
+        ],
+        "Y_GSA_3Plate_Benchers": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online-young\\GSA_3Plate_Benchers1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-17__tune-001\\survivors\\Y_GSA_3Plate_Benchers1",
+            "bytes": 121,
+            "sha256": "7e6a8c26c42fa899e58fb02cde83d71406402dc436741098fc334382a76e5872"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online-young\\GSA_3Plate_Benchers2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-17__tune-001\\survivors\\Y_GSA_3Plate_Benchers2",
+            "bytes": 121,
+            "sha256": "7e6a8c26c42fa899e58fb02cde83d71406402dc436741098fc334382a76e5872"
+          }
+        ],
+        "A_HRZ_Registered_Winners": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_Registered_Winners1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-17__tune-001\\survivors\\A_HRZ_Registered_Winners1",
+            "bytes": 217,
+            "sha256": "1645436c2465df7ac0def9182eb12506e7aa9ca6b719635d2192eab4e38ce70d"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_Registered_Winners2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-17__tune-001\\survivors\\A_HRZ_Registered_Winners2",
+            "bytes": 115,
+            "sha256": "6a489e8f28e3cbe8e370b8382679938c7635a46fcbbd5f4c263024e2e8dcabab"
+          }
+        ],
+        "A_HDS_IWDIA_nachalo": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\HDS_IWDIA_nachalo1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-17__tune-001\\survivors\\A_HDS_IWDIA_nachalo1",
+            "bytes": 512,
+            "sha256": "e167f5b550647a852833be5d1a676a5539c67062b68d29564799231dbb326130"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\HDS_IWDIA_nachalo2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-17__tune-001\\survivors\\A_HDS_IWDIA_nachalo2",
+            "bytes": 512,
+            "sha256": "82897f9576e656fff06b6a52b4fa7710fedb3c662588d54b49f3b29e3b953ff8"
+          }
+        ]
+      },
+      "zombies": [
+        {
+          "name": "zom20a",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20a",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-17__tune-001\\zombies\\zom20a",
+          "bytes": 73,
+          "sha256": "a950e618ea2e127096c85f486fb555c264730d924a2192c407aa66e6e0318eb6"
+        },
+        {
+          "name": "zom20b",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20b",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-17__tune-001\\zombies\\zom20b",
+          "bytes": 382,
+          "sha256": "af6394c021ccb5e486db507e2ccd787bd5675f8fec88fd2ddbe9f834566852ce"
+        },
+        {
+          "name": "zom20c",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20c",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-17__tune-001\\zombies\\zom20c",
+          "bytes": 232,
+          "sha256": "3d3f209967f51a7344e0eab582bc04d1e694da5a73e3682a26ed483dcab7a443"
+        },
+        {
+          "name": "zom20d",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20d",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-17__tune-001\\zombies\\zom20d",
+          "bytes": 382,
+          "sha256": "923dd6abebbb7bb502ec5a02873c26175820ada5c4409d179d8464f0e90cb6fc"
+        }
+      ],
+      "scores": {
+        "groups": {
+          "A_HDS_IWDIA_nachalo": 0,
+          "A_HRZ_Registered_Winners": 5.1666665,
+          "COD_y015": 5.8333335,
+          "Y_GSA_3Plate_Benchers": 1
+        },
+        "warriors": {
+          "A_HDS_IWDIA_nachalo1": 0,
+          "A_HDS_IWDIA_nachalo2": 0,
+          "A_HRZ_Registered_Winners1": 3.3333333,
+          "A_HRZ_Registered_Winners2": 1.8333335,
+          "COD_y0151": 2.8333333,
+          "COD_y0152": 3,
+          "Y_GSA_3Plate_Benchers1": 1,
+          "Y_GSA_3Plate_Benchers2": 0
+        }
+      },
+      "candidate": {
+        "teamRaw": 5.8333335,
+        "teamPerBattle": 0.48611112500000003,
+        "warrior1Raw": 2.8333333,
+        "warrior1PerBattle": 0.23611110833333335,
+        "warrior2Raw": 3,
+        "warrior2PerBattle": 0.25
+      },
+      "rawScoreText": "Groups:\nA_HDS_IWDIA_nachalo,0.0\nA_HRZ_Registered_Winners,5.1666665\nCOD_y015,5.8333335\nY_GSA_3Plate_Benchers,1.0\n\nWarriors:\nA_HDS_IWDIA_nachalo1,0.0\nA_HDS_IWDIA_nachalo2,0.0\nA_HRZ_Registered_Winners1,3.3333333\nA_HRZ_Registered_Winners2,1.8333335\nCOD_y0151,2.8333333\nCOD_y0152,3.0\nY_GSA_3Plate_Benchers1,1.0\nY_GSA_3Plate_Benchers2,0.0\n",
+      "stdout": "CoreWars8086 - headless mode\n\r\nLoaded warriors: [A_HDS_IWDIA_nachalo, A_HRZ_Registered_Winners, COD_y015, Y_GSA_3Plate_Benchers]\r\nStarting competition (12 wars) in parallel.\r\nCompetition is over. Ran 12 wars\r\nWriting scores to file C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-17__tune-001\\scores.csv\r\n"
+    },
+    {
+      "runId": "tune-v1-18__tune-001",
+      "cohortId": "tune-v1-18",
+      "seed": "tune-001",
+      "battles": 12,
+      "startedAt": "2026-09-20T12:21:25.887Z",
+      "elapsedSeconds": 0.7650827,
+      "command": {
+        "executable": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\tools\\temurin8-jre\\jdk8u504-b01-jre\\bin\\java.exe",
+        "args": [
+          "-jar",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+          "--headless",
+          "--comboSize",
+          "4",
+          "--battlesPerCombo",
+          "12",
+          "--seed",
+          "tune-001",
+          "--threads",
+          "4",
+          "--warriorsDir",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-18__tune-001\\survivors",
+          "--zombiesDir",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-18__tune-001\\zombies",
+          "--outputFile",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-18__tune-001\\scores.csv"
+        ]
+      },
+      "inputs": {
+        "COD_y015": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\chimera\\y015_a",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-18__tune-001\\survivors\\COD_y0151",
+            "bytes": 157,
+            "sha256": "bb9238224b48eab8da020223738477f1b003de02e0132b4430a628efac564cd7"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\chimera\\y015_b",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-18__tune-001\\survivors\\COD_y0152",
+            "bytes": 114,
+            "sha256": "a6a10207a1d52e7ed7b628c044724a9913b5d8285578771fc8ca1afc65aa5b15"
+          }
+        ],
+        "A_TOM_BitBenders": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\TOM_BitBenders1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-18__tune-001\\survivors\\A_TOM_BitBenders1",
+            "bytes": 115,
+            "sha256": "97d159491650cf04a236c8c6188555dd17b9e7b1d2b1fe86a4926ef9b9b30d00"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\TOM_BitBenders2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-18__tune-001\\survivors\\A_TOM_BitBenders2",
+            "bytes": 115,
+            "sha256": "97d159491650cf04a236c8c6188555dd17b9e7b1d2b1fe86a4926ef9b9b30d00"
+          }
+        ],
+        "A_TOM_anonymous": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\TOM_anonymous1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-18__tune-001\\survivors\\A_TOM_anonymous1",
+            "bytes": 379,
+            "sha256": "6f57faeb8622bbc3778c80d450fa03c9efbf8703b58414850a3861f2bcbc83f4"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\TOM_anonymous2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-18__tune-001\\survivors\\A_TOM_anonymous2",
+            "bytes": 512,
+            "sha256": "e0cdbe70e170d8bf242e071325971d7590701d330fe089b9d2f815e05a432759"
+          }
+        ],
+        "A_HRZ_stack_attack": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_stack_attack1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-18__tune-001\\survivors\\A_HRZ_stack_attack1",
+            "bytes": 24,
+            "sha256": "7298748ba797e65564eb58d3f53af67b3457b2400c73069dcbfbe538bd6ee6f1"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_stack_attack2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-18__tune-001\\survivors\\A_HRZ_stack_attack2",
+            "bytes": 83,
+            "sha256": "140a6203d3d0839bd3797cdf1da03613b727c053854dbb8eb0b7e34118355fa9"
+          }
+        ]
+      },
+      "zombies": [
+        {
+          "name": "zom20a",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20a",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-18__tune-001\\zombies\\zom20a",
+          "bytes": 73,
+          "sha256": "a950e618ea2e127096c85f486fb555c264730d924a2192c407aa66e6e0318eb6"
+        },
+        {
+          "name": "zom20b",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20b",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-18__tune-001\\zombies\\zom20b",
+          "bytes": 382,
+          "sha256": "af6394c021ccb5e486db507e2ccd787bd5675f8fec88fd2ddbe9f834566852ce"
+        },
+        {
+          "name": "zom20c",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20c",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-18__tune-001\\zombies\\zom20c",
+          "bytes": 232,
+          "sha256": "3d3f209967f51a7344e0eab582bc04d1e694da5a73e3682a26ed483dcab7a443"
+        },
+        {
+          "name": "zom20d",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20d",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-18__tune-001\\zombies\\zom20d",
+          "bytes": 382,
+          "sha256": "923dd6abebbb7bb502ec5a02873c26175820ada5c4409d179d8464f0e90cb6fc"
+        }
+      ],
+      "scores": {
+        "groups": {
+          "A_HRZ_stack_attack": 4,
+          "A_TOM_anonymous": 1,
+          "A_TOM_BitBenders": 4,
+          "COD_y015": 3
+        },
+        "warriors": {
+          "A_HRZ_stack_attack1": 1.5,
+          "A_HRZ_stack_attack2": 2.5,
+          "A_TOM_anonymous1": 1,
+          "A_TOM_anonymous2": 0,
+          "A_TOM_BitBenders1": 1.5,
+          "A_TOM_BitBenders2": 2.5,
+          "COD_y0151": 2.5,
+          "COD_y0152": 0.5
+        }
+      },
+      "candidate": {
+        "teamRaw": 3,
+        "teamPerBattle": 0.25,
+        "warrior1Raw": 2.5,
+        "warrior1PerBattle": 0.20833333333333334,
+        "warrior2Raw": 0.5,
+        "warrior2PerBattle": 0.041666666666666664
+      },
+      "rawScoreText": "Groups:\nA_HRZ_stack_attack,4.0\nA_TOM_anonymous,1.0\nA_TOM_BitBenders,4.0\nCOD_y015,3.0\n\nWarriors:\nA_HRZ_stack_attack1,1.5\nA_HRZ_stack_attack2,2.5\nA_TOM_anonymous1,1.0\nA_TOM_anonymous2,0.0\nA_TOM_BitBenders1,1.5\nA_TOM_BitBenders2,2.5\nCOD_y0151,2.5\nCOD_y0152,0.5\n",
+      "stdout": "CoreWars8086 - headless mode\n\r\nLoaded warriors: [A_HRZ_stack_attack, A_TOM_anonymous, A_TOM_BitBenders, COD_y015]\r\nStarting competition (12 wars) in parallel.\r\nCompetition is over. Ran 12 wars\r\nWriting scores to file C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-18__tune-001\\scores.csv\r\n"
+    },
+    {
+      "runId": "tune-v1-19__tune-001",
+      "cohortId": "tune-v1-19",
+      "seed": "tune-001",
+      "battles": 12,
+      "startedAt": "2026-09-20T12:21:26.703Z",
+      "elapsedSeconds": 2.0497099,
+      "command": {
+        "executable": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\tools\\temurin8-jre\\jdk8u504-b01-jre\\bin\\java.exe",
+        "args": [
+          "-jar",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+          "--headless",
+          "--comboSize",
+          "4",
+          "--battlesPerCombo",
+          "12",
+          "--seed",
+          "tune-001",
+          "--threads",
+          "4",
+          "--warriorsDir",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-19__tune-001\\survivors",
+          "--zombiesDir",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-19__tune-001\\zombies",
+          "--outputFile",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-19__tune-001\\scores.csv"
+        ]
+      },
+      "inputs": {
+        "COD_y015": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\chimera\\y015_a",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-19__tune-001\\survivors\\COD_y0151",
+            "bytes": 157,
+            "sha256": "bb9238224b48eab8da020223738477f1b003de02e0132b4430a628efac564cd7"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\chimera\\y015_b",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-19__tune-001\\survivors\\COD_y0152",
+            "bytes": 114,
+            "sha256": "a6a10207a1d52e7ed7b628c044724a9913b5d8285578771fc8ca1afc65aa5b15"
+          }
+        ],
+        "A_GGN_OpcodeHunter": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\GGN_OpcodeHunter1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-19__tune-001\\survivors\\A_GGN_OpcodeHunter1",
+            "bytes": 493,
+            "sha256": "d5992bdc307b070ad91e1737a8777125970912b286a392ed6d9a6456d87ed3af"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\GGN_OpcodeHunter2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-19__tune-001\\survivors\\A_GGN_OpcodeHunter2",
+            "bytes": 503,
+            "sha256": "0ced8fc1ec650a032604e2e149458b54202be7ecabb447999f143659d6ea46b6"
+          }
+        ],
+        "Y_GSA_SigmaSilent": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online-young\\GSA_SigmaSilent1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-19__tune-001\\survivors\\Y_GSA_SigmaSilent1",
+            "bytes": 98,
+            "sha256": "5f99b89cf54c876307804f0f38658b46739baa8ff4f14189e0c17713f10ee16c"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online-young\\GSA_SigmaSilent2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-19__tune-001\\survivors\\Y_GSA_SigmaSilent2",
+            "bytes": 109,
+            "sha256": "8a06a8d64760629cacb4e1ad2c236c5e2fc9b3e0948d3de048a43c2fa386ead9"
+          }
+        ],
+        "Y_HDS_TRY": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online-young\\HDS_TRY1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-19__tune-001\\survivors\\Y_HDS_TRY1",
+            "bytes": 59,
+            "sha256": "d654e9598b1d6e232328341049e95b646e383a504224dbcc4763fc32ac7d37fb"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online-young\\HDS_TRY2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-19__tune-001\\survivors\\Y_HDS_TRY2",
+            "bytes": 86,
+            "sha256": "9c498b425a7b6af5fe64b4445efddc821d513955dc7f2c207eb127f141ac1092"
+          }
+        ]
+      },
+      "zombies": [
+        {
+          "name": "zom20a",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20a",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-19__tune-001\\zombies\\zom20a",
+          "bytes": 73,
+          "sha256": "a950e618ea2e127096c85f486fb555c264730d924a2192c407aa66e6e0318eb6"
+        },
+        {
+          "name": "zom20b",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20b",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-19__tune-001\\zombies\\zom20b",
+          "bytes": 382,
+          "sha256": "af6394c021ccb5e486db507e2ccd787bd5675f8fec88fd2ddbe9f834566852ce"
+        },
+        {
+          "name": "zom20c",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20c",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-19__tune-001\\zombies\\zom20c",
+          "bytes": 232,
+          "sha256": "3d3f209967f51a7344e0eab582bc04d1e694da5a73e3682a26ed483dcab7a443"
+        },
+        {
+          "name": "zom20d",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20d",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-19__tune-001\\zombies\\zom20d",
+          "bytes": 382,
+          "sha256": "923dd6abebbb7bb502ec5a02873c26175820ada5c4409d179d8464f0e90cb6fc"
+        }
+      ],
+      "scores": {
+        "groups": {
+          "A_GGN_OpcodeHunter": 4.833333,
+          "COD_y015": 6.5,
+          "Y_GSA_SigmaSilent": 0.6666667,
+          "Y_HDS_TRY": 0
+        },
+        "warriors": {
+          "A_GGN_OpcodeHunter1": 0,
+          "A_GGN_OpcodeHunter2": 4.833333,
+          "COD_y0151": 4.5,
+          "COD_y0152": 2,
+          "Y_GSA_SigmaSilent1": 0.6666667,
+          "Y_GSA_SigmaSilent2": 0,
+          "Y_HDS_TRY1": 0,
+          "Y_HDS_TRY2": 0
+        }
+      },
+      "candidate": {
+        "teamRaw": 6.5,
+        "teamPerBattle": 0.5416666666666666,
+        "warrior1Raw": 4.5,
+        "warrior1PerBattle": 0.375,
+        "warrior2Raw": 2,
+        "warrior2PerBattle": 0.16666666666666666
+      },
+      "rawScoreText": "Groups:\nA_GGN_OpcodeHunter,4.833333\nCOD_y015,6.5\nY_GSA_SigmaSilent,0.6666667\nY_HDS_TRY,0.0\n\nWarriors:\nA_GGN_OpcodeHunter1,0.0\nA_GGN_OpcodeHunter2,4.833333\nCOD_y0151,4.5\nCOD_y0152,2.0\nY_GSA_SigmaSilent1,0.6666667\nY_GSA_SigmaSilent2,0.0\nY_HDS_TRY1,0.0\nY_HDS_TRY2,0.0\n",
+      "stdout": "CoreWars8086 - headless mode\n\r\nLoaded warriors: [A_GGN_OpcodeHunter, COD_y015, Y_GSA_SigmaSilent, Y_HDS_TRY]\r\nStarting competition (12 wars) in parallel.\r\nCompetition is over. Ran 12 wars\r\nWriting scores to file C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-19__tune-001\\scores.csv\r\n"
+    },
+    {
+      "runId": "tune-v1-20__tune-001",
+      "cohortId": "tune-v1-20",
+      "seed": "tune-001",
+      "battles": 12,
+      "startedAt": "2026-09-20T12:21:28.803Z",
+      "elapsedSeconds": 0.9494087,
+      "command": {
+        "executable": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\tools\\temurin8-jre\\jdk8u504-b01-jre\\bin\\java.exe",
+        "args": [
+          "-jar",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+          "--headless",
+          "--comboSize",
+          "4",
+          "--battlesPerCombo",
+          "12",
+          "--seed",
+          "tune-001",
+          "--threads",
+          "4",
+          "--warriorsDir",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-20__tune-001\\survivors",
+          "--zombiesDir",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-20__tune-001\\zombies",
+          "--outputFile",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-20__tune-001\\scores.csv"
+        ]
+      },
+      "inputs": {
+        "COD_y015": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\chimera\\y015_a",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-20__tune-001\\survivors\\COD_y0151",
+            "bytes": 157,
+            "sha256": "bb9238224b48eab8da020223738477f1b003de02e0132b4430a628efac564cd7"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\chimera\\y015_b",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-20__tune-001\\survivors\\COD_y0152",
+            "bytes": 114,
+            "sha256": "a6a10207a1d52e7ed7b628c044724a9913b5d8285578771fc8ca1afc65aa5b15"
+          }
+        ],
+        "A_HRZ_BinaryBandits": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_BinaryBandits1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-20__tune-001\\survivors\\A_HRZ_BinaryBandits1",
+            "bytes": 468,
+            "sha256": "c6cf8bb109582030c5cd0723399930168aee257dbeac6122507c522f9b383d86"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_BinaryBandits2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-20__tune-001\\survivors\\A_HRZ_BinaryBandits2",
+            "bytes": 351,
+            "sha256": "be7d4791659d4aacd49dded0044baadf737e123b3dff8ddb497f5be1954c461b"
+          }
+        ],
+        "A_HRZ_fisherEXE": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_fisherEXE1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-20__tune-001\\survivors\\A_HRZ_fisherEXE1",
+            "bytes": 92,
+            "sha256": "82b268ce80e540cea8c8a61d6279f613721d5c59b369317af53de5983db3bb49"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_fisherEXE2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-20__tune-001\\survivors\\A_HRZ_fisherEXE2",
+            "bytes": 92,
+            "sha256": "ac49b19fc0fb2f62c4a6db6b18c637deebde8ff010d183578e738c429cf8be92"
+          }
+        ],
+        "Y_TOM_Thefrogs": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online-young\\TOM_Thefrogs1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-20__tune-001\\survivors\\Y_TOM_Thefrogs1",
+            "bytes": 36,
+            "sha256": "8f014d9812cf497a03015d562135e8bdaaa4dd921e5de3e28984ac64642fa050"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online-young\\TOM_Thefrogs2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-20__tune-001\\survivors\\Y_TOM_Thefrogs2",
+            "bytes": 16,
+            "sha256": "348c42651bea5001dc5a61a3e15228e4820dbbd4ab0b6df16982dbb38334a504"
+          }
+        ]
+      },
+      "zombies": [
+        {
+          "name": "zom20a",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20a",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-20__tune-001\\zombies\\zom20a",
+          "bytes": 73,
+          "sha256": "a950e618ea2e127096c85f486fb555c264730d924a2192c407aa66e6e0318eb6"
+        },
+        {
+          "name": "zom20b",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20b",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-20__tune-001\\zombies\\zom20b",
+          "bytes": 382,
+          "sha256": "af6394c021ccb5e486db507e2ccd787bd5675f8fec88fd2ddbe9f834566852ce"
+        },
+        {
+          "name": "zom20c",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20c",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-20__tune-001\\zombies\\zom20c",
+          "bytes": 232,
+          "sha256": "3d3f209967f51a7344e0eab582bc04d1e694da5a73e3682a26ed483dcab7a443"
+        },
+        {
+          "name": "zom20d",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20d",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-20__tune-001\\zombies\\zom20d",
+          "bytes": 382,
+          "sha256": "923dd6abebbb7bb502ec5a02873c26175820ada5c4409d179d8464f0e90cb6fc"
+        }
+      ],
+      "scores": {
+        "groups": {
+          "A_HRZ_BinaryBandits": 2,
+          "A_HRZ_fisherEXE": 2,
+          "COD_y015": 7,
+          "Y_TOM_Thefrogs": 1
+        },
+        "warriors": {
+          "A_HRZ_BinaryBandits1": 1.5,
+          "A_HRZ_BinaryBandits2": 0.5,
+          "A_HRZ_fisherEXE1": 0,
+          "A_HRZ_fisherEXE2": 2,
+          "COD_y0151": 3,
+          "COD_y0152": 4,
+          "Y_TOM_Thefrogs1": 1,
+          "Y_TOM_Thefrogs2": 0
+        }
+      },
+      "candidate": {
+        "teamRaw": 7,
+        "teamPerBattle": 0.5833333333333334,
+        "warrior1Raw": 3,
+        "warrior1PerBattle": 0.25,
+        "warrior2Raw": 4,
+        "warrior2PerBattle": 0.3333333333333333
+      },
+      "rawScoreText": "Groups:\nA_HRZ_BinaryBandits,2.0\nA_HRZ_fisherEXE,2.0\nCOD_y015,7.0\nY_TOM_Thefrogs,1.0\n\nWarriors:\nA_HRZ_BinaryBandits1,1.5\nA_HRZ_BinaryBandits2,0.5\nA_HRZ_fisherEXE1,0.0\nA_HRZ_fisherEXE2,2.0\nCOD_y0151,3.0\nCOD_y0152,4.0\nY_TOM_Thefrogs1,1.0\nY_TOM_Thefrogs2,0.0\n",
+      "stdout": "CoreWars8086 - headless mode\n\r\nLoaded warriors: [A_HRZ_BinaryBandits, A_HRZ_fisherEXE, COD_y015, Y_TOM_Thefrogs]\r\nStarting competition (12 wars) in parallel.\r\nCompetition is over. Ran 12 wars\r\nWriting scores to file C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\y015-2025-tune-s1\\tune-v1-20__tune-001\\scores.csv\r\n"
+    }
+  ]
+}
