@@ -1,0 +1,19 @@
+     1                                  bits 16
+     2                                  
+     3                                  start:
+     4 00000000 89C3                        mov bx, ax
+     5 00000002 1E                          push ds
+     6 00000003 17                          pop ss
+     7 00000004 1E                          push ds
+     8 00000005 07                          pop es
+     9 00000006 89DF                        mov di, bx
+    10 00000008 81C7E9B6                    add di, 0B6E9h
+    11 0000000C 89FC                        mov sp, di
+    12 0000000E 81C45365                    add sp, 6553h
+    13 00000012 B850AB                      mov ax, 0AB50h
+    14 00000015 89C2                        mov dx, ax
+    15 00000017 CD86                        int 86h
+    16 00000019 CD86                        int 86h
+    17 0000001B 81EF0002                    sub di, 0200h
+    18 0000001F FFE7                        jmp di
+    19                                  

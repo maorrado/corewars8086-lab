@@ -1,0 +1,31 @@
+{% extends "../challenge_base.html" %}
+{% load i18n %}
+
+{% block 'challenge_fields' %}
+
+{% if user.profile.group.owner == user and challenge.active %}
+{% if prev_upload %}
+{% trans "Last update to survivors was" %} {{ prev_upload.upload_date|timesince }} {% trans "ago" %}
+{% endif %}
+<form enctype="multipart/form-data" method="post" action="{{ challenge.id }}">
+    {% csrf_token %}
+    {{ form.errors }}
+    {% regroup form by field.group as field_groups %}
+    {% for field_group in field_groups %}
+        <br>{% trans "Survivor" %} {{field_group.grouper}}<br>
+        {% for field in field_group.list %}
+            {{field.label}}
+            {{field}}
+            {% if prev_upload %}
+                <a href="{% url 'war_download' id=challenge.id fieldname=field.name %}">{% trans "Download" %}</a>
+            {% endif %}
+            <br>
+        {% endfor %} 
+    {% endfor %}
+
+    <br><input type="submit" value="{% trans 'Upload' %}" />
+    <input type="hidden" name="next" value="{{ next }}" />
+</form>
+{% endif %}
+    
+{% endblock %}

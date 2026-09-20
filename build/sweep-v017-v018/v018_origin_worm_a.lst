@@ -1,0 +1,22 @@
+     1                                  bits 16
+     2                                  
+     3                                  start:
+     4                                      ; Faster non-relocating version: the worker remains at the original load
+     5                                      ; site, but starts painting immediately and uses a full-period odd stride.
+     6 00000000 89C5                        mov bp, ax
+     7 00000002 06                          push es
+     8 00000003 1F                          pop ds
+     9 00000004 89EB                        mov bx, bp
+    10 00000006 83C31B                      add bx, worker - start
+    11 00000009 891E0000                    mov [0], bx
+    12 0000000D 8C0E0200                    mov [2], cs
+    13 00000011 0E                          push cs
+    14 00000012 17                          pop ss
+    15 00000013 89EC                        mov sp, bp
+    16 00000015 81C41D4B                    add sp, 4B1Dh
+    17 00000019 FFE3                        jmp bx
+    18                                  
+    19                                  worker:
+    20 0000001B 81ECFB02                    sub sp, 02FBh
+    21 0000001F FF1E0000                    call far [0]
+    22                                  

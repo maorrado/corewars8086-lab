@@ -1,0 +1,52 @@
+     1                                  bits 16
+     2                                  
+     3                                  ; Byte-exact simulator-ready reconstruction of the official 2025 Young binary.
+     4                                  
+     5 00000000 83C04C                      add ax, 04Ch
+     6 00000003 89C6                        mov si, ax
+     7 00000005 B91100                      mov cx, 011h
+     8 00000008 F3A5                        rep movsw
+     9 0000000A EB02                        db 0EBh, 002h
+    10 0000000C FF1F                        call far [bx]
+    11 0000000E 06                          push es
+    12 0000000F 1E                          push ds
+    13 00000010 07                          pop es
+    14 00000011 1F                          pop ds
+    15 00000012 BB3200                      mov bx, 032h
+    16 00000015 8907                        mov [bx], ax
+    17 00000017 90                          nop
+    18 00000018 C74702A510                  mov word [bx + 2], 010A5h
+    19 0000001D 0E                          push cs
+    20 0000001E 17                          pop ss
+    21 0000001F 89C4                        mov sp, ax
+    22 00000021 BD96F5                      mov bp, 0F596h
+    23 00000024 81C4520A                    add sp, 0A52h
+    24 00000028 81070419                    add word [bx], 01904h
+    25 0000002C 81C4041D                    add sp, 01D04h
+    26 00000030 90                          nop
+    27 00000031 90                          nop
+    28 00000032 392F                        cmp [bx], bp
+    29 00000034 77EB                        db 077h, 0EBh
+    30 00000036 8B3F                        mov di, [bx]
+    31 00000038 81C7500A                    add di, 0A50h
+    32 0000003C B91100                      mov cx, 011h
+    33 0000003F BE0000                      mov si, 0
+    34 00000042 A5                          movsw
+    35 00000043 B91100                      mov cx, 011h
+    36 00000046 83EF01                      sub di, 1
+    37 00000049 FF1F                        call far [bx]
+    38 0000004B 90                          nop
+    39 0000004C FF1F                        call far [bx]
+    40 0000004E F3A5                        rep movsw
+    41 00000050 81070419                    add word [bx], 01904h
+    42 00000054 81C4041D                    add sp, 01D04h
+    43 00000058 392F                        cmp [bx], bp
+    44 0000005A 77F4                        db 077h, 0F4h
+    45 0000005C 8B3F                        mov di, [bx]
+    46 0000005E 81C7500A                    add di, 0A50h
+    47 00000062 B91100                      mov cx, 011h
+    48 00000065 BE0000                      mov si, 0
+    49 00000068 A5                          movsw
+    50 00000069 83EF01                      sub di, 1
+    51 0000006C FF1F                        call far [bx]
+    52 0000006E 90                          nop

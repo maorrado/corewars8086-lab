@@ -1,0 +1,27 @@
+     1                                  bits 16
+     2                                  
+     3                                  start:
+     4 00000000 89C5                        mov bp, ax
+     5 00000002 1E                          push ds
+     6 00000003 07                          pop es
+     7                                  
+     8 00000004 89EF                        mov di, bp
+     9 00000006 81C7E751                    add di, 51E7h
+    10 0000000A B8CCCC                      mov ax, 0CCCCh
+    11 0000000D BACCCC                      mov dx, 0CCCCh
+    12 00000010 CD86                        int 86h
+    13 00000012 81C70080                    add di, 8000h
+    14 00000016 CD86                        int 86h
+    15                                  
+    16                                      ; Redirect PUSH to the arena. PUSH decrements SP by two before writing;
+    17                                      ; the odd net step gives a full 64 KiB traversal instead of one parity.
+    18 00000018 1E                          push ds
+    19 00000019 17                          pop ss
+    20 0000001A 89EC                        mov sp, bp
+    21 0000001C 81C42D6B                    add sp, 6B2Dh
+    22                                  push_scan:
+    23 00000020 50                          push ax
+    24 00000021 81C43E1F                    add sp, 1F3Eh
+    25 00000025 9B9B                        db 09Bh, 09Bh
+    26 00000027 EBF7                        jmp push_scan
+    27                                  

@@ -1,0 +1,44 @@
+     1                                  bits 16
+     2                                  
+     3                                  %define HOOK_CELL 0A37Dh
+     4                                  
+     5                                  start:
+     6 00000000 89C5                        mov bp, ax
+     7 00000002 89C6                        mov si, ax
+     8 00000004 83C61F                      add si, stolen_entry - start
+     9 00000007 89367DA3                    mov [HOOK_CELL], si
+    10 0000000B 1E                          push ds
+    11 0000000C 07                          pop es
+    12 0000000D 31FF                        xor di, di
+    13 0000000F B8EBF9                      mov ax, 0F9EBh
+    14 00000012 BACCCC                      mov dx, 0CCCCh
+    15 00000015 BBFF26                      mov bx, 026FFh
+    16 00000018 B97DA3                      mov cx, HOOK_CELL
+    17 0000001B CD87                        int 87h
+    18 0000001D EB13                        jmp fallback
+    19                                  stolen_entry:
+    20 0000001F 1E                          push ds
+    21 00000020 17                          pop ss
+    22 00000021 BC834C                      mov sp, 04C83h
+    23 00000024 1E                          push ds
+    24 00000025 07                          pop es
+    25 00000026 BFE9C6                      mov di, 0C6E9h
+    26 00000029 89FB                        mov bx, di
+    27 0000002B B850AB                      mov ax, 0AB50h
+    28 0000002E 50                          push ax
+    29 0000002F AB                          stosw
+    30 00000030 FFE3                        jmp bx
+    31                                  fallback:
+    32 00000032 1E                          push ds
+    33 00000033 17                          pop ss
+    34 00000034 89EC                        mov sp, bp
+    35 00000036 81C4ABAA                    add sp, 0AAABh
+    36 0000003A 1E                          push ds
+    37 0000003B 07                          pop es
+    38 0000003C 89EF                        mov di, bp
+    39 0000003E 83C746                      add di, generated - start
+    40 00000041 B850AB                      mov ax, 0AB50h
+    41 00000044 50                          push ax
+    42 00000045 AB                          stosw
+    43                                  generated:
+    44                                  

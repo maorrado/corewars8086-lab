@@ -1,0 +1,99 @@
+     1                                  bits 16
+     2                                  
+     3                                  %macro body 0
+     4                                      mov bp, ax
+     5                                      push ds
+     6                                      pop es
+     7                                      mov di, bp
+     8                                      add di, 2D13h
+     9                                      mov ax, 0CCCCh
+    10                                      mov dx, 0CCCCh
+    11                                      int 86h
+    12                                      add di, 8000h
+    13                                      int 86h
+    14                                  
+    15                                      push ds
+    16                                      pop ss
+    17                                      mov sp, bp
+    18                                      push ds
+    19                                      pop es
+    20                                      mov di, bp
+    21                                      add di, active_generated - program_start
+    22                                      mov ax, 0AB50h
+    23                                      push ax
+    24                                      stosw
+    25                                  %endmacro
+    26                                  
+    27                                  program_start:
+    28 00000000 EB28                        jmp active
+    29                                  front_decoy:
+    30                                      body
+    30 00000002 89C5                <1>  mov bp, ax
+    30 00000004 1E                  <1>  push ds
+    30 00000005 07                  <1>  pop es
+    30 00000006 89EF                <1>  mov di, bp
+    30 00000008 81C7132D            <1>  add di, 2D13h
+    30 0000000C B8CCCC              <1>  mov ax, 0CCCCh
+    30 0000000F BACCCC              <1>  mov dx, 0CCCCh
+    30 00000012 CD86                <1>  int 86h
+    30 00000014 81C70080            <1>  add di, 8000h
+    30 00000018 CD86                <1>  int 86h
+    30                              <1> 
+    30 0000001A 1E                  <1>  push ds
+    30 0000001B 17                  <1>  pop ss
+    30 0000001C 89EC                <1>  mov sp, bp
+    30 0000001E 1E                  <1>  push ds
+    30 0000001F 07                  <1>  pop es
+    30 00000020 89EF                <1>  mov di, bp
+    30 00000022 83C752              <1>  add di, active_generated - program_start
+    30 00000025 B850AB              <1>  mov ax, 0AB50h
+    30 00000028 50                  <1>  push ax
+    30 00000029 AB                  <1>  stosw
+    31                                  active:
+    32                                      body
+    32 0000002A 89C5                <1>  mov bp, ax
+    32 0000002C 1E                  <1>  push ds
+    32 0000002D 07                  <1>  pop es
+    32 0000002E 89EF                <1>  mov di, bp
+    32 00000030 81C7132D            <1>  add di, 2D13h
+    32 00000034 B8CCCC              <1>  mov ax, 0CCCCh
+    32 00000037 BACCCC              <1>  mov dx, 0CCCCh
+    32 0000003A CD86                <1>  int 86h
+    32 0000003C 81C70080            <1>  add di, 8000h
+    32 00000040 CD86                <1>  int 86h
+    32                              <1> 
+    32 00000042 1E                  <1>  push ds
+    32 00000043 17                  <1>  pop ss
+    32 00000044 89EC                <1>  mov sp, bp
+    32 00000046 1E                  <1>  push ds
+    32 00000047 07                  <1>  pop es
+    32 00000048 89EF                <1>  mov di, bp
+    32 0000004A 83C752              <1>  add di, active_generated - program_start
+    32 0000004D B850AB              <1>  mov ax, 0AB50h
+    32 00000050 50                  <1>  push ax
+    32 00000051 AB                  <1>  stosw
+    33                                  active_generated:
+    34                                  back_decoy:
+    35                                      body
+    35 00000052 89C5                <1>  mov bp, ax
+    35 00000054 1E                  <1>  push ds
+    35 00000055 07                  <1>  pop es
+    35 00000056 89EF                <1>  mov di, bp
+    35 00000058 81C7132D            <1>  add di, 2D13h
+    35 0000005C B8CCCC              <1>  mov ax, 0CCCCh
+    35 0000005F BACCCC              <1>  mov dx, 0CCCCh
+    35 00000062 CD86                <1>  int 86h
+    35 00000064 81C70080            <1>  add di, 8000h
+    35 00000068 CD86                <1>  int 86h
+    35                              <1> 
+    35 0000006A 1E                  <1>  push ds
+    35 0000006B 17                  <1>  pop ss
+    35 0000006C 89EC                <1>  mov sp, bp
+    35 0000006E 1E                  <1>  push ds
+    35 0000006F 07                  <1>  pop es
+    35 00000070 89EF                <1>  mov di, bp
+    35 00000072 83C752              <1>  add di, active_generated - program_start
+    35 00000075 B850AB              <1>  mov ax, 0AB50h
+    35 00000078 50                  <1>  push ax
+    35 00000079 AB                  <1>  stosw
+    36                                  

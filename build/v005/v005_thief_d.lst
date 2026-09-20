@@ -1,0 +1,51 @@
+     1                                  bits 16
+     2                                  
+     3                                  start:
+     4 00000000 89C5                        mov bp, ax
+     5 00000002 1E                          push ds
+     6 00000003 07                          pop es
+     7                                  
+     8                                      ; Same mechanism for zom20d; its fourth entry byte distinguishes it.
+     9 00000004 89EE                        mov si, bp
+    10 00000006 83C635                      add si, stolen_entry - start
+    11 00000009 89F3                        mov bx, si
+    12 0000000B 88DF                        mov bh, bl
+    13 0000000D B368                        mov bl, 68h
+    14 0000000F 89F1                        mov cx, si
+    15 00000011 88E9                        mov cl, ch
+    16 00000013 B5C3                        mov ch, 0C3h
+    17 00000015 B8E936                      mov ax, 36E9h
+    18 00000018 BA0147                      mov dx, 4701h
+    19 0000001B 31FF                        xor di, di
+    20 0000001D CD87                        int 87h
+    21                                  
+    22 0000001F 89EF                        mov di, bp
+    23 00000021 81C7E751                    add di, 51E7h
+    24 00000025 B8CCCC                      mov ax, 0CCCCh
+    25 00000028 BACCCC                      mov dx, 0CCCCh
+    26 0000002B CD86                        int 86h
+    27 0000002D 81C70080                    add di, 8000h
+    28 00000031 CD86                        int 86h
+    29 00000033 EB14                        jmp original_loop
+    30                                  
+    31                                  stolen_entry:
+    32 00000035 1E                          push ds
+    33 00000036 07                          pop es
+    34 00000037 89C5                        mov bp, ax
+    35 00000039 89C7                        mov di, ax
+    36 0000003B 81C7CF35                    add di, 35CFh
+    37 0000003F B8CCCC                      mov ax, 0CCCCh
+    38                                  stolen_loop:
+    39 00000042 AB                          stosw
+    40 00000043 81C7FB1F                    add di, 1FFBh
+    41 00000047 EBF9                        jmp stolen_loop
+    42                                  
+    43                                  original_loop:
+    44 00000049 89EF                        mov di, bp
+    45 0000004B 81C72D6B                    add di, 6B2Dh
+    46 0000004F B8CCCC                      mov ax, 0CCCCh
+    47                                  attack:
+    48 00000052 AB                          stosw
+    49 00000053 81C7F92F                    add di, 2FF9h
+    50 00000057 9B9B                        db 09Bh, 09Bh
+    51 00000059 EBF7                        jmp attack

@@ -1,0 +1,23 @@
+     1                                  bits 16
+     2                                  
+     3                                  start:
+     4 00000000 9B9B9B9B9B9B9B9B9B-         times 32 db 09Bh, 09Bh
+     4 00000009 9B9B9B9B9B9B9B9B9B-
+     4 00000012 9B9B9B9B9B9B9B9B9B-
+     4 0000001B 9B9B9B9B9B9B9B9B9B-
+     4 00000024 9B9B9B9B9B9B9B9B9B-
+     4 0000002D 9B9B9B9B9B9B9B9B9B-
+     4 00000036 9B9B9B9B9B9B9B9B9B-
+     4 0000003F 9B                 
+     5 00000040 89C3                        mov bx, ax
+     6 00000042 1E                          push ds
+     7 00000043 17                          pop ss
+     8 00000044 1E                          push ds
+     9 00000045 07                          pop es
+    10 00000046 89DC                        mov sp, bx
+    11 00000048 81C40340                    add sp, 4003h
+    12 0000004C 89E7                        mov di, sp
+    13 0000004E B850AB                      mov ax, 0AB50h
+    14 00000051 50                          push ax
+    15 00000052 FFE4                        jmp sp
+    16                                  

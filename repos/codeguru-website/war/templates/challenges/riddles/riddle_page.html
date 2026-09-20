@@ -1,0 +1,32 @@
+{% extends "../challenge_base.html" %}
+{% load i18n %}
+
+{% block 'challenge_fields' %}
+
+<br>
+
+{% if user.profile.group.owner == user and challenge.active %}
+
+    <strong>{% trans "Please upload .zip file" %}</strong><br>
+
+    {% if current_solution %}
+        {% trans "Last update to solution was" %} {{ current_solution.upload_date|timesince }} {% trans "ago" %}: 
+        <a href="{% url 'riddle_download' id=challenge.id %}">{% trans "Download" %}</a>
+    {% endif %}
+
+    <form method="post" action="{{ challenge.id }}" enctype="multipart/form-data">
+        {% csrf_token %} 
+        {{ form.as_p }}
+
+        <input type="submit" value="{% trans 'Upload' %}" />
+        <input type="hidden" name="next" value="{{ next }}" />
+    </form>
+
+{% else %}
+
+    {% trans "Only group owner can upload solutions." %}
+
+{% endif %}
+
+{% endblock %}
+

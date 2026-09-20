@@ -1,0 +1,22 @@
+     1                                  bits 16
+     2                                  
+     3                                  start:
+     4                                      ; Plant the runway far from the visible original and jump into it.  The
+     5                                      ; two team members use unrelated spacings so one attack pattern is less
+     6                                      ; likely to remove both.
+     7 00000000 89C3                        mov bx, ax
+     8 00000002 1E                          push ds
+     9 00000003 17                          pop ss
+    10 00000004 1E                          push ds
+    11 00000005 07                          pop es
+    12 00000006 89DF                        mov di, bx
+    13 00000008 81C7132D                    add di, 2D13h
+    14 0000000C 89FC                        mov sp, di
+    15 0000000E 81C49D39                    add sp, 399Dh
+    16 00000012 B850AB                      mov ax, 0AB50h
+    17 00000015 89C2                        mov dx, ax
+    18 00000017 CD86                        int 86h
+    19 00000019 CD86                        int 86h
+    20 0000001B 81EF0002                    sub di, 0200h
+    21 0000001F FFE7                        jmp di
+    22                                  

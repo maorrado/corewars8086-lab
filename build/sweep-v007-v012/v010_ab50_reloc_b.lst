@@ -1,0 +1,15 @@
+     1                                  bits 16
+     2                                  
+     3                                  start:
+     4 00000000 89C3                        mov bx, ax
+     5 00000002 1E                          push ds
+     6 00000003 17                          pop ss
+     7 00000004 1E                          push ds
+     8 00000005 07                          pop es
+     9 00000006 89DC                        mov sp, bx
+    10 00000008 81C4F1BE                    add sp, 0BEF1h      ; complementary distant destination + two bytes
+    11 0000000C 89E7                        mov di, sp
+    12 0000000E B850AB                      mov ax, 0AB50h
+    13 00000011 50                          push ax
+    14 00000012 FFE4                        jmp sp
+    15                                  

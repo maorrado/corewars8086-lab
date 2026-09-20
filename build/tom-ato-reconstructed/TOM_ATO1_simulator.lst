@@ -1,0 +1,252 @@
+     1                                  bits 16
+     2                                  
+     3                                  ; Byte-exact simulator-ready reconstruction of the published TOM_ATO1 binary.
+     4                                  ; The original binary contains the same 121-byte body three times and starts
+     5                                  ; by jumping to the second copy.
+     6                                  
+     7 00000000 EB79                    jmp short second_copy
+     8                                  
+     9                                  %macro atom_body 0
+    10                                      push ds
+    11                                      push es
+    12                                      pop ds
+    13                                      mov cx, 020h
+    14                                      db 0E2h, 0FEh
+    15                                      mov bp, ax
+    16                                      mov si, 0120h
+    17                                      lodsw
+    18                                      mov dx, ax
+    19                                      lodsw
+    20                                      xchg bp, ax
+    21                                      pop ds
+    22                                      push ss
+    23                                      pop es
+    24                                      mov si, ax
+    25                                      add si, 0D8h
+    26                                      mov cl, 00Fh
+    27                                      rep movsw
+    28                                      push es
+    29                                      pop ds
+    30                                      mov al, dl
+    31                                      sub ah, 001h
+    32                                      mov bx, 0100h
+    33                                      mov [bx], ax
+    34                                      mov [bx + 2], bp
+    35                                      sub [bx], dx
+    36                                      add word [bx], 0A6h
+    37                                      push cs
+    38                                      pop ss
+    39                                      mov es, bp
+    40                                      mov di, [bx]
+    41                                      mov sp, di
+    42                                      add sp, 02F49h
+    43                                      add sp, dx
+    44                                      mov si, 018h
+    45                                      movsw
+    46                                      movsw
+    47                                      sub di, 003h
+    48                                      xor si, si
+    49                                      mov ax, 0A5A5h
+    50                                      mov cl, 00Ah
+    51                                      mov bp, 02F49h
+    52                                      add bp, 086h
+    53                                      mov dx, 02Bh
+    54                                      call far [bx]
+    55                                      movsw
+    56                                      rep movsw
+    57                                      sub word [bx], 0700h
+    58                                      mov di, [bx]
+    59                                      mov sp, di
+    60                                      add sp, bp
+    61                                      movsw
+    62                                      movsw
+    63                                      sub di, 003h
+    64                                      xor si, si
+    65                                      mov cl, 00Ah
+    66                                      call far [bx + si]
+    67                                      sub sp, dx
+    68                                      call far [bx + si]
+    69                                  %endmacro
+    70                                  
+    71                                  atom_body
+    71 00000002 1E                  <1>  push ds
+    71 00000003 06                  <1>  push es
+    71 00000004 1F                  <1>  pop ds
+    71 00000005 B92000              <1>  mov cx, 020h
+    71 00000008 E2FE                <1>  db 0E2h, 0FEh
+    71 0000000A 89C5                <1>  mov bp, ax
+    71 0000000C BE2001              <1>  mov si, 0120h
+    71 0000000F AD                  <1>  lodsw
+    71 00000010 89C2                <1>  mov dx, ax
+    71 00000012 AD                  <1>  lodsw
+    71 00000013 95                  <1>  xchg bp, ax
+    71 00000014 1F                  <1>  pop ds
+    71 00000015 16                  <1>  push ss
+    71 00000016 07                  <1>  pop es
+    71 00000017 89C6                <1>  mov si, ax
+    71 00000019 81C6D800            <1>  add si, 0D8h
+    71 0000001D B10F                <1>  mov cl, 00Fh
+    71 0000001F F3A5                <1>  rep movsw
+    71 00000021 06                  <1>  push es
+    71 00000022 1F                  <1>  pop ds
+    71 00000023 88D0                <1>  mov al, dl
+    71 00000025 80EC01              <1>  sub ah, 001h
+    71 00000028 BB0001              <1>  mov bx, 0100h
+    71 0000002B 8907                <1>  mov [bx], ax
+    71 0000002D 896F02              <1>  mov [bx + 2], bp
+    71 00000030 2917                <1>  sub [bx], dx
+    71 00000032 8107A600            <1>  add word [bx], 0A6h
+    71 00000036 0E                  <1>  push cs
+    71 00000037 17                  <1>  pop ss
+    71 00000038 8EC5                <1>  mov es, bp
+    71 0000003A 8B3F                <1>  mov di, [bx]
+    71 0000003C 89FC                <1>  mov sp, di
+    71 0000003E 81C4492F            <1>  add sp, 02F49h
+    71 00000042 01D4                <1>  add sp, dx
+    71 00000044 BE1800              <1>  mov si, 018h
+    71 00000047 A5                  <1>  movsw
+    71 00000048 A5                  <1>  movsw
+    71 00000049 83EF03              <1>  sub di, 003h
+    71 0000004C 31F6                <1>  xor si, si
+    71 0000004E B8A5A5              <1>  mov ax, 0A5A5h
+    71 00000051 B10A                <1>  mov cl, 00Ah
+    71 00000053 BD492F              <1>  mov bp, 02F49h
+    71 00000056 81C58600            <1>  add bp, 086h
+    71 0000005A BA2B00              <1>  mov dx, 02Bh
+    71 0000005D FF1F                <1>  call far [bx]
+    71 0000005F A5                  <1>  movsw
+    71 00000060 F3A5                <1>  rep movsw
+    71 00000062 812F0007            <1>  sub word [bx], 0700h
+    71 00000066 8B3F                <1>  mov di, [bx]
+    71 00000068 89FC                <1>  mov sp, di
+    71 0000006A 01EC                <1>  add sp, bp
+    71 0000006C A5                  <1>  movsw
+    71 0000006D A5                  <1>  movsw
+    71 0000006E 83EF03              <1>  sub di, 003h
+    71 00000071 31F6                <1>  xor si, si
+    71 00000073 B10A                <1>  mov cl, 00Ah
+    71 00000075 FF18                <1>  call far [bx + si]
+    71 00000077 29D4                <1>  sub sp, dx
+    71 00000079 FF18                <1>  call far [bx + si]
+    72                                  
+    73                                  second_copy:
+    74                                  atom_body
+    74 0000007B 1E                  <1>  push ds
+    74 0000007C 06                  <1>  push es
+    74 0000007D 1F                  <1>  pop ds
+    74 0000007E B92000              <1>  mov cx, 020h
+    74 00000081 E2FE                <1>  db 0E2h, 0FEh
+    74 00000083 89C5                <1>  mov bp, ax
+    74 00000085 BE2001              <1>  mov si, 0120h
+    74 00000088 AD                  <1>  lodsw
+    74 00000089 89C2                <1>  mov dx, ax
+    74 0000008B AD                  <1>  lodsw
+    74 0000008C 95                  <1>  xchg bp, ax
+    74 0000008D 1F                  <1>  pop ds
+    74 0000008E 16                  <1>  push ss
+    74 0000008F 07                  <1>  pop es
+    74 00000090 89C6                <1>  mov si, ax
+    74 00000092 81C6D800            <1>  add si, 0D8h
+    74 00000096 B10F                <1>  mov cl, 00Fh
+    74 00000098 F3A5                <1>  rep movsw
+    74 0000009A 06                  <1>  push es
+    74 0000009B 1F                  <1>  pop ds
+    74 0000009C 88D0                <1>  mov al, dl
+    74 0000009E 80EC01              <1>  sub ah, 001h
+    74 000000A1 BB0001              <1>  mov bx, 0100h
+    74 000000A4 8907                <1>  mov [bx], ax
+    74 000000A6 896F02              <1>  mov [bx + 2], bp
+    74 000000A9 2917                <1>  sub [bx], dx
+    74 000000AB 8107A600            <1>  add word [bx], 0A6h
+    74 000000AF 0E                  <1>  push cs
+    74 000000B0 17                  <1>  pop ss
+    74 000000B1 8EC5                <1>  mov es, bp
+    74 000000B3 8B3F                <1>  mov di, [bx]
+    74 000000B5 89FC                <1>  mov sp, di
+    74 000000B7 81C4492F            <1>  add sp, 02F49h
+    74 000000BB 01D4                <1>  add sp, dx
+    74 000000BD BE1800              <1>  mov si, 018h
+    74 000000C0 A5                  <1>  movsw
+    74 000000C1 A5                  <1>  movsw
+    74 000000C2 83EF03              <1>  sub di, 003h
+    74 000000C5 31F6                <1>  xor si, si
+    74 000000C7 B8A5A5              <1>  mov ax, 0A5A5h
+    74 000000CA B10A                <1>  mov cl, 00Ah
+    74 000000CC BD492F              <1>  mov bp, 02F49h
+    74 000000CF 81C58600            <1>  add bp, 086h
+    74 000000D3 BA2B00              <1>  mov dx, 02Bh
+    74 000000D6 FF1F                <1>  call far [bx]
+    74 000000D8 A5                  <1>  movsw
+    74 000000D9 F3A5                <1>  rep movsw
+    74 000000DB 812F0007            <1>  sub word [bx], 0700h
+    74 000000DF 8B3F                <1>  mov di, [bx]
+    74 000000E1 89FC                <1>  mov sp, di
+    74 000000E3 01EC                <1>  add sp, bp
+    74 000000E5 A5                  <1>  movsw
+    74 000000E6 A5                  <1>  movsw
+    74 000000E7 83EF03              <1>  sub di, 003h
+    74 000000EA 31F6                <1>  xor si, si
+    74 000000EC B10A                <1>  mov cl, 00Ah
+    74 000000EE FF18                <1>  call far [bx + si]
+    74 000000F0 29D4                <1>  sub sp, dx
+    74 000000F2 FF18                <1>  call far [bx + si]
+    75                                  atom_body
+    75 000000F4 1E                  <1>  push ds
+    75 000000F5 06                  <1>  push es
+    75 000000F6 1F                  <1>  pop ds
+    75 000000F7 B92000              <1>  mov cx, 020h
+    75 000000FA E2FE                <1>  db 0E2h, 0FEh
+    75 000000FC 89C5                <1>  mov bp, ax
+    75 000000FE BE2001              <1>  mov si, 0120h
+    75 00000101 AD                  <1>  lodsw
+    75 00000102 89C2                <1>  mov dx, ax
+    75 00000104 AD                  <1>  lodsw
+    75 00000105 95                  <1>  xchg bp, ax
+    75 00000106 1F                  <1>  pop ds
+    75 00000107 16                  <1>  push ss
+    75 00000108 07                  <1>  pop es
+    75 00000109 89C6                <1>  mov si, ax
+    75 0000010B 81C6D800            <1>  add si, 0D8h
+    75 0000010F B10F                <1>  mov cl, 00Fh
+    75 00000111 F3A5                <1>  rep movsw
+    75 00000113 06                  <1>  push es
+    75 00000114 1F                  <1>  pop ds
+    75 00000115 88D0                <1>  mov al, dl
+    75 00000117 80EC01              <1>  sub ah, 001h
+    75 0000011A BB0001              <1>  mov bx, 0100h
+    75 0000011D 8907                <1>  mov [bx], ax
+    75 0000011F 896F02              <1>  mov [bx + 2], bp
+    75 00000122 2917                <1>  sub [bx], dx
+    75 00000124 8107A600            <1>  add word [bx], 0A6h
+    75 00000128 0E                  <1>  push cs
+    75 00000129 17                  <1>  pop ss
+    75 0000012A 8EC5                <1>  mov es, bp
+    75 0000012C 8B3F                <1>  mov di, [bx]
+    75 0000012E 89FC                <1>  mov sp, di
+    75 00000130 81C4492F            <1>  add sp, 02F49h
+    75 00000134 01D4                <1>  add sp, dx
+    75 00000136 BE1800              <1>  mov si, 018h
+    75 00000139 A5                  <1>  movsw
+    75 0000013A A5                  <1>  movsw
+    75 0000013B 83EF03              <1>  sub di, 003h
+    75 0000013E 31F6                <1>  xor si, si
+    75 00000140 B8A5A5              <1>  mov ax, 0A5A5h
+    75 00000143 B10A                <1>  mov cl, 00Ah
+    75 00000145 BD492F              <1>  mov bp, 02F49h
+    75 00000148 81C58600            <1>  add bp, 086h
+    75 0000014C BA2B00              <1>  mov dx, 02Bh
+    75 0000014F FF1F                <1>  call far [bx]
+    75 00000151 A5                  <1>  movsw
+    75 00000152 F3A5                <1>  rep movsw
+    75 00000154 812F0007            <1>  sub word [bx], 0700h
+    75 00000158 8B3F                <1>  mov di, [bx]
+    75 0000015A 89FC                <1>  mov sp, di
+    75 0000015C 01EC                <1>  add sp, bp
+    75 0000015E A5                  <1>  movsw
+    75 0000015F A5                  <1>  movsw
+    75 00000160 83EF03              <1>  sub di, 003h
+    75 00000163 31F6                <1>  xor si, si
+    75 00000165 B10A                <1>  mov cl, 00Ah
+    75 00000167 FF18                <1>  call far [bx + si]
+    75 00000169 29D4                <1>  sub sp, dx
+    75 0000016B FF18                <1>  call far [bx + si]

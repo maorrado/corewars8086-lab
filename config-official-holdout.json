@@ -1,0 +1,44 @@
+{
+  "experimentId": "holdout-template",
+  "outputPath": "experiments/holdout-template.json",
+  "runDirectory": "build/official-runs/holdout-template",
+  "battles": 100,
+  "threads": 4,
+  "seeds": ["holdout-2025-001", "holdout-2025-002"],
+  "candidate": {
+    "name": "placeholder",
+    "warriors": ["build/v004/v004_push_bomber", "build/v004/v004_stos_bomber"]
+  },
+  "cohorts": [
+    {
+      "id": "unseen-2025",
+      "opponents": [
+        { "name": "HRZ_ADDvanced", "warriors": ["official-2025/survivors-online/HRZ_ADDvanced1", "official-2025/survivors-online/HRZ_ADDvanced2"] },
+        { "name": "HRZ_CodeEliteGang", "warriors": ["official-2025/survivors-online/HRZ_CodeEliteGang1", "official-2025/survivors-online/HRZ_CodeEliteGang2"] },
+        { "name": "HRZ_Ctrl_Alt_Elite", "warriors": ["official-2025/survivors-online/HRZ_Ctrl_Alt_Elite1", "official-2025/survivors-online/HRZ_Ctrl_Alt_Elite2"] }
+      ]
+    },
+    {
+      "id": "unseen-2024",
+      "opponents": [
+        { "name": "HLS_segment_fault", "warriors": ["repos/corewars8086-survivors/cgx2024/05-final2/HLS_segment_fault1", "repos/corewars8086-survivors/cgx2024/05-final2/HLS_segment_fault2"] },
+        { "name": "HRZ_JMP2HELL_2024", "warriors": ["repos/corewars8086-survivors/cgx2024/05-final2/HRZ_JMP2HELL1", "repos/corewars8086-survivors/cgx2024/05-final2/HRZ_JMP2HELL2"] },
+        { "name": "TOM_R_JS", "warriors": ["repos/corewars8086-survivors/cgx2024/05-final2/TOM_R_JS1", "repos/corewars8086-survivors/cgx2024/05-final2/TOM_R_JS2"] }
+      ]
+    },
+    {
+      "id": "unseen-2023",
+      "opponents": [
+        { "name": "HRZ_JMP2HELL_2023", "warriors": ["repos/corewars8086-survivors/cgx2023/phase2/HRZ_JMP2HELL1", "repos/corewars8086-survivors/cgx2023/phase2/HRZ_JMP2HELL2"] },
+        { "name": "ORH_CANNON", "warriors": ["repos/corewars8086-survivors/cgx2023/phase2/ORH_CANNON1", "repos/corewars8086-survivors/cgx2023/phase2/ORH_CANNON2"] },
+        { "name": "TOM_callBarama", "warriors": ["repos/corewars8086-survivors/cgx2023/phase2/TOM_callBarama1", "repos/corewars8086-survivors/cgx2023/phase2/TOM_callBarama2"] }
+      ]
+    }
+  ],
+  "zombies": [
+    { "name": "zom20a", "path": "official-2025/zombies-live/zom20a" },
+    { "name": "zom20b", "path": "official-2025/zombies-live/zom20b" },
+    { "name": "zom20c", "path": "official-2025/zombies-live/zom20c" },
+    { "name": "zom20d", "path": "official-2025/zombies-live/zom20d" }
+  ]
+}

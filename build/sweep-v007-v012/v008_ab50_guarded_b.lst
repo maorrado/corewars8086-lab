@@ -1,0 +1,58 @@
+     1                                  bits 16
+     2                                  
+     3                                  %macro ab50_body 0
+     4                                      push ds
+     5                                      pop ss
+     6                                      mov sp, ax
+     7                                      add sp, 5555h
+     8                                      push ds
+     9                                      pop es
+    10                                      mov di, ax
+    11                                      add di, active_generated - program_start
+    12                                      mov ax, 0AB50h
+    13                                      push ax
+    14                                      stosw
+    15                                  %endmacro
+    16                                  
+    17                                  program_start:
+    18 00000000 EB14                        jmp active
+    19                                  front_decoy:
+    20                                      ab50_body
+    20 00000002 1E                  <1>  push ds
+    20 00000003 17                  <1>  pop ss
+    20 00000004 89C4                <1>  mov sp, ax
+    20 00000006 81C45555            <1>  add sp, 5555h
+    20 0000000A 1E                  <1>  push ds
+    20 0000000B 07                  <1>  pop es
+    20 0000000C 89C7                <1>  mov di, ax
+    20 0000000E 83C72A              <1>  add di, active_generated - program_start
+    20 00000011 B850AB              <1>  mov ax, 0AB50h
+    20 00000014 50                  <1>  push ax
+    20 00000015 AB                  <1>  stosw
+    21                                  active:
+    22                                      ab50_body
+    22 00000016 1E                  <1>  push ds
+    22 00000017 17                  <1>  pop ss
+    22 00000018 89C4                <1>  mov sp, ax
+    22 0000001A 81C45555            <1>  add sp, 5555h
+    22 0000001E 1E                  <1>  push ds
+    22 0000001F 07                  <1>  pop es
+    22 00000020 89C7                <1>  mov di, ax
+    22 00000022 83C72A              <1>  add di, active_generated - program_start
+    22 00000025 B850AB              <1>  mov ax, 0AB50h
+    22 00000028 50                  <1>  push ax
+    22 00000029 AB                  <1>  stosw
+    23                                  active_generated:
+    24                                  back_decoy:
+    25                                      ab50_body
+    25 0000002A 1E                  <1>  push ds
+    25 0000002B 17                  <1>  pop ss
+    25 0000002C 89C4                <1>  mov sp, ax
+    25 0000002E 81C45555            <1>  add sp, 5555h
+    25 00000032 1E                  <1>  push ds
+    25 00000033 07                  <1>  pop es
+    25 00000034 89C7                <1>  mov di, ax
+    25 00000036 83C72A              <1>  add di, active_generated - program_start
+    25 00000039 B850AB              <1>  mov ax, 0AB50h
+    25 0000003C 50                  <1>  push ax
+    25 0000003D AB                  <1>  stosw

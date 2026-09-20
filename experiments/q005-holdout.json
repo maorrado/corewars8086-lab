@@ -1,0 +1,895 @@
+{
+  "schemaVersion": 1,
+  "experimentId": "q005-holdout",
+  "generatedAt": "2026-09-19T18:04:21.219Z",
+  "configPath": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\config-sweep-q005.json",
+  "configSha256": "1c9c023ec008c29d311f81ed7baf674eb917521a3145f13b18cb7f09a0d1fe12",
+  "engineJar": {
+    "path": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+    "sha256": "15bc4da94a2159700a42bb553552b4d80b69e766e07d0d3e2dc36c1f4f4c3b93"
+  },
+  "aggregate": {
+    "battles": 600,
+    "teamPerBattle": 0.2825,
+    "warrior1PerBattle": 0.15055555666666667,
+    "warrior2PerBattle": 0.131944445
+  },
+  "runs": [
+    {
+      "runId": "unseen-2025__holdout-2025-001",
+      "cohortId": "unseen-2025",
+      "seed": "holdout-2025-001",
+      "battles": 100,
+      "startedAt": "2026-09-19T18:04:11.761Z",
+      "elapsedSeconds": 0.9623285,
+      "command": {
+        "executable": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\tools\\temurin8-jre\\jdk8u504-b01-jre\\bin\\java.exe",
+        "args": [
+          "-jar",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+          "--headless",
+          "--comboSize",
+          "4",
+          "--battlesPerCombo",
+          "100",
+          "--seed",
+          "holdout-2025-001",
+          "--threads",
+          "4",
+          "--warriorsDir",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2025__holdout-2025-001\\survivors",
+          "--zombiesDir",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2025__holdout-2025-001\\zombies",
+          "--outputFile",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2025__holdout-2025-001\\scores.csv"
+        ]
+      },
+      "inputs": {
+        "COD_q005": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\phoenix-parameter-sweep\\q005_a",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2025__holdout-2025-001\\survivors\\COD_q0051",
+            "bytes": 81,
+            "sha256": "f3feb33cc59550fe0fdfc235fc34c1e017085399f62da9c0491680e971fac2c3"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\phoenix-parameter-sweep\\q005_b",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2025__holdout-2025-001\\survivors\\COD_q0052",
+            "bytes": 81,
+            "sha256": "ff8c0e52eda674bc3e75a809b82e63a4fffc0f102f1c815dd9097bf1ebc053e6"
+          }
+        ],
+        "HRZ_ADDvanced": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_ADDvanced1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2025__holdout-2025-001\\survivors\\HRZ_ADDvanced1",
+            "bytes": 268,
+            "sha256": "ff353ab75e7a3b88b896f64cbb97bfad639412a6e222088d6f52cc189a9e2ebe"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_ADDvanced2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2025__holdout-2025-001\\survivors\\HRZ_ADDvanced2",
+            "bytes": 241,
+            "sha256": "509086f3e6ec36b0867ecebe4ba9ecc8faffaf7cc7f4e633dd04f2814981f39c"
+          }
+        ],
+        "HRZ_CodeEliteGang": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_CodeEliteGang1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2025__holdout-2025-001\\survivors\\HRZ_CodeEliteGang1",
+            "bytes": 512,
+            "sha256": "18455d457341e1d7b30c782693eeb66cab9f239b7bdc6b372bdcfb41c16dc426"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_CodeEliteGang2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2025__holdout-2025-001\\survivors\\HRZ_CodeEliteGang2",
+            "bytes": 15,
+            "sha256": "74f611e36a3c93d5f9f5ced87f637120a0810e33a1927ef675a402da5900416f"
+          }
+        ],
+        "HRZ_Ctrl_Alt_Elite": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_Ctrl_Alt_Elite1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2025__holdout-2025-001\\survivors\\HRZ_Ctrl_Alt_Elite1",
+            "bytes": 44,
+            "sha256": "396faf80539b6f55ee1ce91d06bf40ee0049be5f931e0fd82da0da3c2e70ce79"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_Ctrl_Alt_Elite2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2025__holdout-2025-001\\survivors\\HRZ_Ctrl_Alt_Elite2",
+            "bytes": 44,
+            "sha256": "396faf80539b6f55ee1ce91d06bf40ee0049be5f931e0fd82da0da3c2e70ce79"
+          }
+        ]
+      },
+      "zombies": [
+        {
+          "name": "zom20a",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20a",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2025__holdout-2025-001\\zombies\\zom20a",
+          "bytes": 73,
+          "sha256": "a950e618ea2e127096c85f486fb555c264730d924a2192c407aa66e6e0318eb6"
+        },
+        {
+          "name": "zom20b",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20b",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2025__holdout-2025-001\\zombies\\zom20b",
+          "bytes": 382,
+          "sha256": "af6394c021ccb5e486db507e2ccd787bd5675f8fec88fd2ddbe9f834566852ce"
+        },
+        {
+          "name": "zom20c",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20c",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2025__holdout-2025-001\\zombies\\zom20c",
+          "bytes": 232,
+          "sha256": "3d3f209967f51a7344e0eab582bc04d1e694da5a73e3682a26ed483dcab7a443"
+        },
+        {
+          "name": "zom20d",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20d",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2025__holdout-2025-001\\zombies\\zom20d",
+          "bytes": 382,
+          "sha256": "923dd6abebbb7bb502ec5a02873c26175820ada5c4409d179d8464f0e90cb6fc"
+        }
+      ],
+      "scores": {
+        "groups": {
+          "COD_q005": 14,
+          "HRZ_ADDvanced": 62,
+          "HRZ_CodeEliteGang": 5,
+          "HRZ_Ctrl_Alt_Elite": 19
+        },
+        "warriors": {
+          "COD_q0051": 8.5,
+          "COD_q0052": 5.5,
+          "HRZ_ADDvanced1": 30,
+          "HRZ_ADDvanced2": 32,
+          "HRZ_CodeEliteGang1": 2.5,
+          "HRZ_CodeEliteGang2": 2.5,
+          "HRZ_Ctrl_Alt_Elite1": 9.5,
+          "HRZ_Ctrl_Alt_Elite2": 9.5
+        }
+      },
+      "candidate": {
+        "teamRaw": 14,
+        "teamPerBattle": 0.14,
+        "warrior1Raw": 8.5,
+        "warrior1PerBattle": 0.085,
+        "warrior2Raw": 5.5,
+        "warrior2PerBattle": 0.055
+      },
+      "rawScoreText": "Groups:\nCOD_q005,14.0\nHRZ_ADDvanced,62.0\nHRZ_CodeEliteGang,5.0\nHRZ_Ctrl_Alt_Elite,19.0\n\nWarriors:\nCOD_q0051,8.5\nCOD_q0052,5.5\nHRZ_ADDvanced1,30.0\nHRZ_ADDvanced2,32.0\nHRZ_CodeEliteGang1,2.5\nHRZ_CodeEliteGang2,2.5\nHRZ_Ctrl_Alt_Elite1,9.5\nHRZ_Ctrl_Alt_Elite2,9.5\n",
+      "stdout": "CoreWars8086 - headless mode\n\r\nLoaded warriors: [COD_q005, HRZ_ADDvanced, HRZ_CodeEliteGang, HRZ_Ctrl_Alt_Elite]\r\nStarting competition (100 wars) in parallel.\r\nCompetition is over. Ran 99 wars\r\nWriting scores to file C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2025__holdout-2025-001\\scores.csv\r\n"
+    },
+    {
+      "runId": "unseen-2025__holdout-2025-002",
+      "cohortId": "unseen-2025",
+      "seed": "holdout-2025-002",
+      "battles": 100,
+      "startedAt": "2026-09-19T18:04:12.746Z",
+      "elapsedSeconds": 0.9613739,
+      "command": {
+        "executable": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\tools\\temurin8-jre\\jdk8u504-b01-jre\\bin\\java.exe",
+        "args": [
+          "-jar",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+          "--headless",
+          "--comboSize",
+          "4",
+          "--battlesPerCombo",
+          "100",
+          "--seed",
+          "holdout-2025-002",
+          "--threads",
+          "4",
+          "--warriorsDir",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2025__holdout-2025-002\\survivors",
+          "--zombiesDir",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2025__holdout-2025-002\\zombies",
+          "--outputFile",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2025__holdout-2025-002\\scores.csv"
+        ]
+      },
+      "inputs": {
+        "COD_q005": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\phoenix-parameter-sweep\\q005_a",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2025__holdout-2025-002\\survivors\\COD_q0051",
+            "bytes": 81,
+            "sha256": "f3feb33cc59550fe0fdfc235fc34c1e017085399f62da9c0491680e971fac2c3"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\phoenix-parameter-sweep\\q005_b",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2025__holdout-2025-002\\survivors\\COD_q0052",
+            "bytes": 81,
+            "sha256": "ff8c0e52eda674bc3e75a809b82e63a4fffc0f102f1c815dd9097bf1ebc053e6"
+          }
+        ],
+        "HRZ_ADDvanced": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_ADDvanced1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2025__holdout-2025-002\\survivors\\HRZ_ADDvanced1",
+            "bytes": 268,
+            "sha256": "ff353ab75e7a3b88b896f64cbb97bfad639412a6e222088d6f52cc189a9e2ebe"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_ADDvanced2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2025__holdout-2025-002\\survivors\\HRZ_ADDvanced2",
+            "bytes": 241,
+            "sha256": "509086f3e6ec36b0867ecebe4ba9ecc8faffaf7cc7f4e633dd04f2814981f39c"
+          }
+        ],
+        "HRZ_CodeEliteGang": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_CodeEliteGang1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2025__holdout-2025-002\\survivors\\HRZ_CodeEliteGang1",
+            "bytes": 512,
+            "sha256": "18455d457341e1d7b30c782693eeb66cab9f239b7bdc6b372bdcfb41c16dc426"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_CodeEliteGang2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2025__holdout-2025-002\\survivors\\HRZ_CodeEliteGang2",
+            "bytes": 15,
+            "sha256": "74f611e36a3c93d5f9f5ced87f637120a0810e33a1927ef675a402da5900416f"
+          }
+        ],
+        "HRZ_Ctrl_Alt_Elite": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_Ctrl_Alt_Elite1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2025__holdout-2025-002\\survivors\\HRZ_Ctrl_Alt_Elite1",
+            "bytes": 44,
+            "sha256": "396faf80539b6f55ee1ce91d06bf40ee0049be5f931e0fd82da0da3c2e70ce79"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_Ctrl_Alt_Elite2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2025__holdout-2025-002\\survivors\\HRZ_Ctrl_Alt_Elite2",
+            "bytes": 44,
+            "sha256": "396faf80539b6f55ee1ce91d06bf40ee0049be5f931e0fd82da0da3c2e70ce79"
+          }
+        ]
+      },
+      "zombies": [
+        {
+          "name": "zom20a",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20a",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2025__holdout-2025-002\\zombies\\zom20a",
+          "bytes": 73,
+          "sha256": "a950e618ea2e127096c85f486fb555c264730d924a2192c407aa66e6e0318eb6"
+        },
+        {
+          "name": "zom20b",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20b",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2025__holdout-2025-002\\zombies\\zom20b",
+          "bytes": 382,
+          "sha256": "af6394c021ccb5e486db507e2ccd787bd5675f8fec88fd2ddbe9f834566852ce"
+        },
+        {
+          "name": "zom20c",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20c",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2025__holdout-2025-002\\zombies\\zom20c",
+          "bytes": 232,
+          "sha256": "3d3f209967f51a7344e0eab582bc04d1e694da5a73e3682a26ed483dcab7a443"
+        },
+        {
+          "name": "zom20d",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20d",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2025__holdout-2025-002\\zombies\\zom20d",
+          "bytes": 382,
+          "sha256": "923dd6abebbb7bb502ec5a02873c26175820ada5c4409d179d8464f0e90cb6fc"
+        }
+      ],
+      "scores": {
+        "groups": {
+          "COD_q005": 25,
+          "HRZ_ADDvanced": 45,
+          "HRZ_CodeEliteGang": 9.333334,
+          "HRZ_Ctrl_Alt_Elite": 20.666666
+        },
+        "warriors": {
+          "COD_q0051": 13.5,
+          "COD_q0052": 11.5,
+          "HRZ_ADDvanced1": 25.5,
+          "HRZ_ADDvanced2": 19.5,
+          "HRZ_CodeEliteGang1": 3,
+          "HRZ_CodeEliteGang2": 6.333333,
+          "HRZ_Ctrl_Alt_Elite1": 10.333334,
+          "HRZ_Ctrl_Alt_Elite2": 10.333334
+        }
+      },
+      "candidate": {
+        "teamRaw": 25,
+        "teamPerBattle": 0.25,
+        "warrior1Raw": 13.5,
+        "warrior1PerBattle": 0.135,
+        "warrior2Raw": 11.5,
+        "warrior2PerBattle": 0.115
+      },
+      "rawScoreText": "Groups:\nCOD_q005,25.0\nHRZ_ADDvanced,45.0\nHRZ_CodeEliteGang,9.333334\nHRZ_Ctrl_Alt_Elite,20.666666\n\nWarriors:\nCOD_q0051,13.5\nCOD_q0052,11.5\nHRZ_ADDvanced1,25.5\nHRZ_ADDvanced2,19.5\nHRZ_CodeEliteGang1,3.0\nHRZ_CodeEliteGang2,6.333333\nHRZ_Ctrl_Alt_Elite1,10.333334\nHRZ_Ctrl_Alt_Elite2,10.333334\n",
+      "stdout": "CoreWars8086 - headless mode\n\r\nLoaded warriors: [COD_q005, HRZ_ADDvanced, HRZ_CodeEliteGang, HRZ_Ctrl_Alt_Elite]\r\nStarting competition (100 wars) in parallel.\r\nCompetition is over. Ran 100 wars\r\nWriting scores to file C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2025__holdout-2025-002\\scores.csv\r\n"
+    },
+    {
+      "runId": "unseen-2024__holdout-2025-001",
+      "cohortId": "unseen-2024",
+      "seed": "holdout-2025-001",
+      "battles": 100,
+      "startedAt": "2026-09-19T18:04:13.723Z",
+      "elapsedSeconds": 2.1988658,
+      "command": {
+        "executable": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\tools\\temurin8-jre\\jdk8u504-b01-jre\\bin\\java.exe",
+        "args": [
+          "-jar",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+          "--headless",
+          "--comboSize",
+          "4",
+          "--battlesPerCombo",
+          "100",
+          "--seed",
+          "holdout-2025-001",
+          "--threads",
+          "4",
+          "--warriorsDir",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2024__holdout-2025-001\\survivors",
+          "--zombiesDir",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2024__holdout-2025-001\\zombies",
+          "--outputFile",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2024__holdout-2025-001\\scores.csv"
+        ]
+      },
+      "inputs": {
+        "COD_q005": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\phoenix-parameter-sweep\\q005_a",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2024__holdout-2025-001\\survivors\\COD_q0051",
+            "bytes": 81,
+            "sha256": "f3feb33cc59550fe0fdfc235fc34c1e017085399f62da9c0491680e971fac2c3"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\phoenix-parameter-sweep\\q005_b",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2024__holdout-2025-001\\survivors\\COD_q0052",
+            "bytes": 81,
+            "sha256": "ff8c0e52eda674bc3e75a809b82e63a4fffc0f102f1c815dd9097bf1ebc053e6"
+          }
+        ],
+        "HLS_segment_fault": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\repos\\corewars8086-survivors\\cgx2024\\05-final2\\HLS_segment_fault1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2024__holdout-2025-001\\survivors\\HLS_segment_fault1",
+            "bytes": 492,
+            "sha256": "267dbe82e9af96b3a8531afbf32ab08281cdae0bc86c4e340f2008e8ec1c3cc2"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\repos\\corewars8086-survivors\\cgx2024\\05-final2\\HLS_segment_fault2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2024__holdout-2025-001\\survivors\\HLS_segment_fault2",
+            "bytes": 320,
+            "sha256": "028054edfcdc11162402200d9aa7af823a02f14ff06afe5e786cfecbcb21e931"
+          }
+        ],
+        "HRZ_JMP2HELL_2024": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\repos\\corewars8086-survivors\\cgx2024\\05-final2\\HRZ_JMP2HELL1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2024__holdout-2025-001\\survivors\\HRZ_JMP2HELL_20241",
+            "bytes": 201,
+            "sha256": "3f702b7b910a2f33e344ac1987f1c8459e5cf4284f2e3324de1e8c73db41bd8d"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\repos\\corewars8086-survivors\\cgx2024\\05-final2\\HRZ_JMP2HELL2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2024__holdout-2025-001\\survivors\\HRZ_JMP2HELL_20242",
+            "bytes": 458,
+            "sha256": "3ae18e16a194658a519ab56a1c181d5c256d3d5e2e9963855c2897df84fa2015"
+          }
+        ],
+        "TOM_R_JS": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\repos\\corewars8086-survivors\\cgx2024\\05-final2\\TOM_R_JS1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2024__holdout-2025-001\\survivors\\TOM_R_JS1",
+            "bytes": 448,
+            "sha256": "67435a02103c8db2e0e9b2d489e0dbfc613d41ab911e07707c984dec23d91101"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\repos\\corewars8086-survivors\\cgx2024\\05-final2\\TOM_R_JS2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2024__holdout-2025-001\\survivors\\TOM_R_JS2",
+            "bytes": 512,
+            "sha256": "8428b7584375a88b3e3eb6a3e48af7c478afdc07013b264d7bb3e462b67e85e2"
+          }
+        ]
+      },
+      "zombies": [
+        {
+          "name": "zom20a",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20a",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2024__holdout-2025-001\\zombies\\zom20a",
+          "bytes": 73,
+          "sha256": "a950e618ea2e127096c85f486fb555c264730d924a2192c407aa66e6e0318eb6"
+        },
+        {
+          "name": "zom20b",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20b",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2024__holdout-2025-001\\zombies\\zom20b",
+          "bytes": 382,
+          "sha256": "af6394c021ccb5e486db507e2ccd787bd5675f8fec88fd2ddbe9f834566852ce"
+        },
+        {
+          "name": "zom20c",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20c",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2024__holdout-2025-001\\zombies\\zom20c",
+          "bytes": 232,
+          "sha256": "3d3f209967f51a7344e0eab582bc04d1e694da5a73e3682a26ed483dcab7a443"
+        },
+        {
+          "name": "zom20d",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20d",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2024__holdout-2025-001\\zombies\\zom20d",
+          "bytes": 382,
+          "sha256": "923dd6abebbb7bb502ec5a02873c26175820ada5c4409d179d8464f0e90cb6fc"
+        }
+      ],
+      "scores": {
+        "groups": {
+          "COD_q005": 37,
+          "HLS_segment_fault": 3,
+          "HRZ_JMP2HELL_2024": 14,
+          "TOM_R_JS": 46
+        },
+        "warriors": {
+          "COD_q0051": 17,
+          "COD_q0052": 20,
+          "HLS_segment_fault1": 3,
+          "HLS_segment_fault2": 0,
+          "HRZ_JMP2HELL_20241": 6.5,
+          "HRZ_JMP2HELL_20242": 7.5,
+          "TOM_R_JS1": 26,
+          "TOM_R_JS2": 20
+        }
+      },
+      "candidate": {
+        "teamRaw": 37,
+        "teamPerBattle": 0.37,
+        "warrior1Raw": 17,
+        "warrior1PerBattle": 0.17,
+        "warrior2Raw": 20,
+        "warrior2PerBattle": 0.2
+      },
+      "rawScoreText": "Groups:\nCOD_q005,37.0\nHLS_segment_fault,3.0\nHRZ_JMP2HELL_2024,14.0\nTOM_R_JS,46.0\n\nWarriors:\nCOD_q0051,17.0\nCOD_q0052,20.0\nHLS_segment_fault1,3.0\nHLS_segment_fault2,0.0\nHRZ_JMP2HELL_20241,6.5\nHRZ_JMP2HELL_20242,7.5\nTOM_R_JS1,26.0\nTOM_R_JS2,20.0\n",
+      "stdout": "CoreWars8086 - headless mode\n\r\nLoaded warriors: [COD_q005, HLS_segment_fault, HRZ_JMP2HELL_2024, TOM_R_JS]\r\nStarting competition (100 wars) in parallel.\r\nCompetition is over. Ran 100 wars\r\nWriting scores to file C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2024__holdout-2025-001\\scores.csv\r\n"
+    },
+    {
+      "runId": "unseen-2024__holdout-2025-002",
+      "cohortId": "unseen-2024",
+      "seed": "holdout-2025-002",
+      "battles": 100,
+      "startedAt": "2026-09-19T18:04:15.949Z",
+      "elapsedSeconds": 1.7313955,
+      "command": {
+        "executable": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\tools\\temurin8-jre\\jdk8u504-b01-jre\\bin\\java.exe",
+        "args": [
+          "-jar",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+          "--headless",
+          "--comboSize",
+          "4",
+          "--battlesPerCombo",
+          "100",
+          "--seed",
+          "holdout-2025-002",
+          "--threads",
+          "4",
+          "--warriorsDir",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2024__holdout-2025-002\\survivors",
+          "--zombiesDir",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2024__holdout-2025-002\\zombies",
+          "--outputFile",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2024__holdout-2025-002\\scores.csv"
+        ]
+      },
+      "inputs": {
+        "COD_q005": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\phoenix-parameter-sweep\\q005_a",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2024__holdout-2025-002\\survivors\\COD_q0051",
+            "bytes": 81,
+            "sha256": "f3feb33cc59550fe0fdfc235fc34c1e017085399f62da9c0491680e971fac2c3"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\phoenix-parameter-sweep\\q005_b",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2024__holdout-2025-002\\survivors\\COD_q0052",
+            "bytes": 81,
+            "sha256": "ff8c0e52eda674bc3e75a809b82e63a4fffc0f102f1c815dd9097bf1ebc053e6"
+          }
+        ],
+        "HLS_segment_fault": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\repos\\corewars8086-survivors\\cgx2024\\05-final2\\HLS_segment_fault1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2024__holdout-2025-002\\survivors\\HLS_segment_fault1",
+            "bytes": 492,
+            "sha256": "267dbe82e9af96b3a8531afbf32ab08281cdae0bc86c4e340f2008e8ec1c3cc2"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\repos\\corewars8086-survivors\\cgx2024\\05-final2\\HLS_segment_fault2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2024__holdout-2025-002\\survivors\\HLS_segment_fault2",
+            "bytes": 320,
+            "sha256": "028054edfcdc11162402200d9aa7af823a02f14ff06afe5e786cfecbcb21e931"
+          }
+        ],
+        "HRZ_JMP2HELL_2024": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\repos\\corewars8086-survivors\\cgx2024\\05-final2\\HRZ_JMP2HELL1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2024__holdout-2025-002\\survivors\\HRZ_JMP2HELL_20241",
+            "bytes": 201,
+            "sha256": "3f702b7b910a2f33e344ac1987f1c8459e5cf4284f2e3324de1e8c73db41bd8d"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\repos\\corewars8086-survivors\\cgx2024\\05-final2\\HRZ_JMP2HELL2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2024__holdout-2025-002\\survivors\\HRZ_JMP2HELL_20242",
+            "bytes": 458,
+            "sha256": "3ae18e16a194658a519ab56a1c181d5c256d3d5e2e9963855c2897df84fa2015"
+          }
+        ],
+        "TOM_R_JS": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\repos\\corewars8086-survivors\\cgx2024\\05-final2\\TOM_R_JS1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2024__holdout-2025-002\\survivors\\TOM_R_JS1",
+            "bytes": 448,
+            "sha256": "67435a02103c8db2e0e9b2d489e0dbfc613d41ab911e07707c984dec23d91101"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\repos\\corewars8086-survivors\\cgx2024\\05-final2\\TOM_R_JS2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2024__holdout-2025-002\\survivors\\TOM_R_JS2",
+            "bytes": 512,
+            "sha256": "8428b7584375a88b3e3eb6a3e48af7c478afdc07013b264d7bb3e462b67e85e2"
+          }
+        ]
+      },
+      "zombies": [
+        {
+          "name": "zom20a",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20a",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2024__holdout-2025-002\\zombies\\zom20a",
+          "bytes": 73,
+          "sha256": "a950e618ea2e127096c85f486fb555c264730d924a2192c407aa66e6e0318eb6"
+        },
+        {
+          "name": "zom20b",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20b",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2024__holdout-2025-002\\zombies\\zom20b",
+          "bytes": 382,
+          "sha256": "af6394c021ccb5e486db507e2ccd787bd5675f8fec88fd2ddbe9f834566852ce"
+        },
+        {
+          "name": "zom20c",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20c",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2024__holdout-2025-002\\zombies\\zom20c",
+          "bytes": 232,
+          "sha256": "3d3f209967f51a7344e0eab582bc04d1e694da5a73e3682a26ed483dcab7a443"
+        },
+        {
+          "name": "zom20d",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20d",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2024__holdout-2025-002\\zombies\\zom20d",
+          "bytes": 382,
+          "sha256": "923dd6abebbb7bb502ec5a02873c26175820ada5c4409d179d8464f0e90cb6fc"
+        }
+      ],
+      "scores": {
+        "groups": {
+          "COD_q005": 49.5,
+          "HLS_segment_fault": 5,
+          "HRZ_JMP2HELL_2024": 15,
+          "TOM_R_JS": 30.5
+        },
+        "warriors": {
+          "COD_q0051": 26.5,
+          "COD_q0052": 23,
+          "HLS_segment_fault1": 3.5,
+          "HLS_segment_fault2": 1.5,
+          "HRZ_JMP2HELL_20241": 7.5,
+          "HRZ_JMP2HELL_20242": 7.5,
+          "TOM_R_JS1": 17.5,
+          "TOM_R_JS2": 13
+        }
+      },
+      "candidate": {
+        "teamRaw": 49.5,
+        "teamPerBattle": 0.495,
+        "warrior1Raw": 26.5,
+        "warrior1PerBattle": 0.265,
+        "warrior2Raw": 23,
+        "warrior2PerBattle": 0.23
+      },
+      "rawScoreText": "Groups:\nCOD_q005,49.5\nHLS_segment_fault,5.0\nHRZ_JMP2HELL_2024,15.0\nTOM_R_JS,30.5\n\nWarriors:\nCOD_q0051,26.5\nCOD_q0052,23.0\nHLS_segment_fault1,3.5\nHLS_segment_fault2,1.5\nHRZ_JMP2HELL_20241,7.5\nHRZ_JMP2HELL_20242,7.5\nTOM_R_JS1,17.5\nTOM_R_JS2,13.0\n",
+      "stdout": "CoreWars8086 - headless mode\n\r\nLoaded warriors: [COD_q005, HLS_segment_fault, HRZ_JMP2HELL_2024, TOM_R_JS]\r\nStarting competition (100 wars) in parallel.\r\nCompetition is over. Ran 100 wars\r\nWriting scores to file C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2024__holdout-2025-002\\scores.csv\r\n"
+    },
+    {
+      "runId": "unseen-2023__holdout-2025-001",
+      "cohortId": "unseen-2023",
+      "seed": "holdout-2025-001",
+      "battles": 100,
+      "startedAt": "2026-09-19T18:04:17.711Z",
+      "elapsedSeconds": 1.629141,
+      "command": {
+        "executable": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\tools\\temurin8-jre\\jdk8u504-b01-jre\\bin\\java.exe",
+        "args": [
+          "-jar",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+          "--headless",
+          "--comboSize",
+          "4",
+          "--battlesPerCombo",
+          "100",
+          "--seed",
+          "holdout-2025-001",
+          "--threads",
+          "4",
+          "--warriorsDir",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2023__holdout-2025-001\\survivors",
+          "--zombiesDir",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2023__holdout-2025-001\\zombies",
+          "--outputFile",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2023__holdout-2025-001\\scores.csv"
+        ]
+      },
+      "inputs": {
+        "COD_q005": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\phoenix-parameter-sweep\\q005_a",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2023__holdout-2025-001\\survivors\\COD_q0051",
+            "bytes": 81,
+            "sha256": "f3feb33cc59550fe0fdfc235fc34c1e017085399f62da9c0491680e971fac2c3"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\phoenix-parameter-sweep\\q005_b",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2023__holdout-2025-001\\survivors\\COD_q0052",
+            "bytes": 81,
+            "sha256": "ff8c0e52eda674bc3e75a809b82e63a4fffc0f102f1c815dd9097bf1ebc053e6"
+          }
+        ],
+        "HRZ_JMP2HELL_2023": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\repos\\corewars8086-survivors\\cgx2023\\phase2\\HRZ_JMP2HELL1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2023__holdout-2025-001\\survivors\\HRZ_JMP2HELL_20231",
+            "bytes": 512,
+            "sha256": "eb18339ae3da9bf2d8cbc1d7e7111fe9767b0f824e8e227cbcfca3f7cafc7cd6"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\repos\\corewars8086-survivors\\cgx2023\\phase2\\HRZ_JMP2HELL2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2023__holdout-2025-001\\survivors\\HRZ_JMP2HELL_20232",
+            "bytes": 171,
+            "sha256": "64f58cf76fa3f461e32e7d74805c8f32fa94e513b54152aff9ad568f09d01dc8"
+          }
+        ],
+        "ORH_CANNON": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\repos\\corewars8086-survivors\\cgx2023\\phase2\\ORH_CANNON1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2023__holdout-2025-001\\survivors\\ORH_CANNON1",
+            "bytes": 307,
+            "sha256": "018c58aace97164a8cd103996c460d0fca827e7fcea886a9cb70922986d1c061"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\repos\\corewars8086-survivors\\cgx2023\\phase2\\ORH_CANNON2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2023__holdout-2025-001\\survivors\\ORH_CANNON2",
+            "bytes": 420,
+            "sha256": "d0b2d7f5838c9ceef79a841cf2c34eedb1c1083e979eebcf23efeda013de48c5"
+          }
+        ],
+        "TOM_callBarama": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\repos\\corewars8086-survivors\\cgx2023\\phase2\\TOM_callBarama1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2023__holdout-2025-001\\survivors\\TOM_callBarama1",
+            "bytes": 496,
+            "sha256": "011ab33d2814c2923000151fa21a15228f5deb88ba611ff0f4de440732f72ca9"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\repos\\corewars8086-survivors\\cgx2023\\phase2\\TOM_callBarama2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2023__holdout-2025-001\\survivors\\TOM_callBarama2",
+            "bytes": 291,
+            "sha256": "b30ff12039e5b90d0caa1f7c77308525b9ffed81d0670c240b0664fae80a6700"
+          }
+        ]
+      },
+      "zombies": [
+        {
+          "name": "zom20a",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20a",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2023__holdout-2025-001\\zombies\\zom20a",
+          "bytes": 73,
+          "sha256": "a950e618ea2e127096c85f486fb555c264730d924a2192c407aa66e6e0318eb6"
+        },
+        {
+          "name": "zom20b",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20b",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2023__holdout-2025-001\\zombies\\zom20b",
+          "bytes": 382,
+          "sha256": "af6394c021ccb5e486db507e2ccd787bd5675f8fec88fd2ddbe9f834566852ce"
+        },
+        {
+          "name": "zom20c",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20c",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2023__holdout-2025-001\\zombies\\zom20c",
+          "bytes": 232,
+          "sha256": "3d3f209967f51a7344e0eab582bc04d1e694da5a73e3682a26ed483dcab7a443"
+        },
+        {
+          "name": "zom20d",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20d",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2023__holdout-2025-001\\zombies\\zom20d",
+          "bytes": 382,
+          "sha256": "923dd6abebbb7bb502ec5a02873c26175820ada5c4409d179d8464f0e90cb6fc"
+        }
+      ],
+      "scores": {
+        "groups": {
+          "COD_q005": 21.166666,
+          "HRZ_JMP2HELL_2023": 17.666666,
+          "ORH_CANNON": 31.333334,
+          "TOM_callBarama": 29.833332
+        },
+        "warriors": {
+          "COD_q0051": 10.833334,
+          "COD_q0052": 10.333334,
+          "HRZ_JMP2HELL_20231": 9.333334,
+          "HRZ_JMP2HELL_20232": 8.333334,
+          "ORH_CANNON1": 15.333333,
+          "ORH_CANNON2": 16,
+          "TOM_callBarama1": 15.5,
+          "TOM_callBarama2": 14.333333
+        }
+      },
+      "candidate": {
+        "teamRaw": 21.166666,
+        "teamPerBattle": 0.21166666,
+        "warrior1Raw": 10.833334,
+        "warrior1PerBattle": 0.10833334,
+        "warrior2Raw": 10.333334,
+        "warrior2PerBattle": 0.10333334000000001
+      },
+      "rawScoreText": "Groups:\nCOD_q005,21.166666\nHRZ_JMP2HELL_2023,17.666666\nORH_CANNON,31.333334\nTOM_callBarama,29.833332\n\nWarriors:\nCOD_q0051,10.833334\nCOD_q0052,10.333334\nHRZ_JMP2HELL_20231,9.333334\nHRZ_JMP2HELL_20232,8.333334\nORH_CANNON1,15.333333\nORH_CANNON2,16.0\nTOM_callBarama1,15.5\nTOM_callBarama2,14.333333\n",
+      "stdout": "CoreWars8086 - headless mode\n\r\nLoaded warriors: [COD_q005, HRZ_JMP2HELL_2023, ORH_CANNON, TOM_callBarama]\r\nStarting competition (100 wars) in parallel.\r\nCompetition is over. Ran 100 wars\r\nWriting scores to file C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2023__holdout-2025-001\\scores.csv\r\n"
+    },
+    {
+      "runId": "unseen-2023__holdout-2025-002",
+      "cohortId": "unseen-2023",
+      "seed": "holdout-2025-002",
+      "battles": 100,
+      "startedAt": "2026-09-19T18:04:19.379Z",
+      "elapsedSeconds": 1.8338686,
+      "command": {
+        "executable": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\tools\\temurin8-jre\\jdk8u504-b01-jre\\bin\\java.exe",
+        "args": [
+          "-jar",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+          "--headless",
+          "--comboSize",
+          "4",
+          "--battlesPerCombo",
+          "100",
+          "--seed",
+          "holdout-2025-002",
+          "--threads",
+          "4",
+          "--warriorsDir",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2023__holdout-2025-002\\survivors",
+          "--zombiesDir",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2023__holdout-2025-002\\zombies",
+          "--outputFile",
+          "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2023__holdout-2025-002\\scores.csv"
+        ]
+      },
+      "inputs": {
+        "COD_q005": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\phoenix-parameter-sweep\\q005_a",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2023__holdout-2025-002\\survivors\\COD_q0051",
+            "bytes": 81,
+            "sha256": "f3feb33cc59550fe0fdfc235fc34c1e017085399f62da9c0491680e971fac2c3"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\phoenix-parameter-sweep\\q005_b",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2023__holdout-2025-002\\survivors\\COD_q0052",
+            "bytes": 81,
+            "sha256": "ff8c0e52eda674bc3e75a809b82e63a4fffc0f102f1c815dd9097bf1ebc053e6"
+          }
+        ],
+        "HRZ_JMP2HELL_2023": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\repos\\corewars8086-survivors\\cgx2023\\phase2\\HRZ_JMP2HELL1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2023__holdout-2025-002\\survivors\\HRZ_JMP2HELL_20231",
+            "bytes": 512,
+            "sha256": "eb18339ae3da9bf2d8cbc1d7e7111fe9767b0f824e8e227cbcfca3f7cafc7cd6"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\repos\\corewars8086-survivors\\cgx2023\\phase2\\HRZ_JMP2HELL2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2023__holdout-2025-002\\survivors\\HRZ_JMP2HELL_20232",
+            "bytes": 171,
+            "sha256": "64f58cf76fa3f461e32e7d74805c8f32fa94e513b54152aff9ad568f09d01dc8"
+          }
+        ],
+        "ORH_CANNON": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\repos\\corewars8086-survivors\\cgx2023\\phase2\\ORH_CANNON1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2023__holdout-2025-002\\survivors\\ORH_CANNON1",
+            "bytes": 307,
+            "sha256": "018c58aace97164a8cd103996c460d0fca827e7fcea886a9cb70922986d1c061"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\repos\\corewars8086-survivors\\cgx2023\\phase2\\ORH_CANNON2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2023__holdout-2025-002\\survivors\\ORH_CANNON2",
+            "bytes": 420,
+            "sha256": "d0b2d7f5838c9ceef79a841cf2c34eedb1c1083e979eebcf23efeda013de48c5"
+          }
+        ],
+        "TOM_callBarama": [
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\repos\\corewars8086-survivors\\cgx2023\\phase2\\TOM_callBarama1",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2023__holdout-2025-002\\survivors\\TOM_callBarama1",
+            "bytes": 496,
+            "sha256": "011ab33d2814c2923000151fa21a15228f5deb88ba611ff0f4de440732f72ca9"
+          },
+          {
+            "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\repos\\corewars8086-survivors\\cgx2023\\phase2\\TOM_callBarama2",
+            "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2023__holdout-2025-002\\survivors\\TOM_callBarama2",
+            "bytes": 291,
+            "sha256": "b30ff12039e5b90d0caa1f7c77308525b9ffed81d0670c240b0664fae80a6700"
+          }
+        ]
+      },
+      "zombies": [
+        {
+          "name": "zom20a",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20a",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2023__holdout-2025-002\\zombies\\zom20a",
+          "bytes": 73,
+          "sha256": "a950e618ea2e127096c85f486fb555c264730d924a2192c407aa66e6e0318eb6"
+        },
+        {
+          "name": "zom20b",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20b",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2023__holdout-2025-002\\zombies\\zom20b",
+          "bytes": 382,
+          "sha256": "af6394c021ccb5e486db507e2ccd787bd5675f8fec88fd2ddbe9f834566852ce"
+        },
+        {
+          "name": "zom20c",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20c",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2023__holdout-2025-002\\zombies\\zom20c",
+          "bytes": 232,
+          "sha256": "3d3f209967f51a7344e0eab582bc04d1e694da5a73e3682a26ed483dcab7a443"
+        },
+        {
+          "name": "zom20d",
+          "source": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\official-2025\\zombies-live\\zom20d",
+          "target": "C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2023__holdout-2025-002\\zombies\\zom20d",
+          "bytes": 382,
+          "sha256": "923dd6abebbb7bb502ec5a02873c26175820ada5c4409d179d8464f0e90cb6fc"
+        }
+      ],
+      "scores": {
+        "groups": {
+          "COD_q005": 22.833334,
+          "HRZ_JMP2HELL_2023": 18,
+          "ORH_CANNON": 28,
+          "TOM_callBarama": 31.166668
+        },
+        "warriors": {
+          "COD_q0051": 14,
+          "COD_q0052": 8.833333,
+          "HRZ_JMP2HELL_20231": 8.5,
+          "HRZ_JMP2HELL_20232": 9.5,
+          "ORH_CANNON1": 14,
+          "ORH_CANNON2": 14,
+          "TOM_callBarama1": 13.833333,
+          "TOM_callBarama2": 17.333332
+        }
+      },
+      "candidate": {
+        "teamRaw": 22.833334,
+        "teamPerBattle": 0.22833334,
+        "warrior1Raw": 14,
+        "warrior1PerBattle": 0.14,
+        "warrior2Raw": 8.833333,
+        "warrior2PerBattle": 0.08833333
+      },
+      "rawScoreText": "Groups:\nCOD_q005,22.833334\nHRZ_JMP2HELL_2023,18.0\nORH_CANNON,28.0\nTOM_callBarama,31.166668\n\nWarriors:\nCOD_q0051,14.0\nCOD_q0052,8.833333\nHRZ_JMP2HELL_20231,8.5\nHRZ_JMP2HELL_20232,9.5\nORH_CANNON1,14.0\nORH_CANNON2,14.0\nTOM_callBarama1,13.833333\nTOM_callBarama2,17.333332\n",
+      "stdout": "CoreWars8086 - headless mode\n\r\nLoaded warriors: [COD_q005, HRZ_JMP2HELL_2023, ORH_CANNON, TOM_callBarama]\r\nStarting competition (100 wars) in parallel.\r\nCompetition is over. Ran 100 wars\r\nWriting scores to file C:\\Users\\ronyr\\Codex\\2026-05-02\\2025\\scratch\\corewars8086-lab\\build\\official-runs\\q005-holdout\\unseen-2023__holdout-2025-002\\scores.csv\r\n"
+    }
+  ]
+}

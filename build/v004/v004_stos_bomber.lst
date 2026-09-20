@@ -1,0 +1,24 @@
+     1                                  bits 16
+     2                                  
+     3                                  start:
+     4 00000000 89C5                        mov bp, ax
+     5 00000002 1E                          push ds
+     6 00000003 07                          pop es
+     7                                  
+     8                                      ; Two seed-relative 256-byte strikes before entering the tight scanner.
+     9 00000004 89EF                        mov di, bp
+    10 00000006 81C7132D                    add di, 2D13h
+    11 0000000A B8CCCC                      mov ax, 0CCCCh
+    12 0000000D BACCCC                      mov dx, 0CCCCh
+    13 00000010 CD86                        int 86h
+    14 00000012 81C70080                    add di, 8000h
+    15 00000016 CD86                        int 86h
+    16                                  
+    17 00000018 89EF                        mov di, bp
+    18 0000001A 81C75713                    add di, 1357h
+    19                                  scan:
+    20 0000001E AB                          stosw
+    21 0000001F 81C7FD0F                    add di, 0FFDh
+    22 00000023 9B9B                        db 09Bh, 09Bh
+    23 00000025 EBF7                        jmp scan
+    24                                  

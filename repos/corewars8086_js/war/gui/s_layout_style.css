@@ -1,0 +1,48 @@
+
+.sl_top_div {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden; /* prevent scrollbars due to 1 pixel errors */
+    white-space: nowrap;
+}
+
+.sl_child_div_v {
+    display: inline-block;
+    vertical-align: top;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.sl_child_div_h {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.sl_v_splitter {
+    display: inline-block;
+    cursor: col-resize;
+    width: 5px;
+    height: 100%;
+}
+.sl_h_splitter {
+    display: block;
+    cursor: row-resize;
+    height: 5px;
+    width: 100%;
+}
+
+.sl_splitter:hover {
+    background-color: #ccc;
+}
+.sl_splitter {
+    background-color: #ddd;
+}
+
+.sl_hidden {
+    display: none;
+}
+

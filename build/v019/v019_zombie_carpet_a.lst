@@ -1,0 +1,47 @@
+     1                                  bits 16
+     2                                  
+     3                                  %define HOOK_CELL 06D3Bh
+     4                                  
+     5                                  start:
+     6 00000000 89C5                        mov bp, ax
+     7 00000002 89C6                        mov si, ax
+     8 00000004 83C61F                      add si, stolen_entry - start
+     9 00000007 89363B6D                    mov [HOOK_CELL], si
+    10                                  
+    11                                      ; In the 2025 live pack, both long Zombies contain repeated
+    12                                      ; EB F9 CC CC tails.  Redirect the first still-unclaimed occurrence to a
+    13                                      ; fixed arena cell that contains this instance's dynamic entry address.
+    14 0000000B 1E                          push ds
+    15 0000000C 07                          pop es
+    16 0000000D 31FF                        xor di, di
+    17 0000000F B8EBF9                      mov ax, 0F9EBh
+    18 00000012 BACCCC                      mov dx, 0CCCCh
+    19 00000015 BBFF26                      mov bx, 026FFh
+    20 00000018 B93B6D                      mov cx, HOOK_CELL
+    21 0000001B CD87                        int 87h
+    22 0000001D EB0F                        jmp fallback
+    23                                  
+    24                                  stolen_entry:
+    25 0000001F 1E                          push ds
+    26 00000020 07                          pop es
+    27 00000021 BF5713                      mov di, 1357h
+    28 00000024 B8CCCC                      mov ax, 0CCCCh
+    29                                  stolen_loop:
+    30 00000027 AB                          stosw
+    31 00000028 81C7FB1F                    add di, 1FFBh
+    32 0000002C EBF9                        jmp stolen_loop
+    33                                  
+    34                                  fallback:
+    35 0000002E 1E                          push ds
+    36 0000002F 17                          pop ss
+    37 00000030 89EC                        mov sp, bp
+    38 00000032 81C43333                    add sp, 3333h
+    39 00000036 1E                          push ds
+    40 00000037 07                          pop es
+    41 00000038 89EF                        mov di, bp
+    42 0000003A 83C742                      add di, generated - start
+    43 0000003D B850AB                      mov ax, 0AB50h
+    44 00000040 50                          push ax
+    45 00000041 AB                          stosw
+    46                                  generated:
+    47                                  

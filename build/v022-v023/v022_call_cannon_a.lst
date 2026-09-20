@@ -1,0 +1,27 @@
+     1                                  bits 16
+     2                                  
+     3                                  start:
+     4                                      ; Plant a two-byte recursive far-call loop.  Each scheduled opcode pushes
+     5                                      ; CS and the return IP into the arena, so the live head emits four bytes
+     6                                      ; per round while the far pointer itself remains in team-private memory.
+     7 00000000 89C5                        mov bp, ax
+     8 00000002 06                          push es
+     9 00000003 5A                          pop dx
+    10 00000004 1E                          push ds
+    11 00000005 07                          pop es
+    12 00000006 89EF                        mov di, bp
+    13 00000008 81C7132D                    add di, 2D13h
+    14 0000000C B8FF1F                      mov ax, 01FFFh
+    15 0000000F AB                          stosw
+    16 00000010 83EF02                      sub di, 2
+    17 00000013 52                          push dx
+    18 00000014 1F                          pop ds
+    19 00000015 BB0002                      mov bx, 0200h
+    20 00000018 893F                        mov [bx], di
+    21 0000001A 8C4F02                      mov [bx + 2], cs
+    22 0000001D 0E                          push cs
+    23 0000001E 17                          pop ss
+    24 0000001F 89EC                        mov sp, bp
+    25 00000021 81C4096A                    add sp, 6A09h
+    26 00000025 FF1F                        call far [bx]
+    27                                  

@@ -1,0 +1,50 @@
+     1                                  bits 16
+     2                                  %define FAR_SEG 0FFCh
+     3                                  %define PTR_CELL 00240h
+     4                                  start:
+     5 00000000 89C6                        mov si, ax
+     6 00000002 88E0                        mov al, ah
+     7 00000004 30E4                        xor ah, ah
+     8 00000006 B555                        mov ch, 055h
+     9 00000008 F6F5                        div ch
+    10 0000000A F6E5                        mul ch
+    11 0000000C 88C4                        mov ah, al
+    12 0000000E 80C420                      add ah, 020h
+    13 00000011 B0A2                        mov al, 0A2h
+    14 00000013 83C64C                      add si, worker - start
+    15 00000016 16                          push ss
+    16 00000017 07                          pop es
+    17 00000018 31FF                        xor di, di
+    18 0000001A B90900                      mov cx, 9
+    19 0000001D F3A5                        rep movsw
+    20 0000001F 16                          push ss
+    21 00000020 1F                          pop ds
+    22 00000021 0E                          push cs
+    23 00000022 17                          pop ss
+    24 00000023 BB4002                      mov bx, PTR_CELL
+    25 00000026 8907                        mov [bx], ax
+    26 00000028 C74702FC0F                  mov word [bx + 2], FAR_SEG
+    27 0000002D 31F6                        xor si, si
+    28 0000002F 89C7                        mov di, ax
+    29 00000031 B8FC0F                      mov ax, FAR_SEG
+    30 00000034 8EC0                        mov es, ax
+    31 00000036 89FC                        mov sp, di
+    32 00000038 81C40003                    add sp, 0300h
+    33 0000003C B90900                      mov cx, 9
+    34 0000003F BA0051                      mov dx, 05100h
+    35 00000042 BD0055                      mov bp, 05500h
+    36 00000045 B8FF1F                      mov ax, 01FFFh
+    37 00000048 AB                          stosw
+    38 00000049 4F                          dec di
+    39 0000004A FF1F                        call far [bx]
+    40                                  worker:
+    41 0000004C A5                          movsw
+    42 0000004D F3A5                        rep movsw
+    43 0000004F 29D4                        sub sp, dx
+    44 00000051 292F                        sub [bx], bp
+    45 00000053 8B3F                        mov di, [bx]
+    46 00000055 B109                        mov cl, 9
+    47 00000057 31F6                        xor si, si
+    48 00000059 AB                          stosw
+    49 0000005A 4F                          dec di
+    50 0000005B FF1F                        call far [bx]

@@ -1,0 +1,53 @@
+     1                                  bits 16
+     2                                  
+     3                                  ; Phoenix B: the same protected replication engine as A, aimed at a
+     4                                  ; different arena band and using a separate private-stack pointer cell.
+     5                                  %define FAR_SEG  0FF8h
+     6                                  %define PTR_CELL 00240h
+     7                                  
+     8                                  start:
+     9 00000000 89C6                        mov si, ax
+    10 00000002 B0A2                        mov al, 0A2h
+    11 00000004 80C48D                      add ah, 08Dh
+    12 00000007 83C640                      add si, worker - start
+    13                                  
+    14 0000000A 16                          push ss
+    15 0000000B 07                          pop es
+    16 0000000C 31FF                        xor di, di
+    17 0000000E B90900                      mov cx, 9
+    18 00000011 F3A5                        rep movsw
+    19                                  
+    20 00000013 16                          push ss
+    21 00000014 1F                          pop ds
+    22 00000015 0E                          push cs
+    23 00000016 17                          pop ss
+    24                                  
+    25 00000017 BB4002                      mov bx, PTR_CELL
+    26 0000001A 8907                        mov [bx], ax
+    27 0000001C C74702F80F                  mov word [bx + 2], FAR_SEG
+    28                                  
+    29 00000021 31F6                        xor si, si
+    30 00000023 89C7                        mov di, ax
+    31 00000025 B8F80F                      mov ax, FAR_SEG
+    32 00000028 8EC0                        mov es, ax
+    33 0000002A 89FC                        mov sp, di
+    34 0000002C 81C40005                    add sp, 00500h
+    35 00000030 B90900                      mov cx, 9
+    36 00000033 BA0036                      mov dx, 03600h
+    37 00000036 BD003C                      mov bp, 03C00h
+    38 00000039 B8FF1F                      mov ax, 01FFFh
+    39 0000003C AB                          stosw
+    40 0000003D 4F                          dec di
+    41 0000003E FF1F                        call far [bx]
+    42                                  
+    43                                  worker:
+    44 00000040 A5                          movsw
+    45 00000041 F3A5                        rep movsw
+    46 00000043 29D4                        sub sp, dx
+    47 00000045 292F                        sub [bx], bp
+    48 00000047 8B3F                        mov di, [bx]
+    49 00000049 B109                        mov cl, 9
+    50 0000004B 31F6                        xor si, si
+    51 0000004D AB                          stosw
+    52 0000004E 4F                          dec di
+    53 0000004F FF1F                        call far [bx]

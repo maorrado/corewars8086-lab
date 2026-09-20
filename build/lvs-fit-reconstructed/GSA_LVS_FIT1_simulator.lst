@@ -1,0 +1,46 @@
+     1                                  bits 16
+     2                                  
+     3                                  ; Byte-exact simulator-ready reconstruction of the official 2025 Young binary.
+     4                                  
+     5 00000000 90                          nop
+     6 00000001 06                          push es
+     7 00000002 50                          push ax
+     8 00000003 0E                          push cs
+     9 00000004 07                          pop es
+    10 00000005 B88907                      mov ax, 0789h
+    11 00000008 BA8C4F                      mov dx, 04F8Ch
+    12 0000000B B9CCCC                      mov cx, 0CCCCh
+    13 0000000E 89CB                        mov bx, cx
+    14 00000010 BF0000                      mov di, 0
+    15 00000013 CD87                        int 087h
+    16 00000015 58                          pop ax
+    17 00000016 07                          pop es
+    18 00000017 BA0000                      mov dx, 0
+    19 0000001A B90000                      mov cx, 0
+    20 0000001D BB0000                      mov bx, 0
+    21 00000020 06                          push es
+    22 00000021 1E                          push ds
+    23 00000022 07                          pop es
+    24 00000023 1F                          pop ds
+    25 00000024 BB3600                      mov bx, 036h
+    26 00000027 8907                        mov [bx], ax
+    27 00000029 90                          nop
+    28 0000002A C74702A510                  mov word [bx + 2], 010A5h
+    29 0000002F 0E                          push cs
+    30 00000030 17                          pop ss
+    31 00000031 90                          nop
+    32 00000032 89C4                        mov sp, ax
+    33 00000034 BD96F5                      mov bp, 0F596h
+    34 00000037 81C4520A                    add sp, 0A52h
+    35 0000003B 81070419                    add word [bx], 01904h
+    36 0000003F 81C4041D                    add sp, 01D04h
+    37 00000043 392F                        cmp [bx], bp
+    38 00000045 77ED                        db 077h, 0EDh
+    39 00000047 8B3F                        mov di, [bx]
+    40 00000049 81C7500A                    add di, 0A50h
+    41 0000004D B91E00                      mov cx, 01Eh
+    42 00000050 BE0000                      mov si, 0
+    43 00000053 A5                          movsw
+    44 00000054 B91100                      mov cx, 011h
+    45 00000057 83EF01                      sub di, 1
+    46 0000005A FF1F                        call far [bx]

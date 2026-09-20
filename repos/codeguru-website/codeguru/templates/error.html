@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<meta http-equiv="refresh" content="3;url={% url 'index' %}" />
+
+{% if form is not None %}
+    {% if form.errors %}
+        {% for field in form %}
+            {% for error in field.errors %}
+                {{ error }}
+            {% endfor %}
+        {% endfor %}
+        {% for error in form.non_field_errors %}
+            {{ error }}
+        {% endfor %}
+    {% endif %}
+{% else %}
+    <p>{{ error_message }}</p>
+{% endif %}
+
+{% endblock content %}

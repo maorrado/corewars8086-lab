@@ -1,0 +1,16 @@
+     1                                  bits 16
+     2                                  
+     3                                  start:
+     4                                      ; Immediate general-purpose member: no opponent signature dependency.
+     5 00000000 1E                          push ds
+     6 00000001 17                          pop ss
+     7 00000002 89C4                        mov sp, ax
+     8 00000004 1E                          push ds
+     9 00000005 07                          pop es
+    10 00000006 89C7                        mov di, ax
+    11 00000008 83C710                      add di, generated - start
+    12 0000000B B850AB                      mov ax, 0AB50h
+    13 0000000E 50                          push ax
+    14 0000000F AB                          stosw
+    15                                  generated:
+    16                                  

@@ -1,0 +1,28 @@
+     1                                  bits 16
+     2                                  
+     3                                  start:
+     4                                      ; Three identical call heads absorb a small amount of targeted damage;
+     5                                      ; execution begins at the middle copy.
+     6 00000000 89C5                        mov bp, ax
+     7 00000002 06                          push es
+     8 00000003 5A                          pop dx
+     9 00000004 1E                          push ds
+    10 00000005 07                          pop es
+    11 00000006 89EF                        mov di, bp
+    12 00000008 81C7B731                    add di, 31B7h
+    13 0000000C B8FF1F                      mov ax, 01FFFh
+    14 0000000F AB                          stosw
+    15 00000010 AB                          stosw
+    16 00000011 AB                          stosw
+    17 00000012 83EF04                      sub di, 4
+    18 00000015 52                          push dx
+    19 00000016 1F                          pop ds
+    20 00000017 BB8002                      mov bx, 0280h
+    21 0000001A 893F                        mov [bx], di
+    22 0000001C 8C4F02                      mov [bx + 2], cs
+    23 0000001F 0E                          push cs
+    24 00000020 17                          pop ss
+    25 00000021 89EC                        mov sp, bp
+    26 00000023 81C4834C                    add sp, 4C83h
+    27 00000027 FF1F                        call far [bx]
+    28                                  

@@ -1,0 +1,71 @@
+     1                                  bits 16
+     2                                  
+     3                                  %define FAR_SEG  0FF8h
+     4                                  %define PTR_CELL 0240h
+     5                                  %define HOOK_CELL 0A37Dh
+     6                                  
+     7                                  start:
+     8 00000000 89C6                        mov si, ax
+     9 00000002 89C7                        mov di, ax
+    10 00000004 83C721                      add di, stolen_entry - start
+    11 00000007 893E7DA3                    mov [HOOK_CELL], di
+    12 0000000B 0E                          push cs
+    13 0000000C 07                          pop es
+    14 0000000D 31FF                        xor di, di
+    15 0000000F B8EBF9                      mov ax, 0F9EBh
+    16 00000012 BACCCC                      mov dx, 0CCCCh
+    17 00000015 BBFF26                      mov bx, 026FFh
+    18 00000018 B97DA3                      mov cx, HOOK_CELL
+    19 0000001B CD87                        int 87h
+    20 0000001D 89F0                        mov ax, si
+    21 0000001F EB09                        jmp phoenix_init
+    22                                  
+    23                                  stolen_entry:
+    24 00000021 E80000                      call .get_ip
+    25                                  .get_ip:
+    26 00000024 5E                          pop si
+    27 00000025 83EE24                      sub si, .get_ip - start
+    28 00000028 89F0                        mov ax, si
+    29                                  
+    30                                  phoenix_init:
+    31 0000002A B0A2                        mov al, 0A2h
+    32 0000002C 80C48D                      add ah, 8Dh
+    33 0000002F 83C668                      add si, worker - start
+    34 00000032 16                          push ss
+    35 00000033 07                          pop es
+    36 00000034 31FF                        xor di, di
+    37 00000036 B90900                      mov cx, 9
+    38 00000039 F3A5                        rep movsw
+    39 0000003B 16                          push ss
+    40 0000003C 1F                          pop ds
+    41 0000003D 0E                          push cs
+    42 0000003E 17                          pop ss
+    43 0000003F BB4002                      mov bx, PTR_CELL
+    44 00000042 8907                        mov [bx], ax
+    45 00000044 C74702F80F                  mov word [bx + 2], FAR_SEG
+    46 00000049 31F6                        xor si, si
+    47 0000004B 89C7                        mov di, ax
+    48 0000004D B8F80F                      mov ax, FAR_SEG
+    49 00000050 8EC0                        mov es, ax
+    50 00000052 89FC                        mov sp, di
+    51 00000054 81C40005                    add sp, 0500h
+    52 00000058 B90900                      mov cx, 9
+    53 0000005B BA0034                      mov dx, 03400h
+    54 0000005E BD003A                      mov bp, 03A00h
+    55 00000061 B8FF1F                      mov ax, 01FFFh
+    56 00000064 AB                          stosw
+    57 00000065 4F                          dec di
+    58 00000066 FF1F                        call far [bx]
+    59                                  
+    60                                  worker:
+    61 00000068 A5                          movsw
+    62 00000069 F3A5                        rep movsw
+    63 0000006B 29D4                        sub sp, dx
+    64 0000006D 292F                        sub [bx], bp
+    65 0000006F 8B3F                        mov di, [bx]
+    66 00000071 B109                        mov cl, 9
+    67 00000073 31F6                        xor si, si
+    68 00000075 AB                          stosw
+    69 00000076 4F                          dec di
+    70 00000077 FF1F                        call far [bx]
+    71                                  

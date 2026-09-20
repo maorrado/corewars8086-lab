@@ -1,0 +1,22 @@
+     1                                  bits 16
+     2                                  
+     3                                  start:
+     4                                      ; A relocated NRG runway trades early attack speed for a large energy
+     5                                      ; reserve, then enters an AB50 seed at the runway tail.
+     6 00000000 89C3                        mov bx, ax
+     7 00000002 1E                          push ds
+     8 00000003 17                          pop ss
+     9 00000004 1E                          push ds
+    10 00000005 07                          pop es
+    11 00000006 89DF                        mov di, bx
+    12 00000008 81C7B731                    add di, 31B7h
+    13 0000000C 89FD                        mov bp, di
+    14 0000000E B89B9B                      mov ax, 09B9Bh
+    15 00000011 89C2                        mov dx, ax
+    16 00000013 CD86                        int 86h
+    17 00000015 B850AB                      mov ax, 0AB50h
+    18 00000018 AB                          stosw
+    19 00000019 89FC                        mov sp, di
+    20 0000001B 81C45B5A                    add sp, 5A5Bh
+    21 0000001F FFE5                        jmp bp
+    22                                  
