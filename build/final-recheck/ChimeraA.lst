@@ -1,0 +1,87 @@
+     1                                  bits 16
+     2
+     3                                  ; Chimera A (m045): balanced hybrid; protected Phoenix plus Zombie-B/D capture.
+     4                                  %define FAR_SEG  0FFCh
+     5                                  %define PTR_CELL 00200h
+     6
+     7                                  start:
+     8 00000000 89C6                        mov si, ax
+     9 00000002 89C7                        mov di, ax
+    10 00000004 83C738                      add di, zombie_entry - start
+    11 00000007 893E135D                    mov [05D13h], di
+    12 0000000B 0E                          push cs
+    13 0000000C 07                          pop es
+    14 0000000D 31FF                        xor di, di
+    15 0000000F B8EBF9                      mov ax, 0F9EBh
+    16 00000012 BACCCC                      mov dx, 0CCCCh
+    17 00000015 BBFF26                      mov bx, 026FFh
+    18 00000018 B9135D                      mov cx, 05D13h
+    19 0000001B FD                          std
+    20 0000001C CD87                        int 087h
+    21 0000001E FC                          cld
+    22 0000001F 89F0                        mov ax, si
+    23 00000021 88E0                        mov al, ah
+    24 00000023 30E4                        xor ah, ah
+    25 00000025 B53C                        mov ch, 03Ch
+    26 00000027 F6F5                        div ch
+    27 00000029 F6E5                        mul ch
+    28 0000002B 88C4                        mov ah, al
+    29 0000002D 80C410                      add ah, 010h
+    30 00000030 B0A2                        mov al, 0A2h
+    31 00000032 81C68C00                    add si, worker - start
+    32 00000036 EB1E                        jmp short phoenix_init
+    33
+    34                                  zombie_entry:
+    35 00000038 E80000                      call .get_ip
+    36                                  .get_ip:
+    37 0000003B 5E                          pop si
+    38 0000003C 83EE3B                      sub si, .get_ip - start
+    39 0000003F 89F0                        mov ax, si
+    40 00000041 88E0                        mov al, ah
+    41 00000043 30E4                        xor ah, ah
+    42 00000045 B53C                        mov ch, 03Ch
+    43 00000047 F6F5                        div ch
+    44 00000049 F6E5                        mul ch
+    45 0000004B 88C4                        mov ah, al
+    46 0000004D 80C434                      add ah, 034h
+    47 00000050 B0A2                        mov al, 0A2h
+    48 00000052 81C68C00                    add si, worker - start
+    49
+    50                                  phoenix_init:
+    51 00000056 16                          push ss
+    52 00000057 07                          pop es
+    53 00000058 31FF                        xor di, di
+    54 0000005A B90900                      mov cx, 9
+    55 0000005D F3A5                        rep movsw
+    56 0000005F 16                          push ss
+    57 00000060 1F                          pop ds
+    58 00000061 0E                          push cs
+    59 00000062 17                          pop ss
+    60 00000063 BB0002                      mov bx, PTR_CELL
+    61 00000066 8907                        mov [bx], ax
+    62 00000068 C74702FC0F                  mov word [bx + 2], FAR_SEG
+    63 0000006D 31F6                        xor si, si
+    64 0000006F 89C7                        mov di, ax
+    65 00000071 B8FC0F                      mov ax, FAR_SEG
+    66 00000074 8EC0                        mov es, ax
+    67 00000076 89FC                        mov sp, di
+    68 00000078 81C40002                    add sp, 00200h
+    69 0000007C B90800                      mov cx, 8
+    70 0000007F BA0038                      mov dx, 03800h
+    71 00000082 BD003C                      mov bp, 03C00h
+    72 00000085 B8FF1F                      mov ax, 01FFFh
+    73 00000088 AB                          stosw
+    74 00000089 4F                          dec di
+    75 0000008A FF1F                        call far [bx]
+    76
+    77                                  worker:
+    78 0000008C A5                          movsw
+    79 0000008D F3A5                        rep movsw
+    80 0000008F 29D4                        sub sp, dx
+    81 00000091 292F                        sub [bx], bp
+    82 00000093 8B3F                        mov di, [bx]
+    83 00000095 B109                        mov cl, 9
+    84 00000097 31F6                        xor si, si
+    85 00000099 AB                          stosw
+    86 0000009A 4F                          dec di
+    87 0000009B FF1F                        call far [bx]
