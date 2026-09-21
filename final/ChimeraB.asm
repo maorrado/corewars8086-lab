@@ -1,6 +1,6 @@
 bits 16
 
-; Chimera B (w003): protected Phoenix plus deterministic Zombie-B/D tail capture.
+; Chimera B (m045): balanced hybrid; protected Phoenix plus Zombie-B/D capture.
 %define FAR_SEG  0FFCh
 %define PTR_CELL 00240h
 
@@ -46,10 +46,10 @@ phoenix_init:
     mov ax, FAR_SEG
     mov es, ax
     mov sp, di
-    add sp, 00200h
+    add sp, 00280h
     mov cx, 9
-    mov dx, 03800h
-    mov bp, 03C00h
+    mov dx, 04000h
+    mov bp, 04400h
     mov ax, 01FFFh
     stosw
     dec di
