@@ -2,50 +2,97 @@
 
 ## Outcome
 
-`w003` is the current champion and is promoted byte-for-byte as `final/ChimeraA.asm` and `final/ChimeraB.asm`.
+`m045` is the promoted pair in `final/ChimeraA.asm` and
+`final/ChimeraB.asm`. It is a balanced hybrid of the two statistically tied
+asymmetric finalists: survivor A uses the eight-word first copy from `l056`,
+while survivor B keeps the `l022` phase and motion.
 
 | Protocol | Pair | Battles | Team | Survivor A | Survivor B |
 |---|---|---:|---:|---:|---:|
-| Untouched 2025 holdout (15 teams, 5 cohorts, 3 seeds) | Chimera `w003` | 750 | 0.583333 | 0.278000 | 0.305333 |
-| Same holdout | `Registered_Winners` | 750 | 0.508889 | 0.239778 | 0.269111 |
-| All 75 official 2025 teams (25 cohorts, 2 seeds) | Chimera `w003` | 2,500 | 0.608200 | 0.292733 | 0.315467 |
-| Same all-2025 protocol | `Registered_Winners` | 2,500 | 0.538800 | 0.252400 | 0.286400 |
-| Same all-2025 protocol | old Phoenix pair | 2,500 | 0.472800 | 0.236533 | 0.236267 |
-| Same all-2025 protocol | `TOM_ATO` | 2,500 | 0.298800 | 0.214800 | 0.084000 |
+| Fresh final holdout, 5 cohorts x 10 new seeds | **Chimera `m045`** | 5,000 | **0.578600** | **0.289200** | **0.289400** |
+| Same final holdout | `l022` | 5,000 | 0.578333 | 0.287500 | 0.290833 |
+| Same final holdout | `l056` | 5,000 | 0.578867 | 0.276033 | 0.302833 |
+| Same final holdout | old champion `w003` | 5,000 | 0.555067 | 0.283333 | 0.271733 |
+| All 75 official 2025 teams, 25 cohorts x 2 seeds | **Chimera `m045`** | 2,500 | **0.637267** | **0.308733** | **0.328533** |
+| Same all-2025 protocol | `l022` | 2,500 | 0.635400 | 0.306567 | 0.328833 |
+| Same all-2025 protocol | `l056` | 2,500 | 0.625467 | 0.301767 | 0.323700 |
+| Same all-2025 protocol | old champion `w003` | 2,500 | 0.608000 | 0.298600 | 0.309400 |
+| Fresh tuning validation, 20 cohorts x 2 seeds | **Chimera `m045`** | 1,600 | **0.621771** | **0.298281** | **0.323490** |
+| Same tuning protocol | `l022` | 1,600 | 0.621979 | 0.299531 | 0.322448 |
 
-On the paired 50-run all-2025 comparison, Chimera exceeded `Registered_Winners` in 32 runs, tied 2, and lost 16. The mean paired difference was +0.069400 team points per battle; a run-level 95% t interval is [+0.015157, +0.123643]. The smaller 15-run holdout difference was +0.074444, with 11 wins and 4 losses; its run-level interval crosses zero because the holdout has only 15 aggregate observations.
+The final 5,000-battle paired holdout comparison against `w003` gives a mean
+improvement of `+0.023533` team points per battle (about 4.24% relative), with
+a run-cluster 95% t interval of `[+0.000101, +0.046966]`. The all-2025
+improvement is `+0.029267`; its 95% interval is
+`[-0.000797, +0.059331]`. Thus the new pair has a measured repeatable
+holdout advantage over the former champion, but the all-field interval remains
+just wide enough to include zero.
 
-These measurements show a repeatable advantage under the tested 2025 engine, Zombies, cohorts, and seeds. They do not prove that no future 2026 survivor can beat Chimera.
+`m045`, `l022`, and `l056` are statistically tied on the second holdout.
+`m045` was selected because it preserves the same team score, is essentially
+identical to `l022` on both tune and all-2025, and gives the most even final
+holdout contribution from the two survivors. This evidence does not prove that
+no unknown 2026 survivor can beat it.
 
 ## Strategy
 
-Both survivors quantize their initial load address into 0x3C00-spaced replication bands and run the protected private-stack Phoenix loop through segment `0x0FFC`. Survivor A uses phase `0x10`; Survivor B uses phase `0x2C`. Their pointer cells are separate (`0x0200` and `0x0240`), and both use a 0x0200 stack gap with 0x3800 stack motion.
+Both survivors quantize their initial load address into `0x3C00`-spaced bands
+and run a protected private-stack Phoenix loop through segment `0x0FFC`.
+Survivor A uses phase `0x10`, target step `0x3C00`, stack motion `0x3800`, and
+an eight-word first replication. Survivor B uses phase `0x2C`, a wider
+`0x4400` target step, `0x4000` stack motion, and a `0x0280` initial stack gap.
+Their private pointer cells are separate (`0x0200` and `0x0240`).
 
-Both search backward with `INT 87h` for the `EB F9 CC CC` tail used by the live 2025 Zombie B/D loops. They replace it with an indirect jump through cell `0x5D13`. Survivor A owns that hook and routes a captured Zombie into a position-independent entry that rejoins the Phoenix replication engine at a third phase, `0x34`. Thus the stolen process becomes another spatially separated replicator instead of a one-shot bomb.
+Both search backward with `INT 87h` for the `EB F9 CC CC` tail used by the
+live 2025 Zombie B/D loops and replace it with an indirect jump through cell
+`0x5D13`. Survivor A owns that hook and routes a captured Zombie into a
+position-independent entry at phase `0x34`, where it joins the protected
+replication engine. The stolen process therefore becomes another spatially
+separated replicator rather than a one-shot writer.
 
 ## Search history
 
-- `x001-x012`: broad Chimera families: band width, initial phases, shared/split hooks, forward/backward theft, and replication gap.
-- `y001-y016`: local search around the best broad result.
-- `z001-z012`: isolated phase, band, gap, and margin changes around `y007`.
-- `w001-w006`: combinations of the independently promising changes. `w003` won with balanced survivor scores.
-- `v001-v010`: fine sweep around `w003` using fresh seeds. The unchanged control `v001` remained first; gaps 0x100/0x180/0x280 and adjacent A/B/Zombie phases did not improve it.
+- `x001-x012`, `y001-y016`, `z001-z012`, `w001-w006`, and `v001-v010`
+  produced the former `w003` champion through broad and local searches over
+  bands, phases, hooks, theft direction, gaps, and stack motion.
+- `k001-k037` tested new Zombie/opponent signatures, heavy writers, target low
+  bytes, far segments, steps, gaps, and bands. Apparent 200-battle gains did
+  not survive 1,600-battle validation.
+- `l001-l057` separated A and B motion, phase, segment, copy-count, and gap
+  parameters. `l022` and `l056` emerged as complementary finalists.
+- `m001-m054` performed a focused sweep around those finalists. Phase `0x26`
+  (`m014`) scored 0.651771 on tune but collapsed to 0.541333 on holdout, a
+  concrete overfitting example. Phase `0x30` (`m021`) also failed holdout.
+- The four A/B hybrids were then measured. `m045` matched the best holdout
+  score, slightly led the all-2025 field, and was the most balanced pair.
 
-The reproducible experiment JSONs contain every command, engine and input hash, cohort, opponent, Zombie, seed, raw score, team score, and per-survivor score. `experiment-log.md` is the generated index.
+Every official-engine result JSON records the command, engine/config and input
+hashes, cohort, opponents, Zombies, seed, raw score, team score, and both
+per-survivor scores. `experiment-log.md` is the generated index, and the
+`comparison-*.json` files contain the paired differences and confidence
+interval inputs.
 
 ## Arena inspection
 
-The saved round-4,000 inspection versus `Registered_Winners`, `GoonSquad`, and `TrojanByte` shows the expected repeated 0x3C00 band structure and a live Phoenix worker executing from protected segment `0x0FFC`. In this particular seed, Chimera A died at round 1,178 while Chimera B and replicated/stolen code continued; this is consistent with the aggregate data, where either survivor can carry an individual battle but both contribute materially across seeds. The screenshot and register dump are `experiments/w003-arena-round4000.png` and `.json`.
+The saved round-4,006 inspection versus `Registered_Winners`, `GoonSquad`, and
+`TrojanByte` shows near-arena-wide colored replication bands and a live Chimera
+A worker executing from protected segment `0x0FFC`. All four Zombies had died
+by round 1,273; Chimera B died at round 3,549 while A and the replicated/stolen
+code continued. The screenshot and exact register/message dump are
+`experiments/m045-arena-round4000.png` and `.json`.
 
 ## Reproduction
 
 1. Start the local simulator server at `http://127.0.0.1:8123/page.html`.
-2. Assemble the promoted sources with `node assemble.mjs build/final final/ChimeraA.asm final/ChimeraB.asm`.
-3. Regenerate the 2025 split with `node generate-2025-evaluation-configs.mjs`.
-4. Run the all-field validation with `node official-sweep.mjs config-2025-all-template.json build/chimera w003`.
+2. Assemble with
+   `node assemble.mjs build/final final/ChimeraA.asm final/ChimeraB.asm`.
+3. Regenerate the 2025 cohort split with
+   `node generate-2025-evaluation-configs.mjs`.
+4. Re-run an official template with `official-sweep.mjs` and an explicitly
+   recorded `SWEEP_TAG`, `SWEEP_BATTLES`, and `SWEEP_SEEDS`.
 5. Regenerate the ledger with `node generate-experiment-log.mjs`.
 
-The promoted binaries are 157 bytes and 117 bytes. Their SHA-256 hashes are:
+The promoted binaries are 157 and 117 bytes. Their SHA-256 hashes are:
 
-- Chimera A: `3e3897d9337c405380e8ff225fb75adc5ca578136f376835af22c34f17c295c7`
-- Chimera B: `f1db39972aca89b1e4224dab492102501dfcbf9f0709e0c8661621ede62a1e57`
+- Chimera A: `1394d70274e2a5bf7ec239df7a82127c469712bc34fac9194731c128a8aad606`
+- Chimera B: `7a6248d21c64a9896c190e79a83b47bac21166f6eaba604dc5dd06c46cac4138`

@@ -1,85 +1,84 @@
 # CodeGuru Xtreme 2025 study and survivor result
 
-## Outcome
+## Material studied
 
 All 31 unique supplied recordings were reviewed end to end in their resolved
 course order: 82,010.576 seconds (22.781 hours) of audio and screen content,
 30,376 timestamped transcript segments, 16,418 five-second/change-triggered
-frames, 5,250 retained keyframes and 342 contact sheets. Two additional Drive
+frames, 5,250 retained keyframes, and 342 contact sheets. Two additional Drive
 files were byte-identical aliases and were hash-deduplicated. The completion
-ledger is `study-notes/README.md`; the reconciled contract is
+ledger is `study-notes/README.md`; the reconciled engine contract is
 `rules-2025-consolidated.md`.
 
-The strongest original pair produced by the measured search is Phoenix A/B in
-`final/`. Each survivor is 81 bytes. The final official-v6 validation contains
-9,000 Phoenix battles plus a 4,500-battle same-pool champion comparison.
+## Promoted pair
 
-| Evaluation | Battles | Team | Phoenix A | Phoenix B |
+The strongest robust pair produced by the measured search is Chimera `m045` in
+`final/ChimeraA.asm` and `final/ChimeraB.asm`. The compiled survivors are 157
+and 117 bytes.
+
+| Evaluation | Battles | Team | Chimera A | Chimera B |
 |---|---:|---:|---:|---:|
-| Train, 9 known strong teams in 3 fixed cohorts | 4,500 | 0.446593 | 0.227111 | 0.219481 |
-| Holdout, 9 unseen teams from 2025/2024/2023 | 4,500 | 0.412815 | 0.220370 | 0.192444 |
+| Fresh final holdout, 5 cohorts x 10 seeds | 5,000 | 0.578600 | 0.289200 | 0.289400 |
+| All 75 official 2025 teams, 25 cohorts x 2 seeds | 2,500 | 0.637267 | 0.308733 | 0.328533 |
+| Fresh tuning validation, 20 cohorts x 2 seeds | 1,600 | 0.621771 | 0.298281 | 0.323490 |
 
-Both survivors materially contribute; neither is a dummy carried by the other.
-Across the two large evaluations A earned 0.223741 per battle and B 0.205963.
+Both survivors materially contribute. On the final holdout their scores are
+almost exactly equal, so the team is not relying on one survivor to carry a
+dummy partner.
 
-## Honest champion comparison
+## Comparison with the former champion
 
-`Registered_Winners` was rerun on the exact same holdout, Zombies, five seeds
-and 4,500-battle count. It remains stronger overall.
+The previous `w003` pair was rerun on the exact same fresh 5,000-battle
+holdout. It scored 0.555067, compared with 0.578600 for `m045`. The paired
+difference is `+0.023533` per battle, with a run-cluster 95% t interval of
+`[+0.000101,+0.046966]`. On the identical 2,500-battle all-2025 protocol,
+`m045` scored 0.637267 and `w003` 0.608000; that interval narrowly includes
+zero.
 
-| Holdout cohort | Phoenix | Registered Winners | Phoenix minus benchmark |
-|---|---:|---:|---:|
-| Unseen 2025 | 0.207333 | 0.541333 | -0.334000 |
-| Unseen 2024 | 0.624556 | 0.594667 | +0.029889 |
-| Unseen 2023 | 0.406556 | 0.398000 | +0.008556 |
-| **All holdout** | **0.412815** | **0.511333** | **-0.098519** |
-
-Therefore there is no evidence that Phoenix is “better than everyone.” It
-generalizes well to the 2023–2024 field and is balanced, but its main remaining
-weakness is the unseen 2025 cohort. The data also show why optimizing only
-against `TOM_ATO` would have been misleading.
+The nearest finalists `l022` and `l056` are statistically tied with `m045` on
+the second holdout. `m045` was promoted because it retained their team score,
+slightly led the all-2025 test, and gave the best A/B balance. These results do
+not establish that it is unbeatable by unknown 2026 code.
 
 ## What the pair does
 
-The worker is first copied into the private 2,048-byte stack and `DS` is moved
-there, so ordinary arena painting cannot erase the source. A far pointer stored
-in private memory targets the shared arena through segment `0FF8h`. The first
-`STOSW` installs `FF 1F` (`CALL FAR [BX]`). Recursive far calls then leave a
-controlled return-address trail. The selected target low byte is `A2h`, so the
-eventual return IP ends in `A4h` (`MOVSB`); that single copy exposes `A5h`
-(`MOVSW`) followed by `REP MOVSW`, creating a live worker at the new site.
-The worker moves both its stack and target and repeats. A and B aim at separated
-bands and private cells, reducing collisions while retaining the same tested
-engine.
+The worker is copied into the private stack and `DS` is moved there, protecting
+its source from ordinary arena painting. A far pointer stored in private memory
+targets the shared arena through segment `0FFCh`. Recursive far calls leave a
+controlled return-address trail; `MOVSB`, `MOVSW`, and `REP MOVSW` then expose
+and copy a live worker into new spatial bands.
 
-At browser round 4,005, the inspected A process was alive at `CS=0FF8h` and the
-arena contained the expected repeating far-call/MOVSB bands; all four Zombies
-and both `TOM_ATO` processes in that visual run had already died. The snapshot
-and exact state are `experiments/final-arena-round4000.png` and its adjacent
-JSON. This visualization is diagnostic only; every score above comes from the
-Java v6 engine.
+Survivor A uses a `0x3C00` target step and an eight-word first copy. Survivor B
+uses a `0x4400` target step, `0x4000` stack motion, and `0x0280` initial gap.
+Both also search backward with `INT 87h` for the live 2025 Zombie-B/D tail.
+Survivor A redirects a captured process through `0x5D13` into a third protected
+replication phase.
 
-## Search history and reproducibility
+At browser round 4,006, the arena showed the expected near-arena-wide bands and
+a live A worker at `CS=0FFCh`; all four Zombies had died by round 1,273. The
+diagnostic screenshot and exact state are
+`experiments/m045-arena-round4000.png` and its adjacent JSON. Scores come from
+the official Java v6 engine, not the browser visualization.
 
-The search covered conventional writers, AB50 families, Zombie theft, runways,
-NRG launchers, dual splits, worms, Zombie carpets, call cannons, protected-stack
-Phoenix variants, a Zombie/Phoenix Hydra, target-band quantization and motion
-parameter sweeps. The compact human lineage and all 39,150 controlled official
-battles are indexed in `experiment-log.md`. Each result JSON records the exact
-command, binaries and SHA-256 hashes, opponents, four live 2025 Zombies, seeds,
-battle count, raw scores, team score and both warrior scores.
+## Search and reproducibility
 
-The scoring runner is the official Java v6 CPU/War implementation with a
-minimal test-only deterministic cohort/seed wrapper. CPU semantics, placement,
-Zombies and scoring are unchanged. Fixed four-team cohorts are enumerated
-externally because the stock runner does not fully honor its seed for cohort
-selection/order. The browser simulator is used only to assemble, disassemble,
-step and inspect the arena.
+The search covered conventional writers, AB50 families, Zombie theft,
+runways, NRG launchers, worms, Zombie carpets, call cannons, protected Phoenix
+variants, band quantization, asymmetric motion, signature alternatives, and
+focused phase/copy-count hybrids. In the latest stage alone, 37 extension
+variants, 57 asymmetric variants, and 54 focused variants were screened before
+large validation.
+
+`optimization-2025-report.md` records the final decision and key statistics.
+`experiment-log.md` indexes every official result JSON. Each result preserves
+the command, engine/config and binary hashes, opponents, Zombies, seeds, raw
+score text, team score, and both survivor scores. Paired comparisons and their
+per-run differences are saved as `experiments/comparison-*.json`.
 
 ## Remaining limitation
 
-The available 2025 online binaries are the strongest current evidence set, not
-unknown future finalist code. The final is also a clean-slate event with new
-Zombies, so no static benchmark can guarantee the actual ranking. The correct
-competition workflow is to preserve this general engine as a baseline, then
-adapt at the event to the released Zombies and published Survivor 1 field.
+The available 2025 binaries are the strongest current evidence set, not future
+2026 finalists. The competition final also releases new Zombies and may impose
+new strategic pressure. The correct workflow is to keep `m045` as the measured
+baseline, then revalidate and adapt it when the 2026 engine rules, Zombies, and
+published Survivor 1 field are available.
