@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "experimentId": "post-m049-adversarial-audit-2026-09-27",
+  "decision": "retain-m049",
+  "baseline": {
+    "id": "m049",
+    "aSha256": "106765da16166d0fa744631e5cfbe403c5eafc30db164eb47e1749e7d365a973",
+    "bSha256": "7ed87893a82861b716ad0df6404b1c70282cb983db1a4a607363fd3f27ad6c77"
+  },
+  "registeredWinners": {
+    "browserObservation": "Registered_Winners could lead m049 in selected old-browser cohorts, especially when Code_Jokers was absent. The browser uses older War/scoring/Zombie semantics and is diagnostic only.",
+    "officialV6Controlled": {
+      "battles": 6000,
+      "m049Score": 0.5277503583333333,
+      "registeredWinnersScore": 0.3719172183333333,
+      "m049Margin": 0.15583314
+    },
+    "geometryFinding": "Registered_Winners uses symmetric phase/step geometry. Copying that geometry could flip a worst browser context but regressed official 2025 gates, so it was rejected."
+  },
+  "codeJokers": {
+    "warrior1": {
+      "size": 377,
+      "finding": "Complex INT 86h writer plus relocation/Phoenix behavior."
+    },
+    "warrior2": {
+      "size": 12,
+      "bytes": "90 1E 06 1F 8B 07 05 05 00 1F FF E0",
+      "finding": "Small partner that derives a jump target through the shared segment; it does not target m049's initializer signature."
+    },
+    "officialV6TargetScreen": {
+      "cohorts": 4,
+      "seeds": 2,
+      "battles": 1600,
+      "m049Score": 0.5122917225,
+      "codeJokersScore": 0.061875,
+      "m049Margin": 0.4504167225
+    }
+  },
+  "directSignatureScreen": [
+    {
+      "candidate": "m049",
+      "battles": 1600,
+      "score": 0.5122917225
+    },
+    {
+      "candidate": "jworker",
+      "targetBytes": "F3 A5 89 D6",
+      "battles": 1600,
+      "score": 0.5458334025,
+      "differenceVsM049": 0.03354168,
+      "decision": "reject-general-regression"
+    },
+    {
+      "candidate": "jtiny",
+      "targetBytes": "90 1E 06 1F",
+      "battles": 1600,
+      "score": 0.53270840375,
+      "differenceVsM049": 0.02041668125,
+      "decision": "reject-overfit-risk"
+    }
+  ],
+  "sharedSignatureScreen": {
+    "protocol": "Four Code_Jokers target cohorts plus two preselected sentinel cohorts, two seeds, 100 battles per run, 1200 battles per candidate.",
+    "results": [
+      {
+        "candidate": "m049",
+        "targetScore": 0.4849999775,
+        "sentinelScore": 0.7875,
+        "allScore": 0.5858333183333334
+      },
+      {
+        "candidate": "shared-movsi",
+        "targetScore": 0.4849999775,
+        "sentinelScore": 0.5875,
+        "allScore": 0.5191666516666668
+      },
+      {
+        "candidate": "shared-worker",
+        "targetScore": 0.53333326375,
+        "sentinelScore": 0.535,
+        "allScore": 0.5338888425
+      },
+      {
+        "candidate": "shared-pointer",
+        "targetScore": 0.52791660875,
+        "sentinelScore": 0.535,
+        "allScore": 0.5302777391666667
+      },
+      {
+        "candidate": "shared-callpad",
+        "targetScore": 0.499583315,
+        "sentinelScore": 0.575,
+        "allScore": 0.52472221
+      }
+    ],
+    "decision": "All shared-signature variants failed the sentinel non-regression gate."
+  },
+  "splitSignatureScreen": [
+    {
+      "candidate": "split-broad-b",
+      "sentinelBattles": 100,
+      "sentinelScore": 0.6,
+      "decision": "reject"
+    },
+    {
+      "candidate": "split-joker-b",
+      "sentinelBattles": 100,
+      "sentinelScore": 0.69,
+      "decision": "reject"
+    }
+  ],
+  "baselineReference": {
+    "tuneBattles": 1000,
+    "tuneScore": 0.672333331,
+    "futureBattles": 960,
+    "futureScore": 0.3807663495
+  },
+  "conclusion": "Neither Registered_Winners nor Code_Jokers demonstrated a general official-v6 advantage over m049. Every attempted defense that improved the targeted Code_Jokers contexts caused a material loss on broader sentinel cohorts. No source or binary was promoted to final/."
+}

@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "experimentId": "post-m046-strategy-search-2026-09-26",
+  "decision": "keep-m046",
+  "baseline": {
+    "id": "m046",
+    "aSha256": "9c205304bd6b05ce859ef247659a64ab0d78cb2232484d4e3e9a18318effa0a0",
+    "bSha256": "7a6248d21c64a9896c190e79a83b47bac21166f6eaba604dc5dd06c46cac4138"
+  },
+  "telemetry": {
+    "wars": 1000,
+    "bothInt86ChargesUnusedRate": 1.0,
+    "aliveRateGivenCapturedB": 0.5263888888888889,
+    "aliveRateGivenCapturedD": 0.5336658354114713,
+    "aliveRateGivenNoCapture": 0.4393305439330544
+  },
+  "families": [
+    {
+      "id": "worker-count",
+      "validationBattlesPerCandidate": 1000,
+      "bestDifferenceVsM046": 0.00133333,
+      "ci95": [-0.0125554044, 0.0152220644],
+      "decision": "reject-no-reproducible-gain"
+    },
+    {
+      "id": "worker-order",
+      "validationBattlesPerCandidate": 1000,
+      "bestDifferenceVsM046": -0.000333334,
+      "decision": "reject"
+    },
+    {
+      "id": "split-thief",
+      "bestScreenDifferenceVsM046": -0.1158333275,
+      "decision": "reject"
+    },
+    {
+      "id": "fast-hook",
+      "validationBattles": 1000,
+      "validationDifferenceVsM046": 0.009333334,
+      "validationCi95": [-0.0051761872, 0.0238428552],
+      "freshHoldoutBattles": 6000,
+      "freshHoldoutDifferenceVsM046": -0.0009722233,
+      "freshHoldoutCi95": [-0.0082276130, 0.0062831664],
+      "futurePoolBattles": 640,
+      "futurePoolDifferenceVsM046": -0.0023846781,
+      "decision": "reject-fresh-holdout"
+    },
+    {
+      "id": "postcapture-bombs",
+      "candidate": "pb_hf_b_p2266",
+      "validationBattles": 1000,
+      "validationDifferenceVsM046": 0.037500002,
+      "validationCi95": [0.0186502638, 0.0563497402],
+      "futurePoolBattles": 640,
+      "futurePoolDifferenceVsM046": -0.0322618891,
+      "decision": "reject-future-overfit"
+    },
+    {
+      "id": "capture-position",
+      "bestScreenDifferenceVsM046": -0.03500001,
+      "decision": "reject"
+    },
+    {
+      "id": "mirror-breaker",
+      "bestScreenDifferenceVsM046": -0.085,
+      "decision": "reject-friendly-fire"
+    },
+    {
+      "id": "dual-hook",
+      "validationDifferenceVsM046": 0.010667,
+      "futurePoolDifferenceVsM046": -0.022835,
+      "decision": "reject-future-overfit"
+    }
+  ],
+  "promotion": null,
+  "notes": "No candidate improved both the official-field evidence and the fresh future-strategy robustness pool. final/ remains m046."
+}

@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "experimentId": "post-m048-micro-search-2026-09-27",
+  "decision": "keep-m048",
+  "baseline": {
+    "id": "m048",
+    "aSize": 189,
+    "bSize": 117,
+    "aSha256": "f11d8d5b9bd021bdbc63ffbc6c3d230cb100581739037a1e31d976c09b7900f4",
+    "bSha256": "0fd01d04e68656ea04619759cc3502fc01e5ccc8a8e1f032ded8787179ea03a0"
+  },
+  "search": {
+    "mutationsScreened": 122,
+    "rule": "Each candidate changed one source line or one placement/copy constant from m048.",
+    "phaseMutations": {
+      "count": 48,
+      "parameters": ["A main phase", "A captured-process phase", "B phase"]
+    },
+    "spatialMutations": {
+      "count": 74,
+      "parameters": [
+        "A/B stack motion",
+        "A/B target step",
+        "A/B initial stack gap",
+        "A/B/captured pointer cell",
+        "A/B far segment",
+        "A/B first-copy count",
+        "A/B worker-copy count"
+      ]
+    }
+  },
+  "rejectedPhaseFinalist": {
+    "id": "u_bph_25",
+    "change": "Survivor B initial phase 0x34 -> 0x25.",
+    "tuneValidation": {
+      "battles": 1000,
+      "m048Score": 0.6714999950,
+      "candidateScore": 0.7023333310,
+      "difference": 0.0308333360,
+      "ci95": [-0.0006911593, 0.0623578313],
+      "runUnits": { "wins": 23, "ties": 4, "losses": 13 }
+    },
+    "futurePool": {
+      "battles": 960,
+      "m048Score": 0.3986557276,
+      "candidateScore": 0.3339087075,
+      "difference": -0.0647470201,
+      "ci95": [-0.1013510086, -0.0281430316],
+      "runUnits": { "wins": 7, "ties": 0, "losses": 17 }
+    },
+    "decision": "reject-before-holdout"
+  },
+  "freshHoldouts": [
+    {
+      "id": "ms1",
+      "candidate": "s_ai_7",
+      "change": "Survivor A first replication count 8 -> 7 words.",
+      "aSha256": "d3df92703aeef65f9b922606d81d8a927a2e9d1ef12c502c4facbc0184a19858",
+      "bSha256": "0fd01d04e68656ea04619759cc3502fc01e5ccc8a8e1f032ded8787179ea03a0",
+      "priorGates": {
+        "tuneDifference": 0.0030000000,
+        "futurePoolDifference": 0.0088119958,
+        "futurePoolCi95": [0.0010065159, 0.0166174758]
+      },
+      "battles": 6000,
+      "m048Score": 0.6705055572,
+      "candidateScore": 0.6712500022,
+      "difference": 0.0007444450,
+      "ci95": [-0.0032112419, 0.0047001319],
+      "runUnits": { "wins": 40, "ties": 74, "losses": 36 },
+      "decision": "reject-no-measurable-improvement"
+    },
+    {
+      "id": "ms2",
+      "candidate": "s_ag_260",
+      "change": "Survivor A initial stack gap 0x0200 -> 0x0260.",
+      "aSha256": "57312cbeb6fa93ca200d6a6fc892f30e1771916b3cdf087dc85d8dd3d75b44a0",
+      "bSha256": "0fd01d04e68656ea04619759cc3502fc01e5ccc8a8e1f032ded8787179ea03a0",
+      "priorGates": {
+        "tuneDifference": 0.0071666620,
+        "futurePoolDifference": 0.0027504995,
+        "futurePoolCi95": [-0.0136063462, 0.0191073452]
+      },
+      "battles": 6000,
+      "m048Score": 0.6806388918,
+      "candidateScore": 0.6766944462,
+      "difference": -0.0039444457,
+      "ci95": [-0.0111152453, 0.0032263540],
+      "runUnits": { "wins": 51, "ties": 38, "losses": 61 },
+      "decision": "reject-negative-holdout"
+    }
+  ],
+  "conclusion": "No one-line or one-constant micro mutation produced a measurable reproducible improvement across tune validation, a synthetic future pool, and a fresh all-2025 holdout. Keep the exact m048 binaries in final/."
+}

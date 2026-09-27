@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "experimentId": "m049-promotion-2026-09-27",
+  "decision": "promote-m049",
+  "baseline": {
+    "id": "m048",
+    "aSha256": "f11d8d5b9bd021bdbc63ffbc6c3d230cb100581739037a1e31d976c09b7900f4",
+    "bSha256": "0fd01d04e68656ea04619759cc3502fc01e5ccc8a8e1f032ded8787179ea03a0"
+  },
+  "candidate": {
+    "id": "m049",
+    "searchId": "cd_all_reorder",
+    "aSize": 189,
+    "bSize": 117,
+    "aSourceSha256": "015d43e9cd1813f5d53b0e7182c6e5fc9d381b782b3cb550da23ca1a04f00041",
+    "bSourceSha256": "f391d676dd85e8d36d02bade58c7df02c27bb52e59ed28f212c59a99be261b01",
+    "aSha256": "106765da16166d0fa744631e5cfbe403c5eafc30db164eb47e1749e7d365a973",
+    "bSha256": "7ed87893a82861b716ad0df6404b1c70282cb983db1a4a607363fd3f27ad6c77",
+    "change": "Move each Phoenix-init MOV BX before PUSH CS / POP SS in A main, A captured, and B. Instruction count, byte count, final register state, phases, steps, gaps, and worker loops are unchanged."
+  },
+  "counter": {
+    "name": "New_Best",
+    "warrior1Size": 117,
+    "warrior2Size": 171,
+    "warrior1Sha256": "81ca1a63b58475f77b8e6934e8340bdfef48fce54434a2d15e4735da2b2342fc",
+    "warrior2Sha256": "4480aef28714010549a86c7fd8f0022f7f63687aac46a887d35937762a2c65a3",
+    "attack": {
+      "searchedBytes": "0E 17 BB 00",
+      "searchedInstructions": "PUSH CS; POP SS; first two bytes of MOV BX,0x0200",
+      "replacementBytes": "FF 26 17 4A",
+      "replacementInstruction": "JMP word [0x4A17]",
+      "effect": "The exact four-byte INT 87h replacement redirects or kills m048 survivor A during Phoenix initialization."
+    }
+  },
+  "directCounterGates": [
+    {
+      "id": "screen",
+      "battlesPerPair": 480,
+      "cohorts": 8,
+      "seeds": ["counter-defense-7401", "counter-defense-7402"],
+      "m048Score": 0.2921527813,
+      "m049Score": 0.4638194083,
+      "gainVsM048": 0.1716666271,
+      "newBestScoreWithM049": 0.4325694188,
+      "m049MarginVsNewBest": 0.0312499896
+    },
+    {
+      "id": "fresh-direct",
+      "battlesPerPair": 1600,
+      "cohorts": 8,
+      "seeds": [
+        "counter-defense-final-7601",
+        "counter-defense-final-7602",
+        "counter-defense-final-7603",
+        "counter-defense-final-7604"
+      ],
+      "m048Score": 0.2818749875,
+      "m049Score": 0.4539792031,
+      "gainVsM048": 0.1721042156,
+      "gainVsM048Ci95": [0.1541110115, 0.1900974198],
+      "pairedRunUnits": { "wins": 32, "ties": 0, "losses": 0 },
+      "newBestScoreWithM049": 0.4412396188,
+      "m049MarginVsNewBest": 0.0127395844,
+      "m049MarginVsNewBestCi95": [-0.0080049027, 0.0334840715],
+      "m049VsNewBestRunUnits": { "wins": 18, "ties": 0, "losses": 14 }
+    }
+  ],
+  "generalNonRegressionGates": [
+    {
+      "id": "full-tune-validation",
+      "battlesPerPair": 1000,
+      "m048Score": 0.6396666650,
+      "m049Score": 0.6396666650,
+      "difference": 0.0,
+      "pairedRunUnits": { "wins": 0, "ties": 40, "losses": 0 }
+    },
+    {
+      "id": "three-seed-future-pool",
+      "battlesPerPair": 960,
+      "m048Score": 0.3939657578,
+      "m049Score": 0.3939657578,
+      "difference": 0.0,
+      "pairedRunUnits": { "wins": 0, "ties": 24, "losses": 0 }
+    },
+    {
+      "id": "fresh-all-2025-cd1",
+      "battlesPerPair": 6000,
+      "m048Score": 0.6468055577,
+      "m049Score": 0.6468055577,
+      "difference": 0.0,
+      "pairedRunUnits": { "wins": 0, "ties": 150, "losses": 0 },
+      "partitionSeeds": [
+        "counter-defense-partition-11501",
+        "counter-defense-partition-11502",
+        "counter-defense-partition-11503"
+      ],
+      "battleSeeds": ["counter-defense-battle-11601", "counter-defense-battle-11602"]
+    }
+  ],
+  "promotion": {
+    "promoted": true,
+    "reason": "The exact tested binary removed the demonstrated smart-bomb signature at zero byte and instruction-count cost. It reproduced a large positive gain over m048 in two direct-counter seed sets, won the fresh aggregate matchup against New_Best, and was bit-for-bit score-identical to m048 in every paired run of full tune validation, the synthetic future pool, and a fresh 6,000-battle all-2025 holdout."
+  }
+}

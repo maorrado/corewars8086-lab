@@ -1,7 +1,17 @@
 import crypto from "node:crypto";
 import fs from "node:fs";
+import { createRequire } from "node:module";
 import path from "node:path";
-import { chromium } from "playwright";
+
+const require = createRequire(import.meta.url);
+let playwright;
+try {
+  playwright = require("playwright");
+} catch (error) {
+  if (!process.env.PLAYWRIGHT_MODULE) throw error;
+  playwright = require(process.env.PLAYWRIGHT_MODULE);
+}
+const { chromium } = playwright;
 
 const outputDirectory = process.argv[2];
 const inputFiles = process.argv.slice(3);

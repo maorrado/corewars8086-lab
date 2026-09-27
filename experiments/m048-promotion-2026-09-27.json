@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "experimentId": "m048-promotion-2026-09-27",
+  "decision": "promote-m048",
+  "baseline": {
+    "id": "m047",
+    "aSha256": "f11d8d5b9bd021bdbc63ffbc6c3d230cb100581739037a1e31d976c09b7900f4",
+    "bSha256": "7a6248d21c64a9896c190e79a83b47bac21166f6eaba604dc5dd06c46cac4138"
+  },
+  "candidate": {
+    "id": "m048",
+    "searchId": "rb_p34",
+    "aSize": 189,
+    "bSize": 117,
+    "aSourceSha256": "fe51a0f2f915c1e76c8283712bf177c5ac2394246d1df063c817f6b53364a5ee",
+    "bSourceSha256": "29d6d9a645cc97a8b578576527f4d02e12672d76f12e0ec794f3c18ca43b9b88",
+    "aSha256": "f11d8d5b9bd021bdbc63ffbc6c3d230cb100581739037a1e31d976c09b7900f4",
+    "bSha256": "0fd01d04e68656ea04619759cc3502fc01e5ccc8a8e1f032ded8787179ea03a0",
+    "change": "Survivor A is byte-identical to m047. Survivor B changes only its initial Phoenix phase from 0x2C to 0x34."
+  },
+  "gates": {
+    "tuneValidation": {
+      "battlesPerPair": 1000,
+      "m047Score": 0.6691666675,
+      "m048Score": 0.6823333330,
+      "difference": 0.0131666655,
+      "ci95": [-0.0195584603, 0.0458917913],
+      "runUnits": { "wins": 18, "ties": 7, "losses": 15 },
+      "seeds": ["retuned-b-validation-6402", "retuned-b-validation-6403"]
+    },
+    "futurePool": {
+      "battlesPerPair": 960,
+      "m047Score": 0.3962400604,
+      "m048Score": 0.4037475073,
+      "difference": 0.0075074469,
+      "ci95": [-0.013173, 0.028188],
+      "runUnits": { "wins": 11, "ties": 0, "losses": 13 },
+      "seeds": [
+        "retuned-b-uncovered-future-9301",
+        "retuned-b-uncovered-future-9302",
+        "retuned-b-uncovered-future-9303"
+      ]
+    },
+    "freshHoldout": {
+      "id": "cp3",
+      "battlesPerPair": 6000,
+      "battlesPerCohort": 40,
+      "cohorts": 75,
+      "partitionSeeds": [
+        "captured-profile-partition-10501",
+        "captured-profile-partition-10502",
+        "captured-profile-partition-10503"
+      ],
+      "battleSeeds": [
+        "captured-profile-battle-10601",
+        "captured-profile-battle-10602"
+      ],
+      "m047Score": 0.6470000032,
+      "m048Score": 0.6604305583,
+      "difference": 0.0134305552,
+      "relativeDifference": 0.0207581993,
+      "ci95": [0.0002670374, 0.0265940729],
+      "pairedRunUnits": { "wins": 85, "ties": 9, "losses": 56 },
+      "partitionSeedDifferences": [
+        0.0133333340,
+        0.0161666640,
+        0.0118333360,
+        0.0308333310,
+        0.0062500000,
+        0.0021666660
+      ]
+    }
+  },
+  "promotion": {
+    "promoted": true,
+    "reason": "Positive point estimates on the full tune validation and a three-seed synthetic future pool, followed by six of six positive fresh partition/seed units and a positive paired-run 95% interval on the untouched 6,000-battle cp3 holdout."
+  }
+}

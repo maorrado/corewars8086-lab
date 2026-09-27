@@ -109,6 +109,14 @@ public class Options extends OptionsBase {
   public String outputFile;
 
   @Option(
+      name = "telemetryFile",
+      help = "Optional per-warrior CSV telemetry output (serial mode only)",
+      category = "Data",
+      defaultValue = ""
+  )
+  public String telemetryFile;
+
+  @Option(
       name = "colorsFile",
       help = "Path to color holder file",
       category = "Data",

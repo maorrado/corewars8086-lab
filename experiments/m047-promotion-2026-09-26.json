@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "experimentId": "m047-promotion-2026-09-26",
+  "decision": "promote-m047",
+  "baseline": {
+    "id": "m046",
+    "aSha256": "9c205304bd6b05ce859ef247659a64ab0d78cb2232484d4e3e9a18318effa0a0",
+    "bSha256": "7a6248d21c64a9896c190e79a83b47bac21166f6eaba604dc5dd06c46cac4138"
+  },
+  "candidate": {
+    "id": "m047",
+    "searchId": "sc_ptr280_p54",
+    "aSize": 189,
+    "bSize": 117,
+    "aSourceSha256": "e7b262630abc3df1a38b4218ea38d82cda3c807928724f8c3b3b3de91f2a471c",
+    "bSourceSha256": "5e0b8e4c7cc0efafcbbf13ff066ff007304cd42e14cd9d1f3ce21c4cbdf2204a",
+    "aSha256": "f11d8d5b9bd021bdbc63ffbc6c3d230cb100581739037a1e31d976c09b7900f4",
+    "bSha256": "7a6248d21c64a9896c190e79a83b47bac21166f6eaba604dc5dd06c46cac4138",
+    "change": "The captured Zombie uses phase 0x54 and private pointer cell 0x0280; the original A and B paths are otherwise m046."
+  },
+  "gates": {
+    "tuneValidation": {
+      "battlesPerPair": 1000,
+      "m046Score": 0.699666663,
+      "m047Score": 0.708,
+      "difference": 0.008333337,
+      "ci95": [-0.0137787974, 0.0304454714],
+      "runUnits": { "wins": 16, "ties": 12, "losses": 12 }
+    },
+    "futurePool": {
+      "battlesPerPair": 640,
+      "m046Score": 0.4185193313,
+      "m047Score": 0.4245052008,
+      "difference": 0.0059858695,
+      "ci95": [-0.0096397648, 0.0216115038],
+      "runUnits": { "wins": 10, "ties": 0, "losses": 6 }
+    },
+    "freshHoldouts": [
+      {
+        "id": "fh2",
+        "battlesPerPair": 6000,
+        "battlesPerCohort": 40,
+        "cohorts": 75,
+        "partitionSeeds": ["fast-hook-partition-7201", "fast-hook-partition-7202", "fast-hook-partition-7203"],
+        "battleSeeds": ["fast-hook-battle-8201", "fast-hook-battle-8202"],
+        "m046Score": 0.6368888915,
+        "m047Score": 0.6371944455,
+        "difference": 0.0003055540,
+        "ci95": [-0.0193196874, 0.0199307954],
+        "superunitDifferences": [-0.0205000000, 0.0174999920, 0.0111666650, 0.0159999990, -0.0251666680, 0.0028333360]
+      },
+      {
+        "id": "sc1",
+        "battlesPerPair": 6000,
+        "battlesPerCohort": 40,
+        "cohorts": 75,
+        "partitionSeeds": ["separated-captured-partition-9101", "separated-captured-partition-9102", "separated-captured-partition-9103"],
+        "battleSeeds": ["separated-captured-battle-9201", "separated-captured-battle-9202"],
+        "m046Score": 0.6499722258,
+        "m047Score": 0.6673472257,
+        "difference": 0.0173749998,
+        "ci95": [0.0070166150, 0.0277333847],
+        "superunitDifferences": [0.0153333300, 0.0236666680, 0.0206666650, 0.0084166680, 0.0048333320, 0.0313333360]
+      },
+      {
+        "id": "sc2",
+        "battlesPerPair": 6000,
+        "battlesPerCohort": 40,
+        "cohorts": 75,
+        "partitionSeeds": ["separated-captured-partition-9301", "separated-captured-partition-9302", "separated-captured-partition-9303"],
+        "battleSeeds": ["separated-captured-battle-9401", "separated-captured-battle-9402"],
+        "m046Score": 0.6588388903,
+        "m047Score": 0.6727833353,
+        "difference": 0.0139444450,
+        "ci95": [0.0050432784, 0.0228456116],
+        "superunitDifferences": [0.0108333340, 0.0250000060, 0.0123333300, 0.0168333420, -0.0000000020, 0.0186666600]
+      }
+    ],
+    "combinedFreshHoldouts": {
+      "battlesPerPair": 18000,
+      "m046Score": 0.6485666692,
+      "m047Score": 0.6591083355,
+      "difference": 0.0105416663,
+      "relativeDifference": 0.0162537925,
+      "ci95": [0.0033317251, 0.0177516075],
+      "superunits": 18,
+      "wins": 15,
+      "losses": 3
+    }
+  },
+  "promotion": {
+    "promoted": true,
+    "reason": "Positive direction on tune validation and the synthetic future pool, two independently significant fresh holdouts, and a positive combined 18-superunit interval across 18,000 fresh battles per pair."
+  }
+}

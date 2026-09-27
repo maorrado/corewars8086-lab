@@ -70,6 +70,7 @@ for (const cohort of config.cohorts) {
     });
 
     const scorePath = path.join(runDirectory, "scores.csv");
+    const telemetryPath = config.telemetry ? path.join(runDirectory, "telemetry.csv") : null;
     const args = [
       "-jar", jar,
       "--headless",
@@ -81,6 +82,11 @@ for (const cohort of config.cohorts) {
       "--zombiesDir", zombiesDirectory,
       "--outputFile", scorePath,
     ];
+    if (config.parallel === false) args.push("--parallel=false");
+    if (telemetryPath) {
+      if (config.parallel !== false) throw new Error("config.telemetry requires config.parallel=false");
+      args.push("--telemetryFile", telemetryPath);
+    }
     const startedAt = new Date().toISOString();
     const started = process.hrtime.bigint();
     const stdout = execFileSync(java, args, { encoding: "utf8", maxBuffer: 64 * 1024 * 1024 });
@@ -108,6 +114,10 @@ for (const cohort of config.cohorts) {
       zombies: zombieInputs,
       scores,
       candidate,
+      telemetry: telemetryPath ? {
+        path: telemetryPath,
+        sha256: sha256(telemetryPath),
+      } : null,
       rawScoreText,
       stdout,
     };

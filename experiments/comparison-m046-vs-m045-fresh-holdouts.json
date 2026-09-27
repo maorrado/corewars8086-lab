@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "baseline": "m045",
+  "candidate": "m046",
+  "candidateBinarySha256": {
+    "a": "9c205304bd6b05ce859ef247659a64ab0d78cb2232484d4e3e9a18318effa0a0",
+    "b": "7a6248d21c64a9896c190e79a83b47bac21166f6eaba604dc5dd06c46cac4138"
+  },
+  "replications": [
+    {
+      "definition": "m046-fresh-holdout-r1-definition.json",
+      "summary": "m046-fresh-holdout-r1-summary.json",
+      "battlesPerPair": 6000,
+      "baselineScore": 0.620277781,
+      "candidateScore": 0.629000003,
+      "difference": 0.008722222,
+      "superunitConfidence95": [0.0019726850246021936, 0.015471758975397806],
+      "superunitWins": 6,
+      "superunitLosses": 0
+    },
+    {
+      "definition": "m046-fresh-holdout-r2-definition.json",
+      "summary": "m046-fresh-holdout-r2-summary.json",
+      "battlesPerPair": 6000,
+      "baselineScore": 0.6468194466666668,
+      "candidateScore": 0.6563194471666666,
+      "difference": 0.0095000005,
+      "superunitConfidence95": [0.0035532597400315296, 0.01544674125996847],
+      "superunitWins": 6,
+      "superunitLosses": 0
+    }
+  ],
+  "combined": {
+    "battlesPerPair": 12000,
+    "superunits": 12,
+    "meanDifference": 0.00911111125,
+    "standardDeviation": 0.0057924257094356816,
+    "confidence95": [0.005430754723864738, 0.012791467776135261],
+    "tCritical": 2.201,
+    "wins": 12,
+    "ties": 0,
+    "losses": 0
+  }
+}
