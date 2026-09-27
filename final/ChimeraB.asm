@@ -1,6 +1,6 @@
 bits 16
 
-; Chimera B (m045): balanced hybrid; protected Phoenix plus Zombie-B/D capture.
+; Chimera B (m049): m048 with signature-hardened Phoenix initialization.
 %define FAR_SEG  0FFCh
 %define PTR_CELL 00240h
 
@@ -23,7 +23,7 @@ start:
     div ch
     mul ch
     mov ah, al
-    add ah, 02Ch
+    add ah, 034h
     mov al, 0A2h
     add si, worker - start
     jmp short phoenix_init
@@ -36,9 +36,9 @@ phoenix_init:
     rep movsw
     push ss
     pop ds
+    mov bx, PTR_CELL
     push cs
     pop ss
-    mov bx, PTR_CELL
     mov [bx], ax
     mov word [bx + 2], FAR_SEG
     xor si, si
