@@ -1,0 +1,48 @@
+# Diagnostics-only instrumentation used during the 2026-09-28 night session
+# to pinpoint the exact byte-level death mechanism for Chimera A. Applies
+# cleanly against repos/corewars8086-6.0.0-deterministic's
+# HeadlessCompetitionRunner.java. Does not change CPU/War/scoring semantics
+# -- read-only telemetry printed to stdout at the moment of a warrior death
+# matching name prefix "ChimeraA". Apply with:
+#   patch -p0 < debug-trace-instrumentation.patch
+# (adjust warriorName.startsWith(...) prefix to match your candidate's group
+# name before rebuilding with `mvn -q clean package -DskipTests`).
+--- repos/corewars8086-6.0.0-deterministic/src/main/java/il/co/codeguru/corewars8086/cli/HeadlessCompetitionRunner.java	2026-09-28 00:40:36.374994100 +0300
++++ repos/corewars8086-6.0.0-debug-trace/src/main/java/il/co/codeguru/corewars8086/cli/HeadlessCompetitionRunner.java	2026-09-28 02:44:13.476755600 +0300
+@@ -134,6 +134,36 @@
+   public void onWarriorDeath(String warriorName, String reason) {
+     deathRounds.put(warriorName, currentRound);
+     deathReasons.put(warriorName, reason);
++    if (warriorName.startsWith("ChimeraA")) {
++      War war = competition.getCurrentWar();
++      for (int i = 0; i < war.getNumWarriors(); i++) {
++        Warrior warrior = war.getWarrior(i);
++        if (warrior.getName().equals(warriorName)) {
++          int cs = warrior.getCpuState().getCS() & 0xffff;
++          int ip = warrior.getCpuState().getIP() & 0xffff;
++          int loadOffset = warrior.getLoadOffset() & 0xffff;
++          StringBuilder sb = new StringBuilder();
++          sb.append(String.format("DEATHTRACE war=%d name=%s round=%d reason=%s loadOffset=%04X CS=%04X IP=%04X ipMinusLoad=%04X bytes=",
++              warCounter, warriorName, currentRound, reason, loadOffset, cs, ip, (ip - loadOffset) & 0xffff));
++          for (int off = -16; off <= 16; off++) {
++            int addr = (ip + off) & 0xffff;
++            byte b = war.getMemory().readByte(
++                new il.co.codeguru.corewars8086.memory.RealModeAddress((short) cs, (short) addr));
++            sb.append(String.format("%02X", b & 0xff));
++            if (off == -1) sb.append("[");
++            if (off == 0) sb.append("]");
++          }
++          System.out.println(sb.toString());
++          StringBuilder loads = new StringBuilder("LOADMAP war=" + warCounter + " ");
++          for (int j = 0; j < war.getNumWarriors(); j++) {
++            Warrior w2 = war.getWarrior(j);
++            loads.append(w2.getName()).append("=").append(String.format("%04X", w2.getLoadOffset() & 0xffff))
++                .append("(size=").append(w2.getCodeSize()).append(") ");
++          }
++          System.out.println(loads.toString());
++        }
++      }
++    }
+   }
+   
+   @Override
