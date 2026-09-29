@@ -176,25 +176,79 @@ Used to separate A's cost from B's cost and to locate the AX-clobber bug:
 - B-only (`ChimeraB-scout-v1`, unchanged `final/ChimeraA`): -0.0117
   [-0.0301,+0.0066]
 
+## Follow-up round: zero-cost reuse and further insert minimization
+
+Two additional avenues were tested after the initial scout-v3 rejection,
+per the brief's explicit fallback instruction to not stop but move to the
+cheapest remaining alternative.
+
+**Zero-cost reuse of `INT87h` — investigated and closed.** m049's `start:`
+already runs an `INT87h` search (`AX=0xF9EB`, `DX=0xCCCC`) before any scout
+logic would run; the idea was to repurpose this existing call as the
+opponent-scanner instead of adding a new one. Decoding the search bytes in
+little-endian order (`AX=0xF9EB` → bytes `EB F9` → `JMP short -7`;
+`DX=0xCCCC` → bytes `CC CC`) and cross-referencing against m049's own
+compiled bytes showed the 4-byte signature `EB F9 CC CC` **is m049's own
+encoded bootstrap immediate values** (`B8 EB F9` = `mov ax,0F9EBh`
+immediately followed by `BA CC CC` = `mov dx,0CCCCh`'s leading bytes) —
+i.e. this search is part of the Zombie/self-recognition mechanism
+(finding other warriors running this exact byte pattern), not a spare
+general-purpose scan. Repurposing it would break Zombie capture, a
+separately-valuable, already-proven part of m049. **Closed — not a safe
+free lunch.** Also confirmed directly against `Cpu.java:int87()`:the found
+address is never written back to any register (only the memory *at* that
+address is modified via `writeWord`), so `INT87h` structurally cannot
+double as an address-reporting scanner without engine changes.
+
+**Further insert minimization (Chimera scout-v4).** Rewrote B's
+marker-check-and-burst block (`ChimeraB-scout-v2.asm`) to use a single
+`DS` swap (read both marker and target back-to-back via two `LODSW`s,
+restore `DS` once) instead of v1's swap/restore/swap-again pattern, and
+halved `BURST_LEN` from 4 to 2 bytes (still enough to corrupt the
+documented 2-byte `FF1F` anchor). Isolated B-v2 cost: -0.0099
+[-0.0309,+0.0110] vs. B-v1's -0.0117 [-0.0301,+0.0066] — a small,
+statistically insignificant improvement.
+
+Paired with A-v3 (already near-zero isolated cost), the combined
+candidate (Chimera scout-v4):
+
+| Gate | n | W/L/T | Mean diff | 95% CI |
+|---|---|---|---|---|
+| Screen (all-2025) | 50 | 16/27/7 | -0.0193 | [-0.0423,+0.0037] |
+| **Fresh holdout** | 50 | 15/31/4 | **-0.0347** | **[-0.0582,-0.0113]** |
+
+Still a significant fresh-holdout regression, marginally *worse* than
+scout-v3's -0.0279 (well within combined noise of the two point estimates
+— not evidence the minimization hurt, just evidence it didn't help).
+**This closes the "shrink the insert further" sub-avenue**: the floor for
+this integration strategy (one-shot bootstrap check, best position found,
+smallest correctly-functioning payload) has been reached across two
+independent minimization attempts, and it does not cross into positive
+territory on genuinely unseen data.
+
 ## Conclusion / next steps
 
-1. **The scout/executor cooperative-pair idea is not disproven — this
-   specific integration (bootstrap-time scan/burst layered onto unmodified
-   m049 replication) is.** The mechanism works (proven kill in a
-   controlled test); the cost of even a near-minimal, correctly-positioned
-   insert (~9 instructions, in the cheapest tested position) still nets a
-   small but real regression once tested on a genuinely fresh holdout.
-2. Per the brief's own fallback instruction: this direction has now been
-   tested to its cheapest viable version (single-candidate scan, optimally
-   positioned, bug-fixed) and still fails the fresh-holdout gate — further
-   size reduction below "1 candidate check" isn't meaningful (there'd be
-   nothing left to call a scout). The next cheaper alternative worth
-   trying, if this thread is resumed, is **not shrinking the insert
-   further but eliminating it**: e.g., encoding the "check for an
-   opportunistic target" logic using bytes/cycles m049 already spends
-   (piggybacking on existing `int87h`/anchor-setup instructions rather
-   than adding new ones), which was not attempted this session.
+1. **The scout/executor cooperative-pair idea is not disproven — every
+   tested integration of it onto m049's existing bootstrap is.** The
+   mechanism works end-to-end (proven kill in a controlled test, proven
+   communication channel); the cost of even the most-minimized,
+   optimally-positioned insert tested (Chimera scout-v4) still nets a
+   confirmed regression on fresh holdout, and a second independent
+   minimization attempt did not change this conclusion.
+2. **Two explicit "cheaper alternative" directions from the brief have now
+   been tried and closed**: (a) reusing an existing engine call
+   (`INT87h`) instead of adding a new scan — closed, would break Zombie
+   capture; (b) shrinking the insert to its functional floor — closed,
+   two independent minimization rounds both still regress on fresh
+   holdout. The remaining untried direction from the brief is the more
+   structural one: **A performs the precise attack itself (no B
+   communication at all), B remains an independent pressure/decoy** — this
+   was not attempted this session (time budget), since it requires a
+   different, not-yet-designed A architecture rather than a variation on
+   what was already built.
 3. Everything needed to resume or verify this work is saved:
-   `candidate-source/` (all `.asm` files, including the two full self-caught-
-   and-documented bugs and their fixes), `configs/` and `results/`
-   (compacted JSON, all screen/tune/holdout/isolation runs), this report.
+   `candidate-source/` (all `.asm` files, including three full self-caught-
+   and-documented bugs and their fixes across scout-v2 and the B-v2
+   minimization), `configs/` and `results/` (compacted JSON, all
+   screen/tune/holdout/isolation runs across 4 full candidate iterations),
+   this report.
