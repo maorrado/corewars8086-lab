@@ -6,20 +6,19 @@ not touched throughout. Process follows the `arena` skill
 (`~/.claude/skills/arena/SKILL.md`): Frame → Fan out → Cross-judge → Pick
 → Graft → Verify.
 
-## Bottom line
+## Bottom line (updated 2026-09-30 — see Phase F)
 
-**Winner: Candidate 1 (multi-anchor rotation / "RotAnchor"), unmodified.**
-Beats m049 and m050 decisively in direct combat (65% margin, 9-0 across
-every tested opponent including all 7 other arena candidates), but scores
-13.8% *below* m049 on the isolated 75-team general-field screen. Three
-independent attempts to graft improvements from other candidates onto
-this base all made the general-field score worse (and one caused a
-100%-reproducible crash that was diagnosed and abandoned rather than
-fixed). **No version found beats m049 on both measures simultaneously.**
-Candidate 1 unmodified is the best result of the night — a real,
-verified, reproducible improvement over the champion in one specific,
-well-characterized dimension (direct confrontation), not an unqualified
-upgrade.
+**Winner: v6 (Synth v6 — Candidate 1's base + a root-cause fix for the
+crash originally hit in v3/v5).** Beats m049 in direct tournament combat
+by +9% to +20% depending on seed set (confirmed on a fresh holdout seed
+set never touched during tuning, where the margin was actually the
+*largest*: +20.0%), and beats m050 by +22% to +33%. On the general-field
+screen it trails m049 by only -2.4% (versus candidate 1's original
+-13.8%) — the root-cause fix closed roughly 83% of that gap. Full detail
+in Phase F below; the original Phase A-E narrative immediately following
+is preserved as-written for the historical record of how this was found,
+but its "no version found beats m049 on both measures" conclusion is
+superseded.
 
 ## Phase A/B: Frame and fan out
 
@@ -237,6 +236,93 @@ costly to perturb, even when the perturbation is individually sound.
   measurable, reproducible, holdout-surviving improvement over m049 on
   the primary metric, which was not achieved.
 
+## Phase F: root-causing the v3/v5 crash and closing the gap (2026-09-30)
+
+The abandoned v3 crash (100% reproducible, round 225/254) was revisited
+using the `systematic-debugging` process rather than continued trial and
+error. v5 (a variant using a different delta magnitude, 0x1000 instead of
+v3's 0x0800, otherwise identical) was built specifically to test whether
+the crash was magnitude-dependent — it crashed identically, same round
+(226/255), same corrupted-anchor byte signature, despite the different
+value. That identical-crash-regardless-of-value result ruled out the
+"stride ratio causes denser packing" hypothesis and pointed at a
+structural bug instead.
+
+**Root cause, traced instruction-by-instruction:** `call far [bx]` (the
+replication jump) does not re-run the warrior's bootstrap between
+generations — it transfers control with whatever register state existed
+at the jump. Both v3 and v5 inserted `mov dx, <delta>` inside `worker:`
+to give the stride-toggle its own constant, separate from the existing
+`sub sp,dx` stack-gap use of DX. That `mov dx` permanently overwrites DX
+starting from generation 2 onward, so every subsequent `sub sp,dx`
+silently uses the wrong value (the toggle delta, not the stack-gap
+constant), corrupting SP-derived memory writes over several generations
+until they collide with unrelated code — consistent with the crash
+happening at round ~226 rather than round 1. Candidate 1's original code
+never hit this because it reuses the SAME DX value for both purposes and
+never writes a second value to DX inside `worker:`.
+
+**Fix (v6):** bake the toggle delta as an immediate operand
+(`xor bp, 02000h`, 4 bytes) instead of routing it through a register
+(`xor bp, dx`, 2 bytes). This costs +2 bytes per warrior (193/121 vs
+candidate 1's 191/119, both well under the 256-byte budget) but means DX
+is never written inside `worker:` at all — it stays at its one-time
+bootstrap value for `sub sp,dx` on every generation, forever, so there is
+nothing to inherit incorrectly across the `call far [bx]` boundary. Delta
+chosen: 0x2000 (zero low byte, preserving the AL-sweep-safety invariant
+documented in candidate 1's own source comments), giving alt stride
+ratios of 46.7% (A) / 147.1% (B) to their respective primary strides —
+much closer to 1:1 than candidate 1's forced 6.7%, which the earlier
+timing-control diagnostic had isolated as the dominant source of
+candidate 1's screen-score cost. The usual byte-length/copy-count
+coupling (`GROUNDING.md`'s "DEC DI ablation" class) was pre-emptively
+fixed in the same pass: `worker:` grew from 19 to 21 bytes, so the three
+coupled `mov cx`/`mov cl` sites were bumped 10→11.
+
+**Results** (2500-battle all-2025 screen; tournament figures are
+aggregated pairwise totals across a controlled 6-seed sweep with a fixed
+team-list order, to avoid a filler-opponent-rotation confound described
+below):
+
+| Version | Screen teamPerBattle | vs m049 (screen) | Tournament vs m049 | Tournament vs m050 |
+|---|---|---|---|---|
+| m049 (champion) | 0.6674 | — | — | — |
+| candidate 1 (original) | 0.5750 | -13.8% | wins | wins |
+| v6 (root-cause fix) | 0.6515 | **-2.4%** | **wins, +9.0%** (tuning seeds) / **+20.0%** (fresh holdout seeds) | **wins, +22.1%** (tuning) / **+33.2%** (holdout) |
+
+A confound was caught and corrected along the way: an initial two single-
+seed 4-team tournament runs appeared to contradict each other (one had
+m049 beat v6, the next had v6 beat m049 by a wide margin). This was not
+noise — `tournament-benchmark.mjs` rotates `fillerCohorts` by
+`pairIndex mod fillerCohorts.length`, and `pairIndex` depends on
+team-list order in the config, so the same seed string under two
+differently-ordered team lists faces different filler opponents and
+produces non-comparable battles. A dedicated 2-team-only (m049 vs v6)
+6-seed re-run, immune to this confound, resolved it cleanly: v6 won all
+6 of 6 seeds. A subsequent 4-team, 6-seed run with a fixed team-list
+order, and then a final run on entirely fresh holdout seeds never used in
+any tuning decision, both confirmed the same direction — the holdout run
+if anything showed a *larger* margin (+20.0%) than the tuning-set seeds,
+ruling out the concern that the tuning seeds happened to favor v6.
+
+**v6 vs v4** (the other surviving graft, which added an independent
+zombie-capture entry point but kept candidate 1's original, unfixed
+stride toggle) is genuinely close and seed-sensitive — v6 won the
+tuning-set sweep by 1.2%, v4 won the fresh-holdout sweep by 3.7%, both
+thin margins. Since v6 is far ahead of v4 on the general-field screen
+(0.6515 vs 0.5575) while being roughly tied in tournament play, v6 is the
+stronger overall candidate of the two.
+
+**Revised answer to "is there code better than both m049 and m050?"**
+Yes, confirmed on the tournament axis with three independent multi-seed
+measurements including a fresh holdout set, not just the original
+single-configuration tournament win. On the screen axis, v6 is close but
+not quite there (-2.4%, versus candidate 1's -13.8%). `final/` was not
+modified; no `m051` has been promoted despite the tournament-axis result
+meeting the project's "reproducible, fresh-holdout-surviving improvement"
+bar, pending a decision on how to weigh the still-open screen-axis gap
+before any promotion.
+
 ## Files
 
 - `GROUNDING.md` — shared engine-facts document given to all 8 candidates
@@ -244,7 +330,8 @@ costly to perturb, even when the perturbation is individually sound.
   and `RATIONALE.md`
 - `candidate-source/diagnostic/` — the timing-control isolation experiment
 - `candidate-source/synthesis/` — all synthesis attempts (v1, v2, v3
-  abandoned, v4)
+  abandoned, v4, v6 — see `candidates/generated/arena-2026-09-29/synthesis/`
+  in the repo root for v5/v6, added in Phase F)
 - `results/` — compacted JSON for every screen, tournament, and diagnostic
   run referenced above
 - `configs/` — reproduction configs for the tournament and key comparisons
