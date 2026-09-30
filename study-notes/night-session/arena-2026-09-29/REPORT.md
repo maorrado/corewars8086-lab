@@ -434,6 +434,64 @@ faced). **v9 is a strict improvement over v6 on every axis measured** and
 is the best-known result of the session as of this writing. Still does
 not beat m050 on the solo screen — that remains the open gap.
 
+## Phase H: hunting for more redundant instructions — a real bug, a fix,
+and a null result (2026-09-30)
+
+Applying the exact method that found m050's own fix (trace every
+register write, check if it's overwritten/unused before being read) to
+the rest of the bootstrap found two more candidate dead instructions:
+`captured_init:`'s and `phoenix_init:`'s own `xor di,di`, both
+redundant by the same reasoning m050 used (verified via the engine
+source that `int87()`, `Cpu.java:2153-2177`, only reads DI, never
+writes it back).
+
+**A first attempt reused m050's exact "pad with `times 2 db 0CCh`"
+technique and this was a real mistake — it crashed.** That technique
+only works in a region execution jumps OVER (the gap m050's own fix
+sits in); `captured_init:` and `phoenix_init:` are both jump-target
+labels, so the filler bytes get executed as real opcodes (`0xCC` =
+unsupported `INT3`). `phoenix_init:`'s version crashed 100%
+deterministically (debug-traced to round 23-26, IP landing directly in
+the filler). `captured_init:`'s version was more insidious: a 400-battle
+smoke test passed cleanly because the zombie-capture path it corrupted
+is a rare mid-battle event the smoke sample never triggered — only the
+full 2500-battle screen exposed it, cratering the score to 0.534 instead
+of the expected ~0.65. This is now documented as a distinct trap in the
+project's memory system, separate from the DX-persistence bug and the
+byte-length/copy-count coupling bug.
+
+Reverted `captured_init:`'s change entirely (not worth the added risk
+for a rarely-triggered path). Properly fixed `phoenix_init:` by
+genuinely removing the 2 bytes (191/119, shrinking from v9's 193/121)
+rather than padding, verified via the NASM listing that `worker:`'s own
+length and the copy-count coupling are completely unaffected (separate,
+later block; NASM's label-relative arithmetic auto-adjusts everything
+else). This version, v11, is crash-free on both smoke and full screen.
+
+**Result: v11 vs v9 on the full screen = -0.09%, statistically
+indistinguishable from zero.** A genuine, correctly-executed null
+result — not every provably-redundant instruction has the same timing
+value as m050's original fix; this one removes a round LATER in the
+bootstrap sequence (after the int87h search) rather than very early
+(before it), and that position appears to matter, not just the raw
+instruction count. v11 is saved as a verified-correct variant but offers
+no measurable benefit over v9, so v9 remains the session's best result.
+
+**Where this leaves things.** Across the whole night, four genuinely
+different improvement strategies were tried against the v6/v9
+architecture and all are now closed: the stride-toggle ratio (14
+values), A/B-decoupled deltas (9 combinations), grafts from other arena
+candidates (3 attempts, tried against both the original and the fixed
+base), and the redundant-instruction hunt (2 more instances, one
+reverted, one netting to noise). v9 stands as the best verified result:
+beats both m049 (+11.2%) and m050 (+12.5%) in direct tournament combat,
+and trails m050 by only -2.6% on the solo screen (versus candidate 1's
+original -13.8%). Further progress on the remaining screen gap would
+need either a genuinely different architectural idea (not a further
+variation on this base) or a decision to accept the tournament-axis win
+as sufficient on its own. `final/` was not touched at any point; no
+`m051` has been promoted.
+
 ## Files
 
 - `GROUNDING.md` — shared engine-facts document given to all 8 candidates
