@@ -492,6 +492,72 @@ variation on this base) or a decision to accept the tournament-axis win
 as sufficient on its own. `final/` was not touched at any point; no
 `m051` has been promoted.
 
+## Phase I: a genuinely new mechanism attempted — retargeting a wasted
+offensive search — two real regressions, root cause unresolved (2026-09-30)
+
+Everything up to this point was a variation on the existing stride-
+toggle/timing-fix themes. This phase tried something structurally new:
+`start:`'s FIRST `int87h` call (running once, before `phoenix_init:`,
+completely separate from `worker:`'s own anchor-maintenance logic)
+searches the shared arena for a 4-byte pattern and patches any match.
+Byte-scanning all 150 real official-2025 opponent binaries confirmed
+the ORIGINAL search pattern (`EB F9 CC CC`) matches ZERO of them — this
+call runs every single battle for free (INT87h is round-cost-free
+regardless of hit, per the engine deep-read) but has never once found
+anything against the real field. Pure wasted potential, not a bug.
+
+Further scanning found this lineage's own `FF 1F` anchor pattern
+(`call far [bx]`, the exact replication mechanism this whole codebase
+uses) present in 83/150 real files (55% of the field!), with
+`FF 1F 90 90` as the single most common exact 4-byte variant (24/150
+files). Retargeted the search to this pattern — a well-motivated,
+carefully-verified change with zero added byte or round cost (only 2
+immediate operand values change).
+
+**v12** kept the existing replacement (`jmp [0x5D13]`, redirecting a
+matched opponent into this warrior's own `zombie_entry:` capture
+logic). Verified thoroughly for self-hijack risk (own static bytes
+never match the new pattern; search timing precedes this warrior's own
+first arena write, so nothing of its own exists to hijack yet) and
+crash-free on smoke test. **Regressed -16.58% vs v9 on the full 2500-
+battle screen** — large, real, spread broadly across most cohorts (not
+one collision). Hypothesized cause: hijacking an opponent into
+`zombie_entry:`/`captured_init:` makes them run that code with their
+OWN arbitrary register state, and `captured_init:` writes into a
+fixed, team-shared cell (`0x0280`) this team's own zombie-recovery
+flow depends on — corrupting state this team needs later.
+
+**v13** tested that hypothesis directly: identical retargeted search,
+but a pure, side-effect-free replacement (`BX=CX=0xCCCC`, writing raw
+`CC CC CC CC` INT3 sabotage bytes — never executes any of this
+warrior's own code, never touches shared state). **Regressed -16.52%,
+essentially IDENTICAL to v12.** This disproves the shared-state-
+corruption hypothesis outright — two completely different replacement
+targets produced the same regression, so the problem is tied to the
+search-pattern retargeting itself, not the replacement choice.
+
+Debug-traced v13 against unmodified v9 on the identical seed
+specifically to rule out a crash/corruption explanation: found none —
+both versions die at nearly identical rounds, offsets, and failure
+reasons (ordinary combat attrition present equally in both). This was
+a genuine wrong turn in the investigation, caught and corrected rather
+than reported as a finding. **Abandoned after two independent,
+carefully-verified negative results and a debug-trace investigation
+that ruled out the two most obvious explanations**, consistent with
+the session's established practice of not sinking excessive time into
+one direction once a clear regression is confirmed. Reverted to v9.
+
+The actual root cause remains an open question — the most likely
+remaining explanation is some effect in aggregate competitive dynamics
+(successfully sabotaging real opponents' shared anchor pattern changes
+which opponents die when in a way that nets unfavorable for this
+team's own scoring) rather than any implementation bug in this
+warrior's own code, but this is unverified speculation, not a
+confirmed finding. A future session wanting to pursue this further
+should compare aggregate opponent-death-rate/timing statistics across
+the full screen rather than individual battle traces, since per-battle
+debug-tracing was tried here and did not surface an explanation.
+
 ## Files
 
 - `GROUNDING.md` — shared engine-facts document given to all 8 candidates
