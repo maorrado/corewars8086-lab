@@ -6,18 +6,35 @@ not touched throughout. Process follows the `arena` skill
 (`~/.claude/skills/arena/SKILL.md`): Frame → Fan out → Cross-judge → Pick
 → Graft → Verify.
 
-## Bottom line (updated 2026-09-30 — see Phase F)
+## Bottom line (updated 2026-09-30 — see Phase G, supersedes Phase F)
 
-**Winner: v6 (Synth v6 — Candidate 1's base + a root-cause fix for the
-crash originally hit in v3/v5).** Beats m049 in direct tournament combat
-by +9% to +20% depending on seed set (confirmed on a fresh holdout seed
-set never touched during tuning, where the margin was actually the
-*largest*: +20.0%), and beats m050 by +22% to +33%. On the general-field
-screen it trails m049 by only -2.4% (versus candidate 1's original
--13.8%) — the root-cause fix closed roughly 83% of that gap. Full detail
-in Phase F below; the original Phase A-E narrative immediately following
-is preserved as-written for the historical record of how this was found,
-but its "no version found beats m049 on both measures" conclusion is
+**Winner: v9 (v6's base + m050's one-instruction bootstrap-timing fix).**
+Important correction from earlier in the night: m050 was believed to be
+weaker than m049 (established before this research thread began), but
+turns out to be the strongest of {m049, m050, v6} on the primary solo-
+vs-field screen metric (0.6723 vs m049's 0.6674) — a fact obscured by an
+artificial "3 fixed candidates crowded in one arena" test that measures
+something different (see Phase G). v9 ports m050's entire actual
+advantage over m049 (one redundant instruction removed from the one-time
+bootstrap) onto v6, and is a STRICT improvement over v6 on every axis
+measured: solo screen 0.6547 (+0.49% over v6, still -2.62% behind m050),
+tournament vs m049 +11.2% (wider than v6's own +9.0%), tournament vs m050
++12.5% (a clean win against a much tougher target than v6 faced). Full
+detail in Phase G below. The Phase F "Winner: v6" framing immediately
+following is preserved as-written for the historical record of how v6
+was found, but is superseded by v9.
+
+Earlier Phase F summary (superseded, kept for history): v6 beats m049 in
+direct tournament combat by +9% to +20% depending on seed set (confirmed
+on a fresh holdout seed set never touched during tuning, where the
+margin was actually the *largest*: +20.0%), and beats m050 by +22% to
++33% (that m050 comparison used the crowded-arena methodology now known
+to be less representative — see Phase G). On the general-field screen v6
+trails m049 by only -2.4% (versus candidate 1's original -13.8%) — the
+root-cause fix closed roughly 83% of that gap. The original Phase A-E
+narrative immediately following is preserved as-written for the
+historical record of how this was found, but its "no version found beats
+m049 on both measures" conclusion is
 superseded.
 
 ## Phase A/B: Frame and fan out
@@ -322,6 +339,100 @@ modified; no `m051` has been promoted despite the tournament-axis result
 meeting the project's "reproducible, fresh-holdout-surviving improvement"
 bar, pending a decision on how to weigh the still-open screen-axis gap
 before any promotion.
+
+## Phase G: correcting the m050 record, a 3-way realistic-final test, a
+full engine-source deep-read, and v9 (2026-09-30)
+
+**The m050 correction.** Earlier tonight (and in prior sessions), m050
+was treated as strictly weaker than m049 — "a Codex research variant
+that never beat m049." A user request to run all three of {m049, m050,
+v6} together against the real 2025 field (see the three-way test below)
+appeared to confirm this: m050 scored worst of the three (mean 0.202 vs
+m049's 0.389 and v6's 0.301) across 1050 battles. Presenting this as
+settling "who's actually best" was a mistake, caught when directly
+challenged: m050's own solo-vs-field screen (`experiments/m050-all2025.json`,
+identical 25-cohort/2-seed/2500-battle structure used for m049 and v6)
+shows **m050 = 0.6723, actually the HIGHEST of the three** — m049 =
+0.6674, v6 = 0.6515. The crowded 3-way test and the solo screen give a
+complete ranking reversal, not noise (0.73% m050-over-m049 gap on
+solo, vs. m049 finishing first and m050 last when crowded together).
+
+**Three-way "realistic final" test.** Built `threeway-vs-field-benchmark.mjs`
+(generalizes the pairwise `tournament-benchmark.mjs` pattern): puts 3
+fixed teams in EVERY battle together, with the engine's 4th comboSize
+slot rotating through all 75 real official-2025 opponents (14 battles
+per opponent, 1050 total, config `config-threeway-vs-field-1000.json`,
+result `experiments/threeway-vs-field-1000.json`). Standings: m049 mean
+0.389 (best-of-3 in 55/75 opponent-groups), v6 mean 0.301 (12/75), m050
+mean 0.202 (8/75). Asked directly whether this test's "solo winner
+scoring worst when crowded" result was suspicious, reconsidered and
+concluded: **the solo screen remains the more externally-valid predictor
+of real competitive placement.** The three-way test's specific
+composition — 3 different VERSIONS of essentially the same champion
+lineage sharing one arena — is not a configuration that would ever occur
+in an actual competition round (m049/m050/v9 aren't 3 independent real
+entrants competing simultaneously; they're 3 iterations of one team's
+own code). The engine deep-read (below) also surfaced a specific
+mechanism — a shared, order-dependent RNG stream whose consumption
+scales with how many warriors are alive each round — that helps explain
+*why* solo and crowded results can diverge so sharply for the same seed,
+without making the crowded result more trustworthy as a predictor.
+
+**Full engine-source deep-read.** Dispatched a dedicated research agent
+to read every simulation-relevant Java file (~30 files, ~5,500 lines:
+`cpu/`, `memory/`, `war/`, `CoreWarsEngine.java`, `cli/`) top to bottom,
+hunting for mechanics beyond what `GROUNDING.md` already documents.
+Headline findings (full detail, with file:line citations, in the
+session's memory system under "Engine Deep-Read" and in the agent's
+original transcript): (1) a single shared `Random` instance drives the
+whole war — load order, load-address retries, and a per-round
+per-living-warrior "extra opcode" roll (`War.java:213-218`) all draw
+from it, so the entire future random sequence diverges as soon as any
+two battles' death timelines diverge, even under the same seed; (2)
+scoring is per-INDIVIDUAL-warrior (`1/numSurvivorsAlive`, added once per
+surviving A or B independently, `War.java:406-414`) — keeping both A and
+B alive to war-end is worth exactly double one alone; (3) `isOver()`
+excludes zombies from the survivor count, so uncaptured hostile zombies
+don't block victory; (4) `INT87h`'s full-arena search-and-patch runs to
+completion in ONE round regardless of hit position, a genuine anomaly in
+the otherwise-strict one-opcode-one-round model (already well-exploited
+by the champion lineage); (5) 16-bit `RCR`/`SHL`/`SHR`/`SAR` have
+inconsistent flag updates (RCR touches no Sign/Zero/Parity at all;
+SHL/SHR/SAR touch Zero only) — a landmine for any future design using a
+conditional jump right after a 16-bit shift/rotate; (6) any 16-bit
+memory access is two independently-permission-checked byte writes, so a
+target one byte before a region boundary can commit a partial write
+before killing the warrior. The agent also flagged a possible
+inconsistency in `GROUNDING.md`'s documented CS=0xFFC execute-blind-spot
+arithmetic; redone by hand afterward and confirmed `GROUNDING.md`'s
+original two-range documentation was correct — the agent's own
+derivation had the error, not the existing documentation. None of these
+findings pointed to an immediately larger architectural lever than what
+had already been tried, but (2) was checked against the current
+champion lineage's actual B-side code and confirmed not to reveal a gap
+(B already runs the same active `worker:`/`INT87h` defense loop as A,
+not a passive bootstrap-then-idle design).
+
+**v9: porting m050's actual fix onto v6.** Diffed m050 against m049
+directly (byte-identical file sizes, 189/117 both) to find m050's entire
+real advantage: one redundant `xor di,di` removed from the one-time
+`start:` bootstrap (m049 sets DI then re-zeroes it two instructions
+later, before DI is ever read — a genuine dead no-op), a functionally
+inert DI->BX register swap for an address computation, and 2 filler
+`0xCC` bytes to preserve every downstream label offset. This saves
+exactly one engine round, once, at the very start of the warrior's
+life — not a structural or architectural change. Ported the identical
+fix onto v6 (v9 = v6 + this one change; `SynthA-v9.asm`/`SynthB-v9.asm`,
+byte-identical to v6 at 193/121). Results: solo screen 0.6547 (+0.49%
+over v6, `experiments/synth-v9-all2025.json`), still -2.62% behind
+m050's 0.6723. Tournament (6-seed controlled, 900 battles, same
+fixed-team-order/seed set as v6's own earlier tournament,
+`experiments/synth-v9-vs-both-multiseed.json`): v9 beats m049 +11.2%
+(wider than v6's own +9.0% on the identical seeds) and beats m050 +12.5%
+(a clean win against a much tougher opponent than v6's tournament ever
+faced). **v9 is a strict improvement over v6 on every axis measured** and
+is the best-known result of the session as of this writing. Still does
+not beat m050 on the solo screen — that remains the open gap.
 
 ## Files
 
