@@ -37,6 +37,37 @@ correction section in the next commit.
 ## Active processes at checkpoint time
 None (the 10-seed bigcheck finished; nothing else running).
 
+## Progress after resuming (2026-10-01, after the speedup; commit 4356415)
+
+- Speedup done: `fast-benchmark.mjs` (+ `--java C:/Users/ronyr/.jdks/openjdk-25.0.1/bin/java.exe
+  --jvm-opts "-XX:+UseParallelGC"`): one 10-seed screen config 852 s -> ~67 s, byte-identical.
+- REPORT.md corrected and pushed.
+- micro-oct1 (10 fresh seeds, standard partition all-v1): no bootstrap tweak beats c090; removing
+  the "dead" xor di,di (d1) is consistently harmful (-0.48pp, 0/10). Timing scan (A/B main loop
+  -1..+3 rounds): c090 sits at a sharp local optimum on all-v1 (B shifts up to -1.76pp).
+- KEY METHOD FINDING: the standard screen uses ONE partition of the 75 teams into 25 triples
+  (salt all-v1). Timing effects are triple-specific, so one partition is a large noise source
+  that more seeds do not remove. `make-partition-configs.mjs` builds fresh partitions (salts
+  all-v2...). On 8 fresh partitions x 2 seeds (gen-oct1, 20,000 battles each):
+  e1 (c090 + A start fusion) +0.78pp vs m050 (14/16, t=3.81), +0.51pp vs c090 (14/16, t=3.99);
+  c090 +0.27pp vs m050 (12/16); m049 -0.84pp vs m050 (0/16). (On all-v1, e1 was only +0.03 vs c090.)
+- RUNNING at this point: pre-registered holdout for e1 (partitions all-v10..v17, seeds
+  hold-oct1-001/002, with m049/m050/c090) + exploration around e1 on the gen-oct1 partitions
+  (e1p1-3, e1m, e2, mA, pA1, pA3, d4). Log: build/fast-runs/hold-oct1.log.
+  Compare: `node candidates/generated/microopt-2026-10-01/compare.mjs --by-partition --baseline m050 --baseline c090 name=experiments/part-hold-oct1-<name>.json ...`
+
+### Update ~05:00
+- Holdout (v10-v17, 2 shared seeds): e1 did NOT replicate (-0.01 vs c090); c090 +0.86 vs m050 (15/16).
+- SECOND METHOD FINDING: all runs with the same seed string share the same 50 war seeds and group
+  permutations, so "2 seeds x 8 partitions" has only 2 independent seed bases. Fixed with
+  `--seed-per-cohort` (make-partition-configs.mjs; fast-benchmark supports cohort.seeds): every
+  run gets its own seed. ind-oct1 (v18-v33, 400 independent runs per warrior):
+  c090 vs m050 -0.05pp (t=-0.5) -- c090's edge does NOT generalize; e1p3 +0.79 vs c090 (t=3.96,
+  14/16 partitions); zombie-path speedups z1-z3 monotonically harmful; m049 -0.83 vs m050.
+- RUNNING: conf-oct1 (v34-v49, independent seeds; PRE-REGISTERED primary: e1p3 vs m049/m050/c090;
+  exploration e1p2/e1p4/e1p5) + holdind-oct1 (v10-v17 with independent seeds: does c090's +0.86
+  there survive? diagnostic for the shared-seed artefact). Log build/fast-runs/conf-oct1.log.
+
 ## Next step when resuming
 1. Correct the arena-100 REPORT.md and commit.
 2. Using the faster benchmark infrastructure, keep searching for general improvements over m050,

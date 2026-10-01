@@ -1,0 +1,69 @@
+     1                                  bits 16
+     2                                  
+     3                                  ; microopt-2026-10-01 timing scan mB / B: B main loop 1 round earlier (dead xor di,di removed from B phoenix_init only)
+     4                                  ; Base: c090. Only the start time of one warrior's main loop changes.
+     5                                  
+     6                                  %define FAR_SEG  0FFCh
+     7                                  %define PTR_CELL 00240h
+     8                                  
+     9                                  start:
+    10 00000000 89C6                        mov si, ax
+    11 00000002 0E                          push cs
+    12 00000003 07                          pop es
+    13 00000004 B8EBF9                      mov ax, 0F9EBh
+    14 00000007 BACCCC                      mov dx, 0CCCCh
+    15 0000000A BBFF26                      mov bx, 026FFh
+    16 0000000D B9135D                      mov cx, 05D13h
+    17 00000010 FD                          std
+    18 00000011 CD87                        int 087h
+    19 00000013 FC                          cld
+    20 00000014 89F0                        mov ax, si
+    21 00000016 88E0                        mov al, ah
+    22 00000018 30E4                        xor ah, ah
+    23 0000001A B53C                        mov ch, 03Ch
+    24 0000001C F6F5                        div ch
+    25 0000001E F6E5                        mul ch
+    26 00000020 88C4                        mov ah, al
+    27 00000022 80C434                      add ah, 034h
+    28 00000025 B0A2                        mov al, 0A2h
+    29 00000027 83C660                      add si, worker - start
+    30 0000002A EB02                        jmp short phoenix_init
+    31                                  
+    32 0000002C CCCC                        times 2 db 0CCh
+    33                                  
+    34                                  phoenix_init:
+    35 0000002E 16                          push ss
+    36 0000002F 07                          pop es
+    37 00000030 B90900                      mov cx, 9
+    38 00000033 F3A5                        rep movsw
+    39 00000035 16                          push ss
+    40 00000036 1F                          pop ds
+    41 00000037 BB4002                      mov bx, PTR_CELL
+    42 0000003A 0E                          push cs
+    43 0000003B 17                          pop ss
+    44 0000003C 8907                        mov [bx], ax
+    45 0000003E C74702FC0F                  mov word [bx + 2], FAR_SEG
+    46 00000043 31F6                        xor si, si
+    47 00000045 89C7                        mov di, ax
+    48 00000047 B8FC0F                      mov ax, FAR_SEG
+    49 0000004A 8EC0                        mov es, ax
+    50 0000004C 8DA58002                    lea sp, [di + 00280h]
+    51 00000050 B90900                      mov cx, 9
+    52 00000053 BA0040                      mov dx, 04000h
+    53 00000056 BD0044                      mov bp, 04400h
+    54 00000059 B8FF1F                      mov ax, 01FFFh
+    55 0000005C AB                          stosw
+    56 0000005D 4F                          dec di
+    57 0000005E FF1F                        call far [bx]
+    58                                  
+    59                                  worker:
+    60 00000060 A5                          movsw
+    61 00000061 F3A5                        rep movsw
+    62 00000063 29D4                        sub sp, dx
+    63 00000065 292F                        sub [bx], bp
+    64 00000067 8B3F                        mov di, [bx]
+    65 00000069 B109                        mov cl, 9
+    66 0000006B 31F6                        xor si, si
+    67 0000006D AB                          stosw
+    68 0000006E 4F                          dec di
+    69 0000006F FF1F                        call far [bx]

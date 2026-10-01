@@ -125,7 +125,9 @@ for (const configPath of configPaths) {
     const teams = [config.candidate, ...cohort.opponents];
     const inputs = {};
     for (const team of teams) inputs[team.name] = copyTeam(team, warriorsDirectory);
-    for (const seed of config.seeds) {
+    // A cohort may carry its own seeds (fast-benchmark only): all runs sharing a seed string
+    // share their 50 war seeds and group orders, so independent units need distinct seeds.
+    for (const seed of cohort.seeds ?? config.seeds) {
       const runId = `${safeName(cohort.id)}__${safeName(seed)}`;
       const runDirectory = path.join(runRoot, runId);
       fs.mkdirSync(runDirectory, { recursive: true });

@@ -1,0 +1,107 @@
+     1                                  bits 16
+     2                                  
+     3                                  ; microopt-2026-10-01 z3 / A: captured zombies: z1 + z2 (-3 rounds)
+     4                                  ; Base: c090. Only code that captured zombies execute changes (zombie_entry..captured_init).
+     5                                  
+     6                                  %define FAR_SEG  0FFCh
+     7                                  %define PTR_CELL 00200h
+     8                                  
+     9                                  start:
+    10 00000000 89C6                        mov si, ax
+    11 00000002 89C3                        mov bx, ax
+    12 00000004 83C338                      add bx, zombie_entry - start
+    13 00000007 891E135D                    mov [05D13h], bx
+    14 0000000B 0E                          push cs
+    15 0000000C 07                          pop es
+    16 0000000D B8EBF9                      mov ax, 0F9EBh
+    17 00000010 BACCCC                      mov dx, 0CCCCh
+    18 00000013 BBFF26                      mov bx, 026FFh
+    19 00000016 B9135D                      mov cx, 05D13h
+    20 00000019 FD                          std
+    21 0000001A CD87                        int 087h
+    22 0000001C FC                          cld
+    23 0000001D 89F0                        mov ax, si
+    24 0000001F 88E0                        mov al, ah
+    25 00000021 30E4                        xor ah, ah
+    26 00000023 B53C                        mov ch, 03Ch
+    27 00000025 F6F5                        div ch
+    28 00000027 F6E5                        mul ch
+    29 00000029 88C4                        mov ah, al
+    30 0000002B 80C410                      add ah, 010h
+    31 0000002E B0A2                        mov al, 0A2h
+    32 00000030 81C6A500                    add si, worker - start
+    33 00000034 EB3B                        jmp short phoenix_init
+    34                                  
+    35 00000036 CCCC                        times 2 db 0CCh
+    36                                  
+    37                                  zombie_entry:
+    38 00000038 31FF                        xor di, di
+    39 0000003A B8F3A5                      mov ax, 0A5F3h
+    40 0000003D BA061F                      mov dx, 01F06h
+    41 00000040 B3CC                        mov bl, 0CCh
+    42 00000042 FD                          std
+    43 00000043 CD87                        int 087h
+    44 00000045 FC                          cld
+    45 00000046 8B36135D                    mov si, [05D13h]
+    46 0000004A 8D44C8                      lea ax, [si - (zombie_entry - start)]
+    47 0000004D 88E0                        mov al, ah
+    48 0000004F 30E4                        xor ah, ah
+    49 00000051 B53C                        mov ch, 03Ch
+    50 00000053 F6F5                        div ch
+    51 00000055 F6E5                        mul ch
+    52 00000057 88C4                        mov ah, al
+    53 00000059 80C454                      add ah, 054h
+    54 0000005C B0A2                        mov al, 0A2h
+    55 0000005E 83C66D                      add si, worker - zombie_entry
+    56                                  
+    57                                  captured_init:
+    58 00000061 16                          push ss
+    59 00000062 07                          pop es
+    60 00000063 B90900                      mov cx, 9
+    61 00000066 F3A5                        rep movsw
+    62 00000068 16                          push ss
+    63 00000069 1F                          pop ds
+    64 0000006A BB8002                      mov bx, 00280h
+    65 0000006D 0E                          push cs
+    66 0000006E 17                          pop ss
+    67 0000006F EB10                        jmp short phoenix_pointer_ready
+    68                                  
+    69                                  phoenix_init:
+    70 00000071 16                          push ss
+    71 00000072 07                          pop es
+    72 00000073 31FF                        xor di, di
+    73 00000075 B90900                      mov cx, 9
+    74 00000078 F3A5                        rep movsw
+    75 0000007A 16                          push ss
+    76 0000007B 1F                          pop ds
+    77 0000007C BB0002                      mov bx, PTR_CELL
+    78 0000007F 0E                          push cs
+    79 00000080 17                          pop ss
+    80                                  
+    81                                  phoenix_pointer_ready:
+    82 00000081 8907                        mov [bx], ax
+    83 00000083 C74702FC0F                  mov word [bx + 2], FAR_SEG
+    84 00000088 31F6                        xor si, si
+    85 0000008A 89C7                        mov di, ax
+    86 0000008C B8FC0F                      mov ax, FAR_SEG
+    87 0000008F 8EC0                        mov es, ax
+    88 00000091 8DA50002                    lea sp, [di + 00200h]
+    89 00000095 B90800                      mov cx, 8
+    90 00000098 BA0038                      mov dx, 03800h
+    91 0000009B BD003C                      mov bp, 03C00h
+    92 0000009E B8FF1F                      mov ax, 01FFFh
+    93 000000A1 AB                          stosw
+    94 000000A2 4F                          dec di
+    95 000000A3 FF1F                        call far [bx]
+    96                                  
+    97                                  worker:
+    98 000000A5 A5                          movsw
+    99 000000A6 F3A5                        rep movsw
+   100 000000A8 29D4                        sub sp, dx
+   101 000000AA 292F                        sub [bx], bp
+   102 000000AC 8B3F                        mov di, [bx]
+   103 000000AE B109                        mov cl, 9
+   104 000000B0 31F6                        xor si, si
+   105 000000B2 AB                          stosw
+   106 000000B3 4F                          dec di
+   107 000000B4 FF1F                        call far [bx]

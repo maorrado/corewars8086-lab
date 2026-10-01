@@ -1,0 +1,112 @@
+     1                                  bits 16
+     2                                  
+     3                                  ; microopt-2026-10-01 timing scan pB1 / A: B main loop 1 round later (1 nop after pop ss)
+     4                                  ; Base: c090. Only the start time of one warrior's main loop changes.
+     5                                  
+     6                                  %define FAR_SEG  0FFCh
+     7                                  %define PTR_CELL 00200h
+     8                                  
+     9                                  start:
+    10 00000000 89C6                        mov si, ax
+    11 00000002 89C3                        mov bx, ax
+    12 00000004 83C338                      add bx, zombie_entry - start
+    13 00000007 891E135D                    mov [05D13h], bx
+    14 0000000B 0E                          push cs
+    15 0000000C 07                          pop es
+    16 0000000D B8EBF9                      mov ax, 0F9EBh
+    17 00000010 BACCCC                      mov dx, 0CCCCh
+    18 00000013 BBFF26                      mov bx, 026FFh
+    19 00000016 B9135D                      mov cx, 05D13h
+    20 00000019 FD                          std
+    21 0000001A CD87                        int 087h
+    22 0000001C FC                          cld
+    23 0000001D 89F0                        mov ax, si
+    24 0000001F 88E0                        mov al, ah
+    25 00000021 30E4                        xor ah, ah
+    26 00000023 B53C                        mov ch, 03Ch
+    27 00000025 F6F5                        div ch
+    28 00000027 F6E5                        mul ch
+    29 00000029 88C4                        mov ah, al
+    30 0000002B 80C410                      add ah, 010h
+    31 0000002E B0A2                        mov al, 0A2h
+    32 00000030 81C6AA00                    add si, worker - start
+    33 00000034 EB40                        jmp short phoenix_init
+    34                                  
+    35 00000036 CCCC                        times 2 db 0CCh
+    36                                  
+    37                                  zombie_entry:
+    38 00000038 31FF                        xor di, di
+    39 0000003A B8F3A5                      mov ax, 0A5F3h
+    40 0000003D BA061F                      mov dx, 01F06h
+    41 00000040 B3CC                        mov bl, 0CCh
+    42 00000042 FD                          std
+    43 00000043 CD87                        int 087h
+    44 00000045 FC                          cld
+    45 00000046 E80000                      call .get_ip
+    46                                  
+    47                                  .get_ip:
+    48 00000049 5E                          pop si
+    49 0000004A 83EE49                      sub si, .get_ip - start
+    50 0000004D 89F0                        mov ax, si
+    51 0000004F 88E0                        mov al, ah
+    52 00000051 30E4                        xor ah, ah
+    53 00000053 B53C                        mov ch, 03Ch
+    54 00000055 F6F5                        div ch
+    55 00000057 F6E5                        mul ch
+    56 00000059 88C4                        mov ah, al
+    57 0000005B 80C454                      add ah, 054h
+    58 0000005E B0A2                        mov al, 0A2h
+    59 00000060 81C6AA00                    add si, worker - start
+    60                                  
+    61                                  captured_init:
+    62 00000064 16                          push ss
+    63 00000065 07                          pop es
+    64 00000066 31FF                        xor di, di
+    65 00000068 B90900                      mov cx, 9
+    66 0000006B F3A5                        rep movsw
+    67 0000006D 16                          push ss
+    68 0000006E 1F                          pop ds
+    69 0000006F BB8002                      mov bx, 00280h
+    70 00000072 0E                          push cs
+    71 00000073 17                          pop ss
+    72 00000074 EB10                        jmp short phoenix_pointer_ready
+    73                                  
+    74                                  phoenix_init:
+    75 00000076 16                          push ss
+    76 00000077 07                          pop es
+    77 00000078 31FF                        xor di, di
+    78 0000007A B90900                      mov cx, 9
+    79 0000007D F3A5                        rep movsw
+    80 0000007F 16                          push ss
+    81 00000080 1F                          pop ds
+    82 00000081 BB0002                      mov bx, PTR_CELL
+    83 00000084 0E                          push cs
+    84 00000085 17                          pop ss
+    85                                  
+    86                                  phoenix_pointer_ready:
+    87 00000086 8907                        mov [bx], ax
+    88 00000088 C74702FC0F                  mov word [bx + 2], FAR_SEG
+    89 0000008D 31F6                        xor si, si
+    90 0000008F 89C7                        mov di, ax
+    91 00000091 B8FC0F                      mov ax, FAR_SEG
+    92 00000094 8EC0                        mov es, ax
+    93 00000096 8DA50002                    lea sp, [di + 00200h]
+    94 0000009A B90800                      mov cx, 8
+    95 0000009D BA0038                      mov dx, 03800h
+    96 000000A0 BD003C                      mov bp, 03C00h
+    97 000000A3 B8FF1F                      mov ax, 01FFFh
+    98 000000A6 AB                          stosw
+    99 000000A7 4F                          dec di
+   100 000000A8 FF1F                        call far [bx]
+   101                                  
+   102                                  worker:
+   103 000000AA A5                          movsw
+   104 000000AB F3A5                        rep movsw
+   105 000000AD 29D4                        sub sp, dx
+   106 000000AF 292F                        sub [bx], bp
+   107 000000B1 8B3F                        mov di, [bx]
+   108 000000B3 B109                        mov cl, 9
+   109 000000B5 31F6                        xor si, si
+   110 000000B7 AB                          stosw
+   111 000000B8 4F                          dec di
+   112 000000B9 FF1F                        call far [bx]
