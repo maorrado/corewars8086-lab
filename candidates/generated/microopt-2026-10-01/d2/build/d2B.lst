@@ -1,0 +1,70 @@
+     1                                  bits 16
+     2                                  
+     3                                  ; microopt-2026-10-01 d2 / B: d1 + dead `xor di,di` removed from captured_init (A zombie path)
+     4                                  ; Base: c090 (arena-100 c090-landmine-avoidance). Engine facts used: warriors start with
+     5                                  ; DI=SI=BX=CX=DX=BP=0, INT 87h never writes DI, REP MOVSW ignores flags.
+     6                                  
+     7                                  %define FAR_SEG  0FFCh
+     8                                  %define PTR_CELL 00240h
+     9                                  
+    10                                  start:
+    11 00000000 89C6                        mov si, ax
+    12 00000002 0E                          push cs
+    13 00000003 07                          pop es
+    14 00000004 B8EBF9                      mov ax, 0F9EBh
+    15 00000007 BACCCC                      mov dx, 0CCCCh
+    16 0000000A BBFF26                      mov bx, 026FFh
+    17 0000000D B9135D                      mov cx, 05D13h
+    18 00000010 FD                          std
+    19 00000011 CD87                        int 087h
+    20 00000013 FC                          cld
+    21 00000014 89F0                        mov ax, si
+    22 00000016 88E0                        mov al, ah
+    23 00000018 30E4                        xor ah, ah
+    24 0000001A B53C                        mov ch, 03Ch
+    25 0000001C F6F5                        div ch
+    26 0000001E F6E5                        mul ch
+    27 00000020 88C4                        mov ah, al
+    28 00000022 80C434                      add ah, 034h
+    29 00000025 B0A2                        mov al, 0A2h
+    30 00000027 83C660                      add si, worker - start
+    31 0000002A EB02                        jmp short phoenix_init
+    32                                  
+    33 0000002C CCCC                        times 2 db 0CCh
+    34                                  
+    35                                  phoenix_init:
+    36 0000002E 16                          push ss
+    37 0000002F 07                          pop es
+    38 00000030 B90900                      mov cx, 9
+    39 00000033 F3A5                        rep movsw
+    40 00000035 16                          push ss
+    41 00000036 1F                          pop ds
+    42 00000037 BB4002                      mov bx, PTR_CELL
+    43 0000003A 0E                          push cs
+    44 0000003B 17                          pop ss
+    45 0000003C 8907                        mov [bx], ax
+    46 0000003E C74702FC0F                  mov word [bx + 2], FAR_SEG
+    47 00000043 31F6                        xor si, si
+    48 00000045 89C7                        mov di, ax
+    49 00000047 B8FC0F                      mov ax, FAR_SEG
+    50 0000004A 8EC0                        mov es, ax
+    51 0000004C 8DA58002                    lea sp, [di + 00280h]
+    52 00000050 B90900                      mov cx, 9
+    53 00000053 BA0040                      mov dx, 04000h
+    54 00000056 BD0044                      mov bp, 04400h
+    55 00000059 B8FF1F                      mov ax, 01FFFh
+    56 0000005C AB                          stosw
+    57 0000005D 4F                          dec di
+    58 0000005E FF1F                        call far [bx]
+    59                                  
+    60                                  worker:
+    61 00000060 A5                          movsw
+    62 00000061 F3A5                        rep movsw
+    63 00000063 29D4                        sub sp, dx
+    64 00000065 292F                        sub [bx], bp
+    65 00000067 8B3F                        mov di, [bx]
+    66 00000069 B109                        mov cl, 9
+    67 0000006B 31F6                        xor si, si
+    68 0000006D AB                          stosw
+    69 0000006E 4F                          dec di
+    70 0000006F FF1F                        call far [bx]

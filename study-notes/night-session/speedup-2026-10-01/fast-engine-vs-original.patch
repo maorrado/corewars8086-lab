@@ -1,0 +1,757 @@
+diff -ruN --strip-trailing-cr repos/corewars8086-6.0.0-deterministic/src/main/java/il/co/codeguru/corewars8086/cli/BatchRunner.java repos/corewars8086-6.0.0-fast/src/main/java/il/co/codeguru/corewars8086/cli/BatchRunner.java
+--- repos/corewars8086-6.0.0-deterministic/src/main/java/il/co/codeguru/corewars8086/cli/BatchRunner.java	1970-01-01 02:00:00.000000000 +0200
++++ repos/corewars8086-6.0.0-fast/src/main/java/il/co/codeguru/corewars8086/cli/BatchRunner.java	2026-10-01 02:57:02.043886300 +0300
+@@ -0,0 +1,163 @@
++package il.co.codeguru.corewars8086.cli;
++
++import com.google.common.primitives.Longs;
++import com.google.devtools.common.options.OptionsParser;
++import il.co.codeguru.corewars8086.war.Competition;
++import il.co.codeguru.corewars8086.war.War;
++import il.co.codeguru.corewars8086.war.WarriorRepository;
++
++import java.io.IOException;
++import java.nio.charset.StandardCharsets;
++import java.nio.file.Files;
++import java.nio.file.Paths;
++import java.util.ArrayList;
++import java.util.Arrays;
++import java.util.List;
++import java.util.concurrent.ExecutorService;
++import java.util.concurrent.Executors;
++import java.util.concurrent.TimeUnit;
++import java.util.concurrent.atomic.AtomicInteger;
++
++/**
++ * Runs many independent headless competitions ("jobs") in one JVM, on one shared
++ * thread pool.
++ *
++ * Each job is one ordinary headless invocation, given by its usual command-line
++ * arguments (one job per line of the jobs file, arguments separated by tabs). A job
++ * reproduces that invocation's --parallel=false result exactly: the same option
++ * parsing and warrior loading, the same combination iterator and war seeds
++ * (Competition.planCompetition), and the same score additions in war-id order. Only
++ * the assignment of wars to threads differs, and no war depends on it: every war owns
++ * its memory, CPU state and seeded Random.
++ *
++ * What this saves over one process per job: JVM start-up and JIT warm-up per job, and
++ * idle cores at the end of every job (the pool always has work from the next job).
++ *
++ * Usage: java -cp engine.jar il.co.codeguru.corewars8086.cli.BatchRunner jobsFile [threads]
++ */
++public final class BatchRunner {
++
++    private static final class Job {
++        final int index;
++        final String[] args;
++        final Options options;
++        final Competition competition;
++        final List<Competition.PlannedWar> wars;
++        final String[][] scoringNames;
++        final float[] scoreValues;
++        final AtomicInteger remaining;
++        volatile Throwable failure;
++
++        Job(int index, String[] args, Options options, Competition competition, List<Competition.PlannedWar> wars) {
++            this.index = index;
++            this.args = args;
++            this.options = options;
++            this.competition = competition;
++            this.wars = wars;
++            this.scoringNames = new String[wars.size()][];
++            this.scoreValues = new float[wars.size()];
++            this.remaining = new AtomicInteger(wars.size());
++        }
++    }
++
++    public static void main(String[] args) throws Exception {
++        if (args.length < 1 || args.length > 2) {
++            System.err.println("usage: BatchRunner <jobsFile> [threads]");
++            System.exit(2);
++        }
++        final int threads = args.length > 1 ? Integer.parseInt(args[1]) : Runtime.getRuntime().availableProcessors();
++        final List<Job> jobs = loadJobs(args[0]);
++        int totalWars = 0;
++        for (Job job : jobs) totalWars += job.wars.size();
++        System.out.printf("BatchRunner: %d jobs, %d wars, %d threads%n", jobs.size(), totalWars, threads);
++
++        final long started = System.nanoTime();
++        final AtomicInteger jobsDone = new AtomicInteger();
++        final AtomicInteger jobsFailed = new AtomicInteger();
++        ExecutorService pool = Executors.newFixedThreadPool(threads);
++        for (Job job : jobs) {
++            for (int id = 0; id < job.wars.size(); id++) {
++                final int warId = id;
++                pool.execute(() -> runWar(job, warId, jobs.size(), jobsDone, jobsFailed, started));
++            }
++        }
++        pool.shutdown();
++        while (!pool.awaitTermination(1, TimeUnit.MINUTES)) {
++            // keep waiting; progress is printed per finished job
++        }
++        double seconds = (System.nanoTime() - started) / 1e9;
++        System.out.printf("BatchRunner: finished %d jobs (%d failed) in %.2fs%n", jobsDone.get(), jobsFailed.get(), seconds);
++        if (jobsFailed.get() > 0 || jobsDone.get() != jobs.size()) {
++            System.exit(1);
++        }
++    }
++
++    private static List<Job> loadJobs(String jobsFile) throws IOException {
++        List<Job> jobs = new ArrayList<>();
++        for (String line : Files.readAllLines(Paths.get(jobsFile), StandardCharsets.UTF_8)) {
++            if (line.trim().isEmpty()) continue;
++            String[] jobArgs = line.split("\t");
++            OptionsParser parser = OptionsParser.newOptionsParser(Options.class);
++            try {
++                parser.parse(jobArgs);
++            } catch (Exception e) {
++                throw new IllegalArgumentException("job " + jobs.size() + ": bad arguments " + Arrays.toString(jobArgs), e);
++            }
++            Options options = parser.getOptions(Options.class);
++            if (!options.telemetryFile.isEmpty()) {
++                throw new IllegalArgumentException("job " + jobs.size() + ": --telemetryFile is not supported in batch mode");
++            }
++            Competition competition = new Competition(options);
++            competition.setMemoryEventsEnabled(false);
++            // same seed interpretation as HeadlessCompetitionRunner
++            long seed = Longs.tryParse(options.seed) != null ? Long.parseLong(options.seed) : options.seed.hashCode();
++            competition.setSeed(seed);
++            WarriorRepository repository = competition.getWarriorRepository();
++            if (repository.getNumberOfGroups() < options.combinationSize) {
++                throw new IllegalArgumentException(String.format("job %d: not enough survivors (got %d but %d are needed)",
++                    jobs.size(), repository.getNumberOfGroups(), options.combinationSize));
++            }
++            List<Competition.PlannedWar> wars = competition.planCompetition(options.battlesPerCombo, options.combinationSize);
++            jobs.add(new Job(jobs.size(), jobArgs, options, competition, wars));
++        }
++        return jobs;
++    }
++
++    private static void runWar(Job job, int warId, int totalJobs, AtomicInteger jobsDone, AtomicInteger jobsFailed, long started) {
++        try {
++            if (job.failure == null) {
++                Competition.PlannedWar planned = job.wars.get(warId);
++                War war = job.competition.runWarInParallel(planned.groups, planned.seed, warId);
++                job.scoringNames[warId] = war.getScoringWarriorNames();
++                job.scoreValues[warId] = war.getScorePerSurvivor();
++            }
++        } catch (Throwable t) {
++            job.failure = t;
++        }
++        // The decrement publishes this war's awards; whoever brings the count to zero
++        // sees every war's awards and writes the job's scores.
++        if (job.remaining.decrementAndGet() == 0) {
++            finishJob(job, totalJobs, jobsDone, jobsFailed, started);
++        }
++    }
++
++    private static void finishJob(Job job, int totalJobs, AtomicInteger jobsDone, AtomicInteger jobsFailed, long started) {
++        if (job.failure != null) {
++            jobsFailed.incrementAndGet();
++            System.err.printf("job %d FAILED (%s): %s%n", job.index, job.options.outputFile, job.failure);
++            job.failure.printStackTrace();
++            return;
++        }
++        WarriorRepository repository = job.competition.getWarriorRepository();
++        for (int id = 0; id < job.wars.size(); id++) {
++            for (String name : job.scoringNames[id]) {
++                repository.addScore(name, job.scoreValues[id]);
++            }
++        }
++        synchronized (BatchRunner.class) { // keep job lines whole on stdout
++            repository.saveScoresToFile(job.options.outputFile);
++            System.out.printf("job %d done (%d/%d) %.1fs%n", job.index, jobsDone.incrementAndGet(), totalJobs,
++                (System.nanoTime() - started) / 1e9);
++        }
++    }
++}
+diff -ruN --strip-trailing-cr repos/corewars8086-6.0.0-deterministic/src/main/java/il/co/codeguru/corewars8086/cli/HeadlessCompetitionRunner.java repos/corewars8086-6.0.0-fast/src/main/java/il/co/codeguru/corewars8086/cli/HeadlessCompetitionRunner.java
+--- repos/corewars8086-6.0.0-deterministic/src/main/java/il/co/codeguru/corewars8086/cli/HeadlessCompetitionRunner.java	2026-09-28 00:40:36.374994100 +0300
++++ repos/corewars8086-6.0.0-fast/src/main/java/il/co/codeguru/corewars8086/cli/HeadlessCompetitionRunner.java	2026-10-01 02:45:50.960568700 +0300
+@@ -46,6 +46,7 @@
+     System.out.println("CoreWars8086 - headless mode\n");
+     
+     this.competition = new Competition(options);
++    this.competition.setMemoryEventsEnabled(false); // headless: no memory listeners exist
+     this.competition.addCompetitionEventListener(this);
+     WarriorRepository repository = competition.getWarriorRepository();
+     System.out.printf("Loaded warriors: %s%n", Arrays.toString(repository.getGroupNames()));
+@@ -105,8 +106,12 @@
+     }
+   }
+   
++  // The telemetry bookkeeping below is only ever read by writeTelemetry(). Without
++  // telemetry it is skipped: it has no observable effect, and in parallel mode it
++  // was shared mutable state (incl. a HashMap) written by every worker thread.
+   @Override
+   public void onWarStart(long seed) {
++    if (telemetryWriter == null) return;
+     currentWarSeed = seed;
+     currentRound = 0;
+     deathRounds.clear();
+@@ -122,6 +127,7 @@
+   
+   @Override
+   public void onRound(int round) {
++    if (telemetryWriter == null) return;
+     currentRound = round;
+   }
+   
+@@ -132,6 +138,7 @@
+   
+   @Override
+   public void onWarriorDeath(String warriorName, String reason) {
++    if (telemetryWriter == null) return;
+     deathRounds.put(warriorName, currentRound);
+     deathReasons.put(warriorName, reason);
+   }
+diff -ruN --strip-trailing-cr repos/corewars8086-6.0.0-deterministic/src/main/java/il/co/codeguru/corewars8086/memory/MemoryEventMulticaster.java repos/corewars8086-6.0.0-fast/src/main/java/il/co/codeguru/corewars8086/memory/MemoryEventMulticaster.java
+--- repos/corewars8086-6.0.0-deterministic/src/main/java/il/co/codeguru/corewars8086/memory/MemoryEventMulticaster.java	1970-01-01 02:00:00.000000000 +0200
++++ repos/corewars8086-6.0.0-fast/src/main/java/il/co/codeguru/corewars8086/memory/MemoryEventMulticaster.java	2026-10-01 02:37:15.558798000 +0300
+@@ -0,0 +1,40 @@
++package il.co.codeguru.corewars8086.memory;
++
++import java.util.Arrays;
++
++/**
++ * Direct (non-reflective) broadcaster for memory-write events. Called on
++ * every arena write, so it must be cheap: with no listeners (headless runs)
++ * a broadcast is a single array-length check. Same snapshot, ordering and
++ * de-duplication semantics as the reflection-proxy EventMulticaster it
++ * replaces.
++ */
++public final class MemoryEventMulticaster implements MemoryEventListener {
++    private volatile MemoryEventListener[] listeners = new MemoryEventListener[0];
++
++    public synchronized void add(MemoryEventListener listener) {
++        for (MemoryEventListener l : listeners) {
++            if (l.equals(listener)) return;
++        }
++        MemoryEventListener[] next = Arrays.copyOf(listeners, listeners.length + 1);
++        next[listeners.length] = listener;
++        listeners = next;
++    }
++
++    public synchronized void remove(MemoryEventListener listener) {
++        for (int i = 0; i < listeners.length; i++) {
++            if (listeners[i].equals(listener)) {
++                MemoryEventListener[] next = new MemoryEventListener[listeners.length - 1];
++                System.arraycopy(listeners, 0, next, 0, i);
++                System.arraycopy(listeners, i + 1, next, i, listeners.length - i - 1);
++                listeners = next;
++                return;
++            }
++        }
++    }
++
++    @Override
++    public void onMemoryWrite(RealModeAddress address) {
++        for (MemoryEventListener l : listeners) l.onMemoryWrite(address);
++    }
++}
+diff -ruN --strip-trailing-cr repos/corewars8086-6.0.0-deterministic/src/main/java/il/co/codeguru/corewars8086/memory/RealModeMemoryImpl.java repos/corewars8086-6.0.0-fast/src/main/java/il/co/codeguru/corewars8086/memory/RealModeMemoryImpl.java
+--- repos/corewars8086-6.0.0-deterministic/src/main/java/il/co/codeguru/corewars8086/memory/RealModeMemoryImpl.java	2026-09-28 00:40:36.405910800 +0300
++++ repos/corewars8086-6.0.0-fast/src/main/java/il/co/codeguru/corewars8086/memory/RealModeMemoryImpl.java	2026-10-01 02:37:51.206954200 +0300
+@@ -62,6 +62,14 @@
+     /**
+      * @return Returns the listener.
+      */
++    /**
++     * Fills a linear address range directly, without emitting memory-write
++     * events. Only for initialization before a listener is attached.
++     */
++    public void fillLinear(int linearStart, int length, byte value) {
++        java.util.Arrays.fill(m_data, linearStart, linearStart + length, value);
++    }
++
+     public MemoryEventListener getListener() {
+         return listener;
+     }
+diff -ruN --strip-trailing-cr repos/corewars8086-6.0.0-deterministic/src/main/java/il/co/codeguru/corewars8086/memory/RealModeMemoryRegion.java repos/corewars8086-6.0.0-fast/src/main/java/il/co/codeguru/corewars8086/memory/RealModeMemoryRegion.java
+--- repos/corewars8086-6.0.0-deterministic/src/main/java/il/co/codeguru/corewars8086/memory/RealModeMemoryRegion.java	2026-09-28 00:40:36.406443100 +0300
++++ repos/corewars8086-6.0.0-fast/src/main/java/il/co/codeguru/corewars8086/memory/RealModeMemoryRegion.java	2026-10-01 02:46:08.770493200 +0300
+@@ -24,6 +24,14 @@
+      * @param address  Address to check.
+      * @return whether or not the given address is within the region.
+      */
++    public int getStartLinearAddress() {
++        return m_start.getLinearAddress();
++    }
++
++    public int getEndLinearAddress() {
++        return m_end.getLinearAddress();
++    }
++
+     public boolean isInRegion(RealModeAddress address) {
+         final int start = m_start.getLinearAddress();
+         final int end = m_end.getLinearAddress();
+diff -ruN --strip-trailing-cr repos/corewars8086-6.0.0-deterministic/src/main/java/il/co/codeguru/corewars8086/memory/RestrictedAccessRealModeMemory.java repos/corewars8086-6.0.0-fast/src/main/java/il/co/codeguru/corewars8086/memory/RestrictedAccessRealModeMemory.java
+--- repos/corewars8086-6.0.0-deterministic/src/main/java/il/co/codeguru/corewars8086/memory/RestrictedAccessRealModeMemory.java	2026-09-28 00:40:36.407018700 +0300
++++ repos/corewars8086-6.0.0-fast/src/main/java/il/co/codeguru/corewars8086/memory/RestrictedAccessRealModeMemory.java	2026-10-01 02:46:23.072897200 +0300
+@@ -26,6 +26,38 @@
+         m_readAccessRegions = readAccessRegions;
+         m_writeAccessRegions = writeAccessRegions;
+         m_executeAccessRegions = executeAccessRegions;
++
++        // Regions are immutable (final endpoints, addresses never re-assigned) and
++        // these arrays are owned by this object, so their linear bounds can be
++        // computed once instead of re-dereferenced on every byte access.
++        m_readStarts = starts(readAccessRegions);
++        m_readEnds = ends(readAccessRegions);
++        m_writeStarts = starts(writeAccessRegions);
++        m_writeEnds = ends(writeAccessRegions);
++        m_executeStarts = starts(executeAccessRegions);
++        m_executeEnds = ends(executeAccessRegions);
++    }
++
++    private static int[] starts(RealModeMemoryRegion[] regions) {
++        int[] result = new int[regions.length];
++        for (int i = 0; i < regions.length; i++) result[i] = regions[i].getStartLinearAddress();
++        return result;
++    }
++
++    private static int[] ends(RealModeMemoryRegion[] regions) {
++        int[] result = new int[regions.length];
++        for (int i = 0; i < regions.length; i++) result[i] = regions[i].getEndLinearAddress();
++        return result;
++    }
++
++    /** Same test as RealModeMemoryRegion.isInRegion, over precomputed bounds. */
++    private static boolean isInRegions(int[] starts, int[] ends, int asked) {
++        for (int i = 0; i < starts.length; ++i) {
++            if (asked >= starts[i] && asked <= ends[i]) {
++                return true;
++            }
++        }
++        return false;
+     }
+ 
+     /**
+@@ -38,11 +70,11 @@
+      */
+     public byte readByte(RealModeAddress address) throws MemoryException {
+         // is reading allowed from this address ?
+-        if (!isAddressInRegions(m_readAccessRegions, address)) {
+-            throw new MemoryException();			
++        if (!isInRegions(m_readStarts, m_readEnds, address.getLinearAddress())) {
++            throw new MemoryException();
+         }
+ 
+-        return m_memory.readByte(address);		
++        return m_memory.readByte(address);
+     }
+ 
+     /**
+@@ -55,8 +87,8 @@
+      */
+     public void writeByte(RealModeAddress address, byte value) throws MemoryException {
+         // is writing allowed to this address ?
+-        if (!isAddressInRegions(m_writeAccessRegions, address)) {
+-            throw new MemoryException();			
++        if (!isInRegions(m_writeStarts, m_writeEnds, address.getLinearAddress())) {
++            throw new MemoryException();
+         }
+ 
+         m_memory.writeByte(address, value);
+@@ -72,12 +104,12 @@
+      */
+     public byte readExecuteByte(RealModeAddress address) throws MemoryException {
+         // is reading allowed from this address ?
+-        if (!isAddressInRegions(m_executeAccessRegions, address)) {
+-            throw new MemoryException();			
++        if (!isInRegions(m_executeStarts, m_executeEnds, address.getLinearAddress())) {
++            throw new MemoryException();
+         }
+ 
+-        return m_memory.readExecuteByte(address);		
+-    }	
++        return m_memory.readExecuteByte(address);
++    }
+ 
+     /**
+      * Checks whether or not a given address is within at least a single
+@@ -108,6 +140,10 @@
+     private final RealModeMemoryRegion[] m_readAccessRegions;
+     /** Writing to these regions is allowed */
+     private final RealModeMemoryRegion[] m_writeAccessRegions;
+-    /** Executing these regions is allowed */	
++    /** Executing these regions is allowed */
+     private final RealModeMemoryRegion[] m_executeAccessRegions;
++    /** Precomputed linear bounds of the regions above (see constructor) */
++    private final int[] m_readStarts, m_readEnds;
++    private final int[] m_writeStarts, m_writeEnds;
++    private final int[] m_executeStarts, m_executeEnds;
+ }
+\ No newline at end of file
+diff -ruN --strip-trailing-cr repos/corewars8086-6.0.0-deterministic/src/main/java/il/co/codeguru/corewars8086/war/Competition.java repos/corewars8086-6.0.0-fast/src/main/java/il/co/codeguru/corewars8086/war/Competition.java
+--- repos/corewars8086-6.0.0-deterministic/src/main/java/il/co/codeguru/corewars8086/war/Competition.java	2026-09-28 00:40:36.410410800 +0300
++++ repos/corewars8086-6.0.0-fast/src/main/java/il/co/codeguru/corewars8086/war/Competition.java	2026-10-01 03:29:24.543686900 +0300
+@@ -2,11 +2,16 @@
+ 
+ import il.co.codeguru.corewars8086.cli.Options;
+ import il.co.codeguru.corewars8086.memory.MemoryEventListener;
+-import il.co.codeguru.corewars8086.utils.EventMulticaster;
++import il.co.codeguru.corewars8086.memory.MemoryEventMulticaster;
+ 
+ import java.io.IOException;
++import java.util.ArrayList;
++import java.util.List;
++import java.util.concurrent.CancellationException;
++import java.util.concurrent.ExecutionException;
+ import java.util.concurrent.ExecutorService;
+ import java.util.concurrent.Executors;
++import java.util.concurrent.Future;
+ import java.util.concurrent.TimeUnit;
+ 
+ 
+@@ -18,9 +23,22 @@
+ 
+     private CompetitionIterator competitionIterator;
+ 
+-    private EventMulticaster competitionEventCaster, memoryEventCaster;
+-    private CompetitionEventListener competitionEventListener;
+-    private MemoryEventListener memoryEventListener;
++    private final CompetitionEventMulticaster competitionEventCaster = new CompetitionEventMulticaster();
++    private final MemoryEventMulticaster memoryEventCaster = new MemoryEventMulticaster();
++    private final CompetitionEventListener competitionEventListener = competitionEventCaster;
++    private final MemoryEventListener memoryEventListener = memoryEventCaster;
++    // Headless runs never register memory listeners (only the GUI does). Disabling
++    // memory events there removes a per-write call that can never do anything, and
++    // lets the JIT eliminate the address objects it would otherwise force to escape.
++    private boolean memoryEventsEnabled = true;
++
++    public void setMemoryEventsEnabled(boolean enabled) {
++        this.memoryEventsEnabled = enabled;
++    }
++
++    private MemoryEventListener memoryListenerForWar() {
++        return memoryEventsEnabled ? memoryEventListener : null;
++    }
+ 
+     private final WarriorRepository warriorRepository;
+     
+@@ -47,10 +65,6 @@
+     public Competition(boolean shouldReadWarriorsFile, Options options) throws IOException {
+         warriorRepository = new WarriorRepository(shouldReadWarriorsFile, options);
+ 
+-        competitionEventCaster = new EventMulticaster(CompetitionEventListener.class);
+-        competitionEventListener = (CompetitionEventListener) competitionEventCaster.getProxy();
+-        memoryEventCaster = new EventMulticaster(MemoryEventListener.class);
+-        memoryEventListener = (MemoryEventListener) memoryEventCaster.getProxy();
+         speed = MAXIMUM_SPEED;
+         abort = false;
+         
+@@ -82,33 +96,94 @@
+       competitionEventListener.onCompetitionStart();
+   
+       executorService = Executors.newFixedThreadPool(threads);
+-  
+-      for (int warCount = 0; warCount < getTotalNumberOfWars(); warCount++) {
++
++      // Each war's seed is fixed before submission, so war outcomes never depended on
++      // scheduling -- but the float score additions happened in completion order, making
++      // the last digits vary with thread count. Record each war's awards and apply them
++      // in war-id order afterwards: the exact addition sequence of sequential mode.
++      final int totalWars = getTotalNumberOfWars();
++      final String[][] scoringNames = new String[totalWars][];
++      final float[] scoreValues = new float[totalWars];
++      final List<Future<?>> futures = new ArrayList<>(totalWars);
++
++      for (int warCount = 0; warCount < totalWars; warCount++) {
+         WarriorGroup[] groups = warriorRepository.createGroupList(competitionIterator.next());
+         int id = warCount;
+         long warSeed = seed++;
+-        executorService.submit(() -> {
++        futures.add(executorService.submit(() -> {
+           try {
+-            runWarInParallel(groups, warSeed, id);
++            War war = runWarInParallel(groups, warSeed, id);
++            scoringNames[id] = war.getScoringWarriorNames();
++            scoreValues[id] = war.getScorePerSurvivor();
+           } catch (Exception e) {
+             throw new RuntimeException(e);
+           }
+-        });
++        }));
+       }
+-  
++
+       executorService.shutdown();
+       boolean finished = executorService.awaitTermination(1, TimeUnit.HOURS);
+-  
++
+       if (!finished) {
+         System.err.println("Note: Competition has timed out after 1h - results may be incorrect.");
+       }
+-      
++
+       executorService = null;
+-  
++
++      // Apply the recorded awards in war-id order. Future.get() makes each war's awards
++      // visible here and rethrows a war's failure instead of silently dropping that war.
++      // Wars that never ran (GUI abort via shutdownNow, or the 1h timeout above) are not
++      // done and contribute nothing, as before -- waiting on them would never return.
++      for (int id = 0; id < totalWars; id++) {
++        Future<?> future = futures.get(id);
++        if (!future.isDone()) {
++          continue;
++        }
++        try {
++          future.get();
++        } catch (CancellationException e) {
++          continue;
++        } catch (ExecutionException e) {
++          throw new IllegalStateException("A war failed; refusing to write partial scores", e.getCause());
++        }
++        for (String name : scoringNames[id]) {
++          warriorRepository.addScore(name, scoreValues[id]);
++        }
++      }
++
+       competitionEventListener.onCompetitionEnd();
+       warriorRepository.saveScoresToFile(options.outputFile);
+     }
+ 
++    /** One war of a planned competition: the groups and seed runCompetition would give it. */
++    public static final class PlannedWar {
++        public final WarriorGroup[] groups;
++        public final long seed;
++
++        PlannedWar(WarriorGroup[] groups, long seed) {
++            this.groups = groups;
++            this.seed = seed;
++        }
++    }
++
++    /**
++     * Returns the wars runCompetition would run, in order, without running them.
++     * Uses the same iterator, seed sequence and group lists as runCompetition, so
++     * running each planned war with runWarInParallel and applying the awards in
++     * war-id order reproduces runCompetition's scores exactly.
++     */
++    public List<PlannedWar> planCompetition(int warsPerCombination, int warriorsPerGroup) {
++        this.warsPerCombination = warsPerCombination;
++        competitionIterator = new CompetitionIterator(
++            warriorRepository.getNumberOfGroups(), warriorsPerGroup, seed);
++        final int totalWars = getTotalNumberOfWars();
++        List<PlannedWar> wars = new ArrayList<>(totalWars);
++        for (int warCount = 0; warCount < totalWars; warCount++) {
++            wars.add(new PlannedWar(warriorRepository.createGroupList(competitionIterator.next()), seed++));
++        }
++        return wars;
++    }
++
+     public int getTotalNumberOfWars() {
+         if (options.totalBattles > 0) {
+             return options.totalBattles;
+@@ -118,7 +193,7 @@
+     }
+ 
+     public void runWar(WarriorGroup[] warriorGroups,boolean startPaused) throws Exception {
+-        currentWar = new War(memoryEventListener, competitionEventListener, startPaused, options);
++        currentWar = new War(memoryListenerForWar(), competitionEventListener, startPaused, options);
+         currentWar.setSeed(this.seed);
+         competitionEventListener.onWarStart(seed);
+         currentWar.loadWarriorGroups(warriorGroups);
+@@ -174,8 +249,8 @@
+         currentWar = null;
+     }
+   
+-  public void runWarInParallel(WarriorGroup[] warriorGroups, long seed, int id) throws Exception {
+-    War war = new War(memoryEventListener, competitionEventListener, false, options);
++  public War runWarInParallel(WarriorGroup[] warriorGroups, long seed, int id) throws Exception {
++    War war = new War(memoryListenerForWar(), competitionEventListener, false, options);
+     war.setSeed(seed);
+     boolean selectedAsCurrent = false;
+     
+@@ -227,10 +302,9 @@
+         this.currentWar = null;
+       }
+     }
+-    
+-    synchronized (warriorRepository) {
+-      war.updateScores(warriorRepository);
+-    }
++
++    // scores are applied by runCompetitionInParallel, in war-id order
++    return war;
+   }
+   
+   public int getCurrentWarrior() {
+diff -ruN --strip-trailing-cr repos/corewars8086-6.0.0-deterministic/src/main/java/il/co/codeguru/corewars8086/war/CompetitionEventMulticaster.java repos/corewars8086-6.0.0-fast/src/main/java/il/co/codeguru/corewars8086/war/CompetitionEventMulticaster.java
+--- repos/corewars8086-6.0.0-deterministic/src/main/java/il/co/codeguru/corewars8086/war/CompetitionEventMulticaster.java	1970-01-01 02:00:00.000000000 +0200
++++ repos/corewars8086-6.0.0-fast/src/main/java/il/co/codeguru/corewars8086/war/CompetitionEventMulticaster.java	2026-10-01 02:37:10.721774800 +0300
+@@ -0,0 +1,45 @@
++package il.co.codeguru.corewars8086.war;
++
++import java.util.Arrays;
++
++/**
++ * Direct (non-reflective) broadcaster for competition events. Replaces the
++ * reflection-proxy EventMulticaster on the per-round hot path. Broadcasts
++ * iterate an immutable snapshot, so a listener added or removed during a
++ * broadcast does not affect the in-flight event -- the same guarantee the
++ * proxy version gave via its waiting list. Insertion order is kept and
++ * duplicates are ignored, as with the proxy version's LinkedHashSet.
++ */
++final class CompetitionEventMulticaster implements CompetitionEventListener {
++    private volatile CompetitionEventListener[] listeners = new CompetitionEventListener[0];
++
++    synchronized void add(CompetitionEventListener listener) {
++        for (CompetitionEventListener l : listeners) {
++            if (l.equals(listener)) return;
++        }
++        CompetitionEventListener[] next = Arrays.copyOf(listeners, listeners.length + 1);
++        next[listeners.length] = listener;
++        listeners = next;
++    }
++
++    synchronized void remove(CompetitionEventListener listener) {
++        for (int i = 0; i < listeners.length; i++) {
++            if (listeners[i].equals(listener)) {
++                CompetitionEventListener[] next = new CompetitionEventListener[listeners.length - 1];
++                System.arraycopy(listeners, 0, next, 0, i);
++                System.arraycopy(listeners, i + 1, next, i, listeners.length - i - 1);
++                listeners = next;
++                return;
++            }
++        }
++    }
++
++    @Override public void onWarStart(long seed) { for (CompetitionEventListener l : listeners) l.onWarStart(seed); }
++    @Override public void onWarEnd(int reason, String winners) { for (CompetitionEventListener l : listeners) l.onWarEnd(reason, winners); }
++    @Override public void onRound(int round) { for (CompetitionEventListener l : listeners) l.onRound(round); }
++    @Override public void onWarriorBirth(String warriorName) { for (CompetitionEventListener l : listeners) l.onWarriorBirth(warriorName); }
++    @Override public void onWarriorDeath(String warriorName, String reason) { for (CompetitionEventListener l : listeners) l.onWarriorDeath(warriorName, reason); }
++    @Override public void onCompetitionStart() { for (CompetitionEventListener l : listeners) l.onCompetitionStart(); }
++    @Override public void onCompetitionEnd() { for (CompetitionEventListener l : listeners) l.onCompetitionEnd(); }
++    @Override public void onEndRound() { for (CompetitionEventListener l : listeners) l.onEndRound(); }
++}
+diff -ruN --strip-trailing-cr repos/corewars8086-6.0.0-deterministic/src/main/java/il/co/codeguru/corewars8086/war/UnsyncRandom.java repos/corewars8086-6.0.0-fast/src/main/java/il/co/codeguru/corewars8086/war/UnsyncRandom.java
+--- repos/corewars8086-6.0.0-deterministic/src/main/java/il/co/codeguru/corewars8086/war/UnsyncRandom.java	1970-01-01 02:00:00.000000000 +0200
++++ repos/corewars8086-6.0.0-fast/src/main/java/il/co/codeguru/corewars8086/war/UnsyncRandom.java	2026-10-01 02:45:24.498897400 +0300
+@@ -0,0 +1,39 @@
++package il.co.codeguru.corewars8086.war;
++
++import java.util.Random;
++
++/**
++ * java.util.Random with the identical, spec-mandated 48-bit LCG, but a plain
++ * long instead of an AtomicLong. Each War owns one instance and uses it from a
++ * single thread, so the compare-and-swap Random performs on every draw (once
++ * per living warrior per round) is pure overhead. Only next(int) and setSeed
++ * are overridden; nextInt(int) etc. are inherited unchanged, so every value
++ * drawn is bit-for-bit what java.util.Random would return.
++ *
++ * NOT thread-safe: must stay confined to the thread running its War.
++ */
++final class UnsyncRandom extends Random {
++    private static final long MULTIPLIER = 0x5DEECE66DL;
++    private static final long ADDEND = 0xBL;
++    private static final long MASK = (1L << 48) - 1;
++
++    // No field initializer on purpose: Random's constructor calls setSeed()
++    // before subclass field initializers would run.
++    private long state;
++
++    UnsyncRandom() {
++        super(0L);
++    }
++
++    @Override
++    public void setSeed(long seed) {
++        state = (seed ^ MULTIPLIER) & MASK;
++        super.setSeed(seed); // keeps Random's own bookkeeping (e.g. nextGaussian) consistent
++    }
++
++    @Override
++    protected int next(int bits) {
++        state = (state * MULTIPLIER + ADDEND) & MASK;
++        return (int) (state >>> (48 - bits));
++    }
++}
+diff -ruN --strip-trailing-cr repos/corewars8086-6.0.0-deterministic/src/main/java/il/co/codeguru/corewars8086/war/War.java repos/corewars8086-6.0.0-fast/src/main/java/il/co/codeguru/corewars8086/war/War.java
+--- repos/corewars8086-6.0.0-deterministic/src/main/java/il/co/codeguru/corewars8086/war/War.java	2026-09-28 00:40:36.412633900 +0300
++++ repos/corewars8086-6.0.0-fast/src/main/java/il/co/codeguru/corewars8086/war/War.java	2026-10-01 02:45:33.581379000 +0300
+@@ -78,11 +78,9 @@
+         m_nextFreeAddress = RealModeAddress.PARAGRAPH_SIZE *
+             (ARENA_SEGMENT + RealModeAddress.PARAGRAPHS_IN_SEGMENT);
+ 
+-        // initialize arena
+-        for (int offset = 0; offset < ARENA_SIZE; ++offset) {
+-            RealModeAddress tmp = new RealModeAddress(ARENA_SEGMENT, (short)offset);
+-            m_core.writeByte(tmp, ARENA_BYTE);			
+-        }
++        // initialize arena: the same linear range the per-offset loop wrote
++        // (ARENA_SEGMENT:0000..FFFF = linear 0x10000..0x1FFFF), before any listener is set
++        m_core.fillLinear(new RealModeAddress(ARENA_SEGMENT, (short)0).getLinearAddress(), ARENA_SIZE, ARENA_BYTE);
+ 
+         isSingleRound = false;
+         
+@@ -169,12 +167,24 @@
+      * Count the number of alive survivor groups - defined as survivor groups with at least one alive survivor.
+      */
+     private long countAliveSurvivorGroups() {
+-        return Arrays.stream(m_warriors)
+-                .filter(Objects::nonNull)  // m_warriors contains null references for indices >= m_numWarriors
+-                .filter(Warrior::isAlive)
+-                .filter(w -> !w.isZombie())
+-                .map(Warrior::getGroupName)
+-                .distinct().count();
++        // Same result as the original stream (filter alive non-zombies, distinct group
++        // names by equals()), without allocating a stream and HashSet on every round.
++        int distinct = 0;
++        for (int i = 0; i < m_numWarriors; i++) {
++            Warrior w = m_warriors[i];
++            if (!w.isAlive() || w.isZombie()) continue;
++            String group = w.getGroupName();
++            boolean seen = false;
++            for (int j = 0; j < i; j++) {
++                Warrior prev = m_warriors[j];
++                if (prev.isAlive() && !prev.isZombie() && Objects.equals(prev.getGroupName(), group)) {
++                    seen = true;
++                    break;
++                }
++            }
++            if (!seen) distinct++;
++        }
++        return distinct;
+     }
+ 	
+     /**
+@@ -400,6 +410,24 @@
+     	return names;
+     }
+  
++    /** The warriors updateScores() awards points to, in the same order. */
++    public String[] getScoringWarriorNames() {
++        String[] names = new String[m_numWarriors];
++        int n = 0;
++        for (int i = 0; i < m_numWarriors; i++) {
++            Warrior warrior = m_warriors[i];
++            if (warrior.isAlive() && !warrior.isZombie()) {
++                names[n++] = warrior.getName();
++            }
++        }
++        return Arrays.copyOf(names, n);
++    }
++
++    /** The per-warrior award updateScores() uses (same expression). */
++    public float getScorePerSurvivor() {
++        return (float) 1.0 / m_numSurvivorsAlive;
++    }
++
+     /**
+      * Updates the scores in a given score-board.
+      */
+@@ -413,7 +441,8 @@
+         }
+     }
+     
+-    private Random rand = new Random();
++    // Same LCG and draw sequence as java.util.Random, without per-draw CAS (see UnsyncRandom).
++    private Random rand = new UnsyncRandom();
+     
+     private boolean isSingleRound;
+     private boolean isPaused;

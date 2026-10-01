@@ -1,5 +1,45 @@
 # Arena-100: 105-agent design competition to beat m049 and m050 (2026-09-30)
 
+> **CORRECTION (2026-10-01): the "Bottom line" and "Final verified result" sections below are
+> wrong. The synthesis does NOT beat m050.** The original text is kept unchanged below for the
+> record; read it together with this correction.
+>
+> What went wrong:
+> - **Seed set 1** (`all-001/002`): baselines and candidates did share these seeds, but the
+>   same seeds were also used to *select* the winners out of 105 candidates, so the winners'
+>   margins carry selection bias (winner's curse).
+> - **Seed set 2** (`all2-verify-101/102`) and the **holdout** (`holdout-fresh-201/202`): the
+>   candidates were compared against m049/m050 numbers measured on `all-001/002`, not on the
+>   same seeds. Those comparisons are invalid. The "strengthened on seed 2" rows are artefacts.
+>
+> Matched re-run: all four warriors on identical seeds in one batch. 10 fresh seeds
+> `bigcheck-oct1-001..010`, 25 all-2025 cohorts x 50 battles per seed, 12,500 battles per warrior:
+>
+> | warrior | screen | vs m050 | seeds won vs m050 | paired t |
+> |---|---|---|---|---|
+> | c090 alone (m050 + `lea sp,[di+imm]` fusion) | 0.67980 | +0.25pp | 9/10 | 2.28 |
+> | m050 | 0.67729 | -- | -- | -- |
+> | synthesis (c090 + c041 INT86h detour) | 0.67584 | -0.15pp | 3/10 | -0.62 |
+> | m049 | 0.66961 | -0.77pp | 2/10 | -4.46 |
+>
+> A second matched check on 4 more fresh seeds (`audit-fresh-301..304`, 5,000 battles each):
+> m049 .6684, m050 .6759, c090 .6762, synthesis .6768 (all within noise of each other except
+> m049). An independent audit by Codex (4 seeds, 5,000 battles per version) agrees: c090 67.90 >
+> m050 67.60 > m049 67.18 > synthesis 67.15.
+>
+> Corrected conclusions:
+> - The INT86h detour (c041/c036/c039, and therefore the synthesis) is **not** a verified
+>   improvement.
+> - The only change with a consistent matched edge over m050 is c090's `lea sp,[di+imm]` fusion,
+>   and that edge is small (+0.25pp, about a sixth of what was claimed here). It is not yet
+>   enough to promote anything to m051.
+> - The tournament rows were not re-checked and should not be relied on.
+> - Rule adopted for all later work: baselines run on the same seeds, in the same batch, as every
+>   candidate, with >= 10 seeds before any claim.
+>
+> Sources: `config-bigcheck-*.json` -> `experiments/bigcheck-*.json`;
+> `config-audit-screen-*.json` -> `experiments/audit-screen-*.json`.
+
 Branch: `claude/scout-executor-research-2026-09-29`. Reference baselines:
 m049 (`final/ChimeraA.asm`/`ChimeraB.asm`, screen score `0.6674000056`) and
 m050 (`candidates/generated/chimera-m050/`, screen score `0.6722666728`,
@@ -179,6 +219,9 @@ reasonable (not exhaustive) confidence nothing major was silently
 dropped by the shortlist cutoff.
 
 ## Final verified result
+
+*(Superseded: see the CORRECTION at the top. The matched 10-seed re-run shows the synthesis
+slightly BELOW m050; only c090 alone keeps a small edge.)*
 
 The synthesis (`SynthA.asm`/`SynthB.asm`) is the strongest result
 found: beats both m049 and m050 on the screen across two independent

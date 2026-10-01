@@ -1,0 +1,111 @@
+     1                                  bits 16
+     2                                  
+     3                                  ; microopt-2026-10-01 d2 / A: d1 + dead `xor di,di` removed from captured_init (A zombie path)
+     4                                  ; Base: c090 (arena-100 c090-landmine-avoidance). Engine facts used: warriors start with
+     5                                  ; DI=SI=BX=CX=DX=BP=0, INT 87h never writes DI, REP MOVSW ignores flags.
+     6                                  
+     7                                  %define FAR_SEG  0FFCh
+     8                                  %define PTR_CELL 00200h
+     9                                  
+    10                                  start:
+    11 00000000 89C6                        mov si, ax
+    12 00000002 89C3                        mov bx, ax
+    13 00000004 83C338                      add bx, zombie_entry - start
+    14 00000007 891E135D                    mov [05D13h], bx
+    15 0000000B 0E                          push cs
+    16 0000000C 07                          pop es
+    17 0000000D B8EBF9                      mov ax, 0F9EBh
+    18 00000010 BACCCC                      mov dx, 0CCCCh
+    19 00000013 BBFF26                      mov bx, 026FFh
+    20 00000016 B9135D                      mov cx, 05D13h
+    21 00000019 FD                          std
+    22 0000001A CD87                        int 087h
+    23 0000001C FC                          cld
+    24 0000001D 89F0                        mov ax, si
+    25 0000001F 88E0                        mov al, ah
+    26 00000021 30E4                        xor ah, ah
+    27 00000023 B53C                        mov ch, 03Ch
+    28 00000025 F6F5                        div ch
+    29 00000027 F6E5                        mul ch
+    30 00000029 88C4                        mov ah, al
+    31 0000002B 80C410                      add ah, 010h
+    32 0000002E B0A2                        mov al, 0A2h
+    33 00000030 81C6A600                    add si, worker - start
+    34 00000034 EB3E                        jmp short phoenix_init
+    35                                  
+    36 00000036 CCCC                        times 2 db 0CCh
+    37                                  
+    38                                  zombie_entry:
+    39 00000038 31FF                        xor di, di
+    40 0000003A B8F3A5                      mov ax, 0A5F3h
+    41 0000003D BA061F                      mov dx, 01F06h
+    42 00000040 B3CC                        mov bl, 0CCh
+    43 00000042 FD                          std
+    44 00000043 CD87                        int 087h
+    45 00000045 FC                          cld
+    46 00000046 E80000                      call .get_ip
+    47                                  
+    48                                  .get_ip:
+    49 00000049 5E                          pop si
+    50 0000004A 83EE49                      sub si, .get_ip - start
+    51 0000004D 89F0                        mov ax, si
+    52 0000004F 88E0                        mov al, ah
+    53 00000051 30E4                        xor ah, ah
+    54 00000053 B53C                        mov ch, 03Ch
+    55 00000055 F6F5                        div ch
+    56 00000057 F6E5                        mul ch
+    57 00000059 88C4                        mov ah, al
+    58 0000005B 80C454                      add ah, 054h
+    59 0000005E B0A2                        mov al, 0A2h
+    60 00000060 81C6A600                    add si, worker - start
+    61                                  
+    62                                  captured_init:
+    63 00000064 16                          push ss
+    64 00000065 07                          pop es
+    65 00000066 B90900                      mov cx, 9
+    66 00000069 F3A5                        rep movsw
+    67 0000006B 16                          push ss
+    68 0000006C 1F                          pop ds
+    69 0000006D BB8002                      mov bx, 00280h
+    70 00000070 0E                          push cs
+    71 00000071 17                          pop ss
+    72 00000072 EB0E                        jmp short phoenix_pointer_ready
+    73                                  
+    74                                  phoenix_init:
+    75 00000074 16                          push ss
+    76 00000075 07                          pop es
+    77 00000076 B90900                      mov cx, 9
+    78 00000079 F3A5                        rep movsw
+    79 0000007B 16                          push ss
+    80 0000007C 1F                          pop ds
+    81 0000007D BB0002                      mov bx, PTR_CELL
+    82 00000080 0E                          push cs
+    83 00000081 17                          pop ss
+    84                                  
+    85                                  phoenix_pointer_ready:
+    86 00000082 8907                        mov [bx], ax
+    87 00000084 C74702FC0F                  mov word [bx + 2], FAR_SEG
+    88 00000089 31F6                        xor si, si
+    89 0000008B 89C7                        mov di, ax
+    90 0000008D B8FC0F                      mov ax, FAR_SEG
+    91 00000090 8EC0                        mov es, ax
+    92 00000092 8DA50002                    lea sp, [di + 00200h]
+    93 00000096 B90800                      mov cx, 8
+    94 00000099 BA0038                      mov dx, 03800h
+    95 0000009C BD003C                      mov bp, 03C00h
+    96 0000009F B8FF1F                      mov ax, 01FFFh
+    97 000000A2 AB                          stosw
+    98 000000A3 4F                          dec di
+    99 000000A4 FF1F                        call far [bx]
+   100                                  
+   101                                  worker:
+   102 000000A6 A5                          movsw
+   103 000000A7 F3A5                        rep movsw
+   104 000000A9 29D4                        sub sp, dx
+   105 000000AB 292F                        sub [bx], bp
+   106 000000AD 8B3F                        mov di, [bx]
+   107 000000AF B109                        mov cl, 9
+   108 000000B1 31F6                        xor si, si
+   109 000000B3 AB                          stosw
+   110 000000B4 4F                          dec di
+   111 000000B5 FF1F                        call far [bx]

@@ -1,0 +1,70 @@
+     1                                  bits 16
+     2                                  
+     3                                  ; microopt-2026-10-01 d4 / B: d3 + `les di,[si+arena_far]` replaces `push cs/pop es` (-1 round A,B)
+     4                                  ; Base: c090 (arena-100 c090-landmine-avoidance). Engine facts used: warriors start with
+     5                                  ; DI=SI=BX=CX=DX=BP=0, INT 87h never writes DI, REP MOVSW ignores flags.
+     6                                  
+     7                                  %define FAR_SEG  0FFCh
+     8                                  %define PTR_CELL 00240h
+     9                                  
+    10                                  start:
+    11 00000000 89C6                        mov si, ax
+    12 00000002 C47C2D                      les di, [si + arena_far - start]
+    13 00000005 B8EBF9                      mov ax, 0F9EBh
+    14 00000008 BACCCC                      mov dx, 0CCCCh
+    15 0000000B BBFF26                      mov bx, 026FFh
+    16 0000000E B9135D                      mov cx, 05D13h
+    17 00000011 FD                          std
+    18 00000012 CD87                        int 087h
+    19 00000014 FC                          cld
+    20 00000015 89F0                        mov ax, si
+    21 00000017 88E0                        mov al, ah
+    22 00000019 30E4                        xor ah, ah
+    23 0000001B B53C                        mov ch, 03Ch
+    24 0000001D F6F5                        div ch
+    25 0000001F F6E5                        mul ch
+    26 00000021 88C4                        mov ah, al
+    27 00000023 80C434                      add ah, 034h
+    28 00000026 B0A2                        mov al, 0A2h
+    29 00000028 83C663                      add si, worker - start
+    30 0000002B EB04                        jmp short phoenix_init
+    31                                  
+    32                                  arena_far:
+    33 0000002D 00000010                    dw 0, 01000h
+    34                                  
+    35                                  phoenix_init:
+    36 00000031 16                          push ss
+    37 00000032 07                          pop es
+    38 00000033 B90900                      mov cx, 9
+    39 00000036 F3A5                        rep movsw
+    40 00000038 16                          push ss
+    41 00000039 1F                          pop ds
+    42 0000003A BB4002                      mov bx, PTR_CELL
+    43 0000003D 0E                          push cs
+    44 0000003E 17                          pop ss
+    45 0000003F 8907                        mov [bx], ax
+    46 00000041 C74702FC0F                  mov word [bx + 2], FAR_SEG
+    47 00000046 31F6                        xor si, si
+    48 00000048 89C7                        mov di, ax
+    49 0000004A B8FC0F                      mov ax, FAR_SEG
+    50 0000004D 8EC0                        mov es, ax
+    51 0000004F 8DA58002                    lea sp, [di + 00280h]
+    52 00000053 B90900                      mov cx, 9
+    53 00000056 BA0040                      mov dx, 04000h
+    54 00000059 BD0044                      mov bp, 04400h
+    55 0000005C B8FF1F                      mov ax, 01FFFh
+    56 0000005F AB                          stosw
+    57 00000060 4F                          dec di
+    58 00000061 FF1F                        call far [bx]
+    59                                  
+    60                                  worker:
+    61 00000063 A5                          movsw
+    62 00000064 F3A5                        rep movsw
+    63 00000066 29D4                        sub sp, dx
+    64 00000068 292F                        sub [bx], bp
+    65 0000006A 8B3F                        mov di, [bx]
+    66 0000006C B109                        mov cl, 9
+    67 0000006E 31F6                        xor si, si
+    68 00000070 AB                          stosw
+    69 00000071 4F                          dec di
+    70 00000072 FF1F                        call far [bx]

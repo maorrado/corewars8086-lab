@@ -1,0 +1,20 @@
+== round 1
+j8-default: ALL IDENTICAL across 20 batch jobs, one JVM, 8 threads, total 16.3s 
+j8-notiered: ALL IDENTICAL across 20 batch jobs, one JVM, 8 threads, total 15.8s -XX:-TieredCompilation
+j8-aggressive: ALL IDENTICAL across 20 batch jobs, one JVM, 8 threads, total 17.6s -XX:+AggressiveOpts
+j8-inline15: ALL IDENTICAL across 20 batch jobs, one JVM, 8 threads, total 16.2s -XX:MaxInlineLevel=15 -XX:InlineSmallCode=2500
+j8-bigyoung: ALL IDENTICAL across 20 batch jobs, one JVM, 8 threads, total 15.1s -Xms2g -Xmn1g
+j21-default: ALL IDENTICAL across 20 batch jobs, one JVM, 8 threads, total 13.3s 
+j21-parallelgc: ALL IDENTICAL across 20 batch jobs, one JVM, 8 threads, total 12.5s -XX:+UseParallelGC
+j25-default: ALL IDENTICAL across 20 batch jobs, one JVM, 8 threads, total 14.0s 
+j25-parallelgc: ALL IDENTICAL across 20 batch jobs, one JVM, 8 threads, total 12.7s -XX:+UseParallelGC
+== round 2
+j8-default: ALL IDENTICAL across 20 batch jobs, one JVM, 8 threads, total 16.4s 
+j8-notiered: ALL IDENTICAL across 20 batch jobs, one JVM, 8 threads, total 13.4s -XX:-TieredCompilation
+j8-aggressive: ALL IDENTICAL across 20 batch jobs, one JVM, 8 threads, total 14.2s -XX:+AggressiveOpts
+j8-inline15: ALL IDENTICAL across 20 batch jobs, one JVM, 8 threads, total 14.1s -XX:MaxInlineLevel=15 -XX:InlineSmallCode=2500
+j8-bigyoung: ALL IDENTICAL across 20 batch jobs, one JVM, 8 threads, total 15.0s -Xms2g -Xmn1g
+j21-default: ALL IDENTICAL across 20 batch jobs, one JVM, 8 threads, total 12.6s 
+j21-parallelgc: ALL IDENTICAL across 20 batch jobs, one JVM, 8 threads, total 11.2s -XX:+UseParallelGC
+j25-default: ALL IDENTICAL across 20 batch jobs, one JVM, 8 threads, total 11.5s 
+j25-parallelgc: ALL IDENTICAL across 20 batch jobs, one JVM, 8 threads, total 10.8s -XX:+UseParallelGC

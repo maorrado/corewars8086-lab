@@ -1,0 +1,147 @@
+diff -ruN --strip-trailing-cr repos/corewars8086-6.0.0-fast/src/main/java/il/co/codeguru/corewars8086/cli/BatchRunner.java repos/corewars8086-6.0.0-ablation/src/main/java/il/co/codeguru/corewars8086/cli/BatchRunner.java
+--- repos/corewars8086-6.0.0-fast/src/main/java/il/co/codeguru/corewars8086/cli/BatchRunner.java	2026-10-01 02:57:02.043886300 +0300
++++ repos/corewars8086-6.0.0-ablation/src/main/java/il/co/codeguru/corewars8086/cli/BatchRunner.java	2026-10-01 03:02:44.675799500 +0300
+@@ -69,7 +69,7 @@
+         final List<Job> jobs = loadJobs(args[0]);
+         int totalWars = 0;
+         for (Job job : jobs) totalWars += job.wars.size();
+-        System.out.printf("BatchRunner: %d jobs, %d wars, %d threads%n", jobs.size(), totalWars, threads);
++        System.out.printf("BatchRunner: %d jobs, %d wars, %d threads, ablation: %s%n", jobs.size(), totalWars, threads, il.co.codeguru.corewars8086.war.Ablation.describe());
+ 
+         final long started = System.nanoTime();
+         final AtomicInteger jobsDone = new AtomicInteger();
+@@ -108,7 +108,7 @@
+                 throw new IllegalArgumentException("job " + jobs.size() + ": --telemetryFile is not supported in batch mode");
+             }
+             Competition competition = new Competition(options);
+-            competition.setMemoryEventsEnabled(false);
++            competition.setMemoryEventsEnabled(!il.co.codeguru.corewars8086.war.Ablation.ORIG_MEMEVENTS);
+             // same seed interpretation as HeadlessCompetitionRunner
+             long seed = Longs.tryParse(options.seed) != null ? Long.parseLong(options.seed) : options.seed.hashCode();
+             competition.setSeed(seed);
+diff -ruN --strip-trailing-cr repos/corewars8086-6.0.0-fast/src/main/java/il/co/codeguru/corewars8086/memory/RestrictedAccessRealModeMemory.java repos/corewars8086-6.0.0-ablation/src/main/java/il/co/codeguru/corewars8086/memory/RestrictedAccessRealModeMemory.java
+--- repos/corewars8086-6.0.0-fast/src/main/java/il/co/codeguru/corewars8086/memory/RestrictedAccessRealModeMemory.java	2026-10-01 02:46:23.072897200 +0300
++++ repos/corewars8086-6.0.0-ablation/src/main/java/il/co/codeguru/corewars8086/memory/RestrictedAccessRealModeMemory.java	2026-10-01 03:02:44.680911100 +0300
+@@ -70,7 +70,7 @@
+      */
+     public byte readByte(RealModeAddress address) throws MemoryException {
+         // is reading allowed from this address ?
+-        if (!isInRegions(m_readStarts, m_readEnds, address.getLinearAddress())) {
++        if (il.co.codeguru.corewars8086.war.Ablation.ORIG_REGIONS ? !isAddressInRegions(m_readAccessRegions, address) : !isInRegions(m_readStarts, m_readEnds, address.getLinearAddress())) {
+             throw new MemoryException();
+         }
+ 
+@@ -87,7 +87,7 @@
+      */
+     public void writeByte(RealModeAddress address, byte value) throws MemoryException {
+         // is writing allowed to this address ?
+-        if (!isInRegions(m_writeStarts, m_writeEnds, address.getLinearAddress())) {
++        if (il.co.codeguru.corewars8086.war.Ablation.ORIG_REGIONS ? !isAddressInRegions(m_writeAccessRegions, address) : !isInRegions(m_writeStarts, m_writeEnds, address.getLinearAddress())) {
+             throw new MemoryException();
+         }
+ 
+@@ -104,7 +104,7 @@
+      */
+     public byte readExecuteByte(RealModeAddress address) throws MemoryException {
+         // is reading allowed from this address ?
+-        if (!isInRegions(m_executeStarts, m_executeEnds, address.getLinearAddress())) {
++        if (il.co.codeguru.corewars8086.war.Ablation.ORIG_REGIONS ? !isAddressInRegions(m_executeAccessRegions, address) : !isInRegions(m_executeStarts, m_executeEnds, address.getLinearAddress())) {
+             throw new MemoryException();
+         }
+ 
+diff -ruN --strip-trailing-cr repos/corewars8086-6.0.0-fast/src/main/java/il/co/codeguru/corewars8086/war/Ablation.java repos/corewars8086-6.0.0-ablation/src/main/java/il/co/codeguru/corewars8086/war/Ablation.java
+--- repos/corewars8086-6.0.0-fast/src/main/java/il/co/codeguru/corewars8086/war/Ablation.java	1970-01-01 02:00:00.000000000 +0200
++++ repos/corewars8086-6.0.0-ablation/src/main/java/il/co/codeguru/corewars8086/war/Ablation.java	2026-10-01 03:01:45.725655400 +0300
+@@ -0,0 +1,24 @@
++package il.co.codeguru.corewars8086.war;
++
++/**
++ * ABLATION BUILD ONLY: each flag restores the ORIGINAL code of one speedup, so its
++ * contribution can be measured alone and in combination. static final -> the JIT
++ * folds the unused branch away, so the toggles themselves cost nothing.
++ * Enable with -Dcw.orig.<name>=true.
++ */
++public final class Ablation {
++    public static final boolean ORIG_MULTICASTER = Boolean.getBoolean("cw.orig.multicaster");
++    public static final boolean ORIG_MEMEVENTS = Boolean.getBoolean("cw.orig.memevents");
++    public static final boolean ORIG_COUNT = Boolean.getBoolean("cw.orig.count");
++    public static final boolean ORIG_FILL = Boolean.getBoolean("cw.orig.fill");
++    public static final boolean ORIG_RANDOM = Boolean.getBoolean("cw.orig.random");
++    public static final boolean ORIG_REGIONS = Boolean.getBoolean("cw.orig.regions");
++
++    private Ablation() {
++    }
++
++    public static String describe() {
++        return "multicaster=" + ORIG_MULTICASTER + " memevents=" + ORIG_MEMEVENTS + " count=" + ORIG_COUNT
++            + " fill=" + ORIG_FILL + " random=" + ORIG_RANDOM + " regions=" + ORIG_REGIONS;
++    }
++}
+diff -ruN --strip-trailing-cr repos/corewars8086-6.0.0-fast/src/main/java/il/co/codeguru/corewars8086/war/Competition.java repos/corewars8086-6.0.0-ablation/src/main/java/il/co/codeguru/corewars8086/war/Competition.java
+--- repos/corewars8086-6.0.0-fast/src/main/java/il/co/codeguru/corewars8086/war/Competition.java	2026-10-01 02:56:41.014661800 +0300
++++ repos/corewars8086-6.0.0-ablation/src/main/java/il/co/codeguru/corewars8086/war/Competition.java	2026-10-01 03:02:44.668417800 +0300
+@@ -24,8 +24,10 @@
+ 
+     private final CompetitionEventMulticaster competitionEventCaster = new CompetitionEventMulticaster();
+     private final MemoryEventMulticaster memoryEventCaster = new MemoryEventMulticaster();
+-    private final CompetitionEventListener competitionEventListener = competitionEventCaster;
+-    private final MemoryEventListener memoryEventListener = memoryEventCaster;
++    private final il.co.codeguru.corewars8086.utils.EventMulticaster origCompCaster = Ablation.ORIG_MULTICASTER ? new il.co.codeguru.corewars8086.utils.EventMulticaster(CompetitionEventListener.class) : null;
++    private final il.co.codeguru.corewars8086.utils.EventMulticaster origMemCaster = Ablation.ORIG_MULTICASTER ? new il.co.codeguru.corewars8086.utils.EventMulticaster(MemoryEventListener.class) : null;
++    private final CompetitionEventListener competitionEventListener = Ablation.ORIG_MULTICASTER ? (CompetitionEventListener) origCompCaster.getProxy() : competitionEventCaster;
++    private final MemoryEventListener memoryEventListener = Ablation.ORIG_MULTICASTER ? (MemoryEventListener) origMemCaster.getProxy() : memoryEventCaster;
+     // Headless runs never register memory listeners (only the GUI does). Disabling
+     // memory events there removes a per-write call that can never do anything, and
+     // lets the JIT eliminate the address objects it would otherwise force to escape.
+@@ -309,7 +311,7 @@
+     }
+ 
+     public void addCompetitionEventListener(CompetitionEventListener lis) {
+-        competitionEventCaster.add(lis);
++        if (Ablation.ORIG_MULTICASTER) origCompCaster.add(lis); else competitionEventCaster.add(lis);
+     }
+         public void removeCompetitionEventListener(CompetitionEventListener lis) {
+     	competitionEventCaster.remove(lis);
+diff -ruN --strip-trailing-cr repos/corewars8086-6.0.0-fast/src/main/java/il/co/codeguru/corewars8086/war/War.java repos/corewars8086-6.0.0-ablation/src/main/java/il/co/codeguru/corewars8086/war/War.java
+--- repos/corewars8086-6.0.0-fast/src/main/java/il/co/codeguru/corewars8086/war/War.java	2026-10-01 02:45:33.581379000 +0300
++++ repos/corewars8086-6.0.0-ablation/src/main/java/il/co/codeguru/corewars8086/war/War.java	2026-10-01 03:02:44.679867100 +0300
+@@ -80,7 +80,14 @@
+ 
+         // initialize arena: the same linear range the per-offset loop wrote
+         // (ARENA_SEGMENT:0000..FFFF = linear 0x10000..0x1FFFF), before any listener is set
+-        m_core.fillLinear(new RealModeAddress(ARENA_SEGMENT, (short)0).getLinearAddress(), ARENA_SIZE, ARENA_BYTE);
++        if (Ablation.ORIG_FILL) {
++            for (int offset = 0; offset < ARENA_SIZE; ++offset) {
++                RealModeAddress tmp = new RealModeAddress(ARENA_SEGMENT, (short)offset);
++                m_core.writeByte(tmp, ARENA_BYTE);
++            }
++        } else {
++            m_core.fillLinear(new RealModeAddress(ARENA_SEGMENT, (short)0).getLinearAddress(), ARENA_SIZE, ARENA_BYTE);
++        }
+ 
+         isSingleRound = false;
+         
+@@ -167,6 +174,14 @@
+      * Count the number of alive survivor groups - defined as survivor groups with at least one alive survivor.
+      */
+     private long countAliveSurvivorGroups() {
++        if (Ablation.ORIG_COUNT) {
++            return java.util.Arrays.stream(m_warriors)
++                .filter(Objects::nonNull)
++                .filter(Warrior::isAlive)
++                .filter(w -> !w.isZombie())
++                .map(Warrior::getGroupName)
++                .distinct().count();
++        }
+         // Same result as the original stream (filter alive non-zombies, distinct group
+         // names by equals()), without allocating a stream and HashSet on every round.
+         int distinct = 0;
+@@ -442,7 +457,7 @@
+     }
+     
+     // Same LCG and draw sequence as java.util.Random, without per-draw CAS (see UnsyncRandom).
+-    private Random rand = new UnsyncRandom();
++    private Random rand = Ablation.ORIG_RANDOM ? new Random() : new UnsyncRandom();
+     
+     private boolean isSingleRound;
+     private boolean isPaused;

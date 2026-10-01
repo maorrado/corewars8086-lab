@@ -1,0 +1,30 @@
+== round 1
+all-new: ALL IDENTICAL across 10 batch jobs, one JVM, 1 threads, total 15.0s 
+all-orig: ALL IDENTICAL across 10 batch jobs, one JVM, 1 threads, total 21.7s -Dcw.orig.multicaster=true -Dcw.orig.memevents=true -Dcw.orig.count=true -Dcw.orig.fill=true -Dcw.orig.random=true -Dcw.orig.regions=true
+revert-only-multicaster: ALL IDENTICAL across 10 batch jobs, one JVM, 1 threads, total 17.7s -Dcw.orig.multicaster=true
+apply-only-multicaster: ALL IDENTICAL across 10 batch jobs, one JVM, 1 threads, total 21.6s -Dcw.orig.memevents=true -Dcw.orig.count=true -Dcw.orig.fill=true -Dcw.orig.random=true -Dcw.orig.regions=true
+revert-only-memevents: ALL IDENTICAL across 10 batch jobs, one JVM, 1 threads, total 15.0s -Dcw.orig.memevents=true
+apply-only-memevents: ALL IDENTICAL across 10 batch jobs, one JVM, 1 threads, total 24.1s -Dcw.orig.multicaster=true -Dcw.orig.count=true -Dcw.orig.fill=true -Dcw.orig.random=true -Dcw.orig.regions=true
+revert-only-count: ALL IDENTICAL across 10 batch jobs, one JVM, 1 threads, total 23.4s -Dcw.orig.count=true
+apply-only-count: ALL IDENTICAL across 10 batch jobs, one JVM, 1 threads, total 15.3s -Dcw.orig.multicaster=true -Dcw.orig.memevents=true -Dcw.orig.fill=true -Dcw.orig.random=true -Dcw.orig.regions=true
+revert-only-fill: ALL IDENTICAL across 10 batch jobs, one JVM, 1 threads, total 15.3s -Dcw.orig.fill=true
+apply-only-fill: ALL IDENTICAL across 10 batch jobs, one JVM, 1 threads, total 20.1s -Dcw.orig.multicaster=true -Dcw.orig.memevents=true -Dcw.orig.count=true -Dcw.orig.random=true -Dcw.orig.regions=true
+revert-only-random: ALL IDENTICAL across 10 batch jobs, one JVM, 1 threads, total 15.5s -Dcw.orig.random=true
+apply-only-random: ALL IDENTICAL across 10 batch jobs, one JVM, 1 threads, total 20.2s -Dcw.orig.multicaster=true -Dcw.orig.memevents=true -Dcw.orig.count=true -Dcw.orig.fill=true -Dcw.orig.regions=true
+revert-only-regions: ALL IDENTICAL across 10 batch jobs, one JVM, 1 threads, total 14.6s -Dcw.orig.regions=true
+apply-only-regions: ALL IDENTICAL across 10 batch jobs, one JVM, 1 threads, total 21.9s -Dcw.orig.multicaster=true -Dcw.orig.memevents=true -Dcw.orig.count=true -Dcw.orig.fill=true -Dcw.orig.random=true
+== round 2
+all-new: ALL IDENTICAL across 10 batch jobs, one JVM, 1 threads, total 22.1s 
+all-orig: ALL IDENTICAL across 10 batch jobs, one JVM, 1 threads, total 27.8s -Dcw.orig.multicaster=true -Dcw.orig.memevents=true -Dcw.orig.count=true -Dcw.orig.fill=true -Dcw.orig.random=true -Dcw.orig.regions=true
+revert-only-multicaster: ALL IDENTICAL across 10 batch jobs, one JVM, 1 threads, total 24.0s -Dcw.orig.multicaster=true
+apply-only-multicaster: ALL IDENTICAL across 10 batch jobs, one JVM, 1 threads, total 32.1s -Dcw.orig.memevents=true -Dcw.orig.count=true -Dcw.orig.fill=true -Dcw.orig.random=true -Dcw.orig.regions=true
+revert-only-memevents: ALL IDENTICAL across 10 batch jobs, one JVM, 1 threads, total 24.4s -Dcw.orig.memevents=true
+apply-only-memevents: ALL IDENTICAL across 10 batch jobs, one JVM, 1 threads, total 41.1s -Dcw.orig.multicaster=true -Dcw.orig.count=true -Dcw.orig.fill=true -Dcw.orig.random=true -Dcw.orig.regions=true
+revert-only-count: ALL IDENTICAL across 10 batch jobs, one JVM, 1 threads, total 45.1s -Dcw.orig.count=true
+apply-only-count: ALL IDENTICAL across 10 batch jobs, one JVM, 1 threads, total 28.9s -Dcw.orig.multicaster=true -Dcw.orig.memevents=true -Dcw.orig.fill=true -Dcw.orig.random=true -Dcw.orig.regions=true
+revert-only-fill: ALL IDENTICAL across 10 batch jobs, one JVM, 1 threads, total 29.2s -Dcw.orig.fill=true
+apply-only-fill: ALL IDENTICAL across 10 batch jobs, one JVM, 1 threads, total 21.9s -Dcw.orig.multicaster=true -Dcw.orig.memevents=true -Dcw.orig.count=true -Dcw.orig.random=true -Dcw.orig.regions=true
+revert-only-random: ALL IDENTICAL across 10 batch jobs, one JVM, 1 threads, total 17.7s -Dcw.orig.random=true
+apply-only-random: ALL IDENTICAL across 10 batch jobs, one JVM, 1 threads, total 22.1s -Dcw.orig.multicaster=true -Dcw.orig.memevents=true -Dcw.orig.count=true -Dcw.orig.fill=true -Dcw.orig.regions=true
+revert-only-regions: ALL IDENTICAL across 10 batch jobs, one JVM, 1 threads, total 14.6s -Dcw.orig.regions=true
+apply-only-regions: ALL IDENTICAL across 10 batch jobs, one JVM, 1 threads, total 20.9s -Dcw.orig.multicaster=true -Dcw.orig.memevents=true -Dcw.orig.count=true -Dcw.orig.fill=true -Dcw.orig.random=true
