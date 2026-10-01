@@ -68,6 +68,15 @@ None (the 10-seed bigcheck finished; nothing else running).
   exploration e1p2/e1p4/e1p5) + holdind-oct1 (v10-v17 with independent seeds: does c090's +0.86
   there survive? diagnostic for the shared-seed artefact). Log build/fast-runs/conf-oct1.log.
 
+### Update ~05:45 -- RESULT
+- conf-oct1 (pre-registered): e1p3 +0.58 vs m050, +1.33 vs m049 (16/16 partitions). CONFIRMED.
+- expl-oct1: e1p3 +0.56 vs m050 (3rd replication); neighbourhood f1-f7: nothing significantly
+  better (f6 +0.11 n.s.); B loop +1 costs ~1pp.
+- Pooled e1p3 - m050 over 1,200 independent runs (48 fresh partitions): +0.62pp, t=5.35.
+- Report: study-notes/night-session/microopt-2026-10-01/REPORT.md. Commits 4356415, 6dbbfc8 (+ this one).
+- Note: Codex is running its own check in C:\Maor\CodeGuru\corewars8086-lab (experiments/
+  claude-e1-confirmation-20261001); be considerate with threads while it runs.
+
 ## Next step when resuming
 1. Correct the arena-100 REPORT.md and commit.
 2. Using the faster benchmark infrastructure, keep searching for general improvements over m050,

@@ -1,0 +1,70 @@
+     1                                  bits 16
+     2                                  
+     3                                  ; microopt-2026-10-01 f2 / B: e1p3 + B: les (int 87h -1) + 1 nop (B loop at its e1p3 time)
+     4                                  
+     5                                  %define FAR_SEG  0FFCh
+     6                                  %define PTR_CELL 00240h
+     7                                  
+     8                                  start:
+     9 00000000 89C6                        mov si, ax
+    10 00000002 C47C2D                      les di, [si + arena_far - start]
+    11 00000005 B8EBF9                      mov ax, 0F9EBh
+    12 00000008 BACCCC                      mov dx, 0CCCCh
+    13 0000000B BBFF26                      mov bx, 026FFh
+    14 0000000E B9135D                      mov cx, 05D13h
+    15 00000011 FD                          std
+    16 00000012 CD87                        int 087h
+    17 00000014 FC                          cld
+    18 00000015 89F0                        mov ax, si
+    19 00000017 88E0                        mov al, ah
+    20 00000019 30E4                        xor ah, ah
+    21 0000001B B53C                        mov ch, 03Ch
+    22 0000001D F6F5                        div ch
+    23 0000001F F6E5                        mul ch
+    24 00000021 88C4                        mov ah, al
+    25 00000023 80C434                      add ah, 034h
+    26 00000026 B0A2                        mov al, 0A2h
+    27 00000028 83C666                      add si, worker - start
+    28 0000002B EB04                        jmp short phoenix_init
+    29                                  
+    30                                  arena_far:
+    31 0000002D 00000010                    dw 0, 01000h
+    32                                  
+    33                                  phoenix_init:
+    34 00000031 16                          push ss
+    35 00000032 07                          pop es
+    36 00000033 31FF                        xor di, di
+    37 00000035 B90900                      mov cx, 9
+    38 00000038 F3A5                        rep movsw
+    39 0000003A 16                          push ss
+    40 0000003B 1F                          pop ds
+    41 0000003C BB4002                      mov bx, PTR_CELL
+    42 0000003F 0E                          push cs
+    43 00000040 17                          pop ss
+    44 00000041 90                          nop
+    45 00000042 8907                        mov [bx], ax
+    46 00000044 C74702FC0F                  mov word [bx + 2], FAR_SEG
+    47 00000049 31F6                        xor si, si
+    48 0000004B 89C7                        mov di, ax
+    49 0000004D B8FC0F                      mov ax, FAR_SEG
+    50 00000050 8EC0                        mov es, ax
+    51 00000052 8DA58002                    lea sp, [di + 00280h]
+    52 00000056 B90900                      mov cx, 9
+    53 00000059 BA0040                      mov dx, 04000h
+    54 0000005C BD0044                      mov bp, 04400h
+    55 0000005F B8FF1F                      mov ax, 01FFFh
+    56 00000062 AB                          stosw
+    57 00000063 4F                          dec di
+    58 00000064 FF1F                        call far [bx]
+    59                                  
+    60                                  worker:
+    61 00000066 A5                          movsw
+    62 00000067 F3A5                        rep movsw
+    63 00000069 29D4                        sub sp, dx
+    64 0000006B 292F                        sub [bx], bp
+    65 0000006D 8B3F                        mov di, [bx]
+    66 0000006F B109                        mov cl, 9
+    67 00000071 31F6                        xor si, si
+    68 00000073 AB                          stosw
+    69 00000074 4F                          dec di
+    70 00000075 FF1F                        call far [bx]

@@ -19,6 +19,11 @@ and m049 on fresh, independent evaluations never used for selection:
 | ind-oct1: 16 fresh partitions (all-v18..v33), first test of e1p3 | **+0.73pp** (t=3.5; 14/16 partitions vs c090) | **+1.56pp** | -0.05pp |
 | conf-oct1: 16 more fresh partitions (all-v34..v49), **pre-registered** | **+0.58pp** (13/16 partitions, t=3.7) | **+1.33pp** (16/16, t=7.7) | +0.04pp |
 
+| expl-oct1: 16 more fresh partitions (all-v50..v65), third test | **+0.56pp** (13/16 partitions) | (not run) | -- |
+
+**Pooled over all 1,200 independent runs (48 fresh partitions, 60,000 battles per warrior):
+e1p3 - m050 = +0.62pp, t = 5.35.** Versus m049 (800 runs): about +1.45pp.
+
 Screen scores in conf-oct1: e1p3 0.6784, c090 0.6730, m050 0.6726, m049 0.6650.
 
 What e1p3 changes relative to m050 (only timing of the one-time bootstrap; the replication
@@ -62,6 +67,11 @@ for m049 in every design).
 | ind-oct1 | 16 partitions, independent seeds | e1p3 +0.79 (t=3.96); e1p1 +0.32; e1 +0.09; e1x +0.05; e1m -0.04; zombie-path speedups z1 -0.08, z2 -0.31, z3 -0.54 (monotonically harmful) |
 | conf-oct1 | 16 new partitions, independent seeds, e1p3 pre-registered | **e1p3 confirmed: +0.53 vs c090, +0.58 vs m050, +1.33 vs m049**; e1p5 +0.42, e1p4 +0.36, e1p2 +0.17 |
 | holdind-oct1 | v10-v17 with independent seeds | c090 vs m050 +0.24 (t=1.5), not +0.86 |
+| expl-oct1 | 16 new partitions, independent seeds; neighbourhood of e1p3 (vs e1p3) | f6 (A int 87h 2 rounds early, loop as e1p3) +0.11 (t=1.3, n.s.); f1 (B `les`: B int 87h + loop 1 earlier) -0.06; f2 -0.15; f5 (B loop +2) -0.14; f7 -0.14; **f4 (B loop +1) -1.03; f3 (B `les` + loop +1) -1.14**. e1p3 vs m050 +0.56 (3rd replication) |
+
+Nothing in the explored neighbourhood (A int 87h -1/-2, A loop -3..+3 around it, B int 87h -1,
+B loop -1..+2) beats e1p3 significantly; B's loop timing is the most sensitive knob (+1 round
+costs about 1pp).
 
 Removing a "dead" instruction is not automatically good: the bootstrap's exact timing against
 the field matters in both directions, and B's timing is especially sensitive.

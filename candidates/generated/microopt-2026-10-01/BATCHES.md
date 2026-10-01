@@ -14,6 +14,7 @@ Run from the lab root. `M=candidates/generated/microopt-2026-10-01`.
 | ind-oct1 (16 partitions, independent seeds) | `node $M/make-partition-configs.mjs ind-oct1 all-v18,...,all-v33 1 1 --seed-per-cohort m049 m050 c090 e1 e1m e1p1 e1p3 e1x z1 z2 z3` | Java 25 |
 | conf-oct1 (16 new partitions, independent seeds; e1p3 pre-registered) | `node $M/make-partition-configs.mjs conf-oct1 all-v34,...,all-v49 1 1 --seed-per-cohort m049 m050 c090 e1p3 e1p2 e1p4 e1p5` | Java 25 |
 | holdind-oct1 (v10-v17 again, independent seeds) | `node $M/make-partition-configs.mjs holdind-oct1 all-v10,...,all-v17 1 1 --seed-per-cohort c090 m050` | Java 25 |
+| expl-oct1 (16 new partitions, independent seeds; around e1p3) | `node $M/make-partition-configs.mjs expl-oct1 all-v50,...,all-v65 1 1 --seed-per-cohort m050 e1p3 f1 f2 f3 f4 f5 f6 f7` | Java 25 |
 
 (`all-v2,...,all-v9` = `$(seq -s, -f "all-v%g" 2 9)`.)
 
