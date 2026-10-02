@@ -1,0 +1,61 @@
+{
+  "label": "rep-movsw-20261002",
+  "mode": "validate",
+  "repeats": 1,
+  "variants": [
+    "baseline",
+    "batch-all",
+    "batch-all-rep"
+  ],
+  "createdAt": "2026-10-02T15:40:37.697Z",
+  "engineSha256": "31639072397eaf69d99e90b10d8fa594a7446951f1137b7ebd298378f5ec318d",
+  "java": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\temurin8-jre\\jdk8u504-b01-jre\\bin\\java.exe",
+  "javaSha256": "46df95bb47e2ba2b10736cee2ab543289c66021611f1ec67d0d55d5128228c20",
+  "harnessSha256": "221c68cf4b3b23a716393da20da501989465c4745240bf1277e8a1ba86011904",
+  "fixtures": [
+    {
+      "id": "fast",
+      "archiveRun": "all-v1-24__claude-synthesis-fresh-1-e812ddd5219b59e12b76f265",
+      "battles": 50,
+      "seed": "claude-synthesis-fresh-1-e812ddd5219b59e12b76f265"
+    },
+    {
+      "id": "median",
+      "archiveRun": "all-v1-08__claude-synthesis-fresh-2-d65bf5b1ac31c1cb8543bb10",
+      "battles": 50,
+      "seed": "claude-synthesis-fresh-2-d65bf5b1ac31c1cb8543bb10"
+    },
+    {
+      "id": "slow",
+      "archiveRun": "all-v1-07__claude-synthesis-fresh-4-011d87b36409480dc0450118",
+      "battles": 50,
+      "seed": "claude-synthesis-fresh-4-011d87b36409480dc0450118"
+    }
+  ],
+  "profiles": {
+    "baseline": {
+      "prefix": [
+        "-jar",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar"
+      ]
+    },
+    "batch-all": {
+      "batch": true,
+      "prefix": [
+        "-cp",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\runtime\\classes;C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\int87\\classes;C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\war\\combined\\classes;C:\\Maor\\CodeGuru\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+        "SerialBatchMain"
+      ]
+    },
+    "batch-all-rep": {
+      "batch": true,
+      "prefix": [
+        "-cp",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\runtime\\classes;C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261002\\cpu\\rep-movsw\\classes;C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\int87\\classes;C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\war\\combined\\classes;C:\\Maor\\CodeGuru\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+        "SerialBatchMain"
+      ]
+    }
+  },
+  "ordering": "Each repetition uses variants forward then reversed; each variant runs fast, median, slow. All jobs serial, full original battle counts.",
+  "caveat": "Wall-clock measurement includes JVM, JIT, UI and simulation. Other pre-existing jobs may contend; paired balanced order mitigates but cannot eliminate host noise."
+}
