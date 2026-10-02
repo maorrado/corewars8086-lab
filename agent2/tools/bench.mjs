@@ -47,7 +47,7 @@ function parseScores(text) {
 }
 
 const jobs = [];
-for (const arm of plan.arms) for (const cohort of plan.cohorts) for (const seed of plan.seeds) {
+for (const arm of plan.arms) for (const cohort of plan.cohorts) for (const seed of (cohort.seeds ?? plan.seeds)) {
   const id = `${safe(arm.id)}__${safe(cohort.id)}__${safe(seed)}`;
   const dir = path.join(runRoot, id);
   const scores = path.join(dir, "scores.csv");
@@ -64,7 +64,12 @@ for (const j of todo) {
   for (const t of teams) {
     if (names.has(t.name)) throw new Error(`duplicate team name ${t.name} in ${j.id}`);
     names.add(t.name);
-    t.warriors.forEach((w, k) => fs.copyFileSync(R(w), path.join(sv, `${safe(t.name)}${k + 1}`)));
+    if (t.warriors.length === 1) {
+      if (/[12]$/.test(safe(t.name))) throw new Error(`single-member team name must not end in 1/2: ${t.name}`);
+      fs.copyFileSync(R(t.warriors[0]), path.join(sv, safe(t.name)));
+    } else if (t.warriors.length === 2) {
+      t.warriors.forEach((w, k) => fs.copyFileSync(R(w), path.join(sv, `${safe(t.name)}${k + 1}`)));
+    } else throw new Error(`team ${t.name} must have 1 or 2 warriors`);
   }
   for (const z of plan.zombies) fs.copyFileSync(R(z.path), path.join(zd, safe(z.name)));
 }
