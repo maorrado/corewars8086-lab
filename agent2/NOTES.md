@@ -65,3 +65,45 @@ counter search, and joins the replicator at its own phase. Screen 1
 (4,000 battles/arm, 100 cohorts): +0.0453 vs b01d, 95% CI [+0.0285,+0.0622].
 Mechanism check (1,000 battles): zom20a alive at battle end 449/1000 vs
 101/1000 with b01d. This is a 2025-zombie-pack-specific gain.
+
+## Holdout 1 (preregistered, `protocols/holdout1-zchain.md`)
+
+Fresh salts, 40 battles/cohort, paired cohort-cluster 95% t intervals.
+zchain minus b01d: H1 2025 field (8,000 battles/arm) +0.0433 [+0.0303,+0.0563],
+130/25/45; H2 2024 live + counters (3,600) +0.0414 [+0.0264,+0.0564];
+H3 2024 final + counters + peers (2,240) +0.0174 [+0.0003,+0.0345];
+H4 zom19 pack -0.0008 [-0.0050,+0.0034]; H5 no zombies -0.0025
+[-0.0085,+0.0034]; H6 2023 final (2,240) +0.0301 [+0.0136,+0.0466].
+zchain minus m050: H1 +0.0519 [+0.0368,+0.0670]; H3 +0.0045 (n.s.);
+H4 +0.0194; H5 +0.0252; H6 +0.0395. All preregistered criteria pass.
+Original engine: 48/48 sampled H1 jobs byte-identical with cold `java -jar`.
+
+combo_zrl03 was also strong in holdout 1 (H1 +0.0361 vs b01d) and dominant in
+the peer field H3 (+0.135 vs b01d). 2025 entrant HRZ_Registered_Winners is a
+Chimera-style replicator on the same anchor lattice (FAR_SEG 0FFC, AL=A2).
+
+## Screen 2 (selection data for holdout 2)
+
+zchain2 = zrl03 + chain (FAR_SEG 0FF9, anchors at in-page 0x32);
+zchain3 = the same with FAR_SEG 0FFC. Relative to zchain: 2025 field
+zchain2 +0.0098 (n.s.), zchain3 +0.0109 (n.s.); peer field zchain2 +0.1073
+[+0.063,+0.152], zchain3 +0.0161 (n.s.). So zrl03's peer advantage comes from
+the FAR_SEG/lattice offset, not from its planted capture decoy.
+Geometry note: a Chimera-family generation at anchor P pushes exactly
+[P, P+0x400), so streams on the same 0x400 lattice never overwrite each
+other's anchors unless they occupy the same lattice point.
+
+## Holdout 2 (preregistered, `protocols/holdout2-zchain2.md`)
+
+zchain2 (zrl03 + chain, FAR_SEG 0FF9) minus reference, 95% cohort intervals:
+| Field | vs b01d | vs m050 | vs zchain | vs zrl03 | vs zchain3 |
+|---|---|---|---|---|---|
+| H1 2025 + zom20 (8,000/arm) | +0.0518 [+0.034,+0.069] | +0.0693 [+0.051,+0.088] | +0.0165 [-0.001,+0.034] | +0.0229 [+0.010,+0.035] | +0.0045 n.s. |
+| H2 2024 live + counters | +0.0696 | +0.1153 | +0.0258 [+0.0003,+0.051] | +0.0456 | +0.0237 |
+| H3 2024 final + counters + peers | +0.1229 | +0.1264 | +0.0974 | +0.0192 n.s. | +0.0849 |
+| H4 2025 + zom19 | -0.0191 [-0.043,+0.005] | +0.0020 | -0.0154 n.s. | -0.0004 | -0.0101 n.s. |
+| H5 2025, no zombies | -0.0319 [-0.056,-0.008] | -0.0137 n.s. | -0.0320 [-0.056,-0.008] | -0.0003 | -0.0298 [-0.054,-0.006] |
+| H6 2023 final | +0.0222 | +0.0286 | -0.0078 n.s. | +0.0128 n.s. | -0.0031 n.s. |
+zchain3 (FAR_SEG 0FFC) has no H5 regression but loses most of the H3 gain.
+Conclusion: the anchor lattice offset is a field-dependent tradeoff, not a free
+gain; the zombie chain itself is robustly positive with the zom20 pack.
