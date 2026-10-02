@@ -1,17 +1,16 @@
 bits 16
 
-; Chimera A (m049): m048 with signature-hardened Phoenix initialization.
+; Chimera A (m050): m049 with redundant startup DI clear removed.
 %define FAR_SEG  0FFCh
 %define PTR_CELL 00200h
 
 start:
     mov si, ax
-    mov di, ax
-    add di, zombie_entry - start
-    mov [05D13h], di
+    mov bx, ax
+    add bx, zombie_entry - start
+    mov [05D13h], bx
     push cs
     pop es
-    xor di, di
     mov ax, 0F9EBh
     mov dx, 0CCCCh
     mov bx, 026FFh
@@ -31,6 +30,7 @@ start:
     add si, worker - start
     jmp short phoenix_init
 
+    times 2 db 0CCh
 zombie_entry:
     xor di, di
     mov ax, 0A5F3h

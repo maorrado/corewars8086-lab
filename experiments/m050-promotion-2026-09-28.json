@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "experimentId": "m050-promotion-2026-09-28",
+  "decision": "promote-m050",
+  "baseline": {
+    "id": "m049",
+    "aSize": 189,
+    "bSize": 117,
+    "aSha256": "106765da16166d0fa744631e5cfbe403c5eafc30db164eb47e1749e7d365a973",
+    "bSha256": "7ed87893a82861b716ad0df6404b1c70282cb983db1a4a607363fd3f27ad6c77"
+  },
+  "candidate": {
+    "id": "m050",
+    "searchId": "zero-di-elision-ab-pad",
+    "aSize": 189,
+    "bSize": 117,
+    "aSourceSha256": "b05ae79647c65b67d8486205597dc28c3c6467a80efbd9017bc257e2014999d8",
+    "bSourceSha256": "6c909366137b736bf693090093d83a8c1436f7817ccc2cea51b3ea53bfc46144",
+    "aSha256": "0268ce4f301bf2ada8566f4e608180a0670a335a80b9c2b93b67aee2b632bd44",
+    "bSha256": "06b5a1ff7bac4b146620de6d1de512dfedf3f28366d6435bf61d49869d971782",
+    "change": "Remove the redundant initial XOR DI,DI from both survivors. Survivor A computes and stores zombie_entry through BX instead of DI. Two skipped 0xCC bytes keep both binary sizes and all later code placement unchanged."
+  },
+  "validationGates": [
+    {
+      "id": "full-tune-validation-r2",
+      "battlesPerPair": 1000,
+      "m049Score": 0.6890000010,
+      "m050Score": 0.6995000010,
+      "difference": 0.0105,
+      "differenceCi95": [-0.005549147983225618, 0.026549147983225628],
+      "pairedRunUnits": { "wins": 15, "ties": 18, "losses": 7 }
+    },
+    {
+      "id": "synthetic-future-validation-r2",
+      "battlesPerPair": 960,
+      "m049Score": 0.4054166531,
+      "m050Score": 0.4072990969,
+      "difference": 0.0018824437,
+      "differenceCi95": [-0.013672863396435943, 0.017437750896435934],
+      "pairedRunUnits": { "wins": 14, "ties": 3, "losses": 7 }
+    },
+    {
+      "id": "fresh-all-2025-h1",
+      "battlesPerPair": 5000,
+      "m049Score": 0.6663666578,
+      "m050Score": 0.6722333296,
+      "difference": 0.0058666718,
+      "differenceCi95": [-0.003949550020489688, 0.01568289362048969],
+      "pairedRunUnits": { "wins": 23, "ties": 8, "losses": 19 }
+    },
+    {
+      "id": "fresh-all-2025-h2",
+      "battlesPerPair": 10000,
+      "m049Score": 0.6626999943,
+      "m050Score": 0.6678999948,
+      "difference": 0.0052000005,
+      "differenceCi95": [-0.0012035885927414334, 0.011603589592741426],
+      "pairedRunUnits": { "wins": 44, "ties": 26, "losses": 30 }
+    },
+    {
+      "id": "targeted-anchor-attacker",
+      "battlesPerPair": 500,
+      "m049Score": 0.3953333320,
+      "m050Score": 0.3953333320,
+      "difference": 0.0
+    }
+  ],
+  "combinedFreshAll2025": {
+    "battlesPerPair": 15000,
+    "pairedRunUnits": 150,
+    "m049Score": 0.6639222155,
+    "m050Score": 0.6693444397,
+    "difference": 0.0054222243,
+    "relativeImprovement": 0.0081669572,
+    "standardDeviation": 0.03292998984018815,
+    "standardError": 0.002688722411449838,
+    "differenceCi95": [0.00010930878164178495, 0.010735139751691544],
+    "pairedRunUnitsByOutcome": { "wins": 67, "ties": 34, "losses": 49 }
+  },
+  "promotion": {
+    "promoted": true,
+    "reason": "The same exact-size candidate was positive on tune and synthetic-future validation, positive in both independent fresh all-2025 holdouts, and its combined 15,000-battle paired confidence interval remained above zero. The targeted counter gate tied at team level. The rebuilt final binaries exactly match the tested candidate hashes."
+  }
+}

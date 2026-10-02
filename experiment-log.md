@@ -4,9 +4,10 @@ Generated from 410 schema-v1 result files containing 254,640 measured battles.
 Each linked JSON contains the exact Java command, engine/config SHA-256, complete input paths and hashes, Zombies, opponents, seeds, raw score text, team score and both per-warrior scores for every run.
 The table below is only the compact index; the JSON is the audit record.
 
-The current promotion decision is Chimera `m049`; its general non-regression
-gates, direct-counter tests, exact binary hashes, and statistical decision are
-recorded in [`experiments/m049-promotion-2026-09-27.json`](experiments/m049-promotion-2026-09-27.json).
+The current promotion decision is Chimera `m050`; its fresh tune/future gates,
+two independent all-2025 holdouts, targeted-counter check, exact binary hashes,
+and statistical decision are recorded in
+[`experiments/m050-promotion-2026-09-28.json`](experiments/m050-promotion-2026-09-28.json).
 
 | Experiment | Battles | Team | Warrior 1 | Warrior 2 | Exact candidate inputs | SHA-256 prefixes | Cohorts | Seeds |
 |---|---:|---:|---:|---:|---|---|---|---|
@@ -443,5 +444,6 @@ recorded in [`experiments/m049-promotion-2026-09-27.json`](experiments/m049-prom
 - A post-`m048` micro search screened 122 one-line or one-constant mutations. B phase `0x25` gained +0.030833 on tune validation but lost -0.064747 on the future pool. The two spatial finalists also failed fresh 6,000-battle all-field holdouts: A's seven-word first copy gained only +0.000744 with a 95% interval crossing zero, and A stack gap `0x0260` lost -0.003944. No candidate was promoted; see `experiments/post-m048-micro-search-2026-09-27.json`.
 - `New_Best` targeted the exact m048 A initializer bytes `0E 17 BB 00` and replaced them through `INT 87h` with `FF 26 17 4A`, redirecting A during Phoenix initialization. `m049` reorders each dependency-safe `MOV BX` before `PUSH CS; POP SS`, removing that signature with unchanged size, instruction count, constants, and later register state. It tied m048 in every paired run of 1,000 tune, 960 future-pool, and 6,000 fresh all-2025 battles. In 1,600 fresh direct-counter battles it scored 0.453979 versus m048's 0.281875 and New_Best's 0.441240; all 32 paired run units favored m049 over m048. The exact binaries were promoted; see `experiments/m049-promotion-2026-09-27.json`.
 - A post-m049 adversarial audit checked the browser-visible `Registered_Winners` and `Code_Jokers4Life` concern in official v6. m049 beat Registered 0.527750 to 0.371917 over 6,000 controlled battles and scored 0.512292 versus Code_Jokers' 0.061875 across 1,600 targeted battles. Eight direct/shared/split signature defenses all failed broader sentinel non-regression, so none was promoted; see `experiments/post-m049-adversarial-audit-2026-09-27.json`.
+- The m050 search explored protected-replication layouts, aliasing, anchor hardening, decoy walls, phase and mask families, and startup/worker micro-optimizations. The promoted `zero-di-elision-ab-pad` candidate removes one redundant startup `XOR DI,DI` from each survivor; A uses `BX` for its captured-Zombie entry calculation, and skipped `CC` padding preserves the 189/117-byte layouts. It improved on fresh 1,000-battle tune and 960-battle future gates, then gained `+0.005867` and `+0.005200` on independent 5,000- and 10,000-battle all-2025 holdouts. Combined, m050 scored 0.669344 versus m049's 0.663922, a `+0.005422` gain (about 0.82% relative) with 95% interval `[+0.000109,+0.010735]`; the 500-battle targeted-counter gate tied. The exact tested binaries were promoted; see `experiments/m050-promotion-2026-09-28.json`.
 
 Pre-official smoke/debug artifacts and arena snapshots remain in `experiments/` but are intentionally excluded from the score totals above because they do not use the controlled deterministic official-v6 cohort protocol.

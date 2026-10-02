@@ -2,10 +2,30 @@
 
 ## Outcome
 
-`m049` is the promoted pair in `final/ChimeraA.asm` and
-`final/ChimeraB.asm`. It keeps the exact strategy, constants, code sizes, and
-instruction counts of `m048`, while reordering three Phoenix initialization
-sequences to remove the exact signature exploited by `New_Best`.
+`m050` is the promoted pair in `final/ChimeraA.asm` and
+`final/ChimeraB.asm`. It keeps m049's strategy, constants, phases, worker
+loops, sizes, and `New_Best` signature hardening, while removing one redundant
+startup `XOR DI,DI` from each survivor. A computes `zombie_entry` through `BX`
+instead of consuming and then clearing `DI`; B receives `DI=0` from the engine
+and leaves it unchanged before `INT 87h`. Skipped `CC` padding preserves the
+exact binary sizes and all later code placement.
+
+| m050 promotion protocol | Battles per pair | m049 | m050 | Difference |
+|---|---:|---:|---:|---:|
+| Full tune validation | 1,000 | 0.689000 | **0.699500** | **+0.010500** |
+| Synthetic future pool | 960 | 0.405417 | **0.407299** | **+0.001882** |
+| Fresh all-2025 holdout H1 | 5,000 | 0.666367 | **0.672233** | **+0.005867** |
+| Fresh all-2025 holdout H2 | 10,000 | 0.662700 | **0.667900** | **+0.005200** |
+| Combined all-2025 holdouts | 15,000 | 0.663922 | **0.669344** | **+0.005422** |
+| Targeted anchor-attacker gate | 500 | 0.395333 | **0.395333** | 0.000000 |
+
+Both independent all-2025 holdouts were positive. Combined, the 150 paired
+run units split 67 wins, 34 ties, and 49 losses, and the 95% interval for the
+gain was `[+0.000109,+0.010735]`. The improvement is about 0.82% relative to
+m049. The exact rebuilt final binaries match the tested candidate hashes. The
+compact promotion record is `experiments/m050-promotion-2026-09-28.json`.
+
+### Historical m049 promotion
 
 | m049 promotion protocol | Battles per pair | m048 | m049 | Difference |
 |---|---:|---:|---:|---:|
@@ -290,11 +310,30 @@ the target subset versus m049's `0.485000`, while scoring only `0.535000` on
 the sentinels versus m049's `0.787500`.  Split-Zombie versions failed the same
 gate.  Registered-style geometry also regressed official 2025 evaluation.
 
-No candidate met the non-regression requirement, so m049 remained unchanged.
+No candidate in that adversarial audit met the non-regression requirement, so
+m049 remained unchanged at that stage.
 The compact decision record is
 `experiments/post-m049-adversarial-audit-2026-09-27.json`; selected raw configs
 and results are in `experiments/post-m049-adversarial/`, and the exact rejected
 sources are in `candidates/generated/chimera-jokers-defense/`.
+
+## Zero-DI elision and m050 promotion
+
+The next broad search tested new protected-replication layouts, anchor
+hardening, alias paths, decoy walls, phase sweeps, mask quantizers, and small
+startup/worker mutations. Larger strategy changes either regressed on broad
+validation or overfit their screens. The surviving micro-optimization removes
+the initial `XOR DI,DI` from both team members. A uses `BX` for its early
+captured-Zombie pointer calculation, while B relies directly on the engine's
+documented zeroed initial `DI`. Both recover the removed two bytes as skipped
+`CC` padding, so the measured 189/117-byte layouts remain stable.
+
+The candidate improved on fresh tune and synthetic-future validation. Two
+independent all-2025 holdouts then produced gains of `+0.005867` over 5,000
+battles and `+0.005200` over 10,000 battles. Their combined 15,000-battle
+paired interval was `[+0.000109,+0.010735]`; the targeted anchor-attacker gate
+was an exact team-level tie. The tested binaries were promoted as `m050`; see
+`experiments/m050-promotion-2026-09-28.json`.
 
 ## Arena inspection
 
