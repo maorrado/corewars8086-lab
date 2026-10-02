@@ -1,0 +1,67 @@
+{
+  "generatedAt": "2026-10-02T09:29:06.796Z",
+  "sourceOfTruth": {
+    "e1p3A": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1p3-check-20261001\\e1p3-A.asm",
+    "e1p3B": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1p3-check-20261001\\e1p3-B.asm",
+    "e1p4BinarySha256": [
+      "99192c673e5af394ed8194932b52b4f18f092804384f38d1bb2828b189c76b93",
+      "d307b92097ac68ce6073adc1e34917b2f51c0c396235c918dfc913cee7393354"
+    ]
+  },
+  "variants": {
+    "control": [
+      {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-b01d-e1p4-20261002\\sources\\control-A.asm",
+        "sha256": "0ffc7147550daf993ac03a048baab38d283ca5470d7b5c42ed4665c5fc092585",
+        "bytesUtf8": 1812
+      },
+      {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-b01d-e1p4-20261002\\sources\\control-B.asm",
+        "sha256": "8b003c1679270a06f5f015d99f501c20371a7a048e7cf43cc589e2e299fa8cea",
+        "bytesUtf8": 1080
+      }
+    ],
+    "a_decoy": [
+      {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-b01d-e1p4-20261002\\sources\\a_decoy-A.asm",
+        "sha256": "808d10ab60d7d948859c9f7104bb719a25c738a893543aa3e5e79df5e86c99df",
+        "bytesUtf8": 1834
+      },
+      {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-b01d-e1p4-20261002\\sources\\a_decoy-B.asm",
+        "sha256": "8b003c1679270a06f5f015d99f501c20371a7a048e7cf43cc589e2e299fa8cea",
+        "bytesUtf8": 1080
+      }
+    ],
+    "b_band_shift": [
+      {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-b01d-e1p4-20261002\\sources\\b_band_shift-A.asm",
+        "sha256": "0ffc7147550daf993ac03a048baab38d283ca5470d7b5c42ed4665c5fc092585",
+        "bytesUtf8": 1812
+      },
+      {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-b01d-e1p4-20261002\\sources\\b_band_shift-B.asm",
+        "sha256": "cdf6340bb9ab37f0274f63bee0931eef5f5b1fd44c4c2da8bb9a0972d9e8139b",
+        "bytesUtf8": 1080
+      }
+    ],
+    "b01d": [
+      {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-b01d-e1p4-20261002\\sources\\b01d-A.asm",
+        "sha256": "808d10ab60d7d948859c9f7104bb719a25c738a893543aa3e5e79df5e86c99df",
+        "bytesUtf8": 1834
+      },
+      {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-b01d-e1p4-20261002\\sources\\b01d-B.asm",
+        "sha256": "cdf6340bb9ab37f0274f63bee0931eef5f5b1fd44c4c2da8bb9a0972d9e8139b",
+        "bytesUtf8": 1080
+      }
+    ]
+  },
+  "transformations": {
+    "e1p4": "e1p3 payload 01FFFh -> 018FFh, and both far call anchors [bx] -> [bx+si].",
+    "a_decoy": "Insert mov word [0FF90h],018FFh after startup cld and remove one main-entry NOP to balance one opcode turn.",
+    "b_band_shift": "In B main entry only, change add ah,034h -> add ah,070h.",
+    "combined": "Apply both candidate changes; all other source instructions derive from the checked e1p4 source transformations."
+  }
+}
