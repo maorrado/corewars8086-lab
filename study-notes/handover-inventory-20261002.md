@@ -28,17 +28,23 @@ It is **not** a claim that every local file is in Git, nor that the current
   points/battle, but its 95% interval crossed zero; it did not establish a
   winner over b01d. `combo_ah02` is retained as a research source, not a
   promoted champion.
+- Remaining ASM source snapshots under `candidates/generated/` were archived
+  separately without compiled outputs. `candidates/generated/README.md`
+  explains why many are rejected or invalid research drafts, not submissions.
+- Another 135 root-level `.mjs` experiment/generator/analyzer scripts were
+  archived after syntax checking. They are historical research tools, not a
+  supported command suite; inspect paths, write effects and assumptions before
+  running one on another machine.
 
 ## Local-only material deliberately not bulk committed
 
 | Group | Why it remains local | Next treatment |
 |---|---|---|
 | Root `config-*.json` files (roughly 726) | Generated experiment definitions, many with absolute machine paths | Select configs alongside a specific result and source package; do not import wholesale as current rules |
-| Root `generate-*.mjs` / `analyze-*.mjs` scripts (roughly 126) | Mixed one-off screens, valid analyzers, and unfinished branches | Preserve only with the experiment they reproduce; label dead ends |
 | `experiments/m050-search/` (about 55 MB in 291 JSON files) | Broad historical search, much of it selected-screen output | Build a compact family index, retain decisive holdouts and rejection evidence |
 | Other `experiments/` runs, logs and copied inputs | Tens of thousands of regenerable per-run files | Retain locally; publish frozen config, hashes, aggregate result and analyzer for decisions |
 | `build/` and generated candidate binaries/listings | Regenerable compilation and run staging | Keep exact promoted binaries only where source/hash evidence requires them |
-| `candidates/generated/codex-goal-20261001/` and other large candidate directories | Source intermingled with classes, CSV, temporary outputs | Curate ASM, scripts and a result index before publishing |
+| `candidates/generated/codex-goal-20261001/` and other large candidate directories | ASM snapshots are archived, but scripts remain intermingled with classes, CSV and temporary outputs | Curate supporting scripts and a result index before publishing |
 | `tools/corewars8086-6.0.0/scores.csv` | Mutable local simulator output | Do not commit as a research result |
 
 No local-only item was deleted. `benchmark.mjs` and `disassemble.mjs` show
