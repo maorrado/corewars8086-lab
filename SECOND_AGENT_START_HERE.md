@@ -44,3 +44,16 @@ Some historical configs, raw run copies and scratch binaries in the primary
 checkout are intentionally not committed. Do not assume a missing file here
 means the corresponding experiment never happened; consult the inventory and
 request the specific missing artifact when it is necessary.
+
+## Local execution setup
+
+The deterministic research-engine JAR was copied into this worktree at
+`repos/corewars8086-6.0.0-deterministic/target/corewars8086-6.0.0-jar-with-dependencies.jar`.
+Its SHA-256 is `31639072397eaf69d99e90b10d8fa594a7446951f1137b7ebd298378f5ec318d`.
+This compiled file is local-only; the engine source is in `repos/`.
+`tools/temurin8-jre/` supplies Java. Old configs may contain absolute paths to
+the primary checkout and must be regenerated or adjusted before running here.
+The browser assembler additionally needs the simulator served at
+`127.0.0.1:8123`, Chrome, and Playwright (`assemble.mjs` documents these).
+Port 8123 is shared across worktrees: check whether a server is already running
+before starting another.
