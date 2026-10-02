@@ -50,7 +50,7 @@ function copyTeam(team, destination) {
 
 const runs = [];
 for (const cohort of config.cohorts) {
-  if (cohort.opponents.length !== 3) throw new Error(`${cohort.id} must contain exactly three opponents`);
+  if (cohort.opponents.length < 1 || cohort.opponents.length > 3) throw new Error(`${cohort.id} must contain one to three opponents`);
   for (const seed of config.seeds) {
     const runId = `${safeName(cohort.id)}__${safeName(seed)}`;
     const runDirectory = path.join(runRoot, runId);
@@ -74,7 +74,7 @@ for (const cohort of config.cohorts) {
     const args = [
       "-jar", jar,
       "--headless",
-      "--comboSize", "4",
+      "--comboSize", String(1 + cohort.opponents.length),
       "--battlesPerCombo", String(battles),
       "--seed", seed,
       "--threads", String(config.threads ?? 4),
