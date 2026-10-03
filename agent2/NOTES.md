@@ -107,3 +107,23 @@ zchain2 (zrl03 + chain, FAR_SEG 0FF9) minus reference, 95% cohort intervals:
 zchain3 (FAR_SEG 0FFC) has no H5 regression but loses most of the H3 gain.
 Conclusion: the anchor lattice offset is a field-dependent tradeoff, not a free
 gain; the zombie chain itself is robustly positive with the zom20 pack.
+
+## Holdout 4 (preregistered, `protocols/holdout4-v6.md`) — V6-based variants
+
+Differences vs original Good_Test V6 (paired cohort 95% intervals):
+| Field | V6dn | V6nohunt | V6dec | zchain4 |
+|---|---|---|---|---|
+| H1 2025 | +0.0091 [+0.003,+0.016] | +0.0032 n.s. | +0.0063 | +0.0260 |
+| H2 2024 live | -0.0079 n.s. | +0.0051 n.s. | -0.0137 n.s. | -0.0097 n.s. |
+| H3 strong/peer | +0.0497 | +0.0116 | +0.0407 | -0.0783 |
+| H4 zom19 | +0.0188 | +0.0097 | +0.0090 | +0.0074 n.s. |
+| H5 no zombies | +0.0111 | +0.0047 n.s. | +0.0061 n.s. | -0.0019 n.s. |
+| H6 2023 | +0.0001 | +0.0022 | -0.0042 | -0.0022 |
+| H7 V6 in every cohort | **-0.0541 [-0.078,-0.030]** | +0.0086 n.s. | -0.0632 | -0.1403 |
+| pooled H1-H3 | +0.0113 [+0.0035,+0.0190] | +0.0050 [+0.0015,+0.0086] | +0.0067 n.s. | -0.0002 |
+V6dn fails the preregistered H7 criterion (planted decoys cost ~0.06 when V6 is
+an opponent); V6nohunt meets all criteria but with a small effect (secondary arm,
+3 variants tested). Neither is promoted; per the frontier-method update they must
+first be compared with the frontier leaders (V4 etc.) on a fresh preregistered test.
+V4 differs from V6 only in B's step (2800h/2000h vs 2C00h/2400h): verified by
+rebuilding V4_2 from the V6 label source (hash e0325834… matches).
