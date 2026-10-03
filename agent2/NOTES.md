@@ -141,3 +141,15 @@ F1+F2+F3 (346 cohorts, 98.75% Bonferroni intervals):
 - vs combo_zrl03: +0.0581 [+0.0312,+0.0851] — rule met.
 Original engine: 72/72 sampled jobs byte-identical. `final/` unchanged.
 Holdout 4 independently gave V6nohunt - V6 = +0.0050 [+0.0015,+0.0086].
+
+## Holdout 6 (preregistered) — Codex V6Guard vs V6nohunt
+
+V6Guard A 227 B `71164c8d…` (hash as reported by Codex), B = V6 B.
+Primary V6Guard − V6nohunt, pooled F1+F2+F3 (346 cohorts): -0.0015
+[-0.0044,+0.0014] → no measurable difference. By field: 2025 +0.0012 n.s.,
+strong field -0.0134 [-0.022,-0.005] (V6nohunt better), 2024 live -0.0003,
+no Zombies -0.0011; V6-present group -0.0148 [-0.028,-0.002].
+Descriptive: V6Guard − V6 +0.0044 [+0.0016,+0.0072] (consistent with Codex's
+~0.8%); V6Guard − V4 +0.0366; V6Guard − zchain4 +0.0119 n.s. (zchain4 again
+highest on the 2025 field: 0.761 vs 0.753/0.752). 25/25 sampled F2 jobs
+byte-identical on the original engine.

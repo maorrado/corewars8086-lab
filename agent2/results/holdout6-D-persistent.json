@@ -1,0 +1,6679 @@
+{
+ "schema": "agent2-bench-v1",
+ "planId": "holdout6-D",
+ "engine": "persistent",
+ "generatedAt": "2026-10-03T14:56:12.519Z",
+ "elapsedSeconds": 1138.288,
+ "planSha256": "cb0f68fca7946426ea39d68de5d90ff017e39d6079da3c8a29fac83686929ceb",
+ "planPath": "agent2\\plans\\holdout6-D.json",
+ "engineJarSha256": "31639072397eaf69d99e90b10d8fa594a7446951f1137b7ebd298378f5ec318d",
+ "driver": {
+  "class": "A2Batch",
+  "sourceSha256": "32068d0d97e3f649788a40ccada2d5213719aa515c4832b73643e028a5069d8a"
+ },
+ "teamName": "CAND",
+ "armHashes": {
+  "V6Guard": [
+   {
+    "path": "agent2/build/v6guard/V6GuardA",
+    "bytes": 227,
+    "sha256": "71164c8d7308766cd14d64ac6d1342cd1631afce98278fe9dca4d4ab14a3b3f3"
+   },
+   {
+    "path": "agent2/build/v6guard/V6GuardB",
+    "bytes": 202,
+    "sha256": "8579e2c2212d72a413a6daacfe3b91ceb72be648bfc085bfeed9430eeaf6657a"
+   }
+  ],
+  "V6nohunt": [
+   {
+    "path": "agent2/build/v6/V6nohuntA",
+    "bytes": 194,
+    "sha256": "6861894f3c1992cd6c6baa5b2a746178082f5b4b0a1d9969b9a326fe03d86c89"
+   },
+   {
+    "path": "agent2/build/v6/V6nohuntB",
+    "bytes": 202,
+    "sha256": "8579e2c2212d72a413a6daacfe3b91ceb72be648bfc085bfeed9430eeaf6657a"
+   }
+  ],
+  "Good_Test_V6": [
+   {
+    "path": "agent2/frontier-20261003/arms/Good_Test_V6/A",
+    "bytes": 221,
+    "sha256": "3fa67bed880413901ad618b4f7b248e5782d98de93318271ac540ad1690ca2b7"
+   },
+   {
+    "path": "agent2/frontier-20261003/arms/Good_Test_V6/B",
+    "bytes": 202,
+    "sha256": "8579e2c2212d72a413a6daacfe3b91ceb72be648bfc085bfeed9430eeaf6657a"
+   }
+  ],
+  "Good_Test_V4": [
+   {
+    "path": "agent2/frontier-20261003/arms/Good_Test_V4/A",
+    "bytes": 221,
+    "sha256": "3fa67bed880413901ad618b4f7b248e5782d98de93318271ac540ad1690ca2b7"
+   },
+   {
+    "path": "agent2/frontier-20261003/arms/Good_Test_V4/B",
+    "bytes": 202,
+    "sha256": "e03258349771238813ed3d9b7e3b604612638ccd98b1aa58cbc4fb26b795ae78"
+   }
+  ],
+  "zchain4": [
+   {
+    "path": "agent2/frontier-20261003/arms/zchain4/A",
+    "bytes": 233,
+    "sha256": "07c238b2d276824f23e54c4d2c74fb9d229e42419b3ff74302447b47bb9fbc49"
+   },
+   {
+    "path": "agent2/frontier-20261003/arms/zchain4/B",
+    "bytes": 122,
+    "sha256": "2fb8f41228b5ded8b7bd6b511c5002f5e646955f2eab8c48a73f358c128c286e"
+   }
+  ]
+ },
+ "opponentHashes": {
+  "agent2/frontier-20261003/arms/Good_Test_V4/A": "3fa67bed880413901ad618b4f7b248e5782d98de93318271ac540ad1690ca2b7",
+  "agent2/frontier-20261003/arms/Good_Test_V4/B": "e03258349771238813ed3d9b7e3b604612638ccd98b1aa58cbc4fb26b795ae78",
+  "official-2025/survivors-online/HRZ_Code_Jokers4Life1": "f2222e5041e6fdfe2ab35582cc9df51e3b0498b7b57d90f18c20056239d673b8",
+  "official-2025/survivors-online/HRZ_Code_Jokers4Life2": "7ecc90c263e5458e6ac5b880d91efd45c3e0c6345639c3e38153bc161173e8de",
+  "official-2025/survivors-online/GSA_GoonSquad1": "7b092caf2288c03827e2c7189566306f3bcc65e8668d2793659877475eaa8ac7",
+  "official-2025/survivors-online/GSA_GoonSquad2": "b0092281531189b979faf8b5084d1a6eb1793075f9ae4e56a4437459088fadc7",
+  "official-2025/survivors-online/HRZ_CodeEliteGang1": "18455d457341e1d7b30c782693eeb66cab9f239b7bdc6b372bdcfb41c16dc426",
+  "official-2025/survivors-online/HRZ_CodeEliteGang2": "74f611e36a3c93d5f9f5ced87f637120a0810e33a1927ef675a402da5900416f",
+  "official-2025/survivors-online/BZV_SKYENT1": "71bdf7043da5f50d23bc4d8b729b13ce39a2240775937d7652476abdcbb2705d",
+  "official-2025/survivors-online/BZV_SKYENT2": "bfca1258902ff47eef60ddc230e67f4c8528c89421377f5a696724506c2fdada",
+  "official-2025/survivors-online/ATL_R1DDLE1": "dc1e7b81a57cc7fb13be0a4b32036342b7a7b2c65614bccc28998bec70111803",
+  "official-2025/survivors-online/ATL_R1DDLE2": "dc1e7b81a57cc7fb13be0a4b32036342b7a7b2c65614bccc28998bec70111803",
+  "official-2025/survivors-online/IND_BRA1": "fd42f831ef722a715fc5d89877cf830b366efd1d3a30a2e0612e565de0031015",
+  "official-2025/survivors-online/IND_BRA2": "fd42f831ef722a715fc5d89877cf830b366efd1d3a30a2e0612e565de0031015",
+  "official-2025/survivors-online/HRZ_Ctrl_Alt_Elite1": "396faf80539b6f55ee1ce91d06bf40ee0049be5f931e0fd82da0da3c2e70ce79",
+  "official-2025/survivors-online/HRZ_Ctrl_Alt_Elite2": "396faf80539b6f55ee1ce91d06bf40ee0049be5f931e0fd82da0da3c2e70ce79",
+  "official-2025/survivors-online/HRZ_Thingies1": "2a381510bdaf45ab809c11ee0c115c6683b6e3c38148f613c3927026138c8b93",
+  "official-2025/survivors-online/HRZ_Thingies2": "2a381510bdaf45ab809c11ee0c115c6683b6e3c38148f613c3927026138c8b93",
+  "official-2025/survivors-online-young/GSA_SigmaSilent1": "5f99b89cf54c876307804f0f38658b46739baa8ff4f14189e0c17713f10ee16c",
+  "official-2025/survivors-online-young/GSA_SigmaSilent2": "8a06a8d64760629cacb4e1ad2c236c5e2fc9b3e0948d3de048a43c2fa386ead9",
+  "official-2025/survivors-online/OST_Gamma1": "a470a79b80f6eac90b3613ffc6127722a210923fa5fa80efec4760197a901c63",
+  "official-2025/survivors-online/OST_Gamma2": "0f522f42cecc4b8e2dd7cc8ea914cb7946d7cf1ec0a4877fb876c30137580caa",
+  "official-2025/survivors-online/IND_stuxnet1": "b4c342926e63b9d8b21f22e744de9cc96312ce7bf9433f5d9c6b76d982763834",
+  "official-2025/survivors-online/IND_stuxnet2": "2f645003233d8935086b8e5867c013ff3a93d87acbda64c149805c5ba5ccd5bd",
+  "official-2025/survivors-online/GSA_callfart1": "dfe5017765f2522372bedc2e5e3b72af5597b99ddbfb3444c25f5bde17a4acf3",
+  "official-2025/survivors-online/GSA_callfart2": "30dafcebde39ba9bf4bbcf21d83a666bc5f0a8e3e4aabcb52310905d389a4f4d",
+  "official-2025/survivors-online/HDS_MAC1": "01fe69503bf6f9092a4df08b0cb7d29ee83a8c9532162b63d3a97ab21e36ad14",
+  "official-2025/survivors-online/HDS_MAC2": "b983b54b0afc2b8ff78ed361f67745e3d133f28989140ae8da394e740ae2f6b6",
+  "official-2025/survivors-online/HRZ_L1": "39de1bb615fe8760c528eab9b0cdac26e934010ee5953bb3c88f1ce561cefea0",
+  "official-2025/survivors-online/HRZ_L2": "bdd2bb9dbb0dffc2ed7c0fa4f6b1fdf7a067d9784959d26c8c615f6fc3fde901",
+  "official-2025/survivors-online/HRZ_TitanicSwimTeam1": "4794558ee17f4265372dd9176b06150026d88e0bb2d481954dec55be8b3aeec0",
+  "official-2025/survivors-online/HRZ_TitanicSwimTeam2": "5bb33762a99debde94f5905696bf9e72c552cb9ddbd2e01391efde85b5d92ffc",
+  "official-2025/survivors-online/OHS_cgxPro1": "128d6e4fb73dec09b71198963573298bb8bac99c3a2daca74759efc48b28a1ce",
+  "official-2025/survivors-online/OHS_cgxPro2": "128d6e4fb73dec09b71198963573298bb8bac99c3a2daca74759efc48b28a1ce",
+  "official-2025/survivors-online/HRZ_MOV_AX_WIN1": "ef82df0d92476fa6161d81ff092ea489d4df7ddef88a0dad44705a3cf14f8dd1",
+  "official-2025/survivors-online/HRZ_MOV_AX_WIN2": "a1b4b8459ae6b367da93742fb5f3c8bb0fe321e3cf1174f4e7a1dc29ada2a544",
+  "official-2025/survivors-online/OHS_BatteringRAM1": "6db7c4932a50615520b1eed2f49a9543723d89fb1b70f7507b6241f77d0e9474",
+  "official-2025/survivors-online/OHS_BatteringRAM2": "5f2531e6a569ae005357df7f8d16fdd7e49020cee96a6ccf16e85d2fb51e4bb1",
+  "official-2025/survivors-online/WHS_K0F1M_AL_T1L1M1": "51be29ada737ee980285eeb1cce4c445ce345d8b3bf0c9b3d97e2ae09ade3f60",
+  "official-2025/survivors-online/WHS_K0F1M_AL_T1L1M2": "d7487a752af32ae355c8fbabcaba111150451a26ff9b7c6804ac08b26f85de6f",
+  "official-2025/survivors-online-young/SZR_The_Chargers1": "3e7c44b27c9d019d42495a066a7346ada38b9c5bc5e3dbbf484c729ef90bf379",
+  "official-2025/survivors-online-young/SZR_The_Chargers2": "4c43e3d631d94e14dfbc3bb68e80e29aba97156b3244a912675e24b4a2d1f6f9",
+  "official-2025/survivors-online/OHS_TOMEX1": "d511b9beab4574d1bf126ef9264e3aca2276ea71e81b3a6c9296e217859f54a8",
+  "official-2025/survivors-online/OHS_TOMEX2": "d511b9beab4574d1bf126ef9264e3aca2276ea71e81b3a6c9296e217859f54a8",
+  "official-2025/survivors-online/TOM_BitBenders1": "97d159491650cf04a236c8c6188555dd17b9e7b1d2b1fe86a4926ef9b9b30d00",
+  "official-2025/survivors-online/TOM_BitBenders2": "97d159491650cf04a236c8c6188555dd17b9e7b1d2b1fe86a4926ef9b9b30d00",
+  "official-2025/survivors-online/GGN_OpcodeHunter1": "d5992bdc307b070ad91e1737a8777125970912b286a392ed6d9a6456d87ed3af",
+  "official-2025/survivors-online/GGN_OpcodeHunter2": "0ced8fc1ec650a032604e2e149458b54202be7ecabb447999f143659d6ea46b6",
+  "official-2025/survivors-online/HRZ_Underflow1": "79f994bd13bfd25b44a97d420e8a9d6e8f45311a716b21bfb9f10fdc79cde7e4",
+  "official-2025/survivors-online/HRZ_Underflow2": "7d5c20977121ffb2ac532f6a4cb6662a2c349f0e833beb9999869ad9df918840",
+  "official-2025/survivors-online/ORT_Pegasus_Hex1": "8c82f8dc226579917f261847d0a6606c670f47ae4adcd5d4eb41fe4807035537",
+  "official-2025/survivors-online/ORT_Pegasus_Hex2": "4026ad9d8dd3c66933bf5cc03cd18ed3b7d707f181a054fc43bf07b2239758c1",
+  "official-2025/survivors-online-young/GSA_3Plate_Benchers1": "7e6a8c26c42fa899e58fb02cde83d71406402dc436741098fc334382a76e5872",
+  "official-2025/survivors-online-young/GSA_3Plate_Benchers2": "7e6a8c26c42fa899e58fb02cde83d71406402dc436741098fc334382a76e5872",
+  "official-2025/survivors-online/HRZ_PowerRangers1": "52aa2ff950b861e97be698661c012ca2f2da158171aa2899c69fe1049fb1abb0",
+  "official-2025/survivors-online/HRZ_PowerRangers2": "d105ec96ad325832882dc8820d82a52567780dfdb1abb40a50986e011feff22c",
+  "official-2025/survivors-online/HRZ_ADDvanced1": "ff353ab75e7a3b88b896f64cbb97bfad639412a6e222088d6f52cc189a9e2ebe",
+  "official-2025/survivors-online/HRZ_ADDvanced2": "509086f3e6ec36b0867ecebe4ba9ecc8faffaf7cc7f4e633dd04f2814981f39c",
+  "official-2025/survivors-online/HRZ_BinaryBandits1": "c6cf8bb109582030c5cd0723399930168aee257dbeac6122507c522f9b383d86",
+  "official-2025/survivors-online/HRZ_BinaryBandits2": "be7d4791659d4aacd49dded0044baadf737e123b3dff8ddb497f5be1954c461b",
+  "official-2025/survivors-online/HRZ_Grindo_Holics1": "0fd28370c9b4200dc1d4774a5ab959e76f1f5fe0243dd327626fd8f47c936b51",
+  "official-2025/survivors-online/HRZ_Grindo_Holics2": "69791f0bdb90e9ff65fc078f6e863f92c3847700efbdc8e8865e002c96f2934f",
+  "official-2025/survivors-online/TOM_anonymous1": "6f57faeb8622bbc3778c80d450fa03c9efbf8703b58414850a3861f2bcbc83f4",
+  "official-2025/survivors-online/TOM_anonymous2": "e0cdbe70e170d8bf242e071325971d7590701d330fe089b9d2f815e05a432759",
+  "official-2025/survivors-online-young/TOM_Code_Killer1": "388479f220bd757fe9c011cb234cc52ad1e6f12e9deb01a8d247a0e5568c4e22",
+  "official-2025/survivors-online-young/TOM_Code_Killer2": "7fc3754c18976081ccd54f3936d22a493bb1d8420706cde4a5962613f4c9bbf5",
+  "official-2025/survivors-online/AVI_AnotherBitInTheWall1": "5a78ed74829860373ab4dd7d80bb58fd50234789e3d2cba84c4f8a1cc183ab15",
+  "official-2025/survivors-online/AVI_AnotherBitInTheWall2": "76b06db3e88a32e0a1f025030e1c14d19c53b9a8f7a0944c76de9d867de55fda",
+  "official-2025/survivors-online/GSA_B331": "b669a39358c457bbd739710d2a82e6c7f5bfb20125922b153207209d2bf74350",
+  "official-2025/survivors-online/GSA_B332": "b669a39358c457bbd739710d2a82e6c7f5bfb20125922b153207209d2bf74350",
+  "agent2/frontier-20261003/arms/Good_Test_V6/A": "3fa67bed880413901ad618b4f7b248e5782d98de93318271ac540ad1690ca2b7",
+  "agent2/frontier-20261003/arms/Good_Test_V6/B": "8579e2c2212d72a413a6daacfe3b91ceb72be648bfc085bfeed9430eeaf6657a",
+  "official-2025/survivors-online/KOB_KosherCode1": "f333c2d41cce100bb3afee9f2e60b9fda6f93d717602adc369d7719664568184",
+  "official-2025/survivors-online/KOB_KosherCode2": "f2b704b27b426c0d25f8dc26f1e4876f14cf3d5d1b89d4e7bfbecd0b132af5ac",
+  "official-2025/survivors-online/HDS_IWDIA_nachalo1": "e167f5b550647a852833be5d1a676a5539c67062b68d29564799231dbb326130",
+  "official-2025/survivors-online/HDS_IWDIA_nachalo2": "82897f9576e656fff06b6a52b4fa7710fedb3c662588d54b49f3b29e3b953ff8",
+  "official-2025/survivors-online/GSA_GhostBytes_0x1": "2cf5b8a9974e1e6e46504f5027a2f20f6329cf8944ad15397afdd0f5955d2801",
+  "official-2025/survivors-online/GSA_GhostBytes_0x2": "08c6ac348985a5f21fecbaf1ee7d7bb56add87cd8d8af2278902df7e60b52238",
+  "official-2025/survivors-online-young/TOM_Thefrogs1": "8f014d9812cf497a03015d562135e8bdaaa4dd921e5de3e28984ac64642fa050",
+  "official-2025/survivors-online-young/TOM_Thefrogs2": "348c42651bea5001dc5a61a3e15228e4820dbbd4ab0b6df16982dbb38334a504",
+  "official-2025/survivors-online/ORT_TheGoats1": "74e7a2f5ff930e07fc75a13cc15fadf586f1af66d1f6283532ce47b7c0673a25",
+  "official-2025/survivors-online/ORT_TheGoats2": "0ab57aed774169d420cb0b6b05414fe6145ef6e99b614b988ed8163e3b11aa42",
+  "official-2025/survivors-online/WAN_Full_Time_Job1": "451ccffeedd664f6814d45a712f805c71931efada682112e61b801858c3ab4f3",
+  "official-2025/survivors-online/WAN_Full_Time_Job2": "9e076ceaf246b6003d9c2680a2b4cf0bffd069805902b0b5edeebf49039fe4bd",
+  "official-2025/survivors-online/HLS_EmoMutants1": "629b28dbff281ca175493f1f40492e52afdf6f9f3c2f8a7e06a8df08a5580711",
+  "official-2025/survivors-online/HLS_EmoMutants2": "36c6a4f23a988920ed0e2e7a128bd706b5f82871935b6c0dfc5d3c2cbbd65aa0",
+  "official-2025/survivors-online-young/BGR_theGlopyGng1": "8d84a93cdcc76fb45b496184bc68c3535a3564fc9e1ea523a9fcba0c2a5fa6ac",
+  "official-2025/survivors-online-young/BGR_theGlopyGng2": "adfdb3915475338713a2a1e4d7c8cc27a2ff8c6e4ed0a474e6770be72836b97d",
+  "official-2025/survivors-online/OHS_TrojanByte1": "8daa80561913795dab371699ae02d243e11889eafdbd3f198b8b2792ef8caed6",
+  "official-2025/survivors-online/OHS_TrojanByte2": "7a243cd4100cef57759ded924b53566ac3004a1d23b71a11a1166f0a7cecbc4f",
+  "official-2025/survivors-online/HRZ_fisherEXE1": "82b268ce80e540cea8c8a61d6279f613721d5c59b369317af53de5983db3bb49",
+  "official-2025/survivors-online/HRZ_fisherEXE2": "ac49b19fc0fb2f62c4a6db6b18c637deebde8ff010d183578e738c429cf8be92",
+  "official-2025/survivors-online/GSA_VanLavan1": "29bcd91c2654fbe3b40eb0ba46f0b27956fc951185f3ebc7fb78877f739a401e",
+  "official-2025/survivors-online/GSA_VanLavan2": "649dad7fb2499e54a9474e31784d38f3ad36e801d9649eb0d78d7aabe8e30d1b",
+  "official-2025/survivors-online/HDS_YOY1": "a30854eb23928d0a2a16e32fc2db3fbf6f6dec4b843ae73fa4b5ba904eced03f",
+  "official-2025/survivors-online/HDS_YOY2": "61cdca8ebd5d863f30172e0164c4d0a3d8eb6dae39815aa06465a8904a95dfa9",
+  "official-2025/survivors-online-young/ELD_FriendlyFire1": "9198ae7381e5449f42b5f2cb80e0ec1788c4b2bd25b9ec9ed0096383c4c2085c",
+  "official-2025/survivors-online-young/ELD_FriendlyFire2": "9198ae7381e5449f42b5f2cb80e0ec1788c4b2bd25b9ec9ed0096383c4c2085c",
+  "official-2025/survivors-online/TOM_2B2Team1": "bcc371f9a6c803da24ca9b207cc669f3ad303b115c7b6d27afdaafc1f48d0cb5",
+  "official-2025/survivors-online/TOM_2B2Team2": "bd1a1687a4f99d4a0bb60ae23cb09a505d87c77042de95a27957b1c524df4ab0",
+  "official-2025/survivors-online/HRZ_TEST_ticals1": "bde8d3995ed1d713bcb7a64eb6f122a3105e0549e28ee8bc3bb951737ed7aa6f",
+  "official-2025/survivors-online/HRZ_TEST_ticals2": "bde8d3995ed1d713bcb7a64eb6f122a3105e0549e28ee8bc3bb951737ed7aa6f",
+  "official-2025/survivors-online/GSA_TheBytes1": "d168c81336006cab440c719f9bf857d146ca2b8b063b95eaccbc274326d58f9b",
+  "official-2025/survivors-online/GSA_TheBytes2": "7dfdbe1fbfeb2311ef5c1a77621fb43dc0ca5ec23abc566bdf4078d348311351",
+  "official-2025/survivors-online/GSA_ShmuelTurtles1": "22de4575872d077b32481da4edf814f6a72136771b931b45a1b0191001b19c3f",
+  "official-2025/survivors-online/GSA_ShmuelTurtles2": "9198ae7381e5449f42b5f2cb80e0ec1788c4b2bd25b9ec9ed0096383c4c2085c",
+  "official-2025/survivors-online/AVI_Fishandpoultry1": "c8aa0e238c28c8c041cf8318d93f165b7cb2005c71cc055552244f120ea7f065",
+  "official-2025/survivors-online/AVI_Fishandpoultry2": "3718913ee7debbee757a1fa053699cb80d12cd1985d8218b3ed6cb9f4d87193d",
+  "agent2/frontier-20261003/arms/zchain4/A": "07c238b2d276824f23e54c4d2c74fb9d229e42419b3ff74302447b47bb9fbc49",
+  "agent2/frontier-20261003/arms/zchain4/B": "2fb8f41228b5ded8b7bd6b511c5002f5e646955f2eab8c48a73f358c128c286e",
+  "official-2025/survivors-online/HRZ_Pixar_Lamps1": "500852a7240608e60b8ed36f93d14f09ec08db9f3b9f65358a4d3174a14221a8",
+  "official-2025/survivors-online/HRZ_Pixar_Lamps2": "5ab6a833bc63e8497db71b36ae02a835ab1b9f5abef9b42dafabd07b1d671ab5",
+  "official-2025/survivors-online-young/SZR_BrvazimAlSteroidim1": "dbc5b61532888cc9246691b72acfc95eb453fb6362d405f79dca61b48b4e3764",
+  "official-2025/survivors-online-young/SZR_BrvazimAlSteroidim2": "6071871d772af0d529769ecf82479b93d30a388feb72df6a41e4c0845100dfd3",
+  "official-2025/survivors-online/HRZ_Registered_Winners1": "1645436c2465df7ac0def9182eb12506e7aa9ca6b719635d2192eab4e38ce70d",
+  "official-2025/survivors-online/HRZ_Registered_Winners2": "6a489e8f28e3cbe8e370b8382679938c7635a46fcbbd5f4c263024e2e8dcabab",
+  "official-2025/survivors-online-young/GSA_LVS_FIT1": "32d1ed02b689d9d0b10a321511ed19c6d603e7f5c741ec71788cb8b9774d9be6",
+  "official-2025/survivors-online-young/GSA_LVS_FIT2": "92b6705be2d32ef9a46386c4371e7ad2c0ad5eaf279ea6a704ea0a2d0c11c987",
+  "official-2025/survivors-online-young/TOM_The_Crushers1": "8daf826ed95b86c1ceef1f0f6e1a8c92fe292fb83e3e651dd75b72064187e5b2",
+  "official-2025/survivors-online-young/TOM_The_Crushers2": "af0ee0bde6599b412201e094453951cf884aa5e5c7e79e32986d4812d9516547",
+  "official-2025/survivors-online/TOM_Syntax_Terror1": "2cb2747ca3e9331b28ca609a228bfd21413a77ee98355c5e8fff4042c56a2a56",
+  "official-2025/survivors-online/TOM_Syntax_Terror2": "f39bc040a51c504af6baca86ef99bf19351717c91ac4e3af01a2e0ecad193e47",
+  "official-2025/survivors-online/HDS_GoldenLamed1": "f76ec20d3e5d9e5dc58734ae0aa90532090d98abbd857baeedc3179c8bd32378",
+  "official-2025/survivors-online/HDS_GoldenLamed2": "f76ec20d3e5d9e5dc58734ae0aa90532090d98abbd857baeedc3179c8bd32378",
+  "official-2025/survivors-online/TOM_tson_el_akod1": "9198ae7381e5449f42b5f2cb80e0ec1788c4b2bd25b9ec9ed0096383c4c2085c",
+  "official-2025/survivors-online/TOM_tson_el_akod2": "9198ae7381e5449f42b5f2cb80e0ec1788c4b2bd25b9ec9ed0096383c4c2085c",
+  "official-2025/survivors-online/RZL_YANDE1": "8e8c89070cc2d1f64bc5e16fc6dbbffb2fc72cb57bf66f16ac5bfe089d60632b",
+  "official-2025/survivors-online/RZL_YANDE2": "eba9d406edec09cd697bcb706c1bdc133a9a2b63cea3811252ddaaf54e2b8b75",
+  "official-2025/survivors-online/HDS_ATW_Solo1": "3433de990452854bfefb8f5e76c2e898f1b4b44cfe3a2533bc54ab6f1e461fa5",
+  "official-2025/survivors-online/HDS_ATW_Solo2": "1e1079248809e3c1eac0a7768e7726bfad3f6daae78f90c1fd25bb7f12c634a5",
+  "official-2025/survivors-online/IND_cgx1231231": "b6c07757f0c8b5d20a60c12de9d30c5130badc9c4e342e8a3beec5e92d6f782e",
+  "official-2025/survivors-online/IND_cgx1231232": "a053a4c9f0b893fe84070894ed08e600964a9d63bc57719b083b8d91186e4315",
+  "agent2/frontier-20261003/arms/combo_zrl03/A": "605880ba552c3d43c5cd175693b1942cf401c60c2135f62ab76a97dc20d1b051",
+  "agent2/frontier-20261003/arms/combo_zrl03/B": "011720f6ae95c4b225ee92acfcbe4e373e6c56d78fadde3b11268a162529f334",
+  "official-2025/survivors-online/WAN_Baltika91": "dba05606104f4c4805e10023866390bad2fd4c3eed1732e86780a158f061e4c6",
+  "official-2025/survivors-online/WAN_Baltika92": "30065fd48eab62390508c9357b30e01246e1e56343803df97aa4306ce0fdd9c5",
+  "official-2025/survivors-online/HRZ_InCtrl1": "d7b0b84459fe2295e8a65512ef16c2e698e6d6bee50b1b3b777dc0c2b0c5b7c0",
+  "official-2025/survivors-online/HRZ_InCtrl2": "6997d9e87f8c241b3056f8ebfb624bd4bf268ef14329f49c95d4f553146153fa",
+  "official-2025/survivors-online/HDS_NRI1": "8830ca6b843b0508fc2a5771068dad1bc150d2f824d2cd77d7631e523b431bb1",
+  "official-2025/survivors-online/HDS_NRI2": "1cc40806e6766e591dac071b1256c8b5f325360f0aae448b188dcc87376bb9ab",
+  "official-2025/survivors-online/HRZ_stack_attack1": "7298748ba797e65564eb58d3f53af67b3457b2400c73069dcbfbe538bd6ee6f1",
+  "official-2025/survivors-online/HRZ_stack_attack2": "140a6203d3d0839bd3797cdf1da03613b727c053854dbb8eb0b7e34118355fa9",
+  "official-2025/survivors-online/WAN_OnlyCode1": "79feca3fa250a6c0406c46fa11fb0ce604758625912695e45040a784121625d8",
+  "official-2025/survivors-online/WAN_OnlyCode2": "a230910890f8270ad8dcb6c2d304a47ca8c1dd25a418022b80e091e5a8c96658"
+ },
+ "zombieHashes": [
+  {
+   "name": "zom20a",
+   "path": "official-2025/zombies-live/zom20a",
+   "sha256": "a950e618ea2e127096c85f486fb555c264730d924a2192c407aa66e6e0318eb6"
+  },
+  {
+   "name": "zom20b",
+   "path": "official-2025/zombies-live/zom20b",
+   "sha256": "af6394c021ccb5e486db507e2ccd787bd5675f8fec88fd2ddbe9f834566852ce"
+  },
+  {
+   "name": "zom20c",
+   "path": "official-2025/zombies-live/zom20c",
+   "sha256": "3d3f209967f51a7344e0eab582bc04d1e694da5a73e3682a26ed483dcab7a443"
+  },
+  {
+   "name": "zom20d",
+   "path": "official-2025/zombies-live/zom20d",
+   "sha256": "923dd6abebbb7bb502ec5a02873c26175820ada5c4409d179d8464f0e90cb6fc"
+  }
+ ],
+ "summary": {
+  "V6Guard": {
+   "battles": 3200,
+   "team": 0.5173437546875,
+   "w1": 0.18898437621875,
+   "w2": 0.328359374325
+  },
+  "V6nohunt": {
+   "battles": 3200,
+   "team": 0.5168750025000001,
+   "w1": 0.20424479203125004,
+   "w2": 0.31263020871874997
+  },
+  "Good_Test_V6": {
+   "battles": 3200,
+   "team": 0.5101302103124998,
+   "w1": 0.20320312540625,
+   "w2": 0.30692708475
+  },
+  "Good_Test_V4": {
+   "battles": 3200,
+   "team": 0.5076041709374999,
+   "w1": 0.189218752,
+   "w2": 0.3183854181250001
+  },
+  "zchain4": {
+   "battles": 3200,
+   "team": 0.3597968648437499,
+   "w1": 0.16650000250000005,
+   "w2": 0.19329687856249994
+  }
+ },
+ "runs": [
+  {
+   "arm": "V6Guard",
+   "cohort": "K_V4-0",
+   "seed": "a2-c0891c3d26c8f9f3",
+   "battles": 40,
+   "team": 21.833332,
+   "w1": 7.833333,
+   "w2": 14,
+   "opponents": {
+    "K_V4": 14.333333,
+    "A_HRZ_Code_Jokers4Life": 0,
+    "A_GSA_GoonSquad": 2.8333333
+   },
+   "scoresSha256": "930c076ab79d0a5cea9ff2eb765034f444962f57c45d87a6bf54de0a006dfb7d",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_V4-1",
+   "seed": "a2-710f74867ed04153",
+   "battles": 40,
+   "team": 19.333332,
+   "w1": 6.0833335,
+   "w2": 13.25,
+   "opponents": {
+    "K_V4": 17.333332,
+    "A_HRZ_CodeEliteGang": 0,
+    "A_BZV_SKYENT": 3.3333335
+   },
+   "scoresSha256": "89b48c3f882df668443086dd926e38e306af63d711f298fd94e4cc0845f958b3",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_V4-2",
+   "seed": "a2-2c62d5066421c39b",
+   "battles": 40,
+   "team": 19.833334,
+   "w1": 3.8333333,
+   "w2": 16,
+   "opponents": {
+    "K_V4": 20.166668,
+    "A_ATL_R1DDLE": 0,
+    "A_IND_BRA": 0
+   },
+   "scoresSha256": "5af9ed644d5e284067593564e4a2590c6a3ce440cef38a7e0545b656f0ce9899",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_V4-3",
+   "seed": "a2-115f88c934bb138e",
+   "battles": 40,
+   "team": 19.500002,
+   "w1": 11.166666,
+   "w2": 8.333334,
+   "opponents": {
+    "K_V4": 18.500002,
+    "A_HRZ_Ctrl_Alt_Elite": 0,
+    "A_HRZ_Thingies": 2
+   },
+   "scoresSha256": "ef5a12760c9e0cc54dfddb6f8ea77d319913e35b95ce13a53cab6c9494407029",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_V4-4",
+   "seed": "a2-051a8a46835cd74f",
+   "battles": 40,
+   "team": 13.333332,
+   "w1": 3.8333333,
+   "w2": 9.5,
+   "opponents": {
+    "K_V4": 25.666672,
+    "Y_GSA_SigmaSilent": 0,
+    "A_OST_Gamma": 0
+   },
+   "scoresSha256": "38b6ad6a6e2623b4771d8bea7631cfaaa0526f901dd6a02b2db3af30260e3d96",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_V4-5",
+   "seed": "a2-5771476da3662696",
+   "battles": 40,
+   "team": 15.25,
+   "w1": 5.75,
+   "w2": 9.5,
+   "opponents": {
+    "K_V4": 21.25,
+    "A_IND_stuxnet": 1,
+    "A_GSA_callfart": 1.5
+   },
+   "scoresSha256": "728c6b5889862e39a28f8e5f3e5bac6c765d15bb765e20dfcfc72b71b26fb8a2",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_V4-6",
+   "seed": "a2-991613896dc86d9f",
+   "battles": 40,
+   "team": 17.333332,
+   "w1": 4.5,
+   "w2": 12.833333,
+   "opponents": {
+    "K_V4": 21,
+    "A_HDS_MAC": 0,
+    "A_HRZ_L": 1.6666667
+   },
+   "scoresSha256": "d7350d63e12dc6af1b90b0eec09453bd5b6dedad02b8697cd7ddb569b8e4c6e5",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_V4-7",
+   "seed": "a2-0871b586c7c59a9a",
+   "battles": 40,
+   "team": 18.333332,
+   "w1": 4,
+   "w2": 14.333333,
+   "opponents": {
+    "K_V4": 20.666668,
+    "A_HRZ_TitanicSwimTeam": 0,
+    "Y_GSA_SigmaSilent": 0
+   },
+   "scoresSha256": "662764e6ff7430eedd444f859bccada3e4dc948ac1f58d0a985debf9539c28c2",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_V4-8",
+   "seed": "a2-06623d2ad52f6440",
+   "battles": 40,
+   "team": 22,
+   "w1": 5.333333,
+   "w2": 16.666668,
+   "opponents": {
+    "K_V4": 17,
+    "A_OHS_cgxPro": 0,
+    "A_HRZ_MOV_AX_WIN": 1
+   },
+   "scoresSha256": "b69bf93098bedf1ece3794f417516de3f7f697ba6f49f92a42c531e7125c4491",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_V4-9",
+   "seed": "a2-ec2088441244d3b6",
+   "battles": 40,
+   "team": 13.833333,
+   "w1": 1.8333334,
+   "w2": 12,
+   "opponents": {
+    "K_V4": 22.166668,
+    "A_OHS_BatteringRAM": 1,
+    "A_WHS_K0F1M_AL_T1L1M": 2
+   },
+   "scoresSha256": "58cecfe133de8be5dde6c9228b74e4e7debc2a00f046676650a3a9dcd8114fc8",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_V4-10",
+   "seed": "a2-6922500f7eb8e40e",
+   "battles": 40,
+   "team": 21,
+   "w1": 2,
+   "w2": 19,
+   "opponents": {
+    "K_V4": 18,
+    "Y_SZR_The_Chargers": 0,
+    "A_OHS_TOMEX": 1
+   },
+   "scoresSha256": "df2d614b4b0b35246f578fd31e4721087e4aa24888a850e1dc81eb3c7a2c95a4",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_V4-11",
+   "seed": "a2-1cfe4eda69593465",
+   "battles": 40,
+   "team": 13.5,
+   "w1": 4,
+   "w2": 9.5,
+   "opponents": {
+    "K_V4": 23.5,
+    "A_TOM_BitBenders": 2,
+    "A_HRZ_Ctrl_Alt_Elite": 1
+   },
+   "scoresSha256": "0bfd881a390501c54647c9246571951dd958753d9fb91b1513374b91884c01c3",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_V4-12",
+   "seed": "a2-ec003b6cffd28ea9",
+   "battles": 40,
+   "team": 17.500002,
+   "w1": 6.2500005,
+   "w2": 11.25,
+   "opponents": {
+    "K_V4": 18.833336,
+    "A_GGN_OpcodeHunter": 3.6666667,
+    "A_HRZ_Underflow": 0
+   },
+   "scoresSha256": "4573f300036067bcbba1c94fdd16923a3d222430bf260c8590e5370328f905cc",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_V4-13",
+   "seed": "a2-e5141dd4c9bd8564",
+   "battles": 40,
+   "team": 16,
+   "w1": 7,
+   "w2": 9,
+   "opponents": {
+    "K_V4": 23,
+    "A_HRZ_Underflow": 0,
+    "A_ORT_Pegasus_Hex": 0
+   },
+   "scoresSha256": "3061ebd0a5e4f5981d36fbd75b22120ad4e108cd563f9b2b246552720ca4c314",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_V4-14",
+   "seed": "a2-3daa55dbe36c7943",
+   "battles": 40,
+   "team": 17.666668,
+   "w1": 4.333333,
+   "w2": 13.333334,
+   "opponents": {
+    "K_V4": 20.333332,
+    "Y_GSA_3Plate_Benchers": 1,
+    "A_HRZ_PowerRangers": 1
+   },
+   "scoresSha256": "61edf8a58d55ad9af2810ab5205f8ef857601a6822db1dfb266a4acf08e165bf",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_V4-15",
+   "seed": "a2-0b5ddb0fcad8f154",
+   "battles": 40,
+   "team": 17,
+   "w1": 4.5,
+   "w2": 12.5,
+   "opponents": {
+    "K_V4": 14,
+    "A_HRZ_ADDvanced": 5,
+    "A_HRZ_BinaryBandits": 3
+   },
+   "scoresSha256": "a051d6ec619805d8b16c4ae8aa609d3439d071f74eaba64ccbede618387f1ca1",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_V4-16",
+   "seed": "a2-3977490129b536c4",
+   "battles": 40,
+   "team": 13.333333,
+   "w1": 4.6666665,
+   "w2": 8.666667,
+   "opponents": {
+    "K_V4": 14.666666,
+    "A_HRZ_Grindo_Holics": 11,
+    "A_TOM_anonymous": 1
+   },
+   "scoresSha256": "86e77263d7a42de4aea3dadea54728037cb4a8d36d9c04b5bfb222920dcaf10e",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_V4-17",
+   "seed": "a2-eb1e386158ba739c",
+   "battles": 40,
+   "team": 15.166666,
+   "w1": 4.3333335,
+   "w2": 10.833333,
+   "opponents": {
+    "K_V4": 18.333332,
+    "Y_TOM_Code_Killer": 2.5,
+    "A_AVI_AnotherBitInTheWall": 2
+   },
+   "scoresSha256": "41319cd31e03c294d9519cb4716d467a6c319a86c32ea590453e3695da809f91",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_V4-18",
+   "seed": "a2-1ea88980fbe55494",
+   "battles": 40,
+   "team": 23.000002,
+   "w1": 4.1666665,
+   "w2": 18.833332,
+   "opponents": {
+    "K_V4": 14.999999,
+    "A_HRZ_CodeEliteGang": 0,
+    "A_GSA_B33": 2
+   },
+   "scoresSha256": "2b652942e27f500f772a378837c2a926b512fa711275dfa969d7f3f831f5ae48",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_V4-19",
+   "seed": "a2-764002ba8f2354e4",
+   "battles": 40,
+   "team": 16.666668,
+   "w1": 5.1666665,
+   "w2": 11.5,
+   "opponents": {
+    "K_V4": 14.833333,
+    "Y_TOM_Code_Killer": 4.5,
+    "A_OHS_BatteringRAM": 2
+   },
+   "scoresSha256": "08334d8170d2b7ffd6024515a14bfcea95b12221c8642160259b4567cbaefd60",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_V6-0",
+   "seed": "a2-1957b8d0d22d155b",
+   "battles": 40,
+   "team": 22.833334,
+   "w1": 6.3333335,
+   "w2": 16.5,
+   "opponents": {
+    "K_V6": 17.166666,
+    "Y_GSA_SigmaSilent": 0,
+    "A_KOB_KosherCode": 0
+   },
+   "scoresSha256": "546cbb96c6175135546c99387655f642aacd3f08814d41e5066631b707e07f31",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_V6-1",
+   "seed": "a2-5284f65c7c29d589",
+   "battles": 40,
+   "team": 20.5,
+   "w1": 3,
+   "w2": 17.5,
+   "opponents": {
+    "K_V6": 17.5,
+    "A_HDS_IWDIA_nachalo": 0,
+    "A_GSA_GhostBytes_0x": 2
+   },
+   "scoresSha256": "355ffbc56adc79182cd561ac9b0b182fa06196634ac87eabf43e96f281416613",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_V6-2",
+   "seed": "a2-6c0c7e14582cce04",
+   "battles": 40,
+   "team": 20,
+   "w1": 5,
+   "w2": 15,
+   "opponents": {
+    "K_V6": 19,
+    "A_WHS_K0F1M_AL_T1L1M": 1,
+    "A_KOB_KosherCode": 0
+   },
+   "scoresSha256": "0462faa55a7e5077b5dfc1bf171cf931c21c151cd136f6742e50b07032571392",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_V6-3",
+   "seed": "a2-557f1c7e6bdd7571",
+   "battles": 40,
+   "team": 19.666666,
+   "w1": 4.666667,
+   "w2": 15,
+   "opponents": {
+    "K_V6": 20.333332,
+    "A_HRZ_MOV_AX_WIN": 0,
+    "A_HDS_MAC": 0
+   },
+   "scoresSha256": "dc4f1bb25a7553a0fa1d5908db75ccf34c46e2e9e52a932490d6e3d17df48457",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_V6-4",
+   "seed": "a2-cbd6644e28bfdf3c",
+   "battles": 40,
+   "team": 20.5,
+   "w1": 3.3333335,
+   "w2": 17.166668,
+   "opponents": {
+    "K_V6": 19.5,
+    "A_HRZ_Underflow": 0,
+    "Y_TOM_Thefrogs": 0
+   },
+   "scoresSha256": "4d5e78540b0d2482d23cc2c11ab74475bb72b78c019f5ecda1d20ca0424cd7b8",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_V6-5",
+   "seed": "a2-ed2179e72b45341c",
+   "battles": 40,
+   "team": 21.333334,
+   "w1": 5.333333,
+   "w2": 16,
+   "opponents": {
+    "K_V6": 18.666668,
+    "Y_SZR_The_Chargers": 0,
+    "A_ORT_TheGoats": 0
+   },
+   "scoresSha256": "4bb523aef1990fdf5bb3e902df62c8879df563cd7b79a195d55322b6d0e3e613",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_V6-6",
+   "seed": "a2-5831da5b9f288643",
+   "battles": 40,
+   "team": 19.5,
+   "w1": 5.1666665,
+   "w2": 14.333333,
+   "opponents": {
+    "K_V6": 18.5,
+    "A_WAN_Full_Time_Job": 1,
+    "A_HLS_EmoMutants": 1
+   },
+   "scoresSha256": "7023a2bc84a3590ae7d1515a896914ef28964886cf523a91ef601952f12878f6",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_V6-7",
+   "seed": "a2-22f0af42e282ee19",
+   "battles": 40,
+   "team": 16.833332,
+   "w1": 7.166667,
+   "w2": 9.666666,
+   "opponents": {
+    "K_V6": 21.166666,
+    "Y_BGR_theGlopyGng": 0,
+    "A_OHS_BatteringRAM": 2
+   },
+   "scoresSha256": "ed7b4593f628e7eb14c5371a81ab15d122d8e33feafb5d86cbdd579123da906c",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_V6-8",
+   "seed": "a2-8c94c5b5a6ad89ec",
+   "battles": 40,
+   "team": 23,
+   "w1": 2.5,
+   "w2": 20.5,
+   "opponents": {
+    "K_V6": 16,
+    "A_HRZ_CodeEliteGang": 0,
+    "A_OHS_TrojanByte": 1
+   },
+   "scoresSha256": "f107dc73fbab363a5372d5ad71f3342ed01c77fdda8d7a7d28efd80fba2e5d01",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_V6-9",
+   "seed": "a2-64c31b26c2b31b88",
+   "battles": 40,
+   "team": 17.333334,
+   "w1": 4.8333335,
+   "w2": 12.5,
+   "opponents": {
+    "K_V6": 18.833332,
+    "A_HRZ_fisherEXE": 0,
+    "A_GSA_VanLavan": 3.8333333
+   },
+   "scoresSha256": "b08b81f13996735ceb15f7901b27a5a4b26927cf6b098db8f6d81f706b384258",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_V6-10",
+   "seed": "a2-a305260c559d48e1",
+   "battles": 40,
+   "team": 12.666667,
+   "w1": 4.3333335,
+   "w2": 8.333333,
+   "opponents": {
+    "K_V6": 21.333332,
+    "A_HRZ_ADDvanced": 2,
+    "A_WHS_K0F1M_AL_T1L1M": 4
+   },
+   "scoresSha256": "7ce617cbef77e3ba477ba13e5ce0b5057df7c4aa2978ddb1fcf081ce2b8ff2e8",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_V6-11",
+   "seed": "a2-b808925608a9459e",
+   "battles": 40,
+   "team": 20,
+   "w1": 5.5,
+   "w2": 14.5,
+   "opponents": {
+    "K_V6": 17,
+    "A_HDS_YOY": 1,
+    "Y_ELD_FriendlyFire": 1
+   },
+   "scoresSha256": "63c3d1c6fdbc90e555cd657a6713a68c9cd88f9ff190ec8dd664677ab4370ef7",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_V6-12",
+   "seed": "a2-df34cc8ea2f74d4f",
+   "battles": 40,
+   "team": 19.5,
+   "w1": 11,
+   "w2": 8.5,
+   "opponents": {
+    "K_V6": 13.5,
+    "A_TOM_2B2Team": 5,
+    "A_HRZ_TEST_ticals": 1
+   },
+   "scoresSha256": "be798489a609dc2247b3180876396b4b63ea2cdc8f81957ca5fa09292528b9a7",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_V6-13",
+   "seed": "a2-d143b2118ace69e8",
+   "battles": 40,
+   "team": 21,
+   "w1": 6,
+   "w2": 15,
+   "opponents": {
+    "K_V6": 13,
+    "A_WHS_K0F1M_AL_T1L1M": 1.5,
+    "A_HRZ_BinaryBandits": 4.5
+   },
+   "scoresSha256": "96047c38dd329295ef472dd421ac4a9c1b70a76fdb08029da873d6cc8a7c0713",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_V6-14",
+   "seed": "a2-deeb4e82858776dc",
+   "battles": 40,
+   "team": 16,
+   "w1": 4,
+   "w2": 12,
+   "opponents": {
+    "K_V6": 23,
+    "A_GSA_TheBytes": 0,
+    "A_GSA_GoonSquad": 1
+   },
+   "scoresSha256": "c5e0580cf6f793fd9299e8b0a437f7d526606b65b5483ee7a501d8b41de18de8",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_V6-15",
+   "seed": "a2-246ac94582267447",
+   "battles": 40,
+   "team": 14.333333,
+   "w1": 1.8333334,
+   "w2": 12.5,
+   "opponents": {
+    "K_V6": 21.666668,
+    "A_GSA_ShmuelTurtles": 0,
+    "A_AVI_Fishandpoultry": 4
+   },
+   "scoresSha256": "18e2b481326557acce2c0375c0d03501f9797dc280f4edf6f2c138363c86921c",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_V6-16",
+   "seed": "a2-6134045c0a2fc49a",
+   "battles": 40,
+   "team": 18,
+   "w1": 4,
+   "w2": 14,
+   "opponents": {
+    "K_V6": 20,
+    "A_HDS_IWDIA_nachalo": 0,
+    "A_HRZ_Thingies": 2
+   },
+   "scoresSha256": "525fb5cdb2dba5f0ee4b8923c73ab263afa4bf3266a0f607c1d16148d167e425",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_V6-17",
+   "seed": "a2-43e5c8481b5cb9b0",
+   "battles": 40,
+   "team": 18,
+   "w1": 4,
+   "w2": 14,
+   "opponents": {
+    "K_V6": 20,
+    "A_HRZ_Code_Jokers4Life": 2,
+    "Y_SZR_The_Chargers": 0
+   },
+   "scoresSha256": "a5b39bcb6660d95daf7aa9606bbf8d4410ee654e6fbd5ccf88d9d583641bed85",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_V6-18",
+   "seed": "a2-b4ef9fbd1b10330a",
+   "battles": 40,
+   "team": 24.666668,
+   "w1": 5.333333,
+   "w2": 19.333334,
+   "opponents": {
+    "K_V6": 14.333333,
+    "Y_SZR_The_Chargers": 0,
+    "A_OHS_cgxPro": 0
+   },
+   "scoresSha256": "6bcbdd4690181d84c2375875c32ee42edba0f8fb67891e7dff7384322326b1c7",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_V6-19",
+   "seed": "a2-7eb4531a2ab4db88",
+   "battles": 40,
+   "team": 18.833332,
+   "w1": 6,
+   "w2": 12.833334,
+   "opponents": {
+    "K_V6": 19.166666,
+    "A_TOM_anonymous": 0,
+    "A_HRZ_PowerRangers": 2
+   },
+   "scoresSha256": "20ccaaae707038c2090b386527777abd70e80018437209f3fd55e75e3d1a8c62",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_zchain4-0",
+   "seed": "a2-234040fbcb484cce",
+   "battles": 40,
+   "team": 21.833334,
+   "w1": 10.833333,
+   "w2": 11,
+   "opponents": {
+    "K_zchain4": 18.166668,
+    "A_HRZ_Pixar_Lamps": 0,
+    "A_TOM_2B2Team": 0
+   },
+   "scoresSha256": "4c2f04fbd3ae818207db72ae624cf2196fbc4e595ec2ad4397f87bda986ac6f7",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_zchain4-1",
+   "seed": "a2-2ff926a0e3efd9d7",
+   "battles": 40,
+   "team": 29.833334,
+   "w1": 8,
+   "w2": 21.833334,
+   "opponents": {
+    "K_zchain4": 9.166667,
+    "A_IND_BRA": 0,
+    "Y_SZR_BrvazimAlSteroidim": 0
+   },
+   "scoresSha256": "6c0ac829d57df774341c447c3f9dee60bac166cfdb4ca09e93993295b1460013",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_zchain4-2",
+   "seed": "a2-033a8e378ed5be31",
+   "battles": 40,
+   "team": 22.833332,
+   "w1": 11.666667,
+   "w2": 11.166667,
+   "opponents": {
+    "K_zchain4": 17.166666,
+    "A_GSA_GhostBytes_0x": 0,
+    "A_GSA_TheBytes": 0
+   },
+   "scoresSha256": "c84c0908c5b0f4b1cd49a09a94a895fe6f141c6323c12e18d3d6d544dbccb928",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_zchain4-3",
+   "seed": "a2-672a4d97a7ec3da9",
+   "battles": 40,
+   "team": 30.5,
+   "w1": 10,
+   "w2": 20.5,
+   "opponents": {
+    "K_zchain4": 9.5,
+    "A_HRZ_Registered_Winners": 0,
+    "Y_BGR_theGlopyGng": 0
+   },
+   "scoresSha256": "a1052b0256664fcb7ed69495adea0497c9a42052c0aa3aae229dfea9e1259925",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_zchain4-4",
+   "seed": "a2-bc2311a48c7c6f56",
+   "battles": 40,
+   "team": 25.833332,
+   "w1": 10.333334,
+   "w2": 15.5,
+   "opponents": {
+    "K_zchain4": 12.166667,
+    "Y_GSA_LVS_FIT": 2,
+    "Y_TOM_The_Crushers": 0
+   },
+   "scoresSha256": "e70039be2d5b2b7ab952328d69848c9352ccc5d104bab72a35080220f4e03efc",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_zchain4-5",
+   "seed": "a2-147663e5120ce924",
+   "battles": 40,
+   "team": 27.833332,
+   "w1": 7.8333335,
+   "w2": 20,
+   "opponents": {
+    "K_zchain4": 9.166668,
+    "A_GSA_ShmuelTurtles": 0,
+    "A_OHS_cgxPro": 1
+   },
+   "scoresSha256": "3969fac4cb1021f4ab218f7dd88309d9f8b092f991ff99c37c1063070599784b",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_zchain4-6",
+   "seed": "a2-a470d3085126a684",
+   "battles": 40,
+   "team": 19.833336,
+   "w1": 7.6666675,
+   "w2": 12.166665,
+   "opponents": {
+    "K_zchain4": 18.333332,
+    "A_WAN_Full_Time_Job": 0,
+    "A_GSA_callfart": 1.8333334
+   },
+   "scoresSha256": "cb6275ac6a644691ed44ab8446bfbc577c8d581bbde92951f250858bab8464cd",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_zchain4-7",
+   "seed": "a2-b1e53df342f6cbc3",
+   "battles": 40,
+   "team": 29.333336,
+   "w1": 13.166666,
+   "w2": 16.166668,
+   "opponents": {
+    "K_zchain4": 9.666666,
+    "Y_BGR_theGlopyGng": 1,
+    "A_TOM_Syntax_Terror": 0
+   },
+   "scoresSha256": "e8764ded33e5a935fe817a89f6694ab0976457c862d9ffb8aa2678768b45e75f",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_zchain4-8",
+   "seed": "a2-734e4cee1000d813",
+   "battles": 40,
+   "team": 27.833334,
+   "w1": 10,
+   "w2": 17.833332,
+   "opponents": {
+    "K_zchain4": 10.166666,
+    "Y_TOM_Thefrogs": 0,
+    "A_WHS_K0F1M_AL_T1L1M": 2
+   },
+   "scoresSha256": "d4baff45de3b0dd28f9933b198ebb90d761d5a88cfe5013cd7d2a34a608ebe84",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_zchain4-9",
+   "seed": "a2-db3e40ee0c4d1b85",
+   "battles": 40,
+   "team": 29.333334,
+   "w1": 6.5,
+   "w2": 22.833332,
+   "opponents": {
+    "K_zchain4": 10.666667,
+    "A_HRZ_CodeEliteGang": 0,
+    "A_HDS_YOY": 0
+   },
+   "scoresSha256": "0fe8bf36689f802c40783464f10cc1b55e3aabd6a3f813a6f95861e91bc0b38c",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_zchain4-10",
+   "seed": "a2-51813adb166029b0",
+   "battles": 40,
+   "team": 27,
+   "w1": 8.166667,
+   "w2": 18.833334,
+   "opponents": {
+    "K_zchain4": 11.999999,
+    "A_HDS_GoldenLamed": 0,
+    "A_HDS_YOY": 0
+   },
+   "scoresSha256": "a10e1e82d08344eaf0d5c0c663c08991ed79eb1c4a82e23a2ff2dc9dd47e42c3",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_zchain4-11",
+   "seed": "a2-0a2eff097461f3c2",
+   "battles": 40,
+   "team": 19.916666,
+   "w1": 9.333333,
+   "w2": 10.583333,
+   "opponents": {
+    "K_zchain4": 10.25,
+    "A_GSA_VanLavan": 6.0833335,
+    "A_GSA_callfart": 3.75
+   },
+   "scoresSha256": "27a650488dac3c32d9952bd16d2f15ffeeb0454f938e8ba10f328b896e99617b",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_zchain4-12",
+   "seed": "a2-16a7f17d1d96f4d6",
+   "battles": 40,
+   "team": 22.333334,
+   "w1": 9,
+   "w2": 13.333333,
+   "opponents": {
+    "K_zchain4": 13.5,
+    "Y_TOM_The_Crushers": 0,
+    "A_BZV_SKYENT": 4.1666665
+   },
+   "scoresSha256": "ce04c4d7165e76116d3ae92e79084c528fbc6b017f54e49e7389f01d027c36b3",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_zchain4-13",
+   "seed": "a2-0421c2c659b1e530",
+   "battles": 40,
+   "team": 26.500002,
+   "w1": 10.833333,
+   "w2": 15.666666,
+   "opponents": {
+    "K_zchain4": 10.499999,
+    "Y_TOM_Code_Killer": 1,
+    "A_TOM_tson_el_akod": 0
+   },
+   "scoresSha256": "d8cb8dac4df76f83acb13541f6b93dab81a436ca246788f0223b850e4092699f",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_zchain4-14",
+   "seed": "a2-122fe4e9212785b3",
+   "battles": 40,
+   "team": 32.5,
+   "w1": 7.5,
+   "w2": 25,
+   "opponents": {
+    "K_zchain4": 7.5,
+    "A_RZL_YANDE": 0,
+    "A_HDS_YOY": 0
+   },
+   "scoresSha256": "0d792234e510a0dc996e4bdb8b1d8b31c805c08f65a59da63e5a42fd3912dc1f",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_zchain4-15",
+   "seed": "a2-a0e76a0974b12a2f",
+   "battles": 40,
+   "team": 5.833334,
+   "w1": 5.5000005,
+   "w2": 0.33333334,
+   "opponents": {
+    "K_zchain4": 25.66667,
+    "A_GSA_callfart": 8.5,
+    "A_TOM_2B2Team": 0
+   },
+   "scoresSha256": "dcc571e475047bd317f46ae85951bc438692a865857870d228024735e726fc85",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_zchain4-16",
+   "seed": "a2-c34f50b7d9650475",
+   "battles": 40,
+   "team": 28.333336,
+   "w1": 8.666667,
+   "w2": 19.666666,
+   "opponents": {
+    "K_zchain4": 11.666666,
+    "A_OST_Gamma": 0,
+    "A_HDS_ATW_Solo": 0
+   },
+   "scoresSha256": "6378640ce4f81ea9f08285f5158fd86d9265562dedf27e76a71463730dbbf017",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_zchain4-17",
+   "seed": "a2-cf75eef1603658b2",
+   "battles": 40,
+   "team": 26.166668,
+   "w1": 10.333333,
+   "w2": 15.833333,
+   "opponents": {
+    "K_zchain4": 12.833333,
+    "Y_ELD_FriendlyFire": 1,
+    "A_HRZ_Pixar_Lamps": 0
+   },
+   "scoresSha256": "6bcd71a571db5fadd6e44c620e31e4b9d09e3d0685769ce0c9d7e9bd28427ced",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_zchain4-18",
+   "seed": "a2-afb6a9b977e83c09",
+   "battles": 40,
+   "team": 19.166666,
+   "w1": 8.333334,
+   "w2": 10.833333,
+   "opponents": {
+    "K_zchain4": 15.833332,
+    "A_IND_cgx123123": 3,
+    "A_GSA_B33": 2
+   },
+   "scoresSha256": "bd8194d18341da742a293a4fc10a32251be91a7b85afa7e5417eeae336287880",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_zchain4-19",
+   "seed": "a2-b3ee5ef883448814",
+   "battles": 40,
+   "team": 23.66667,
+   "w1": 6.0000005,
+   "w2": 17.666666,
+   "opponents": {
+    "K_zchain4": 10,
+    "A_GSA_VanLavan": 5.3333335,
+    "A_GSA_ShmuelTurtles": 0
+   },
+   "scoresSha256": "533179b2e27aeb44cab250e285c4fc4ed0ed1a6c49b416de6ad00609bde28c84",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_zrl03-0",
+   "seed": "a2-93310bde26bdaac5",
+   "battles": 40,
+   "team": 21.833334,
+   "w1": 10.333334,
+   "w2": 11.5,
+   "opponents": {
+    "K_zrl03": 17.833332,
+    "Y_GSA_SigmaSilent": 0,
+    "A_HRZ_Registered_Winners": 0.33333334
+   },
+   "scoresSha256": "e094411c4115721b04a1548b065d26472ef2725e32d9a2e76b862c43110b3e65",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_zrl03-1",
+   "seed": "a2-b3a22a52051e607d",
+   "battles": 40,
+   "team": 22.666666,
+   "w1": 13.333333,
+   "w2": 9.333334,
+   "opponents": {
+    "K_zrl03": 17.333334,
+    "A_HRZ_TEST_ticals": 0,
+    "A_OHS_TOMEX": 0
+   },
+   "scoresSha256": "09f04afbdd963f77810de608d3b82d179ca14ad007e3cad6abd94d5a5b65ad75",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_zrl03-2",
+   "seed": "a2-8da26dc617886605",
+   "battles": 40,
+   "team": 26,
+   "w1": 15,
+   "w2": 11,
+   "opponents": {
+    "K_zrl03": 14,
+    "A_HRZ_Ctrl_Alt_Elite": 0,
+    "A_OST_Gamma": 0
+   },
+   "scoresSha256": "008b76127c7b71e12ea02a6e881e7bc92c2814d214af82ff18103b13896825b2",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_zrl03-3",
+   "seed": "a2-d36a6d8010f6f1e2",
+   "battles": 40,
+   "team": 10.999999,
+   "w1": 6.666667,
+   "w2": 4.333333,
+   "opponents": {
+    "K_zrl03": 22,
+    "A_HRZ_Grindo_Holics": 7,
+    "A_OST_Gamma": 0
+   },
+   "scoresSha256": "09b7b88927e63902b0c39ce09c0114dfc7a2d223e01b036745f2097b9380569d",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_zrl03-4",
+   "seed": "a2-a5ba8f57a44389be",
+   "battles": 40,
+   "team": 21.916668,
+   "w1": 11.416666,
+   "w2": 10.5,
+   "opponents": {
+    "K_zrl03": 14.499998,
+    "A_IND_stuxnet": 3.5833333,
+    "A_HRZ_CodeEliteGang": 0
+   },
+   "scoresSha256": "26dd1554bbdc922a9b7205495d72c2e0eb8b2fdbe26e215d8fd418f109286f89",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_zrl03-5",
+   "seed": "a2-424c31a240559fe2",
+   "battles": 40,
+   "team": 20,
+   "w1": 7.166667,
+   "w2": 12.833333,
+   "opponents": {
+    "K_zrl03": 15.999999,
+    "Y_GSA_SigmaSilent": 0,
+    "A_WAN_Baltika9": 4
+   },
+   "scoresSha256": "2c99f208ce79f8b191739081e86119299afddc3c096d9e76309c008aee027620",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_zrl03-6",
+   "seed": "a2-148932581b79ce1d",
+   "battles": 40,
+   "team": 16.5,
+   "w1": 9.5,
+   "w2": 7,
+   "opponents": {
+    "K_zrl03": 22.5,
+    "A_AVI_Fishandpoultry": 1,
+    "A_OHS_cgxPro": 0
+   },
+   "scoresSha256": "4234f0027f2ae7b5a62d16ab156497d9dec2e7f3fb1a82b6b888fbebb21bea61",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_zrl03-7",
+   "seed": "a2-c25015a7492e638b",
+   "battles": 40,
+   "team": 24.166666,
+   "w1": 11.333334,
+   "w2": 12.833333,
+   "opponents": {
+    "K_zrl03": 13.833334,
+    "A_HRZ_CodeEliteGang": 0,
+    "A_OHS_TOMEX": 2
+   },
+   "scoresSha256": "fb71163dbe7a960cef87de1658759513b86487678cd569362c301e23fa61967d",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_zrl03-8",
+   "seed": "a2-515642b5c4e2c4eb",
+   "battles": 40,
+   "team": 19.166668,
+   "w1": 10,
+   "w2": 9.166667,
+   "opponents": {
+    "K_zrl03": 20.833332,
+    "A_HRZ_MOV_AX_WIN": 0,
+    "A_ORT_Pegasus_Hex": 0
+   },
+   "scoresSha256": "ffe7b433d4c677411278d699753b1b77f1816d12148025c2ce4ed369f68b5564",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_zrl03-9",
+   "seed": "a2-7d5df8a9b0634366",
+   "battles": 40,
+   "team": 21,
+   "w1": 9,
+   "w2": 12,
+   "opponents": {
+    "K_zrl03": 10.499999,
+    "A_GSA_GoonSquad": 8.5,
+    "A_HRZ_InCtrl": 0
+   },
+   "scoresSha256": "995a5b7cf885106cb4e061650e3251507a5947ced7b65f36c414673211b7360d",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_zrl03-10",
+   "seed": "a2-9dbf7d4245ff4756",
+   "battles": 40,
+   "team": 22.833334,
+   "w1": 13.833333,
+   "w2": 9,
+   "opponents": {
+    "K_zrl03": 16.166668,
+    "A_HDS_NRI": 0,
+    "A_HLS_EmoMutants": 1
+   },
+   "scoresSha256": "06ab89ef119d39e706e500acabd86e83e174e3b8c8b858f3e7271633800d3f9d",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_zrl03-11",
+   "seed": "a2-2e20fa373a780450",
+   "battles": 40,
+   "team": 25,
+   "w1": 12.5,
+   "w2": 12.5,
+   "opponents": {
+    "K_zrl03": 10.166667,
+    "A_OHS_TOMEX": 0,
+    "A_IND_stuxnet": 4.8333335
+   },
+   "scoresSha256": "b436ae676ef7fe666dbf65aa22eebb807fad5ade31621f1aef05439e2c659136",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_zrl03-12",
+   "seed": "a2-5fd5cf344f4b7317",
+   "battles": 40,
+   "team": 23.083334,
+   "w1": 11.833334,
+   "w2": 11.25,
+   "opponents": {
+    "K_zrl03": 13.916667,
+    "A_BZV_SKYENT": 3,
+    "A_HRZ_stack_attack": 0
+   },
+   "scoresSha256": "cb4a01b39d397c4efd71b98a58b67433c5d5b73d7d6f6559923a68bf56d03d05",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_zrl03-13",
+   "seed": "a2-4e2a6e48e9dbb65f",
+   "battles": 40,
+   "team": 23.5,
+   "w1": 10.5,
+   "w2": 13,
+   "opponents": {
+    "K_zrl03": 12.5,
+    "A_IND_stuxnet": 4,
+    "A_WAN_OnlyCode": 0
+   },
+   "scoresSha256": "7664f9ba059c607030180258c21a69458dc59d4adf23b33f0a6da122ac0628c3",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_zrl03-14",
+   "seed": "a2-cd5f2d5d57b0ff20",
+   "battles": 40,
+   "team": 18.166666,
+   "w1": 10.833334,
+   "w2": 7.3333335,
+   "opponents": {
+    "K_zrl03": 18.833332,
+    "A_HRZ_ADDvanced": 1,
+    "A_AVI_Fishandpoultry": 2
+   },
+   "scoresSha256": "7f34d75bd8fd9bac4b596b93fcc94f8714b282592e399ceb21f06b298b5c2648",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_zrl03-15",
+   "seed": "a2-f6e67b6999ef2268",
+   "battles": 40,
+   "team": 18,
+   "w1": 12.25,
+   "w2": 5.75,
+   "opponents": {
+    "K_zrl03": 18,
+    "A_GSA_callfart": 2.6666667,
+    "A_IND_stuxnet": 1.3333334
+   },
+   "scoresSha256": "1981b8b23a03b06abdd3940f8dc605c5b07c6a04c9e68aa11384eb2df0a476b7",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_zrl03-16",
+   "seed": "a2-83513b263398d86a",
+   "battles": 40,
+   "team": 21.5,
+   "w1": 13.5,
+   "w2": 8,
+   "opponents": {
+    "K_zrl03": 18.5,
+    "A_TOM_anonymous": 0,
+    "A_TOM_2B2Team": 0
+   },
+   "scoresSha256": "58f49949f360f30290d092310ff182808aadd940eb14c88c481fcfad2ba90249",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_zrl03-17",
+   "seed": "a2-7c14223669b861a9",
+   "battles": 40,
+   "team": 22.833332,
+   "w1": 9.833334,
+   "w2": 13,
+   "opponents": {
+    "K_zrl03": 17.166668,
+    "A_TOM_anonymous": 0,
+    "A_WAN_Full_Time_Job": 0
+   },
+   "scoresSha256": "eafd18f0842f43d78e1353fa6e91e65e27b841fe88ec39b439ae8a2fd019ca4c",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_zrl03-18",
+   "seed": "a2-ea2866d359eeeea6",
+   "battles": 40,
+   "team": 21.333332,
+   "w1": 14.166666,
+   "w2": 7.166667,
+   "opponents": {
+    "K_zrl03": 18.666664,
+    "A_HRZ_MOV_AX_WIN": 0,
+    "A_WAN_Full_Time_Job": 0
+   },
+   "scoresSha256": "37847a4acefa781b3130de539897e08d4c5239ab0fd506642a8f1f378f895041",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "K_zrl03-19",
+   "seed": "a2-c6b738c1614c3cf9",
+   "battles": 40,
+   "team": 22.666668,
+   "w1": 12.166667,
+   "w2": 10.5,
+   "opponents": {
+    "K_zrl03": 16.333332,
+    "A_HDS_YOY": 1,
+    "A_HRZ_Underflow": 0
+   },
+   "scoresSha256": "4a9cf47a1adcf0261a107edae5d785daa8dd3aa2751c31872151bea900392ea4",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_V4-0",
+   "seed": "a2-c0891c3d26c8f9f3",
+   "battles": 40,
+   "team": 22.333332,
+   "w1": 9.333333,
+   "w2": 13,
+   "opponents": {
+    "K_V4": 14.166666,
+    "A_HRZ_Code_Jokers4Life": 0,
+    "A_GSA_GoonSquad": 2.5
+   },
+   "scoresSha256": "cc9a7a085e950468ee3134fac1146eb3d4037ad887300f86ceae51f34a2c172a",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_V4-1",
+   "seed": "a2-710f74867ed04153",
+   "battles": 40,
+   "team": 19.333332,
+   "w1": 8.500001,
+   "w2": 10.833334,
+   "opponents": {
+    "K_V4": 16.333332,
+    "A_HRZ_CodeEliteGang": 0,
+    "A_BZV_SKYENT": 4.333333
+   },
+   "scoresSha256": "c0f44c9097a47d083bfcfb01a5b3f500918a6c6cc496809ccf3154e464c0db59",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_V4-2",
+   "seed": "a2-2c62d5066421c39b",
+   "battles": 40,
+   "team": 20.000002,
+   "w1": 4.5000005,
+   "w2": 15.5,
+   "opponents": {
+    "K_V4": 20.000002,
+    "A_ATL_R1DDLE": 0,
+    "A_IND_BRA": 0
+   },
+   "scoresSha256": "0406b16bb3470e23a31d55d1b841ae1c2577d6d80dbfb2fbdb5a2d08e5cccd6f",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_V4-3",
+   "seed": "a2-115f88c934bb138e",
+   "battles": 40,
+   "team": 18,
+   "w1": 9.833333,
+   "w2": 8.166667,
+   "opponents": {
+    "K_V4": 19.000002,
+    "A_HRZ_Ctrl_Alt_Elite": 0,
+    "A_HRZ_Thingies": 3
+   },
+   "scoresSha256": "ff59cae77eec78e31b8a6470c88c26b6760bed262e3414055c4806c5a65b3cda",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_V4-4",
+   "seed": "a2-051a8a46835cd74f",
+   "battles": 40,
+   "team": 14.833332,
+   "w1": 4.5,
+   "w2": 10.333334,
+   "opponents": {
+    "K_V4": 24.166672,
+    "Y_GSA_SigmaSilent": 0,
+    "A_OST_Gamma": 0
+   },
+   "scoresSha256": "3a427027c0e1cafbfc2336620d241866fccb6ee0c088bed582d512d22a98373a",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_V4-5",
+   "seed": "a2-5771476da3662696",
+   "battles": 40,
+   "team": 13.916667,
+   "w1": 5.583333,
+   "w2": 8.333333,
+   "opponents": {
+    "K_V4": 21.583334,
+    "A_IND_stuxnet": 1,
+    "A_GSA_callfart": 2.5
+   },
+   "scoresSha256": "e45c09681c0bea792879c9a3451f1d0614061197b592ad0b524f2fb651c8b6e0",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_V4-6",
+   "seed": "a2-991613896dc86d9f",
+   "battles": 40,
+   "team": 17,
+   "w1": 5,
+   "w2": 12,
+   "opponents": {
+    "K_V4": 21.333336,
+    "A_HDS_MAC": 0,
+    "A_HRZ_L": 1.6666667
+   },
+   "scoresSha256": "6a88496298949ac4796f1e237cc1da27c5bed828e13faea2513ed1ae108faa8d",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_V4-7",
+   "seed": "a2-0871b586c7c59a9a",
+   "battles": 40,
+   "team": 19.666668,
+   "w1": 6.8333335,
+   "w2": 12.833333,
+   "opponents": {
+    "K_V4": 19.333336,
+    "A_HRZ_TitanicSwimTeam": 0,
+    "Y_GSA_SigmaSilent": 0
+   },
+   "scoresSha256": "5f6167f1e8b4d7d9fa6dc266c15552b22c414b83472e5feedaea570618c46580",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_V4-8",
+   "seed": "a2-06623d2ad52f6440",
+   "battles": 40,
+   "team": 22,
+   "w1": 6.75,
+   "w2": 15.25,
+   "opponents": {
+    "K_V4": 17,
+    "A_OHS_cgxPro": 1,
+    "A_HRZ_MOV_AX_WIN": 0
+   },
+   "scoresSha256": "c4beb13c3b0a0e765d85e35c745c085c56e9b978ab04012d33a6632895493cc6",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_V4-9",
+   "seed": "a2-ec2088441244d3b6",
+   "battles": 40,
+   "team": 10.333334,
+   "w1": 3.3333335,
+   "w2": 7,
+   "opponents": {
+    "K_V4": 25.666666,
+    "A_OHS_BatteringRAM": 1,
+    "A_WHS_K0F1M_AL_T1L1M": 2
+   },
+   "scoresSha256": "0547b0a7287145b0bc6beb40cc0aae46bf54ba03af3067de50b950a2986f59f2",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_V4-10",
+   "seed": "a2-6922500f7eb8e40e",
+   "battles": 40,
+   "team": 22.333334,
+   "w1": 4.333333,
+   "w2": 18,
+   "opponents": {
+    "K_V4": 16.666666,
+    "Y_SZR_The_Chargers": 0,
+    "A_OHS_TOMEX": 1
+   },
+   "scoresSha256": "725615540d50a133797fa79af638171abbb4c2d4b0454d6d8f55d2cbf17422e9",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_V4-11",
+   "seed": "a2-1cfe4eda69593465",
+   "battles": 40,
+   "team": 15.833333,
+   "w1": 7.3333335,
+   "w2": 8.5,
+   "opponents": {
+    "K_V4": 22.166668,
+    "A_TOM_BitBenders": 1,
+    "A_HRZ_Ctrl_Alt_Elite": 1
+   },
+   "scoresSha256": "35b90f04ab470d083b097204ec09b02cb4f258fa405854aee4c260061ca6a16a",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_V4-12",
+   "seed": "a2-ec003b6cffd28ea9",
+   "battles": 40,
+   "team": 17.833332,
+   "w1": 7.0000005,
+   "w2": 10.833334,
+   "opponents": {
+    "K_V4": 17.166668,
+    "A_GGN_OpcodeHunter": 5.0000005,
+    "A_HRZ_Underflow": 0
+   },
+   "scoresSha256": "456917a97347d1f53ca926f8c9b145b4f4946cb79531d8943bbddbb2dab263c6",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_V4-13",
+   "seed": "a2-e5141dd4c9bd8564",
+   "battles": 40,
+   "team": 19,
+   "w1": 8.5,
+   "w2": 10.5,
+   "opponents": {
+    "K_V4": 21,
+    "A_HRZ_Underflow": 0,
+    "A_ORT_Pegasus_Hex": 0
+   },
+   "scoresSha256": "1f56a3cc0415142ea9c8c18e438fcd609aaae2721c808941dbbd73c9df84408c",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_V4-14",
+   "seed": "a2-3daa55dbe36c7943",
+   "battles": 40,
+   "team": 19.666666,
+   "w1": 7,
+   "w2": 12.666667,
+   "opponents": {
+    "K_V4": 19.333334,
+    "Y_GSA_3Plate_Benchers": 0,
+    "A_HRZ_PowerRangers": 1
+   },
+   "scoresSha256": "022b9c4678c3c5d1be806444e7a40c2048ef2080e113f4cec3b99ee312acdc80",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_V4-15",
+   "seed": "a2-0b5ddb0fcad8f154",
+   "battles": 40,
+   "team": 16.5,
+   "w1": 5,
+   "w2": 11.5,
+   "opponents": {
+    "K_V4": 15.5,
+    "A_HRZ_ADDvanced": 5,
+    "A_HRZ_BinaryBandits": 3
+   },
+   "scoresSha256": "ec8fb996831ddec89dc1d4d1e1a8086cb9566565fda90ba5bf58c55869f4d0a4",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_V4-16",
+   "seed": "a2-3977490129b536c4",
+   "battles": 40,
+   "team": 12.833333,
+   "w1": 4.1666665,
+   "w2": 8.666666,
+   "opponents": {
+    "K_V4": 14.166666,
+    "A_HRZ_Grindo_Holics": 12,
+    "A_TOM_anonymous": 1
+   },
+   "scoresSha256": "796a2a206b209cd8592ecdb1456896c90cc85e97cb3b2e5ccc5f09a9d07a56ed",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_V4-17",
+   "seed": "a2-eb1e386158ba739c",
+   "battles": 40,
+   "team": 13.5,
+   "w1": 3.5,
+   "w2": 10,
+   "opponents": {
+    "K_V4": 21,
+    "Y_TOM_Code_Killer": 2.5,
+    "A_AVI_AnotherBitInTheWall": 2
+   },
+   "scoresSha256": "fe893e520faac347c9d2e063b0d4228280883674967fdb6e173785b4ada87654",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_V4-18",
+   "seed": "a2-1ea88980fbe55494",
+   "battles": 40,
+   "team": 23.333334,
+   "w1": 4.8333335,
+   "w2": 18.5,
+   "opponents": {
+    "K_V4": 14.666666,
+    "A_HRZ_CodeEliteGang": 0,
+    "A_GSA_B33": 2
+   },
+   "scoresSha256": "a4fa490e19193f641b08aa75cae3727b01c62fc296946d1bc25fc78543625e81",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_V4-19",
+   "seed": "a2-764002ba8f2354e4",
+   "battles": 40,
+   "team": 16.666668,
+   "w1": 5.6666665,
+   "w2": 11,
+   "opponents": {
+    "K_V4": 14.833333,
+    "Y_TOM_Code_Killer": 4.5,
+    "A_OHS_BatteringRAM": 2
+   },
+   "scoresSha256": "00847d923776edfce781c2916bbb22812c8655f233fab35f4892e6c694c23710",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_V6-0",
+   "seed": "a2-1957b8d0d22d155b",
+   "battles": 40,
+   "team": 25.5,
+   "w1": 7.833333,
+   "w2": 17.666668,
+   "opponents": {
+    "K_V6": 14.5,
+    "Y_GSA_SigmaSilent": 0,
+    "A_KOB_KosherCode": 0
+   },
+   "scoresSha256": "2c4762f16d4c8ba8194336ade6b6db67329c2827e99ebbeea6f1937188a968a1",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_V6-1",
+   "seed": "a2-5284f65c7c29d589",
+   "battles": 40,
+   "team": 23,
+   "w1": 5,
+   "w2": 18,
+   "opponents": {
+    "K_V6": 16,
+    "A_HDS_IWDIA_nachalo": 0,
+    "A_GSA_GhostBytes_0x": 1
+   },
+   "scoresSha256": "bfa455a275dbd74ac580ad0ad92849dcb3bb1081f78b5b1cad510bab405e4015",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_V6-2",
+   "seed": "a2-6c0c7e14582cce04",
+   "battles": 40,
+   "team": 18.666666,
+   "w1": 5.333333,
+   "w2": 13.333334,
+   "opponents": {
+    "K_V6": 20.333334,
+    "A_WHS_K0F1M_AL_T1L1M": 1,
+    "A_KOB_KosherCode": 0
+   },
+   "scoresSha256": "db5cc8c9dd36cdda52c29632fafef6337ebe3b06a52383eb1a8a6812853bd7f1",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_V6-3",
+   "seed": "a2-557f1c7e6bdd7571",
+   "battles": 40,
+   "team": 20.000002,
+   "w1": 6.833334,
+   "w2": 13.166666,
+   "opponents": {
+    "K_V6": 19.999998,
+    "A_HRZ_MOV_AX_WIN": 0,
+    "A_HDS_MAC": 0
+   },
+   "scoresSha256": "4e0e5ef18166a5c278fba69de9b8a2499fadec1a5a543b61f82d0c10621662ba",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_V6-4",
+   "seed": "a2-cbd6644e28bfdf3c",
+   "battles": 40,
+   "team": 20.5,
+   "w1": 4.833333,
+   "w2": 15.666667,
+   "opponents": {
+    "K_V6": 19.5,
+    "A_HRZ_Underflow": 0,
+    "Y_TOM_Thefrogs": 0
+   },
+   "scoresSha256": "34d5937b03e1ab5f892a05f3bde520bbb0a6595bb65b41edc808a2c467906704",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_V6-5",
+   "seed": "a2-ed2179e72b45341c",
+   "battles": 40,
+   "team": 20.5,
+   "w1": 5.166667,
+   "w2": 15.333334,
+   "opponents": {
+    "K_V6": 19.5,
+    "Y_SZR_The_Chargers": 0,
+    "A_ORT_TheGoats": 0
+   },
+   "scoresSha256": "130c826075eba26ca3c4981932acf7eb0a05f0434d3ddcc28a6a7d644cd4c194",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_V6-6",
+   "seed": "a2-5831da5b9f288643",
+   "battles": 40,
+   "team": 19.833332,
+   "w1": 6.333333,
+   "w2": 13.5,
+   "opponents": {
+    "K_V6": 18.166668,
+    "A_WAN_Full_Time_Job": 1,
+    "A_HLS_EmoMutants": 1
+   },
+   "scoresSha256": "8054a2b6ab9863f100a7b0690956a15590db4748333439a568b07235484808e2",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_V6-7",
+   "seed": "a2-22f0af42e282ee19",
+   "battles": 40,
+   "team": 17.666668,
+   "w1": 8.333334,
+   "w2": 9.333333,
+   "opponents": {
+    "K_V6": 20.333332,
+    "Y_BGR_theGlopyGng": 0,
+    "A_OHS_BatteringRAM": 2
+   },
+   "scoresSha256": "536a210a885a892e2117dc48ab6bdbf86b59a7a7fcda26a8227dcf8a306f6555",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_V6-8",
+   "seed": "a2-8c94c5b5a6ad89ec",
+   "battles": 40,
+   "team": 23,
+   "w1": 3.5,
+   "w2": 19.5,
+   "opponents": {
+    "K_V6": 16,
+    "A_HRZ_CodeEliteGang": 0,
+    "A_OHS_TrojanByte": 1
+   },
+   "scoresSha256": "7cb9591e3ae33f607a2dc816696905406c14ac7ba56b78ec68a6e59dfa2756dd",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_V6-9",
+   "seed": "a2-64c31b26c2b31b88",
+   "battles": 40,
+   "team": 17.833332,
+   "w1": 4.166667,
+   "w2": 13.666666,
+   "opponents": {
+    "K_V6": 18.5,
+    "A_HRZ_fisherEXE": 0,
+    "A_GSA_VanLavan": 3.6666667
+   },
+   "scoresSha256": "524596b9059b55b7af77b8e2f667405ffba1b8f8d723c86f44608e8cf5153b94",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_V6-10",
+   "seed": "a2-a305260c559d48e1",
+   "battles": 40,
+   "team": 13.666667,
+   "w1": 5.3333335,
+   "w2": 8.333333,
+   "opponents": {
+    "K_V6": 19.333332,
+    "A_HRZ_ADDvanced": 3,
+    "A_WHS_K0F1M_AL_T1L1M": 4
+   },
+   "scoresSha256": "755564865ce536eb342f7ca08ac287e92a1f003e7e8d1a00b057bf103169da8d",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_V6-11",
+   "seed": "a2-b808925608a9459e",
+   "battles": 40,
+   "team": 22.666666,
+   "w1": 7.6666665,
+   "w2": 15,
+   "opponents": {
+    "K_V6": 14.333333,
+    "A_HDS_YOY": 1,
+    "Y_ELD_FriendlyFire": 1
+   },
+   "scoresSha256": "251d74701c465d18467899699fd24c7a4cd592041f6eafbb87db7a204da9654b",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_V6-12",
+   "seed": "a2-df34cc8ea2f74d4f",
+   "battles": 40,
+   "team": 19.5,
+   "w1": 11,
+   "w2": 8.5,
+   "opponents": {
+    "K_V6": 13.5,
+    "A_TOM_2B2Team": 5,
+    "A_HRZ_TEST_ticals": 1
+   },
+   "scoresSha256": "2236b92f765d469478fb9a1f43d33f94ab3de98b8023b7fa47bb955faf3ff6c2",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_V6-13",
+   "seed": "a2-d143b2118ace69e8",
+   "battles": 40,
+   "team": 20,
+   "w1": 6,
+   "w2": 14,
+   "opponents": {
+    "K_V6": 15,
+    "A_WHS_K0F1M_AL_T1L1M": 1.5,
+    "A_HRZ_BinaryBandits": 3.5
+   },
+   "scoresSha256": "65c1d8c71864cd07549f95d374d02ddafcf77d83ecf37f53d8537a4e5b9bdb83",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_V6-14",
+   "seed": "a2-deeb4e82858776dc",
+   "battles": 40,
+   "team": 16.833332,
+   "w1": 4.3333335,
+   "w2": 12.5,
+   "opponents": {
+    "K_V6": 22.166668,
+    "A_GSA_TheBytes": 0,
+    "A_GSA_GoonSquad": 1
+   },
+   "scoresSha256": "639ca41c2bb670a3889c221a5db9b65454f9220d7eadf0d27766fa5eda77598c",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_V6-15",
+   "seed": "a2-246ac94582267447",
+   "battles": 40,
+   "team": 14.166666,
+   "w1": 2.6666665,
+   "w2": 11.5,
+   "opponents": {
+    "K_V6": 21.833336,
+    "A_GSA_ShmuelTurtles": 0,
+    "A_AVI_Fishandpoultry": 4
+   },
+   "scoresSha256": "cff48da49cdf833c15d1df666447a6dd01dbcd2e31927cd1d6e543f3e33ab537",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_V6-16",
+   "seed": "a2-6134045c0a2fc49a",
+   "battles": 40,
+   "team": 19,
+   "w1": 5,
+   "w2": 14,
+   "opponents": {
+    "K_V6": 19,
+    "A_HDS_IWDIA_nachalo": 0,
+    "A_HRZ_Thingies": 2
+   },
+   "scoresSha256": "9cbf27b7d18faf64ce2d278252948fbdfee5e5bdec08ef393c20aebd4a2ba8cb",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_V6-17",
+   "seed": "a2-43e5c8481b5cb9b0",
+   "battles": 40,
+   "team": 18.5,
+   "w1": 5.5,
+   "w2": 13,
+   "opponents": {
+    "K_V6": 20.5,
+    "A_HRZ_Code_Jokers4Life": 1,
+    "Y_SZR_The_Chargers": 0
+   },
+   "scoresSha256": "97c12cb1d8de211f3c5f57e064d1b875a91b54d04521d6ea66dedbbdbea5a81b",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_V6-18",
+   "seed": "a2-b4ef9fbd1b10330a",
+   "battles": 40,
+   "team": 26.166668,
+   "w1": 5.3333335,
+   "w2": 20.833334,
+   "opponents": {
+    "K_V6": 12.833333,
+    "Y_SZR_The_Chargers": 1,
+    "A_OHS_cgxPro": 0
+   },
+   "scoresSha256": "096b4ecb1e4eefe4eddd065e0f14b835261d17640d5c8a4787a06be3efd18f83",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_V6-19",
+   "seed": "a2-7eb4531a2ab4db88",
+   "battles": 40,
+   "team": 19.333332,
+   "w1": 7.6666665,
+   "w2": 11.666667,
+   "opponents": {
+    "K_V6": 18.666668,
+    "A_TOM_anonymous": 0,
+    "A_HRZ_PowerRangers": 2
+   },
+   "scoresSha256": "dafac83b7d0734f55305dbe6f67642bcef146fffb68ac8b1ca59caa5c7a463fe",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_zchain4-0",
+   "seed": "a2-234040fbcb484cce",
+   "battles": 40,
+   "team": 22.833334,
+   "w1": 10.833333,
+   "w2": 12,
+   "opponents": {
+    "K_zchain4": 17.166666,
+    "A_HRZ_Pixar_Lamps": 0,
+    "A_TOM_2B2Team": 0
+   },
+   "scoresSha256": "be626b2fe1c70fd7bd2aabcc300492162f826f339bd0fba0c54144951bad49a4",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_zchain4-1",
+   "seed": "a2-2ff926a0e3efd9d7",
+   "battles": 40,
+   "team": 26.833334,
+   "w1": 11.5,
+   "w2": 15.333334,
+   "opponents": {
+    "K_zchain4": 12.166667,
+    "A_IND_BRA": 0,
+    "Y_SZR_BrvazimAlSteroidim": 0
+   },
+   "scoresSha256": "65a6ec06fd1a9d24c4da344679ee8d7ee8202ea8e6778186a19edb97471d8746",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_zchain4-2",
+   "seed": "a2-033a8e378ed5be31",
+   "battles": 40,
+   "team": 21.333332,
+   "w1": 11.166667,
+   "w2": 10.166666,
+   "opponents": {
+    "K_zchain4": 18.666666,
+    "A_GSA_GhostBytes_0x": 0,
+    "A_GSA_TheBytes": 0
+   },
+   "scoresSha256": "1ac6f5d4c31d6f36c4cf3c53ee79daf5f2b03e6198b5a5e8d8941c662ae74bb1",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_zchain4-3",
+   "seed": "a2-672a4d97a7ec3da9",
+   "battles": 40,
+   "team": 30.333332,
+   "w1": 10.5,
+   "w2": 19.833332,
+   "opponents": {
+    "K_zchain4": 9.666666,
+    "A_HRZ_Registered_Winners": 0,
+    "Y_BGR_theGlopyGng": 0
+   },
+   "scoresSha256": "a11bd86832a90ef91fce0617a5641d1d7a7604baa9a9979d2ea7ad626b22f4ef",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_zchain4-4",
+   "seed": "a2-bc2311a48c7c6f56",
+   "battles": 40,
+   "team": 25.333332,
+   "w1": 8.833334,
+   "w2": 16.5,
+   "opponents": {
+    "K_zchain4": 12.666667,
+    "Y_GSA_LVS_FIT": 2,
+    "Y_TOM_The_Crushers": 0
+   },
+   "scoresSha256": "3e00342ce44b3dc8c6b67f10496e1dae4dc565dd0980143e5fcf47293d6004b3",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_zchain4-5",
+   "seed": "a2-147663e5120ce924",
+   "battles": 40,
+   "team": 27.166664,
+   "w1": 9,
+   "w2": 18.166666,
+   "opponents": {
+    "K_zchain4": 11.833334,
+    "A_GSA_ShmuelTurtles": 0,
+    "A_OHS_cgxPro": 1
+   },
+   "scoresSha256": "2bfdfeb4278e456962e5392ea3c03ea53711dee5029a3bea2db07820f9b95e53",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_zchain4-6",
+   "seed": "a2-a470d3085126a684",
+   "battles": 40,
+   "team": 21.666672,
+   "w1": 9.749999,
+   "w2": 11.916665,
+   "opponents": {
+    "K_zchain4": 15.333331,
+    "A_WAN_Full_Time_Job": 0,
+    "A_GSA_callfart": 3
+   },
+   "scoresSha256": "d0044cd5ed59ba1e461a2e3c7139773f5a539619e51cfae0147ac8badf8809b8",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_zchain4-7",
+   "seed": "a2-b1e53df342f6cbc3",
+   "battles": 40,
+   "team": 27.833336,
+   "w1": 13.166666,
+   "w2": 14.666667,
+   "opponents": {
+    "K_zchain4": 11.166666,
+    "Y_BGR_theGlopyGng": 1,
+    "A_TOM_Syntax_Terror": 0
+   },
+   "scoresSha256": "97810360cf6fadcef4964e8e5f116d103a9ea3dcd429a0d2162c8bc60da83b2f",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_zchain4-8",
+   "seed": "a2-734e4cee1000d813",
+   "battles": 40,
+   "team": 27.500002,
+   "w1": 10.833333,
+   "w2": 16.666668,
+   "opponents": {
+    "K_zchain4": 10.5,
+    "Y_TOM_Thefrogs": 0,
+    "A_WHS_K0F1M_AL_T1L1M": 2
+   },
+   "scoresSha256": "3d1fbe014ea724b04fd433b9d3a9cb39de70897e035b3fd39a621691def75426",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_zchain4-9",
+   "seed": "a2-db3e40ee0c4d1b85",
+   "battles": 40,
+   "team": 27.833334,
+   "w1": 6.5,
+   "w2": 21.333332,
+   "opponents": {
+    "K_zchain4": 12.166667,
+    "A_HRZ_CodeEliteGang": 0,
+    "A_HDS_YOY": 0
+   },
+   "scoresSha256": "e98a49cec31d3a287d63a74b1883e67dac0ab3c56a4f1b90aab51aa8b5207ec2",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_zchain4-10",
+   "seed": "a2-51813adb166029b0",
+   "battles": 40,
+   "team": 25.166666,
+   "w1": 8,
+   "w2": 17.166668,
+   "opponents": {
+    "K_zchain4": 13.833333,
+    "A_HDS_GoldenLamed": 0,
+    "A_HDS_YOY": 0
+   },
+   "scoresSha256": "bab20efd841ac042bff44c69c71ff5c5bbbfee4e71d30c266b17f89a451795c1",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_zchain4-11",
+   "seed": "a2-0a2eff097461f3c2",
+   "battles": 40,
+   "team": 19.583332,
+   "w1": 10,
+   "w2": 9.583333,
+   "opponents": {
+    "K_zchain4": 10.083333,
+    "A_GSA_VanLavan": 6.5833335,
+    "A_GSA_callfart": 3.75
+   },
+   "scoresSha256": "05bb033e3c8e08c5cebb1f2fe169e45dec3adafb0d766f02d73abe9ae5bd8902",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_zchain4-12",
+   "seed": "a2-16a7f17d1d96f4d6",
+   "battles": 40,
+   "team": 22.333334,
+   "w1": 9.5,
+   "w2": 12.833333,
+   "opponents": {
+    "K_zchain4": 13.5,
+    "Y_TOM_The_Crushers": 0,
+    "A_BZV_SKYENT": 4.1666665
+   },
+   "scoresSha256": "0cb5e7f83c4ee6ef95a8051302930d71d37b268f7a7f5a1076d53196e1f4e6a2",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_zchain4-13",
+   "seed": "a2-0421c2c659b1e530",
+   "battles": 40,
+   "team": 25,
+   "w1": 9.333334,
+   "w2": 15.666667,
+   "opponents": {
+    "K_zchain4": 13,
+    "Y_TOM_Code_Killer": 1,
+    "A_TOM_tson_el_akod": 0
+   },
+   "scoresSha256": "f81db36cce2524a3400e3beda2f64c5234144aa090e528b3b9e70e3bbbb3b74f",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_zchain4-14",
+   "seed": "a2-122fe4e9212785b3",
+   "battles": 40,
+   "team": 33,
+   "w1": 9.5,
+   "w2": 23.5,
+   "opponents": {
+    "K_zchain4": 7,
+    "A_RZL_YANDE": 0,
+    "A_HDS_YOY": 0
+   },
+   "scoresSha256": "e1236fbdacfa39621a51ccf10ffc8843e4422c4ca49a6cbc8200ff0271401415",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_zchain4-15",
+   "seed": "a2-a0e76a0974b12a2f",
+   "battles": 40,
+   "team": 6.333334,
+   "w1": 4.5000005,
+   "w2": 1.8333334,
+   "opponents": {
+    "K_zchain4": 25.66667,
+    "A_GSA_callfart": 8,
+    "A_TOM_2B2Team": 0
+   },
+   "scoresSha256": "a861f58c0252cb63c5dbdfe7337e2400fd4fffecbf825496844d41498ce3483c",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_zchain4-16",
+   "seed": "a2-c34f50b7d9650475",
+   "battles": 40,
+   "team": 28.333336,
+   "w1": 9.666667,
+   "w2": 18.666666,
+   "opponents": {
+    "K_zchain4": 11.666666,
+    "A_OST_Gamma": 0,
+    "A_HDS_ATW_Solo": 0
+   },
+   "scoresSha256": "c2f652dd5dc88635aa07f7b2c6b45cd4c6bcce105f0cd00eef5b4ec6cecfc4f2",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_zchain4-17",
+   "seed": "a2-cf75eef1603658b2",
+   "battles": 40,
+   "team": 26.166668,
+   "w1": 10.166667,
+   "w2": 16,
+   "opponents": {
+    "K_zchain4": 12.833333,
+    "Y_ELD_FriendlyFire": 1,
+    "A_HRZ_Pixar_Lamps": 0
+   },
+   "scoresSha256": "5d094e598decdc82f0c659fdf1891619e8e467ce3973679d937ed152484b9bf8",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_zchain4-18",
+   "seed": "a2-afb6a9b977e83c09",
+   "battles": 40,
+   "team": 20.166666,
+   "w1": 9.333334,
+   "w2": 10.833333,
+   "opponents": {
+    "K_zchain4": 14.833333,
+    "A_IND_cgx123123": 3,
+    "A_GSA_B33": 2
+   },
+   "scoresSha256": "580f3a84f11deb5b0c87db0c999231d04d0aaee4ddc8705b251e851866680057",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_zchain4-19",
+   "seed": "a2-b3ee5ef883448814",
+   "battles": 40,
+   "team": 22.666668,
+   "w1": 6.0000005,
+   "w2": 16.666666,
+   "opponents": {
+    "K_zchain4": 10.999999,
+    "A_GSA_VanLavan": 5.3333335,
+    "A_GSA_ShmuelTurtles": 0
+   },
+   "scoresSha256": "30177d457dd00a3f76dbfa93040abadd28c41c7cfa87bf057d392fee3eb3df36",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_zrl03-0",
+   "seed": "a2-93310bde26bdaac5",
+   "battles": 40,
+   "team": 21.833334,
+   "w1": 11.333333,
+   "w2": 10.5,
+   "opponents": {
+    "K_zrl03": 17.833332,
+    "Y_GSA_SigmaSilent": 0,
+    "A_HRZ_Registered_Winners": 0.33333334
+   },
+   "scoresSha256": "8fa2e8ebafa4f31ccbf02d4668e57cb392c273e425176eb3757283ae5cb1c446",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_zrl03-1",
+   "seed": "a2-b3a22a52051e607d",
+   "battles": 40,
+   "team": 22.666666,
+   "w1": 13.333333,
+   "w2": 9.333334,
+   "opponents": {
+    "K_zrl03": 17.333334,
+    "A_HRZ_TEST_ticals": 0,
+    "A_OHS_TOMEX": 0
+   },
+   "scoresSha256": "eb385d2ebd4aa1d7659ebce3386ba537e05617b675021d20e6c5fbe78f30c752",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_zrl03-2",
+   "seed": "a2-8da26dc617886605",
+   "battles": 40,
+   "team": 27,
+   "w1": 15,
+   "w2": 12,
+   "opponents": {
+    "K_zrl03": 13,
+    "A_HRZ_Ctrl_Alt_Elite": 0,
+    "A_OST_Gamma": 0
+   },
+   "scoresSha256": "bc026af251eebe54a62d8945326842f0ee25a04d2ba1f96b320bdf39ab6cac56",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_zrl03-3",
+   "seed": "a2-d36a6d8010f6f1e2",
+   "battles": 40,
+   "team": 10,
+   "w1": 6.5,
+   "w2": 3.5,
+   "opponents": {
+    "K_zrl03": 23,
+    "A_HRZ_Grindo_Holics": 7,
+    "A_OST_Gamma": 0
+   },
+   "scoresSha256": "4d1d2e8d8516f4425c5e3a1b4ca9636543d8b77671ce9ce4c925186676092142",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_zrl03-4",
+   "seed": "a2-a5ba8f57a44389be",
+   "battles": 40,
+   "team": 24.41667,
+   "w1": 13.916665,
+   "w2": 10.5,
+   "opponents": {
+    "K_zrl03": 13,
+    "A_IND_stuxnet": 2.5833333,
+    "A_HRZ_CodeEliteGang": 0
+   },
+   "scoresSha256": "94e7790243fb704555a205b2f02588ecbab7a2fdf5013b7d8eb3b3b3a2bd75e2",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_zrl03-5",
+   "seed": "a2-424c31a240559fe2",
+   "battles": 40,
+   "team": 19.666666,
+   "w1": 6.8333335,
+   "w2": 12.833333,
+   "opponents": {
+    "K_zrl03": 16.333332,
+    "Y_GSA_SigmaSilent": 0,
+    "A_WAN_Baltika9": 4
+   },
+   "scoresSha256": "51f1ce812cffa1c9d48b5caf07851f42616894701da218fc90972d8d447d601a",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_zrl03-6",
+   "seed": "a2-148932581b79ce1d",
+   "battles": 40,
+   "team": 17.5,
+   "w1": 11.5,
+   "w2": 6,
+   "opponents": {
+    "K_zrl03": 21.5,
+    "A_AVI_Fishandpoultry": 1,
+    "A_OHS_cgxPro": 0
+   },
+   "scoresSha256": "51d85fa0b5690dd39712f4116c3e5f8350dd2dc30cccfda379d5923facaf4779",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_zrl03-7",
+   "seed": "a2-c25015a7492e638b",
+   "battles": 40,
+   "team": 23.166666,
+   "w1": 10.333333,
+   "w2": 12.833334,
+   "opponents": {
+    "K_zrl03": 14.833334,
+    "A_HRZ_CodeEliteGang": 0,
+    "A_OHS_TOMEX": 2
+   },
+   "scoresSha256": "784df7e4efceef8c8105279811391bbe02fc060e06c40c78182bd4d8c98f17d8",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_zrl03-8",
+   "seed": "a2-515642b5c4e2c4eb",
+   "battles": 40,
+   "team": 19.166666,
+   "w1": 9.5,
+   "w2": 9.666667,
+   "opponents": {
+    "K_zrl03": 20.833332,
+    "A_HRZ_MOV_AX_WIN": 0,
+    "A_ORT_Pegasus_Hex": 0
+   },
+   "scoresSha256": "c34f8b9ef63ec2afdfe58ec26d6941ba29154c5e81d1b84bc2c3980bbf3abfb7",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_zrl03-9",
+   "seed": "a2-7d5df8a9b0634366",
+   "battles": 40,
+   "team": 20.5,
+   "w1": 8.5,
+   "w2": 12,
+   "opponents": {
+    "K_zrl03": 10.999999,
+    "A_GSA_GoonSquad": 8.5,
+    "A_HRZ_InCtrl": 0
+   },
+   "scoresSha256": "1f4df6e89f04705d8d68fa00bd23048b4d4741e855caaef7708dbc41a450ee2a",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_zrl03-10",
+   "seed": "a2-9dbf7d4245ff4756",
+   "battles": 40,
+   "team": 21.833334,
+   "w1": 11.833333,
+   "w2": 10,
+   "opponents": {
+    "K_zrl03": 17.166668,
+    "A_HDS_NRI": 0,
+    "A_HLS_EmoMutants": 1
+   },
+   "scoresSha256": "ed710dbc46319dadcd35e980f2514599a7120fd3905d3eb445af94c0dcef070e",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_zrl03-11",
+   "seed": "a2-2e20fa373a780450",
+   "battles": 40,
+   "team": 23,
+   "w1": 12,
+   "w2": 11,
+   "opponents": {
+    "K_zrl03": 11.166666,
+    "A_OHS_TOMEX": 1,
+    "A_IND_stuxnet": 4.8333335
+   },
+   "scoresSha256": "8fa5db57ef3f71fadc1fa17cfa4b2908e30c4f76a97a37a1c0cac6cd173900f5",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_zrl03-12",
+   "seed": "a2-5fd5cf344f4b7317",
+   "battles": 40,
+   "team": 22.833334,
+   "w1": 12.083334,
+   "w2": 10.75,
+   "opponents": {
+    "K_zrl03": 14.166667,
+    "A_BZV_SKYENT": 3,
+    "A_HRZ_stack_attack": 0
+   },
+   "scoresSha256": "b3a347a904883ef82dd1a1e331fcb007136598d6e282972d5a009748d73228ab",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_zrl03-13",
+   "seed": "a2-4e2a6e48e9dbb65f",
+   "battles": 40,
+   "team": 23,
+   "w1": 11,
+   "w2": 12,
+   "opponents": {
+    "K_zrl03": 13,
+    "A_IND_stuxnet": 4,
+    "A_WAN_OnlyCode": 0
+   },
+   "scoresSha256": "7e391dc5e14dbe2362e0f4560b686d09516641221e26d5b59a3a4b03d0d34426",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_zrl03-14",
+   "seed": "a2-cd5f2d5d57b0ff20",
+   "battles": 40,
+   "team": 17.666666,
+   "w1": 10.333334,
+   "w2": 7.3333335,
+   "opponents": {
+    "K_zrl03": 18.333332,
+    "A_HRZ_ADDvanced": 1,
+    "A_AVI_Fishandpoultry": 3
+   },
+   "scoresSha256": "b1961963292bc18761b16b0cf7925c862c064b7e7a6e57cbae13b6c08df7d762",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_zrl03-15",
+   "seed": "a2-f6e67b6999ef2268",
+   "battles": 40,
+   "team": 16.25,
+   "w1": 12.5,
+   "w2": 3.75,
+   "opponents": {
+    "K_zrl03": 18.083332,
+    "A_GSA_callfart": 3.0833333,
+    "A_IND_stuxnet": 2.5833333
+   },
+   "scoresSha256": "d60686b2a04117e0c971710cbf2e419b947ea4c1564bc62c2f01cd6467f3b2a7",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_zrl03-16",
+   "seed": "a2-83513b263398d86a",
+   "battles": 40,
+   "team": 19,
+   "w1": 14,
+   "w2": 5,
+   "opponents": {
+    "K_zrl03": 21,
+    "A_TOM_anonymous": 0,
+    "A_TOM_2B2Team": 0
+   },
+   "scoresSha256": "6a3fd95abcf6a8db964b38415044269580f4f3fe3dbbd6ae3803669e47f80905",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_zrl03-17",
+   "seed": "a2-7c14223669b861a9",
+   "battles": 40,
+   "team": 23.333332,
+   "w1": 11.333333,
+   "w2": 12,
+   "opponents": {
+    "K_zrl03": 16.666668,
+    "A_TOM_anonymous": 0,
+    "A_WAN_Full_Time_Job": 0
+   },
+   "scoresSha256": "84716aa365965e078ee66ba1c1f5636e08f92a94ae737a8929f7d94bea442b43",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_zrl03-18",
+   "seed": "a2-ea2866d359eeeea6",
+   "battles": 40,
+   "team": 20.333332,
+   "w1": 12.666666,
+   "w2": 7.666667,
+   "opponents": {
+    "K_zrl03": 19.666664,
+    "A_HRZ_MOV_AX_WIN": 0,
+    "A_WAN_Full_Time_Job": 0
+   },
+   "scoresSha256": "74aef22555f7649af521436af3bc4c3a56f51891f769701327663252bf50296c",
+   "telemetry": null
+  },
+  {
+   "arm": "V6nohunt",
+   "cohort": "K_zrl03-19",
+   "seed": "a2-c6b738c1614c3cf9",
+   "battles": 40,
+   "team": 22.166668,
+   "w1": 11.666667,
+   "w2": 10.5,
+   "opponents": {
+    "K_zrl03": 16.833332,
+    "A_HDS_YOY": 1,
+    "A_HRZ_Underflow": 0
+   },
+   "scoresSha256": "f7730afa5f9638497e5aa8b4f46edde451f0502737d44d1d183f194b443b5523",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_V4-0",
+   "seed": "a2-c0891c3d26c8f9f3",
+   "battles": 40,
+   "team": 23.5,
+   "w1": 9,
+   "w2": 14.5,
+   "opponents": {
+    "K_V4": 13,
+    "A_HRZ_Code_Jokers4Life": 0,
+    "A_GSA_GoonSquad": 3.5
+   },
+   "scoresSha256": "372cee78cb794d8f239250964be53dd33a52e1f8138164d60eac30954ba2ef2d",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_V4-1",
+   "seed": "a2-710f74867ed04153",
+   "battles": 40,
+   "team": 18.083332,
+   "w1": 6.75,
+   "w2": 11.333334,
+   "opponents": {
+    "K_V4": 14.916666,
+    "A_HRZ_CodeEliteGang": 0,
+    "A_BZV_SKYENT": 7.0000005
+   },
+   "scoresSha256": "0089c0256619b94562646681081d263006c07faebebbea9569315897f6a9bd1e",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_V4-2",
+   "seed": "a2-2c62d5066421c39b",
+   "battles": 40,
+   "team": 18,
+   "w1": 7.25,
+   "w2": 10.75,
+   "opponents": {
+    "K_V4": 22,
+    "A_ATL_R1DDLE": 0,
+    "A_IND_BRA": 0
+   },
+   "scoresSha256": "2cff9139df30ffa716877e965680b41151d237d0b93f62ffc63e79ed615f9247",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_V4-3",
+   "seed": "a2-115f88c934bb138e",
+   "battles": 40,
+   "team": 16.5,
+   "w1": 11.416667,
+   "w2": 5.083333,
+   "opponents": {
+    "K_V4": 19.5,
+    "A_HRZ_Ctrl_Alt_Elite": 0,
+    "A_HRZ_Thingies": 4
+   },
+   "scoresSha256": "dd0af3d7c9802ee4dadbe4f6091b7d219ab7fb0b8723b05a55c7d23eb25c30cf",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_V4-4",
+   "seed": "a2-051a8a46835cd74f",
+   "battles": 40,
+   "team": 16.5,
+   "w1": 6.166667,
+   "w2": 10.333334,
+   "opponents": {
+    "K_V4": 23.5,
+    "Y_GSA_SigmaSilent": 0,
+    "A_OST_Gamma": 0
+   },
+   "scoresSha256": "781f217b98d7b13e665091ebaf1fa34ef2ef5b58b20991388a9b43a64c5acea4",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_V4-5",
+   "seed": "a2-5771476da3662696",
+   "battles": 40,
+   "team": 14.333332,
+   "w1": 7.0000005,
+   "w2": 7.3333335,
+   "opponents": {
+    "K_V4": 21.833334,
+    "A_IND_stuxnet": 1.75,
+    "A_GSA_callfart": 2.0833333
+   },
+   "scoresSha256": "1f8101493633dfcb397d039e6207feeaf1a56f40b56408275d54046fb8b42574",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_V4-6",
+   "seed": "a2-991613896dc86d9f",
+   "battles": 40,
+   "team": 17.333332,
+   "w1": 7.5,
+   "w2": 9.833333,
+   "opponents": {
+    "K_V4": 21,
+    "A_HDS_MAC": 0,
+    "A_HRZ_L": 1.6666667
+   },
+   "scoresSha256": "31cd30ade628f02960f4f4f55f381c487e4608d063042a19cd1fd4b928d90ca6",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_V4-7",
+   "seed": "a2-0871b586c7c59a9a",
+   "battles": 40,
+   "team": 18.666666,
+   "w1": 6.8333335,
+   "w2": 11.833333,
+   "opponents": {
+    "K_V4": 21.333334,
+    "A_HRZ_TitanicSwimTeam": 0,
+    "Y_GSA_SigmaSilent": 0
+   },
+   "scoresSha256": "869fbe752b301c7aff367afaa7fa2488769791d7c1791afd46a9abf4ba4f82ab",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_V4-8",
+   "seed": "a2-06623d2ad52f6440",
+   "battles": 40,
+   "team": 21.5,
+   "w1": 6.833333,
+   "w2": 14.666667,
+   "opponents": {
+    "K_V4": 17.5,
+    "A_OHS_cgxPro": 1,
+    "A_HRZ_MOV_AX_WIN": 0
+   },
+   "scoresSha256": "3867183d99d57192571a7e624b848d0d5d558d9ce1448a93826ba292cba6e0e8",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_V4-9",
+   "seed": "a2-ec2088441244d3b6",
+   "battles": 40,
+   "team": 13.666667,
+   "w1": 3.3333335,
+   "w2": 10.333334,
+   "opponents": {
+    "K_V4": 23.333332,
+    "A_OHS_BatteringRAM": 1,
+    "A_WHS_K0F1M_AL_T1L1M": 2
+   },
+   "scoresSha256": "39d9d82ef31ce869404ec80da116cf4ac68f7d5a55518c219f137afd1cd57492",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_V4-10",
+   "seed": "a2-6922500f7eb8e40e",
+   "battles": 40,
+   "team": 20.333334,
+   "w1": 5.3333335,
+   "w2": 15,
+   "opponents": {
+    "K_V4": 18.666668,
+    "Y_SZR_The_Chargers": 0,
+    "A_OHS_TOMEX": 1
+   },
+   "scoresSha256": "8dc7fbdefbd04b77e9ac00076168829d520cc399854febdc090521780ee94fc6",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_V4-11",
+   "seed": "a2-1cfe4eda69593465",
+   "battles": 40,
+   "team": 13.166667,
+   "w1": 4.8333335,
+   "w2": 8.333334,
+   "opponents": {
+    "K_V4": 22.833332,
+    "A_TOM_BitBenders": 3,
+    "A_HRZ_Ctrl_Alt_Elite": 1
+   },
+   "scoresSha256": "1771e2a4ab0aa7065f1f199d51f07c3c2c1bc6633dc7dd767dcddb4fb1e76c6b",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_V4-12",
+   "seed": "a2-ec003b6cffd28ea9",
+   "battles": 40,
+   "team": 20.833332,
+   "w1": 7.5000005,
+   "w2": 13.333334,
+   "opponents": {
+    "K_V4": 14.499999,
+    "A_GGN_OpcodeHunter": 3.6666667,
+    "A_HRZ_Underflow": 0
+   },
+   "scoresSha256": "4d959176f88b4ebe0093036c10e59b688bede324fc0b825c9630caa1e93a013d",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_V4-13",
+   "seed": "a2-e5141dd4c9bd8564",
+   "battles": 40,
+   "team": 17.333334,
+   "w1": 9.333333,
+   "w2": 8,
+   "opponents": {
+    "K_V4": 22.666668,
+    "A_HRZ_Underflow": 0,
+    "A_ORT_Pegasus_Hex": 0
+   },
+   "scoresSha256": "456801f1a994ff6ff538ca22a6d88783cfc6950cf7d0ce3e957feb4ba8cebef3",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_V4-14",
+   "seed": "a2-3daa55dbe36c7943",
+   "battles": 40,
+   "team": 15.5,
+   "w1": 6,
+   "w2": 9.5,
+   "opponents": {
+    "K_V4": 22.5,
+    "Y_GSA_3Plate_Benchers": 1,
+    "A_HRZ_PowerRangers": 1
+   },
+   "scoresSha256": "4d014e3598d9b9be0bad850895e63ac549a6e9f8979adbce9987cea29b854f95",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_V4-15",
+   "seed": "a2-0b5ddb0fcad8f154",
+   "battles": 40,
+   "team": 17.166666,
+   "w1": 5.833333,
+   "w2": 11.333334,
+   "opponents": {
+    "K_V4": 14.833334,
+    "A_HRZ_ADDvanced": 5,
+    "A_HRZ_BinaryBandits": 3
+   },
+   "scoresSha256": "a078951d1513c19f648332e571b794bdf8117a93da5ec20ce4d7270969062e1e",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_V4-16",
+   "seed": "a2-3977490129b536c4",
+   "battles": 40,
+   "team": 13.166666,
+   "w1": 5.333334,
+   "w2": 7.8333335,
+   "opponents": {
+    "K_V4": 14.833332,
+    "A_HRZ_Grindo_Holics": 11,
+    "A_TOM_anonymous": 1
+   },
+   "scoresSha256": "bdcebb16d1d04a7e1afcadd3971108af7f3904291015720e8aa7aa5d006295c9",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_V4-17",
+   "seed": "a2-eb1e386158ba739c",
+   "battles": 40,
+   "team": 15.5,
+   "w1": 8,
+   "w2": 7.5,
+   "opponents": {
+    "K_V4": 20,
+    "Y_TOM_Code_Killer": 2.5,
+    "A_AVI_AnotherBitInTheWall": 2
+   },
+   "scoresSha256": "f56674c06f3f29e972a2f884fbebd32dc0b60f4a04d538e7b423b5d7cf2fb287",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_V4-18",
+   "seed": "a2-1ea88980fbe55494",
+   "battles": 40,
+   "team": 22.666668,
+   "w1": 5.333333,
+   "w2": 17.333332,
+   "opponents": {
+    "K_V4": 16.333332,
+    "A_HRZ_CodeEliteGang": 0,
+    "A_GSA_B33": 1
+   },
+   "scoresSha256": "bdcd5f9d1f626ac8f56ddfe0f56f203b3f23d6e7552811b4e247d9183bc09b16",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_V4-19",
+   "seed": "a2-764002ba8f2354e4",
+   "battles": 40,
+   "team": 18,
+   "w1": 8,
+   "w2": 10,
+   "opponents": {
+    "K_V4": 14.5,
+    "Y_TOM_Code_Killer": 4.5,
+    "A_OHS_BatteringRAM": 3
+   },
+   "scoresSha256": "651d838d67b11ad8758460e0dc3be4b0cd3b57e0f992ba522dfd82850af51ce6",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_V6-0",
+   "seed": "a2-1957b8d0d22d155b",
+   "battles": 40,
+   "team": 22.833332,
+   "w1": 6.5,
+   "w2": 16.333334,
+   "opponents": {
+    "K_V6": 17.166668,
+    "Y_GSA_SigmaSilent": 0,
+    "A_KOB_KosherCode": 0
+   },
+   "scoresSha256": "43c1716f55aa3486b66b3d1fb00bc286adfbde8bdcf639f6845dc811c14dc86f",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_V6-1",
+   "seed": "a2-5284f65c7c29d589",
+   "battles": 40,
+   "team": 20.5,
+   "w1": 6.5,
+   "w2": 14,
+   "opponents": {
+    "K_V6": 17.5,
+    "A_HDS_IWDIA_nachalo": 0,
+    "A_GSA_GhostBytes_0x": 2
+   },
+   "scoresSha256": "a5000474e588194ba8edc6ae34815a7330cfc15a2da5b7bb5ee3551d70a6f14e",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_V6-2",
+   "seed": "a2-6c0c7e14582cce04",
+   "battles": 40,
+   "team": 19,
+   "w1": 6,
+   "w2": 13,
+   "opponents": {
+    "K_V6": 20,
+    "A_WHS_K0F1M_AL_T1L1M": 1,
+    "A_KOB_KosherCode": 0
+   },
+   "scoresSha256": "1fca9fb53265d955f257e2733134e4d36a30aa533c722cb3d32d20ce5ac43636",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_V6-3",
+   "seed": "a2-557f1c7e6bdd7571",
+   "battles": 40,
+   "team": 21,
+   "w1": 7,
+   "w2": 14,
+   "opponents": {
+    "K_V6": 19,
+    "A_HRZ_MOV_AX_WIN": 0,
+    "A_HDS_MAC": 0
+   },
+   "scoresSha256": "9611dfcbb4e7d6c61eae010f279f0117d2b83a0fa35d80e1b64a68afa5aeb182",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_V6-4",
+   "seed": "a2-cbd6644e28bfdf3c",
+   "battles": 40,
+   "team": 21,
+   "w1": 4.3333335,
+   "w2": 16.666668,
+   "opponents": {
+    "K_V6": 19,
+    "A_HRZ_Underflow": 0,
+    "Y_TOM_Thefrogs": 0
+   },
+   "scoresSha256": "f9fb22058b6f24ad102777a847d4d06abde7c0830b91e79d13545fabf168e5ff",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_V6-5",
+   "seed": "a2-ed2179e72b45341c",
+   "battles": 40,
+   "team": 20.333332,
+   "w1": 7.3333335,
+   "w2": 13,
+   "opponents": {
+    "K_V6": 18.666668,
+    "Y_SZR_The_Chargers": 0,
+    "A_ORT_TheGoats": 0
+   },
+   "scoresSha256": "5249e9fc9abf7880facf4a448f095bb39c9d4fca55ad113c0a10d26a3dafa6b7",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_V6-6",
+   "seed": "a2-5831da5b9f288643",
+   "battles": 40,
+   "team": 18.833332,
+   "w1": 4.833333,
+   "w2": 14,
+   "opponents": {
+    "K_V6": 19.166668,
+    "A_WAN_Full_Time_Job": 1,
+    "A_HLS_EmoMutants": 1
+   },
+   "scoresSha256": "a1e8b022b7437b6fe2fea20b8ec6b170ffbe147c817fe6970089e0d8abec8e19",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_V6-7",
+   "seed": "a2-22f0af42e282ee19",
+   "battles": 40,
+   "team": 17,
+   "w1": 10,
+   "w2": 7,
+   "opponents": {
+    "K_V6": 20,
+    "Y_BGR_theGlopyGng": 0,
+    "A_OHS_BatteringRAM": 3
+   },
+   "scoresSha256": "47d2143db97eeea08bd88de9224d3b08918b52959b269f4f3a4f9cc9a37fba1e",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_V6-8",
+   "seed": "a2-8c94c5b5a6ad89ec",
+   "battles": 40,
+   "team": 21.5,
+   "w1": 2,
+   "w2": 19.5,
+   "opponents": {
+    "K_V6": 15.5,
+    "A_HRZ_CodeEliteGang": 0,
+    "A_OHS_TrojanByte": 2
+   },
+   "scoresSha256": "3f56d3f100af49b67649b14eb5ebfc4409385d1b6e603657af79b80145150897",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_V6-9",
+   "seed": "a2-64c31b26c2b31b88",
+   "battles": 40,
+   "team": 17.833334,
+   "w1": 6.8333335,
+   "w2": 11,
+   "opponents": {
+    "K_V6": 16.833332,
+    "A_HRZ_fisherEXE": 0,
+    "A_GSA_VanLavan": 5.333333
+   },
+   "scoresSha256": "1f8dcd70e5044ee942e5f46544d94ae93967642c945d0af09753b914f4d2d851",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_V6-10",
+   "seed": "a2-a305260c559d48e1",
+   "battles": 40,
+   "team": 12.833334,
+   "w1": 3.5,
+   "w2": 9.333333,
+   "opponents": {
+    "K_V6": 20.166666,
+    "A_HRZ_ADDvanced": 2,
+    "A_WHS_K0F1M_AL_T1L1M": 4
+   },
+   "scoresSha256": "d1c4f45f22127a6ad8973c6a8f8c4643b8df0b9d424e61fa5f936031f8f76c61",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_V6-11",
+   "seed": "a2-b808925608a9459e",
+   "battles": 40,
+   "team": 21.5,
+   "w1": 6,
+   "w2": 15.5,
+   "opponents": {
+    "K_V6": 16.5,
+    "A_HDS_YOY": 1,
+    "Y_ELD_FriendlyFire": 1
+   },
+   "scoresSha256": "58097212649dc65909ded80792ea751a3649d639a50b58ebeca278733f3eb420",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_V6-12",
+   "seed": "a2-df34cc8ea2f74d4f",
+   "battles": 40,
+   "team": 19,
+   "w1": 11,
+   "w2": 8,
+   "opponents": {
+    "K_V6": 14,
+    "A_TOM_2B2Team": 5,
+    "A_HRZ_TEST_ticals": 1
+   },
+   "scoresSha256": "7e3a2283c6cc66e79a91eab8882bb37626970bb6c029ee2a92668a3725ba8934",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_V6-13",
+   "seed": "a2-d143b2118ace69e8",
+   "battles": 40,
+   "team": 19.5,
+   "w1": 6,
+   "w2": 13.5,
+   "opponents": {
+    "K_V6": 15.5,
+    "A_WHS_K0F1M_AL_T1L1M": 1.5,
+    "A_HRZ_BinaryBandits": 3.5
+   },
+   "scoresSha256": "6657f59ce8289f9729683839443409ab717134315c51a23baa43d022f3396f55",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_V6-14",
+   "seed": "a2-deeb4e82858776dc",
+   "battles": 40,
+   "team": 14.999999,
+   "w1": 3.9999998,
+   "w2": 11,
+   "opponents": {
+    "K_V6": 22,
+    "A_GSA_TheBytes": 1,
+    "A_GSA_GoonSquad": 2
+   },
+   "scoresSha256": "ae24204eb93ee917d63de65a6b40e2a6698f238e530f778a4e28ca2bb007a269",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_V6-15",
+   "seed": "a2-246ac94582267447",
+   "battles": 40,
+   "team": 14.5,
+   "w1": 3.5,
+   "w2": 11,
+   "opponents": {
+    "K_V6": 21.5,
+    "A_GSA_ShmuelTurtles": 0,
+    "A_AVI_Fishandpoultry": 4
+   },
+   "scoresSha256": "5998876de38429865628634149334fe1414f18997678541f309ab8feca5679f5",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_V6-16",
+   "seed": "a2-6134045c0a2fc49a",
+   "battles": 40,
+   "team": 18,
+   "w1": 5,
+   "w2": 13,
+   "opponents": {
+    "K_V6": 20,
+    "A_HDS_IWDIA_nachalo": 0,
+    "A_HRZ_Thingies": 2
+   },
+   "scoresSha256": "f9255a0e35b155b87f46ec2ce76b310b3d835cda0e3b5c732ce45b6dd224be45",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_V6-17",
+   "seed": "a2-43e5c8481b5cb9b0",
+   "battles": 40,
+   "team": 18,
+   "w1": 5.5,
+   "w2": 12.5,
+   "opponents": {
+    "K_V6": 20,
+    "A_HRZ_Code_Jokers4Life": 2,
+    "Y_SZR_The_Chargers": 0
+   },
+   "scoresSha256": "78608abf4bf66b3df8d01080edc79643c72ed064f590b90bfb347201e6c4cd39",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_V6-18",
+   "seed": "a2-b4ef9fbd1b10330a",
+   "battles": 40,
+   "team": 24.833334,
+   "w1": 4.666667,
+   "w2": 20.166666,
+   "opponents": {
+    "K_V6": 14.166667,
+    "Y_SZR_The_Chargers": 0,
+    "A_OHS_cgxPro": 0
+   },
+   "scoresSha256": "94376e84f8bb86fd5f8eaa089e8f516eb416d1f561c7be38c954621485f5c4a5",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_V6-19",
+   "seed": "a2-7eb4531a2ab4db88",
+   "battles": 40,
+   "team": 18.5,
+   "w1": 6.5,
+   "w2": 12,
+   "opponents": {
+    "K_V6": 19.5,
+    "A_TOM_anonymous": 0,
+    "A_HRZ_PowerRangers": 2
+   },
+   "scoresSha256": "5bd32d36475015b31db680587dfc9204d7b940f769aae6e01068094f74bfa5e9",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_zchain4-0",
+   "seed": "a2-234040fbcb484cce",
+   "battles": 40,
+   "team": 21.333334,
+   "w1": 10.833333,
+   "w2": 10.5,
+   "opponents": {
+    "K_zchain4": 18.666668,
+    "A_HRZ_Pixar_Lamps": 0,
+    "A_TOM_2B2Team": 0
+   },
+   "scoresSha256": "c28aebf777ab1f396a9cc74d98e0bd9b8ffdffc78384e0def090bde9ddc6fd53",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_zchain4-1",
+   "seed": "a2-2ff926a0e3efd9d7",
+   "battles": 40,
+   "team": 28.666668,
+   "w1": 7.833333,
+   "w2": 20.833334,
+   "opponents": {
+    "K_zchain4": 10.333333,
+    "A_IND_BRA": 0,
+    "Y_SZR_BrvazimAlSteroidim": 0
+   },
+   "scoresSha256": "e31122291ba392e49483992ed7082b42322f0d4c1a049f7158b99e9487a03d0c",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_zchain4-2",
+   "seed": "a2-033a8e378ed5be31",
+   "battles": 40,
+   "team": 23,
+   "w1": 10.333334,
+   "w2": 12.666667,
+   "opponents": {
+    "K_zchain4": 17,
+    "A_GSA_GhostBytes_0x": 0,
+    "A_GSA_TheBytes": 0
+   },
+   "scoresSha256": "bed5b84dfa1004d2e571286ecb3c8ff3739826ee92e0a4a566f84304c6c97118",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_zchain4-3",
+   "seed": "a2-672a4d97a7ec3da9",
+   "battles": 40,
+   "team": 28.5,
+   "w1": 9,
+   "w2": 19.5,
+   "opponents": {
+    "K_zchain4": 11.5,
+    "A_HRZ_Registered_Winners": 0,
+    "Y_BGR_theGlopyGng": 0
+   },
+   "scoresSha256": "bd7b5d0470d834b32fb362800736ad54eb9916d3a76f869bb19595de4b158bb1",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_zchain4-4",
+   "seed": "a2-bc2311a48c7c6f56",
+   "battles": 40,
+   "team": 27.166666,
+   "w1": 10.666667,
+   "w2": 16.5,
+   "opponents": {
+    "K_zchain4": 10.833334,
+    "Y_GSA_LVS_FIT": 2,
+    "Y_TOM_The_Crushers": 0
+   },
+   "scoresSha256": "e133cd5dc1d1fac778accfb8d238b1bb82c33b0582f5e7fed31642d83685eb02",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_zchain4-5",
+   "seed": "a2-147663e5120ce924",
+   "battles": 40,
+   "team": 28.666666,
+   "w1": 7.5,
+   "w2": 21.166668,
+   "opponents": {
+    "K_zchain4": 10.333334,
+    "A_GSA_ShmuelTurtles": 0,
+    "A_OHS_cgxPro": 1
+   },
+   "scoresSha256": "939c3c531ce63b9b86117dda1508fb20638244f0d04d5515a29f06eb79aeaa52",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_zchain4-6",
+   "seed": "a2-a470d3085126a684",
+   "battles": 40,
+   "team": 20,
+   "w1": 10,
+   "w2": 9.999999,
+   "opponents": {
+    "K_zchain4": 16.333332,
+    "A_WAN_Full_Time_Job": 0,
+    "A_GSA_callfart": 3.6666667
+   },
+   "scoresSha256": "b1cb57ccecc9ff2f54975ede9ddf4cfd300a4d9933711475fbd9b01363a43c4d",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_zchain4-7",
+   "seed": "a2-b1e53df342f6cbc3",
+   "battles": 40,
+   "team": 27.66667,
+   "w1": 12.333332,
+   "w2": 15.333333,
+   "opponents": {
+    "K_zchain4": 10.333333,
+    "Y_BGR_theGlopyGng": 1,
+    "A_TOM_Syntax_Terror": 1
+   },
+   "scoresSha256": "c091750eaf61ce806066cb0d7ba89838b59a2fa62cf1a13c84359ec4295de148",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_zchain4-8",
+   "seed": "a2-734e4cee1000d813",
+   "battles": 40,
+   "team": 26.5,
+   "w1": 13.5,
+   "w2": 13,
+   "opponents": {
+    "K_zchain4": 11.5,
+    "Y_TOM_Thefrogs": 0,
+    "A_WHS_K0F1M_AL_T1L1M": 2
+   },
+   "scoresSha256": "562df433eface3e099e3a9ba06d2dca35e77c43088bd78abffec284e0a5a1726",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_zchain4-9",
+   "seed": "a2-db3e40ee0c4d1b85",
+   "battles": 40,
+   "team": 27.333334,
+   "w1": 5.5,
+   "w2": 21.833332,
+   "opponents": {
+    "K_zchain4": 12.666667,
+    "A_HRZ_CodeEliteGang": 0,
+    "A_HDS_YOY": 0
+   },
+   "scoresSha256": "78cf19eca9ac9a925a09fd3e4bfb47387350e8ce7f18e4b87dac855c7056b2c3",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_zchain4-10",
+   "seed": "a2-51813adb166029b0",
+   "battles": 40,
+   "team": 27.166666,
+   "w1": 8,
+   "w2": 19.166668,
+   "opponents": {
+    "K_zchain4": 11.833333,
+    "A_HDS_GoldenLamed": 0,
+    "A_HDS_YOY": 0
+   },
+   "scoresSha256": "caf288851e2f6f66de91dc14190e01d4c7e926904eb651be20a94b5a8351a16b",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_zchain4-11",
+   "seed": "a2-0a2eff097461f3c2",
+   "battles": 40,
+   "team": 19.499998,
+   "w1": 8.250001,
+   "w2": 11.25,
+   "opponents": {
+    "K_zchain4": 11.666667,
+    "A_GSA_VanLavan": 5.0000005,
+    "A_GSA_callfart": 3.8333333
+   },
+   "scoresSha256": "3325a1c6a9e7bf2ac814a30a8ae6bf395202000d2845f102eefb31b0d16fb5a8",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_zchain4-12",
+   "seed": "a2-16a7f17d1d96f4d6",
+   "battles": 40,
+   "team": 23.583334,
+   "w1": 9.25,
+   "w2": 14.333333,
+   "opponents": {
+    "K_zchain4": 11.75,
+    "Y_TOM_The_Crushers": 0,
+    "A_BZV_SKYENT": 3.6666665
+   },
+   "scoresSha256": "da3b69298d6ceb2bd0458438eb51fe1727482de656014e3cdf58a22400ba3f57",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_zchain4-13",
+   "seed": "a2-0421c2c659b1e530",
+   "battles": 40,
+   "team": 26.500002,
+   "w1": 11.333333,
+   "w2": 15.166666,
+   "opponents": {
+    "K_zchain4": 10.5,
+    "Y_TOM_Code_Killer": 2,
+    "A_TOM_tson_el_akod": 0
+   },
+   "scoresSha256": "a8a059b1cc8a7c4e44823845c5fd7d9494b2115263a2711d10e711b6475b28e2",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_zchain4-14",
+   "seed": "a2-122fe4e9212785b3",
+   "battles": 40,
+   "team": 32,
+   "w1": 6.5,
+   "w2": 25.5,
+   "opponents": {
+    "K_zchain4": 8,
+    "A_RZL_YANDE": 0,
+    "A_HDS_YOY": 0
+   },
+   "scoresSha256": "bb9322b5b718642d646ac4dff62d41217e7aca911c45963a9b63d5b71ec8ba25",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_zchain4-15",
+   "seed": "a2-a0e76a0974b12a2f",
+   "battles": 40,
+   "team": 5.333334,
+   "w1": 4,
+   "w2": 1.3333334,
+   "opponents": {
+    "K_zchain4": 26.16667,
+    "A_GSA_callfart": 8.5,
+    "A_TOM_2B2Team": 0
+   },
+   "scoresSha256": "1c69d1a72e5458cade2fbc3c8cc5cc089ae444b83167cd0546140a2b6d3201b2",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_zchain4-16",
+   "seed": "a2-c34f50b7d9650475",
+   "battles": 40,
+   "team": 28.833336,
+   "w1": 5.1666665,
+   "w2": 23.666666,
+   "opponents": {
+    "K_zchain4": 10.166667,
+    "A_OST_Gamma": 1,
+    "A_HDS_ATW_Solo": 0
+   },
+   "scoresSha256": "c236bdd6969a2b341e825fc426cb2ed95bffc9ed1da6c6ec3fa0fb52fecb0a99",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_zchain4-17",
+   "seed": "a2-cf75eef1603658b2",
+   "battles": 40,
+   "team": 25.166668,
+   "w1": 10.333333,
+   "w2": 14.833333,
+   "opponents": {
+    "K_zchain4": 13.833333,
+    "Y_ELD_FriendlyFire": 1,
+    "A_HRZ_Pixar_Lamps": 0
+   },
+   "scoresSha256": "41a84ef620b6d7eabe039182620b40fbf35136122d0a0c085c24f8a58a59bbcd",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_zchain4-18",
+   "seed": "a2-afb6a9b977e83c09",
+   "battles": 40,
+   "team": 19,
+   "w1": 8.5,
+   "w2": 10.5,
+   "opponents": {
+    "K_zchain4": 15.999998,
+    "A_IND_cgx123123": 3,
+    "A_GSA_B33": 2
+   },
+   "scoresSha256": "050a89bc4489d45987985605b2ac74f0fa606391ac6ea04f152132aed0214dcc",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_zchain4-19",
+   "seed": "a2-b3ee5ef883448814",
+   "battles": 40,
+   "team": 23.166668,
+   "w1": 6.0000005,
+   "w2": 17.166668,
+   "opponents": {
+    "K_zchain4": 9.999999,
+    "A_GSA_VanLavan": 5.8333335,
+    "A_GSA_ShmuelTurtles": 0
+   },
+   "scoresSha256": "a3ef9ceb990662998b52288115894eda95a4d6bb7863ac2b7bce7e03a281d538",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_zrl03-0",
+   "seed": "a2-93310bde26bdaac5",
+   "battles": 40,
+   "team": 21.833334,
+   "w1": 9.833334,
+   "w2": 12,
+   "opponents": {
+    "K_zrl03": 17.833332,
+    "Y_GSA_SigmaSilent": 0,
+    "A_HRZ_Registered_Winners": 0.33333334
+   },
+   "scoresSha256": "75b286f860a17acf2290b31702ba0c96a70d6aec2db489fcdb4003c229e3c34f",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_zrl03-1",
+   "seed": "a2-b3a22a52051e607d",
+   "battles": 40,
+   "team": 23,
+   "w1": 14,
+   "w2": 9,
+   "opponents": {
+    "K_zrl03": 17,
+    "A_HRZ_TEST_ticals": 0,
+    "A_OHS_TOMEX": 0
+   },
+   "scoresSha256": "c7c19d77ee20f3cf038bf3e5328a7f820968f3383f44d6863641b70953ec4dd6",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_zrl03-2",
+   "seed": "a2-8da26dc617886605",
+   "battles": 40,
+   "team": 25,
+   "w1": 13.5,
+   "w2": 11.5,
+   "opponents": {
+    "K_zrl03": 15,
+    "A_HRZ_Ctrl_Alt_Elite": 0,
+    "A_OST_Gamma": 0
+   },
+   "scoresSha256": "e35cbe5976557da4e16df110f35ee7b9fbd24be7b9c5126048fa35f059764266",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_zrl03-3",
+   "seed": "a2-d36a6d8010f6f1e2",
+   "battles": 40,
+   "team": 11.833332,
+   "w1": 8,
+   "w2": 3.8333333,
+   "opponents": {
+    "K_zrl03": 21.166666,
+    "A_HRZ_Grindo_Holics": 7,
+    "A_OST_Gamma": 0
+   },
+   "scoresSha256": "4486dcd865fe41a9807853c0b2bd5574a52b59a7989bf562be7b27f58ca5c02b",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_zrl03-4",
+   "seed": "a2-a5ba8f57a44389be",
+   "battles": 40,
+   "team": 21.583336,
+   "w1": 11.749999,
+   "w2": 9.833333,
+   "opponents": {
+    "K_zrl03": 15.166664,
+    "A_IND_stuxnet": 3.25,
+    "A_HRZ_CodeEliteGang": 0
+   },
+   "scoresSha256": "f74efaa858e7160f9643683c63f960734a1bc7365670f047f8fc2fc639fc4d20",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_zrl03-5",
+   "seed": "a2-424c31a240559fe2",
+   "battles": 40,
+   "team": 18,
+   "w1": 6,
+   "w2": 12,
+   "opponents": {
+    "K_zrl03": 18,
+    "Y_GSA_SigmaSilent": 0,
+    "A_WAN_Baltika9": 4
+   },
+   "scoresSha256": "1c25b161b5009c434ba7845c0dd538d40841ea4eb5557691233789aa143e41da",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_zrl03-6",
+   "seed": "a2-148932581b79ce1d",
+   "battles": 40,
+   "team": 16.5,
+   "w1": 9.5,
+   "w2": 7,
+   "opponents": {
+    "K_zrl03": 22.5,
+    "A_AVI_Fishandpoultry": 1,
+    "A_OHS_cgxPro": 0
+   },
+   "scoresSha256": "4234f0027f2ae7b5a62d16ab156497d9dec2e7f3fb1a82b6b888fbebb21bea61",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_zrl03-7",
+   "seed": "a2-c25015a7492e638b",
+   "battles": 40,
+   "team": 23.666668,
+   "w1": 10.833333,
+   "w2": 12.833333,
+   "opponents": {
+    "K_zrl03": 13.333334,
+    "A_HRZ_CodeEliteGang": 1,
+    "A_OHS_TOMEX": 2
+   },
+   "scoresSha256": "e91f74157f902c1794052ea3d792cee9306706e0c0cfaa6a9945dc66eddb6e77",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_zrl03-8",
+   "seed": "a2-515642b5c4e2c4eb",
+   "battles": 40,
+   "team": 18.833332,
+   "w1": 10.5,
+   "w2": 8.333334,
+   "opponents": {
+    "K_zrl03": 21.166666,
+    "A_HRZ_MOV_AX_WIN": 0,
+    "A_ORT_Pegasus_Hex": 0
+   },
+   "scoresSha256": "d077c55e84575c1803fa125fae805bcfc05a462ec5ed4a6f63b3c2d147b19560",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_zrl03-9",
+   "seed": "a2-7d5df8a9b0634366",
+   "battles": 40,
+   "team": 19.5,
+   "w1": 8,
+   "w2": 11.5,
+   "opponents": {
+    "K_zrl03": 11.333333,
+    "A_GSA_GoonSquad": 9.166667,
+    "A_HRZ_InCtrl": 0
+   },
+   "scoresSha256": "95cac48f0fb78cea98f9b5087a8aa64c602c071c6526a2f99e74137b12acd9f7",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_zrl03-10",
+   "seed": "a2-9dbf7d4245ff4756",
+   "battles": 40,
+   "team": 22,
+   "w1": 13,
+   "w2": 9,
+   "opponents": {
+    "K_zrl03": 17,
+    "A_HDS_NRI": 0,
+    "A_HLS_EmoMutants": 1
+   },
+   "scoresSha256": "ca57cb2e5948d41f2664d5c970e9c3a61604b66da6f14b6ddc381636a970f7e8",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_zrl03-11",
+   "seed": "a2-2e20fa373a780450",
+   "battles": 40,
+   "team": 24.5,
+   "w1": 12.5,
+   "w2": 12,
+   "opponents": {
+    "K_zrl03": 10.666667,
+    "A_OHS_TOMEX": 0,
+    "A_IND_stuxnet": 4.8333335
+   },
+   "scoresSha256": "ab7da0146524518c31af1747e2fa3b1373caee135ec9067fcfb34903b13f7443",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_zrl03-12",
+   "seed": "a2-5fd5cf344f4b7317",
+   "battles": 40,
+   "team": 22.333334,
+   "w1": 12.833334,
+   "w2": 9.5,
+   "opponents": {
+    "K_zrl03": 15.416667,
+    "A_BZV_SKYENT": 2.25,
+    "A_HRZ_stack_attack": 0
+   },
+   "scoresSha256": "4c3dc34095a27024da501d864fc3ce236203633eccdb4aec9e8332ed7ff30005",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_zrl03-13",
+   "seed": "a2-4e2a6e48e9dbb65f",
+   "battles": 40,
+   "team": 23.166666,
+   "w1": 11.333333,
+   "w2": 11.833334,
+   "opponents": {
+    "K_zrl03": 13.333333,
+    "A_IND_stuxnet": 3.5,
+    "A_WAN_OnlyCode": 0
+   },
+   "scoresSha256": "3f9d2f483f28ae9f535f55188d77b0915e5a5806bc32a24c14dd4d8ca4eed2c3",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_zrl03-14",
+   "seed": "a2-cd5f2d5d57b0ff20",
+   "battles": 40,
+   "team": 18,
+   "w1": 11.5,
+   "w2": 6.5,
+   "opponents": {
+    "K_zrl03": 19,
+    "A_HRZ_ADDvanced": 1,
+    "A_AVI_Fishandpoultry": 2
+   },
+   "scoresSha256": "d7182e0c67b7c8bf2ba88dc0b407e03b5c4b65a936880a9e960cb9490415e324",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_zrl03-15",
+   "seed": "a2-f6e67b6999ef2268",
+   "battles": 40,
+   "team": 18,
+   "w1": 11.249999,
+   "w2": 6.75,
+   "opponents": {
+    "K_zrl03": 18.833332,
+    "A_GSA_callfart": 1.5,
+    "A_IND_stuxnet": 1.6666667
+   },
+   "scoresSha256": "7ed3e81246270595c5f9b930cb9dc6e5a5c41789a1eb3e59012dae4f5bdfc08f",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_zrl03-16",
+   "seed": "a2-83513b263398d86a",
+   "battles": 40,
+   "team": 19,
+   "w1": 13,
+   "w2": 6,
+   "opponents": {
+    "K_zrl03": 21,
+    "A_TOM_anonymous": 0,
+    "A_TOM_2B2Team": 0
+   },
+   "scoresSha256": "0b50bf91ebdb3ba35733c4c602faefa2a86d04b723215256a69b3640a33b12e3",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_zrl03-17",
+   "seed": "a2-7c14223669b861a9",
+   "battles": 40,
+   "team": 20.833334,
+   "w1": 8.333334,
+   "w2": 12.5,
+   "opponents": {
+    "K_zrl03": 19.166668,
+    "A_TOM_anonymous": 0,
+    "A_WAN_Full_Time_Job": 0
+   },
+   "scoresSha256": "e22969299b83c03e9e840b22b6480ad78f196ec83a7c6052afa27e2141237f9c",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_zrl03-18",
+   "seed": "a2-ea2866d359eeeea6",
+   "battles": 40,
+   "team": 20.333332,
+   "w1": 13,
+   "w2": 7.3333335,
+   "opponents": {
+    "K_zrl03": 19.666666,
+    "A_HRZ_MOV_AX_WIN": 0,
+    "A_WAN_Full_Time_Job": 0
+   },
+   "scoresSha256": "b3fca533efb41b339033ebfe91ba1d3da5f49cbe211afdebe107d1eb1d19b188",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V6",
+   "cohort": "K_zrl03-19",
+   "seed": "a2-c6b738c1614c3cf9",
+   "battles": 40,
+   "team": 22.166668,
+   "w1": 12.166667,
+   "w2": 10,
+   "opponents": {
+    "K_zrl03": 15.833333,
+    "A_HDS_YOY": 2,
+    "A_HRZ_Underflow": 0
+   },
+   "scoresSha256": "418538e9dc40b0da4c6846e801a8d3ffee2e1d22c7356435c9d98fef764898bd",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_V4-0",
+   "seed": "a2-c0891c3d26c8f9f3",
+   "battles": 40,
+   "team": 17.666664,
+   "w1": 6.7500005,
+   "w2": 10.916667,
+   "opponents": {
+    "K_V4": 19,
+    "A_HRZ_Code_Jokers4Life": 0,
+    "A_GSA_GoonSquad": 3.3333335
+   },
+   "scoresSha256": "ee9d8d1b19083ce3bff76e5746b7931f69c53868f6fc5598c5063a54a60760ff",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_V4-1",
+   "seed": "a2-710f74867ed04153",
+   "battles": 40,
+   "team": 15.083332,
+   "w1": 3.5833333,
+   "w2": 11.499999,
+   "opponents": {
+    "K_V4": 15.416666,
+    "A_HRZ_CodeEliteGang": 0,
+    "A_BZV_SKYENT": 9.499999
+   },
+   "scoresSha256": "cd0acf5eec2972fa7a896673bc5dd240726229292d146fcc50efec15fd370f7f",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_V4-2",
+   "seed": "a2-2c62d5066421c39b",
+   "battles": 40,
+   "team": 19.833336,
+   "w1": 8,
+   "w2": 11.833333,
+   "opponents": {
+    "K_V4": 20.166668,
+    "A_ATL_R1DDLE": 0,
+    "A_IND_BRA": 0
+   },
+   "scoresSha256": "f4faadcccf96cd0e2af4b6d4f264e321bdc33be98179d901e024c06b21156b8e",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_V4-3",
+   "seed": "a2-115f88c934bb138e",
+   "battles": 40,
+   "team": 18.666668,
+   "w1": 7.8333335,
+   "w2": 10.833333,
+   "opponents": {
+    "K_V4": 16.333332,
+    "A_HRZ_Ctrl_Alt_Elite": 0,
+    "A_HRZ_Thingies": 4
+   },
+   "scoresSha256": "2195ac2b270a1af18277473c77027b3977b931579604f3f406d8330980de1c04",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_V4-4",
+   "seed": "a2-051a8a46835cd74f",
+   "battles": 40,
+   "team": 20.333332,
+   "w1": 7.3333335,
+   "w2": 13,
+   "opponents": {
+    "K_V4": 18.666668,
+    "Y_GSA_SigmaSilent": 0,
+    "A_OST_Gamma": 1
+   },
+   "scoresSha256": "35624cb52fa0906696e75708c3bb6a817fa30995de6f727450853babc4da079d",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_V4-5",
+   "seed": "a2-5771476da3662696",
+   "battles": 40,
+   "team": 19.5,
+   "w1": 5,
+   "w2": 14.5,
+   "opponents": {
+    "K_V4": 13.416666,
+    "A_IND_stuxnet": 0.33333334,
+    "A_GSA_callfart": 6.7500005
+   },
+   "scoresSha256": "186dfa71ed521a2a0e3d0797e207615cfce8584415f781d06d83b0374594e9bd",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_V4-6",
+   "seed": "a2-991613896dc86d9f",
+   "battles": 40,
+   "team": 21.166666,
+   "w1": 6.166667,
+   "w2": 14.999999,
+   "opponents": {
+    "K_V4": 17.833334,
+    "A_HDS_MAC": 0,
+    "A_HRZ_L": 1
+   },
+   "scoresSha256": "24ffb07a3c2ee1fc32b039089b18ab57507f691b636c4b3bc9d187410cac955c",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_V4-7",
+   "seed": "a2-0871b586c7c59a9a",
+   "battles": 40,
+   "team": 19.833332,
+   "w1": 4.166667,
+   "w2": 15.666667,
+   "opponents": {
+    "K_V4": 20.166666,
+    "A_HRZ_TitanicSwimTeam": 0,
+    "Y_GSA_SigmaSilent": 0
+   },
+   "scoresSha256": "16fb2185cfb4ad98f085c714df35435347c2fca5fb3321f75754530ac0822de6",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_V4-8",
+   "seed": "a2-06623d2ad52f6440",
+   "battles": 40,
+   "team": 18.5,
+   "w1": 7.8333335,
+   "w2": 10.666667,
+   "opponents": {
+    "K_V4": 20.500002,
+    "A_OHS_cgxPro": 1,
+    "A_HRZ_MOV_AX_WIN": 0
+   },
+   "scoresSha256": "ff4f05f742c42ef9a1fbb175235ff16fb547871f4843c784dd1c89a0bf9de057",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_V4-9",
+   "seed": "a2-ec2088441244d3b6",
+   "battles": 40,
+   "team": 13.499999,
+   "w1": 1.3333334,
+   "w2": 12.166667,
+   "opponents": {
+    "K_V4": 19.5,
+    "A_OHS_BatteringRAM": 1,
+    "A_WHS_K0F1M_AL_T1L1M": 5
+   },
+   "scoresSha256": "6babaf57a617fbdd1586b9b945038fe5ed8b66400c0db6be9900a3e79a5e7797",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_V4-10",
+   "seed": "a2-6922500f7eb8e40e",
+   "battles": 40,
+   "team": 18,
+   "w1": 2.8333335,
+   "w2": 15.166667,
+   "opponents": {
+    "K_V4": 20,
+    "Y_SZR_The_Chargers": 0,
+    "A_OHS_TOMEX": 2
+   },
+   "scoresSha256": "a6516bb325c9d224ab84301c9d791b03ff83b6fec50344667dc28cff3b4490bd",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_V4-11",
+   "seed": "a2-1cfe4eda69593465",
+   "battles": 40,
+   "team": 18.666666,
+   "w1": 4.8333335,
+   "w2": 13.833333,
+   "opponents": {
+    "K_V4": 17.333332,
+    "A_TOM_BitBenders": 4,
+    "A_HRZ_Ctrl_Alt_Elite": 0
+   },
+   "scoresSha256": "8c2728896e4a4e84adc8c2b27f28ddbfc7ac3767a984c22bda5127f54d3fd59b",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_V4-12",
+   "seed": "a2-ec003b6cffd28ea9",
+   "battles": 40,
+   "team": 15.666666,
+   "w1": 6.6666675,
+   "w2": 9,
+   "opponents": {
+    "K_V4": 14.666665,
+    "A_GGN_OpcodeHunter": 8.666667,
+    "A_HRZ_Underflow": 0
+   },
+   "scoresSha256": "ffe3ee665c907984b50084a9c043b0c063bd2fcfe7dbcf79f56b71ce647fde4d",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_V4-13",
+   "seed": "a2-e5141dd4c9bd8564",
+   "battles": 40,
+   "team": 21.833334,
+   "w1": 7.3333335,
+   "w2": 14.5,
+   "opponents": {
+    "K_V4": 17.166668,
+    "A_HRZ_Underflow": 1,
+    "A_ORT_Pegasus_Hex": 0
+   },
+   "scoresSha256": "704c7a37b29426a76a4e0b82bc3571bf128369ddca26f95832d0f3a1ccc9c5eb",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_V4-14",
+   "seed": "a2-3daa55dbe36c7943",
+   "battles": 40,
+   "team": 16.833332,
+   "w1": 4.75,
+   "w2": 12.083334,
+   "opponents": {
+    "K_V4": 18.166666,
+    "Y_GSA_3Plate_Benchers": 2,
+    "A_HRZ_PowerRangers": 2
+   },
+   "scoresSha256": "f8eb567413f9d69798e2c04f55b4f1571518438313375b469def0ef3b7578092",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_V4-15",
+   "seed": "a2-0b5ddb0fcad8f154",
+   "battles": 40,
+   "team": 16.666668,
+   "w1": 5.333333,
+   "w2": 11.333334,
+   "opponents": {
+    "K_V4": 13.333333,
+    "A_HRZ_ADDvanced": 4,
+    "A_HRZ_BinaryBandits": 6
+   },
+   "scoresSha256": "1bd05f8c69d59050c26abd00cb5a1b3d185d9a49e140b0dec66d2e1bf97287bd",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_V4-16",
+   "seed": "a2-3977490129b536c4",
+   "battles": 40,
+   "team": 14.833333,
+   "w1": 6.1666665,
+   "w2": 8.666667,
+   "opponents": {
+    "K_V4": 16.166666,
+    "A_HRZ_Grindo_Holics": 9,
+    "A_TOM_anonymous": 0
+   },
+   "scoresSha256": "378f7fc25140fedf5baba66ac218de4b8b29af560ca5802e7547dc5fe378c183",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_V4-17",
+   "seed": "a2-eb1e386158ba739c",
+   "battles": 40,
+   "team": 14.833334,
+   "w1": 6.333333,
+   "w2": 8.5,
+   "opponents": {
+    "K_V4": 21.833332,
+    "Y_TOM_Code_Killer": 2.3333335,
+    "A_AVI_AnotherBitInTheWall": 1
+   },
+   "scoresSha256": "7a1d5422aabee0bc2998cbbea2c58e7f3a3ae42c7cf88e9bb186646e34b40404",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_V4-18",
+   "seed": "a2-1ea88980fbe55494",
+   "battles": 40,
+   "team": 17.5,
+   "w1": 7.5,
+   "w2": 10,
+   "opponents": {
+    "K_V4": 18.5,
+    "A_HRZ_CodeEliteGang": 1,
+    "A_GSA_B33": 2
+   },
+   "scoresSha256": "fdbd3cae5048b49a15e97251b07c570990cc500ef6b94a77e1cd39b2ba413ffa",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_V4-19",
+   "seed": "a2-764002ba8f2354e4",
+   "battles": 40,
+   "team": 16.333334,
+   "w1": 7,
+   "w2": 9.333333,
+   "opponents": {
+    "K_V4": 16.166668,
+    "Y_TOM_Code_Killer": 4.5,
+    "A_OHS_BatteringRAM": 3
+   },
+   "scoresSha256": "2acae0479cb9fcbb137da286f4c2f2e1bea5bf1b156551e2f49a6f6b1bb3e026",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_V6-0",
+   "seed": "a2-1957b8d0d22d155b",
+   "battles": 40,
+   "team": 18.166668,
+   "w1": 6.5000005,
+   "w2": 11.666667,
+   "opponents": {
+    "K_V6": 21.833334,
+    "Y_GSA_SigmaSilent": 0,
+    "A_KOB_KosherCode": 0
+   },
+   "scoresSha256": "f922a84cfd9fe445e2e47e487bcc70fbc2ae1d41a73d988448d92b60c96319af",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_V6-1",
+   "seed": "a2-5284f65c7c29d589",
+   "battles": 40,
+   "team": 20,
+   "w1": 7,
+   "w2": 13,
+   "opponents": {
+    "K_V6": 16,
+    "A_HDS_IWDIA_nachalo": 0,
+    "A_GSA_GhostBytes_0x": 3
+   },
+   "scoresSha256": "3e959a043d453a1746b736e9d59e14cceec645611cf263ee569131f84b348fbe",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_V6-2",
+   "seed": "a2-6c0c7e14582cce04",
+   "battles": 40,
+   "team": 18.666666,
+   "w1": 7.8333335,
+   "w2": 10.833334,
+   "opponents": {
+    "K_V6": 19.333332,
+    "A_WHS_K0F1M_AL_T1L1M": 2,
+    "A_KOB_KosherCode": 0
+   },
+   "scoresSha256": "94d2a64991ff8bc708c17f8c2621c2d56c4c3c3582e1ac281095638a0f68deaf",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_V6-3",
+   "seed": "a2-557f1c7e6bdd7571",
+   "battles": 40,
+   "team": 16,
+   "w1": 9.583334,
+   "w2": 6.416667,
+   "opponents": {
+    "K_V6": 24,
+    "A_HRZ_MOV_AX_WIN": 0,
+    "A_HDS_MAC": 0
+   },
+   "scoresSha256": "a32d05729eee4186a970f9f8c242f4368c111b2b84231744cd295ce801af1e47",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_V6-4",
+   "seed": "a2-cbd6644e28bfdf3c",
+   "battles": 40,
+   "team": 17.666666,
+   "w1": 6.166667,
+   "w2": 11.5,
+   "opponents": {
+    "K_V6": 22.333332,
+    "A_HRZ_Underflow": 0,
+    "Y_TOM_Thefrogs": 0
+   },
+   "scoresSha256": "408f4adb343034fb9217fb552752a98ec2348d029ca3f9b02e15142c350aa8b8",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_V6-5",
+   "seed": "a2-ed2179e72b45341c",
+   "battles": 40,
+   "team": 23.333336,
+   "w1": 10.833334,
+   "w2": 12.5,
+   "opponents": {
+    "K_V6": 15.666666,
+    "Y_SZR_The_Chargers": 0,
+    "A_ORT_TheGoats": 0
+   },
+   "scoresSha256": "5d5aed4d1e662b238b7da787a8500a808ed4333b8fb4d0a3c0d3f6bffa861379",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_V6-6",
+   "seed": "a2-5831da5b9f288643",
+   "battles": 40,
+   "team": 18.333332,
+   "w1": 5.3333335,
+   "w2": 13,
+   "opponents": {
+    "K_V6": 20.666668,
+    "A_WAN_Full_Time_Job": 0,
+    "A_HLS_EmoMutants": 1
+   },
+   "scoresSha256": "cd4af141adf7c042777ee6f2717e5da349669af072bc988d47f5086142a49602",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_V6-7",
+   "seed": "a2-22f0af42e282ee19",
+   "battles": 40,
+   "team": 19.166666,
+   "w1": 9.833334,
+   "w2": 9.333334,
+   "opponents": {
+    "K_V6": 18.833332,
+    "Y_BGR_theGlopyGng": 0,
+    "A_OHS_BatteringRAM": 2
+   },
+   "scoresSha256": "1f48ed176806d70042e7f2410f3978fc4db8226f42ebf66fdd48b093d6771449",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_V6-8",
+   "seed": "a2-8c94c5b5a6ad89ec",
+   "battles": 40,
+   "team": 18.833334,
+   "w1": 4.416667,
+   "w2": 14.416666,
+   "opponents": {
+    "K_V6": 14.166666,
+    "A_HRZ_CodeEliteGang": 1,
+    "A_OHS_TrojanByte": 6
+   },
+   "scoresSha256": "b83adc6d1e290472db097aaf6bded80a5539518fd186e65106c4c3752d8555a9",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_V6-9",
+   "seed": "a2-64c31b26c2b31b88",
+   "battles": 40,
+   "team": 18.75,
+   "w1": 6.9166665,
+   "w2": 11.833334,
+   "opponents": {
+    "K_V6": 14.25,
+    "A_HRZ_fisherEXE": 0,
+    "A_GSA_VanLavan": 6
+   },
+   "scoresSha256": "60f8b3cd920222749b9343c5ad35d827b10b43bad72f39ca2e7b5bad6587d5aa",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_V6-10",
+   "seed": "a2-a305260c559d48e1",
+   "battles": 40,
+   "team": 15.333333,
+   "w1": 6.333333,
+   "w2": 9,
+   "opponents": {
+    "K_V6": 21.666666,
+    "A_HRZ_ADDvanced": 1,
+    "A_WHS_K0F1M_AL_T1L1M": 2
+   },
+   "scoresSha256": "56c19918da934a10fd7ebac00c67d017499b7915a5a4548c8d67193114a3daa0",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_V6-11",
+   "seed": "a2-b808925608a9459e",
+   "battles": 40,
+   "team": 20.166668,
+   "w1": 6.8333335,
+   "w2": 13.333333,
+   "opponents": {
+    "K_V6": 19.833334,
+    "A_HDS_YOY": 0,
+    "Y_ELD_FriendlyFire": 0
+   },
+   "scoresSha256": "597e1e804a954dd271bd9877798c7ea81dcc3db8d82e7d3b3ed10979a562f46b",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_V6-12",
+   "seed": "a2-df34cc8ea2f74d4f",
+   "battles": 40,
+   "team": 22,
+   "w1": 12.5,
+   "w2": 9.5,
+   "opponents": {
+    "K_V6": 14,
+    "A_TOM_2B2Team": 3,
+    "A_HRZ_TEST_ticals": 0
+   },
+   "scoresSha256": "2a399908ec51dc3fb51018340829a5e953e8dbe7c498d673029bc22736d695f5",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_V6-13",
+   "seed": "a2-d143b2118ace69e8",
+   "battles": 40,
+   "team": 14.333334,
+   "w1": 5,
+   "w2": 9.333334,
+   "opponents": {
+    "K_V6": 19.666668,
+    "A_WHS_K0F1M_AL_T1L1M": 2.5,
+    "A_HRZ_BinaryBandits": 3.5
+   },
+   "scoresSha256": "099d85fa4f2c805bd095041478a39d4f257cd32c4fa416a5260ae941f54dfc59",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_V6-14",
+   "seed": "a2-deeb4e82858776dc",
+   "battles": 40,
+   "team": 16.166666,
+   "w1": 2.9166667,
+   "w2": 13.25,
+   "opponents": {
+    "K_V6": 22.666668,
+    "A_GSA_TheBytes": 0,
+    "A_GSA_GoonSquad": 1.1666667
+   },
+   "scoresSha256": "fdb77b15f18010c28ec656c1e7b4751b3c07ca0b08eef8fbc3eda960c7d2fd60",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_V6-15",
+   "seed": "a2-246ac94582267447",
+   "battles": 40,
+   "team": 18.5,
+   "w1": 5.5,
+   "w2": 13,
+   "opponents": {
+    "K_V6": 20.5,
+    "A_GSA_ShmuelTurtles": 0,
+    "A_AVI_Fishandpoultry": 1
+   },
+   "scoresSha256": "8240e8f3683ac08610ae6c88792c040a05da4b04d8bc73ff745a156610c95ee1",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_V6-16",
+   "seed": "a2-6134045c0a2fc49a",
+   "battles": 40,
+   "team": 20.5,
+   "w1": 3,
+   "w2": 17.5,
+   "opponents": {
+    "K_V6": 16.5,
+    "A_HDS_IWDIA_nachalo": 0,
+    "A_HRZ_Thingies": 3
+   },
+   "scoresSha256": "933ffb89e78ea7f4be74213b985ed1d946dc10e03942db89b923fdf451cfd3ec",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_V6-17",
+   "seed": "a2-43e5c8481b5cb9b0",
+   "battles": 40,
+   "team": 16.333332,
+   "w1": 6,
+   "w2": 10.333334,
+   "opponents": {
+    "K_V6": 21.666666,
+    "A_HRZ_Code_Jokers4Life": 1,
+    "Y_SZR_The_Chargers": 0
+   },
+   "scoresSha256": "1dec4654566158e9ac474b2885255795dbb8e989e15d940419892e18586c25c9",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_V6-18",
+   "seed": "a2-b4ef9fbd1b10330a",
+   "battles": 40,
+   "team": 19,
+   "w1": 5.333333,
+   "w2": 13.666666,
+   "opponents": {
+    "K_V6": 21,
+    "Y_SZR_The_Chargers": 0,
+    "A_OHS_cgxPro": 0
+   },
+   "scoresSha256": "5c7ee8657704b370758e5e5c06e0de933aa0398af46a14e14dc4de9d48b3e14e",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_V6-19",
+   "seed": "a2-7eb4531a2ab4db88",
+   "battles": 40,
+   "team": 19.333332,
+   "w1": 6.666667,
+   "w2": 12.666666,
+   "opponents": {
+    "K_V6": 19.666668,
+    "A_TOM_anonymous": 0,
+    "A_HRZ_PowerRangers": 1
+   },
+   "scoresSha256": "003a914a6bfea22f4518f19bacc00e4dbf938ee23aeb630a465d439e184ba17d",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_zchain4-0",
+   "seed": "a2-234040fbcb484cce",
+   "battles": 40,
+   "team": 20.333332,
+   "w1": 8,
+   "w2": 12.333333,
+   "opponents": {
+    "K_zchain4": 19.66667,
+    "A_HRZ_Pixar_Lamps": 0,
+    "A_TOM_2B2Team": 0
+   },
+   "scoresSha256": "1ee5af1a11249ab43b4980010d5eeaecbc4fe95f516d8820a180424faf60df2a",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_zchain4-1",
+   "seed": "a2-2ff926a0e3efd9d7",
+   "battles": 40,
+   "team": 29.166666,
+   "w1": 8.75,
+   "w2": 20.416666,
+   "opponents": {
+    "K_zchain4": 10.833333,
+    "A_IND_BRA": 0,
+    "Y_SZR_BrvazimAlSteroidim": 0
+   },
+   "scoresSha256": "b2f812093a4f7f33c432663a71f6cd42efdaf84cfacd7d9fccd9dd583d6c92bc",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_zchain4-2",
+   "seed": "a2-033a8e378ed5be31",
+   "battles": 40,
+   "team": 27.833336,
+   "w1": 8.333334,
+   "w2": 19.500002,
+   "opponents": {
+    "K_zchain4": 10.166666,
+    "A_GSA_GhostBytes_0x": 2,
+    "A_GSA_TheBytes": 0
+   },
+   "scoresSha256": "27547f04e7fe0fb36729d8aa973546d9650778f181ddf0f2b213a10b59ab5119",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_zchain4-3",
+   "seed": "a2-672a4d97a7ec3da9",
+   "battles": 40,
+   "team": 29.000002,
+   "w1": 11.5,
+   "w2": 17.500002,
+   "opponents": {
+    "K_zchain4": 11,
+    "A_HRZ_Registered_Winners": 0,
+    "Y_BGR_theGlopyGng": 0
+   },
+   "scoresSha256": "1371ba3734434867f6ff0dee9035c7aef3d79c9200f5a25d82cc57a7d1fad011",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_zchain4-4",
+   "seed": "a2-bc2311a48c7c6f56",
+   "battles": 40,
+   "team": 26,
+   "w1": 10.666666,
+   "w2": 15.333333,
+   "opponents": {
+    "K_zchain4": 14,
+    "Y_GSA_LVS_FIT": 0,
+    "Y_TOM_The_Crushers": 0
+   },
+   "scoresSha256": "85d3ffe1f0a79d193cd6ecf6525c1195a8aac6b0428f308d558f96e7724851eb",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_zchain4-5",
+   "seed": "a2-147663e5120ce924",
+   "battles": 40,
+   "team": 29.666668,
+   "w1": 7.8333335,
+   "w2": 21.833334,
+   "opponents": {
+    "K_zchain4": 9.333333,
+    "A_GSA_ShmuelTurtles": 1,
+    "A_OHS_cgxPro": 0
+   },
+   "scoresSha256": "810680d8465a787f0fb57f3b04d2ef20ef0e9e7f431c24b58675b17ed4a02c87",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_zchain4-6",
+   "seed": "a2-a470d3085126a684",
+   "battles": 40,
+   "team": 21.5,
+   "w1": 10.5,
+   "w2": 11,
+   "opponents": {
+    "K_zchain4": 11.666667,
+    "A_WAN_Full_Time_Job": 0,
+    "A_GSA_callfart": 6.833334
+   },
+   "scoresSha256": "d1cda46249fa5c2262fed0378959be31733bf0fe68da1207433473072682cf10",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_zchain4-7",
+   "seed": "a2-b1e53df342f6cbc3",
+   "battles": 40,
+   "team": 23.500002,
+   "w1": 11.166667,
+   "w2": 12.333333,
+   "opponents": {
+    "K_zchain4": 15.499999,
+    "Y_BGR_theGlopyGng": 0,
+    "A_TOM_Syntax_Terror": 1
+   },
+   "scoresSha256": "02a77023d2698304974647ff695447ab45fecf0a611a572cdd493ab575567023",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_zchain4-8",
+   "seed": "a2-734e4cee1000d813",
+   "battles": 40,
+   "team": 23.500002,
+   "w1": 9.166667,
+   "w2": 14.333333,
+   "opponents": {
+    "K_zchain4": 12.499999,
+    "Y_TOM_Thefrogs": 1,
+    "A_WHS_K0F1M_AL_T1L1M": 3
+   },
+   "scoresSha256": "f0f82464dda503a39dfede0142b82e6a0287cb241d55c2d04c92148e79821ea7",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_zchain4-9",
+   "seed": "a2-db3e40ee0c4d1b85",
+   "battles": 40,
+   "team": 30.333332,
+   "w1": 7.333333,
+   "w2": 23,
+   "opponents": {
+    "K_zchain4": 8.666667,
+    "A_HRZ_CodeEliteGang": 0,
+    "A_HDS_YOY": 0
+   },
+   "scoresSha256": "a866b8507b6dce16f9fd84eec57bdad1e3ff7d5ab971aac6bbef1de515e6ac9c",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_zchain4-10",
+   "seed": "a2-51813adb166029b0",
+   "battles": 40,
+   "team": 28.500002,
+   "w1": 6,
+   "w2": 22.5,
+   "opponents": {
+    "K_zchain4": 10.5,
+    "A_HDS_GoldenLamed": 0,
+    "A_HDS_YOY": 1
+   },
+   "scoresSha256": "dcd1cf803054d632509d8547b4cf763f9c28cc4171ca9f5234bfc977f5185ce8",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_zchain4-11",
+   "seed": "a2-0a2eff097461f3c2",
+   "battles": 40,
+   "team": 22.166668,
+   "w1": 6.666667,
+   "w2": 15.499999,
+   "opponents": {
+    "K_zchain4": 10,
+    "A_GSA_VanLavan": 3.1666665,
+    "A_GSA_callfart": 4.666667
+   },
+   "scoresSha256": "b48d72620188f5f37e5bfe1041924c551b986c1da3af7bb23d1a76076370d332",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_zchain4-12",
+   "seed": "a2-16a7f17d1d96f4d6",
+   "battles": 40,
+   "team": 17.5,
+   "w1": 6.916667,
+   "w2": 10.583333,
+   "opponents": {
+    "K_zchain4": 6.166667,
+    "Y_TOM_The_Crushers": 0,
+    "A_BZV_SKYENT": 16.333332
+   },
+   "scoresSha256": "dba686b50fd9db14b0e5e3b6dc5e7c36d9d2244137a0477cbc8a1ac64ca203af",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_zchain4-13",
+   "seed": "a2-0421c2c659b1e530",
+   "battles": 40,
+   "team": 25.833334,
+   "w1": 7.8333335,
+   "w2": 18,
+   "opponents": {
+    "K_zchain4": 8.166667,
+    "Y_TOM_Code_Killer": 6,
+    "A_TOM_tson_el_akod": 0
+   },
+   "scoresSha256": "e6d76c7a12daa9657d015282ff2d86872d5aa7d5c951b7097a6d493d830b66d1",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_zchain4-14",
+   "seed": "a2-122fe4e9212785b3",
+   "battles": 40,
+   "team": 29.16667,
+   "w1": 10.083333,
+   "w2": 19.083334,
+   "opponents": {
+    "K_zchain4": 10.833333,
+    "A_RZL_YANDE": 0,
+    "A_HDS_YOY": 0
+   },
+   "scoresSha256": "c9384a5b06de93229f2969401b8aebe5b09c9372959c1a79202e103c1e24a6f7",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_zchain4-15",
+   "seed": "a2-a0e76a0974b12a2f",
+   "battles": 40,
+   "team": 5.833334,
+   "w1": 3,
+   "w2": 2.8333335,
+   "opponents": {
+    "K_zchain4": 23.500002,
+    "A_GSA_callfart": 10.666667,
+    "A_TOM_2B2Team": 0
+   },
+   "scoresSha256": "3667116829c6625758e611b5c6bc5debf28464fc00b69373f6ffd7e5a7c84823",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_zchain4-16",
+   "seed": "a2-c34f50b7d9650475",
+   "battles": 40,
+   "team": 29,
+   "w1": 8.5,
+   "w2": 20.5,
+   "opponents": {
+    "K_zchain4": 9,
+    "A_OST_Gamma": 0,
+    "A_HDS_ATW_Solo": 1
+   },
+   "scoresSha256": "5a029ff8f5ce9a0493c3e21f16b3d63cd5b4b59b43aade928e8229f6cbbcb570",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_zchain4-17",
+   "seed": "a2-cf75eef1603658b2",
+   "battles": 40,
+   "team": 27.333336,
+   "w1": 9,
+   "w2": 18.333332,
+   "opponents": {
+    "K_zchain4": 11.666667,
+    "Y_ELD_FriendlyFire": 0,
+    "A_HRZ_Pixar_Lamps": 0
+   },
+   "scoresSha256": "d050c13987651283d7f037a8de4298b606cbb2fe6b1b7b1b0b7812b6fb8c3f91",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_zchain4-18",
+   "seed": "a2-afb6a9b977e83c09",
+   "battles": 40,
+   "team": 18.333334,
+   "w1": 11,
+   "w2": 7.3333335,
+   "opponents": {
+    "K_zchain4": 13.666667,
+    "A_IND_cgx123123": 6,
+    "A_GSA_B33": 2
+   },
+   "scoresSha256": "fb1454b86df61611c0fef73f4ab295b1f56f06e1bfc56e434c9eeb2bd7eaf628",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_zchain4-19",
+   "seed": "a2-b3ee5ef883448814",
+   "battles": 40,
+   "team": 28.166668,
+   "w1": 8.5,
+   "w2": 19.666668,
+   "opponents": {
+    "K_zchain4": 6.666667,
+    "A_GSA_VanLavan": 5.166667,
+    "A_GSA_ShmuelTurtles": 0
+   },
+   "scoresSha256": "6a9fc270086b922828bd1bda038ef16d73369935e21ceafd5ce38db7b082b0e6",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_zrl03-0",
+   "seed": "a2-93310bde26bdaac5",
+   "battles": 40,
+   "team": 24.333334,
+   "w1": 15.999999,
+   "w2": 8.333334,
+   "opponents": {
+    "K_zrl03": 13.833333,
+    "Y_GSA_SigmaSilent": 0,
+    "A_HRZ_Registered_Winners": 1.8333334
+   },
+   "scoresSha256": "86ab4000932853d2d0d169d5845cc28340313e4ac447fb103618ee05e9deb633",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_zrl03-1",
+   "seed": "a2-b3a22a52051e607d",
+   "battles": 40,
+   "team": 18.5,
+   "w1": 11,
+   "w2": 7.5,
+   "opponents": {
+    "K_zrl03": 21.5,
+    "A_HRZ_TEST_ticals": 0,
+    "A_OHS_TOMEX": 0
+   },
+   "scoresSha256": "e06b1f4f06364ead4151f53b9a236724b53049356eedd585ef5cb7bf49896f9c",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_zrl03-2",
+   "seed": "a2-8da26dc617886605",
+   "battles": 40,
+   "team": 23.833332,
+   "w1": 11.833333,
+   "w2": 12,
+   "opponents": {
+    "K_zrl03": 16.166668,
+    "A_HRZ_Ctrl_Alt_Elite": 0,
+    "A_OST_Gamma": 0
+   },
+   "scoresSha256": "fa00576c3820145fe41dc346efd7c464370a9117062a92e094df354d3323c061",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_zrl03-3",
+   "seed": "a2-d36a6d8010f6f1e2",
+   "battles": 40,
+   "team": 18,
+   "w1": 6.0000005,
+   "w2": 12,
+   "opponents": {
+    "K_zrl03": 16,
+    "A_HRZ_Grindo_Holics": 6,
+    "A_OST_Gamma": 0
+   },
+   "scoresSha256": "1ce8461aa05258b1ec07eac4aeb5633dd8f662463598da5f2557489eec3680ce",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_zrl03-4",
+   "seed": "a2-a5ba8f57a44389be",
+   "battles": 40,
+   "team": 21.666668,
+   "w1": 10.666666,
+   "w2": 11,
+   "opponents": {
+    "K_zrl03": 15.833332,
+    "A_IND_stuxnet": 2.5,
+    "A_HRZ_CodeEliteGang": 0
+   },
+   "scoresSha256": "b40b6ed29ed3a06937b5bba83897d0cd7ed3ea195b16b2ee77f727f001a72bd7",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_zrl03-5",
+   "seed": "a2-424c31a240559fe2",
+   "battles": 40,
+   "team": 22,
+   "w1": 6.5,
+   "w2": 15.5,
+   "opponents": {
+    "K_zrl03": 15.5,
+    "Y_GSA_SigmaSilent": 1,
+    "A_WAN_Baltika9": 1.5
+   },
+   "scoresSha256": "b96e94431798074be80252cd1dd7cd9efc134bdc63b99b7c2aad81b16652f4fd",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_zrl03-6",
+   "seed": "a2-148932581b79ce1d",
+   "battles": 40,
+   "team": 20.833332,
+   "w1": 9.833334,
+   "w2": 11,
+   "opponents": {
+    "K_zrl03": 18.166666,
+    "A_AVI_Fishandpoultry": 1,
+    "A_OHS_cgxPro": 0
+   },
+   "scoresSha256": "87258a8a977d6f59ba60bcc3b0c2c6aa4b9f93925f42da4abe00a05d73eb0669",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_zrl03-7",
+   "seed": "a2-c25015a7492e638b",
+   "battles": 40,
+   "team": 21,
+   "w1": 7.5,
+   "w2": 13.5,
+   "opponents": {
+    "K_zrl03": 19,
+    "A_HRZ_CodeEliteGang": 0,
+    "A_OHS_TOMEX": 0
+   },
+   "scoresSha256": "32d2a596e949640e106260736ea8ecc19bf7c528dde5fa646bc0951a7002f22c",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_zrl03-8",
+   "seed": "a2-515642b5c4e2c4eb",
+   "battles": 40,
+   "team": 21.5,
+   "w1": 9,
+   "w2": 12.5,
+   "opponents": {
+    "K_zrl03": 18.5,
+    "A_HRZ_MOV_AX_WIN": 0,
+    "A_ORT_Pegasus_Hex": 0
+   },
+   "scoresSha256": "7a717434b12522e3373cbaa0a20fa5b5e1bf3db8f783b368b7e04fbb3fbded98",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_zrl03-9",
+   "seed": "a2-7d5df8a9b0634366",
+   "battles": 40,
+   "team": 17.833334,
+   "w1": 8.333334,
+   "w2": 9.5,
+   "opponents": {
+    "K_zrl03": 13.333334,
+    "A_GSA_GoonSquad": 8.833334,
+    "A_HRZ_InCtrl": 0
+   },
+   "scoresSha256": "8c208126ab40f159385953bb975735b469bc971be32b5dcbf233d0558655687b",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_zrl03-10",
+   "seed": "a2-9dbf7d4245ff4756",
+   "battles": 40,
+   "team": 17.5,
+   "w1": 9.5,
+   "w2": 8,
+   "opponents": {
+    "K_zrl03": 17.5,
+    "A_HDS_NRI": 0,
+    "A_HLS_EmoMutants": 5
+   },
+   "scoresSha256": "ce09b1404feb0089c829461da8d619572e3d35b03bc443607393da14f9d64183",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_zrl03-11",
+   "seed": "a2-2e20fa373a780450",
+   "battles": 40,
+   "team": 17.166666,
+   "w1": 6.1666665,
+   "w2": 11,
+   "opponents": {
+    "K_zrl03": 16.333332,
+    "A_OHS_TOMEX": 0,
+    "A_IND_stuxnet": 6.5
+   },
+   "scoresSha256": "4a2b59a4f5da803237e176b023781f40e1e7a68c140ef76db77fa14abddc2130",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_zrl03-12",
+   "seed": "a2-5fd5cf344f4b7317",
+   "battles": 40,
+   "team": 19.5,
+   "w1": 9.5,
+   "w2": 10,
+   "opponents": {
+    "K_zrl03": 13.75,
+    "A_BZV_SKYENT": 6.75,
+    "A_HRZ_stack_attack": 0
+   },
+   "scoresSha256": "8b82fd11fd844f7701e5c5f36c928f734bc3c989f69fb5e186477fbe961f1ed0",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_zrl03-13",
+   "seed": "a2-4e2a6e48e9dbb65f",
+   "battles": 40,
+   "team": 20.083332,
+   "w1": 8.583334,
+   "w2": 11.5,
+   "opponents": {
+    "K_zrl03": 14.249999,
+    "A_IND_stuxnet": 5.6666665,
+    "A_WAN_OnlyCode": 0
+   },
+   "scoresSha256": "abf692ae7c78b0f89eefb72169e3b58c632bf95dc1bfbf2b119bef51d447297c",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_zrl03-14",
+   "seed": "a2-cd5f2d5d57b0ff20",
+   "battles": 40,
+   "team": 22.5,
+   "w1": 8.5,
+   "w2": 14,
+   "opponents": {
+    "K_zrl03": 16.5,
+    "A_HRZ_ADDvanced": 0,
+    "A_AVI_Fishandpoultry": 1
+   },
+   "scoresSha256": "a4e4cd80db6a2f0247ff92ec2f306701796867ff23b694f72c576bac20857842",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_zrl03-15",
+   "seed": "a2-f6e67b6999ef2268",
+   "battles": 40,
+   "team": 20.75,
+   "w1": 9.75,
+   "w2": 11,
+   "opponents": {
+    "K_zrl03": 10.833334,
+    "A_GSA_callfart": 4.7500005,
+    "A_IND_stuxnet": 3.6666667
+   },
+   "scoresSha256": "aec1a15aeec0109a1a4f0b512032a82898efc635e9ee36bb7d53fbdb16d29d38",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_zrl03-16",
+   "seed": "a2-83513b263398d86a",
+   "battles": 40,
+   "team": 17,
+   "w1": 10.5,
+   "w2": 6.5,
+   "opponents": {
+    "K_zrl03": 23,
+    "A_TOM_anonymous": 0,
+    "A_TOM_2B2Team": 0
+   },
+   "scoresSha256": "98112e059865861ed4719ce1a2f81f690363456bbd268e0d32d2e7da66532a39",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_zrl03-17",
+   "seed": "a2-7c14223669b861a9",
+   "battles": 40,
+   "team": 22.5,
+   "w1": 6.5,
+   "w2": 16,
+   "opponents": {
+    "K_zrl03": 16.5,
+    "A_TOM_anonymous": 1,
+    "A_WAN_Full_Time_Job": 0
+   },
+   "scoresSha256": "1211e99c2d3450960f6382f8954e1e4946aa2bef3de116cb835e0067606ee4b5",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_zrl03-18",
+   "seed": "a2-ea2866d359eeeea6",
+   "battles": 40,
+   "team": 16.166666,
+   "w1": 7.666667,
+   "w2": 8.5,
+   "opponents": {
+    "K_zrl03": 23.833334,
+    "A_HRZ_MOV_AX_WIN": 0,
+    "A_WAN_Full_Time_Job": 0
+   },
+   "scoresSha256": "6fb56598000e88a23b86e9457c16ac4de849cae559557048f108a11fa982c432",
+   "telemetry": null
+  },
+  {
+   "arm": "Good_Test_V4",
+   "cohort": "K_zrl03-19",
+   "seed": "a2-c6b738c1614c3cf9",
+   "battles": 40,
+   "team": 23.166668,
+   "w1": 10.166666,
+   "w2": 13,
+   "opponents": {
+    "K_zrl03": 16.833336,
+    "A_HDS_YOY": 0,
+    "A_HRZ_Underflow": 0
+   },
+   "scoresSha256": "4eb09e89842da1b97a6e7a0a5b325c3e47478bd26e9003fa91f8a602ddfa049d",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_V4-0",
+   "seed": "a2-c0891c3d26c8f9f3",
+   "battles": 40,
+   "team": 8.166667,
+   "w1": 2,
+   "w2": 6.1666665,
+   "opponents": {
+    "K_V4": 24,
+    "A_HRZ_Code_Jokers4Life": 0,
+    "A_GSA_GoonSquad": 6.833333
+   },
+   "scoresSha256": "385435c7fbe132a8e624904b3d25d9b4783e42d7af0eb266a91f9a32c4a46621",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_V4-1",
+   "seed": "a2-710f74867ed04153",
+   "battles": 40,
+   "team": 7.3333335,
+   "w1": 2,
+   "w2": 5.333333,
+   "opponents": {
+    "K_V4": 23.666666,
+    "A_HRZ_CodeEliteGang": 1,
+    "A_BZV_SKYENT": 8
+   },
+   "scoresSha256": "0dcb4f749ef699d622f0370ba8bc642b428b46d3a48eb30a0e3697829b4c5d2d",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_V4-2",
+   "seed": "a2-2c62d5066421c39b",
+   "battles": 40,
+   "team": 12.999998,
+   "w1": 6.2500005,
+   "w2": 6.7500005,
+   "opponents": {
+    "K_V4": 27.000002,
+    "A_ATL_R1DDLE": 0,
+    "A_IND_BRA": 0
+   },
+   "scoresSha256": "87efa2d5eabe18b235becd019c49cb17fad4c13d5489172952e1d1857f1c228d",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_V4-3",
+   "seed": "a2-115f88c934bb138e",
+   "battles": 40,
+   "team": 9.666668,
+   "w1": 4.6666665,
+   "w2": 5,
+   "opponents": {
+    "K_V4": 28.333336,
+    "A_HRZ_Ctrl_Alt_Elite": 2,
+    "A_HRZ_Thingies": 0
+   },
+   "scoresSha256": "02b1071e34831f37b323df2b64284f0cd6009d49d5a76ea14a45fb661951b805",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_V4-4",
+   "seed": "a2-051a8a46835cd74f",
+   "battles": 40,
+   "team": 8.166666,
+   "w1": 3.3333335,
+   "w2": 4.8333335,
+   "opponents": {
+    "K_V4": 31.833332,
+    "Y_GSA_SigmaSilent": 0,
+    "A_OST_Gamma": 0
+   },
+   "scoresSha256": "9743266f3211321042ca2ef034174e734f4109fb507cbe9b44458fd24d7d9164",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_V4-5",
+   "seed": "a2-5771476da3662696",
+   "battles": 40,
+   "team": 8.833333,
+   "w1": 2.5,
+   "w2": 6.333334,
+   "opponents": {
+    "K_V4": 25.666668,
+    "A_IND_stuxnet": 2.5,
+    "A_GSA_callfart": 3
+   },
+   "scoresSha256": "be571427bfed5b8781222f28d026819971f11f8d2e0986a620755cbaf3a10753",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_V4-6",
+   "seed": "a2-991613896dc86d9f",
+   "battles": 40,
+   "team": 7.833334,
+   "w1": 5.666667,
+   "w2": 2.1666667,
+   "opponents": {
+    "K_V4": 28.166668,
+    "A_HDS_MAC": 0,
+    "A_HRZ_L": 4
+   },
+   "scoresSha256": "7d315eb886970194e039079a9738df337b372f0832ddf922b9f3e6b97ad0502a",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_V4-7",
+   "seed": "a2-0871b586c7c59a9a",
+   "battles": 40,
+   "team": 6.666667,
+   "w1": 2,
+   "w2": 4.666667,
+   "opponents": {
+    "K_V4": 33.33333,
+    "A_HRZ_TitanicSwimTeam": 0,
+    "Y_GSA_SigmaSilent": 0
+   },
+   "scoresSha256": "d6f18731733b6ce5d42c1dc63e3b28b94c290891b0434a8906d801a0d40937f7",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_V4-8",
+   "seed": "a2-06623d2ad52f6440",
+   "battles": 40,
+   "team": 14.666665,
+   "w1": 6.833334,
+   "w2": 7.8333335,
+   "opponents": {
+    "K_V4": 25.333334,
+    "A_OHS_cgxPro": 0,
+    "A_HRZ_MOV_AX_WIN": 0
+   },
+   "scoresSha256": "714bdf184474ff4c9f4f2721e182eedc8caffaf7c8e038cce8a6cb78d5d27378",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_V4-9",
+   "seed": "a2-ec2088441244d3b6",
+   "battles": 40,
+   "team": 11.5,
+   "w1": 7.8333335,
+   "w2": 3.6666667,
+   "opponents": {
+    "K_V4": 25.5,
+    "A_OHS_BatteringRAM": 0,
+    "A_WHS_K0F1M_AL_T1L1M": 3
+   },
+   "scoresSha256": "6c1837f725cf5a348c4d4f37ecbe14ef911d551fe2dcdcf4f7d5f2f86d68d500",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_V4-10",
+   "seed": "a2-6922500f7eb8e40e",
+   "battles": 40,
+   "team": 8.833333,
+   "w1": 5.1666665,
+   "w2": 3.6666665,
+   "opponents": {
+    "K_V4": 30.166666,
+    "Y_SZR_The_Chargers": 0,
+    "A_OHS_TOMEX": 1
+   },
+   "scoresSha256": "890a59de9f3c78bd6c65fddf31cd894017c80ca3c0f8596b58c0e9051749ac50",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_V4-11",
+   "seed": "a2-1cfe4eda69593465",
+   "battles": 40,
+   "team": 14.999998,
+   "w1": 6.5,
+   "w2": 8.5,
+   "opponents": {
+    "K_V4": 22.000002,
+    "A_TOM_BitBenders": 3,
+    "A_HRZ_Ctrl_Alt_Elite": 0
+   },
+   "scoresSha256": "b768577b6c927ca44eee3d1c8adc0f1057d99a9b817a61866d2118a08a274c8a",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_V4-12",
+   "seed": "a2-ec003b6cffd28ea9",
+   "battles": 40,
+   "team": 15.333333,
+   "w1": 9.333334,
+   "w2": 6,
+   "opponents": {
+    "K_V4": 19.833332,
+    "A_GGN_OpcodeHunter": 4.8333335,
+    "A_HRZ_Underflow": 0
+   },
+   "scoresSha256": "ad20e4dd40931880132d4663e7f14bb5c32fce07bc4098a52fd668623841fde1",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_V4-13",
+   "seed": "a2-e5141dd4c9bd8564",
+   "battles": 40,
+   "team": 13,
+   "w1": 5.25,
+   "w2": 7.75,
+   "opponents": {
+    "K_V4": 26,
+    "A_HRZ_Underflow": 1,
+    "A_ORT_Pegasus_Hex": 0
+   },
+   "scoresSha256": "779bb14bfaa3becdc8e70d1fa69217359d8a93b501d987ae05920ad26c35bfda",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_V4-14",
+   "seed": "a2-3daa55dbe36c7943",
+   "battles": 40,
+   "team": 12.166667,
+   "w1": 6.8333335,
+   "w2": 5.333333,
+   "opponents": {
+    "K_V4": 24.833334,
+    "Y_GSA_3Plate_Benchers": 1,
+    "A_HRZ_PowerRangers": 1
+   },
+   "scoresSha256": "d2b110840a706727f812327f2a612315eb1859b166b872f5e86a73aa2e47b1dc",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_V4-15",
+   "seed": "a2-0b5ddb0fcad8f154",
+   "battles": 40,
+   "team": 15.666668,
+   "w1": 10.666666,
+   "w2": 5,
+   "opponents": {
+    "K_V4": 21.833332,
+    "A_HRZ_ADDvanced": 0.5,
+    "A_HRZ_BinaryBandits": 2
+   },
+   "scoresSha256": "47cfa5470f148ac6b7aad8627a6a81bc0309ea7d6f61bb93b116c0aa43d6ba36",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_V4-16",
+   "seed": "a2-3977490129b536c4",
+   "battles": 40,
+   "team": 14.999998,
+   "w1": 6.3333335,
+   "w2": 8.666667,
+   "opponents": {
+    "K_V4": 15.999998,
+    "A_HRZ_Grindo_Holics": 8,
+    "A_TOM_anonymous": 1
+   },
+   "scoresSha256": "bdb94d069ad9b828ac5921b5c561170cddafa24f87fc986cb854c9d994edbe7a",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_V4-17",
+   "seed": "a2-eb1e386158ba739c",
+   "battles": 40,
+   "team": 14.166665,
+   "w1": 6.666667,
+   "w2": 7.5000005,
+   "opponents": {
+    "K_V4": 21.833332,
+    "Y_TOM_Code_Killer": 4,
+    "A_AVI_AnotherBitInTheWall": 0
+   },
+   "scoresSha256": "d0c6c213b708587d6ce71e6b9df2a81aed4ad74553d0ab3146e37975523f0fc9",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_V4-18",
+   "seed": "a2-1ea88980fbe55494",
+   "battles": 40,
+   "team": 11.666667,
+   "w1": 6.5833335,
+   "w2": 5.083333,
+   "opponents": {
+    "K_V4": 25.333334,
+    "A_HRZ_CodeEliteGang": 0,
+    "A_GSA_B33": 2
+   },
+   "scoresSha256": "bb72c6872a15b6741f1506b3e71e5f92fa2f9ae48752d8e2a2f5c2aa6af98eb6",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_V4-19",
+   "seed": "a2-764002ba8f2354e4",
+   "battles": 40,
+   "team": 15.166665,
+   "w1": 8.416666,
+   "w2": 6.7500005,
+   "opponents": {
+    "K_V4": 21.833336,
+    "Y_TOM_Code_Killer": 3,
+    "A_OHS_BatteringRAM": 0
+   },
+   "scoresSha256": "e6337af13dd57c65efaeca346d8a28657f46f51ea0bebd0eafc1f568424defb5",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_V6-0",
+   "seed": "a2-1957b8d0d22d155b",
+   "battles": 40,
+   "team": 10.166667,
+   "w1": 4.416667,
+   "w2": 5.75,
+   "opponents": {
+    "K_V6": 29.833336,
+    "Y_GSA_SigmaSilent": 0,
+    "A_KOB_KosherCode": 0
+   },
+   "scoresSha256": "2c982911580f5d96ccd42a66788c1315708e393a19e27ecdce97204ef8abfdac",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_V6-1",
+   "seed": "a2-5284f65c7c29d589",
+   "battles": 40,
+   "team": 12.666667,
+   "w1": 6.0000005,
+   "w2": 6.666667,
+   "opponents": {
+    "K_V6": 23.333332,
+    "A_HDS_IWDIA_nachalo": 0,
+    "A_GSA_GhostBytes_0x": 2
+   },
+   "scoresSha256": "4e37d12d8b2b1e0997efd23fb5e6810ca2de94af32615f3903d42bb841106a6e",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_V6-2",
+   "seed": "a2-6c0c7e14582cce04",
+   "battles": 40,
+   "team": 13.666666,
+   "w1": 5.5,
+   "w2": 8.166667,
+   "opponents": {
+    "K_V6": 25.333332,
+    "A_WHS_K0F1M_AL_T1L1M": 1,
+    "A_KOB_KosherCode": 0
+   },
+   "scoresSha256": "f5f1666fad8737b4403faf6dfcac244a37f9d7b27aede81e171a6e8b370c2160",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_V6-3",
+   "seed": "a2-557f1c7e6bdd7571",
+   "battles": 40,
+   "team": 13.499999,
+   "w1": 2.4166667,
+   "w2": 11.083333,
+   "opponents": {
+    "K_V6": 26.500002,
+    "A_HRZ_MOV_AX_WIN": 0,
+    "A_HDS_MAC": 0
+   },
+   "scoresSha256": "1d62ce7f73be6fdf560658bd9f2100b6b27713dcce8d891841327e379714fff2",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_V6-4",
+   "seed": "a2-cbd6644e28bfdf3c",
+   "battles": 40,
+   "team": 12.166666,
+   "w1": 6.3333335,
+   "w2": 5.8333335,
+   "opponents": {
+    "K_V6": 25.833334,
+    "A_HRZ_Underflow": 0,
+    "Y_TOM_Thefrogs": 1
+   },
+   "scoresSha256": "f85841e2065b103bcd09fcb43b1e19a6bb42bee97ca63189aaa7384ef93fe561",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_V6-5",
+   "seed": "a2-ed2179e72b45341c",
+   "battles": 40,
+   "team": 13.166667,
+   "w1": 4.8333335,
+   "w2": 8.333334,
+   "opponents": {
+    "K_V6": 26.833334,
+    "Y_SZR_The_Chargers": 0,
+    "A_ORT_TheGoats": 0
+   },
+   "scoresSha256": "8a776e6dbac1e892b17202b9f8a8df00771aeea13684c59dff283a6296ec0c60",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_V6-6",
+   "seed": "a2-5831da5b9f288643",
+   "battles": 40,
+   "team": 17.333332,
+   "w1": 6.6666665,
+   "w2": 10.666667,
+   "opponents": {
+    "K_V6": 18.666666,
+    "A_WAN_Full_Time_Job": 0,
+    "A_HLS_EmoMutants": 3
+   },
+   "scoresSha256": "08b1948bd0af1da34d24f985445d54cc61640ff24d9a2e990c0d8201c926c5af",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_V6-7",
+   "seed": "a2-22f0af42e282ee19",
+   "battles": 40,
+   "team": 9.666666,
+   "w1": 3.5,
+   "w2": 6.166667,
+   "opponents": {
+    "K_V6": 28.333334,
+    "Y_BGR_theGlopyGng": 0,
+    "A_OHS_BatteringRAM": 1
+   },
+   "scoresSha256": "440b88e90a95bea9fac5d48b5fcbee01079a355347839c4bd8a05c944663ead5",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_V6-8",
+   "seed": "a2-8c94c5b5a6ad89ec",
+   "battles": 40,
+   "team": 10.499999,
+   "w1": 6.5000005,
+   "w2": 4,
+   "opponents": {
+    "K_V6": 27.5,
+    "A_HRZ_CodeEliteGang": 0,
+    "A_OHS_TrojanByte": 2
+   },
+   "scoresSha256": "e74f2c4e86fafae368d281d6d8a69ea4171227e543238c12485f2e19c35e1d8f",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_V6-9",
+   "seed": "a2-64c31b26c2b31b88",
+   "battles": 40,
+   "team": 16.166668,
+   "w1": 4.25,
+   "w2": 11.916666,
+   "opponents": {
+    "K_V6": 20.833332,
+    "A_HRZ_fisherEXE": 0,
+    "A_GSA_VanLavan": 3
+   },
+   "scoresSha256": "ffe61d7cb35cf4a3791e4c05e95cf8ba76d40d9bda50f41da9c06bad1a25fd17",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_V6-10",
+   "seed": "a2-a305260c559d48e1",
+   "battles": 40,
+   "team": 12.5,
+   "w1": 5,
+   "w2": 7.5000005,
+   "opponents": {
+    "K_V6": 24.5,
+    "A_HRZ_ADDvanced": 0,
+    "A_WHS_K0F1M_AL_T1L1M": 3
+   },
+   "scoresSha256": "4a2657628a76cd60ffa89504f9ef0b800d459b51f21c9de23a70dade51e31e62",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_V6-11",
+   "seed": "a2-b808925608a9459e",
+   "battles": 40,
+   "team": 12,
+   "w1": 7.5833335,
+   "w2": 4.416667,
+   "opponents": {
+    "K_V6": 28.000002,
+    "A_HDS_YOY": 0,
+    "Y_ELD_FriendlyFire": 0
+   },
+   "scoresSha256": "4df76365ab20841288edfe1346e172e834727d570cc0852c8721eba5a385f651",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_V6-12",
+   "seed": "a2-df34cc8ea2f74d4f",
+   "battles": 40,
+   "team": 22.166668,
+   "w1": 7.166667,
+   "w2": 15,
+   "opponents": {
+    "K_V6": 12.833333,
+    "A_TOM_2B2Team": 2,
+    "A_HRZ_TEST_ticals": 2
+   },
+   "scoresSha256": "dc68a197b1c40233024c7d285d19ade31ba9be8cf374eb5df092161bb33dab82",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_V6-13",
+   "seed": "a2-d143b2118ace69e8",
+   "battles": 40,
+   "team": 17.833334,
+   "w1": 5.8333335,
+   "w2": 12,
+   "opponents": {
+    "K_V6": 17.166666,
+    "A_WHS_K0F1M_AL_T1L1M": 3.5,
+    "A_HRZ_BinaryBandits": 1.5
+   },
+   "scoresSha256": "6234d6482e0869b14b9a85252171505b37faff6180391890eee9abe7bcbe5538",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_V6-14",
+   "seed": "a2-deeb4e82858776dc",
+   "battles": 40,
+   "team": 10.666667,
+   "w1": 2.8333335,
+   "w2": 7.8333335,
+   "opponents": {
+    "K_V6": 23.333334,
+    "A_GSA_TheBytes": 0,
+    "A_GSA_GoonSquad": 6
+   },
+   "scoresSha256": "bd079350093c451047204529d9cda39876782736940e6784f323d8a18685e4d7",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_V6-15",
+   "seed": "a2-246ac94582267447",
+   "battles": 40,
+   "team": 9.5,
+   "w1": 2.8333335,
+   "w2": 6.666667,
+   "opponents": {
+    "K_V6": 24.5,
+    "A_GSA_ShmuelTurtles": 1,
+    "A_AVI_Fishandpoultry": 5
+   },
+   "scoresSha256": "1dee0f14c7ba8b27dabb081d625cef159f7e0a4f59b33a37c9b2772669fcd19a",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_V6-16",
+   "seed": "a2-6134045c0a2fc49a",
+   "battles": 40,
+   "team": 9.333334,
+   "w1": 3.25,
+   "w2": 6.0833335,
+   "opponents": {
+    "K_V6": 30.666668,
+    "A_HDS_IWDIA_nachalo": 0,
+    "A_HRZ_Thingies": 0
+   },
+   "scoresSha256": "1df9a688cdf7e6509902436236737a96beeb59e30723c1249d95fc350869a43a",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_V6-17",
+   "seed": "a2-43e5c8481b5cb9b0",
+   "battles": 40,
+   "team": 8.5,
+   "w1": 3.3333333,
+   "w2": 5.166667,
+   "opponents": {
+    "K_V6": 30.500002,
+    "A_HRZ_Code_Jokers4Life": 1,
+    "Y_SZR_The_Chargers": 0
+   },
+   "scoresSha256": "857b44b904c20ffa7e8810a04cba2a0d15be40aad2de40fd1c1efa75d2784ec8",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_V6-18",
+   "seed": "a2-b4ef9fbd1b10330a",
+   "battles": 40,
+   "team": 11.166667,
+   "w1": 1.8333334,
+   "w2": 9.333334,
+   "opponents": {
+    "K_V6": 27.833332,
+    "Y_SZR_The_Chargers": 0,
+    "A_OHS_cgxPro": 1
+   },
+   "scoresSha256": "f3ab55ec755e29c6bbdf5e317a9d8420c40c43966b66aaefbea7593835287f2f",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_V6-19",
+   "seed": "a2-7eb4531a2ab4db88",
+   "battles": 40,
+   "team": 14.999999,
+   "w1": 6.6666665,
+   "w2": 8.333333,
+   "opponents": {
+    "K_V6": 25.000002,
+    "A_TOM_anonymous": 0,
+    "A_HRZ_PowerRangers": 0
+   },
+   "scoresSha256": "9618a8d7f8befaced41782700cf5d3f39c76bd4057b4bc8ff4272193ac4ccd12",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_zchain4-0",
+   "seed": "a2-234040fbcb484cce",
+   "battles": 40,
+   "team": 22.16667,
+   "w1": 10.499999,
+   "w2": 11.666666,
+   "opponents": {
+    "K_zchain4": 17.833336,
+    "A_HRZ_Pixar_Lamps": 0,
+    "A_TOM_2B2Team": 0
+   },
+   "scoresSha256": "0b1ba3ab6a8bc1fd3c6939bd9fc5230e6749e00c1e65b6982a55ae443f6c52ae",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_zchain4-1",
+   "seed": "a2-2ff926a0e3efd9d7",
+   "battles": 40,
+   "team": 16.33333,
+   "w1": 9.416667,
+   "w2": 6.916667,
+   "opponents": {
+    "K_zchain4": 22.666672,
+    "A_IND_BRA": 0,
+    "Y_SZR_BrvazimAlSteroidim": 0
+   },
+   "scoresSha256": "5d06bedd95acab192544fd796141844221b92a4c8ab7604202fdd5d75ac763f3",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_zchain4-2",
+   "seed": "a2-033a8e378ed5be31",
+   "battles": 40,
+   "team": 15.833332,
+   "w1": 8,
+   "w2": 7.8333335,
+   "opponents": {
+    "K_zchain4": 22.166668,
+    "A_GSA_GhostBytes_0x": 2,
+    "A_GSA_TheBytes": 0
+   },
+   "scoresSha256": "f566566b3c889a4fde31d5a8834dd2e758a7d365762e172a3a46ac0757e87ebb",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_zchain4-3",
+   "seed": "a2-672a4d97a7ec3da9",
+   "battles": 40,
+   "team": 14.883329,
+   "w1": 8.4,
+   "w2": 6.483334,
+   "opponents": {
+    "K_zchain4": 19.883333,
+    "A_HRZ_Registered_Winners": 2.2333336,
+    "Y_BGR_theGlopyGng": 1
+   },
+   "scoresSha256": "b821da9ccc75c7cace7b7581384bee87236a92d2d83c70224269a78151bb044c",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_zchain4-4",
+   "seed": "a2-bc2311a48c7c6f56",
+   "battles": 40,
+   "team": 20.166668,
+   "w1": 9.916666,
+   "w2": 10.249999,
+   "opponents": {
+    "K_zchain4": 18.833334,
+    "Y_GSA_LVS_FIT": 1,
+    "Y_TOM_The_Crushers": 0
+   },
+   "scoresSha256": "dd861e8c9f942534ace454c82c84e71aaa903774d7187f6f26e36bb5cb4d2a02",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_zchain4-5",
+   "seed": "a2-147663e5120ce924",
+   "battles": 40,
+   "team": 19.999998,
+   "w1": 10.250001,
+   "w2": 9.750001,
+   "opponents": {
+    "K_zchain4": 17.999998,
+    "A_GSA_ShmuelTurtles": 1,
+    "A_OHS_cgxPro": 1
+   },
+   "scoresSha256": "518d62b558c2e585c6cbde69ddc7c0652ed77bb7a7100313501d54b1ffb1184c",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_zchain4-6",
+   "seed": "a2-a470d3085126a684",
+   "battles": 40,
+   "team": 13.666663,
+   "w1": 6.7500005,
+   "w2": 6.9166675,
+   "opponents": {
+    "K_zchain4": 18.833334,
+    "A_WAN_Full_Time_Job": 0,
+    "A_GSA_callfart": 6.5000005
+   },
+   "scoresSha256": "43b92d9dfd189c801274a5ffa8df9fcd412ee341e614c2f09cd02dc0973e64b6",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_zchain4-7",
+   "seed": "a2-b1e53df342f6cbc3",
+   "battles": 40,
+   "team": 18.666668,
+   "w1": 8.666667,
+   "w2": 10,
+   "opponents": {
+    "K_zchain4": 18.333334,
+    "Y_BGR_theGlopyGng": 1,
+    "A_TOM_Syntax_Terror": 2
+   },
+   "scoresSha256": "2c1b0c0baf6fe44aaf4b8898b42bb9c40c1c40eab33bc62f06c02f9494c22884",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_zchain4-8",
+   "seed": "a2-734e4cee1000d813",
+   "battles": 40,
+   "team": 22.666666,
+   "w1": 8.5,
+   "w2": 14.166666,
+   "opponents": {
+    "K_zchain4": 16.333332,
+    "Y_TOM_Thefrogs": 0,
+    "A_WHS_K0F1M_AL_T1L1M": 1
+   },
+   "scoresSha256": "1b6bd4055467602b156f9b86569cb245d422fceef996fa11719be63071ae10dd",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_zchain4-9",
+   "seed": "a2-db3e40ee0c4d1b85",
+   "battles": 40,
+   "team": 18.166664,
+   "w1": 11.75,
+   "w2": 6.416667,
+   "opponents": {
+    "K_zchain4": 19.833332,
+    "A_HRZ_CodeEliteGang": 1,
+    "A_HDS_YOY": 0
+   },
+   "scoresSha256": "4afa6db39bddf504dde3df4cc75029f77e9dc041ab652aec4448a5ad8e75de62",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_zchain4-10",
+   "seed": "a2-51813adb166029b0",
+   "battles": 40,
+   "team": 17.666664,
+   "w1": 9,
+   "w2": 8.666668,
+   "opponents": {
+    "K_zchain4": 22.333332,
+    "A_HDS_GoldenLamed": 0,
+    "A_HDS_YOY": 0
+   },
+   "scoresSha256": "746984ee452a021fb94ac67dae79e6fb7e82f5611f035eff5d5e95e3825420c1",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_zchain4-11",
+   "seed": "a2-0a2eff097461f3c2",
+   "battles": 40,
+   "team": 13.749999,
+   "w1": 4.083333,
+   "w2": 9.666666,
+   "opponents": {
+    "K_zchain4": 13.416666,
+    "A_GSA_VanLavan": 7.500001,
+    "A_GSA_callfart": 4.3333335
+   },
+   "scoresSha256": "3d233b3d16eae03fd5fae55c2605ece050f8e70b70256c36cc8984d641d455f2",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_zchain4-12",
+   "seed": "a2-16a7f17d1d96f4d6",
+   "battles": 40,
+   "team": 18.66667,
+   "w1": 9.166667,
+   "w2": 9.5,
+   "opponents": {
+    "K_zchain4": 17.166666,
+    "Y_TOM_The_Crushers": 0,
+    "A_BZV_SKYENT": 4.1666665
+   },
+   "scoresSha256": "e4a49dfb166c6002ccb7c779966971643979f9f29eb5c13343afb609146f74ba",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_zchain4-13",
+   "seed": "a2-0421c2c659b1e530",
+   "battles": 40,
+   "team": 14.999999,
+   "w1": 7.666667,
+   "w2": 7.3333335,
+   "opponents": {
+    "K_zchain4": 18,
+    "Y_TOM_Code_Killer": 6,
+    "A_TOM_tson_el_akod": 1
+   },
+   "scoresSha256": "742cdefa83d7a1424ccb2e0aad95b122dba61f1e540ebe812da25aa24ecd5d13",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_zchain4-14",
+   "seed": "a2-122fe4e9212785b3",
+   "battles": 40,
+   "team": 22.5,
+   "w1": 16.25,
+   "w2": 6.2500005,
+   "opponents": {
+    "K_zchain4": 16.5,
+    "A_RZL_YANDE": 1,
+    "A_HDS_YOY": 0
+   },
+   "scoresSha256": "5a243e85b1ada393247d06226c2393fd359fbed624a09b568a1bd98b00e94dea",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_zchain4-15",
+   "seed": "a2-a0e76a0974b12a2f",
+   "battles": 40,
+   "team": 20.250002,
+   "w1": 11.999999,
+   "w2": 8.25,
+   "opponents": {
+    "K_zchain4": 14.833331,
+    "A_GSA_callfart": 3.9166667,
+    "A_TOM_2B2Team": 0
+   },
+   "scoresSha256": "d88e167766169110fcbf027d279e69e6c729c63ead98ccc5f418d8cfdbecf1fc",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_zchain4-16",
+   "seed": "a2-c34f50b7d9650475",
+   "battles": 40,
+   "team": 18.5,
+   "w1": 10.166666,
+   "w2": 8.333334,
+   "opponents": {
+    "K_zchain4": 19.5,
+    "A_OST_Gamma": 0,
+    "A_HDS_ATW_Solo": 2
+   },
+   "scoresSha256": "30bd2dd1c20c67ea5ed80b3a59b08809581090479594d91ec9e4fd68e62b9142",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_zchain4-17",
+   "seed": "a2-cf75eef1603658b2",
+   "battles": 40,
+   "team": 18.499996,
+   "w1": 7.7500005,
+   "w2": 10.75,
+   "opponents": {
+    "K_zchain4": 19.499998,
+    "Y_ELD_FriendlyFire": 1,
+    "A_HRZ_Pixar_Lamps": 1
+   },
+   "scoresSha256": "1330ed6f156740af289d5cfca2df64c881f6124bda0caf9bcf3f630e5026edd5",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_zchain4-18",
+   "seed": "a2-afb6a9b977e83c09",
+   "battles": 40,
+   "team": 17.833332,
+   "w1": 7.000001,
+   "w2": 10.833332,
+   "opponents": {
+    "K_zchain4": 18.166666,
+    "A_IND_cgx123123": 2,
+    "A_GSA_B33": 2
+   },
+   "scoresSha256": "6d98d31144abe570e3e0a43915e00b2828caf1b2bb0d96482732b0c17267fb0e",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_zchain4-19",
+   "seed": "a2-b3ee5ef883448814",
+   "battles": 40,
+   "team": 17,
+   "w1": 7.5833335,
+   "w2": 9.416667,
+   "opponents": {
+    "K_zchain4": 13.666667,
+    "A_GSA_VanLavan": 8.333334,
+    "A_GSA_ShmuelTurtles": 0
+   },
+   "scoresSha256": "e302bee7e34d1e224a2ad1dbc88f7fda3b398298c3cd0c11b5770b29d75a3bc2",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_zrl03-0",
+   "seed": "a2-93310bde26bdaac5",
+   "battles": 40,
+   "team": 14.299997,
+   "w1": 6.4833336,
+   "w2": 7.816667,
+   "opponents": {
+    "K_zrl03": 22.983335,
+    "Y_GSA_SigmaSilent": 0,
+    "A_HRZ_Registered_Winners": 2.7166667
+   },
+   "scoresSha256": "b794000511a9eba5ae9d223921dcbb53fd1ddb455091c7e526b225ca8f53d063",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_zrl03-1",
+   "seed": "a2-b3a22a52051e607d",
+   "battles": 40,
+   "team": 15.166666,
+   "w1": 9.166667,
+   "w2": 6.0000005,
+   "opponents": {
+    "K_zrl03": 19.833332,
+    "A_HRZ_TEST_ticals": 1,
+    "A_OHS_TOMEX": 4
+   },
+   "scoresSha256": "6d2b212cc165630c0ef455659d3bd847a49fb789973228f0e9cef44c040beb5b",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_zrl03-2",
+   "seed": "a2-8da26dc617886605",
+   "battles": 40,
+   "team": 21.666666,
+   "w1": 8.416667,
+   "w2": 13.249999,
+   "opponents": {
+    "K_zrl03": 18.333332,
+    "A_HRZ_Ctrl_Alt_Elite": 0,
+    "A_OST_Gamma": 0
+   },
+   "scoresSha256": "1fb7c47bfe32676c9cb662ade38e2def295107955bdd562b77c6a5bf184b068b",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_zrl03-3",
+   "seed": "a2-d36a6d8010f6f1e2",
+   "battles": 40,
+   "team": 10.5,
+   "w1": 4.6666665,
+   "w2": 5.8333335,
+   "opponents": {
+    "K_zrl03": 22.5,
+    "A_HRZ_Grindo_Holics": 7,
+    "A_OST_Gamma": 0
+   },
+   "scoresSha256": "1bdcf9d8113b0a4151bfa2f38cded76275c24f8db9c543857ba6b9edb8a9b46e",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_zrl03-4",
+   "seed": "a2-a5ba8f57a44389be",
+   "battles": 40,
+   "team": 13.083333,
+   "w1": 6.2500005,
+   "w2": 6.8333335,
+   "opponents": {
+    "K_zrl03": 17.916664,
+    "A_IND_stuxnet": 7.0000005,
+    "A_HRZ_CodeEliteGang": 2
+   },
+   "scoresSha256": "e7d79bd7811171bc780893a0fe0762dd9a4d9ceb352eada2ce4cb5e5baab6c52",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_zrl03-5",
+   "seed": "a2-424c31a240559fe2",
+   "battles": 40,
+   "team": 12.166668,
+   "w1": 5.333333,
+   "w2": 6.8333335,
+   "opponents": {
+    "K_zrl03": 18.833332,
+    "Y_GSA_SigmaSilent": 0,
+    "A_WAN_Baltika9": 9
+   },
+   "scoresSha256": "8026ea2b86c4ace38e6929c7a220d4565478087550282dd595fd8756ec063eef",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_zrl03-6",
+   "seed": "a2-148932581b79ce1d",
+   "battles": 40,
+   "team": 14.999999,
+   "w1": 6.5000005,
+   "w2": 8.5,
+   "opponents": {
+    "K_zrl03": 22,
+    "A_AVI_Fishandpoultry": 2,
+    "A_OHS_cgxPro": 1
+   },
+   "scoresSha256": "fa68f28206865014ee7e106d3db181de7e1fd1052fcd81ae3dc762d1223ceee7",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_zrl03-7",
+   "seed": "a2-c25015a7492e638b",
+   "battles": 40,
+   "team": 19,
+   "w1": 11,
+   "w2": 8,
+   "opponents": {
+    "K_zrl03": 17,
+    "A_HRZ_CodeEliteGang": 1,
+    "A_OHS_TOMEX": 3
+   },
+   "scoresSha256": "e13d44c78e6049c3f606e39b2e6c7e77dc504575339d0de532e12edd04e51c30",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_zrl03-8",
+   "seed": "a2-515642b5c4e2c4eb",
+   "battles": 40,
+   "team": 15.999999,
+   "w1": 7.666667,
+   "w2": 8.333334,
+   "opponents": {
+    "K_zrl03": 24.000004,
+    "A_HRZ_MOV_AX_WIN": 0,
+    "A_ORT_Pegasus_Hex": 0
+   },
+   "scoresSha256": "231be9bd623ac6c7ccc82a6d4ad1edfe0c9acac2c3464e31a6b0aaf9f39f244c",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_zrl03-9",
+   "seed": "a2-7d5df8a9b0634366",
+   "battles": 40,
+   "team": 14.666666,
+   "w1": 6.75,
+   "w2": 7.9166675,
+   "opponents": {
+    "K_zrl03": 14.666665,
+    "A_GSA_GoonSquad": 10.666666,
+    "A_HRZ_InCtrl": 0
+   },
+   "scoresSha256": "ecfac860b54d6e71b0d02ce7328172590bee6ab9667db712c1ee5528b93b23b2",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_zrl03-10",
+   "seed": "a2-9dbf7d4245ff4756",
+   "battles": 40,
+   "team": 19.66667,
+   "w1": 10.166667,
+   "w2": 9.5,
+   "opponents": {
+    "K_zrl03": 17.333334,
+    "A_HDS_NRI": 0,
+    "A_HLS_EmoMutants": 3
+   },
+   "scoresSha256": "3e4d01a89f2eb461d777a4287a24976bd631a1491cd8500bfa0f11848035b215",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_zrl03-11",
+   "seed": "a2-2e20fa373a780450",
+   "battles": 40,
+   "team": 12.166665,
+   "w1": 4.25,
+   "w2": 7.916668,
+   "opponents": {
+    "K_zrl03": 20.833332,
+    "A_OHS_TOMEX": 0,
+    "A_IND_stuxnet": 7
+   },
+   "scoresSha256": "765ddda9a1c4c94b879acfd9ea7cf12b398414a8939c8377d27c1e524eb668f5",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_zrl03-12",
+   "seed": "a2-5fd5cf344f4b7317",
+   "battles": 40,
+   "team": 14.999999,
+   "w1": 7.916667,
+   "w2": 7.0833335,
+   "opponents": {
+    "K_zrl03": 21.083334,
+    "A_BZV_SKYENT": 3.9166665,
+    "A_HRZ_stack_attack": 0
+   },
+   "scoresSha256": "e5edcbb7c72a64f6f853c281cf1b1c1de3c70a89238854ce4b85c5c70cec909a",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_zrl03-13",
+   "seed": "a2-4e2a6e48e9dbb65f",
+   "battles": 40,
+   "team": 12.583333,
+   "w1": 5.583333,
+   "w2": 7,
+   "opponents": {
+    "K_zrl03": 23.75,
+    "A_IND_stuxnet": 3.6666667,
+    "A_WAN_OnlyCode": 0
+   },
+   "scoresSha256": "072127e1c068fa971959f8f1eca6b3368887a631993389ef3b1fa3a1aa56a8dd",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_zrl03-14",
+   "seed": "a2-cd5f2d5d57b0ff20",
+   "battles": 40,
+   "team": 9.500001,
+   "w1": 4.9166665,
+   "w2": 4.5833335,
+   "opponents": {
+    "K_zrl03": 23.500002,
+    "A_HRZ_ADDvanced": 4,
+    "A_AVI_Fishandpoultry": 3
+   },
+   "scoresSha256": "c5aa3ecab0217aa45bd568923c6a82ec9690172b1a1a3e8c8a6fdcee44a0512a",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_zrl03-15",
+   "seed": "a2-f6e67b6999ef2268",
+   "battles": 40,
+   "team": 13.666667,
+   "w1": 5.166667,
+   "w2": 8.5,
+   "opponents": {
+    "K_zrl03": 16.166664,
+    "A_GSA_callfart": 4.833333,
+    "A_IND_stuxnet": 5.333333
+   },
+   "scoresSha256": "176b65da33b1a06e0b565ff121499b5d7c07469b1a262845c265a3fa1a4c0e8d",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_zrl03-16",
+   "seed": "a2-83513b263398d86a",
+   "battles": 40,
+   "team": 13.999999,
+   "w1": 5.5,
+   "w2": 8.5,
+   "opponents": {
+    "K_zrl03": 26.000006,
+    "A_TOM_anonymous": 0,
+    "A_TOM_2B2Team": 0
+   },
+   "scoresSha256": "b0946b0fbe98804b89ed9c1b51c4316be3ea08c95aed3e7540f137e677008033",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_zrl03-17",
+   "seed": "a2-7c14223669b861a9",
+   "battles": 40,
+   "team": 17.499998,
+   "w1": 7.25,
+   "w2": 10.25,
+   "opponents": {
+    "K_zrl03": 22.5,
+    "A_TOM_anonymous": 0,
+    "A_WAN_Full_Time_Job": 0
+   },
+   "scoresSha256": "6243f1fb3266f26bf8e170aadc196f8877694ffa2a82e186c9cb4993f681997e",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_zrl03-18",
+   "seed": "a2-ea2866d359eeeea6",
+   "battles": 40,
+   "team": 17,
+   "w1": 8.833334,
+   "w2": 8.166667,
+   "opponents": {
+    "K_zrl03": 23,
+    "A_HRZ_MOV_AX_WIN": 0,
+    "A_WAN_Full_Time_Job": 0
+   },
+   "scoresSha256": "6eefa5107eb9c9253fd65666132bb30833d73c219113dfd8595522beee8f4384",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "K_zrl03-19",
+   "seed": "a2-c6b738c1614c3cf9",
+   "battles": 40,
+   "team": 17,
+   "w1": 6.5833335,
+   "w2": 10.416667,
+   "opponents": {
+    "K_zrl03": 22,
+    "A_HDS_YOY": 0,
+    "A_HRZ_Underflow": 1
+   },
+   "scoresSha256": "1205dd4bc06265d0205271b4d890858043fe43f459de6dd4ad84989535f3d6ee",
+   "telemetry": null
+  }
+ ]
+}
