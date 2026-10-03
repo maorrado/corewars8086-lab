@@ -120,3 +120,16 @@ zchain3 − m050 = +0.0628 [+0.0516,+0.0740], 275 wins / 28 ties / 97 losses.
 - Raw results (per cohort, all hashes): `agent2/results/*.json`; decision table
   `agent2/results/decision-summary.json`; working notes `agent2/NOTES.md`.
 - Per-run staging copies and traces are regenerable and ignored (`agent2/runs/`).
+
+## 8. Addendum: direct comparison with Good_Test V6 (run after promotion)
+
+Original V6 binaries as a candidate arm, same cohorts/seeds (`v6check-*`):
+- 2025 field + zom20, 3,000 battles/arm: V6 0.7312, zchain3 0.7338 (+0.0026
+  [-0.039,+0.044]), zchain4 0.7526 (+0.0214 n.s.), b01d -0.0508, m050 -0.0809.
+- 2025 field, no Zombies, 2,000/arm: V6 0.5846, zchain3 +0.0037 n.s.,
+  zchain4 +0.0108 n.s., m050 -0.0114 n.s.
+- Head-to-head (stress1: V6 + two random 2025 teams, 600 battles/arm):
+  zchain3 0.267 vs V6 0.633; zchain4 0.334 vs V6 0.613; m050 0.088 vs V6 0.789.
+So zchain3 is level with V6 on the broad field but clearly loses when V6 is in
+the same battle. The promotion was against m050; it is not a claim of
+superiority over V6.
