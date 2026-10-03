@@ -127,3 +127,17 @@ an opponent); V6nohunt meets all criteria but with a small effect (secondary arm
 first be compared with the frontier leaders (V4 etc.) on a fresh preregistered test.
 V4 differs from V6 only in B's step (2800h/2000h vs 2C00h/2400h): verified by
 rebuilding V4_2 from the V6 label source (hash e0325834… matches).
+
+## Holdout 5 (preregistered, `protocols/holdout5-frontier.md`) — V6nohunt vs frontier leaders
+
+Leaders = frozen copies in `agent2/frontier-20261003/arms/`. Primary pooled
+F1+F2+F3 (346 cohorts, 98.75% Bonferroni intervals):
+- vs Good_Test_V6: +0.0082 [+0.0036,+0.0128] — rule met (no group significantly negative).
+- vs Good_Test_V4: +0.0416 [+0.0269,+0.0564] in the field, but zchain4-present
+  group -0.0463 [-0.085,-0.007] → rule not met (field win with a specific regression).
+- vs zchain4: +0.0048 [-0.0174,+0.0270] inconclusive; zchain4 ahead on the 2025
+  field (F1 -0.012 n.s.), V6nohunt far ahead on the strong field (+0.098) and in
+  every leader-present group (+0.11 to +0.16).
+- vs combo_zrl03: +0.0581 [+0.0312,+0.0851] — rule met.
+Original engine: 72/72 sampled jobs byte-identical. `final/` unchanged.
+Holdout 4 independently gave V6nohunt - V6 = +0.0050 [+0.0015,+0.0086].
