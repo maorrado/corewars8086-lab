@@ -1,0 +1,602 @@
+[
+ {
+  "id": "A001",
+  "group": "A-performance",
+  "card": "Startup cost of warrior A: remove redundant instructions (e.g. `and dx,0 / or dx,0FFBh` -> direct mov, the jmp to the next line, the dead zombie_entry/zombie_scan block) and measure whether earlier entry into the replicator helps. Keep zom20a capture semantics."
+ },
+ {
+  "id": "A002",
+  "group": "A-performance",
+  "card": "Startup cost of warrior B: shorten/reorder B's initializer (cell writes, INT87 placement, quantizer) so the replicator starts earlier, without breaking zombie_entry (which reuses B code and the get_ip arithmetic)."
+ },
+ {
+  "id": "A003",
+  "group": "A-performance",
+  "card": "Timing of A's zom20a capture: move A's INT87 earlier or later relative to the cell copy; check the race against competitors who also target zom20a; screen."
+ },
+ {
+  "id": "A004",
+  "group": "A-performance",
+  "card": "First-generation geometry: A gap 100h / B gap 600h and first copy CX values; try a few principled alternatives (e.g. equalize first-generation length)."
+ },
+ {
+  "id": "A005",
+  "group": "A-performance",
+  "card": "A/B start synchronization: adjust startup lengths so A and B enter steady state in a controlled phase relation; measure partner interference."
+ },
+ {
+  "id": "A006",
+  "group": "A-performance",
+  "card": "Template copy counts: CX 9 vs 8 for first and later rebuilds in A and B (B uses CX 8 in its first copy). Verify mechanically (extra/short copied bytes) then screen."
+ },
+ {
+  "id": "A007",
+  "group": "A-performance",
+  "card": "A's step/stack motion (BP 4400h / DX 4000h): evaluate alternatives that keep full 64-position coverage (gcd with 10000h = 400h) and trail length 400h."
+ },
+ {
+  "id": "A008",
+  "group": "A-performance",
+  "card": "B's step (BP 2C00h / DX 2400h) vs V4's 2800h/2000h (only 32 positions) vs other full-coverage steps; V4 differs from V6 only here."
+ },
+ {
+  "id": "A009",
+  "group": "A-performance",
+  "card": "Band phases: A phase 2Ch, B phase 10h, zombie phases 2000h/3400h (added to AX); explore separations that minimize A/B/zombie lane overlap."
+ },
+ {
+  "id": "A010",
+  "group": "A-performance",
+  "card": "Quantization: divisor 3Ch on the load high byte; try other band schemes (different divisor, mask) that spread A, B and zombies better."
+ },
+ {
+  "id": "A011",
+  "group": "A-performance",
+  "card": "Lattice undercut: FAR_SEG 0FFBh (in-page 52h). Test 0FFAh (42h) / 0FF9h (32h) for BOTH warriors and captured zombies (all streams same lattice). Known: 10h below a crowd wins vs that crowd; check the cost on the plain field."
+ },
+ {
+  "id": "A012",
+  "group": "A-performance",
+  "card": "Separate lattice for captured zombies only (they run B's phoenix code) - can zombies live on an offset lattice without crossfire on A/B? Measure."
+ },
+ {
+  "id": "A013",
+  "group": "A-performance",
+  "card": "Captured zombies' motion: they run B's phoenix (DX 2400h, BP 2C00h, gap 600h). Give zombies their own step/gap tuned for speed-2 processes."
+ },
+ {
+  "id": "A014",
+  "group": "A-performance",
+  "card": "A/B lockstep separation: same step for A and B with a fixed relative offset (e.g. 8000h) using team-shared memory to coordinate the band; measure partner collisions and score."
+ },
+ {
+  "id": "A015",
+  "group": "A-performance",
+  "card": "Trail length per generation (BP-DX=400h): test 300h/500h/800h variants (keep coverage), considering anchor dwell exposure vs rebuild overhead."
+ },
+ {
+  "id": "A016",
+  "group": "A-performance",
+  "card": "Stack/anchor alignment: verify SP and anchor residues for all streams (A, B, zombies) and test whether any stream currently misaligns (rebuild failures)."
+ },
+ {
+  "id": "A017",
+  "group": "A-performance",
+  "card": "Anchor encoding: `FF 1F` call far [bx] vs `FF 18` [bx+si] vs `FF 1C` [si] etc. - effect of which ModRM byte opponents' writes turn benign/fatal; measure."
+ },
+ {
+  "id": "A018",
+  "group": "A-performance",
+  "card": "Anchor redundancy: write a recovery word after the anchor (e.g. a second `FF 1F`) so common single-byte ModRM hits (FF CC = dec sp) fall through into a valid call; check rebuild still works."
+ },
+ {
+  "id": "A019",
+  "group": "A-performance",
+  "card": "Worker shortening: fewer instructions in the 18-byte worker (e.g. LES DI,[BX], keep CX, avoid XOR SI) to cut rebuild exposure; verify template/copy-count consistency."
+ },
+ {
+  "id": "A020",
+  "group": "A-performance",
+  "card": "Worker instruction order: reorder dependency-safe worker instructions to shrink the exposed window during rebuild; measure."
+ },
+ {
+  "id": "A021",
+  "group": "A-performance",
+  "card": "Kill pattern of our trail: the pushed CS word is FB 0F (STI; invalid). Explore FAR_SEG values whose low byte is immediately fatal (F6/F7 /1 are invalid in v6) while keeping a sane lattice; measure lethality vs cost."
+ },
+ {
+  "id": "A022",
+  "group": "A-performance",
+  "card": "Private memory layout: template at SS:0, cells 2C0h/280h; check whether cell/template positions interact with REP copy overrun (CX words copied beyond the template) and fix if harmful."
+ },
+ {
+  "id": "A023",
+  "group": "A-performance",
+  "card": "Rebuild exposure: the anchor+1..+22 window; try placing or splitting the worker to reduce overlap with incoming trails; prototype carefully."
+ },
+ {
+  "id": "A024",
+  "group": "A-performance",
+  "card": "Remove A's dead hunter code and use freed bytes for something useful (e.g. anchor recovery or a decoy) - measure each separately."
+ },
+ {
+  "id": "A025",
+  "group": "A-performance",
+  "card": "INT 86h for A/B (currently unused, 2 charges each): where could 256-byte bombs help without self-damage (e.g. ahead of own first trail, around zombie positions)? Prototype, screen."
+ },
+ {
+  "id": "A026",
+  "group": "A-performance",
+  "card": "INT 86h by captured zombies (each has 2 charges): use them at capture time (a zombie knows its own code location) to wipe something useful; screen."
+ },
+ {
+  "id": "A027",
+  "group": "A-performance",
+  "card": "zrl03-style two-step b/d capture without planting decoys: make B's first search kill the top decoy and the second capture the live tail, using V6's cell layout; check vs zombie competitors."
+ },
+ {
+  "id": "A028",
+  "group": "A-performance",
+  "card": "Fallback counter-bomb of the captured b/d zombie: `0E 07 0E 17` -> CC. Measure alternative 4-byte targets present in many 2025/2024 initializers (scan the binaries) and pick by field data."
+ },
+ {
+  "id": "A029",
+  "group": "A-performance",
+  "card": "NRG economics: any place where NRG (9B 9B) pays off (startup? zombies? worker?) given decay 1 per 5 rounds; prototype at most one well-reasoned variant."
+ },
+ {
+  "id": "A030",
+  "group": "A-performance",
+  "card": "INT 87h smart-bomb aimed at MOVSW-family anchors or workers (e.g. their rebuild template bytes) using a spare charge; verify target bytes in the binaries first."
+ },
+ {
+  "id": "A031",
+  "group": "A-performance",
+  "card": "Defensive INT 86h: overwrite our own abandoned initializer to remove signatures, or bomb regions opponents use to locate us; measure."
+ },
+ {
+  "id": "A032",
+  "group": "A-performance",
+  "card": "zom20c capture: its live loop is the 3rd of 8 identical copies (a forward search hits copies 0,1,2). Is there any charge budget/pattern that captures it? Prototype if feasible."
+ },
+ {
+  "id": "A033",
+  "group": "A-performance",
+  "card": "Capture the second (lower) zom20b/d: compute the charge budget (A, B, zom20a, b/d = 4 charges); try a reassignment that yields an extra capture without losing the counter-bomb."
+ },
+ {
+  "id": "A034",
+  "group": "A-performance",
+  "card": "Captured-process roles: all captured zombies become replicators. Try giving one captured zombie a different role (e.g. revive the trail hunter only for zombies, or a bomber) and measure."
+ },
+ {
+  "id": "A035",
+  "group": "A-performance",
+  "card": "Lane separation for captured zombies (speed 2 laps survivors): choose zombie phases/steps that minimize their crossings of A/B anchors; verify with a trace."
+ },
+ {
+  "id": "A036",
+  "group": "A-performance",
+  "card": "Make zom20a capture happen earlier (it depends on A's INT87 timing and on [4A17h] being written by B); measure capture rate (trace) and score."
+ },
+ {
+  "id": "A037",
+  "group": "A-performance",
+  "card": "Hook cell robustness: [4A17h] is a fixed shared cell (the V4/V6 family uses it too). Try a less collision-prone cell or a double-pointer scheme; measure vs lead_V6/lead_V4 threats."
+ },
+ {
+  "id": "A038",
+  "group": "A-performance",
+  "card": "zom20a capture robustness vs mimics: E2 F2 81 C3 also appears in Grindo/callfart/AnotherBit. Can a more specific pattern or search start avoid mimics? Measure vs zomb_* threats."
+ },
+ {
+  "id": "A039",
+  "group": "A-performance",
+  "card": "b/d capture search parameters: start DI, direction, pattern choice; measure capture rate and score vs zombie competitors."
+ },
+ {
+  "id": "A040",
+  "group": "A-performance",
+  "card": "Use leaked zombie information (zom20b/d write fixed addresses x612h/x226h; zom20c's column) to locate zombies precisely; prototype a direct-write capture if feasible."
+ },
+ {
+  "id": "A041",
+  "group": "A-performance",
+  "card": "Measure A/B partner trail collisions in the base (trace) and test a separation fix."
+ },
+ {
+  "id": "A042",
+  "group": "A-performance",
+  "card": "Captured zombies vs partners: do zombie trails kill A/B anchors or workers? Trace and fix (family/lattice consistency)."
+ },
+ {
+  "id": "A043",
+  "group": "A-performance",
+  "card": "Team-shared memory communication: B reads A's band (or vice versa) to pick a complementary lane; prototype a minimal protocol."
+ },
+ {
+  "id": "A044",
+  "group": "A-performance",
+  "card": "Self-harm at startup: own writes ([4A17h], [5D13h], [9769h], INT87 replacements, stosw) hitting own or partner code; check with a trace and fix."
+ },
+ {
+  "id": "A045",
+  "group": "A-performance",
+  "card": "Pointer cell vs stack: verify no SP/stack interaction can corrupt the private pointer cells or the template in any stream (zombies have their own SS)."
+ },
+ {
+  "id": "A046",
+  "group": "A-performance",
+  "card": "Hybrid pair: one warrior from zchain4 (strong on the plain 2025 field) + one from the base (robust vs leaders). Check family/lattice compatibility (zchain4 is also on lattice 52h, FAR_SEG 0FFBh) and zombie-cell interplay; screen."
+ },
+ {
+  "id": "A047",
+  "group": "A-performance",
+  "card": "Graft zchain4's zombie-chain idea (captured b/d captures zom20a with 41 93 E2 F2) into the base's charge budget if it frees a charge for another use; screen."
+ },
+ {
+  "id": "A048",
+  "group": "A-performance",
+  "card": "Graft combo_zrl03 ideas (decoy-immune capture pattern 0F EB F9 CC with the CC-high-byte cell trick) into the base without planting decoys; screen and threat-test vs lead_V6."
+ },
+ {
+  "id": "A049",
+  "group": "A-performance",
+  "card": "Independent idea of your choice inside the current architecture - justify it with engine facts and prior data, prototype, screen."
+ },
+ {
+  "id": "A050",
+  "group": "A-performance",
+  "card": "Radical new strategy family (not a far-call replicator tweak) prototyped quickly; screen once; report honestly even if it loses."
+ },
+ {
+  "id": "B051",
+  "group": "B-defense",
+  "domain": 1,
+  "role": "R1-verify",
+  "card": "Domain 1: Collision with other replicators, especially MOVSW-family trails hitting our MOVSB-family anchors (FF A5). Role R1-verify: Verify the mechanism in the CURRENT base and classify it (verified-in-current / verified-in-other / hypothesis / not-reproduced) with a trace or threat job; point to the exact bytes/instructions involved."
+ },
+ {
+  "id": "B052",
+  "group": "B-defense",
+  "domain": 2,
+  "role": "R1-verify",
+  "card": "Domain 2: Zombie competition and zombie mimics (HRZ_Grindo_Holics, GSA_callfart, AVI_AnotherBitInTheWall). Role R1-verify: Verify the mechanism in the CURRENT base and classify it (verified-in-current / verified-in-other / hypothesis / not-reproduced) with a trace or threat job; point to the exact bytes/instructions involved."
+ },
+ {
+  "id": "B053",
+  "group": "B-defense",
+  "domain": 3,
+  "role": "R1-verify",
+  "card": "Domain 3: Zombie theft through fixed hook cells (5D13h, 9769h, 4A17h): when are cells read, can a write redirect our captured zombies? Role R1-verify: Verify the mechanism in the CURRENT base and classify it (verified-in-current / verified-in-other / hypothesis / not-reproduced) with a trace or threat job; point to the exact bytes/instructions involved."
+ },
+ {
+  "id": "B054",
+  "group": "B-defense",
+  "domain": 4,
+  "role": "R1-verify",
+  "card": "Domain 4: Decoys that waste our INT87 searches (combo_zrl03 planted EB F9 at FFECh/FFE8h; zombie mimic copies). Role R1-verify: Verify the mechanism in the CURRENT base and classify it (verified-in-current / verified-in-other / hypothesis / not-reproduced) with a trace or threat job; point to the exact bytes/instructions involved."
+ },
+ {
+  "id": "B055",
+  "group": "B-defense",
+  "domain": 5,
+  "role": "R1-verify",
+  "card": "Domain 5: Lattice height/offset differences between replicator families (undercut by 10h-60h). Role R1-verify: Verify the mechanism in the CURRENT base and classify it (verified-in-current / verified-in-other / hypothesis / not-reproduced) with a trace or threat job; point to the exact bytes/instructions involved."
+ },
+ {
+  "id": "B056",
+  "group": "B-defense",
+  "domain": 6,
+  "role": "R1-verify",
+  "card": "Domain 6: Signature attacks on our initializer bytes via INT87 (New_Best-style 4-byte search and replace on published Survivor code). Role R1-verify: Verify the mechanism in the CURRENT base and classify it (verified-in-current / verified-in-other / hypothesis / not-reproduced) with a trace or threat job; point to the exact bytes/instructions involved."
+ },
+ {
+  "id": "B057",
+  "group": "B-defense",
+  "domain": 7,
+  "role": "R1-verify",
+  "card": "Domain 7: Trail scanners / anchor hunters that detect far-call trails and bomb the anchor (V6's own zombie_scan is one such design). Role R1-verify: Verify the mechanism in the CURRENT base and classify it (verified-in-current / verified-in-other / hypothesis / not-reproduced) with a trace or threat job; point to the exact bytes/instructions involved."
+ },
+ {
+  "id": "B058",
+  "group": "B-defense",
+  "domain": 8,
+  "role": "R1-verify",
+  "card": "Domain 8: Dense bombers (IND_BRA-style sparse CC) and early INT86 heavy bombs before we are established. Role R1-verify: Verify the mechanism in the CURRENT base and classify it (verified-in-current / verified-in-other / hypothesis / not-reproduced) with a trace or threat job; point to the exact bytes/instructions involved."
+ },
+ {
+  "id": "B059",
+  "group": "B-defense",
+  "domain": 9,
+  "role": "R1-verify",
+  "card": "Domain 9: Self-harm: A/B partner collisions, captured-zombie trails hitting survivors, own startup writes. Role R1-verify: Verify the mechanism in the CURRENT base and classify it (verified-in-current / verified-in-other / hypothesis / not-reproduced) with a trace or threat job; point to the exact bytes/instructions involved."
+ },
+ {
+  "id": "B060",
+  "group": "B-defense",
+  "domain": 10,
+  "role": "R1-verify",
+  "card": "Domain 10: New threats, combined attacks, and fields with several teams of the same counter family (2-3 copies). Role R1-verify: Verify the mechanism in the CURRENT base and classify it (verified-in-current / verified-in-other / hypothesis / not-reproduced) with a trace or threat job; point to the exact bytes/instructions involved."
+ },
+ {
+  "id": "B061",
+  "group": "B-defense",
+  "domain": 1,
+  "role": "R2-measure",
+  "card": "Domain 1: Collision with other replicators, especially MOVSW-family trails hitting our MOVSB-family anchors (FF A5). Role R2-measure: Measure prevalence and impact in realistic fields: which opponents in the 2025/2024 pools exhibit it (scan binaries with dis86 or byte search) and how many points/battle it costs the base (threat jobs on the relevant library keys)."
+ },
+ {
+  "id": "B062",
+  "group": "B-defense",
+  "domain": 2,
+  "role": "R2-measure",
+  "card": "Domain 2: Zombie competition and zombie mimics (HRZ_Grindo_Holics, GSA_callfart, AVI_AnotherBitInTheWall). Role R2-measure: Measure prevalence and impact in realistic fields: which opponents in the 2025/2024 pools exhibit it (scan binaries with dis86 or byte search) and how many points/battle it costs the base (threat jobs on the relevant library keys)."
+ },
+ {
+  "id": "B063",
+  "group": "B-defense",
+  "domain": 3,
+  "role": "R2-measure",
+  "card": "Domain 3: Zombie theft through fixed hook cells (5D13h, 9769h, 4A17h): when are cells read, can a write redirect our captured zombies? Role R2-measure: Measure prevalence and impact in realistic fields: which opponents in the 2025/2024 pools exhibit it (scan binaries with dis86 or byte search) and how many points/battle it costs the base (threat jobs on the relevant library keys)."
+ },
+ {
+  "id": "B064",
+  "group": "B-defense",
+  "domain": 4,
+  "role": "R2-measure",
+  "card": "Domain 4: Decoys that waste our INT87 searches (combo_zrl03 planted EB F9 at FFECh/FFE8h; zombie mimic copies). Role R2-measure: Measure prevalence and impact in realistic fields: which opponents in the 2025/2024 pools exhibit it (scan binaries with dis86 or byte search) and how many points/battle it costs the base (threat jobs on the relevant library keys)."
+ },
+ {
+  "id": "B065",
+  "group": "B-defense",
+  "domain": 5,
+  "role": "R2-measure",
+  "card": "Domain 5: Lattice height/offset differences between replicator families (undercut by 10h-60h). Role R2-measure: Measure prevalence and impact in realistic fields: which opponents in the 2025/2024 pools exhibit it (scan binaries with dis86 or byte search) and how many points/battle it costs the base (threat jobs on the relevant library keys)."
+ },
+ {
+  "id": "B066",
+  "group": "B-defense",
+  "domain": 6,
+  "role": "R2-measure",
+  "card": "Domain 6: Signature attacks on our initializer bytes via INT87 (New_Best-style 4-byte search and replace on published Survivor code). Role R2-measure: Measure prevalence and impact in realistic fields: which opponents in the 2025/2024 pools exhibit it (scan binaries with dis86 or byte search) and how many points/battle it costs the base (threat jobs on the relevant library keys)."
+ },
+ {
+  "id": "B067",
+  "group": "B-defense",
+  "domain": 7,
+  "role": "R2-measure",
+  "card": "Domain 7: Trail scanners / anchor hunters that detect far-call trails and bomb the anchor (V6's own zombie_scan is one such design). Role R2-measure: Measure prevalence and impact in realistic fields: which opponents in the 2025/2024 pools exhibit it (scan binaries with dis86 or byte search) and how many points/battle it costs the base (threat jobs on the relevant library keys)."
+ },
+ {
+  "id": "B068",
+  "group": "B-defense",
+  "domain": 8,
+  "role": "R2-measure",
+  "card": "Domain 8: Dense bombers (IND_BRA-style sparse CC) and early INT86 heavy bombs before we are established. Role R2-measure: Measure prevalence and impact in realistic fields: which opponents in the 2025/2024 pools exhibit it (scan binaries with dis86 or byte search) and how many points/battle it costs the base (threat jobs on the relevant library keys)."
+ },
+ {
+  "id": "B069",
+  "group": "B-defense",
+  "domain": 9,
+  "role": "R2-measure",
+  "card": "Domain 9: Self-harm: A/B partner collisions, captured-zombie trails hitting survivors, own startup writes. Role R2-measure: Measure prevalence and impact in realistic fields: which opponents in the 2025/2024 pools exhibit it (scan binaries with dis86 or byte search) and how many points/battle it costs the base (threat jobs on the relevant library keys)."
+ },
+ {
+  "id": "B070",
+  "group": "B-defense",
+  "domain": 10,
+  "role": "R2-measure",
+  "card": "Domain 10: New threats, combined attacks, and fields with several teams of the same counter family (2-3 copies). Role R2-measure: Measure prevalence and impact in realistic fields: which opponents in the 2025/2024 pools exhibit it (scan binaries with dis86 or byte search) and how many points/battle it costs the base (threat jobs on the relevant library keys)."
+ },
+ {
+  "id": "B071",
+  "group": "B-defense",
+  "domain": 1,
+  "role": "R3-counter",
+  "card": "Domain 1: Collision with other replicators, especially MOVSW-family trails hitting our MOVSB-family anchors (FF A5). Role R3-counter: Write a NEW counter-code (asm in your scratch, <=256 B per warrior, file names counterA.asm/counterB.asm) that exploits this weakness on purpose; measure it against the base with threat jobs (also --copies 2/3). It becomes a test case for fixes."
+ },
+ {
+  "id": "B072",
+  "group": "B-defense",
+  "domain": 2,
+  "role": "R3-counter",
+  "card": "Domain 2: Zombie competition and zombie mimics (HRZ_Grindo_Holics, GSA_callfart, AVI_AnotherBitInTheWall). Role R3-counter: Write a NEW counter-code (asm in your scratch, <=256 B per warrior, file names counterA.asm/counterB.asm) that exploits this weakness on purpose; measure it against the base with threat jobs (also --copies 2/3). It becomes a test case for fixes."
+ },
+ {
+  "id": "B073",
+  "group": "B-defense",
+  "domain": 3,
+  "role": "R3-counter",
+  "card": "Domain 3: Zombie theft through fixed hook cells (5D13h, 9769h, 4A17h): when are cells read, can a write redirect our captured zombies? Role R3-counter: Write a NEW counter-code (asm in your scratch, <=256 B per warrior, file names counterA.asm/counterB.asm) that exploits this weakness on purpose; measure it against the base with threat jobs (also --copies 2/3). It becomes a test case for fixes."
+ },
+ {
+  "id": "B074",
+  "group": "B-defense",
+  "domain": 4,
+  "role": "R3-counter",
+  "card": "Domain 4: Decoys that waste our INT87 searches (combo_zrl03 planted EB F9 at FFECh/FFE8h; zombie mimic copies). Role R3-counter: Write a NEW counter-code (asm in your scratch, <=256 B per warrior, file names counterA.asm/counterB.asm) that exploits this weakness on purpose; measure it against the base with threat jobs (also --copies 2/3). It becomes a test case for fixes."
+ },
+ {
+  "id": "B075",
+  "group": "B-defense",
+  "domain": 5,
+  "role": "R3-counter",
+  "card": "Domain 5: Lattice height/offset differences between replicator families (undercut by 10h-60h). Role R3-counter: Write a NEW counter-code (asm in your scratch, <=256 B per warrior, file names counterA.asm/counterB.asm) that exploits this weakness on purpose; measure it against the base with threat jobs (also --copies 2/3). It becomes a test case for fixes."
+ },
+ {
+  "id": "B076",
+  "group": "B-defense",
+  "domain": 6,
+  "role": "R3-counter",
+  "card": "Domain 6: Signature attacks on our initializer bytes via INT87 (New_Best-style 4-byte search and replace on published Survivor code). Role R3-counter: Write a NEW counter-code (asm in your scratch, <=256 B per warrior, file names counterA.asm/counterB.asm) that exploits this weakness on purpose; measure it against the base with threat jobs (also --copies 2/3). It becomes a test case for fixes."
+ },
+ {
+  "id": "B077",
+  "group": "B-defense",
+  "domain": 7,
+  "role": "R3-counter",
+  "card": "Domain 7: Trail scanners / anchor hunters that detect far-call trails and bomb the anchor (V6's own zombie_scan is one such design). Role R3-counter: Write a NEW counter-code (asm in your scratch, <=256 B per warrior, file names counterA.asm/counterB.asm) that exploits this weakness on purpose; measure it against the base with threat jobs (also --copies 2/3). It becomes a test case for fixes."
+ },
+ {
+  "id": "B078",
+  "group": "B-defense",
+  "domain": 8,
+  "role": "R3-counter",
+  "card": "Domain 8: Dense bombers (IND_BRA-style sparse CC) and early INT86 heavy bombs before we are established. Role R3-counter: Write a NEW counter-code (asm in your scratch, <=256 B per warrior, file names counterA.asm/counterB.asm) that exploits this weakness on purpose; measure it against the base with threat jobs (also --copies 2/3). It becomes a test case for fixes."
+ },
+ {
+  "id": "B079",
+  "group": "B-defense",
+  "domain": 9,
+  "role": "R3-counter",
+  "card": "Domain 9: Self-harm: A/B partner collisions, captured-zombie trails hitting survivors, own startup writes. Role R3-counter: Write a NEW counter-code (asm in your scratch, <=256 B per warrior, file names counterA.asm/counterB.asm) that exploits this weakness on purpose; measure it against the base with threat jobs (also --copies 2/3). It becomes a test case for fixes."
+ },
+ {
+  "id": "B080",
+  "group": "B-defense",
+  "domain": 10,
+  "role": "R3-counter",
+  "card": "Domain 10: New threats, combined attacks, and fields with several teams of the same counter family (2-3 copies). Role R3-counter: Write a NEW counter-code (asm in your scratch, <=256 B per warrior, file names counterA.asm/counterB.asm) that exploits this weakness on purpose; measure it against the base with threat jobs (also --copies 2/3). It becomes a test case for fixes."
+ },
+ {
+  "id": "B081",
+  "group": "B-defense",
+  "domain": 1,
+  "role": "R4-fix",
+  "card": "Domain 1: Collision with other replicators, especially MOVSW-family trails hitting our MOVSB-family anchors (FF A5). Role R4-fix: Design and test a defensive fix in the base: screen it (general cost) and threat-test it on the relevant counters (library keys and counter-codes other agents left in agent2/night/scratch/*/counter*.asm). Keep the fix documented even if not promotable."
+ },
+ {
+  "id": "B082",
+  "group": "B-defense",
+  "domain": 2,
+  "role": "R4-fix",
+  "card": "Domain 2: Zombie competition and zombie mimics (HRZ_Grindo_Holics, GSA_callfart, AVI_AnotherBitInTheWall). Role R4-fix: Design and test a defensive fix in the base: screen it (general cost) and threat-test it on the relevant counters (library keys and counter-codes other agents left in agent2/night/scratch/*/counter*.asm). Keep the fix documented even if not promotable."
+ },
+ {
+  "id": "B083",
+  "group": "B-defense",
+  "domain": 3,
+  "role": "R4-fix",
+  "card": "Domain 3: Zombie theft through fixed hook cells (5D13h, 9769h, 4A17h): when are cells read, can a write redirect our captured zombies? Role R4-fix: Design and test a defensive fix in the base: screen it (general cost) and threat-test it on the relevant counters (library keys and counter-codes other agents left in agent2/night/scratch/*/counter*.asm). Keep the fix documented even if not promotable."
+ },
+ {
+  "id": "B084",
+  "group": "B-defense",
+  "domain": 4,
+  "role": "R4-fix",
+  "card": "Domain 4: Decoys that waste our INT87 searches (combo_zrl03 planted EB F9 at FFECh/FFE8h; zombie mimic copies). Role R4-fix: Design and test a defensive fix in the base: screen it (general cost) and threat-test it on the relevant counters (library keys and counter-codes other agents left in agent2/night/scratch/*/counter*.asm). Keep the fix documented even if not promotable."
+ },
+ {
+  "id": "B085",
+  "group": "B-defense",
+  "domain": 5,
+  "role": "R4-fix",
+  "card": "Domain 5: Lattice height/offset differences between replicator families (undercut by 10h-60h). Role R4-fix: Design and test a defensive fix in the base: screen it (general cost) and threat-test it on the relevant counters (library keys and counter-codes other agents left in agent2/night/scratch/*/counter*.asm). Keep the fix documented even if not promotable."
+ },
+ {
+  "id": "B086",
+  "group": "B-defense",
+  "domain": 6,
+  "role": "R4-fix",
+  "card": "Domain 6: Signature attacks on our initializer bytes via INT87 (New_Best-style 4-byte search and replace on published Survivor code). Role R4-fix: Design and test a defensive fix in the base: screen it (general cost) and threat-test it on the relevant counters (library keys and counter-codes other agents left in agent2/night/scratch/*/counter*.asm). Keep the fix documented even if not promotable."
+ },
+ {
+  "id": "B087",
+  "group": "B-defense",
+  "domain": 7,
+  "role": "R4-fix",
+  "card": "Domain 7: Trail scanners / anchor hunters that detect far-call trails and bomb the anchor (V6's own zombie_scan is one such design). Role R4-fix: Design and test a defensive fix in the base: screen it (general cost) and threat-test it on the relevant counters (library keys and counter-codes other agents left in agent2/night/scratch/*/counter*.asm). Keep the fix documented even if not promotable."
+ },
+ {
+  "id": "B088",
+  "group": "B-defense",
+  "domain": 8,
+  "role": "R4-fix",
+  "card": "Domain 8: Dense bombers (IND_BRA-style sparse CC) and early INT86 heavy bombs before we are established. Role R4-fix: Design and test a defensive fix in the base: screen it (general cost) and threat-test it on the relevant counters (library keys and counter-codes other agents left in agent2/night/scratch/*/counter*.asm). Keep the fix documented even if not promotable."
+ },
+ {
+  "id": "B089",
+  "group": "B-defense",
+  "domain": 9,
+  "role": "R4-fix",
+  "card": "Domain 9: Self-harm: A/B partner collisions, captured-zombie trails hitting survivors, own startup writes. Role R4-fix: Design and test a defensive fix in the base: screen it (general cost) and threat-test it on the relevant counters (library keys and counter-codes other agents left in agent2/night/scratch/*/counter*.asm). Keep the fix documented even if not promotable."
+ },
+ {
+  "id": "B090",
+  "group": "B-defense",
+  "domain": 10,
+  "role": "R4-fix",
+  "card": "Domain 10: New threats, combined attacks, and fields with several teams of the same counter family (2-3 copies). Role R4-fix: Design and test a defensive fix in the base: screen it (general cost) and threat-test it on the relevant counters (library keys and counter-codes other agents left in agent2/night/scratch/*/counter*.asm). Keep the fix documented even if not promotable."
+ },
+ {
+  "id": "B091",
+  "group": "B-defense",
+  "domain": 1,
+  "role": "R5-cost",
+  "card": "Domain 1: Collision with other replicators, especially MOVSW-family trails hitting our MOVSB-family anchors (FF A5). Role R5-cost: Audit fixes proposed for this weakness so far (agent2/night/FINDINGS.md and other agents' scratch reports): pick the best, test its general cost and its interaction with another promising change (combination screen), and recommend promote / do-not-promote."
+ },
+ {
+  "id": "B092",
+  "group": "B-defense",
+  "domain": 2,
+  "role": "R5-cost",
+  "card": "Domain 2: Zombie competition and zombie mimics (HRZ_Grindo_Holics, GSA_callfart, AVI_AnotherBitInTheWall). Role R5-cost: Audit fixes proposed for this weakness so far (agent2/night/FINDINGS.md and other agents' scratch reports): pick the best, test its general cost and its interaction with another promising change (combination screen), and recommend promote / do-not-promote."
+ },
+ {
+  "id": "B093",
+  "group": "B-defense",
+  "domain": 3,
+  "role": "R5-cost",
+  "card": "Domain 3: Zombie theft through fixed hook cells (5D13h, 9769h, 4A17h): when are cells read, can a write redirect our captured zombies? Role R5-cost: Audit fixes proposed for this weakness so far (agent2/night/FINDINGS.md and other agents' scratch reports): pick the best, test its general cost and its interaction with another promising change (combination screen), and recommend promote / do-not-promote."
+ },
+ {
+  "id": "B094",
+  "group": "B-defense",
+  "domain": 4,
+  "role": "R5-cost",
+  "card": "Domain 4: Decoys that waste our INT87 searches (combo_zrl03 planted EB F9 at FFECh/FFE8h; zombie mimic copies). Role R5-cost: Audit fixes proposed for this weakness so far (agent2/night/FINDINGS.md and other agents' scratch reports): pick the best, test its general cost and its interaction with another promising change (combination screen), and recommend promote / do-not-promote."
+ },
+ {
+  "id": "B095",
+  "group": "B-defense",
+  "domain": 5,
+  "role": "R5-cost",
+  "card": "Domain 5: Lattice height/offset differences between replicator families (undercut by 10h-60h). Role R5-cost: Audit fixes proposed for this weakness so far (agent2/night/FINDINGS.md and other agents' scratch reports): pick the best, test its general cost and its interaction with another promising change (combination screen), and recommend promote / do-not-promote."
+ },
+ {
+  "id": "B096",
+  "group": "B-defense",
+  "domain": 6,
+  "role": "R5-cost",
+  "card": "Domain 6: Signature attacks on our initializer bytes via INT87 (New_Best-style 4-byte search and replace on published Survivor code). Role R5-cost: Audit fixes proposed for this weakness so far (agent2/night/FINDINGS.md and other agents' scratch reports): pick the best, test its general cost and its interaction with another promising change (combination screen), and recommend promote / do-not-promote."
+ },
+ {
+  "id": "B097",
+  "group": "B-defense",
+  "domain": 7,
+  "role": "R5-cost",
+  "card": "Domain 7: Trail scanners / anchor hunters that detect far-call trails and bomb the anchor (V6's own zombie_scan is one such design). Role R5-cost: Audit fixes proposed for this weakness so far (agent2/night/FINDINGS.md and other agents' scratch reports): pick the best, test its general cost and its interaction with another promising change (combination screen), and recommend promote / do-not-promote."
+ },
+ {
+  "id": "B098",
+  "group": "B-defense",
+  "domain": 8,
+  "role": "R5-cost",
+  "card": "Domain 8: Dense bombers (IND_BRA-style sparse CC) and early INT86 heavy bombs before we are established. Role R5-cost: Audit fixes proposed for this weakness so far (agent2/night/FINDINGS.md and other agents' scratch reports): pick the best, test its general cost and its interaction with another promising change (combination screen), and recommend promote / do-not-promote."
+ },
+ {
+  "id": "B099",
+  "group": "B-defense",
+  "domain": 9,
+  "role": "R5-cost",
+  "card": "Domain 9: Self-harm: A/B partner collisions, captured-zombie trails hitting survivors, own startup writes. Role R5-cost: Audit fixes proposed for this weakness so far (agent2/night/FINDINGS.md and other agents' scratch reports): pick the best, test its general cost and its interaction with another promising change (combination screen), and recommend promote / do-not-promote."
+ },
+ {
+  "id": "B100",
+  "group": "B-defense",
+  "domain": 10,
+  "role": "R5-cost",
+  "card": "Domain 10: New threats, combined attacks, and fields with several teams of the same counter family (2-3 copies). Role R5-cost: Audit fixes proposed for this weakness so far (agent2/night/FINDINGS.md and other agents' scratch reports): pick the best, test its general cost and its interaction with another promising change (combination screen), and recommend promote / do-not-promote."
+ }
+]
