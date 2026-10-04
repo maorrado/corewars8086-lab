@@ -1,0 +1,486 @@
+{
+ "job": {
+  "id": "20261004110836921-D4-screen-n6sgd",
+  "agent": "D4",
+  "kind": "screen",
+  "submittedAt": "2026-10-04T11:08:36.924Z",
+  "note": "D4 DET: adaptive lattice. B writes [4A17h] late (instr 7, [9769h] moved to B instr 8, 16-bit band math keeps phoenix at instr 25). A instr 5 reads [4A17h] (CCCCh unless V6-family B wrote it at instr 3) -> FAR_SEG 0FFBh/0FFAh via cmp bp,1/adc dx,0FFAh (turn-neutral); B cmp/je/dec patches its own phoenix or-dx imm so B+zombies follow. 42h only vs V6 family.",
+  "asmA": "agent2/day2/scratch/D4/DET_A.asm",
+  "asmB": "agent2/day2/scratch/D4/DET_B.asm"
+ },
+ "ok": true,
+ "finishedAt": "2026-10-04T11:11:23.565Z",
+ "seconds": 128.813,
+ "result": {
+  "candidate": {
+   "A": "agent2/day2/q/cand-build/20261004110836921-D4-screen-n6sgd/candA",
+   "B": "agent2/day2/q/cand-build/20261004110836921-D4-screen-n6sgd/candB",
+   "sizeA": 214,
+   "sizeB": 233,
+   "shaA": "2153532daca9095acc71f0a2bdc7560024fc81972171c02f1b7f8cc41d1b1ce4",
+   "shaB": "17c3cb4a33a525f0528f0e26b29e5dd797e930cba937f0dec9a7f6d40c1aca1e"
+  },
+  "baseRevision": 1,
+  "battlesPerArm": 1740,
+  "candMean": 0.725,
+  "baseMean": 0.6282,
+  "all": {
+   "n": 58,
+   "diff": 0.09673,
+   "lo": 0.04773,
+   "hi": 0.14573,
+   "wins": 31,
+   "losses": 17
+  },
+  "groups": {
+   "2025": {
+    "n": 15,
+    "diff": 0.01111,
+    "lo": -0.00871,
+    "hi": 0.03093,
+    "wins": 5,
+    "losses": 2
+   },
+   "strong": {
+    "n": 7,
+    "diff": 0.01349,
+    "lo": -0.03348,
+    "hi": 0.06047,
+    "wins": 3,
+    "losses": 2
+   },
+   "leader1": {
+    "n": 24,
+    "diff": 0.10498,
+    "lo": 0.02114,
+    "hi": 0.18881,
+    "wins": 14,
+    "losses": 10
+   },
+   "leader2": {
+    "n": 8,
+    "diff": 0.25257,
+    "lo": 0.07456,
+    "hi": 0.43058,
+    "wins": 6,
+    "losses": 2
+   },
+   "leader3": {
+    "n": 4,
+    "diff": 0.20236,
+    "lo": -0.01651,
+    "hi": 0.42123,
+    "wins": 3,
+    "losses": 1
+   }
+  },
+  "perCohort": [
+   {
+    "cohort": "p2025-0",
+    "group": "2025",
+    "cand": 0.8667,
+    "base": 0.8667,
+    "diff": 0
+   },
+   {
+    "cohort": "p2025-1",
+    "group": "2025",
+    "cand": 0.7,
+    "base": 0.7667,
+    "diff": -0.0667
+   },
+   {
+    "cohort": "p2025-2",
+    "group": "2025",
+    "cand": 0.3,
+    "base": 0.3,
+    "diff": 0
+   },
+   {
+    "cohort": "p2025-3",
+    "group": "2025",
+    "cand": 0.8667,
+    "base": 0.8333,
+    "diff": 0.0333
+   },
+   {
+    "cohort": "p2025-4",
+    "group": "2025",
+    "cand": 0.6667,
+    "base": 0.6333,
+    "diff": 0.0333
+   },
+   {
+    "cohort": "p2025-5",
+    "group": "2025",
+    "cand": 0.9,
+    "base": 0.9,
+    "diff": 0
+   },
+   {
+    "cohort": "p2025-6",
+    "group": "2025",
+    "cand": 0.7833,
+    "base": 0.7833,
+    "diff": 0
+   },
+   {
+    "cohort": "p2025-7",
+    "group": "2025",
+    "cand": 0.6333,
+    "base": 0.6,
+    "diff": 0.0333
+   },
+   {
+    "cohort": "p2025-8",
+    "group": "2025",
+    "cand": 0.8,
+    "base": 0.7333,
+    "diff": 0.0667
+   },
+   {
+    "cohort": "p2025-9",
+    "group": "2025",
+    "cand": 0.8333,
+    "base": 0.8333,
+    "diff": 0
+   },
+   {
+    "cohort": "p2025-10",
+    "group": "2025",
+    "cand": 0.8667,
+    "base": 0.8667,
+    "diff": 0
+   },
+   {
+    "cohort": "p2025-11",
+    "group": "2025",
+    "cand": 0.5667,
+    "base": 0.5667,
+    "diff": 0
+   },
+   {
+    "cohort": "p2025-12",
+    "group": "2025",
+    "cand": 0.7667,
+    "base": 0.6667,
+    "diff": 0.1
+   },
+   {
+    "cohort": "p2025-13",
+    "group": "2025",
+    "cand": 0.6333,
+    "base": 0.6667,
+    "diff": -0.0333
+   },
+   {
+    "cohort": "p2025-14",
+    "group": "2025",
+    "cand": 0.6333,
+    "base": 0.6333,
+    "diff": 0
+   },
+   {
+    "cohort": "strong-0",
+    "group": "strong",
+    "cand": 0.8444,
+    "base": 0.9333,
+    "diff": -0.0889
+   },
+   {
+    "cohort": "strong-1",
+    "group": "strong",
+    "cand": 0.5667,
+    "base": 0.55,
+    "diff": 0.0167
+   },
+   {
+    "cohort": "strong-2",
+    "group": "strong",
+    "cand": 0.4833,
+    "base": 0.4,
+    "diff": 0.0833
+   },
+   {
+    "cohort": "strong-3",
+    "group": "strong",
+    "cand": 0.6833,
+    "base": 0.7,
+    "diff": -0.0167
+   },
+   {
+    "cohort": "strong-4",
+    "group": "strong",
+    "cand": 0.9444,
+    "base": 0.9444,
+    "diff": 0
+   },
+   {
+    "cohort": "strong-5",
+    "group": "strong",
+    "cand": 0.9667,
+    "base": 0.9667,
+    "diff": 0
+   },
+   {
+    "cohort": "strong-6",
+    "group": "strong",
+    "cand": 0.4667,
+    "base": 0.3667,
+    "diff": 0.1
+   },
+   {
+    "cohort": "L1-V6-0",
+    "group": "leader1",
+    "cand": 0.9167,
+    "base": 0.7056,
+    "diff": 0.2111
+   },
+   {
+    "cohort": "L1-V6-1",
+    "group": "leader1",
+    "cand": 0.75,
+    "base": 0.5167,
+    "diff": 0.2333
+   },
+   {
+    "cohort": "L1-V6-2",
+    "group": "leader1",
+    "cand": 0.8,
+    "base": 0.5167,
+    "diff": 0.2833
+   },
+   {
+    "cohort": "L1-V4-0",
+    "group": "leader1",
+    "cand": 0.4833,
+    "base": 0.3556,
+    "diff": 0.1278
+   },
+   {
+    "cohort": "L1-V4-1",
+    "group": "leader1",
+    "cand": 0.7306,
+    "base": 0.5944,
+    "diff": 0.1361
+   },
+   {
+    "cohort": "L1-V4-2",
+    "group": "leader1",
+    "cand": 0.7,
+    "base": 0.5278,
+    "diff": 0.1722
+   },
+   {
+    "cohort": "L1-V6Guard-0",
+    "group": "leader1",
+    "cand": 0.8667,
+    "base": 0.3722,
+    "diff": 0.4944
+   },
+   {
+    "cohort": "L1-V6Guard-1",
+    "group": "leader1",
+    "cand": 0.8,
+    "base": 0.5111,
+    "diff": 0.2889
+   },
+   {
+    "cohort": "L1-V6Guard-2",
+    "group": "leader1",
+    "cand": 0.8333,
+    "base": 0.5111,
+    "diff": 0.3222
+   },
+   {
+    "cohort": "L1-V6nohunt-0",
+    "group": "leader1",
+    "cand": 0.9667,
+    "base": 0.4833,
+    "diff": 0.4833
+   },
+   {
+    "cohort": "L1-V6nohunt-1",
+    "group": "leader1",
+    "cand": 0.9167,
+    "base": 0.5667,
+    "diff": 0.35
+   },
+   {
+    "cohort": "L1-V6nohunt-2",
+    "group": "leader1",
+    "cand": 0.75,
+    "base": 0.4444,
+    "diff": 0.3056
+   },
+   {
+    "cohort": "L1-zchain4-0",
+    "group": "leader1",
+    "cand": 0.8167,
+    "base": 0.8222,
+    "diff": -0.0056
+   },
+   {
+    "cohort": "L1-zchain4-1",
+    "group": "leader1",
+    "cand": 0.7444,
+    "base": 0.8444,
+    "diff": -0.1
+   },
+   {
+    "cohort": "L1-zchain4-2",
+    "group": "leader1",
+    "cand": 0.5889,
+    "base": 0.6389,
+    "diff": -0.05
+   },
+   {
+    "cohort": "L1-zchain3-0",
+    "group": "leader1",
+    "cand": 0.8111,
+    "base": 0.8056,
+    "diff": 0.0056
+   },
+   {
+    "cohort": "L1-zchain3-1",
+    "group": "leader1",
+    "cand": 0.8111,
+    "base": 0.8278,
+    "diff": -0.0167
+   },
+   {
+    "cohort": "L1-zchain3-2",
+    "group": "leader1",
+    "cand": 0.6611,
+    "base": 0.8778,
+    "diff": -0.2167
+   },
+   {
+    "cohort": "L1-zrl03-0",
+    "group": "leader1",
+    "cand": 0.7111,
+    "base": 0.8278,
+    "diff": -0.1167
+   },
+   {
+    "cohort": "L1-zrl03-1",
+    "group": "leader1",
+    "cand": 0.5444,
+    "base": 0.6333,
+    "diff": -0.0889
+   },
+   {
+    "cohort": "L1-zrl03-2",
+    "group": "leader1",
+    "cand": 0.4556,
+    "base": 0.6278,
+    "diff": -0.1722
+   },
+   {
+    "cohort": "L1-ah02-0",
+    "group": "leader1",
+    "cand": 0.65,
+    "base": 0.7611,
+    "diff": -0.1111
+   },
+   {
+    "cohort": "L1-ah02-1",
+    "group": "leader1",
+    "cand": 0.7333,
+    "base": 0.6278,
+    "diff": 0.1056
+   },
+   {
+    "cohort": "L1-ah02-2",
+    "group": "leader1",
+    "cand": 0.65,
+    "base": 0.7722,
+    "diff": -0.1222
+   },
+   {
+    "cohort": "L2-V6-zchain4",
+    "group": "leader2",
+    "cand": 0.7778,
+    "base": 0.5111,
+    "diff": 0.2667
+   },
+   {
+    "cohort": "L2-V4-zchain4",
+    "group": "leader2",
+    "cand": 0.9067,
+    "base": 0.5056,
+    "diff": 0.4011
+   },
+   {
+    "cohort": "L2-V6Guard-zchain3",
+    "group": "leader2",
+    "cand": 0.7389,
+    "base": 0.5111,
+    "diff": 0.2278
+   },
+   {
+    "cohort": "L2-V6-zrl03",
+    "group": "leader2",
+    "cand": 0.4722,
+    "base": 0.2361,
+    "diff": 0.2361
+   },
+   {
+    "cohort": "L2-zchain4-ah02",
+    "group": "leader2",
+    "cand": 0.675,
+    "base": 0.7556,
+    "diff": -0.0806
+   },
+   {
+    "cohort": "L2-V6nohunt-zchain4",
+    "group": "leader2",
+    "cand": 0.9167,
+    "base": 0.3778,
+    "diff": 0.5389
+   },
+   {
+    "cohort": "L2-V4-V6Guard",
+    "group": "leader2",
+    "cand": 0.8667,
+    "base": 0.3028,
+    "diff": 0.5639
+   },
+   {
+    "cohort": "L2-zchain4-zrl03",
+    "group": "leader2",
+    "cand": 0.5233,
+    "base": 0.6567,
+    "diff": -0.1333
+   },
+   {
+    "cohort": "L3-V6x2-z4",
+    "group": "leader3",
+    "cand": 0.8111,
+    "base": 0.4039,
+    "diff": 0.4072
+   },
+   {
+    "cohort": "L3-z4x2-V6",
+    "group": "leader3",
+    "cand": 0.655,
+    "base": 0.6611,
+    "diff": -0.0061
+   },
+   {
+    "cohort": "L3-V4-V6G-z4",
+    "group": "leader3",
+    "cand": 0.7667,
+    "base": 0.3833,
+    "diff": 0.3833
+   },
+   {
+    "cohort": "L3-V6-zrl-ah",
+    "group": "leader3",
+    "cand": 0.475,
+    "base": 0.45,
+    "diff": 0.025
+   }
+  ]
+ }
+}

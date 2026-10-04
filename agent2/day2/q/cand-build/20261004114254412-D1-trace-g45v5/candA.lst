@@ -1,0 +1,134 @@
+     1                                  ; D1 (agent2 day2 role D1, base rev1 KPHL) variant cL: coupled phoenix with a V6-compatible template.
+     2                                  ; Good_Test V6 is friend-provided code (warrior 1/2 reconstructed in study-notes/good-test-v6/source/);
+     3                                  ; V6nohunt and all night edits are agent2 roles (see agent2/night/FINDINGS.md); this edit is agent2 day2 D1.
+     4                                  ; Mechanism (trace dayTR-1e9efbcb54-dd73fad407, emulator agent2/day2/scratch/D1/absim.mjs reproduces the traced
+     5                                  ;   self-kill rounds 32598/52953/65875/69725/109868/114282): the worker's sub sp,dx carries the SP excess of an EARLY
+     6                                  ;   trigger into the next generation (d_new = d_trig + trail), so B and the captured zombies run decoupled ('free')
+     7                                  ;   fronts that trail A's front by 4-80 bytes when A self-triggers and overwrite A's worker during its rebuild.
+     8                                  ; Change: after V6's unchanged worker prefix (sub sp,dx .. dec di, byte-identical so co-anchored V6-family and
+     9                                  ;   own rebuilds still write the same bytes at P+4..P+15), one lea re-derives SP from the new anchor every
+    10                                  ;   generation: SP = BX + DI (+d8) with DI = new IP + 1 and the private cell BX placed so that SP = anchor + trail.
+    11                                  ;   A, B and captured zombies share one byte-identical template (only the private cell offset differs).
+    12                                  ; COMBINE (night combination coordinator, 2026-10-04, base rev0): KPHL = KP + h34 (B099 KPH_B) + locpatA (B092 KL_A). A = KL_A unchanged; B = B099 KPH_B.
+    13                                  ; Good_Test V6 is friend-provided code; V6nohunt and all night edits by agent2 roles (see FINDINGS.md).
+    14                                  bits 16
+    15                                  
+    16                                  ; B092 KL (warrior A): A031 K (E1 INT86 decoy block + A022 SD template edits) combined with the
+    17                                  ; domain-2 defense A038 locpatA (B082 location start DI = 15*[1243h] + A038 window F2 81 C3 E1 -> FF 26 17 4A).
+    18                                  ; Provenance: Good_Test V6 warrior 1 is friend-provided code (reconstructed source in
+    19                                  ; study-notes/good-test-v6/source/); V6nohunt = agent2 edit (removed [7A00h] patch); E1/SD/locA2/locpatA are
+    20                                  ; agent2 night edits (A031, A022, B082, A038); this merge = agent2 night role B092.
+    21                                  ; Turn budget: locpatA startup (INT87 at instr 11) + E1 block (4 instr) + band math with a memory divisor
+    22                                  ; (div/mul word [kq] instead of mov cx,3C00h; div cx; mul cx: same AX, one instruction fewer) + add si;
+    23                                  ; phoenix_init still starts at turn 22 (as in rev0, K and locpatA). Data moved to the end (no jmp needed).
+    24                                  ; B = A031 K_B (A026 Z1 + SD) unchanged.
+    25                                  
+    26                                  start:
+    27 00000000 89C6                        mov si, ax                      ; 1
+    28 00000002 BBFF26                      mov bx, 026FFh                  ; 2
+    29 00000005 B9174A                      mov cx, 04A17h                  ; 3
+    30 00000008 A14312                      mov ax, [1243h]                 ; 4  zom20a's v1 = hi(L*10E1h)
+    31 0000000B 8B16174A                    mov dx, [4A17h]                 ; 5
+    32 0000000F 89166997                    mov [9769h], dx                 ; 6  Registered_Winners hook cell
+    33 00000013 F7A4D400                    mul word [si + k15 - start]     ; 7  ax = 15*v1
+    34 00000017 97                          xchg ax, di                     ; 8
+    35 00000018 C484D000                    les ax, [si + z20a_data - start]; 9  ax = 81F2h, es = 1000h (arena)
+    36 0000001C BAC3E1                      mov dx, 0E1C3h                  ; 10
+    37 0000001F CD87                        int 087h                        ; 11 F2 81 C3 E1 -> FF 26 17 4A, forward from DI
+    38 00000021 BF80FF                      mov di, 0FF80h                  ; 12 E1: 64 x FF 1F CC CC at 0FF80h..007Fh
+    39 00000024 B8FF1F                      mov ax, 01FFFh                  ; 13
+    40 00000027 BACCCC                      mov dx, 0CCCCh                  ; 14
+    41 0000002A CD86                        int 086h                        ; 15
+    42 0000002C 89F0                        mov ax, si                      ; 16 band math: floor(si/3C00h)*3C00h + 2CA2h
+    43 0000002E 31D2                        xor dx, dx                      ; 17
+    44 00000030 F7B4D600                    div word [si + kq - start]      ; 18
+    45 00000034 F7A4D600                    mul word [si + kq - start]      ; 19
+    46 00000038 05A22C                      add ax, 02CA2h                  ; 20
+    47 0000003B 81C67700                    add si, strict word worker - start ; 21
+    48                                  
+    49                                  phoenix_init:
+    50 0000003F 16                          push ss
+    51 00000040 07                          pop es
+    52 00000041 31FF                        xor di, di
+    53 00000043 B90B00                      mov cx, 11              ; D1: template copy 22 bytes (worker grew)
+    54 00000046 F3A5                        rep movsw
+    55 00000048 16                          push ss
+    56 00000049 1F                          pop ds
+    57 0000004A BBAF03                      mov bx, 003AFh             ; D1: cell offset sets A's trail (400h) via lea
+    58 0000004D 0E                          push cs
+    59 0000004E 17                          pop ss
+    60 0000004F 8907                        mov [bx], ax
+    61 00000051 83E200                      and dx, 0
+    62 00000054 81CAFB0F                    or dx, 0FFBh
+    63 00000058 895702                      mov [bx + 2], dx
+    64 0000005B 31F6                        xor si, si
+    65 0000005D 89C7                        mov di, ax
+    66 0000005F 8EC2                        mov es, dx
+    67 00000061 89FC                        mov sp, di
+    68 00000063 81C40001                    add sp, 00100h
+    69 00000067 B90900                      mov cx, 9
+    70 0000006A BA0040                      mov dx, 04000h
+    71 0000006D BD0044                      mov bp, 04400h
+    72 00000070 B8FF1F                      mov ax, 01FFFh
+    73 00000073 AB                          stosw
+    74 00000074 4F                          dec di
+    75 00000075 FF1F                        call far [bx]
+    76                                  worker:
+    77 00000077 A5                          movsw
+    78 00000078 F3A5                        rep movsw
+    79 0000007A 29D4                        sub sp, dx
+    80 0000007C 292F                        sub [bx], bp
+    81 0000007E 8B3F                        mov di, [bx]
+    82 00000080 B109                        mov cl, 9
+    83 00000082 31F6                        xor si, si
+    84 00000084 AB                          stosw
+    85 00000085 4F                          dec di
+    86 00000086 8D21                        lea sp, [bx + di]       ; D1: SP = cell(BX) + new IP + 1 = anchor + trail (coupled)
+    87 00000088 FF1F                        call far [bx]
+    88 0000008A CCCC                        db 0CCh, 0CCh
+    89                                  
+    90                                  zombie_entry:
+    91 0000008C 89C3                        mov bx, ax
+    92 0000008E BACCCC                      mov dx, 0CCCCh
+    93                                  
+    94                                  zombie_scan:
+    95 00000091 81C30001                    add bx, 00100h
+    96 00000095 813FCCCC                    cmp word [bx], 0CCCCh
+    97 00000099 74F6                        je short zombie_scan
+    98                                  
+    99 0000009B B104                        mov cl, 4
+   100                                  
+   101                                  candidate_check:
+   102 0000009D 8A4701                      mov al, [bx + 1]
+   103 000000A0 2C0F                        sub al, 0Fh
+   104 000000A2 3C10                        cmp al, 10h
+   105 000000A4 770D                        ja short next_candidate
+   106 000000A6 8B37                        mov si, [bx]
+   107 000000A8 81FEFC0F                    cmp si, 0FFCh
+   108 000000AC 7405                        je short next_candidate
+   109 000000AE 3B7704                      cmp si, [bx + 4]
+   110 000000B1 7405                        je short found_candidate
+   111                                  
+   112                                  next_candidate:
+   113 000000B3 43                          inc bx
+   114 000000B4 E2E7                        loop candidate_check
+   115 000000B6 EBD9                        jmp short zombie_scan
+   116                                  
+   117                                  found_candidate:
+   118 000000B8 8B7FFE                      mov di, [bx - 2]
+   119 000000BB 81EE0010                    sub si, 01000h
+   120 000000BF 01F6                        add si, si
+   121 000000C1 01F6                        add si, si
+   122 000000C3 01F6                        add si, si
+   123 000000C5 01F6                        add si, si
+   124 000000C7 83EF02                      sub di, 2
+   125 000000CA 01F7                        add di, si
+   126 000000CC 8915                        mov [di], dx
+   127 000000CE EBC1                        jmp short zombie_scan
+   128                                  
+   129                                  z20a_data:
+   130 000000D0 F2810010                    dw 081F2h, 01000h
+   131                                  k15:
+   132 000000D4 0F00                        dw 15
+   133                                  kq:
+   134 000000D6 003C                        dw 03C00h

@@ -1,0 +1,28 @@
+{
+ "job": {
+  "id": "20261004114254412-D1-trace-g45v5",
+  "agent": "D1",
+  "kind": "trace",
+  "submittedAt": "2026-10-04T11:42:54.415Z",
+  "note": "D1 cL trace: where do the 2025/strong losses come from; is co-anchor poisoning of V6-family real",
+  "asmA": "agent2/day2/scratch/D1/cL_A.asm",
+  "asmB": "agent2/day2/scratch/D1/cL_B.asm"
+ },
+ "ok": true,
+ "finishedAt": "2026-10-04T11:45:11.143Z",
+ "seconds": 50.796,
+ "result": {
+  "candidate": {
+   "A": "agent2/day2/q/cand-build/20261004114254412-D1-trace-g45v5/candA",
+   "B": "agent2/day2/q/cand-build/20261004114254412-D1-trace-g45v5/candB",
+   "sizeA": 216,
+   "sizeB": 224,
+   "shaA": "d8ed27782913e4c0312423cc99ef679f4ed6d7188da7d9e6ad9afff4cb242391",
+   "shaB": "f6421cc54bd9eafc438f03dc1ad0e82800ca7b77c12660fcd3d8acee3e425fb9"
+  },
+  "traceDir": "agent2/day2/q/scratch/_trace/dayTR-d8ed277829-f6421cc54b",
+  "battles": 300,
+  "summary": "deaths 297\n 104 wild-cs          memory exception opp\n  96 wild-cs          CPU exception    opp\n  19 wild-cs          CPU exception    zombie\n  15 wild-cs          memory exception ourZombie\n  12 wild-cs          CPU exception    self-only\n   8 wild-cs          CPU exception    partner\n   8 wild-cs          CPU exception    ourZombie\n   7 wild-cs          memory exception self-only\n   6 startup(cs1000)  CPU exception    zombie\n   6 startup(cs1000)  memory exception zombie\n   4 startup(cs1000)  CPU exception    opp\n   3 wild-cs          CPU exception    untouched\n   2 wild-cs          memory exception load\n   2 startup(cs1000)  memory exception opp\n   2 startup(cs1000)  memory exception load\n   1 startup(cs1000)  memory exception partner\n   1 startup(cs1000)  CPU exception    untouched\n   1 startup(cs1000)  CPU exception    load\ntop opponent killers: T_V6=32 T_V6Guard=25 A_HRZ_BinaryBandits=16 T_zrl03=15 A_HDS_NRI=11 T_V6nohunt=10 Y_SZR_BrvazimAlSteroidim=10 T_V4=8 Y_GSA_LVS_FIT=8 T_ah02=7 T_zchain4_b=7 A_HRZ_Pixar_Lamps=6\n",
+  "note": "phase 'wild-cs' = any CS other than 0FFC/1000 (V6 family uses FAR_SEG 0FFB); examples.json not produced by sum-trace2; raw jsonl in traceDir"
+ }
+}

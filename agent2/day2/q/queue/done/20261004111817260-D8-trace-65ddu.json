@@ -1,0 +1,28 @@
+{
+ "job": {
+  "id": "20261004111817260-D8-trace-65ddu",
+  "agent": "D8",
+  "kind": "trace",
+  "submittedAt": "2026-10-04T11:18:17.263Z",
+  "note": "MC2 trace (exact candidate binary; merge-kill mechanism and residual killers)",
+  "asmA": "agent2/day2/scratch/D8/MC2_A.asm",
+  "asmB": "agent2/day2/scratch/D8/MC2_B.asm"
+ },
+ "ok": true,
+ "finishedAt": "2026-10-04T11:21:57.165Z",
+ "seconds": 136.4,
+ "result": {
+  "candidate": {
+   "A": "agent2/day2/q/cand-build/20261004111817260-D8-trace-65ddu/candA",
+   "B": "agent2/day2/q/cand-build/20261004111817260-D8-trace-65ddu/candB",
+   "sizeA": 214,
+   "sizeB": 222,
+   "shaA": "cb76c341f4db3af2d33ffa38d543849cf54e3684a2904354d6aba3c81a902ae7",
+   "shaB": "0a986917237d8ddb6c7de01b0a1f08e32c05d726ecedd9554bddf3e0e3c0a2b7"
+  },
+  "traceDir": "agent2/day2/q/scratch/_trace/dayTR-cb76c341f4-0a98691723",
+  "battles": 300,
+  "summary": "deaths 234\n  83 wild-cs          CPU exception    opp\n  33 wild-cs          memory exception opp\n  32 wild-cs          CPU exception    partner\n  22 wild-cs          CPU exception    zombie\n  14 wild-cs          memory exception self-only\n  11 wild-cs          CPU exception    self-only\n   8 wild-cs          CPU exception    ourZombie\n   7 startup(cs1000)  CPU exception    zombie\n   4 startup(cs1000)  memory exception zombie\n   4 startup(cs1000)  CPU exception    opp\n   4 wild-cs          CPU exception    untouched\n   3 startup(cs1000)  memory exception load\n   2 startup(cs1000)  memory exception opp\n   1 wild-cs          memory exception load\n   1 wild-cs          CPU exception    load\n   1 startup(cs1000)  memory exception partner\n   1 startup(cs1000)  CPU exception    untouched\n   1 wild-cs          memory exception zombie\n   1 wild-cs          memory exception partner\n   1 startup(cs1000)  CPU exception    load\ntop opponent killers: A_HRZ_BinaryBandits=17 T_zrl03=15 A_HDS_NRI=11 Y_SZR_BrvazimAlSteroidim=9 A_HRZ_Grindo_Holics=8 A_BZV_SKYENT=7 A_HRZ_Pixar_Lamps=6 Y_GSA_LVS_FIT=6 T_ah02=5 A_HRZ_PowerRangers=4 T_zchain4_b=4 A_WHS_K0F1M_AL_T1L1M=4\n",
+  "note": "phase 'wild-cs' = any CS other than 0FFC/1000 (V6 family uses FAR_SEG 0FFB); examples.json not produced by sum-trace2; raw jsonl in traceDir"
+ }
+}

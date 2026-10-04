@@ -1,0 +1,28 @@
+{
+ "job": {
+  "id": "20261004111606639-D4-trace-l7lp7",
+  "agent": "D4",
+  "kind": "trace",
+  "submittedAt": "2026-10-04T11:16:06.641Z",
+  "note": "D4 DET2 trace: verify lattice switch (our CS 0FFAh only in V6-family cohorts, captured zombies follow) and death attribution vs rev1 trace 600di",
+  "asmA": "agent2/day2/scratch/D4/DET2_A.asm",
+  "asmB": "agent2/day2/scratch/D4/DET2_B.asm"
+ },
+ "ok": true,
+ "finishedAt": "2026-10-04T11:19:40.731Z",
+ "seconds": 121.956,
+ "result": {
+  "candidate": {
+   "A": "agent2/day2/q/cand-build/20261004111606639-D4-trace-l7lp7/candA",
+   "B": "agent2/day2/q/cand-build/20261004111606639-D4-trace-l7lp7/candB",
+   "sizeA": 214,
+   "sizeB": 233,
+   "shaA": "2153532daca9095acc71f0a2bdc7560024fc81972171c02f1b7f8cc41d1b1ce4",
+   "shaB": "15f5c4dabec14a62af067a9593e3ce6f207167c78b4b6f8e5c89fc4e3e8de8a1"
+  },
+  "traceDir": "agent2/day2/q/scratch/_trace/dayTR-2153532dac-15f5c4dabe",
+  "battles": 300,
+  "summary": "deaths 229\n 101 wild-cs          CPU exception    opp\n  24 wild-cs          memory exception opp\n  20 wild-cs          CPU exception    zombie\n  19 wild-cs          CPU exception    partner\n  11 wild-cs          CPU exception    ourZombie\n  11 wild-cs          CPU exception    self-only\n  10 wild-cs          memory exception self-only\n   7 startup(cs1000)  CPU exception    zombie\n   6 startup(cs1000)  memory exception zombie\n   5 startup(cs1000)  CPU exception    opp\n   3 wild-cs          CPU exception    untouched\n   3 startup(cs1000)  memory exception load\n   2 wild-cs          memory exception zombie\n   1 wild-cs          memory exception load\n   1 wild-cs          CPU exception    load\n   1 startup(cs1000)  CPU exception    untouched\n   1 startup(cs1000)  memory exception opp\n   1 startup(cs1000)  CPU exception    load\n   1 startup(cs1000)  memory exception partner\n   1 wild-cs          memory exception untouched\ntop opponent killers: T_zrl03=19 A_HRZ_BinaryBandits=11 A_HDS_NRI=11 Y_SZR_BrvazimAlSteroidim=8 A_HRZ_InCtrl=8 A_HRZ_Grindo_Holics=8 T_V4=7 A_HRZ_PowerRangers=6 T_V6Guard=6 Y_GSA_LVS_FIT=6 A_HRZ_Pixar_Lamps=5 T_ah02=4\n",
+  "note": "phase 'wild-cs' = any CS other than 0FFC/1000 (V6 family uses FAR_SEG 0FFB); examples.json not produced by sum-trace2; raw jsonl in traceDir"
+ }
+}

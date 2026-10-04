@@ -1,0 +1,27 @@
+{
+ "job": {
+  "id": "20261004113018433-D5-trace-7qfq1",
+  "agent": "D5",
+  "kind": "trace",
+  "submittedAt": "2026-10-04T11:30:18.434Z",
+  "note": "D5 A34 trace: why A phase 34h loses on field L (compare with rev1 trace dayTR)",
+  "asmA": "agent2/day2/scratch/D5/A34.asm"
+ },
+ "ok": true,
+ "finishedAt": "2026-10-04T11:31:59.862Z",
+ "seconds": 100.07,
+ "result": {
+  "candidate": {
+   "A": "agent2/day2/q/cand-build/20261004113018433-D5-trace-7qfq1/candA",
+   "B": "agent2/day2/q/revisions/rev1/B",
+   "sizeA": 214,
+   "sizeB": 222,
+   "shaA": "11a87e7cbc8a50d2a8f63e13177599099822c0ffc5a5876b266509e924c6ba08",
+   "shaB": "dd73fad407df01a6890dbab26b895320bc1a81ff4c3ed35b9a3a584b2daee1c7"
+  },
+  "traceDir": "agent2/day2/q/scratch/_trace/dayTR-11a87e7cbc-dd73fad407",
+  "battles": 300,
+  "summary": "deaths 342\n 139 wild-cs          CPU exception    opp\n  55 wild-cs          CPU exception    zombie\n  41 wild-cs          memory exception opp\n  30 wild-cs          CPU exception    ourZombie\n  29 wild-cs          CPU exception    partner\n   9 wild-cs          memory exception self-only\n   8 wild-cs          CPU exception    self-only\n   6 startup(cs1000)  CPU exception    zombie\n   6 startup(cs1000)  memory exception zombie\n   4 wild-cs          CPU exception    untouched\n   4 startup(cs1000)  CPU exception    opp\n   3 startup(cs1000)  memory exception load\n   2 wild-cs          memory exception zombie\n   2 startup(cs1000)  memory exception opp\n   1 wild-cs          CPU exception    load\n   1 startup(cs1000)  memory exception partner\n   1 startup(cs1000)  CPU exception    untouched\n   1 startup(cs1000)  CPU exception    load\ntop opponent killers: T_V6=24 A_HRZ_BinaryBandits=15 T_V6Guard=15 T_V4=12 T_zrl03=12 T_V6nohunt=10 Y_SZR_BrvazimAlSteroidim=9 T_ah02=8 Y_MTA_Hexellent=8 A_HRZ_Pixar_Lamps=7 Y_GSA_LVS_FIT=7 A_HRZ_Grindo_Holics=7\n",
+  "note": "phase 'wild-cs' = any CS other than 0FFC/1000 (V6 family uses FAR_SEG 0FFB); examples.json not produced by sum-trace2; raw jsonl in traceDir"
+ }
+}

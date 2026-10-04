@@ -1,0 +1,9 @@
+{
+ "id": "20261004110836921-D4-screen-n6sgd",
+ "agent": "D4",
+ "kind": "screen",
+ "submittedAt": "2026-10-04T11:08:36.924Z",
+ "note": "D4 DET: adaptive lattice. B writes [4A17h] late (instr 7, [9769h] moved to B instr 8, 16-bit band math keeps phoenix at instr 25). A instr 5 reads [4A17h] (CCCCh unless V6-family B wrote it at instr 3) -> FAR_SEG 0FFBh/0FFAh via cmp bp,1/adc dx,0FFAh (turn-neutral); B cmp/je/dec patches its own phoenix or-dx imm so B+zombies follow. 42h only vs V6 family.",
+ "asmA": "agent2/day2/scratch/D4/DET_A.asm",
+ "asmB": "agent2/day2/scratch/D4/DET_B.asm"
+}

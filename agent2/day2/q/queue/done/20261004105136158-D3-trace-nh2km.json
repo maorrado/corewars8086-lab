@@ -1,0 +1,27 @@
+{
+ "job": {
+  "id": "20261004105136158-D3-trace-nh2km",
+  "agent": "D3",
+  "kind": "trace",
+  "submittedAt": "2026-10-04T10:51:36.159Z",
+  "note": "D3 S4 trace: verify zombie ownership shift in V6-family cohorts",
+  "asmB": "agent2/day2/scratch/D3/S4_B.asm"
+ },
+ "ok": true,
+ "finishedAt": "2026-10-04T10:52:56.851Z",
+ "seconds": 78.662,
+ "result": {
+  "candidate": {
+   "A": "agent2/day2/q/revisions/rev1/A",
+   "B": "agent2/day2/q/cand-build/20261004105136158-D3-trace-nh2km/candB",
+   "sizeA": 214,
+   "sizeB": 222,
+   "shaA": "1e9efbcb54cb79f1da0ecaaf41f84418043ff97c93bdef2c1f2eba9a430d262a",
+   "shaB": "499971a9b49bab1d3c3ff6a2e7024cd6467891d1cab284a3e402f396e061279b"
+  },
+  "traceDir": "agent2/day2/q/scratch/_trace/dayTR-1e9efbcb54-499971a9b4",
+  "battles": 300,
+  "summary": "deaths 307\n 148 wild-cs          CPU exception    opp\n  33 wild-cs          CPU exception    partner\n  31 wild-cs          CPU exception    zombie\n  29 wild-cs          memory exception opp\n  16 wild-cs          CPU exception    ourZombie\n   9 wild-cs          CPU exception    self-only\n   8 startup(cs1000)  memory exception zombie\n   7 startup(cs1000)  CPU exception    zombie\n   7 wild-cs          memory exception self-only\n   4 startup(cs1000)  CPU exception    opp\n   3 wild-cs          CPU exception    untouched\n   3 startup(cs1000)  memory exception load\n   2 startup(cs1000)  memory exception opp\n   2 wild-cs          memory exception zombie\n   1 wild-cs          memory exception load\n   1 wild-cs          CPU exception    load\n   1 startup(cs1000)  CPU exception    untouched\n   1 startup(cs1000)  CPU exception    load\n   1 wild-cs          memory exception untouched\ntop opponent killers: T_V6=26 T_V6Guard=19 T_zrl03=15 A_HRZ_BinaryBandits=14 T_V4=12 A_HDS_NRI=11 T_V6nohunt=9 Y_SZR_BrvazimAlSteroidim=9 A_BZV_SKYENT=7 A_HRZ_Grindo_Holics=7 A_HRZ_PowerRangers=6 A_HRZ_Pixar_Lamps=6\n",
+  "note": "phase 'wild-cs' = any CS other than 0FFC/1000 (V6 family uses FAR_SEG 0FFB); examples.json not produced by sum-trace2; raw jsonl in traceDir"
+ }
+}
