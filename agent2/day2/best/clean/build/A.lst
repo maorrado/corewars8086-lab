@@ -1,0 +1,102 @@
+     1                                  ; Based on Good_Test V6 (friend-provided code); agent2 edits rev1 (KPHL) + day2 DET2 adaptive lattice
+     2                                  bits 16
+     3                                  start:
+     4 00000000 89C6                        mov si, ax
+     5 00000002 BBFF26                      mov bx, 026FFh
+     6 00000005 B9174A                      mov cx, 04A17h
+     7 00000008 A14312                      mov ax, [1243h]
+     8 0000000B 8B2E174A                    mov bp, [4A17h]
+     9 0000000F 81F5CCCC                    xor bp, 0CCCCh
+    10 00000013 F7A4D200                    mul word [si + k15 - start]
+    11 00000017 97                          xchg ax, di
+    12 00000018 C484CE00                    les ax, [si + z20a_data - start]
+    13 0000001C BAC3E1                      mov dx, 0E1C3h
+    14 0000001F CD87                        int 087h
+    15 00000021 BF80FF                      mov di, 0FF80h
+    16 00000024 B8FF1F                      mov ax, 01FFFh
+    17 00000027 BACCCC                      mov dx, 0CCCCh
+    18 0000002A CD86                        int 086h
+    19 0000002C 89F0                        mov ax, si
+    20 0000002E 31D2                        xor dx, dx
+    21 00000030 F7B4D400                    div word [si + kq - start]
+    22 00000034 F7A4D400                    mul word [si + kq - start]
+    23 00000038 05A22C                      add ax, 02CA2h
+    24 0000003B 81C67700                    add si, strict word worker - start
+    25                                  phoenix_init:
+    26 0000003F 16                          push ss
+    27 00000040 07                          pop es
+    28 00000041 31FF                        xor di, di
+    29 00000043 B90A00                      mov cx, 10
+    30 00000046 F3A5                        rep movsw
+    31 00000048 16                          push ss
+    32 00000049 1F                          pop ds
+    33 0000004A BBC002                      mov bx, 002C0h
+    34 0000004D 0E                          push cs
+    35 0000004E 17                          pop ss
+    36 0000004F 8907                        mov [bx], ax
+    37 00000051 83FD01                      cmp bp, 1
+    38 00000054 81D2FA0F                    adc dx, 0FFAh
+    39 00000058 895702                      mov [bx + 2], dx
+    40 0000005B 31F6                        xor si, si
+    41 0000005D 89C7                        mov di, ax
+    42 0000005F 8EC2                        mov es, dx
+    43 00000061 89FC                        mov sp, di
+    44 00000063 81C40001                    add sp, 00100h
+    45 00000067 B90900                      mov cx, 9
+    46 0000006A BA0040                      mov dx, 04000h
+    47 0000006D BD0044                      mov bp, 04400h
+    48 00000070 B8FF1F                      mov ax, 01FFFh
+    49 00000073 AB                          stosw
+    50 00000074 4F                          dec di
+    51 00000075 FF1F                        call far [bx]
+    52                                  worker:
+    53 00000077 A5                          movsw
+    54 00000078 F3A5                        rep movsw
+    55 0000007A 29D4                        sub sp, dx
+    56 0000007C 292F                        sub [bx], bp
+    57 0000007E 8B3F                        mov di, [bx]
+    58 00000080 B109                        mov cl, 9
+    59 00000082 31F6                        xor si, si
+    60 00000084 AB                          stosw
+    61 00000085 4F                          dec di
+    62 00000086 FF1F                        call far [bx]
+    63 00000088 CCCC                        db 0CCh, 0CCh
+    64                                  zombie_entry:
+    65 0000008A 89C3                        mov bx, ax
+    66 0000008C BACCCC                      mov dx, 0CCCCh
+    67                                  zombie_scan:
+    68 0000008F 81C30001                    add bx, 00100h
+    69 00000093 813FCCCC                    cmp word [bx], 0CCCCh
+    70 00000097 74F6                        je short zombie_scan
+    71 00000099 B104                        mov cl, 4
+    72                                  candidate_check:
+    73 0000009B 8A4701                      mov al, [bx + 1]
+    74 0000009E 2C0F                        sub al, 0Fh
+    75 000000A0 3C10                        cmp al, 10h
+    76 000000A2 770D                        ja short next_candidate
+    77 000000A4 8B37                        mov si, [bx]
+    78 000000A6 81FEFC0F                    cmp si, 0FFCh
+    79 000000AA 7405                        je short next_candidate
+    80 000000AC 3B7704                      cmp si, [bx + 4]
+    81 000000AF 7405                        je short found_candidate
+    82                                  next_candidate:
+    83 000000B1 43                          inc bx
+    84 000000B2 E2E7                        loop candidate_check
+    85 000000B4 EBD9                        jmp short zombie_scan
+    86                                  found_candidate:
+    87 000000B6 8B7FFE                      mov di, [bx - 2]
+    88 000000B9 81EE0010                    sub si, 01000h
+    89 000000BD 01F6                        add si, si
+    90 000000BF 01F6                        add si, si
+    91 000000C1 01F6                        add si, si
+    92 000000C3 01F6                        add si, si
+    93 000000C5 83EF02                      sub di, 2
+    94 000000C8 01F7                        add di, si
+    95 000000CA 8915                        mov [di], dx
+    96 000000CC EBC1                        jmp short zombie_scan
+    97                                  z20a_data:
+    98 000000CE F2810010                    dw 081F2h, 01000h
+    99                                  k15:
+   100 000000D2 0F00                        dw 15
+   101                                  kq:
+   102 000000D4 003C                        dw 03C00h
