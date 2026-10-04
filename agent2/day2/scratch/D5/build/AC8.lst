@@ -1,0 +1,125 @@
+     1                                  ; D5 (day2, 2026-10-04): AC8 = rev1 A with the band phase 2Ch -> C8h (one immediate, 0 bytes, 0 turns).
+     2                                  ; Reason: D5 family simulator with our captured zom20a stream (speed 2, start jitter): A deaths from own B/zombie
+     3                                  ; trails drop strongly vs 2Ch. Screen ruhbb (phase 34h) showed zombie kills dominate. Good_Test V6 attribution below kept.
+     4                                  ; COMBINE (night combination coordinator, 2026-10-04, base rev0): KPHL = KP + h34 (B099 KPH_B) + locpatA (B092 KL_A). A = KL_A unchanged; B = B099 KPH_B.
+     5                                  ; Good_Test V6 is friend-provided code; V6nohunt and all night edits by agent2 roles (see FINDINGS.md).
+     6                                  bits 16
+     7                                  
+     8                                  ; B092 KL (warrior A): A031 K (E1 INT86 decoy block + A022 SD template edits) combined with the
+     9                                  ; domain-2 defense A038 locpatA (B082 location start DI = 15*[1243h] + A038 window F2 81 C3 E1 -> FF 26 17 4A).
+    10                                  ; Provenance: Good_Test V6 warrior 1 is friend-provided code (reconstructed source in
+    11                                  ; study-notes/good-test-v6/source/); V6nohunt = agent2 edit (removed [7A00h] patch); E1/SD/locA2/locpatA are
+    12                                  ; agent2 night edits (A031, A022, B082, A038); this merge = agent2 night role B092.
+    13                                  ; Turn budget: locpatA startup (INT87 at instr 11) + E1 block (4 instr) + band math with a memory divisor
+    14                                  ; (div/mul word [kq] instead of mov cx,3C00h; div cx; mul cx: same AX, one instruction fewer) + add si;
+    15                                  ; phoenix_init still starts at turn 22 (as in rev0, K and locpatA). Data moved to the end (no jmp needed).
+    16                                  ; B = A031 K_B (A026 Z1 + SD) unchanged.
+    17                                  
+    18                                  start:
+    19 00000000 89C6                        mov si, ax                      ; 1
+    20 00000002 BBFF26                      mov bx, 026FFh                  ; 2
+    21 00000005 B9174A                      mov cx, 04A17h                  ; 3
+    22 00000008 A14312                      mov ax, [1243h]                 ; 4  zom20a's v1 = hi(L*10E1h)
+    23 0000000B 8B16174A                    mov dx, [4A17h]                 ; 5
+    24 0000000F 89166997                    mov [9769h], dx                 ; 6  Registered_Winners hook cell
+    25 00000013 F7A4D200                    mul word [si + k15 - start]     ; 7  ax = 15*v1
+    26 00000017 97                          xchg ax, di                     ; 8
+    27 00000018 C484CE00                    les ax, [si + z20a_data - start]; 9  ax = 81F2h, es = 1000h (arena)
+    28 0000001C BAC3E1                      mov dx, 0E1C3h                  ; 10
+    29 0000001F CD87                        int 087h                        ; 11 F2 81 C3 E1 -> FF 26 17 4A, forward from DI
+    30 00000021 BF80FF                      mov di, 0FF80h                  ; 12 E1: 64 x FF 1F CC CC at 0FF80h..007Fh
+    31 00000024 B8FF1F                      mov ax, 01FFFh                  ; 13
+    32 00000027 BACCCC                      mov dx, 0CCCCh                  ; 14
+    33 0000002A CD86                        int 086h                        ; 15
+    34 0000002C 89F0                        mov ax, si                      ; 16 band math: floor(si/3C00h)*3C00h + C8A2h (D5)
+    35 0000002E 31D2                        xor dx, dx                      ; 17
+    36 00000030 F7B4D400                    div word [si + kq - start]      ; 18
+    37 00000034 F7A4D400                    mul word [si + kq - start]      ; 19
+    38 00000038 05A2C8                      add ax, 0C8A2h                  ; 20 D5: A band phase 2Ch -> C8h (own-pair + own-zombie crossfire)
+    39 0000003B 81C67700                    add si, strict word worker - start ; 21
+    40                                  
+    41                                  phoenix_init:
+    42 0000003F 16                          push ss
+    43 00000040 07                          pop es
+    44 00000041 31FF                        xor di, di
+    45 00000043 B90A00                      mov cx, 10
+    46 00000046 F3A5                        rep movsw
+    47 00000048 16                          push ss
+    48 00000049 1F                          pop ds
+    49 0000004A BBC002                      mov bx, 002C0h
+    50 0000004D 0E                          push cs
+    51 0000004E 17                          pop ss
+    52 0000004F 8907                        mov [bx], ax
+    53 00000051 83E200                      and dx, 0
+    54 00000054 81CAFB0F                    or dx, 0FFBh
+    55 00000058 895702                      mov [bx + 2], dx
+    56 0000005B 31F6                        xor si, si
+    57 0000005D 89C7                        mov di, ax
+    58 0000005F 8EC2                        mov es, dx
+    59 00000061 89FC                        mov sp, di
+    60 00000063 81C40001                    add sp, 00100h
+    61 00000067 B90900                      mov cx, 9
+    62 0000006A BA0040                      mov dx, 04000h
+    63 0000006D BD0044                      mov bp, 04400h
+    64 00000070 B8FF1F                      mov ax, 01FFFh
+    65 00000073 AB                          stosw
+    66 00000074 4F                          dec di
+    67 00000075 FF1F                        call far [bx]
+    68                                  worker:
+    69 00000077 A5                          movsw
+    70 00000078 F3A5                        rep movsw
+    71 0000007A 29D4                        sub sp, dx
+    72 0000007C 292F                        sub [bx], bp
+    73 0000007E 8B3F                        mov di, [bx]
+    74 00000080 B109                        mov cl, 9
+    75 00000082 31F6                        xor si, si
+    76 00000084 AB                          stosw
+    77 00000085 4F                          dec di
+    78 00000086 FF1F                        call far [bx]
+    79 00000088 CCCC                        db 0CCh, 0CCh
+    80                                  
+    81                                  zombie_entry:
+    82 0000008A 89C3                        mov bx, ax
+    83 0000008C BACCCC                      mov dx, 0CCCCh
+    84                                  
+    85                                  zombie_scan:
+    86 0000008F 81C30001                    add bx, 00100h
+    87 00000093 813FCCCC                    cmp word [bx], 0CCCCh
+    88 00000097 74F6                        je short zombie_scan
+    89                                  
+    90 00000099 B104                        mov cl, 4
+    91                                  
+    92                                  candidate_check:
+    93 0000009B 8A4701                      mov al, [bx + 1]
+    94 0000009E 2C0F                        sub al, 0Fh
+    95 000000A0 3C10                        cmp al, 10h
+    96 000000A2 770D                        ja short next_candidate
+    97 000000A4 8B37                        mov si, [bx]
+    98 000000A6 81FEFC0F                    cmp si, 0FFCh
+    99 000000AA 7405                        je short next_candidate
+   100 000000AC 3B7704                      cmp si, [bx + 4]
+   101 000000AF 7405                        je short found_candidate
+   102                                  
+   103                                  next_candidate:
+   104 000000B1 43                          inc bx
+   105 000000B2 E2E7                        loop candidate_check
+   106 000000B4 EBD9                        jmp short zombie_scan
+   107                                  
+   108                                  found_candidate:
+   109 000000B6 8B7FFE                      mov di, [bx - 2]
+   110 000000B9 81EE0010                    sub si, 01000h
+   111 000000BD 01F6                        add si, si
+   112 000000BF 01F6                        add si, si
+   113 000000C1 01F6                        add si, si
+   114 000000C3 01F6                        add si, si
+   115 000000C5 83EF02                      sub di, 2
+   116 000000C8 01F7                        add di, si
+   117 000000CA 8915                        mov [di], dx
+   118 000000CC EBC1                        jmp short zombie_scan
+   119                                  
+   120                                  z20a_data:
+   121 000000CE F2810010                    dw 081F2h, 01000h
+   122                                  k15:
+   123 000000D2 0F00                        dw 15
+   124                                  kq:
+   125 000000D4 003C                        dw 03C00h
