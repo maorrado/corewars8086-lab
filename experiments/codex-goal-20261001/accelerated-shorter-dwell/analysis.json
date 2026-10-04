@@ -1,0 +1,215 @@
+{
+  "recordedAt": "2026-10-01T00:43:07.286Z",
+  "status": "AUDITED_COMPLETE",
+  "manifestSha256": "4a6ed9ce480098cf78e812d6e42659a232e86472fc03379e99eba08e0bf3eabd",
+  "battles": 2500,
+  "scores": {
+    "m050": {
+      "battles": 500,
+      "teamPerBattle": 0.6953333340000001,
+      "warrior1PerBattle": 0.3355,
+      "warrior2PerBattle": 0.359833334
+    },
+    "both-trail512": {
+      "battles": 500,
+      "teamPerBattle": 0.4399999989999999,
+      "warrior1PerBattle": 0.2328333328,
+      "warrior2PerBattle": 0.2071666664
+    },
+    "b-trail512": {
+      "battles": 500,
+      "teamPerBattle": 0.567,
+      "warrior1PerBattle": 0.31066666699999995,
+      "warrior2PerBattle": 0.25633333340000003
+    },
+    "both-trail256": {
+      "battles": 500,
+      "teamPerBattle": 0.3260000018,
+      "warrior1PerBattle": 0.1453333338,
+      "warrior2PerBattle": 0.18066666700000003
+    },
+    "b-trail256": {
+      "battles": 500,
+      "teamPerBattle": 0.565666666,
+      "warrior1PerBattle": 0.326000001,
+      "warrior2PerBattle": 0.2396666668
+    }
+  },
+  "comparisons": [
+    {
+      "arm": "both-trail512",
+      "candidate": 0.4399999989999999,
+      "reference": 0.6953333340000001,
+      "meanDelta": -0.255333335,
+      "relativePercent": -36.72099732816778,
+      "descriptive95CohortInterval": [
+        -0.33691536406444833,
+        -0.17375130593555166
+      ],
+      "cohortCount": 25,
+      "positive": 2,
+      "negative": 22,
+      "tied": 1,
+      "bySeed": [
+        {
+          "seed": "shorter-dwell-screen-20261001-694ea4f72ebf5cc34e1f2024",
+          "delta": -0.255333335
+        }
+      ],
+      "note": "Descriptive research screen, not proof of a champion."
+    },
+    {
+      "arm": "b-trail512",
+      "candidate": 0.567,
+      "reference": 0.6953333340000001,
+      "meanDelta": -0.12833333400000002,
+      "relativePercent": -18.456375917107984,
+      "descriptive95CohortInterval": [
+        -0.1817154027588486,
+        -0.07495126524115145
+      ],
+      "cohortCount": 25,
+      "positive": 3,
+      "negative": 22,
+      "tied": 0,
+      "bySeed": [
+        {
+          "seed": "shorter-dwell-screen-20261001-694ea4f72ebf5cc34e1f2024",
+          "delta": -0.12833333400000002
+        }
+      ],
+      "note": "Descriptive research screen, not proof of a champion."
+    },
+    {
+      "arm": "both-trail256",
+      "candidate": 0.3260000018,
+      "reference": 0.6953333340000001,
+      "meanDelta": -0.3693333321999999,
+      "relativePercent": -53.11601129135568,
+      "descriptive95CohortInterval": [
+        -0.4563760097320726,
+        -0.28229065466792724
+      ],
+      "cohortCount": 25,
+      "positive": 1,
+      "negative": 23,
+      "tied": 1,
+      "bySeed": [
+        {
+          "seed": "shorter-dwell-screen-20261001-694ea4f72ebf5cc34e1f2024",
+          "delta": -0.3693333321999999
+        }
+      ],
+      "note": "Descriptive research screen, not proof of a champion."
+    },
+    {
+      "arm": "b-trail256",
+      "candidate": 0.565666666,
+      "reference": 0.6953333340000001,
+      "meanDelta": -0.129666668,
+      "relativePercent": -18.648130566972068,
+      "descriptive95CohortInterval": [
+        -0.19389793180156648,
+        -0.06543540419843355
+      ],
+      "cohortCount": 25,
+      "positive": 5,
+      "negative": 19,
+      "tied": 1,
+      "bySeed": [
+        {
+          "seed": "shorter-dwell-screen-20261001-694ea4f72ebf5cc34e1f2024",
+          "delta": -0.129666668
+        }
+      ],
+      "note": "Descriptive research screen, not proof of a champion."
+    }
+  ],
+  "selectedForFreshHoldout": [],
+  "interpretation": "Exploratory complete paired screen only. A positive arm needs new matched holdout against BOTH exact m049 and m050; no screen promotion.",
+  "commands": [
+    {
+      "args": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\codex-goal-20261001\\shorter-dwell\\generate-screen.mjs",
+        "--verify"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"status\":\"INPUTS_VERIFIED\",\"manifestSha256\":\"4a6ed9ce480098cf78e812d6e42659a232e86472fc03379e99eba08e0bf3eabd\",\"files\":220,\"design\":{\"arms\":[\"m050\",\"both-trail512\",\"b-trail512\",\"both-trail256\",\"b-trail256\"],\"candidateName\":\"COD_pair\",\"published2025Teams\":75,\"seniorTeams\":62,\"youthTeams\":13,\"cohorts\":25,\"opponentSlots\":75,\"repeats\":0,\"seeds\":1,\"battlesPerBlock\":20,\"battlesPerArm\":500,\"totalBattles\":2500,\"threads\":1,\"parallel\":false,\"telemetry\":false}}\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\audit-derived.mjs",
+        "pair",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\codex-goal-20261001\\accelerated-shorter-dwell\\both-trail512",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\codex-goal-20261001\\accelerated-shorter-dwell\\m050"
+      ],
+      "exitCode": 0,
+      "stdout": "{\n  \"candidate\": 0.4399999989999999,\n  \"reference\": 0.6953333340000001,\n  \"meanDelta\": -0.255333335,\n  \"relativePercent\": -36.72099732816778,\n  \"descriptive95CohortInterval\": [\n    -0.33691536406444833,\n    -0.17375130593555166\n  ],\n  \"cohortCount\": 25,\n  \"positive\": 2,\n  \"negative\": 22,\n  \"tied\": 1,\n  \"bySeed\": [\n    {\n      \"seed\": \"shorter-dwell-screen-20261001-694ea4f72ebf5cc34e1f2024\",\n      \"delta\": -0.255333335\n    }\n  ],\n  \"note\": \"Descriptive research screen, not proof of a champion.\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\audit-derived.mjs",
+        "pair",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\codex-goal-20261001\\accelerated-shorter-dwell\\b-trail512",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\codex-goal-20261001\\accelerated-shorter-dwell\\m050"
+      ],
+      "exitCode": 0,
+      "stdout": "{\n  \"candidate\": 0.567,\n  \"reference\": 0.6953333340000001,\n  \"meanDelta\": -0.12833333400000002,\n  \"relativePercent\": -18.456375917107984,\n  \"descriptive95CohortInterval\": [\n    -0.1817154027588486,\n    -0.07495126524115145\n  ],\n  \"cohortCount\": 25,\n  \"positive\": 3,\n  \"negative\": 22,\n  \"tied\": 0,\n  \"bySeed\": [\n    {\n      \"seed\": \"shorter-dwell-screen-20261001-694ea4f72ebf5cc34e1f2024\",\n      \"delta\": -0.12833333400000002\n    }\n  ],\n  \"note\": \"Descriptive research screen, not proof of a champion.\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\audit-derived.mjs",
+        "pair",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\codex-goal-20261001\\accelerated-shorter-dwell\\both-trail256",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\codex-goal-20261001\\accelerated-shorter-dwell\\m050"
+      ],
+      "exitCode": 0,
+      "stdout": "{\n  \"candidate\": 0.3260000018,\n  \"reference\": 0.6953333340000001,\n  \"meanDelta\": -0.3693333321999999,\n  \"relativePercent\": -53.11601129135568,\n  \"descriptive95CohortInterval\": [\n    -0.4563760097320726,\n    -0.28229065466792724\n  ],\n  \"cohortCount\": 25,\n  \"positive\": 1,\n  \"negative\": 23,\n  \"tied\": 1,\n  \"bySeed\": [\n    {\n      \"seed\": \"shorter-dwell-screen-20261001-694ea4f72ebf5cc34e1f2024\",\n      \"delta\": -0.3693333321999999\n    }\n  ],\n  \"note\": \"Descriptive research screen, not proof of a champion.\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\audit-derived.mjs",
+        "pair",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\codex-goal-20261001\\accelerated-shorter-dwell\\b-trail256",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\codex-goal-20261001\\accelerated-shorter-dwell\\m050"
+      ],
+      "exitCode": 0,
+      "stdout": "{\n  \"candidate\": 0.565666666,\n  \"reference\": 0.6953333340000001,\n  \"meanDelta\": -0.129666668,\n  \"relativePercent\": -18.648130566972068,\n  \"descriptive95CohortInterval\": [\n    -0.19389793180156648,\n    -0.06543540419843355\n  ],\n  \"cohortCount\": 25,\n  \"positive\": 5,\n  \"negative\": 19,\n  \"tied\": 1,\n  \"bySeed\": [\n    {\n      \"seed\": \"shorter-dwell-screen-20261001-694ea4f72ebf5cc34e1f2024\",\n      \"delta\": -0.129666668\n    }\n  ],\n  \"note\": \"Descriptive research screen, not proof of a champion.\"\n}\n",
+      "stderr": ""
+    }
+  ],
+  "files": [
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\codex-goal-20261001\\shorter-dwell\\screen\\manifest.json",
+      "sha256": "4a6ed9ce480098cf78e812d6e42659a232e86472fc03379e99eba08e0bf3eabd"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\codex-goal-20261001\\shorter-dwell\\analyze-screen.mjs",
+      "sha256": "07ebe44a92187a37334bf0cbfba259e1cafde8455c9c87036310161230e2d15f"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\codex-goal-20261001\\accelerated-shorter-dwell\\m050\\result.json",
+      "sha256": "ded4361f9d9bd0974077fd41c2dcafe5a35f9f61ddc9b7f14474207a1c1c9a97"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\codex-goal-20261001\\accelerated-shorter-dwell\\both-trail512\\result.json",
+      "sha256": "952db13e20f73224d18c6c9d49a168c8accaa8f4fae897bb9c1ab7bab092a48b"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\codex-goal-20261001\\accelerated-shorter-dwell\\b-trail512\\result.json",
+      "sha256": "bed90ec9cf1a4ba26250febbf1ba868440aab6c4733fddfdca51db79eed9988e"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\codex-goal-20261001\\accelerated-shorter-dwell\\both-trail256\\result.json",
+      "sha256": "98fbe35d4ce82bd09251b4e3724ba86b43818c68bf3871e5508d9fc3310bbbe9"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\codex-goal-20261001\\accelerated-shorter-dwell\\b-trail256\\result.json",
+      "sha256": "a43ab73e12575df01415e0ee2fd4d9ddee0850c8c9b5c821d4dd27a07f4c5157"
+    }
+  ]
+}

@@ -1,0 +1,295 @@
+{
+  "candidates": [
+    {
+      "id": "a001_nohop",
+      "sources": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch2\\nohop\\A.asm",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch2\\nohop\\B.asm"
+      ],
+      "warriors": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch2\\nohop\\build\\A",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch2\\nohop\\build\\B"
+      ],
+      "sha256": [
+        "c0b73644265444be7fca0b6c3836c516d7d50d75c3e1a5b73d66e6af795f3eea",
+        "8579e2c2212d72a413a6daacfe3b91ceb72be648bfc085bfeed9430eeaf6657a"
+      ],
+      "sizes": [
+        219,
+        202
+      ],
+      "edits": "Remove A EB00 fall-through jump; label-rebase A worker 88h->86h and zombie entry99h->97h; B unchanged.",
+      "hypothesis": "Saves one initial opcode and two loaded bytes.",
+      "failure_modes": "Earlier startup and shifted original code can alter attack signatures and load placements.",
+      "sourceManifest": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch2\\candidates.json"
+    },
+    {
+      "id": "a001_shiftattack",
+      "sources": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch2\\shiftattack\\A.asm",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch2\\shiftattack\\B.asm"
+      ],
+      "warriors": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch2\\shiftattack\\build\\A",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch2\\shiftattack\\build\\B"
+      ],
+      "sha256": [
+        "738c09ff1eb1704518dc769b8d9c0fd3ea6c96d81e7ccca0e40e8e66f55d10e1",
+        "8579e2c2212d72a413a6daacfe3b91ceb72be648bfc085bfeed9430eeaf6657a"
+      ],
+      "sizes": [
+        217,
+        202
+      ],
+      "edits": "A found_candidate replaces four ADD SI,SI instructions with MOV CL,4; SHL SI,CL. Earlier layout and all fixed offsets unchanged; B unchanged.",
+      "hypothesis": "Captive zombie computes segment-to-linear conversion in two fewer opcodes.",
+      "failure_modes": "CL changes on hit, but next candidate scan resets it; increased speed can alter attacker timing.",
+      "sourceManifest": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch2\\candidates.json"
+    },
+    {
+      "id": "a001_strideplus100",
+      "sources": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch2\\strideplus100\\A.asm",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch2\\strideplus100\\B.asm"
+      ],
+      "warriors": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch2\\strideplus100\\build\\A",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch2\\strideplus100\\build\\B"
+      ],
+      "sha256": [
+        "525eaa6f88857568c2ef42bef4c068bd7554be724beaebb2a852197a06031c79",
+        "eb73fdbff6816aefa31a36cb8ac9fd1f57b2297af50efb18d17342b047b40469"
+      ],
+      "sizes": [
+        221,
+        202
+      ],
+      "edits": "A DX4000/BP4400->DX4100/BP4500; B DX2400/BP2C00->DX2500/BP2D00. Length and original offsets unchanged.",
+      "hypothesis": "Odd 0100h relocation strides visit 256 destination bands instead of64 while preserving low A2 bootstrap and original BP-DX paint spans.",
+      "failure_modes": "Broader sweep can enter hostile code more often and alter team interference.",
+      "sourceManifest": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch2\\candidates.json"
+    },
+    {
+      "id": "a001_strideminus100",
+      "sources": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch2\\strideminus100\\A.asm",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch2\\strideminus100\\B.asm"
+      ],
+      "warriors": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch2\\strideminus100\\build\\A",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch2\\strideminus100\\build\\B"
+      ],
+      "sha256": [
+        "706724c60fed4b74187088e497f4abdeb8605547edeb16aac533d35847a4c488",
+        "5b02a4b603fb0f993e18a1a6c92209f7fd7070ea315b6abab39404f164c7ff06"
+      ],
+      "sizes": [
+        221,
+        202
+      ],
+      "edits": "A DX4000/BP4400->DX3F00/BP4300; B DX2400/BP2C00->DX2300/BP2B00. Length and original offsets unchanged.",
+      "hypothesis": "Contrasting 0100h stride direction visits256 destination bands while preserving bootstrap and original BP-DX paint spans.",
+      "failure_modes": "Broader sweep can enter hostile code more often and alter team interference.",
+      "sourceManifest": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch2\\candidates.json"
+    },
+    {
+      "id": "a001_nearboot",
+      "sources": [
+        "C:/Maor/CodeGuru/corewars8086-lab/.arena/v6-cooperative-20261003/.arena/run-20261003-150943-s20261003/scratch/a001/batch3/nearboot/A.asm",
+        "C:/Maor/CodeGuru/corewars8086-lab/.arena/v6-cooperative-20261003/.arena/run-20261003-150943-s20261003/scratch/a001/batch3/nearboot/B.asm"
+      ],
+      "warriors": [
+        "C:/Maor/CodeGuru/corewars8086-lab/.arena/v6-cooperative-20261003/.arena/run-20261003-150943-s20261003/scratch/a001/batch3/nearboot/build/A",
+        "C:/Maor/CodeGuru/corewars8086-lab/.arena/v6-cooperative-20261003/.arena/run-20261003-150943-s20261003/scratch/a001/batch3/nearboot/build/B"
+      ],
+      "sha256": [
+        "4a6c251111de333c9b17f236165dc452d6d5ad1a8b13a81ba20f12baad8ab378",
+        "729272b97279dc0955ad1ead7092a0a9ffee8ebea0ad45b65d2f8e6173b4c31d"
+      ],
+      "sizes": [
+        221,
+        202
+      ],
+      "edits": "Both initial stack adjustments ADD SP,0100h/0600h replaced by four-byte SUB SP,0048h. All original layout offsets, steady BP/DX and copy counts unchanged.",
+      "hypothesis": "Initial target at ES=0FFB is DI-0050h in SS=1000. SP=DI-0048h sets stack to target+8. First CALL saves original state at target+4/+6; one recursive CALL then writes return IP ending A4 at target and starts MOVSB copying. Removes almost all initial recursive paint latency.",
+      "failure_modes": "Small initial paint range may reduce early opponent kills. Relocation begins substantially earlier, affecting team interference and zombie races. Must verify bootstrap does not execute any partially overwritten operand before considering scoring.",
+      "sourceManifest": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch3\\candidates.json"
+    },
+    {
+      "id": "a002_direct_boot_b",
+      "sources": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a002\\batch2\\a002_direct_boot_b\\A.asm",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a002\\batch2\\a002_direct_boot_b\\B.asm"
+      ],
+      "binaries": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a002\\batch2\\a002_direct_boot_b\\build\\A",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a002\\batch2\\a002_direct_boot_b\\build\\B"
+      ],
+      "sizes": [
+        221,
+        203
+      ],
+      "sha256": [
+        "3fa67bed880413901ad618b4f7b248e5782d98de93318271ac540ad1690ca2b7",
+        "8830713ecd5409f2790ec88d27d47562d4f4d077e5a6138fc21dffc0fdaaadc2"
+      ],
+      "hypothesis": "Treat recursive startup as an exposed bootstrap barrier. Enter MOVSB directly, copying A5 then F3A5 from private memory. Preserve original AX=1FFF and SP at natural handoff for subsequent relocations.",
+      "edits": [
+        "B: initial marker 1FFF->1FA4, restore AL=FF after STOSW; SP displacement ->FFB0; initial CALL FAR -> JMP FAR; rebase fixed source/zombie offsets using labels."
+      ],
+      "failureModes": [
+        "Initial stack paint is removed, reducing offense and changing what other scanners see.",
+        "Starting the first worker earlier shifts collisions and captured-zombie coordination.",
+        "Untested architectural transformation; compilation is not CPU or battle evidence."
+      ],
+      "verification": "NASM <=256-byte bound passed. Original unaffected teammate binary hash matched baseline. Worker code remains original; modified source offsets use labels.",
+      "warriors": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a002\\batch2\\a002_direct_boot_b\\build\\A",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a002\\batch2\\a002_direct_boot_b\\build\\B"
+      ],
+      "sourceManifest": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a002\\batch2\\candidates.json"
+    },
+    {
+      "id": "a002_direct_boot_a",
+      "sources": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a002\\batch2\\a002_direct_boot_a\\A.asm",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a002\\batch2\\a002_direct_boot_a\\B.asm"
+      ],
+      "binaries": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a002\\batch2\\a002_direct_boot_a\\build\\A",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a002\\batch2\\a002_direct_boot_a\\build\\B"
+      ],
+      "sizes": [
+        222,
+        202
+      ],
+      "sha256": [
+        "bc91d01997f5bfcbc0679b493397b44b355228fc07cdbc4b6acad9fb043c15c8",
+        "8579e2c2212d72a413a6daacfe3b91ceb72be648bfc085bfeed9430eeaf6657a"
+      ],
+      "hypothesis": "Treat recursive startup as an exposed bootstrap barrier. Enter MOVSB directly, copying A5 then F3A5 from private memory. Preserve original AX=1FFF and SP at natural handoff for subsequent relocations.",
+      "edits": [
+        "A: initial marker 1FFF->1FA4, restore AL=FF after STOSW; SP displacement ->FFB0; initial CALL FAR -> JMP FAR; rebase fixed source/zombie offsets using labels."
+      ],
+      "failureModes": [
+        "Initial stack paint is removed, reducing offense and changing what other scanners see.",
+        "Starting the first worker earlier shifts collisions and captured-zombie coordination.",
+        "Untested architectural transformation; compilation is not CPU or battle evidence."
+      ],
+      "verification": "NASM <=256-byte bound passed. Original unaffected teammate binary hash matched baseline. Worker code remains original; modified source offsets use labels.",
+      "warriors": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a002\\batch2\\a002_direct_boot_a\\build\\A",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a002\\batch2\\a002_direct_boot_a\\build\\B"
+      ],
+      "sourceManifest": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a002\\batch2\\candidates.json"
+    },
+    {
+      "id": "a002_direct_boot_both",
+      "sources": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a002\\batch2\\a002_direct_boot_both\\A.asm",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a002\\batch2\\a002_direct_boot_both\\B.asm"
+      ],
+      "binaries": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a002\\batch2\\a002_direct_boot_both\\build\\A",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a002\\batch2\\a002_direct_boot_both\\build\\B"
+      ],
+      "sizes": [
+        222,
+        203
+      ],
+      "sha256": [
+        "bc91d01997f5bfcbc0679b493397b44b355228fc07cdbc4b6acad9fb043c15c8",
+        "8830713ecd5409f2790ec88d27d47562d4f4d077e5a6138fc21dffc0fdaaadc2"
+      ],
+      "hypothesis": "Treat recursive startup as an exposed bootstrap barrier. Enter MOVSB directly, copying A5 then F3A5 from private memory. Preserve original AX=1FFF and SP at natural handoff for subsequent relocations.",
+      "edits": [
+        "A: initial marker 1FFF->1FA4, restore AL=FF after STOSW; SP displacement ->FFB0; initial CALL FAR -> JMP FAR; rebase fixed source/zombie offsets using labels.",
+        "B: initial marker 1FFF->1FA4, restore AL=FF after STOSW; SP displacement ->FFB0; initial CALL FAR -> JMP FAR; rebase fixed source/zombie offsets using labels."
+      ],
+      "failureModes": [
+        "Initial stack paint is removed, reducing offense and changing what other scanners see.",
+        "Starting the first worker earlier shifts collisions and captured-zombie coordination.",
+        "Untested architectural transformation; compilation is not CPU or battle evidence."
+      ],
+      "verification": "NASM <=256-byte bound passed. Original unaffected teammate binary hash matched baseline. Worker code remains original; modified source offsets use labels.",
+      "warriors": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a002\\batch2\\a002_direct_boot_both\\build\\A",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a002\\batch2\\a002_direct_boot_both\\build\\B"
+      ],
+      "sourceManifest": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a002\\batch2\\candidates.json"
+    },
+    {
+      "id": "a003_energypaintA",
+      "baseline": "original_v6",
+      "hypothesis": "Generate NRG;CALL FAR[bx] as the paint loop. Earning energy every two mandatory instructions can compensate its extra instruction and speed both paint/copy phases.",
+      "edits": "Affected warrior sets destination low byte A0, seeds 9B9B FF1F, resets AX around two STOSW, changes DI adjustment to SUB3, copies 13 words; all moved worker and A zombie offsets rebased by labels. Unaffected warrior remains exact original.",
+      "failureModes": "NRG-seeded cells are weaker lethal paint; bonuses change teammate/Zombie turn relation; larger worker is exposed two extra rounds and code overwrites become less regular.",
+      "warriors": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch2\\bin\\energypaintA_A",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch2\\bin\\energypaintA_B"
+      ],
+      "sources": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch2\\src\\energypaintA_A.asm",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch2\\src\\energypaintA_B.asm"
+      ],
+      "sha256": [
+        "b0500b31c30ec632c995589b42bfee93dc11ed2ad250439383491780fbff67c2",
+        "8579e2c2212d72a413a6daacfe3b91ceb72be648bfc085bfeed9430eeaf6657a"
+      ],
+      "sizes": [
+        236,
+        202
+      ],
+      "sourceManifest": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch2\\candidates.json"
+    },
+    {
+      "id": "a003_energypaintB",
+      "baseline": "original_v6",
+      "hypothesis": "Generate NRG;CALL FAR[bx] as the paint loop. Earning energy every two mandatory instructions can compensate its extra instruction and speed both paint/copy phases.",
+      "edits": "Affected warrior sets destination low byte A0, seeds 9B9B FF1F, resets AX around two STOSW, changes DI adjustment to SUB3, copies 13 words; all moved worker and A zombie offsets rebased by labels. Unaffected warrior remains exact original.",
+      "failureModes": "NRG-seeded cells are weaker lethal paint; bonuses change teammate/Zombie turn relation; larger worker is exposed two extra rounds and code overwrites become less regular.",
+      "warriors": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch2\\bin\\energypaintB_A",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch2\\bin\\energypaintB_B"
+      ],
+      "sources": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch2\\src\\energypaintB_A.asm",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch2\\src\\energypaintB_B.asm"
+      ],
+      "sha256": [
+        "3fa67bed880413901ad618b4f7b248e5782d98de93318271ac540ad1690ca2b7",
+        "6275613f142f961b5fda547226c63641d79ff031d44ea8646cd738dd14cca407"
+      ],
+      "sizes": [
+        221,
+        217
+      ],
+      "sourceManifest": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch2\\candidates.json"
+    },
+    {
+      "id": "a003_energypaintAB",
+      "baseline": "original_v6",
+      "hypothesis": "Generate NRG;CALL FAR[bx] as the paint loop. Earning energy every two mandatory instructions can compensate its extra instruction and speed both paint/copy phases.",
+      "edits": "Affected warrior sets destination low byte A0, seeds 9B9B FF1F, resets AX around two STOSW, changes DI adjustment to SUB3, copies 13 words; all moved worker and A zombie offsets rebased by labels. Unaffected warrior remains exact original.",
+      "failureModes": "NRG-seeded cells are weaker lethal paint; bonuses change teammate/Zombie turn relation; larger worker is exposed two extra rounds and code overwrites become less regular.",
+      "warriors": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch2\\bin\\energypaintAB_A",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch2\\bin\\energypaintAB_B"
+      ],
+      "sources": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch2\\src\\energypaintAB_A.asm",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch2\\src\\energypaintAB_B.asm"
+      ],
+      "sha256": [
+        "b0500b31c30ec632c995589b42bfee93dc11ed2ad250439383491780fbff67c2",
+        "6275613f142f961b5fda547226c63641d79ff031d44ea8646cd738dd14cca407"
+      ],
+      "sizes": [
+        236,
+        217
+      ],
+      "sourceManifest": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch2\\candidates.json"
+    }
+  ],
+  "duplicates": []
+}

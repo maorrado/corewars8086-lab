@@ -1,0 +1,265 @@
+{
+  "schemaVersion": 1,
+  "experimentId": "codex-goal-20261001-conditional-camper-screen",
+  "frozenAt": "2026-09-30T22:38:15.515Z",
+  "protocol": {
+    "candidateName": "COD_pair",
+    "battlesPerBlock": 25,
+    "seeds": [
+      "camper-screen-20261001-1-90b393c7fab785781498044b",
+      "camper-screen-20261001-2-5e0f57d505889ace61f3bd43"
+    ],
+    "seedRanges": [
+      {
+        "seed": "camper-screen-20261001-1-90b393c7fab785781498044b",
+        "first": -1928096291,
+        "last": -1928096267
+      },
+      {
+        "seed": "camper-screen-20261001-2-5e0f57d505889ace61f3bd43",
+        "first": 763404821,
+        "last": 763404845
+      }
+    ],
+    "cohorts": [
+      "all-v1-01",
+      "all-v1-02",
+      "all-v1-07",
+      "all-v1-18"
+    ],
+    "uniqueSeniorTeams": 12,
+    "battlesPerArm": 200,
+    "arms": [
+      "control",
+      "camper"
+    ],
+    "threads": 1,
+    "parallel": false,
+    "telemetry": false
+  },
+  "hypothesis": "Keep exact m050 A and B capture opening, then park B in a two-byte arena JZ loop using a private stack. A screening hypothesis only; B sacrifices continued offense.",
+  "interpretation": "Four selected senior triples, not a broad field or historical-final replay. Points per battle are not win rates. A positive screen would require independent broad-field validation.",
+  "references": {
+    "base": {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\config-final-2025-m049-once.json",
+      "bytes": 18967,
+      "sha256": "5fec9af2cd632d5c5dcbc095304168e5fe1c15e97d7893db8a5820ae3c1d481d"
+    },
+    "runner": {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-benchmark.mjs",
+      "bytes": 7056,
+      "sha256": "6618a0d865be0b87389056e09a972fcef88f43d4d2e9f2a9f48bfc8a7ba2d786"
+    },
+    "engine": {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+      "bytes": 6601794,
+      "sha256": "31639072397eaf69d99e90b10d8fa594a7446951f1137b7ebd298378f5ec318d"
+    },
+    "java": {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\temurin8-jre\\jdk8u504-b01-jre\\bin\\java.exe",
+      "bytes": 304768,
+      "sha256": "46df95bb47e2ba2b10736cee2ab543289c66021611f1ec67d0d55d5128228c20"
+    },
+    "m050A": {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\m050-repro\\ab_pad_a",
+      "bytes": 189,
+      "sha256": "0268ce4f301bf2ada8566f4e608180a0670a335a80b9c2b93b67aee2b632bd44"
+    },
+    "m050B": {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\m050-repro\\ab_pad_b",
+      "bytes": 117,
+      "sha256": "06b5a1ff7bac4b146620de6d1de512dfedf3f28366d6435bf61d49869d971782"
+    }
+  },
+  "source": {
+    "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\codex-goal-20260930\\resilient-topology\\B-conditional-camper.asm",
+    "bytes": 1186,
+    "sha256": "3c8de03235efd4dce77f3a523a6f125c228393dd77783eda764234e2aa1fa2c1"
+  },
+  "assemblyManifest": {
+    "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\codex-goal-20261001\\conditional-camper-screen\\assembled\\manifest.json",
+    "bytes": 488,
+    "sha256": "1598a9d318e510338638e6f592e5b9edf8753f4363c1e8cfbd5704fadb2981f4"
+  },
+  "authoring": [
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\codex-goal-20261001\\conditional-camper-screen\\generate.mjs",
+      "bytes": 7049,
+      "sha256": "731bf3896857bf4af0d6300f51eceb8d1c2445bf549d9a2d4672be0ec1244f5d"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\codex-goal-20261001\\conditional-camper-screen\\analyze.mjs",
+      "bytes": 9334,
+      "sha256": "16a57d56545aacbdfb0c991d084ac51538a7cab95bc47320f28b42e4bc7e86fd"
+    }
+  ],
+  "binaries": [
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\codex-goal-20261001\\conditional-camper-screen\\frozen\\m050-A",
+      "bytes": 189,
+      "sha256": "0268ce4f301bf2ada8566f4e608180a0670a335a80b9c2b93b67aee2b632bd44"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\codex-goal-20261001\\conditional-camper-screen\\frozen\\m050-B",
+      "bytes": 117,
+      "sha256": "06b5a1ff7bac4b146620de6d1de512dfedf3f28366d6435bf61d49869d971782"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\codex-goal-20261001\\conditional-camper-screen\\assembled\\B-conditional-camper",
+      "bytes": 66,
+      "sha256": "7dfc5e7d17cf0dbaeb1a37e44dfe74254d8d88020bc71463c6d01348bfd15ccd"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\TOM_2B2Team1",
+      "bytes": 135,
+      "sha256": "bcc371f9a6c803da24ca9b207cc669f3ad303b115c7b6d27afdaafc1f48d0cb5"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\TOM_2B2Team2",
+      "bytes": 140,
+      "sha256": "bd1a1687a4f99d4a0bb60ae23cb09a505d87c77042de95a27957b1c524df4ab0"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\TOM_Syntax_Terror1",
+      "bytes": 27,
+      "sha256": "2cb2747ca3e9331b28ca609a228bfd21413a77ee98355c5e8fff4042c56a2a56"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\TOM_Syntax_Terror2",
+      "bytes": 65,
+      "sha256": "f39bc040a51c504af6baca86ef99bf19351717c91ac4e3af01a2e0ecad193e47"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\AVI_Fishandpoultry1",
+      "bytes": 75,
+      "sha256": "c8aa0e238c28c8c041cf8318d93f165b7cb2005c71cc055552244f120ea7f065"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\AVI_Fishandpoultry2",
+      "bytes": 113,
+      "sha256": "3718913ee7debbee757a1fa053699cb80d12cd1985d8218b3ed6cb9f4d87193d"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\HDS_NRI1",
+      "bytes": 110,
+      "sha256": "8830ca6b843b0508fc2a5771068dad1bc150d2f824d2cd77d7631e523b431bb1"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\HDS_NRI2",
+      "bytes": 477,
+      "sha256": "1cc40806e6766e591dac071b1256c8b5f325360f0aae448b188dcc87376bb9ab"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\GSA_GhostBytes_0x1",
+      "bytes": 512,
+      "sha256": "2cf5b8a9974e1e6e46504f5027a2f20f6329cf8944ad15397afdd0f5955d2801"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\GSA_GhostBytes_0x2",
+      "bytes": 512,
+      "sha256": "08c6ac348985a5f21fecbaf1ee7d7bb56add87cd8d8af2278902df7e60b52238"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_Grindo_Holics1",
+      "bytes": 505,
+      "sha256": "0fd28370c9b4200dc1d4774a5ab959e76f1f5fe0243dd327626fd8f47c936b51"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_Grindo_Holics2",
+      "bytes": 480,
+      "sha256": "69791f0bdb90e9ff65fc078f6e863f92c3847700efbdc8e8865e002c96f2934f"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\GSA_VanLavan1",
+      "bytes": 511,
+      "sha256": "29bcd91c2654fbe3b40eb0ba46f0b27956fc951185f3ebc7fb78877f739a401e"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\GSA_VanLavan2",
+      "bytes": 446,
+      "sha256": "649dad7fb2499e54a9474e31784d38f3ad36e801d9649eb0d78d7aabe8e30d1b"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\AML_ByteReapers1",
+      "bytes": 250,
+      "sha256": "e03726289c7889054f9635a8eea5a25754a819b2016bee5a39ef345f7b6cd3d7"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\AML_ByteReapers2",
+      "bytes": 501,
+      "sha256": "5fe97a9902546036b12928645654fc44688e084fd7f6e3a9799fd5365f48918e"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\GGN_OpcodeHunter1",
+      "bytes": 493,
+      "sha256": "d5992bdc307b070ad91e1737a8777125970912b286a392ed6d9a6456d87ed3af"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\GGN_OpcodeHunter2",
+      "bytes": 503,
+      "sha256": "0ced8fc1ec650a032604e2e149458b54202be7ecabb447999f143659d6ea46b6"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\HLS_EmoMutants1",
+      "bytes": 501,
+      "sha256": "629b28dbff281ca175493f1f40492e52afdf6f9f3c2f8a7e06a8df08a5580711"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\HLS_EmoMutants2",
+      "bytes": 502,
+      "sha256": "36c6a4f23a988920ed0e2e7a128bd706b5f82871935b6c0dfc5d3c2cbbd65aa0"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_InCtrl1",
+      "bytes": 50,
+      "sha256": "d7b0b84459fe2295e8a65512ef16c2e698e6d6bee50b1b3b777dc0c2b0c5b7c0"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_InCtrl2",
+      "bytes": 41,
+      "sha256": "6997d9e87f8c241b3056f8ebfb624bd4bf268ef14329f49c95d4f553146153fa"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\OHS_TrojanByte1",
+      "bytes": 110,
+      "sha256": "8daa80561913795dab371699ae02d243e11889eafdbd3f198b8b2792ef8caed6"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\OHS_TrojanByte2",
+      "bytes": 141,
+      "sha256": "7a243cd4100cef57759ded924b53566ac3004a1d23b71a11a1166f0a7cecbc4f"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\zombies-live\\zom20a",
+      "bytes": 73,
+      "sha256": "a950e618ea2e127096c85f486fb555c264730d924a2192c407aa66e6e0318eb6"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\zombies-live\\zom20b",
+      "bytes": 382,
+      "sha256": "af6394c021ccb5e486db507e2ccd787bd5675f8fec88fd2ddbe9f834566852ce"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\zombies-live\\zom20c",
+      "bytes": 232,
+      "sha256": "3d3f209967f51a7344e0eab582bc04d1e694da5a73e3682a26ed483dcab7a443"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\zombies-live\\zom20d",
+      "bytes": 382,
+      "sha256": "923dd6abebbb7bb502ec5a02873c26175820ada5c4409d179d8464f0e90cb6fc"
+    }
+  ],
+  "configs": [
+    {
+      "arm": "control",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\codex-goal-20261001\\conditional-camper-screen\\control.json",
+      "sha256": "7397e87e311460f5fa841f70dbd41f6ace06e2b27edca83f46c272448e42a082"
+    },
+    {
+      "arm": "camper",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\codex-goal-20261001\\conditional-camper-screen\\camper.json",
+      "sha256": "82efbbfb7675cb6dd81c89d409de5c0eda220181a897ae8a9684c9557b6f158e"
+    }
+  ]
+}

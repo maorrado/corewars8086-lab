@@ -1,0 +1,407 @@
+{
+  "schemaVersion": 1,
+  "description": "XOR-B versus m049/m050 on exactly the same 50 2025 senior-only four-team cohorts and two fresh seeds. Approximate CI clusters 50 cohort means, not 100 seed-runs. Conditional on this archived online field and 2025 Zombies, not actual 2026 final.",
+  "engineJarSha256": "31639072397eaf69d99e90b10d8fa594a7446951f1137b7ebd298378f5ec318d",
+  "candidateHashes": {
+    "m049": [
+      "106765da16166d0fa744631e5cfbe403c5eafc30db164eb47e1749e7d365a973",
+      "7ed87893a82861b716ad0df6404b1c70282cb983db1a4a607363fd3f27ad6c77"
+    ],
+    "m050": [
+      "0268ce4f301bf2ada8566f4e608180a0670a335a80b9c2b93b67aee2b632bd44",
+      "06b5a1ff7bac4b146620de6d1de512dfedf3f28366d6435bf61d49869d971782"
+    ],
+    "xorb": [
+      "0268ce4f301bf2ada8566f4e608180a0670a335a80b9c2b93b67aee2b632bd44",
+      "fb66036e0b20a8df162da32e453cc148b5ff5ea0d1494439f3c417be0a57d994"
+    ]
+  },
+  "seedResults": [
+    {
+      "seed": "realistic-senior-fresh-20260930-9137",
+      "battlesPerCandidate": 5000,
+      "scores": {
+        "m049": 0.6327166548000001,
+        "m050": 0.6520833217999998,
+        "xorb": 0.6114833291999999
+      },
+      "blockRanks": {
+        "m049": {
+          "meanBlockRank": 1.26,
+          "firstOrTiedBlocks": 41
+        },
+        "m050": {
+          "meanBlockRank": 1.14,
+          "firstOrTiedBlocks": 44
+        },
+        "xorb": {
+          "meanBlockRank": 1.2,
+          "firstOrTiedBlocks": 44
+        }
+      },
+      "xorbVsM050": {
+        "blocks": 50,
+        "mean": -0.04059999259999998,
+        "approximateCi95": [
+          -0.06848488138238047,
+          -0.012715103817619491
+        ],
+        "positive": 14,
+        "tied": 1,
+        "negative": 35
+      },
+      "xorbVsM049": {
+        "blocks": 50,
+        "mean": -0.021233325599999985,
+        "approximateCi95": [
+          -0.04977800775004135,
+          0.007311356550041382
+        ],
+        "positive": 17,
+        "tied": 0,
+        "negative": 33
+      }
+    },
+    {
+      "seed": "realistic-senior-fresh-20260930-5311",
+      "battlesPerCandidate": 5000,
+      "scores": {
+        "m049": 0.6234166600000001,
+        "m050": 0.6410499970000001,
+        "xorb": 0.6126999948
+      },
+      "blockRanks": {
+        "m049": {
+          "meanBlockRank": 1.2,
+          "firstOrTiedBlocks": 42
+        },
+        "m050": {
+          "meanBlockRank": 1.12,
+          "firstOrTiedBlocks": 46
+        },
+        "xorb": {
+          "meanBlockRank": 1.18,
+          "firstOrTiedBlocks": 44
+        }
+      },
+      "xorbVsM050": {
+        "blocks": 50,
+        "mean": -0.02835000219999998,
+        "approximateCi95": [
+          -0.053939459995135455,
+          -0.0027605444048645032
+        ],
+        "positive": 15,
+        "tied": 3,
+        "negative": 32
+      },
+      "xorbVsM049": {
+        "blocks": 50,
+        "mean": -0.010716665199999996,
+        "approximateCi95": [
+          -0.0380172393901505,
+          0.01658390899015051
+        ],
+        "positive": 18,
+        "tied": 5,
+        "negative": 27
+      }
+    }
+  ],
+  "combined": {
+    "battlesPerCandidate": 10000,
+    "scores": {
+      "m049": 0.6280666574,
+      "m050": 0.6465666593999999,
+      "xorb": 0.612091662
+    },
+    "blockRanks": {
+      "m049": {
+        "meanBlockRank": 1.23,
+        "firstOrTiedBlocks": 83
+      },
+      "m050": {
+        "meanBlockRank": 1.13,
+        "firstOrTiedBlocks": 90
+      },
+      "xorb": {
+        "meanBlockRank": 1.19,
+        "firstOrTiedBlocks": 88
+      }
+    },
+    "xorbVsM050": {
+      "blocks": 50,
+      "mean": -0.034474997399999985,
+      "approximateCi95": [
+        -0.05979675450956385,
+        -0.00915324029043612
+      ],
+      "positive": 12,
+      "tied": 0,
+      "negative": 38
+    },
+    "xorbVsM049": {
+      "blocks": 50,
+      "mean": -0.01597499539999999,
+      "approximateCi95": [
+        -0.04226247983789018,
+        0.010312489037890199
+      ],
+      "positive": 15,
+      "tied": 1,
+      "negative": 34
+    }
+  },
+  "cohortMeans": [
+    {
+      "cohortId": "senior-panel-1-01",
+      "differenceVsM050": -0.05,
+      "differenceVsM049": 0.024999999999999994
+    },
+    {
+      "cohortId": "senior-panel-1-02",
+      "differenceVsM050": -0.13999999999999996,
+      "differenceVsM049": -0.14999999999999997
+    },
+    {
+      "cohortId": "senior-panel-1-03",
+      "differenceVsM050": -0.05499999999999994,
+      "differenceVsM049": -0.05999999999999994
+    },
+    {
+      "cohortId": "senior-panel-1-04",
+      "differenceVsM050": -0.0050000000000000044,
+      "differenceVsM049": -0.010000000000000009
+    },
+    {
+      "cohortId": "senior-panel-1-05",
+      "differenceVsM050": -0.15500000000000003,
+      "differenceVsM049": -0.15500000000000003
+    },
+    {
+      "cohortId": "senior-panel-1-06",
+      "differenceVsM050": -0.03999999999999995,
+      "differenceVsM049": -0.054999999999999966
+    },
+    {
+      "cohortId": "senior-panel-1-07",
+      "differenceVsM050": 0.18083333000000001,
+      "differenceVsM049": 0.17333334
+    },
+    {
+      "cohortId": "senior-panel-1-08",
+      "differenceVsM050": -0.039999999999999925,
+      "differenceVsM049": -0.025000000000000022
+    },
+    {
+      "cohortId": "senior-panel-1-09",
+      "differenceVsM050": -0.1150000000000001,
+      "differenceVsM049": -0.12000000000000005
+    },
+    {
+      "cohortId": "senior-panel-1-10",
+      "differenceVsM050": -0.04249996999999994,
+      "differenceVsM049": -0.0058332700000000015
+    },
+    {
+      "cohortId": "senior-panel-1-11",
+      "differenceVsM050": -0.019999999999999962,
+      "differenceVsM049": -0.019999999999999962
+    },
+    {
+      "cohortId": "senior-panel-1-12",
+      "differenceVsM050": 0.04666667999999996,
+      "differenceVsM049": 0.27583333
+    },
+    {
+      "cohortId": "senior-panel-1-13",
+      "differenceVsM050": 0.03250000000000003,
+      "differenceVsM049": 0.017500000000000016
+    },
+    {
+      "cohortId": "senior-panel-1-14",
+      "differenceVsM050": -0.065,
+      "differenceVsM049": -0.05499999999999999
+    },
+    {
+      "cohortId": "senior-panel-1-15",
+      "differenceVsM050": -0.015000019999999947,
+      "differenceVsM049": -0.009166669999999932
+    },
+    {
+      "cohortId": "senior-panel-1-16",
+      "differenceVsM050": -0.008333309999999983,
+      "differenceVsM049": 0.010000029999999993
+    },
+    {
+      "cohortId": "senior-panel-1-17",
+      "differenceVsM050": 0.18083349000000004,
+      "differenceVsM049": 0.13333358
+    },
+    {
+      "cohortId": "senior-panel-1-18",
+      "differenceVsM050": -0.04500000000000004,
+      "differenceVsM049": -0.04999999999999999
+    },
+    {
+      "cohortId": "senior-panel-1-19",
+      "differenceVsM050": -0.07500000000000001,
+      "differenceVsM049": -0.07500000000000001
+    },
+    {
+      "cohortId": "senior-panel-1-20",
+      "differenceVsM050": -0.010833359999999986,
+      "differenceVsM049": -0.010833359999999986
+    },
+    {
+      "cohortId": "senior-panel-1-21",
+      "differenceVsM050": -0.16999999999999998,
+      "differenceVsM049": -0.08000000000000002
+    },
+    {
+      "cohortId": "senior-panel-1-22",
+      "differenceVsM050": -0.03999999999999998,
+      "differenceVsM049": -0.009999999999999981
+    },
+    {
+      "cohortId": "senior-panel-1-23",
+      "differenceVsM050": -0.05499999999999994,
+      "differenceVsM049": -0.05999999999999994
+    },
+    {
+      "cohortId": "senior-panel-1-24",
+      "differenceVsM050": -0.065,
+      "differenceVsM049": -0.05499999999999999
+    },
+    {
+      "cohortId": "senior-panel-1-25",
+      "differenceVsM050": -0.03499999999999995,
+      "differenceVsM049": -0.04499999999999996
+    },
+    {
+      "cohortId": "senior-panel-2-01",
+      "differenceVsM050": -0.19999999999999996,
+      "differenceVsM049": -0.19499999999999995
+    },
+    {
+      "cohortId": "senior-panel-2-02",
+      "differenceVsM050": -0.22499999999999998,
+      "differenceVsM049": -0.09
+    },
+    {
+      "cohortId": "senior-panel-2-03",
+      "differenceVsM050": -0.06499999999999995,
+      "differenceVsM049": -0.06499999999999995
+    },
+    {
+      "cohortId": "senior-panel-2-04",
+      "differenceVsM050": 0.024999999999999967,
+      "differenceVsM049": 0.024999999999999967
+    },
+    {
+      "cohortId": "senior-panel-2-05",
+      "differenceVsM050": 0.05499999999999999,
+      "differenceVsM049": 0.06458336000000003
+    },
+    {
+      "cohortId": "senior-panel-2-06",
+      "differenceVsM050": -0.015000000000000013,
+      "differenceVsM049": -5.551115123125783e-17
+    },
+    {
+      "cohortId": "senior-panel-2-07",
+      "differenceVsM050": -0.034999999999999976,
+      "differenceVsM049": -0.044999999999999984
+    },
+    {
+      "cohortId": "senior-panel-2-08",
+      "differenceVsM050": 0.06666666999999998,
+      "differenceVsM049": 0.06333335000000007
+    },
+    {
+      "cohortId": "senior-panel-2-09",
+      "differenceVsM050": -0.05999999999999997,
+      "differenceVsM049": -0.06999999999999998
+    },
+    {
+      "cohortId": "senior-panel-2-10",
+      "differenceVsM050": -0.009166679999999983,
+      "differenceVsM049": 0.010000000000000009
+    },
+    {
+      "cohortId": "senior-panel-2-11",
+      "differenceVsM050": -0.004999999999999977,
+      "differenceVsM049": 0.04000000000000001
+    },
+    {
+      "cohortId": "senior-panel-2-12",
+      "differenceVsM050": -0.03499999999999992,
+      "differenceVsM049": -0.015000000000000013
+    },
+    {
+      "cohortId": "senior-panel-2-13",
+      "differenceVsM050": -0.034999999999999976,
+      "differenceVsM049": -0.034999999999999976
+    },
+    {
+      "cohortId": "senior-panel-2-14",
+      "differenceVsM050": 0.04999999999999999,
+      "differenceVsM049": 0.05499999999999999
+    },
+    {
+      "cohortId": "senior-panel-2-15",
+      "differenceVsM050": 0.12666670000000002,
+      "differenceVsM049": 0.14916667
+    },
+    {
+      "cohortId": "senior-panel-2-16",
+      "differenceVsM050": -0.07,
+      "differenceVsM049": -0.05499999999999999
+    },
+    {
+      "cohortId": "senior-panel-2-17",
+      "differenceVsM050": -0.13,
+      "differenceVsM049": -0.06
+    },
+    {
+      "cohortId": "senior-panel-2-18",
+      "differenceVsM050": -0.06,
+      "differenceVsM049": -0.07
+    },
+    {
+      "cohortId": "senior-panel-2-19",
+      "differenceVsM050": 0.08250003999999994,
+      "differenceVsM049": 0.12999999999999998
+    },
+    {
+      "cohortId": "senior-panel-2-20",
+      "differenceVsM050": 0.12291656000000001,
+      "differenceVsM049": 0.17249986999999997
+    },
+    {
+      "cohortId": "senior-panel-2-21",
+      "differenceVsM050": -0.10499999999999998,
+      "differenceVsM049": -0.10499999999999998
+    },
+    {
+      "cohortId": "senior-panel-2-22",
+      "differenceVsM050": -0.21499999999999997,
+      "differenceVsM049": -0.21499999999999997
+    },
+    {
+      "cohortId": "senior-panel-2-23",
+      "differenceVsM050": -0.1625,
+      "differenceVsM049": -0.0325
+    },
+    {
+      "cohortId": "senior-panel-2-24",
+      "differenceVsM050": 0.0050000000000000044,
+      "differenceVsM049": -0.015000000000000013
+    },
+    {
+      "cohortId": "senior-panel-2-25",
+      "differenceVsM050": -0.025000000000000022,
+      "differenceVsM049": -0.025000000000000022
+    }
+  ]
+}

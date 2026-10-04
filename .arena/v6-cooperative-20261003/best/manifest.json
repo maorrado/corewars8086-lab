@@ -1,0 +1,94 @@
+{
+  "schema": "cooperative-arena-validated-artifact-v1",
+  "id": "a003_pointerguard",
+  "name": "V6 Guard",
+  "provenance": "Original V6 by the user's friend; six-byte pointer guard and label rebasing by Arena researcher a003. B unchanged.",
+  "warriors": [
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\best\\V6GuardA",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\best\\V6GuardB"
+  ],
+  "sources": [
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\best\\V6GuardA.asm",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\best\\V6GuardB.asm"
+  ],
+  "sha256": [
+    "71164c8d7308766cd14d64ac6d1342cd1631afce98278fe9dca4d4ab14a3b3f3",
+    "8579e2c2212d72a413a6daacfe3b91ceb72be648bfc085bfeed9430eeaf6657a"
+  ],
+  "sizes": [
+    227,
+    202
+  ],
+  "primary": {
+    "scope": "Frozen75 published2025 teams, four2025 Zombies, paired four-team battles; not a guarantee for unknown competition.",
+    "alpha": {
+      "mean": 0.7261111126666666,
+      "diff": 0.008055554333333336,
+      "se": 0.0029556417691315355,
+      "ci95": [
+        0.002166309552108874,
+        0.013944799114557798
+      ],
+      "wins": 29,
+      "ties": 35,
+      "losses": 11
+    },
+    "beta": {
+      "mean": 0.719166668,
+      "diff": 0.003388888666666669,
+      "se": 0.0027927823602958745,
+      "ci95": [
+        -0.0021758516588501783,
+        0.008953628992183516
+      ],
+      "wins": 26,
+      "ties": 30,
+      "losses": 19
+    },
+    "pooled": {
+      "mean": 0.7226388903333333,
+      "diff": 0.005722221500000002,
+      "se": 0.002035352236965352,
+      "ci95": [
+        0.0017005581647209222,
+        0.009743884835279082
+      ],
+      "wins": 55,
+      "ties": 65,
+      "losses": 30
+    },
+    "baseline": {
+      "mean": 0.7169166688333333
+    },
+    "relativeGain": 0.007981710774436306
+  },
+  "cold": {
+    "schema": "cooperative-arena-cold-verification-v1",
+    "parent": "pointerguard-confirm-alpha",
+    "subset": "pointerguard-cold-alpha",
+    "scoreFiles": 6,
+    "battles": 240,
+    "status": "PASS",
+    "scope": "Subset of same frozen holdout contexts. Exact full score CSV hash equality, not a second independent performance sample."
+  },
+  "stress": {
+    "2024": {
+      "battlesPerArm": 560,
+      "original": 0.7110119053571429,
+      "candidate": 0.7119047625,
+      "diff": 0.0008928571428571397
+    },
+    "modern": {
+      "battlesPerArm": 400,
+      "original": 0.67,
+      "candidate": 0.6768749975,
+      "diff": 0.00687499749999998
+    },
+    "nozombies": {
+      "battlesPerArm": 200,
+      "original": 0.5591666685,
+      "candidate": 0.5550000035,
+      "diff": -0.004166664999999958
+    }
+  }
+}

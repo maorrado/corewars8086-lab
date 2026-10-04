@@ -1,0 +1,111 @@
+{
+ "version": 1,
+ "created": "2026-10-03 15:09:43",
+ "seed": 20261003,
+ "agents_n": 3,
+ "cards_available": 2160,
+ "wave": 3,
+ "dir": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003",
+ "has_baseline": false,
+ "agents": {
+  "a001": {
+   "card": {
+    "reasoning": {
+     "id": "adversarial",
+     "name": "Adversarial",
+     "how": "Picture the harshest expert reviewer trying to tear the answer apart. Write their attacks down first and build the answer backwards from them."
+    },
+    "workflow": {
+     "id": "smallest-version-first",
+     "name": "Smallest version first",
+     "how": "Produce the smallest complete version that actually works. Then extend it one step at a time, keeping it working after every step."
+    },
+    "strategy": {
+     "id": "fewest-moving-parts",
+     "name": "Fewest moving parts",
+     "how": "Remove things until it breaks, then put the last one back. Fewer steps, fewer dependencies, fewer words."
+    }
+   },
+   "solution": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\r0\\a001.md",
+   "alive": true,
+   "eliminated_in": null,
+   "eliminated_by": null,
+   "byes": 0
+  },
+  "a002": {
+   "card": {
+    "reasoning": {
+     "id": "analogy",
+     "name": "Analogy",
+     "how": "Find a problem in a different field that has already been solved and has the same shape. Port its solution over, then fix every place where the analogy breaks."
+    },
+    "workflow": {
+     "id": "requirements-checklist",
+     "name": "Requirements checklist",
+     "how": "Pull every requirement out of the task into a numbered list. Solve, then tick each item off and say exactly where it is met."
+    },
+    "strategy": {
+     "id": "built-to-last",
+     "name": "Built to last",
+     "how": "Optimise for how this holds up in six months: easy to maintain, easy to extend, no traps for the next person."
+    }
+   },
+   "solution": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\r0\\a002.md",
+   "alive": true,
+   "eliminated_in": null,
+   "eliminated_by": null,
+   "byes": 0
+  },
+  "a003": {
+   "card": {
+    "reasoning": {
+     "id": "systems-thinking",
+     "name": "Systems thinking",
+     "how": "Map the moving parts, how they affect each other, and what happens second and third order. Optimise the whole system, not just the one part the task points at."
+    },
+    "workflow": {
+     "id": "build-then-break",
+     "name": "Build, then break",
+     "how": "Build the answer. Then throw five hostile inputs or scenarios at it, write down what breaks, and patch every break."
+    },
+    "strategy": {
+     "id": "speed",
+     "name": "Speed",
+     "how": "Optimise for the fastest route to something usable today. Cut anything that does not move the result."
+    }
+   },
+   "solution": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\r0\\a003.md",
+   "alive": true,
+   "eliminated_in": null,
+   "eliminated_by": null,
+   "byes": 0
+  }
+ },
+ "rounds": [
+  {
+   "n": 1,
+   "alive": [
+    "a001",
+    "a002",
+    "a003"
+   ],
+   "matches": [
+    {
+     "id": "r1-m01",
+     "a": "a002",
+     "b": "a001",
+     "winner": null,
+     "loser": null,
+     "reason": null,
+     "survived": [],
+     "scores": null,
+     "source": null
+    }
+   ],
+   "bye": "a003",
+   "closed": false
+  }
+ ],
+ "champion": null,
+ "final": null
+}

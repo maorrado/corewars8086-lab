@@ -1,5 +1,10 @@
 # Chimera optimization against the official 2025 field
 
+Historical report: the m050 promotion and measured tradeoffs below are preserved
+unchanged. The current `final/` pair is zchain3, not m050. Use
+`strong-codes/11_Chimera_m050_historical/` for the exact former pair and
+`strong-codes/README.md` for newer candidates and their evidence limits.
+
 ## Outcome
 
 `m050` is the promoted pair in `final/ChimeraA.asm` and

@@ -1,0 +1,2641 @@
+{
+ "schema": "agent2-bench-v1",
+ "planId": "kphldef-20261004-confirm-field-beta",
+ "engine": "persistent",
+ "generatedAt": "2026-10-04T09:12:29.092Z",
+ "elapsedSeconds": 98.652,
+ "planSha256": "e8291ea771cf4fe12064ce3b94eeb1f6b1c4326ef6f3d7480e34f811a39c6424",
+ "planPath": ".arena\\v6-cooperative-20261003\\plans\\kphldef-20261004-confirm-field-beta.json",
+ "engineJarSha256": "31639072397eaf69d99e90b10d8fa594a7446951f1137b7ebd298378f5ec318d",
+ "driver": {
+  "class": "A2Batch",
+  "sourceSha256": "32068d0d97e3f649788a40ccada2d5213719aa515c4832b73643e028a5069d8a"
+ },
+ "teamName": "CAND",
+ "armHashes": {
+  "base": [
+   {
+    "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\kphl-defense-20261004\\build\\baseA",
+    "bytes": 214,
+    "sha256": "1e9efbcb54cb79f1da0ecaaf41f84418043ff97c93bdef2c1f2eba9a430d262a"
+   },
+   {
+    "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\kphl-defense-20261004\\build\\baseB",
+    "bytes": 222,
+    "sha256": "dd73fad407df01a6890dbab26b895320bc1a81ff4c3ed35b9a3a584b2daee1c7"
+   }
+  ],
+  "KPHLGuard": [
+   {
+    "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\kphl-defense-20261004\\sub-build\\di_subA",
+    "bytes": 214,
+    "sha256": "cf684e08a51798a732620c6196d82b3de1a7b57deb545ce2741fda2cce757afd"
+   },
+   {
+    "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\kphl-defense-20261004\\sub-build\\di_subB",
+    "bytes": 222,
+    "sha256": "d023af0f36fbeba8a012001db969247efcc0420f51c80da72aa0be129b85e51a"
+   }
+  ]
+ },
+ "opponentHashes": {
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\Y_GSA_LVS_FIT\\1": "32d1ed02b689d9d0b10a321511ed19c6d603e7f5c741ec71788cb8b9774d9be6",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\Y_GSA_LVS_FIT\\2": "92b6705be2d32ef9a46386c4371e7ad2c0ad5eaf279ea6a704ea0a2d0c11c987",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_TOM_BitBenders\\1": "97d159491650cf04a236c8c6188555dd17b9e7b1d2b1fe86a4926ef9b9b30d00",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_TOM_BitBenders\\2": "97d159491650cf04a236c8c6188555dd17b9e7b1d2b1fe86a4926ef9b9b30d00",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_IND_cgx123123\\1": "b6c07757f0c8b5d20a60c12de9d30c5130badc9c4e342e8a3beec5e92d6f782e",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_IND_cgx123123\\2": "a053a4c9f0b893fe84070894ed08e600964a9d63bc57719b083b8d91186e4315",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_HDS_NRI\\1": "8830ca6b843b0508fc2a5771068dad1bc150d2f824d2cd77d7631e523b431bb1",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_HDS_NRI\\2": "1cc40806e6766e591dac071b1256c8b5f325360f0aae448b188dcc87376bb9ab",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_IND_BRA\\1": "fd42f831ef722a715fc5d89877cf830b366efd1d3a30a2e0612e565de0031015",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_IND_BRA\\2": "fd42f831ef722a715fc5d89877cf830b366efd1d3a30a2e0612e565de0031015",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_HRZ_BinaryBandits\\1": "c6cf8bb109582030c5cd0723399930168aee257dbeac6122507c522f9b383d86",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_HRZ_BinaryBandits\\2": "be7d4791659d4aacd49dded0044baadf737e123b3dff8ddb497f5be1954c461b",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_TOM_Syntax_Terror\\1": "2cb2747ca3e9331b28ca609a228bfd21413a77ee98355c5e8fff4042c56a2a56",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_TOM_Syntax_Terror\\2": "f39bc040a51c504af6baca86ef99bf19351717c91ac4e3af01a2e0ecad193e47",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_AML_ByteReapers\\1": "e03726289c7889054f9635a8eea5a25754a819b2016bee5a39ef345f7b6cd3d7",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_AML_ByteReapers\\2": "5fe97a9902546036b12928645654fc44688e084fd7f6e3a9799fd5365f48918e",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_GSA_VanLavan\\1": "29bcd91c2654fbe3b40eb0ba46f0b27956fc951185f3ebc7fb78877f739a401e",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_GSA_VanLavan\\2": "649dad7fb2499e54a9474e31784d38f3ad36e801d9649eb0d78d7aabe8e30d1b",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_GSA_ShmuelTurtles\\1": "22de4575872d077b32481da4edf814f6a72136771b931b45a1b0191001b19c3f",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_GSA_ShmuelTurtles\\2": "9198ae7381e5449f42b5f2cb80e0ec1788c4b2bd25b9ec9ed0096383c4c2085c",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_OHS_cgxPro\\1": "128d6e4fb73dec09b71198963573298bb8bac99c3a2daca74759efc48b28a1ce",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_OHS_cgxPro\\2": "128d6e4fb73dec09b71198963573298bb8bac99c3a2daca74759efc48b28a1ce",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_HDS_ATW_Solo\\1": "3433de990452854bfefb8f5e76c2e898f1b4b44cfe3a2533bc54ab6f1e461fa5",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_HDS_ATW_Solo\\2": "1e1079248809e3c1eac0a7768e7726bfad3f6daae78f90c1fd25bb7f12c634a5",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_HDS_MAC\\1": "01fe69503bf6f9092a4df08b0cb7d29ee83a8c9532162b63d3a97ab21e36ad14",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_HDS_MAC\\2": "b983b54b0afc2b8ff78ed361f67745e3d133f28989140ae8da394e740ae2f6b6",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_GSA_callfart\\1": "dfe5017765f2522372bedc2e5e3b72af5597b99ddbfb3444c25f5bde17a4acf3",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_GSA_callfart\\2": "30dafcebde39ba9bf4bbcf21d83a666bc5f0a8e3e4aabcb52310905d389a4f4d",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_GSA_B33\\1": "b669a39358c457bbd739710d2a82e6c7f5bfb20125922b153207209d2bf74350",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_GSA_B33\\2": "b669a39358c457bbd739710d2a82e6c7f5bfb20125922b153207209d2bf74350",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_GSA_GhostBytes_0x\\1": "2cf5b8a9974e1e6e46504f5027a2f20f6329cf8944ad15397afdd0f5955d2801",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_GSA_GhostBytes_0x\\2": "08c6ac348985a5f21fecbaf1ee7d7bb56add87cd8d8af2278902df7e60b52238",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_HDS_IWDIA_nachalo\\1": "e167f5b550647a852833be5d1a676a5539c67062b68d29564799231dbb326130",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_HDS_IWDIA_nachalo\\2": "82897f9576e656fff06b6a52b4fa7710fedb3c662588d54b49f3b29e3b953ff8",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_HRZ_Thingies\\1": "2a381510bdaf45ab809c11ee0c115c6683b6e3c38148f613c3927026138c8b93",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_HRZ_Thingies\\2": "2a381510bdaf45ab809c11ee0c115c6683b6e3c38148f613c3927026138c8b93",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_HRZ_fisherEXE\\1": "82b268ce80e540cea8c8a61d6279f613721d5c59b369317af53de5983db3bb49",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_HRZ_fisherEXE\\2": "ac49b19fc0fb2f62c4a6db6b18c637deebde8ff010d183578e738c429cf8be92",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_GSA_TheBytes\\1": "d168c81336006cab440c719f9bf857d146ca2b8b063b95eaccbc274326d58f9b",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_GSA_TheBytes\\2": "7dfdbe1fbfeb2311ef5c1a77621fb43dc0ca5ec23abc566bdf4078d348311351",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\Y_ELD_FriendlyFire\\1": "9198ae7381e5449f42b5f2cb80e0ec1788c4b2bd25b9ec9ed0096383c4c2085c",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\Y_ELD_FriendlyFire\\2": "9198ae7381e5449f42b5f2cb80e0ec1788c4b2bd25b9ec9ed0096383c4c2085c",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\Y_TOM_The_Crushers\\1": "8daf826ed95b86c1ceef1f0f6e1a8c92fe292fb83e3e651dd75b72064187e5b2",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\Y_TOM_The_Crushers\\2": "af0ee0bde6599b412201e094453951cf884aa5e5c7e79e32986d4812d9516547",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\Y_SZR_The_Chargers\\1": "3e7c44b27c9d019d42495a066a7346ada38b9c5bc5e3dbbf484c729ef90bf379",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\Y_SZR_The_Chargers\\2": "4c43e3d631d94e14dfbc3bb68e80e29aba97156b3244a912675e24b4a2d1f6f9",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\Y_TOM_Thefrogs\\1": "8f014d9812cf497a03015d562135e8bdaaa4dd921e5de3e28984ac64642fa050",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\Y_TOM_Thefrogs\\2": "348c42651bea5001dc5a61a3e15228e4820dbbd4ab0b6df16982dbb38334a504",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_HRZ_The_almogooners\\1": "1beaaf660fe42f02b45b031c46d1b4dda2f7d670f99e6dc27c73c6ae45301d91",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_HRZ_The_almogooners\\2": "1beaaf660fe42f02b45b031c46d1b4dda2f7d670f99e6dc27c73c6ae45301d91",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_HRZ_MOV_AX_WIN\\1": "ef82df0d92476fa6161d81ff092ea489d4df7ddef88a0dad44705a3cf14f8dd1",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_HRZ_MOV_AX_WIN\\2": "a1b4b8459ae6b367da93742fb5f3c8bb0fe321e3cf1174f4e7a1dc29ada2a544",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\Y_TOM_AND_JERRY\\1": "0f2a1799845db478549ab951df61323eb863ed496ed87d2e189b2cba510bfa43",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\Y_TOM_AND_JERRY\\2": "8699a2bb930c1d2d1178aa6c17322db31f1338b8184d6056620abbc5b1c1a65e",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_WAN_Baltika9\\1": "dba05606104f4c4805e10023866390bad2fd4c3eed1732e86780a158f061e4c6",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_WAN_Baltika9\\2": "30065fd48eab62390508c9357b30e01246e1e56343803df97aa4306ce0fdd9c5",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_OST_Gamma\\1": "a470a79b80f6eac90b3613ffc6127722a210923fa5fa80efec4760197a901c63",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_OST_Gamma\\2": "0f522f42cecc4b8e2dd7cc8ea914cb7946d7cf1ec0a4877fb876c30137580caa",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\Y_TOM_Code_Killer\\1": "388479f220bd757fe9c011cb234cc52ad1e6f12e9deb01a8d247a0e5568c4e22",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\Y_TOM_Code_Killer\\2": "7fc3754c18976081ccd54f3936d22a493bb1d8420706cde4a5962613f4c9bbf5",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_HRZ_Pixar_Lamps\\1": "500852a7240608e60b8ed36f93d14f09ec08db9f3b9f65358a4d3174a14221a8",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_HRZ_Pixar_Lamps\\2": "5ab6a833bc63e8497db71b36ae02a835ab1b9f5abef9b42dafabd07b1d671ab5",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_HRZ_LowKey_WBB\\1": "9e6f08b0cf3d7fe60b1c349ce143ed02e2f3ed01e1654164f231a4c46d2aefc9",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_HRZ_LowKey_WBB\\2": "42abd17f0ecb417669bb7ad2215bfd6a4fe7477c99b1cde736205d5b207484f4",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_HRZ_Code_Jokers4Life\\1": "f2222e5041e6fdfe2ab35582cc9df51e3b0498b7b57d90f18c20056239d673b8",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_HRZ_Code_Jokers4Life\\2": "7ecc90c263e5458e6ac5b880d91efd45c3e0c6345639c3e38153bc161173e8de",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_KOB_KosherCode\\1": "f333c2d41cce100bb3afee9f2e60b9fda6f93d717602adc369d7719664568184",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_KOB_KosherCode\\2": "f2b704b27b426c0d25f8dc26f1e4876f14cf3d5d1b89d4e7bfbecd0b132af5ac",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_HRZ_InCtrl\\1": "d7b0b84459fe2295e8a65512ef16c2e698e6d6bee50b1b3b777dc0c2b0c5b7c0",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_HRZ_InCtrl\\2": "6997d9e87f8c241b3056f8ebfb624bd4bf268ef14329f49c95d4f553146153fa",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_HLS_EmoMutants\\1": "629b28dbff281ca175493f1f40492e52afdf6f9f3c2f8a7e06a8df08a5580711",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_HLS_EmoMutants\\2": "36c6a4f23a988920ed0e2e7a128bd706b5f82871935b6c0dfc5d3c2cbbd65aa0",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_WAN_OnlyCode\\1": "79feca3fa250a6c0406c46fa11fb0ce604758625912695e45040a784121625d8",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_WAN_OnlyCode\\2": "a230910890f8270ad8dcb6c2d304a47ca8c1dd25a418022b80e091e5a8c96658",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_ATL_R1DDLE\\1": "dc1e7b81a57cc7fb13be0a4b32036342b7a7b2c65614bccc28998bec70111803",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_ATL_R1DDLE\\2": "dc1e7b81a57cc7fb13be0a4b32036342b7a7b2c65614bccc28998bec70111803",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_GSA_GoonSquad\\1": "7b092caf2288c03827e2c7189566306f3bcc65e8668d2793659877475eaa8ac7",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_GSA_GoonSquad\\2": "b0092281531189b979faf8b5084d1a6eb1793075f9ae4e56a4437459088fadc7",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_HRZ_Registered_Winners\\1": "1645436c2465df7ac0def9182eb12506e7aa9ca6b719635d2192eab4e38ce70d",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_HRZ_Registered_Winners\\2": "6a489e8f28e3cbe8e370b8382679938c7635a46fcbbd5f4c263024e2e8dcabab",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\Y_SZR_BrvazimAlSteroidim\\1": "dbc5b61532888cc9246691b72acfc95eb453fb6362d405f79dca61b48b4e3764",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\Y_SZR_BrvazimAlSteroidim\\2": "6071871d772af0d529769ecf82479b93d30a388feb72df6a41e4c0845100dfd3",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_BZV_SKYENT\\1": "71bdf7043da5f50d23bc4d8b729b13ce39a2240775937d7652476abdcbb2705d",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_BZV_SKYENT\\2": "bfca1258902ff47eef60ddc230e67f4c8528c89421377f5a696724506c2fdada",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_AVI_AnotherBitInTheWall\\1": "5a78ed74829860373ab4dd7d80bb58fd50234789e3d2cba84c4f8a1cc183ab15",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_AVI_AnotherBitInTheWall\\2": "76b06db3e88a32e0a1f025030e1c14d19c53b9a8f7a0944c76de9d867de55fda",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_TOM_2B2Team\\1": "bcc371f9a6c803da24ca9b207cc669f3ad303b115c7b6d27afdaafc1f48d0cb5",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_TOM_2B2Team\\2": "bd1a1687a4f99d4a0bb60ae23cb09a505d87c77042de95a27957b1c524df4ab0",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_HRZ_CodeEliteGang\\1": "18455d457341e1d7b30c782693eeb66cab9f239b7bdc6b372bdcfb41c16dc426",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_HRZ_CodeEliteGang\\2": "74f611e36a3c93d5f9f5ced87f637120a0810e33a1927ef675a402da5900416f",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_ORT_Pegasus_Hex\\1": "8c82f8dc226579917f261847d0a6606c670f47ae4adcd5d4eb41fe4807035537",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_ORT_Pegasus_Hex\\2": "4026ad9d8dd3c66933bf5cc03cd18ed3b7d707f181a054fc43bf07b2239758c1",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_WHS_K0F1M_AL_T1L1M\\1": "51be29ada737ee980285eeb1cce4c445ce345d8b3bf0c9b3d97e2ae09ade3f60",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_WHS_K0F1M_AL_T1L1M\\2": "d7487a752af32ae355c8fbabcaba111150451a26ff9b7c6804ac08b26f85de6f",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_HRZ_Ctrl_Alt_Elite\\1": "396faf80539b6f55ee1ce91d06bf40ee0049be5f931e0fd82da0da3c2e70ce79",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_HRZ_Ctrl_Alt_Elite\\2": "396faf80539b6f55ee1ce91d06bf40ee0049be5f931e0fd82da0da3c2e70ce79",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_TOM_tson_el_akod\\1": "9198ae7381e5449f42b5f2cb80e0ec1788c4b2bd25b9ec9ed0096383c4c2085c",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_TOM_tson_el_akod\\2": "9198ae7381e5449f42b5f2cb80e0ec1788c4b2bd25b9ec9ed0096383c4c2085c",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_IND_stuxnet\\1": "b4c342926e63b9d8b21f22e744de9cc96312ce7bf9433f5d9c6b76d982763834",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_IND_stuxnet\\2": "2f645003233d8935086b8e5867c013ff3a93d87acbda64c149805c5ba5ccd5bd",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\Y_GSA_3Plate_Benchers\\1": "7e6a8c26c42fa899e58fb02cde83d71406402dc436741098fc334382a76e5872",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\Y_GSA_3Plate_Benchers\\2": "7e6a8c26c42fa899e58fb02cde83d71406402dc436741098fc334382a76e5872",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_WAN_Full_Time_Job\\1": "451ccffeedd664f6814d45a712f805c71931efada682112e61b801858c3ab4f3",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_WAN_Full_Time_Job\\2": "9e076ceaf246b6003d9c2680a2b4cf0bffd069805902b0b5edeebf49039fe4bd",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_TOM_anonymous\\1": "6f57faeb8622bbc3778c80d450fa03c9efbf8703b58414850a3861f2bcbc83f4",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_TOM_anonymous\\2": "e0cdbe70e170d8bf242e071325971d7590701d330fe089b9d2f815e05a432759",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_OHS_BatteringRAM\\1": "6db7c4932a50615520b1eed2f49a9543723d89fb1b70f7507b6241f77d0e9474",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_OHS_BatteringRAM\\2": "5f2531e6a569ae005357df7f8d16fdd7e49020cee96a6ccf16e85d2fb51e4bb1",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_HDS_GoldenLamed\\1": "f76ec20d3e5d9e5dc58734ae0aa90532090d98abbd857baeedc3179c8bd32378",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_HDS_GoldenLamed\\2": "f76ec20d3e5d9e5dc58734ae0aa90532090d98abbd857baeedc3179c8bd32378",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_RZL_YANDE\\1": "8e8c89070cc2d1f64bc5e16fc6dbbffb2fc72cb57bf66f16ac5bfe089d60632b",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_RZL_YANDE\\2": "eba9d406edec09cd697bcb706c1bdc133a9a2b63cea3811252ddaaf54e2b8b75",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_AVI_Fishandpoultry\\1": "c8aa0e238c28c8c041cf8318d93f165b7cb2005c71cc055552244f120ea7f065",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_AVI_Fishandpoultry\\2": "3718913ee7debbee757a1fa053699cb80d12cd1985d8218b3ed6cb9f4d87193d",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\Y_BGR_theGlopyGng\\1": "8d84a93cdcc76fb45b496184bc68c3535a3564fc9e1ea523a9fcba0c2a5fa6ac",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\Y_BGR_theGlopyGng\\2": "adfdb3915475338713a2a1e4d7c8cc27a2ff8c6e4ed0a474e6770be72836b97d",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_HRZ_Underflow\\1": "79f994bd13bfd25b44a97d420e8a9d6e8f45311a716b21bfb9f10fdc79cde7e4",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_HRZ_Underflow\\2": "7d5c20977121ffb2ac532f6a4cb6662a2c349f0e833beb9999869ad9df918840",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_HRZ_stack_attack\\1": "7298748ba797e65564eb58d3f53af67b3457b2400c73069dcbfbe538bd6ee6f1",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_HRZ_stack_attack\\2": "140a6203d3d0839bd3797cdf1da03613b727c053854dbb8eb0b7e34118355fa9",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_OHS_TrojanByte\\1": "8daa80561913795dab371699ae02d243e11889eafdbd3f198b8b2792ef8caed6",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_OHS_TrojanByte\\2": "7a243cd4100cef57759ded924b53566ac3004a1d23b71a11a1166f0a7cecbc4f",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\Y_HDS_TRY\\1": "d654e9598b1d6e232328341049e95b646e383a504224dbcc4763fc32ac7d37fb",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\Y_HDS_TRY\\2": "9c498b425a7b6af5fe64b4445efddc821d513955dc7f2c207eb127f141ac1092",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_HRZ_TitanicSwimTeam\\1": "4794558ee17f4265372dd9176b06150026d88e0bb2d481954dec55be8b3aeec0",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_HRZ_TitanicSwimTeam\\2": "5bb33762a99debde94f5905696bf9e72c552cb9ddbd2e01391efde85b5d92ffc",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_HRZ_Grindo_Holics\\1": "0fd28370c9b4200dc1d4774a5ab959e76f1f5fe0243dd327626fd8f47c936b51",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_HRZ_Grindo_Holics\\2": "69791f0bdb90e9ff65fc078f6e863f92c3847700efbdc8e8865e002c96f2934f",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_HDS_YOY\\1": "a30854eb23928d0a2a16e32fc2db3fbf6f6dec4b843ae73fa4b5ba904eced03f",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_HDS_YOY\\2": "61cdca8ebd5d863f30172e0164c4d0a3d8eb6dae39815aa06465a8904a95dfa9",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_HRZ_PowerRangers\\1": "52aa2ff950b861e97be698661c012ca2f2da158171aa2899c69fe1049fb1abb0",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_HRZ_PowerRangers\\2": "d105ec96ad325832882dc8820d82a52567780dfdb1abb40a50986e011feff22c",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_HRZ_L\\1": "39de1bb615fe8760c528eab9b0cdac26e934010ee5953bb3c88f1ce561cefea0",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_HRZ_L\\2": "bdd2bb9dbb0dffc2ed7c0fa4f6b1fdf7a067d9784959d26c8c615f6fc3fde901",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\Y_GSA_SigmaSilent\\1": "5f99b89cf54c876307804f0f38658b46739baa8ff4f14189e0c17713f10ee16c",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\Y_GSA_SigmaSilent\\2": "8a06a8d64760629cacb4e1ad2c236c5e2fc9b3e0948d3de048a43c2fa386ead9",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_ORT_TheGoats\\1": "74e7a2f5ff930e07fc75a13cc15fadf586f1af66d1f6283532ce47b7c0673a25",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_ORT_TheGoats\\2": "0ab57aed774169d420cb0b6b05414fe6145ef6e99b614b988ed8163e3b11aa42",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_GGN_OpcodeHunter\\1": "d5992bdc307b070ad91e1737a8777125970912b286a392ed6d9a6456d87ed3af",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_GGN_OpcodeHunter\\2": "0ced8fc1ec650a032604e2e149458b54202be7ecabb447999f143659d6ea46b6",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_HRZ_ADDvanced\\1": "ff353ab75e7a3b88b896f64cbb97bfad639412a6e222088d6f52cc189a9e2ebe",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_HRZ_ADDvanced\\2": "509086f3e6ec36b0867ecebe4ba9ecc8faffaf7cc7f4e633dd04f2814981f39c",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_HRZ_The_Rubber_Duckies\\1": "c8270f10aa7f62682bae9ce457a087fe6b391e63107ae748695d35f615a2d72e",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_HRZ_The_Rubber_Duckies\\2": "d77f23e2eda8675b231d8d53a436dcde422e27fa7936d18059fd338156c58ff4",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_OHS_TOMEX\\1": "d511b9beab4574d1bf126ef9264e3aca2276ea71e81b3a6c9296e217859f54a8",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_OHS_TOMEX\\2": "d511b9beab4574d1bf126ef9264e3aca2276ea71e81b3a6c9296e217859f54a8",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_HRZ_TEST_ticals\\1": "bde8d3995ed1d713bcb7a64eb6f122a3105e0549e28ee8bc3bb951737ed7aa6f",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\A_HRZ_TEST_ticals\\2": "bde8d3995ed1d713bcb7a64eb6f122a3105e0549e28ee8bc3bb951737ed7aa6f",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\Y_MTA_Hexellent\\1": "70484891cb2f1361ffe98001528a8e0d05ed74f44e7e3696b8d71ac64d0c3962",
+  "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\pool\\Y_MTA_Hexellent\\2": "a303a84b1f9fedf1fa0fde29647c5db17ee23bcd63faf16c9f69295e7d60d0a4"
+ },
+ "zombieHashes": [
+  {
+   "name": "zom20a",
+   "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\zombies\\zom20a",
+   "sha256": "a950e618ea2e127096c85f486fb555c264730d924a2192c407aa66e6e0318eb6"
+  },
+  {
+   "name": "zom20b",
+   "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\zombies\\zom20b",
+   "sha256": "af6394c021ccb5e486db507e2ccd787bd5675f8fec88fd2ddbe9f834566852ce"
+  },
+  {
+   "name": "zom20c",
+   "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\zombies\\zom20c",
+   "sha256": "3d3f209967f51a7344e0eab582bc04d1e694da5a73e3682a26ed483dcab7a443"
+  },
+  {
+   "name": "zom20d",
+   "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\zombies\\zom20d",
+   "sha256": "923dd6abebbb7bb502ec5a02873c26175820ada5c4409d179d8464f0e90cb6fc"
+  }
+ ],
+ "summary": {
+  "base": {
+   "battles": 1500,
+   "team": 0.7544444413333334,
+   "w1": 0.37844444466666666,
+   "w2": 0.376
+  },
+  "KPHLGuard": {
+   "battles": 1500,
+   "team": 0.7544444413333334,
+   "w1": 0.37844444466666666,
+   "w2": 0.376
+  }
+ },
+ "runs": [
+  {
+   "arm": "base",
+   "cohort": "p0-c0",
+   "seed": "kphldef-20261004-confirm-field-beta|p0|c0",
+   "battles": 20,
+   "team": 10,
+   "w1": 9,
+   "w2": 1,
+   "opponents": {
+    "Y_GSA_LVS_FIT": 4,
+    "A_TOM_BitBenders": 1,
+    "A_IND_cgx123123": 5
+   },
+   "scoresSha256": "27b77042c223a59dcd2e42740762c438c1f483b3dc15ab4d3b69cd532cf1f5d6",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p0-c1",
+   "seed": "kphldef-20261004-confirm-field-beta|p0|c1",
+   "battles": 20,
+   "team": 7,
+   "w1": 4,
+   "w2": 3,
+   "opponents": {
+    "A_HDS_NRI": 6,
+    "A_IND_BRA": 0,
+    "A_HRZ_BinaryBandits": 7
+   },
+   "scoresSha256": "057407c26f0ea389cfe7e8cbcdd3109961265cde84c095dba9fcc2d6fb6d8c4c",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p0-c2",
+   "seed": "kphldef-20261004-confirm-field-beta|p0|c2",
+   "battles": 20,
+   "team": 16.333332,
+   "w1": 9.833334,
+   "w2": 6.5,
+   "opponents": {
+    "A_TOM_Syntax_Terror": 0,
+    "A_AML_ByteReapers": 1,
+    "A_GSA_VanLavan": 2.6666667
+   },
+   "scoresSha256": "730fbff95be578ccfee36088b08bb0cdb4bffd4b890b9e0247d14e7d666da349",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p0-c3",
+   "seed": "kphldef-20261004-confirm-field-beta|p0|c3",
+   "battles": 20,
+   "team": 19,
+   "w1": 8,
+   "w2": 11,
+   "opponents": {
+    "A_GSA_ShmuelTurtles": 0,
+    "A_OHS_cgxPro": 0,
+    "A_HDS_ATW_Solo": 1
+   },
+   "scoresSha256": "a87e559e2a4a857dc158b3ad75c5683b767699ade3dc0d91cdf474865cdd4fb5",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p0-c4",
+   "seed": "kphldef-20261004-confirm-field-beta|p0|c4",
+   "battles": 20,
+   "team": 17,
+   "w1": 6.5,
+   "w2": 10.5,
+   "opponents": {
+    "A_HDS_MAC": 0,
+    "A_GSA_callfart": 2,
+    "A_GSA_B33": 1
+   },
+   "scoresSha256": "755b32558834f9eedc2952732be704f595a3ec39f0c956d98d5875dee03cd8e8",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p0-c5",
+   "seed": "kphldef-20261004-confirm-field-beta|p0|c5",
+   "battles": 20,
+   "team": 16,
+   "w1": 8,
+   "w2": 8,
+   "opponents": {
+    "A_GSA_GhostBytes_0x": 2,
+    "A_HDS_IWDIA_nachalo": 0,
+    "A_HRZ_Thingies": 2
+   },
+   "scoresSha256": "14c97831800d1501f8cdee20d7870d9a31c4c9c353e3e39fc2ccd136d9edeeac",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p0-c6",
+   "seed": "kphldef-20261004-confirm-field-beta|p0|c6",
+   "battles": 20,
+   "team": 17,
+   "w1": 11.5,
+   "w2": 5.5,
+   "opponents": {
+    "A_HRZ_fisherEXE": 0,
+    "A_GSA_TheBytes": 2,
+    "Y_ELD_FriendlyFire": 1
+   },
+   "scoresSha256": "09a1cfba0908e6ccb341bfafb40d57b6fbe26c707e7850c17662586d329909b5",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p0-c7",
+   "seed": "kphldef-20261004-confirm-field-beta|p0|c7",
+   "battles": 20,
+   "team": 18,
+   "w1": 9.5,
+   "w2": 8.5,
+   "opponents": {
+    "Y_TOM_The_Crushers": 0,
+    "Y_SZR_The_Chargers": 0,
+    "Y_TOM_Thefrogs": 2
+   },
+   "scoresSha256": "f4a85c4c9b623fa4b3ef66b0acbdda2a8704694062567aae1f059960046b6ed5",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p0-c8",
+   "seed": "kphldef-20261004-confirm-field-beta|p0|c8",
+   "battles": 20,
+   "team": 12,
+   "w1": 9,
+   "w2": 3,
+   "opponents": {
+    "A_HRZ_The_almogooners": 5,
+    "A_HRZ_MOV_AX_WIN": 2,
+    "Y_TOM_AND_JERRY": 1
+   },
+   "scoresSha256": "3bfac391e60528a736ec5384e17e20a08d6def0de45d203bcb29a59a7c5601dc",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p0-c9",
+   "seed": "kphldef-20261004-confirm-field-beta|p0|c9",
+   "battles": 20,
+   "team": 10,
+   "w1": 4.5,
+   "w2": 5.5,
+   "opponents": {
+    "A_WAN_Baltika9": 3,
+    "A_OST_Gamma": 2,
+    "Y_TOM_Code_Killer": 5
+   },
+   "scoresSha256": "677b699739a04932a9f7ee7f45e346126c997f671218d9aad7e8b6595b895dda",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p0-c10",
+   "seed": "kphldef-20261004-confirm-field-beta|p0|c10",
+   "battles": 20,
+   "team": 13,
+   "w1": 6.5,
+   "w2": 6.5,
+   "opponents": {
+    "A_HRZ_Pixar_Lamps": 0,
+    "A_HRZ_LowKey_WBB": 4,
+    "A_HRZ_Code_Jokers4Life": 3
+   },
+   "scoresSha256": "fc25204940cf6b826754203ea3564e927a0589d6eb4a248fa73fe62b71d9ea78",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p0-c11",
+   "seed": "kphldef-20261004-confirm-field-beta|p0|c11",
+   "battles": 20,
+   "team": 15,
+   "w1": 8.5,
+   "w2": 6.5,
+   "opponents": {
+    "A_KOB_KosherCode": 0,
+    "A_HRZ_InCtrl": 2,
+    "A_HLS_EmoMutants": 3
+   },
+   "scoresSha256": "65041094a6702e63966eddd244aed56c5387ff648a3539c02cb8e84939e95ab1",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p0-c12",
+   "seed": "kphldef-20261004-confirm-field-beta|p0|c12",
+   "battles": 20,
+   "team": 16.5,
+   "w1": 8,
+   "w2": 8.5,
+   "opponents": {
+    "A_WAN_OnlyCode": 0,
+    "A_ATL_R1DDLE": 1,
+    "A_GSA_GoonSquad": 2.5
+   },
+   "scoresSha256": "879704a25d3915df990d3aedada6d5b42ac15785a8c6a36b8d1b48de1364fb98",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p0-c13",
+   "seed": "kphldef-20261004-confirm-field-beta|p0|c13",
+   "battles": 20,
+   "team": 18.333332,
+   "w1": 9.833333,
+   "w2": 8.5,
+   "opponents": {
+    "A_HRZ_Registered_Winners": 0,
+    "Y_SZR_BrvazimAlSteroidim": 0,
+    "A_BZV_SKYENT": 1.6666667
+   },
+   "scoresSha256": "501d1a5a8b02ef0ee30fa36a174c09be259cbef5f4e3821966fa7b14cc054a52",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p0-c14",
+   "seed": "kphldef-20261004-confirm-field-beta|p0|c14",
+   "battles": 20,
+   "team": 16,
+   "w1": 10,
+   "w2": 6,
+   "opponents": {
+    "A_AVI_AnotherBitInTheWall": 2,
+    "A_TOM_2B2Team": 1,
+    "A_HRZ_CodeEliteGang": 1
+   },
+   "scoresSha256": "a2f1078877eb86580589a63ee4de89bfc0aa039c5b5a88e6566b53ea47d60ae8",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p0-c15",
+   "seed": "kphldef-20261004-confirm-field-beta|p0|c15",
+   "battles": 20,
+   "team": 15,
+   "w1": 8,
+   "w2": 7,
+   "opponents": {
+    "A_ORT_Pegasus_Hex": 0,
+    "A_WHS_K0F1M_AL_T1L1M": 4,
+    "A_HRZ_Ctrl_Alt_Elite": 1
+   },
+   "scoresSha256": "ed457e53813d21ba478569d16ac90f8193f3f17746014e7d17923ed7cc62db99",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p0-c16",
+   "seed": "kphldef-20261004-confirm-field-beta|p0|c16",
+   "battles": 20,
+   "team": 16,
+   "w1": 8.5,
+   "w2": 7.5,
+   "opponents": {
+    "A_TOM_tson_el_akod": 0,
+    "A_IND_stuxnet": 2,
+    "Y_GSA_3Plate_Benchers": 2
+   },
+   "scoresSha256": "c8bd3c7b95db8a983e59a57de10670b5bbe8c2357859dd6670a82e1393c45e49",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p0-c17",
+   "seed": "kphldef-20261004-confirm-field-beta|p0|c17",
+   "battles": 20,
+   "team": 18,
+   "w1": 9.5,
+   "w2": 8.5,
+   "opponents": {
+    "A_WAN_Full_Time_Job": 0,
+    "A_TOM_anonymous": 1,
+    "A_OHS_BatteringRAM": 1
+   },
+   "scoresSha256": "5687a500aec07f34c56771f827cd894b7df667dc7f5f0c91c51a6a1c1a6cb9a5",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p0-c18",
+   "seed": "kphldef-20261004-confirm-field-beta|p0|c18",
+   "battles": 20,
+   "team": 18,
+   "w1": 7,
+   "w2": 11,
+   "opponents": {
+    "A_HDS_GoldenLamed": 0,
+    "A_RZL_YANDE": 2,
+    "A_AVI_Fishandpoultry": 0
+   },
+   "scoresSha256": "bc7503cb7e4b1b45c1a3cb4d1681c906e8e6d430b680ced35ea524ac63216fa7",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p0-c19",
+   "seed": "kphldef-20261004-confirm-field-beta|p0|c19",
+   "battles": 20,
+   "team": 14,
+   "w1": 5.5,
+   "w2": 8.5,
+   "opponents": {
+    "Y_BGR_theGlopyGng": 3,
+    "A_HRZ_Underflow": 1,
+    "A_HRZ_stack_attack": 2
+   },
+   "scoresSha256": "4936d5f6af56568d7758e529ffb0c748b494fcf06765ef85544fd89b7c19c042",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p0-c20",
+   "seed": "kphldef-20261004-confirm-field-beta|p0|c20",
+   "battles": 20,
+   "team": 18,
+   "w1": 9,
+   "w2": 9,
+   "opponents": {
+    "A_OHS_TrojanByte": 1,
+    "Y_HDS_TRY": 1,
+    "A_HRZ_TitanicSwimTeam": 0
+   },
+   "scoresSha256": "faf0e4ba8a8eff2f486583b4f5a9d3dfb68b2dd4c5186ff677e18f5bb716cb19",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p0-c21",
+   "seed": "kphldef-20261004-confirm-field-beta|p0|c21",
+   "battles": 20,
+   "team": 11,
+   "w1": 6.5,
+   "w2": 4.5,
+   "opponents": {
+    "A_HRZ_Grindo_Holics": 8,
+    "A_HDS_YOY": 0,
+    "A_HRZ_PowerRangers": 1
+   },
+   "scoresSha256": "5bf4d402230f467ebf8b80a6e834afdc3536f8eb6d53a6d168a6e12caade54e6",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p0-c22",
+   "seed": "kphldef-20261004-confirm-field-beta|p0|c22",
+   "battles": 20,
+   "team": 16,
+   "w1": 7.5,
+   "w2": 8.5,
+   "opponents": {
+    "A_HRZ_L": 3,
+    "Y_GSA_SigmaSilent": 1,
+    "A_ORT_TheGoats": 0
+   },
+   "scoresSha256": "b9fd687ca2785379aa1918d1d46769e3929d79f3610f254d7c6c0e5f2584fcb0",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p0-c23",
+   "seed": "kphldef-20261004-confirm-field-beta|p0|c23",
+   "battles": 20,
+   "team": 14.5,
+   "w1": 4.5,
+   "w2": 10,
+   "opponents": {
+    "A_GGN_OpcodeHunter": 3.5,
+    "A_HRZ_ADDvanced": 1,
+    "A_HRZ_The_Rubber_Duckies": 1
+   },
+   "scoresSha256": "3d131c3cce327769d5005081e1eec438b850e384cd611bba36a837d0798597b2",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p0-c24",
+   "seed": "kphldef-20261004-confirm-field-beta|p0|c24",
+   "battles": 20,
+   "team": 15,
+   "w1": 8,
+   "w2": 7,
+   "opponents": {
+    "A_OHS_TOMEX": 5,
+    "A_HRZ_TEST_ticals": 0,
+    "Y_MTA_Hexellent": 0
+   },
+   "scoresSha256": "e69f83b6b78ccb3a219d6597470a1d9118e92a7c5d68d26d620dda2dbf906232",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p1-c0",
+   "seed": "kphldef-20261004-confirm-field-beta|p1|c0",
+   "battles": 20,
+   "team": 16,
+   "w1": 9.5,
+   "w2": 6.5,
+   "opponents": {
+    "A_HLS_EmoMutants": 2,
+    "A_HDS_ATW_Solo": 1,
+    "Y_MTA_Hexellent": 1
+   },
+   "scoresSha256": "eac5b7d7965865e85ddb2eb67b049b902b998e2e3cc9f02cdb8665744577b81a",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p1-c1",
+   "seed": "kphldef-20261004-confirm-field-beta|p1|c1",
+   "battles": 20,
+   "team": 18,
+   "w1": 10,
+   "w2": 8,
+   "opponents": {
+    "Y_GSA_SigmaSilent": 1,
+    "A_WAN_Full_Time_Job": 0,
+    "A_OST_Gamma": 1
+   },
+   "scoresSha256": "e537686ed696c61e9355f64680008990c712039b026875f467a30f8600b9dd52",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p1-c2",
+   "seed": "kphldef-20261004-confirm-field-beta|p1|c2",
+   "battles": 20,
+   "team": 19,
+   "w1": 8.5,
+   "w2": 10.5,
+   "opponents": {
+    "Y_HDS_TRY": 0,
+    "A_HRZ_Pixar_Lamps": 0,
+    "A_HDS_YOY": 1
+   },
+   "scoresSha256": "35794b8feb51aace75ae6a783003ffd6d21d9bd4d0fc96ed822d4309539a8af2",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p1-c3",
+   "seed": "kphldef-20261004-confirm-field-beta|p1|c3",
+   "battles": 20,
+   "team": 16,
+   "w1": 7.5,
+   "w2": 8.5,
+   "opponents": {
+    "Y_SZR_BrvazimAlSteroidim": 1,
+    "A_HRZ_The_Rubber_Duckies": 2,
+    "A_OHS_cgxPro": 1
+   },
+   "scoresSha256": "55587d481529de5016c21a4fb0d34a849de8efa935e7d9d6f75b2054fa6acee4",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p1-c4",
+   "seed": "kphldef-20261004-confirm-field-beta|p1|c4",
+   "battles": 20,
+   "team": 13,
+   "w1": 4,
+   "w2": 9,
+   "opponents": {
+    "A_GSA_GhostBytes_0x": 3,
+    "A_HRZ_L": 2,
+    "A_HRZ_Underflow": 2
+   },
+   "scoresSha256": "b8eed169f2558e09f2231d3225b6c84bcc847466afb4727c4251f5a3788b2f67",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p1-c5",
+   "seed": "kphldef-20261004-confirm-field-beta|p1|c5",
+   "battles": 20,
+   "team": 15,
+   "w1": 7,
+   "w2": 8,
+   "opponents": {
+    "A_OHS_TrojanByte": 1.3333334,
+    "A_HRZ_InCtrl": 0,
+    "Y_TOM_Code_Killer": 3.6666667
+   },
+   "scoresSha256": "86df11d1e573326df38718107e27632eca89f809f48ed0d66adbbf314da97af6",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p1-c6",
+   "seed": "kphldef-20261004-confirm-field-beta|p1|c6",
+   "battles": 20,
+   "team": 16,
+   "w1": 9,
+   "w2": 7,
+   "opponents": {
+    "A_HRZ_stack_attack": 3,
+    "A_TOM_anonymous": 1,
+    "A_KOB_KosherCode": 0
+   },
+   "scoresSha256": "29bf4c6ee8dcc1b35dff82ea46492288fa70d0c1c0615db977525fd930ad7634",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p1-c7",
+   "seed": "kphldef-20261004-confirm-field-beta|p1|c7",
+   "battles": 20,
+   "team": 19,
+   "w1": 8,
+   "w2": 11,
+   "opponents": {
+    "A_ORT_Pegasus_Hex": 0,
+    "A_AML_ByteReapers": 1,
+    "A_GSA_ShmuelTurtles": 0
+   },
+   "scoresSha256": "59d09d0ff896d605c97680f6402a493e2b38fdbb6889a88926bcce576b1a3ecc",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p1-c8",
+   "seed": "kphldef-20261004-confirm-field-beta|p1|c8",
+   "battles": 20,
+   "team": 17,
+   "w1": 4.5,
+   "w2": 12.5,
+   "opponents": {
+    "A_HRZ_CodeEliteGang": 0,
+    "Y_TOM_AND_JERRY": 0,
+    "A_GSA_VanLavan": 3
+   },
+   "scoresSha256": "59e2b90c43f2d9bde69686d21a7922034dcbc0bab04df38efd9168de71d4c895",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p1-c9",
+   "seed": "kphldef-20261004-confirm-field-beta|p1|c9",
+   "battles": 20,
+   "team": 17.333334,
+   "w1": 8.833333,
+   "w2": 8.5,
+   "opponents": {
+    "A_HRZ_TitanicSwimTeam": 0,
+    "A_AVI_AnotherBitInTheWall": 0,
+    "A_GSA_GoonSquad": 2.6666667
+   },
+   "scoresSha256": "853fe4a6c0051a511e6ce76a6cb12ffe6d05bbb30bada19a7886e7678ae315ca",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p1-c10",
+   "seed": "kphldef-20261004-confirm-field-beta|p1|c10",
+   "battles": 20,
+   "team": 15,
+   "w1": 9.5,
+   "w2": 5.5,
+   "opponents": {
+    "Y_SZR_The_Chargers": 1,
+    "A_HRZ_fisherEXE": 0,
+    "A_HRZ_Grindo_Holics": 4
+   },
+   "scoresSha256": "2973f098d1903b68be504a7e8970efa5a005c7274807f630d5bf3b3322416781",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p1-c11",
+   "seed": "kphldef-20261004-confirm-field-beta|p1|c11",
+   "battles": 20,
+   "team": 11,
+   "w1": 5.5,
+   "w2": 5.5,
+   "opponents": {
+    "A_HRZ_TEST_ticals": 1,
+    "A_IND_cgx123123": 4,
+    "A_TOM_Syntax_Terror": 4
+   },
+   "scoresSha256": "2a644844402d1b06461b190d0278e23c614a5bfd61b1bbbceaf9c44362b60782",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p1-c12",
+   "seed": "kphldef-20261004-confirm-field-beta|p1|c12",
+   "battles": 20,
+   "team": 14,
+   "w1": 4.5,
+   "w2": 9.5,
+   "opponents": {
+    "A_HRZ_Thingies": 3,
+    "A_HDS_GoldenLamed": 0,
+    "A_HRZ_Code_Jokers4Life": 3
+   },
+   "scoresSha256": "0b71e2eb451f440d3abce5f79b6a46a124583e0163d099feff3616f0a68fd110",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p1-c13",
+   "seed": "kphldef-20261004-confirm-field-beta|p1|c13",
+   "battles": 20,
+   "team": 17,
+   "w1": 7.5,
+   "w2": 9.5,
+   "opponents": {
+    "A_ATL_R1DDLE": 0,
+    "A_HRZ_PowerRangers": 2,
+    "Y_ELD_FriendlyFire": 1
+   },
+   "scoresSha256": "8b5a6e8216f77ed9cb24ac2c20acf4bdea3edd84379f7bb1ee7a452613c34c69",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p1-c14",
+   "seed": "kphldef-20261004-confirm-field-beta|p1|c14",
+   "battles": 20,
+   "team": 18,
+   "w1": 7.5,
+   "w2": 10.5,
+   "opponents": {
+    "A_HRZ_ADDvanced": 1,
+    "A_ORT_TheGoats": 0,
+    "A_TOM_tson_el_akod": 1
+   },
+   "scoresSha256": "e7163ad0e9140dfac81a77e0f1f00c9c1038597d6f10788f15b7f4266ee177e4",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p1-c15",
+   "seed": "kphldef-20261004-confirm-field-beta|p1|c15",
+   "battles": 20,
+   "team": 14,
+   "w1": 5.5,
+   "w2": 8.5,
+   "opponents": {
+    "A_WAN_Baltika9": 3,
+    "A_HRZ_LowKey_WBB": 3,
+    "Y_TOM_Thefrogs": 0
+   },
+   "scoresSha256": "de3832d980090edb2b77c61195e1a54aa4be1fcf03981f58f9336f426d24eeb2",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p1-c16",
+   "seed": "kphldef-20261004-confirm-field-beta|p1|c16",
+   "battles": 20,
+   "team": 15,
+   "w1": 5,
+   "w2": 10,
+   "opponents": {
+    "A_TOM_BitBenders": 3,
+    "A_RZL_YANDE": 2,
+    "A_OHS_BatteringRAM": 0
+   },
+   "scoresSha256": "982deb99df2d84f7a0e8d4f2849587c10d43638411cea64b129077a6308a7e6b",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p1-c17",
+   "seed": "kphldef-20261004-confirm-field-beta|p1|c17",
+   "battles": 20,
+   "team": 14,
+   "w1": 8.5,
+   "w2": 5.5,
+   "opponents": {
+    "A_HRZ_BinaryBandits": 3,
+    "A_HDS_NRI": 3,
+    "A_WAN_OnlyCode": 0
+   },
+   "scoresSha256": "863e11596cc82f3f6b47457cebb86eaf8f394c678d6850cecc457851ed4e14c6",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p1-c18",
+   "seed": "kphldef-20261004-confirm-field-beta|p1|c18",
+   "battles": 20,
+   "team": 16,
+   "w1": 8.5,
+   "w2": 7.5,
+   "opponents": {
+    "A_HRZ_Registered_Winners": 1,
+    "Y_BGR_theGlopyGng": 0,
+    "Y_GSA_LVS_FIT": 3
+   },
+   "scoresSha256": "47b08154010bbfa53f70a8475fcb24550e8f11ca9a7b526cc30482eb7bac92d9",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p1-c19",
+   "seed": "kphldef-20261004-confirm-field-beta|p1|c19",
+   "battles": 20,
+   "team": 20,
+   "w1": 10.5,
+   "w2": 9.5,
+   "opponents": {
+    "A_IND_BRA": 0,
+    "A_GSA_TheBytes": 0,
+    "A_HRZ_MOV_AX_WIN": 0
+   },
+   "scoresSha256": "01810131a8723547df4b6e6199e66bbee17e64cf39f9b282740f7988069b1fd2",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p1-c20",
+   "seed": "kphldef-20261004-confirm-field-beta|p1|c20",
+   "battles": 20,
+   "team": 17.5,
+   "w1": 7.5,
+   "w2": 10,
+   "opponents": {
+    "A_HDS_IWDIA_nachalo": 0,
+    "A_HRZ_Ctrl_Alt_Elite": 0,
+    "A_GSA_callfart": 2.5
+   },
+   "scoresSha256": "5e5d9329a33024b25e267bd929f6ddd15d7cf195a171b785b1a25d24a67096ef",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p1-c21",
+   "seed": "kphldef-20261004-confirm-field-beta|p1|c21",
+   "battles": 20,
+   "team": 15,
+   "w1": 6.5,
+   "w2": 8.5,
+   "opponents": {
+    "A_HDS_MAC": 0,
+    "A_TOM_2B2Team": 2,
+    "A_AVI_Fishandpoultry": 3
+   },
+   "scoresSha256": "cf8eba3fdb7322ce288143051e025720fcd9d0602c90826c43df8241111b9d14",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p1-c22",
+   "seed": "kphldef-20261004-confirm-field-beta|p1|c22",
+   "battles": 20,
+   "team": 12,
+   "w1": 6,
+   "w2": 6,
+   "opponents": {
+    "A_WHS_K0F1M_AL_T1L1M": 6,
+    "A_GSA_B33": 0,
+    "A_HRZ_The_almogooners": 2
+   },
+   "scoresSha256": "f9244b2451ea511298c8122ae76e15f6b10bf1de381317122f1122dd526c3698",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p1-c23",
+   "seed": "kphldef-20261004-confirm-field-beta|p1|c23",
+   "battles": 20,
+   "team": 14,
+   "w1": 7,
+   "w2": 7,
+   "opponents": {
+    "A_GGN_OpcodeHunter": 3.5,
+    "Y_TOM_The_Crushers": 0,
+    "A_IND_stuxnet": 2.5
+   },
+   "scoresSha256": "e3f88d09e33beefd7558c29f21d94ad813d378c93e53f99e899d3b96506a2584",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p1-c24",
+   "seed": "kphldef-20261004-confirm-field-beta|p1|c24",
+   "battles": 20,
+   "team": 17.833332,
+   "w1": 8.333334,
+   "w2": 9.5,
+   "opponents": {
+    "A_BZV_SKYENT": 1.1666667,
+    "A_OHS_TOMEX": 1,
+    "Y_GSA_3Plate_Benchers": 0
+   },
+   "scoresSha256": "6c51cb1ad89878ffaa9dd402fe0cc2156fd0938d7521c0e6f48adc887135cd21",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p2-c0",
+   "seed": "kphldef-20261004-confirm-field-beta|p2|c0",
+   "battles": 20,
+   "team": 14,
+   "w1": 7,
+   "w2": 7,
+   "opponents": {
+    "Y_BGR_theGlopyGng": 0,
+    "A_IND_stuxnet": 6,
+    "A_ORT_TheGoats": 0
+   },
+   "scoresSha256": "c809fb7981c1b475e9c1fe8bdbb7f059ba79a365e71d48d90e80364e225f3b17",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p2-c1",
+   "seed": "kphldef-20261004-confirm-field-beta|p2|c1",
+   "battles": 20,
+   "team": 10,
+   "w1": 5.5,
+   "w2": 4.5,
+   "opponents": {
+    "Y_TOM_The_Crushers": 4,
+    "A_WAN_Baltika9": 4,
+    "A_HDS_NRI": 2
+   },
+   "scoresSha256": "23540738748821b48c2954120f960861914ce8b23c8ab87702a03b4023b05271",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p2-c2",
+   "seed": "kphldef-20261004-confirm-field-beta|p2|c2",
+   "battles": 20,
+   "team": 16,
+   "w1": 9,
+   "w2": 7,
+   "opponents": {
+    "A_HDS_YOY": 0,
+    "A_OHS_BatteringRAM": 2,
+    "A_HRZ_L": 2
+   },
+   "scoresSha256": "6edf717a18895540bc1217cdbca881b632afe588553fa3fb2a29bf82633cd393",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p2-c3",
+   "seed": "kphldef-20261004-confirm-field-beta|p2|c3",
+   "battles": 20,
+   "team": 14,
+   "w1": 7.5,
+   "w2": 6.5,
+   "opponents": {
+    "A_HRZ_BinaryBandits": 2,
+    "A_GSA_B33": 4,
+    "A_GSA_VanLavan": 0
+   },
+   "scoresSha256": "5ffd3c6945160531f6a5298471f787d1b8a3095df6f32125046afd8ad388628b",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p2-c4",
+   "seed": "kphldef-20261004-confirm-field-beta|p2|c4",
+   "battles": 20,
+   "team": 15,
+   "w1": 8.5,
+   "w2": 6.5,
+   "opponents": {
+    "A_TOM_Syntax_Terror": 2,
+    "Y_GSA_LVS_FIT": 2,
+    "Y_MTA_Hexellent": 1
+   },
+   "scoresSha256": "ca85bfbff8fdc4e2a2da206236fa9030c15b4b76e651ce6be9873b0d9496f67f",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p2-c5",
+   "seed": "kphldef-20261004-confirm-field-beta|p2|c5",
+   "battles": 20,
+   "team": 10,
+   "w1": 5,
+   "w2": 5,
+   "opponents": {
+    "Y_TOM_Code_Killer": 2,
+    "A_HRZ_MOV_AX_WIN": 0,
+    "A_HRZ_The_almogooners": 8
+   },
+   "scoresSha256": "4c31f6f6be2dffe949d59b6082ca5ab5575584e000aa19ec816d445cd9e09037",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p2-c6",
+   "seed": "kphldef-20261004-confirm-field-beta|p2|c6",
+   "battles": 20,
+   "team": 13,
+   "w1": 4.5,
+   "w2": 8.5,
+   "opponents": {
+    "A_HDS_IWDIA_nachalo": 0,
+    "Y_TOM_AND_JERRY": 4,
+    "A_OHS_TrojanByte": 3
+   },
+   "scoresSha256": "498cac1ebe62142a7fd8a61377bd65ddfcfb5f51511676c9f11f1ed7c6849523",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p2-c7",
+   "seed": "kphldef-20261004-confirm-field-beta|p2|c7",
+   "battles": 20,
+   "team": 17,
+   "w1": 9.5,
+   "w2": 7.5,
+   "opponents": {
+    "A_HDS_ATW_Solo": 0,
+    "A_WAN_OnlyCode": 0,
+    "A_HRZ_CodeEliteGang": 3
+   },
+   "scoresSha256": "a84efbff5fec6c90bbc4130c17f64289881f559ccf7d11e598a16b8ba5805c60",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p2-c8",
+   "seed": "kphldef-20261004-confirm-field-beta|p2|c8",
+   "battles": 20,
+   "team": 14.666666,
+   "w1": 8,
+   "w2": 6.6666665,
+   "opponents": {
+    "A_HRZ_Ctrl_Alt_Elite": 0,
+    "A_BZV_SKYENT": 5.3333335,
+    "A_TOM_anonymous": 0
+   },
+   "scoresSha256": "809c4c1ea3936e144f688cf5def8f3c4cd20c0b01c6e2b81512457abd0ced23b",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p2-c9",
+   "seed": "kphldef-20261004-confirm-field-beta|p2|c9",
+   "battles": 20,
+   "team": 14,
+   "w1": 8,
+   "w2": 6,
+   "opponents": {
+    "A_HRZ_PowerRangers": 4,
+    "A_HRZ_stack_attack": 1,
+    "A_OHS_TOMEX": 1
+   },
+   "scoresSha256": "bb690a463217efb44ce5616492c65c58f2b1f94a67a5eb07d5cbc1768d4628fe",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p2-c10",
+   "seed": "kphldef-20261004-confirm-field-beta|p2|c10",
+   "battles": 20,
+   "team": 16,
+   "w1": 9.5,
+   "w2": 6.5,
+   "opponents": {
+    "A_AVI_AnotherBitInTheWall": 2,
+    "A_HRZ_InCtrl": 0,
+    "A_HRZ_Registered_Winners": 2
+   },
+   "scoresSha256": "8034bd8989837714f52f4eba6b39a817a9d2f1363cd1b18bd0148fcfe88c8eb1",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p2-c11",
+   "seed": "kphldef-20261004-confirm-field-beta|p2|c11",
+   "battles": 20,
+   "team": 13.5,
+   "w1": 6.5,
+   "w2": 7,
+   "opponents": {
+    "A_HRZ_ADDvanced": 2,
+    "A_GGN_OpcodeHunter": 4.5,
+    "Y_SZR_BrvazimAlSteroidim": 0
+   },
+   "scoresSha256": "7a818546a4a47659def4191a4530b380a4f619d409f7867715d07339b26b3649",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p2-c12",
+   "seed": "kphldef-20261004-confirm-field-beta|p2|c12",
+   "battles": 20,
+   "team": 15,
+   "w1": 7.5,
+   "w2": 7.5,
+   "opponents": {
+    "A_HRZ_Thingies": 4,
+    "A_RZL_YANDE": 1,
+    "A_IND_BRA": 0
+   },
+   "scoresSha256": "b77114b911810e08f5e8c0d1262cb67a01f3b6b36616f876f6bd124dedd8190f",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p2-c13",
+   "seed": "kphldef-20261004-confirm-field-beta|p2|c13",
+   "battles": 20,
+   "team": 18,
+   "w1": 11,
+   "w2": 7,
+   "opponents": {
+    "A_HRZ_Pixar_Lamps": 1,
+    "A_HDS_MAC": 0,
+    "A_HRZ_TEST_ticals": 1
+   },
+   "scoresSha256": "2c1a2c1a6a762465387834dd56df18ec441b90d6719fea7b4334c5fb2cc2d4a6",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p2-c14",
+   "seed": "kphldef-20261004-confirm-field-beta|p2|c14",
+   "battles": 20,
+   "team": 11,
+   "w1": 2,
+   "w2": 9,
+   "opponents": {
+    "A_HRZ_TitanicSwimTeam": 0,
+    "A_GSA_GoonSquad": 7,
+    "A_AVI_Fishandpoultry": 2
+   },
+   "scoresSha256": "d3245e083a91bbad42b9b434add97799e6a080b0da0d499f1e4b30cc4958861c",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p2-c15",
+   "seed": "kphldef-20261004-confirm-field-beta|p2|c15",
+   "battles": 20,
+   "team": 15.5,
+   "w1": 7.5,
+   "w2": 8,
+   "opponents": {
+    "A_HDS_GoldenLamed": 1.5,
+    "A_OHS_cgxPro": 0.5,
+    "A_AML_ByteReapers": 2.5
+   },
+   "scoresSha256": "4feff69ad27a7e5503e8155b2a49df06e789c318b9545058992b2a72145d468f",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p2-c16",
+   "seed": "kphldef-20261004-confirm-field-beta|p2|c16",
+   "battles": 20,
+   "team": 11,
+   "w1": 5.5,
+   "w2": 5.5,
+   "opponents": {
+    "A_HRZ_Grindo_Holics": 6,
+    "A_OST_Gamma": 1,
+    "A_GSA_TheBytes": 2
+   },
+   "scoresSha256": "3c839bf0aced5899a88d8a228f9d9a36352e3e6e11139cd50f4a9f32dcc26f2f",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p2-c17",
+   "seed": "kphldef-20261004-confirm-field-beta|p2|c17",
+   "battles": 20,
+   "team": 16,
+   "w1": 8.5,
+   "w2": 7.5,
+   "opponents": {
+    "A_HRZ_LowKey_WBB": 3,
+    "Y_TOM_Thefrogs": 1,
+    "A_ORT_Pegasus_Hex": 0
+   },
+   "scoresSha256": "5cfc2d15f68f882e8a6ec715f5646179c03481c8b310794a5eab6652595a8681",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p2-c18",
+   "seed": "kphldef-20261004-confirm-field-beta|p2|c18",
+   "battles": 20,
+   "team": 13.666666,
+   "w1": 5.833333,
+   "w2": 7.8333335,
+   "opponents": {
+    "A_IND_cgx123123": 2,
+    "A_HRZ_The_Rubber_Duckies": 0,
+    "A_GSA_callfart": 4.3333335
+   },
+   "scoresSha256": "81eaf6ed61b6987afe26fadc4fd43e178446db5ffa6018a2425ef0a4b84125e8",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p2-c19",
+   "seed": "kphldef-20261004-confirm-field-beta|p2|c19",
+   "battles": 20,
+   "team": 18,
+   "w1": 5.5,
+   "w2": 12.5,
+   "opponents": {
+    "A_WAN_Full_Time_Job": 0,
+    "Y_ELD_FriendlyFire": 0,
+    "Y_GSA_3Plate_Benchers": 2
+   },
+   "scoresSha256": "f6a2d14bb3233810f19f28b0c0ae472a2df73daaddd9b069453089d9ae4ff1ad",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p2-c20",
+   "seed": "kphldef-20261004-confirm-field-beta|p2|c20",
+   "battles": 20,
+   "team": 12,
+   "w1": 7,
+   "w2": 5,
+   "opponents": {
+    "A_WHS_K0F1M_AL_T1L1M": 3,
+    "A_HLS_EmoMutants": 1,
+    "A_ATL_R1DDLE": 4
+   },
+   "scoresSha256": "1235975344d64840916fa975acc59e6e2cb0b3f470233f6ad2db66546e15b804",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p2-c21",
+   "seed": "kphldef-20261004-confirm-field-beta|p2|c21",
+   "battles": 20,
+   "team": 16,
+   "w1": 8.5,
+   "w2": 7.5,
+   "opponents": {
+    "A_GSA_GhostBytes_0x": 4,
+    "A_HRZ_Underflow": 0,
+    "A_KOB_KosherCode": 0
+   },
+   "scoresSha256": "856cb1bbce3af83067cdda35d0a67e2d57a46759bf4ca190978889f4479ab275",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p2-c22",
+   "seed": "kphldef-20261004-confirm-field-beta|p2|c22",
+   "battles": 20,
+   "team": 16,
+   "w1": 9,
+   "w2": 7,
+   "opponents": {
+    "A_TOM_2B2Team": 3,
+    "Y_HDS_TRY": 0,
+    "A_TOM_tson_el_akod": 1
+   },
+   "scoresSha256": "2dbc470bc7b744e5b634b07bd4323ea59e3996df6b07b5911d96a1e47978eea1",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p2-c23",
+   "seed": "kphldef-20261004-confirm-field-beta|p2|c23",
+   "battles": 20,
+   "team": 18,
+   "w1": 12.5,
+   "w2": 5.5,
+   "opponents": {
+    "Y_GSA_SigmaSilent": 1,
+    "A_HRZ_Code_Jokers4Life": 1,
+    "A_HRZ_fisherEXE": 0
+   },
+   "scoresSha256": "fec0e5ef76b001704611a2dce8de67a175d79e08bbd92ddf72740f9716bb6182",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "p2-c24",
+   "seed": "kphldef-20261004-confirm-field-beta|p2|c24",
+   "battles": 20,
+   "team": 11,
+   "w1": 7.5,
+   "w2": 3.5,
+   "opponents": {
+    "A_GSA_ShmuelTurtles": 1,
+    "A_TOM_BitBenders": 5,
+    "Y_SZR_The_Chargers": 3
+   },
+   "scoresSha256": "5ac0d4daf0f922529b53407f42a05339b20feff508c21d5011133caaac752493",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p0-c0",
+   "seed": "kphldef-20261004-confirm-field-beta|p0|c0",
+   "battles": 20,
+   "team": 10,
+   "w1": 9,
+   "w2": 1,
+   "opponents": {
+    "Y_GSA_LVS_FIT": 4,
+    "A_TOM_BitBenders": 1,
+    "A_IND_cgx123123": 5
+   },
+   "scoresSha256": "27b77042c223a59dcd2e42740762c438c1f483b3dc15ab4d3b69cd532cf1f5d6",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p0-c1",
+   "seed": "kphldef-20261004-confirm-field-beta|p0|c1",
+   "battles": 20,
+   "team": 7,
+   "w1": 4,
+   "w2": 3,
+   "opponents": {
+    "A_HDS_NRI": 6,
+    "A_IND_BRA": 0,
+    "A_HRZ_BinaryBandits": 7
+   },
+   "scoresSha256": "057407c26f0ea389cfe7e8cbcdd3109961265cde84c095dba9fcc2d6fb6d8c4c",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p0-c2",
+   "seed": "kphldef-20261004-confirm-field-beta|p0|c2",
+   "battles": 20,
+   "team": 16.333332,
+   "w1": 9.833334,
+   "w2": 6.5,
+   "opponents": {
+    "A_TOM_Syntax_Terror": 0,
+    "A_AML_ByteReapers": 1,
+    "A_GSA_VanLavan": 2.6666667
+   },
+   "scoresSha256": "730fbff95be578ccfee36088b08bb0cdb4bffd4b890b9e0247d14e7d666da349",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p0-c3",
+   "seed": "kphldef-20261004-confirm-field-beta|p0|c3",
+   "battles": 20,
+   "team": 19,
+   "w1": 8,
+   "w2": 11,
+   "opponents": {
+    "A_GSA_ShmuelTurtles": 0,
+    "A_OHS_cgxPro": 0,
+    "A_HDS_ATW_Solo": 1
+   },
+   "scoresSha256": "a87e559e2a4a857dc158b3ad75c5683b767699ade3dc0d91cdf474865cdd4fb5",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p0-c4",
+   "seed": "kphldef-20261004-confirm-field-beta|p0|c4",
+   "battles": 20,
+   "team": 17,
+   "w1": 6.5,
+   "w2": 10.5,
+   "opponents": {
+    "A_HDS_MAC": 0,
+    "A_GSA_callfart": 2,
+    "A_GSA_B33": 1
+   },
+   "scoresSha256": "755b32558834f9eedc2952732be704f595a3ec39f0c956d98d5875dee03cd8e8",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p0-c5",
+   "seed": "kphldef-20261004-confirm-field-beta|p0|c5",
+   "battles": 20,
+   "team": 16,
+   "w1": 8,
+   "w2": 8,
+   "opponents": {
+    "A_GSA_GhostBytes_0x": 2,
+    "A_HDS_IWDIA_nachalo": 0,
+    "A_HRZ_Thingies": 2
+   },
+   "scoresSha256": "14c97831800d1501f8cdee20d7870d9a31c4c9c353e3e39fc2ccd136d9edeeac",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p0-c6",
+   "seed": "kphldef-20261004-confirm-field-beta|p0|c6",
+   "battles": 20,
+   "team": 17,
+   "w1": 11.5,
+   "w2": 5.5,
+   "opponents": {
+    "A_HRZ_fisherEXE": 0,
+    "A_GSA_TheBytes": 2,
+    "Y_ELD_FriendlyFire": 1
+   },
+   "scoresSha256": "09a1cfba0908e6ccb341bfafb40d57b6fbe26c707e7850c17662586d329909b5",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p0-c7",
+   "seed": "kphldef-20261004-confirm-field-beta|p0|c7",
+   "battles": 20,
+   "team": 18,
+   "w1": 9.5,
+   "w2": 8.5,
+   "opponents": {
+    "Y_TOM_The_Crushers": 0,
+    "Y_SZR_The_Chargers": 0,
+    "Y_TOM_Thefrogs": 2
+   },
+   "scoresSha256": "f4a85c4c9b623fa4b3ef66b0acbdda2a8704694062567aae1f059960046b6ed5",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p0-c8",
+   "seed": "kphldef-20261004-confirm-field-beta|p0|c8",
+   "battles": 20,
+   "team": 12,
+   "w1": 9,
+   "w2": 3,
+   "opponents": {
+    "A_HRZ_The_almogooners": 5,
+    "A_HRZ_MOV_AX_WIN": 2,
+    "Y_TOM_AND_JERRY": 1
+   },
+   "scoresSha256": "3bfac391e60528a736ec5384e17e20a08d6def0de45d203bcb29a59a7c5601dc",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p0-c9",
+   "seed": "kphldef-20261004-confirm-field-beta|p0|c9",
+   "battles": 20,
+   "team": 10,
+   "w1": 4.5,
+   "w2": 5.5,
+   "opponents": {
+    "A_WAN_Baltika9": 3,
+    "A_OST_Gamma": 2,
+    "Y_TOM_Code_Killer": 5
+   },
+   "scoresSha256": "677b699739a04932a9f7ee7f45e346126c997f671218d9aad7e8b6595b895dda",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p0-c10",
+   "seed": "kphldef-20261004-confirm-field-beta|p0|c10",
+   "battles": 20,
+   "team": 13,
+   "w1": 6.5,
+   "w2": 6.5,
+   "opponents": {
+    "A_HRZ_Pixar_Lamps": 0,
+    "A_HRZ_LowKey_WBB": 4,
+    "A_HRZ_Code_Jokers4Life": 3
+   },
+   "scoresSha256": "fc25204940cf6b826754203ea3564e927a0589d6eb4a248fa73fe62b71d9ea78",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p0-c11",
+   "seed": "kphldef-20261004-confirm-field-beta|p0|c11",
+   "battles": 20,
+   "team": 15,
+   "w1": 8.5,
+   "w2": 6.5,
+   "opponents": {
+    "A_KOB_KosherCode": 0,
+    "A_HRZ_InCtrl": 2,
+    "A_HLS_EmoMutants": 3
+   },
+   "scoresSha256": "65041094a6702e63966eddd244aed56c5387ff648a3539c02cb8e84939e95ab1",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p0-c12",
+   "seed": "kphldef-20261004-confirm-field-beta|p0|c12",
+   "battles": 20,
+   "team": 16.5,
+   "w1": 8,
+   "w2": 8.5,
+   "opponents": {
+    "A_WAN_OnlyCode": 0,
+    "A_ATL_R1DDLE": 1,
+    "A_GSA_GoonSquad": 2.5
+   },
+   "scoresSha256": "879704a25d3915df990d3aedada6d5b42ac15785a8c6a36b8d1b48de1364fb98",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p0-c13",
+   "seed": "kphldef-20261004-confirm-field-beta|p0|c13",
+   "battles": 20,
+   "team": 18.333332,
+   "w1": 9.833333,
+   "w2": 8.5,
+   "opponents": {
+    "A_HRZ_Registered_Winners": 0,
+    "Y_SZR_BrvazimAlSteroidim": 0,
+    "A_BZV_SKYENT": 1.6666667
+   },
+   "scoresSha256": "501d1a5a8b02ef0ee30fa36a174c09be259cbef5f4e3821966fa7b14cc054a52",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p0-c14",
+   "seed": "kphldef-20261004-confirm-field-beta|p0|c14",
+   "battles": 20,
+   "team": 16,
+   "w1": 10,
+   "w2": 6,
+   "opponents": {
+    "A_AVI_AnotherBitInTheWall": 2,
+    "A_TOM_2B2Team": 1,
+    "A_HRZ_CodeEliteGang": 1
+   },
+   "scoresSha256": "a2f1078877eb86580589a63ee4de89bfc0aa039c5b5a88e6566b53ea47d60ae8",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p0-c15",
+   "seed": "kphldef-20261004-confirm-field-beta|p0|c15",
+   "battles": 20,
+   "team": 15,
+   "w1": 8,
+   "w2": 7,
+   "opponents": {
+    "A_ORT_Pegasus_Hex": 0,
+    "A_WHS_K0F1M_AL_T1L1M": 4,
+    "A_HRZ_Ctrl_Alt_Elite": 1
+   },
+   "scoresSha256": "ed457e53813d21ba478569d16ac90f8193f3f17746014e7d17923ed7cc62db99",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p0-c16",
+   "seed": "kphldef-20261004-confirm-field-beta|p0|c16",
+   "battles": 20,
+   "team": 16,
+   "w1": 8.5,
+   "w2": 7.5,
+   "opponents": {
+    "A_TOM_tson_el_akod": 0,
+    "A_IND_stuxnet": 2,
+    "Y_GSA_3Plate_Benchers": 2
+   },
+   "scoresSha256": "c8bd3c7b95db8a983e59a57de10670b5bbe8c2357859dd6670a82e1393c45e49",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p0-c17",
+   "seed": "kphldef-20261004-confirm-field-beta|p0|c17",
+   "battles": 20,
+   "team": 18,
+   "w1": 9.5,
+   "w2": 8.5,
+   "opponents": {
+    "A_WAN_Full_Time_Job": 0,
+    "A_TOM_anonymous": 1,
+    "A_OHS_BatteringRAM": 1
+   },
+   "scoresSha256": "5687a500aec07f34c56771f827cd894b7df667dc7f5f0c91c51a6a1c1a6cb9a5",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p0-c18",
+   "seed": "kphldef-20261004-confirm-field-beta|p0|c18",
+   "battles": 20,
+   "team": 18,
+   "w1": 7,
+   "w2": 11,
+   "opponents": {
+    "A_HDS_GoldenLamed": 0,
+    "A_RZL_YANDE": 2,
+    "A_AVI_Fishandpoultry": 0
+   },
+   "scoresSha256": "bc7503cb7e4b1b45c1a3cb4d1681c906e8e6d430b680ced35ea524ac63216fa7",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p0-c19",
+   "seed": "kphldef-20261004-confirm-field-beta|p0|c19",
+   "battles": 20,
+   "team": 14,
+   "w1": 5.5,
+   "w2": 8.5,
+   "opponents": {
+    "Y_BGR_theGlopyGng": 3,
+    "A_HRZ_Underflow": 1,
+    "A_HRZ_stack_attack": 2
+   },
+   "scoresSha256": "4936d5f6af56568d7758e529ffb0c748b494fcf06765ef85544fd89b7c19c042",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p0-c20",
+   "seed": "kphldef-20261004-confirm-field-beta|p0|c20",
+   "battles": 20,
+   "team": 18,
+   "w1": 9,
+   "w2": 9,
+   "opponents": {
+    "A_OHS_TrojanByte": 1,
+    "Y_HDS_TRY": 1,
+    "A_HRZ_TitanicSwimTeam": 0
+   },
+   "scoresSha256": "faf0e4ba8a8eff2f486583b4f5a9d3dfb68b2dd4c5186ff677e18f5bb716cb19",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p0-c21",
+   "seed": "kphldef-20261004-confirm-field-beta|p0|c21",
+   "battles": 20,
+   "team": 11,
+   "w1": 6.5,
+   "w2": 4.5,
+   "opponents": {
+    "A_HRZ_Grindo_Holics": 8,
+    "A_HDS_YOY": 0,
+    "A_HRZ_PowerRangers": 1
+   },
+   "scoresSha256": "5bf4d402230f467ebf8b80a6e834afdc3536f8eb6d53a6d168a6e12caade54e6",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p0-c22",
+   "seed": "kphldef-20261004-confirm-field-beta|p0|c22",
+   "battles": 20,
+   "team": 16,
+   "w1": 7.5,
+   "w2": 8.5,
+   "opponents": {
+    "A_HRZ_L": 3,
+    "Y_GSA_SigmaSilent": 1,
+    "A_ORT_TheGoats": 0
+   },
+   "scoresSha256": "b9fd687ca2785379aa1918d1d46769e3929d79f3610f254d7c6c0e5f2584fcb0",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p0-c23",
+   "seed": "kphldef-20261004-confirm-field-beta|p0|c23",
+   "battles": 20,
+   "team": 14.5,
+   "w1": 4.5,
+   "w2": 10,
+   "opponents": {
+    "A_GGN_OpcodeHunter": 3.5,
+    "A_HRZ_ADDvanced": 1,
+    "A_HRZ_The_Rubber_Duckies": 1
+   },
+   "scoresSha256": "3d131c3cce327769d5005081e1eec438b850e384cd611bba36a837d0798597b2",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p0-c24",
+   "seed": "kphldef-20261004-confirm-field-beta|p0|c24",
+   "battles": 20,
+   "team": 15,
+   "w1": 8,
+   "w2": 7,
+   "opponents": {
+    "A_OHS_TOMEX": 5,
+    "A_HRZ_TEST_ticals": 0,
+    "Y_MTA_Hexellent": 0
+   },
+   "scoresSha256": "e69f83b6b78ccb3a219d6597470a1d9118e92a7c5d68d26d620dda2dbf906232",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p1-c0",
+   "seed": "kphldef-20261004-confirm-field-beta|p1|c0",
+   "battles": 20,
+   "team": 16,
+   "w1": 9.5,
+   "w2": 6.5,
+   "opponents": {
+    "A_HLS_EmoMutants": 2,
+    "A_HDS_ATW_Solo": 1,
+    "Y_MTA_Hexellent": 1
+   },
+   "scoresSha256": "eac5b7d7965865e85ddb2eb67b049b902b998e2e3cc9f02cdb8665744577b81a",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p1-c1",
+   "seed": "kphldef-20261004-confirm-field-beta|p1|c1",
+   "battles": 20,
+   "team": 18,
+   "w1": 10,
+   "w2": 8,
+   "opponents": {
+    "Y_GSA_SigmaSilent": 1,
+    "A_WAN_Full_Time_Job": 0,
+    "A_OST_Gamma": 1
+   },
+   "scoresSha256": "e537686ed696c61e9355f64680008990c712039b026875f467a30f8600b9dd52",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p1-c2",
+   "seed": "kphldef-20261004-confirm-field-beta|p1|c2",
+   "battles": 20,
+   "team": 19,
+   "w1": 8.5,
+   "w2": 10.5,
+   "opponents": {
+    "Y_HDS_TRY": 0,
+    "A_HRZ_Pixar_Lamps": 0,
+    "A_HDS_YOY": 1
+   },
+   "scoresSha256": "35794b8feb51aace75ae6a783003ffd6d21d9bd4d0fc96ed822d4309539a8af2",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p1-c3",
+   "seed": "kphldef-20261004-confirm-field-beta|p1|c3",
+   "battles": 20,
+   "team": 16,
+   "w1": 7.5,
+   "w2": 8.5,
+   "opponents": {
+    "Y_SZR_BrvazimAlSteroidim": 1,
+    "A_HRZ_The_Rubber_Duckies": 2,
+    "A_OHS_cgxPro": 1
+   },
+   "scoresSha256": "55587d481529de5016c21a4fb0d34a849de8efa935e7d9d6f75b2054fa6acee4",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p1-c4",
+   "seed": "kphldef-20261004-confirm-field-beta|p1|c4",
+   "battles": 20,
+   "team": 13,
+   "w1": 4,
+   "w2": 9,
+   "opponents": {
+    "A_GSA_GhostBytes_0x": 3,
+    "A_HRZ_L": 2,
+    "A_HRZ_Underflow": 2
+   },
+   "scoresSha256": "b8eed169f2558e09f2231d3225b6c84bcc847466afb4727c4251f5a3788b2f67",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p1-c5",
+   "seed": "kphldef-20261004-confirm-field-beta|p1|c5",
+   "battles": 20,
+   "team": 15,
+   "w1": 7,
+   "w2": 8,
+   "opponents": {
+    "A_OHS_TrojanByte": 1.3333334,
+    "A_HRZ_InCtrl": 0,
+    "Y_TOM_Code_Killer": 3.6666667
+   },
+   "scoresSha256": "86df11d1e573326df38718107e27632eca89f809f48ed0d66adbbf314da97af6",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p1-c6",
+   "seed": "kphldef-20261004-confirm-field-beta|p1|c6",
+   "battles": 20,
+   "team": 16,
+   "w1": 9,
+   "w2": 7,
+   "opponents": {
+    "A_HRZ_stack_attack": 3,
+    "A_TOM_anonymous": 1,
+    "A_KOB_KosherCode": 0
+   },
+   "scoresSha256": "29bf4c6ee8dcc1b35dff82ea46492288fa70d0c1c0615db977525fd930ad7634",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p1-c7",
+   "seed": "kphldef-20261004-confirm-field-beta|p1|c7",
+   "battles": 20,
+   "team": 19,
+   "w1": 8,
+   "w2": 11,
+   "opponents": {
+    "A_ORT_Pegasus_Hex": 0,
+    "A_AML_ByteReapers": 1,
+    "A_GSA_ShmuelTurtles": 0
+   },
+   "scoresSha256": "59d09d0ff896d605c97680f6402a493e2b38fdbb6889a88926bcce576b1a3ecc",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p1-c8",
+   "seed": "kphldef-20261004-confirm-field-beta|p1|c8",
+   "battles": 20,
+   "team": 17,
+   "w1": 4.5,
+   "w2": 12.5,
+   "opponents": {
+    "A_HRZ_CodeEliteGang": 0,
+    "Y_TOM_AND_JERRY": 0,
+    "A_GSA_VanLavan": 3
+   },
+   "scoresSha256": "59e2b90c43f2d9bde69686d21a7922034dcbc0bab04df38efd9168de71d4c895",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p1-c9",
+   "seed": "kphldef-20261004-confirm-field-beta|p1|c9",
+   "battles": 20,
+   "team": 17.333334,
+   "w1": 8.833333,
+   "w2": 8.5,
+   "opponents": {
+    "A_HRZ_TitanicSwimTeam": 0,
+    "A_AVI_AnotherBitInTheWall": 0,
+    "A_GSA_GoonSquad": 2.6666667
+   },
+   "scoresSha256": "853fe4a6c0051a511e6ce76a6cb12ffe6d05bbb30bada19a7886e7678ae315ca",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p1-c10",
+   "seed": "kphldef-20261004-confirm-field-beta|p1|c10",
+   "battles": 20,
+   "team": 15,
+   "w1": 9.5,
+   "w2": 5.5,
+   "opponents": {
+    "Y_SZR_The_Chargers": 1,
+    "A_HRZ_fisherEXE": 0,
+    "A_HRZ_Grindo_Holics": 4
+   },
+   "scoresSha256": "2973f098d1903b68be504a7e8970efa5a005c7274807f630d5bf3b3322416781",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p1-c11",
+   "seed": "kphldef-20261004-confirm-field-beta|p1|c11",
+   "battles": 20,
+   "team": 11,
+   "w1": 5.5,
+   "w2": 5.5,
+   "opponents": {
+    "A_HRZ_TEST_ticals": 1,
+    "A_IND_cgx123123": 4,
+    "A_TOM_Syntax_Terror": 4
+   },
+   "scoresSha256": "2a644844402d1b06461b190d0278e23c614a5bfd61b1bbbceaf9c44362b60782",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p1-c12",
+   "seed": "kphldef-20261004-confirm-field-beta|p1|c12",
+   "battles": 20,
+   "team": 14,
+   "w1": 4.5,
+   "w2": 9.5,
+   "opponents": {
+    "A_HRZ_Thingies": 3,
+    "A_HDS_GoldenLamed": 0,
+    "A_HRZ_Code_Jokers4Life": 3
+   },
+   "scoresSha256": "0b71e2eb451f440d3abce5f79b6a46a124583e0163d099feff3616f0a68fd110",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p1-c13",
+   "seed": "kphldef-20261004-confirm-field-beta|p1|c13",
+   "battles": 20,
+   "team": 17,
+   "w1": 7.5,
+   "w2": 9.5,
+   "opponents": {
+    "A_ATL_R1DDLE": 0,
+    "A_HRZ_PowerRangers": 2,
+    "Y_ELD_FriendlyFire": 1
+   },
+   "scoresSha256": "8b5a6e8216f77ed9cb24ac2c20acf4bdea3edd84379f7bb1ee7a452613c34c69",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p1-c14",
+   "seed": "kphldef-20261004-confirm-field-beta|p1|c14",
+   "battles": 20,
+   "team": 18,
+   "w1": 7.5,
+   "w2": 10.5,
+   "opponents": {
+    "A_HRZ_ADDvanced": 1,
+    "A_ORT_TheGoats": 0,
+    "A_TOM_tson_el_akod": 1
+   },
+   "scoresSha256": "e7163ad0e9140dfac81a77e0f1f00c9c1038597d6f10788f15b7f4266ee177e4",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p1-c15",
+   "seed": "kphldef-20261004-confirm-field-beta|p1|c15",
+   "battles": 20,
+   "team": 14,
+   "w1": 5.5,
+   "w2": 8.5,
+   "opponents": {
+    "A_WAN_Baltika9": 3,
+    "A_HRZ_LowKey_WBB": 3,
+    "Y_TOM_Thefrogs": 0
+   },
+   "scoresSha256": "de3832d980090edb2b77c61195e1a54aa4be1fcf03981f58f9336f426d24eeb2",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p1-c16",
+   "seed": "kphldef-20261004-confirm-field-beta|p1|c16",
+   "battles": 20,
+   "team": 15,
+   "w1": 5,
+   "w2": 10,
+   "opponents": {
+    "A_TOM_BitBenders": 3,
+    "A_RZL_YANDE": 2,
+    "A_OHS_BatteringRAM": 0
+   },
+   "scoresSha256": "982deb99df2d84f7a0e8d4f2849587c10d43638411cea64b129077a6308a7e6b",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p1-c17",
+   "seed": "kphldef-20261004-confirm-field-beta|p1|c17",
+   "battles": 20,
+   "team": 14,
+   "w1": 8.5,
+   "w2": 5.5,
+   "opponents": {
+    "A_HRZ_BinaryBandits": 3,
+    "A_HDS_NRI": 3,
+    "A_WAN_OnlyCode": 0
+   },
+   "scoresSha256": "863e11596cc82f3f6b47457cebb86eaf8f394c678d6850cecc457851ed4e14c6",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p1-c18",
+   "seed": "kphldef-20261004-confirm-field-beta|p1|c18",
+   "battles": 20,
+   "team": 16,
+   "w1": 8.5,
+   "w2": 7.5,
+   "opponents": {
+    "A_HRZ_Registered_Winners": 1,
+    "Y_BGR_theGlopyGng": 0,
+    "Y_GSA_LVS_FIT": 3
+   },
+   "scoresSha256": "47b08154010bbfa53f70a8475fcb24550e8f11ca9a7b526cc30482eb7bac92d9",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p1-c19",
+   "seed": "kphldef-20261004-confirm-field-beta|p1|c19",
+   "battles": 20,
+   "team": 20,
+   "w1": 10.5,
+   "w2": 9.5,
+   "opponents": {
+    "A_IND_BRA": 0,
+    "A_GSA_TheBytes": 0,
+    "A_HRZ_MOV_AX_WIN": 0
+   },
+   "scoresSha256": "01810131a8723547df4b6e6199e66bbee17e64cf39f9b282740f7988069b1fd2",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p1-c20",
+   "seed": "kphldef-20261004-confirm-field-beta|p1|c20",
+   "battles": 20,
+   "team": 17.5,
+   "w1": 7.5,
+   "w2": 10,
+   "opponents": {
+    "A_HDS_IWDIA_nachalo": 0,
+    "A_HRZ_Ctrl_Alt_Elite": 0,
+    "A_GSA_callfart": 2.5
+   },
+   "scoresSha256": "5e5d9329a33024b25e267bd929f6ddd15d7cf195a171b785b1a25d24a67096ef",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p1-c21",
+   "seed": "kphldef-20261004-confirm-field-beta|p1|c21",
+   "battles": 20,
+   "team": 15,
+   "w1": 6.5,
+   "w2": 8.5,
+   "opponents": {
+    "A_HDS_MAC": 0,
+    "A_TOM_2B2Team": 2,
+    "A_AVI_Fishandpoultry": 3
+   },
+   "scoresSha256": "cf8eba3fdb7322ce288143051e025720fcd9d0602c90826c43df8241111b9d14",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p1-c22",
+   "seed": "kphldef-20261004-confirm-field-beta|p1|c22",
+   "battles": 20,
+   "team": 12,
+   "w1": 6,
+   "w2": 6,
+   "opponents": {
+    "A_WHS_K0F1M_AL_T1L1M": 6,
+    "A_GSA_B33": 0,
+    "A_HRZ_The_almogooners": 2
+   },
+   "scoresSha256": "f9244b2451ea511298c8122ae76e15f6b10bf1de381317122f1122dd526c3698",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p1-c23",
+   "seed": "kphldef-20261004-confirm-field-beta|p1|c23",
+   "battles": 20,
+   "team": 14,
+   "w1": 7,
+   "w2": 7,
+   "opponents": {
+    "A_GGN_OpcodeHunter": 3.5,
+    "Y_TOM_The_Crushers": 0,
+    "A_IND_stuxnet": 2.5
+   },
+   "scoresSha256": "e3f88d09e33beefd7558c29f21d94ad813d378c93e53f99e899d3b96506a2584",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p1-c24",
+   "seed": "kphldef-20261004-confirm-field-beta|p1|c24",
+   "battles": 20,
+   "team": 17.833332,
+   "w1": 8.333334,
+   "w2": 9.5,
+   "opponents": {
+    "A_BZV_SKYENT": 1.1666667,
+    "A_OHS_TOMEX": 1,
+    "Y_GSA_3Plate_Benchers": 0
+   },
+   "scoresSha256": "6c51cb1ad89878ffaa9dd402fe0cc2156fd0938d7521c0e6f48adc887135cd21",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p2-c0",
+   "seed": "kphldef-20261004-confirm-field-beta|p2|c0",
+   "battles": 20,
+   "team": 14,
+   "w1": 7,
+   "w2": 7,
+   "opponents": {
+    "Y_BGR_theGlopyGng": 0,
+    "A_IND_stuxnet": 6,
+    "A_ORT_TheGoats": 0
+   },
+   "scoresSha256": "c809fb7981c1b475e9c1fe8bdbb7f059ba79a365e71d48d90e80364e225f3b17",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p2-c1",
+   "seed": "kphldef-20261004-confirm-field-beta|p2|c1",
+   "battles": 20,
+   "team": 10,
+   "w1": 5.5,
+   "w2": 4.5,
+   "opponents": {
+    "Y_TOM_The_Crushers": 4,
+    "A_WAN_Baltika9": 4,
+    "A_HDS_NRI": 2
+   },
+   "scoresSha256": "23540738748821b48c2954120f960861914ce8b23c8ab87702a03b4023b05271",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p2-c2",
+   "seed": "kphldef-20261004-confirm-field-beta|p2|c2",
+   "battles": 20,
+   "team": 16,
+   "w1": 9,
+   "w2": 7,
+   "opponents": {
+    "A_HDS_YOY": 0,
+    "A_OHS_BatteringRAM": 2,
+    "A_HRZ_L": 2
+   },
+   "scoresSha256": "6edf717a18895540bc1217cdbca881b632afe588553fa3fb2a29bf82633cd393",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p2-c3",
+   "seed": "kphldef-20261004-confirm-field-beta|p2|c3",
+   "battles": 20,
+   "team": 14,
+   "w1": 7.5,
+   "w2": 6.5,
+   "opponents": {
+    "A_HRZ_BinaryBandits": 2,
+    "A_GSA_B33": 4,
+    "A_GSA_VanLavan": 0
+   },
+   "scoresSha256": "5ffd3c6945160531f6a5298471f787d1b8a3095df6f32125046afd8ad388628b",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p2-c4",
+   "seed": "kphldef-20261004-confirm-field-beta|p2|c4",
+   "battles": 20,
+   "team": 15,
+   "w1": 8.5,
+   "w2": 6.5,
+   "opponents": {
+    "A_TOM_Syntax_Terror": 2,
+    "Y_GSA_LVS_FIT": 2,
+    "Y_MTA_Hexellent": 1
+   },
+   "scoresSha256": "ca85bfbff8fdc4e2a2da206236fa9030c15b4b76e651ce6be9873b0d9496f67f",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p2-c5",
+   "seed": "kphldef-20261004-confirm-field-beta|p2|c5",
+   "battles": 20,
+   "team": 10,
+   "w1": 5,
+   "w2": 5,
+   "opponents": {
+    "Y_TOM_Code_Killer": 2,
+    "A_HRZ_MOV_AX_WIN": 0,
+    "A_HRZ_The_almogooners": 8
+   },
+   "scoresSha256": "4c31f6f6be2dffe949d59b6082ca5ab5575584e000aa19ec816d445cd9e09037",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p2-c6",
+   "seed": "kphldef-20261004-confirm-field-beta|p2|c6",
+   "battles": 20,
+   "team": 13,
+   "w1": 4.5,
+   "w2": 8.5,
+   "opponents": {
+    "A_HDS_IWDIA_nachalo": 0,
+    "Y_TOM_AND_JERRY": 4,
+    "A_OHS_TrojanByte": 3
+   },
+   "scoresSha256": "498cac1ebe62142a7fd8a61377bd65ddfcfb5f51511676c9f11f1ed7c6849523",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p2-c7",
+   "seed": "kphldef-20261004-confirm-field-beta|p2|c7",
+   "battles": 20,
+   "team": 17,
+   "w1": 9.5,
+   "w2": 7.5,
+   "opponents": {
+    "A_HDS_ATW_Solo": 0,
+    "A_WAN_OnlyCode": 0,
+    "A_HRZ_CodeEliteGang": 3
+   },
+   "scoresSha256": "a84efbff5fec6c90bbc4130c17f64289881f559ccf7d11e598a16b8ba5805c60",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p2-c8",
+   "seed": "kphldef-20261004-confirm-field-beta|p2|c8",
+   "battles": 20,
+   "team": 14.666666,
+   "w1": 8,
+   "w2": 6.6666665,
+   "opponents": {
+    "A_HRZ_Ctrl_Alt_Elite": 0,
+    "A_BZV_SKYENT": 5.3333335,
+    "A_TOM_anonymous": 0
+   },
+   "scoresSha256": "809c4c1ea3936e144f688cf5def8f3c4cd20c0b01c6e2b81512457abd0ced23b",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p2-c9",
+   "seed": "kphldef-20261004-confirm-field-beta|p2|c9",
+   "battles": 20,
+   "team": 14,
+   "w1": 8,
+   "w2": 6,
+   "opponents": {
+    "A_HRZ_PowerRangers": 4,
+    "A_HRZ_stack_attack": 1,
+    "A_OHS_TOMEX": 1
+   },
+   "scoresSha256": "bb690a463217efb44ce5616492c65c58f2b1f94a67a5eb07d5cbc1768d4628fe",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p2-c10",
+   "seed": "kphldef-20261004-confirm-field-beta|p2|c10",
+   "battles": 20,
+   "team": 16,
+   "w1": 9.5,
+   "w2": 6.5,
+   "opponents": {
+    "A_AVI_AnotherBitInTheWall": 2,
+    "A_HRZ_InCtrl": 0,
+    "A_HRZ_Registered_Winners": 2
+   },
+   "scoresSha256": "8034bd8989837714f52f4eba6b39a817a9d2f1363cd1b18bd0148fcfe88c8eb1",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p2-c11",
+   "seed": "kphldef-20261004-confirm-field-beta|p2|c11",
+   "battles": 20,
+   "team": 13.5,
+   "w1": 6.5,
+   "w2": 7,
+   "opponents": {
+    "A_HRZ_ADDvanced": 2,
+    "A_GGN_OpcodeHunter": 4.5,
+    "Y_SZR_BrvazimAlSteroidim": 0
+   },
+   "scoresSha256": "7a818546a4a47659def4191a4530b380a4f619d409f7867715d07339b26b3649",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p2-c12",
+   "seed": "kphldef-20261004-confirm-field-beta|p2|c12",
+   "battles": 20,
+   "team": 15,
+   "w1": 7.5,
+   "w2": 7.5,
+   "opponents": {
+    "A_HRZ_Thingies": 4,
+    "A_RZL_YANDE": 1,
+    "A_IND_BRA": 0
+   },
+   "scoresSha256": "b77114b911810e08f5e8c0d1262cb67a01f3b6b36616f876f6bd124dedd8190f",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p2-c13",
+   "seed": "kphldef-20261004-confirm-field-beta|p2|c13",
+   "battles": 20,
+   "team": 18,
+   "w1": 11,
+   "w2": 7,
+   "opponents": {
+    "A_HRZ_Pixar_Lamps": 1,
+    "A_HDS_MAC": 0,
+    "A_HRZ_TEST_ticals": 1
+   },
+   "scoresSha256": "2c1a2c1a6a762465387834dd56df18ec441b90d6719fea7b4334c5fb2cc2d4a6",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p2-c14",
+   "seed": "kphldef-20261004-confirm-field-beta|p2|c14",
+   "battles": 20,
+   "team": 11,
+   "w1": 2,
+   "w2": 9,
+   "opponents": {
+    "A_HRZ_TitanicSwimTeam": 0,
+    "A_GSA_GoonSquad": 7,
+    "A_AVI_Fishandpoultry": 2
+   },
+   "scoresSha256": "d3245e083a91bbad42b9b434add97799e6a080b0da0d499f1e4b30cc4958861c",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p2-c15",
+   "seed": "kphldef-20261004-confirm-field-beta|p2|c15",
+   "battles": 20,
+   "team": 15.5,
+   "w1": 7.5,
+   "w2": 8,
+   "opponents": {
+    "A_HDS_GoldenLamed": 1.5,
+    "A_OHS_cgxPro": 0.5,
+    "A_AML_ByteReapers": 2.5
+   },
+   "scoresSha256": "4feff69ad27a7e5503e8155b2a49df06e789c318b9545058992b2a72145d468f",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p2-c16",
+   "seed": "kphldef-20261004-confirm-field-beta|p2|c16",
+   "battles": 20,
+   "team": 11,
+   "w1": 5.5,
+   "w2": 5.5,
+   "opponents": {
+    "A_HRZ_Grindo_Holics": 6,
+    "A_OST_Gamma": 1,
+    "A_GSA_TheBytes": 2
+   },
+   "scoresSha256": "3c839bf0aced5899a88d8a228f9d9a36352e3e6e11139cd50f4a9f32dcc26f2f",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p2-c17",
+   "seed": "kphldef-20261004-confirm-field-beta|p2|c17",
+   "battles": 20,
+   "team": 16,
+   "w1": 8.5,
+   "w2": 7.5,
+   "opponents": {
+    "A_HRZ_LowKey_WBB": 3,
+    "Y_TOM_Thefrogs": 1,
+    "A_ORT_Pegasus_Hex": 0
+   },
+   "scoresSha256": "5cfc2d15f68f882e8a6ec715f5646179c03481c8b310794a5eab6652595a8681",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p2-c18",
+   "seed": "kphldef-20261004-confirm-field-beta|p2|c18",
+   "battles": 20,
+   "team": 13.666666,
+   "w1": 5.833333,
+   "w2": 7.8333335,
+   "opponents": {
+    "A_IND_cgx123123": 2,
+    "A_HRZ_The_Rubber_Duckies": 0,
+    "A_GSA_callfart": 4.3333335
+   },
+   "scoresSha256": "81eaf6ed61b6987afe26fadc4fd43e178446db5ffa6018a2425ef0a4b84125e8",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p2-c19",
+   "seed": "kphldef-20261004-confirm-field-beta|p2|c19",
+   "battles": 20,
+   "team": 18,
+   "w1": 5.5,
+   "w2": 12.5,
+   "opponents": {
+    "A_WAN_Full_Time_Job": 0,
+    "Y_ELD_FriendlyFire": 0,
+    "Y_GSA_3Plate_Benchers": 2
+   },
+   "scoresSha256": "f6a2d14bb3233810f19f28b0c0ae472a2df73daaddd9b069453089d9ae4ff1ad",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p2-c20",
+   "seed": "kphldef-20261004-confirm-field-beta|p2|c20",
+   "battles": 20,
+   "team": 12,
+   "w1": 7,
+   "w2": 5,
+   "opponents": {
+    "A_WHS_K0F1M_AL_T1L1M": 3,
+    "A_HLS_EmoMutants": 1,
+    "A_ATL_R1DDLE": 4
+   },
+   "scoresSha256": "1235975344d64840916fa975acc59e6e2cb0b3f470233f6ad2db66546e15b804",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p2-c21",
+   "seed": "kphldef-20261004-confirm-field-beta|p2|c21",
+   "battles": 20,
+   "team": 16,
+   "w1": 8.5,
+   "w2": 7.5,
+   "opponents": {
+    "A_GSA_GhostBytes_0x": 4,
+    "A_HRZ_Underflow": 0,
+    "A_KOB_KosherCode": 0
+   },
+   "scoresSha256": "856cb1bbce3af83067cdda35d0a67e2d57a46759bf4ca190978889f4479ab275",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p2-c22",
+   "seed": "kphldef-20261004-confirm-field-beta|p2|c22",
+   "battles": 20,
+   "team": 16,
+   "w1": 9,
+   "w2": 7,
+   "opponents": {
+    "A_TOM_2B2Team": 3,
+    "Y_HDS_TRY": 0,
+    "A_TOM_tson_el_akod": 1
+   },
+   "scoresSha256": "2dbc470bc7b744e5b634b07bd4323ea59e3996df6b07b5911d96a1e47978eea1",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p2-c23",
+   "seed": "kphldef-20261004-confirm-field-beta|p2|c23",
+   "battles": 20,
+   "team": 18,
+   "w1": 12.5,
+   "w2": 5.5,
+   "opponents": {
+    "Y_GSA_SigmaSilent": 1,
+    "A_HRZ_Code_Jokers4Life": 1,
+    "A_HRZ_fisherEXE": 0
+   },
+   "scoresSha256": "fec0e5ef76b001704611a2dce8de67a175d79e08bbd92ddf72740f9716bb6182",
+   "telemetry": null
+  },
+  {
+   "arm": "KPHLGuard",
+   "cohort": "p2-c24",
+   "seed": "kphldef-20261004-confirm-field-beta|p2|c24",
+   "battles": 20,
+   "team": 11,
+   "w1": 7.5,
+   "w2": 3.5,
+   "opponents": {
+    "A_GSA_ShmuelTurtles": 1,
+    "A_TOM_BitBenders": 5,
+    "Y_SZR_The_Chargers": 3
+   },
+   "scoresSha256": "5ac0d4daf0f922529b53407f42a05339b20feff508c21d5011133caaac752493",
+   "telemetry": null
+  }
+ ],
+ "hostScheduling": {
+  "scope": "Only newly spawned own Java processes; priority expires on exit. No other process changed.",
+  "workerLimit": 2,
+  "records": [
+   {
+    "pid": 21724,
+    "status": "above-normal"
+   }
+  ]
+ }
+}

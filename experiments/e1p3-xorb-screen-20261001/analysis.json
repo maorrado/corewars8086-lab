@@ -1,0 +1,255 @@
+{
+  "status": "COMPLETE_EXPLORATORY_SCREEN",
+  "manifestSha256": "2bec0789b932f52ad0a06676fa882a94862030af73920d733c9254f7ef7d39b9",
+  "design": {
+    "scenarios": [
+      "field",
+      "fixed-toggle-present"
+    ],
+    "arms": [
+      "m050",
+      "m050-xorb",
+      "e1p3",
+      "e1p3-xorb"
+    ],
+    "teams": 75,
+    "cohorts": 25,
+    "seedsPerScenario": 2,
+    "battlesPerCohortSeed": 10,
+    "battlesPerArmScenario": 500,
+    "totalBattles": 4000,
+    "engine": "exact pinned deterministic v6 JAR; no gameplay overlays",
+    "threads": 1,
+    "parallel": false,
+    "telemetry": false,
+    "uncertaintyUnit": "25 cohort deltas averaged over two shared seed blocks; exploratory only",
+    "scope": "Screen e1p3 XOR-B composition for broad-field and one-fixed-toggle matchups; no promotion without fresh holdout."
+  },
+  "meanPointsPerAppearance": {
+    "field": {
+      "m050": 0.6869999996,
+      "m050-xorb": 0.65,
+      "e1p3": 0.676333334,
+      "e1p3-xorb": 0.6459999999999999
+    },
+    "fixed-toggle-present": {
+      "m050": 0.40233333620000006,
+      "m050-xorb": 0.45000000720000005,
+      "e1p3": 0.3696666698,
+      "e1p3-xorb": 0.42850000460000004
+    }
+  },
+  "comparisons": [
+    {
+      "scenario": "field",
+      "candidate": "e1p3-xorb",
+      "reference": "e1p3",
+      "pairedCohortMeanDelta": -0.030333334,
+      "nominal95CI": [
+        -0.07533777271180876,
+        0.014671104711808759
+      ],
+      "cohortCount": 25,
+      "positiveNegativeTie": {
+        "positive": 10,
+        "negative": 14,
+        "tie": 1
+      }
+    },
+    {
+      "scenario": "field",
+      "candidate": "e1p3-xorb",
+      "reference": "m050",
+      "pairedCohortMeanDelta": -0.04099999959999999,
+      "nominal95CI": [
+        -0.09258967898549313,
+        0.010589679785493147
+      ],
+      "cohortCount": 25,
+      "positiveNegativeTie": {
+        "positive": 10,
+        "negative": 13,
+        "tie": 2
+      }
+    },
+    {
+      "scenario": "field",
+      "candidate": "m050-xorb",
+      "reference": "m050",
+      "pairedCohortMeanDelta": -0.03699999959999999,
+      "nominal95CI": [
+        -0.08329197141689673,
+        0.00929197221689674
+      ],
+      "cohortCount": 25,
+      "positiveNegativeTie": {
+        "positive": 8,
+        "negative": 13,
+        "tie": 4
+      }
+    },
+    {
+      "scenario": "fixed-toggle-present",
+      "candidate": "e1p3-xorb",
+      "reference": "e1p3",
+      "pairedCohortMeanDelta": 0.05883333479999999,
+      "nominal95CI": [
+        0.011467395241619077,
+        0.1061992743583809
+      ],
+      "cohortCount": 25,
+      "positiveNegativeTie": {
+        "positive": 19,
+        "negative": 5,
+        "tie": 1
+      }
+    },
+    {
+      "scenario": "fixed-toggle-present",
+      "candidate": "e1p3-xorb",
+      "reference": "m050",
+      "pairedCohortMeanDelta": 0.026166668399999995,
+      "nominal95CI": [
+        -0.013689856017248911,
+        0.0660231928172489
+      ],
+      "cohortCount": 25,
+      "positiveNegativeTie": {
+        "positive": 16,
+        "negative": 9,
+        "tie": 0
+      }
+    },
+    {
+      "scenario": "fixed-toggle-present",
+      "candidate": "m050-xorb",
+      "reference": "m050",
+      "pairedCohortMeanDelta": 0.047666671000000015,
+      "nominal95CI": [
+        0.010450490975163963,
+        0.08488285102483606
+      ],
+      "cohortCount": 25,
+      "positiveNegativeTie": {
+        "positive": 18,
+        "negative": 7,
+        "tie": 0
+      }
+    }
+  ],
+  "interpretation": "Descriptive cohort-cluster intervals only. This is a 500-battle/arm screening experiment, not a fresh holdout, tournament forecast, or basis for final promotion.",
+  "results": [
+    {
+      "id": "field-m050",
+      "result": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\e1p3-xorb-screen-20261001\\accelerated\\field-m050\\result.json",
+        "bytes": 567563,
+        "sha256": "f329aeb1b7bc79a20edd189e95c6ac6a2db075c14a1881f8395c7ee73ccbd215"
+      },
+      "config": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1p3-xorb-20261001\\frozen\\configs\\field-m050.json",
+        "bytes": 31658,
+        "sha256": "17a1b25cea84d87038347ee846e24eeb1af67fcecbaf337b7850bac680d83f35"
+      },
+      "planSha256": "2dca11c42f8e1cdd875debfbae2e2fecf3c5d5f60e167a0e4064bbe9b500ccb8"
+    },
+    {
+      "id": "field-m050-xorb",
+      "result": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\e1p3-xorb-screen-20261001\\accelerated\\field-m050-xorb\\result.json",
+        "bytes": 568028,
+        "sha256": "dc488272b4b007b20bf86a77a7c72305573ec564ce269a22c93ab96000054714"
+      },
+      "config": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1p3-xorb-20261001\\frozen\\configs\\field-m050-xorb.json",
+        "bytes": 31591,
+        "sha256": "f7df6356aba9e95fbde1313d298e4773d9891358d457b2c2683b6ea095f32e13"
+      },
+      "planSha256": "a288d5adf49aff6b59721b8f05e24ce1e9885dfb983d83b74f635a0bbe1ad288"
+    },
+    {
+      "id": "field-e1p3",
+      "result": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\e1p3-xorb-screen-20261001\\accelerated\\field-e1p3\\result.json",
+        "bytes": 565914,
+        "sha256": "6e80039b6caccb2dc9558cdd61a5ec1a7e5dd5cba813574e5a0a43eb6506e00f"
+      },
+      "config": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1p3-xorb-20261001\\frozen\\configs\\field-e1p3.json",
+        "bytes": 31626,
+        "sha256": "4625c812baa48707ca7ef8d142bcb47f2a041b41ba718fb4b80da42cb3d0a30f"
+      },
+      "planSha256": "ae82e7fed8952f002b4ec483961197f62d05aae0b942128b8ff12902398a9d37"
+    },
+    {
+      "id": "field-e1p3-xorb",
+      "result": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\e1p3-xorb-screen-20261001\\accelerated\\field-e1p3-xorb\\result.json",
+        "bytes": 571004,
+        "sha256": "21c32db1c79cca339e0ad56f77ebf94a9af8f273ecfab582da1326b23f0acf5a"
+      },
+      "config": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1p3-xorb-20261001\\frozen\\configs\\field-e1p3-xorb.json",
+        "bytes": 31649,
+        "sha256": "b402c0f3526ec6f4963e8bb4f87da115178ab8329be55e26efb1b29c720f7b4d"
+      },
+      "planSha256": "68980d871782a15faa795ae4ffb9758f93ffb9588efc648b5537432001d82d64"
+    },
+    {
+      "id": "fixed-toggle-present-m050",
+      "result": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\e1p3-xorb-screen-20261001\\accelerated\\fixed-toggle-present-m050\\result.json",
+        "bytes": 604427,
+        "sha256": "786272b7cb4c8ea991b1ba231efdc3ea0aba18c48e3838aea2688509d5033e46"
+      },
+      "config": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1p3-xorb-20261001\\frozen\\configs\\fixed-toggle-present-m050.json",
+        "bytes": 31831,
+        "sha256": "104f1e2520464870fd1ee446857f8fcf37f746dcbbf3731de5ce104254103e93"
+      },
+      "planSha256": "3ce21dc9ae7296262fa5d8f4249bd546bfd9ced593a9e379e0e460f29f521bdb"
+    },
+    {
+      "id": "fixed-toggle-present-m050-xorb",
+      "result": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\e1p3-xorb-screen-20261001\\accelerated\\fixed-toggle-present-m050-xorb\\result.json",
+        "bytes": 605304,
+        "sha256": "347461e8443832ec95e9089fbf5d0c0f81811f7ba5e6ea559933c507629df308"
+      },
+      "config": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1p3-xorb-20261001\\frozen\\configs\\fixed-toggle-present-m050-xorb.json",
+        "bytes": 31764,
+        "sha256": "cbe94080cd29e53fc5c255bceda419b0073d391654923d1ecd587d370a2a7093"
+      },
+      "planSha256": "791b3388dff2bf4980d894c041580c3ce7c2ba32b0a69af67cfd9a63cda91c71"
+    },
+    {
+      "id": "fixed-toggle-present-e1p3",
+      "result": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\e1p3-xorb-screen-20261001\\accelerated\\fixed-toggle-present-e1p3\\result.json",
+        "bytes": 602895,
+        "sha256": "a88f53d3c5eea2ad22532e0a4634c53a5a2bd13b82d6a981dceb528ddb2fa2b2"
+      },
+      "config": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1p3-xorb-20261001\\frozen\\configs\\fixed-toggle-present-e1p3.json",
+        "bytes": 31799,
+        "sha256": "5034f5a808058126e3c6bbe39b9cf7cc8036ba692c9c55798020da6148666901"
+      },
+      "planSha256": "8d76c475be756ead5c4d6d667cab0280e3201753d81a006e8a623cccb2f723b4"
+    },
+    {
+      "id": "fixed-toggle-present-e1p3-xorb",
+      "result": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\e1p3-xorb-screen-20261001\\accelerated\\fixed-toggle-present-e1p3-xorb\\result.json",
+        "bytes": 608964,
+        "sha256": "259e83ae2239cfdf4218cb86f2324df33b49a44f86df1054285e5e6089ab70a0"
+      },
+      "config": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1p3-xorb-20261001\\frozen\\configs\\fixed-toggle-present-e1p3-xorb.json",
+        "bytes": 31822,
+        "sha256": "a805bcdc32b60156e9665d1a0569f5ab0e5e52bbe62897b2de462515f5123d02"
+      },
+      "planSha256": "447c0cc4d397f911655340be2dee00d3e703212f1e51430f7ce0d290fff181cb"
+    }
+  ]
+}

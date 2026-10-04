@@ -1,0 +1,79 @@
+{
+  "status": "PASS",
+  "startedAt": "2026-10-01T00:15:05.228Z",
+  "endedAt": "2026-10-01T00:15:09.057Z",
+  "elapsedSeconds": 3.8280506,
+  "plan": {
+    "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\codex-goal-20261001\\word-trigger\\diagnostic\\replay-plan-reviewed.json",
+    "sha256": "83831e1fbccb9292e67cdd65cf182094e1178fefa6c0b8b325e28ea76c64f7f3",
+    "bytes": 11759
+  },
+  "launcher": {
+    "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\codex-goal-20261001\\word-trigger\\diagnostic\\run-replay.mjs",
+    "sha256": "c7faf8680af110fcff1b6a28ff27e5ed7ede6b155ffb980a6e325cb8c6baecc6",
+    "bytes": 10413
+  },
+  "command": {
+    "executable": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\temurin8-jre\\jdk8u504-b01-jre\\bin\\java.exe",
+    "args": [
+      "-cp",
+      "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\codex-goal-20261001\\word-trigger\\diagnostic\\reviewed-classes;C:\\Maor\\CodeGuru\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+      "DeathDiagnosticMain",
+      "--headless",
+      "--comboSize",
+      "4",
+      "--battlesPerCombo",
+      "50",
+      "--seed",
+      "claude-synthesis-fresh-2-d65bf5b1ac31c1cb8543bb10",
+      "--threads",
+      "1",
+      "--warriorsDir",
+      "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\measurements\\differential-v1\\baseline-r1-forward-median\\survivors",
+      "--zombiesDir",
+      "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\measurements\\differential-v1\\baseline-r1-forward-median\\zombies",
+      "--outputFile",
+      "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\codex-goal-20261001\\word-trigger\\diagnostic\\replay-reviewed\\scores.csv",
+      "--parallel=false",
+      "--telemetryFile",
+      "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\codex-goal-20261001\\word-trigger\\diagnostic\\replay-reviewed\\telemetry.csv"
+    ]
+  },
+  "process": {
+    "status": 0,
+    "signal": null,
+    "error": null
+  },
+  "validation": {
+    "completedWars": 50,
+    "watchedBirths": 100,
+    "watchedDeaths": 38,
+    "explicitIpPresent": true,
+    "rawScoresEqual": true,
+    "rawTelemetryEqual": true
+  },
+  "failure": null,
+  "outputs": {
+    "scores": {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\codex-goal-20261001\\word-trigger\\diagnostic\\replay-reviewed\\scores.csv",
+      "sha256": "f46338d74ec80c97d6aac38485b680d24e13429c3396063f1745c0c24160a5d4",
+      "bytes": 273
+    },
+    "telemetry": {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\codex-goal-20261001\\word-trigger\\diagnostic\\replay-reviewed\\telemetry.csv",
+      "sha256": "170204360645a7ef90d6457f8f94ddf87f3463a0e4e78bd38eb6a2f5924bb011",
+      "bytes": 95407
+    },
+    "diagnosticsJsonl": {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\codex-goal-20261001\\word-trigger\\diagnostic\\replay-reviewed\\deaths.jsonl",
+      "sha256": "e4c74b653511f8a373feead85897fc3aa814b4827fd47608e0d82feddca0197f",
+      "bytes": 133950
+    },
+    "stderr": {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\codex-goal-20261001\\word-trigger\\diagnostic\\replay-reviewed\\process.stderr.txt",
+      "sha256": "a30e68568c7855caa7d09230825dfb2c07fd8acda8a3f9c1e694254fa2ed3f45",
+      "bytes": 150
+    }
+  },
+  "caveat": "Diagnostic original-engine replay, not a score-improvement test. Interpret death records only after PASS."
+}

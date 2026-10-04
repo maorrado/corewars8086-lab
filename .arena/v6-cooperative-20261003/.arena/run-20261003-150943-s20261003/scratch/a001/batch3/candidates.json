@@ -1,0 +1,15 @@
+{
+ "schema":"cooperative-arena-candidates-v1",
+ "baseline":"original_v6",
+ "provenance":"Derived from friend-provided Good_Test V6; original binaries untouched.",
+ "candidates":[{
+  "id":"a001_nearboot",
+  "sources":["C:/Maor/CodeGuru/corewars8086-lab/.arena/v6-cooperative-20261003/.arena/run-20261003-150943-s20261003/scratch/a001/batch3/nearboot/A.asm","C:/Maor/CodeGuru/corewars8086-lab/.arena/v6-cooperative-20261003/.arena/run-20261003-150943-s20261003/scratch/a001/batch3/nearboot/B.asm"],
+  "warriors":["C:/Maor/CodeGuru/corewars8086-lab/.arena/v6-cooperative-20261003/.arena/run-20261003-150943-s20261003/scratch/a001/batch3/nearboot/build/A","C:/Maor/CodeGuru/corewars8086-lab/.arena/v6-cooperative-20261003/.arena/run-20261003-150943-s20261003/scratch/a001/batch3/nearboot/build/B"],
+  "sha256":["4a6c251111de333c9b17f236165dc452d6d5ad1a8b13a81ba20f12baad8ab378","729272b97279dc0955ad1ead7092a0a9ffee8ebea0ad45b65d2f8e6173b4c31d"],
+  "sizes":[221,202],
+  "edits":"Both initial stack adjustments ADD SP,0100h/0600h replaced by four-byte SUB SP,0048h. All original layout offsets, steady BP/DX and copy counts unchanged.",
+  "hypothesis":"Initial target at ES=0FFB is DI-0050h in SS=1000. SP=DI-0048h sets stack to target+8. First CALL saves original state at target+4/+6; one recursive CALL then writes return IP ending A4 at target and starts MOVSB copying. Removes almost all initial recursive paint latency.",
+  "failure_modes":"Small initial paint range may reduce early opponent kills. Relocation begins substantially earlier, affecting team interference and zombie races. Must verify bootstrap does not execute any partially overwritten operand before considering scoring."
+ }]
+}

@@ -1,0 +1,56 @@
+{
+  "status": "FAILED",
+  "startedAt": "2026-10-01T02:18:52.843Z",
+  "endedAt": "2026-10-01T02:18:54.175Z",
+  "elapsedSeconds": 1.329991,
+  "plan": {
+    "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1-confirmation-20261001\\diagnostic\\prepared-plan.json",
+    "bytes": 14428,
+    "sha256": "dd35e005f19509ebbab1b0e077f3140dba954a1a17990347b9c58f7249091050"
+  },
+  "command": {
+    "executable": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\temurin8-jre\\jdk8u504-b01-jre\\bin\\java.exe",
+    "args": [
+      "-cp",
+      "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1-confirmation-20261001\\diagnostic\\classes;C:\\Maor\\CodeGuru\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+      "WriterAttributionMain",
+      "--headless",
+      "--comboSize",
+      "2",
+      "--battlesPerCombo",
+      "125",
+      "--seed",
+      "claude-synthesis-duel-1-cfec1882f8ac1f4fc47a2263",
+      "--threads",
+      "1",
+      "--warriorsDir",
+      "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\claude-synthesis-audit-20260930\\duel-m050-submitted-first\\duel-m050__claude-synthesis-duel-1-cfec1882f8ac1f4fc47a2263\\survivors",
+      "--zombiesDir",
+      "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\claude-synthesis-audit-20260930\\duel-m050-submitted-first\\duel-m050__claude-synthesis-duel-1-cfec1882f8ac1f4fc47a2263\\zombies",
+      "--outputFile",
+      "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1-confirmation-20261001\\diagnostic\\replay\\scores.csv",
+      "--parallel=false"
+    ]
+  },
+  "validation": null,
+  "failure": "Error: Diagnostic Java failed: 1/null/\n    at assert (file:///C:/Maor/CodeGuru/corewars8086-lab/candidates/generated/claude-e1-confirmation-20261001/diagnostic/protocol.mjs:12:57)\n    at file:///C:/Maor/CodeGuru/corewars8086-lab/candidates/generated/claude-e1-confirmation-20261001/diagnostic/run-replay.mjs:35:3\n    at ModuleJob.run (node:internal/modules/esm/module_job:430:25)\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:661:26)\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)",
+  "process": {
+    "status": 1,
+    "signal": null,
+    "error": null
+  },
+  "outputs": {
+    "scores": null,
+    "events": {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1-confirmation-20261001\\diagnostic\\replay\\writers.jsonl",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stderr": {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1-confirmation-20261001\\diagnostic\\replay\\process.stderr.txt",
+      "bytes": 218,
+      "sha256": "933aa6ffdb3804a4aeaf94b23e889ad8c03577e1b8c68e8b8b2227611c2d5982"
+    }
+  },
+  "caveat": "Interpret writer attribution only after PASS. This is diagnostic replay, not a new competition result or advantage estimate."
+}

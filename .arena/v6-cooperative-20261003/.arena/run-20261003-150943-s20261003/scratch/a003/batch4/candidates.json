@@ -1,0 +1,27 @@
+{
+  "schema": "cooperative-v6-candidates-v1",
+  "baseline": "original_v6",
+  "candidates": [
+    {
+      "id": "a003_excludephase",
+      "baseline": "original_v6",
+      "hypothesis": "Exclude own-team-like0FFB return frames only when returnIP modulo0400h equals00A4h, preserving attacks on differently aligned0FFB rivals.",
+      "edits": "Before original FFC filter, check SI0FFB and DI=[BX-2]&03FF, skip only when DI00A4. Original source layout preceding scanner preserved; added scanner instructions use accepted CMP/JNE/MOV/AND/JE.",
+      "failureModes": "Same-aligned V6 rivals still ignored. Extra three instructions on0FFB hits and one branch otherwise slow the scanner; temporary DI is overwritten in found_candidate as before.",
+      "warriors": [
+        {
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch4\\src\\excludephase_A.asm",
+          "binary": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch4\\bin\\excludephase_A",
+          "size": 240,
+          "sha256": "3926b0aa877ff38cd5d75a3e7ef966269f406dac4db4506d178cad1385dc6e51"
+        },
+        {
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch4\\src\\excludephase_B.asm",
+          "binary": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch4\\bin\\excludephase_B",
+          "size": 202,
+          "sha256": "8579e2c2212d72a413a6daacfe3b91ceb72be648bfc085bfeed9430eeaf6657a"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "schema": "cooperative-v6-candidates-v1",
+  "baseline": "original_v6",
+  "candidates": [
+    {
+      "id": "a003_pointerguard",
+      "baseline": "original_v6",
+      "hypothesis": "If advertised Zombie pointer7A00h is untouchedCCCC sentinel, skip blind patching of fixed arenaCCCF..CCD5. Saves four startup opcodes in sentinel case and avoids ungrounded writes; existing patch behavior retained for all other values.",
+      "edits": "A adds CMP BX,CCCC / JE no_zombie_pointer immediately after MOV BX,[7A00]. A worker and zombie offsets use labels; copied worker bytes unchanged. B exact original.",
+      "failureModes": "Non-sentinel corrupt pointer still patches arbitrary bytes. Delaying valid capture by two instructions may regress a compatible old Zombie context. Sentinel-skip removes a small amount of incidental fixed-address offense.",
+      "warriors": [
+        {
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch8\\src\\pointerguard_A.asm",
+          "binary": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch8\\bin\\pointerguard_A",
+          "size": 227,
+          "sha256": "71164c8d7308766cd14d64ac6d1342cd1631afce98278fe9dca4d4ab14a3b3f3"
+        },
+        {
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch8\\src\\pointerguard_B.asm",
+          "binary": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch8\\bin\\pointerguard_B",
+          "size": 202,
+          "sha256": "8579e2c2212d72a413a6daacfe3b91ceb72be648bfc085bfeed9430eeaf6657a"
+        }
+      ]
+    }
+  ]
+}

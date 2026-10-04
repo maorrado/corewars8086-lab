@@ -1,0 +1,537 @@
+{
+  "schemaVersion": 1,
+  "mode": "isolated-persistent-serial",
+  "createdAt": "2026-10-01T09:22:57.854Z",
+  "output": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\m050-xorb-family-stress-20261001\\accelerated\\population-k2-09-xorb-o1",
+  "baseConfig": {
+    "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\m050-xorb-family-stress-20261001\\configs\\population-k2-09-xorb-o1.json",
+    "sha256": "c91bee58b486e255832ab3dc3fa03030f86167004470809f337ed09cf11ad3c2",
+    "config": {
+      "java": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\temurin8-jre\\jdk8u504-b01-jre\\bin\\java.exe",
+      "jar": "C:\\Maor\\CodeGuru\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+      "threads": 1,
+      "parallel": false,
+      "telemetry": false,
+      "zombies": [
+        {
+          "name": "zom20a",
+          "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\zombies\\zom20a"
+        },
+        {
+          "name": "zom20b",
+          "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\zombies\\zom20b"
+        },
+        {
+          "name": "zom20c",
+          "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\zombies\\zom20c"
+        },
+        {
+          "name": "zom20d",
+          "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\zombies\\zom20d"
+        }
+      ],
+      "experimentId": "claude-family-stress-20261001-population-k2-09-m050-o1",
+      "outputPath": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\m050-xorb-family-stress-20261001\\results\\population-k2-09-xorb-o1.json",
+      "runDirectory": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\m050-xorb-family-stress-20261001\\runs\\population-k2-09-xorb-o1",
+      "candidate": {
+        "name": "A00_TEST",
+        "warriors": [
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\m050-pointer-operator\\xor-b\\A",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\m050-pointer-operator\\xor-b\\B"
+        ]
+      },
+      "battles": 10,
+      "seeds": [
+        "family-stress-20261001-k2-09-2484e7922c4f286b56951162"
+      ],
+      "cohorts": [
+        {
+          "id": "k2-09",
+          "opponents": [
+            {
+              "name": "A_GSA_B33",
+              "warriors": [
+                "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_GSA_B331",
+                "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_GSA_B332"
+              ]
+            },
+            {
+              "name": "CF02_e1",
+              "warriors": [
+                "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\e1\\A",
+                "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\e1\\B"
+              ]
+            },
+            {
+              "name": "CF05_fixed_toggle",
+              "warriors": [
+                "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\fixed-toggle\\A",
+                "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\fixed-toggle\\B"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "derivedConfig": {
+    "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\m050-xorb-family-stress-20261001\\accelerated\\population-k2-09-xorb-o1\\derived-config.json",
+    "bytes": 3210,
+    "sha256": "766e722e96806a69acf9312122877ac1414f5d07bfe1a5b56328984c75ad6ead"
+  },
+  "java": {
+    "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\temurin8-jre\\jdk8u504-b01-jre\\bin\\java.exe",
+    "bytes": 304768,
+    "sha256": "46df95bb47e2ba2b10736cee2ab543289c66021611f1ec67d0d55d5128228c20"
+  },
+  "baseEngine": {
+    "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+    "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\m050-xorb-family-stress-20261001\\accelerated\\population-k2-09-xorb-o1\\runtime\\base-engine.jar",
+    "bytes": 6601794,
+    "sha256": "31639072397eaf69d99e90b10d8fa594a7446951f1137b7ebd298378f5ec318d"
+  },
+  "overlays": [
+    {
+      "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\int87\\classes",
+      "staged": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\m050-xorb-family-stress-20261001\\accelerated\\population-k2-09-xorb-o1\\runtime\\overlay-1"
+    },
+    {
+      "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\war\\combined\\classes",
+      "staged": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\m050-xorb-family-stress-20261001\\accelerated\\population-k2-09-xorb-o1\\runtime\\overlay-2"
+    }
+  ],
+  "wrapper": {
+    "mainClass": "SerialBatchMain",
+    "staged": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\m050-xorb-family-stress-20261001\\accelerated\\population-k2-09-xorb-o1\\runtime\\wrapper",
+    "authoring": [
+      {
+        "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\runtime\\research-batch.mjs",
+        "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\m050-xorb-family-stress-20261001\\accelerated\\population-k2-09-xorb-o1\\authoring\\research-batch.mjs",
+        "bytes": 20041,
+        "sha256": "df8d50e2cb7c15ff01d6e5b72cf32eac3c0fa2e51b3b2a8878c78b566abd20ef"
+      },
+      {
+        "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\runtime\\batch-format.mjs",
+        "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\m050-xorb-family-stress-20261001\\accelerated\\population-k2-09-xorb-o1\\authoring\\batch-format.mjs",
+        "bytes": 1483,
+        "sha256": "46ad7ad4f92b7e9884ce1a008c8bbd65f9093217ef52506047d09a2b8c6baa8e"
+      },
+      {
+        "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\runtime\\SerialBatchMain.java",
+        "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\m050-xorb-family-stress-20261001\\accelerated\\population-k2-09-xorb-o1\\authoring\\SerialBatchMain.java",
+        "bytes": 11133,
+        "sha256": "0298207e1ab699a40afde134a6a43e6b583250c44f4666e655dc622905b5d9ff"
+      }
+    ]
+  },
+  "frozen": [
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\m050-xorb-family-stress-20261001\\accelerated\\population-k2-09-xorb-o1\\source-config.json",
+      "bytes": 2857,
+      "sha256": "c91bee58b486e255832ab3dc3fa03030f86167004470809f337ed09cf11ad3c2"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\m050-xorb-family-stress-20261001\\accelerated\\population-k2-09-xorb-o1\\runtime\\base-engine.jar",
+      "bytes": 6601794,
+      "sha256": "31639072397eaf69d99e90b10d8fa594a7446951f1137b7ebd298378f5ec318d",
+      "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\m050-xorb-family-stress-20261001\\accelerated\\population-k2-09-xorb-o1\\runtime\\wrapper\\SerialBatchMain$Job.class",
+      "bytes": 410,
+      "sha256": "fa8c2fc008a1fb564209e23eef5193b37050cead9ce2db635f81928ffb01cc79",
+      "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\runtime\\classes\\SerialBatchMain$Job.class"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\m050-xorb-family-stress-20261001\\accelerated\\population-k2-09-xorb-o1\\runtime\\wrapper\\SerialBatchMain$Runner.class",
+      "bytes": 7147,
+      "sha256": "100e9be36aed76e02ff2cd8fae3e420f2b49ea6325752af3b2065723d79d04ec",
+      "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\runtime\\classes\\SerialBatchMain$Runner.class"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\m050-xorb-family-stress-20261001\\accelerated\\population-k2-09-xorb-o1\\runtime\\wrapper\\SerialBatchMain.class",
+      "bytes": 5177,
+      "sha256": "06cbeda757e36c075ad255a0b423df842046987d9537ba9bb103a57d40d1023c",
+      "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\runtime\\classes\\SerialBatchMain.class"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\m050-xorb-family-stress-20261001\\accelerated\\population-k2-09-xorb-o1\\runtime\\overlay-1\\il\\co\\codeguru\\corewars8086\\cpu\\Cpu.class",
+      "bytes": 29990,
+      "sha256": "e358439ba520a69bb77a591c14d74ca84ad3273c8faa026f52413bd969f6e791",
+      "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\int87\\classes\\il\\co\\codeguru\\corewars8086\\cpu\\Cpu.class"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\m050-xorb-family-stress-20261001\\accelerated\\population-k2-09-xorb-o1\\runtime\\overlay-1\\il\\co\\codeguru\\corewars8086\\memory\\RealModeMemoryImpl.class",
+      "bytes": 1582,
+      "sha256": "eab4aa031b78ab182b93d0bc90be6f4f83ec5d1c0076c420acf04920b298c8fc",
+      "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\int87\\classes\\il\\co\\codeguru\\corewars8086\\memory\\RealModeMemoryImpl.class"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\m050-xorb-family-stress-20261001\\accelerated\\population-k2-09-xorb-o1\\runtime\\overlay-1\\il\\co\\codeguru\\corewars8086\\memory\\RestrictedAccessRealModeMemory.class",
+      "bytes": 2516,
+      "sha256": "b5baea97eb57dde63934a8da0563a2ec3a964be2c454eafab197c88a844af60b",
+      "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\int87\\classes\\il\\co\\codeguru\\corewars8086\\memory\\RestrictedAccessRealModeMemory.class"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\m050-xorb-family-stress-20261001\\accelerated\\population-k2-09-xorb-o1\\runtime\\overlay-2\\il\\co\\codeguru\\corewars8086\\war\\War.class",
+      "bytes": 8673,
+      "sha256": "b6f8a9fd20429e5c32af7021bfe25c09ca86f3a68e8fac7b73b8789ad7eeedde",
+      "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\war\\combined\\classes\\il\\co\\codeguru\\corewars8086\\war\\War.class"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\m050-xorb-family-stress-20261001\\accelerated\\population-k2-09-xorb-o1\\authoring\\research-batch.mjs",
+      "bytes": 20041,
+      "sha256": "df8d50e2cb7c15ff01d6e5b72cf32eac3c0fa2e51b3b2a8878c78b566abd20ef",
+      "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\runtime\\research-batch.mjs"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\m050-xorb-family-stress-20261001\\accelerated\\population-k2-09-xorb-o1\\authoring\\batch-format.mjs",
+      "bytes": 1483,
+      "sha256": "46ad7ad4f92b7e9884ce1a008c8bbd65f9093217ef52506047d09a2b8c6baa8e",
+      "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\runtime\\batch-format.mjs"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\m050-xorb-family-stress-20261001\\accelerated\\population-k2-09-xorb-o1\\authoring\\SerialBatchMain.java",
+      "bytes": 11133,
+      "sha256": "0298207e1ab699a40afde134a6a43e6b583250c44f4666e655dc622905b5d9ff",
+      "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\runtime\\SerialBatchMain.java"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\m050-xorb-family-stress-20261001\\accelerated\\population-k2-09-xorb-o1\\runs\\k2-09__family-stress-20261001-k2-09-2484e7922c4f286b56951162\\survivors\\A00_TEST1",
+      "bytes": 189,
+      "sha256": "0268ce4f301bf2ada8566f4e608180a0670a335a80b9c2b93b67aee2b632bd44",
+      "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\m050-pointer-operator\\xor-b\\A"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\m050-xorb-family-stress-20261001\\accelerated\\population-k2-09-xorb-o1\\runs\\k2-09__family-stress-20261001-k2-09-2484e7922c4f286b56951162\\survivors\\A00_TEST2",
+      "bytes": 117,
+      "sha256": "fb66036e0b20a8df162da32e453cc148b5ff5ea0d1494439f3c417be0a57d994",
+      "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\m050-pointer-operator\\xor-b\\B"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\m050-xorb-family-stress-20261001\\accelerated\\population-k2-09-xorb-o1\\runs\\k2-09__family-stress-20261001-k2-09-2484e7922c4f286b56951162\\survivors\\A_GSA_B331",
+      "bytes": 476,
+      "sha256": "b669a39358c457bbd739710d2a82e6c7f5bfb20125922b153207209d2bf74350",
+      "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_GSA_B331"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\m050-xorb-family-stress-20261001\\accelerated\\population-k2-09-xorb-o1\\runs\\k2-09__family-stress-20261001-k2-09-2484e7922c4f286b56951162\\survivors\\A_GSA_B332",
+      "bytes": 476,
+      "sha256": "b669a39358c457bbd739710d2a82e6c7f5bfb20125922b153207209d2bf74350",
+      "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_GSA_B332"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\m050-xorb-family-stress-20261001\\accelerated\\population-k2-09-xorb-o1\\runs\\k2-09__family-stress-20261001-k2-09-2484e7922c4f286b56951162\\survivors\\CF02_e11",
+      "bytes": 184,
+      "sha256": "9447b5add61d6f18bff2708adfd2038c3eb1a9008dd9cf03df5c046eff4a4349",
+      "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\e1\\A"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\m050-xorb-family-stress-20261001\\accelerated\\population-k2-09-xorb-o1\\runs\\k2-09__family-stress-20261001-k2-09-2484e7922c4f286b56951162\\survivors\\CF02_e12",
+      "bytes": 115,
+      "sha256": "99055d82958f813de2067a17dde8ea361c749bd4dc916095a4dad1ad8e13ce2b",
+      "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\e1\\B"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\m050-xorb-family-stress-20261001\\accelerated\\population-k2-09-xorb-o1\\runs\\k2-09__family-stress-20261001-k2-09-2484e7922c4f286b56951162\\survivors\\CF05_fixed_toggle1",
+      "bytes": 193,
+      "sha256": "bea990bbf2c60cb4c39d80dd5b533f83a1eb62f1ad202020c6d4e93cbebc2747",
+      "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\fixed-toggle\\A"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\m050-xorb-family-stress-20261001\\accelerated\\population-k2-09-xorb-o1\\runs\\k2-09__family-stress-20261001-k2-09-2484e7922c4f286b56951162\\survivors\\CF05_fixed_toggle2",
+      "bytes": 121,
+      "sha256": "9761054288100948cfcf3610c8d989f16eba68f0f501b90c21b7de9ead380c8f",
+      "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\fixed-toggle\\B"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\m050-xorb-family-stress-20261001\\accelerated\\population-k2-09-xorb-o1\\runs\\k2-09__family-stress-20261001-k2-09-2484e7922c4f286b56951162\\zombies\\zom20a",
+      "bytes": 73,
+      "sha256": "a950e618ea2e127096c85f486fb555c264730d924a2192c407aa66e6e0318eb6",
+      "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\zombies\\zom20a"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\m050-xorb-family-stress-20261001\\accelerated\\population-k2-09-xorb-o1\\runs\\k2-09__family-stress-20261001-k2-09-2484e7922c4f286b56951162\\zombies\\zom20b",
+      "bytes": 382,
+      "sha256": "af6394c021ccb5e486db507e2ccd787bd5675f8fec88fd2ddbe9f834566852ce",
+      "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\zombies\\zom20b"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\m050-xorb-family-stress-20261001\\accelerated\\population-k2-09-xorb-o1\\runs\\k2-09__family-stress-20261001-k2-09-2484e7922c4f286b56951162\\zombies\\zom20c",
+      "bytes": 232,
+      "sha256": "3d3f209967f51a7344e0eab582bc04d1e694da5a73e3682a26ed483dcab7a443",
+      "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\zombies\\zom20c"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\m050-xorb-family-stress-20261001\\accelerated\\population-k2-09-xorb-o1\\runs\\k2-09__family-stress-20261001-k2-09-2484e7922c4f286b56951162\\zombies\\zom20d",
+      "bytes": 382,
+      "sha256": "923dd6abebbb7bb502ec5a02873c26175820ada5c4409d179d8464f0e90cb6fc",
+      "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\zombies\\zom20d"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\m050-xorb-family-stress-20261001\\accelerated\\population-k2-09-xorb-o1\\jobs.nul",
+      "bytes": 785,
+      "sha256": "c92f51b6a0ada8fab1d2b6a792d809c502a05be6102b599a883b9095835f03f8"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\m050-xorb-family-stress-20261001\\accelerated\\population-k2-09-xorb-o1\\derived-config.json",
+      "bytes": 3210,
+      "sha256": "766e722e96806a69acf9312122877ac1414f5d07bfe1a5b56328984c75ad6ead"
+    }
+  ],
+  "sourceFiles": [
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+      "bytes": 6601794,
+      "sha256": "31639072397eaf69d99e90b10d8fa594a7446951f1137b7ebd298378f5ec318d"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\runtime\\classes\\SerialBatchMain$Job.class",
+      "bytes": 410,
+      "sha256": "fa8c2fc008a1fb564209e23eef5193b37050cead9ce2db635f81928ffb01cc79"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\runtime\\classes\\SerialBatchMain$Runner.class",
+      "bytes": 7147,
+      "sha256": "100e9be36aed76e02ff2cd8fae3e420f2b49ea6325752af3b2065723d79d04ec"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\runtime\\classes\\SerialBatchMain.class",
+      "bytes": 5177,
+      "sha256": "06cbeda757e36c075ad255a0b423df842046987d9537ba9bb103a57d40d1023c"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\int87\\classes\\il\\co\\codeguru\\corewars8086\\cpu\\Cpu.class",
+      "bytes": 29990,
+      "sha256": "e358439ba520a69bb77a591c14d74ca84ad3273c8faa026f52413bd969f6e791"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\int87\\classes\\il\\co\\codeguru\\corewars8086\\memory\\RealModeMemoryImpl.class",
+      "bytes": 1582,
+      "sha256": "eab4aa031b78ab182b93d0bc90be6f4f83ec5d1c0076c420acf04920b298c8fc"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\int87\\classes\\il\\co\\codeguru\\corewars8086\\memory\\RestrictedAccessRealModeMemory.class",
+      "bytes": 2516,
+      "sha256": "b5baea97eb57dde63934a8da0563a2ec3a964be2c454eafab197c88a844af60b"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\war\\combined\\classes\\il\\co\\codeguru\\corewars8086\\war\\War.class",
+      "bytes": 8673,
+      "sha256": "b6f8a9fd20429e5c32af7021bfe25c09ca86f3a68e8fac7b73b8789ad7eeedde"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\runtime\\research-batch.mjs",
+      "bytes": 20041,
+      "sha256": "df8d50e2cb7c15ff01d6e5b72cf32eac3c0fa2e51b3b2a8878c78b566abd20ef"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\runtime\\batch-format.mjs",
+      "bytes": 1483,
+      "sha256": "46ad7ad4f92b7e9884ce1a008c8bbd65f9093217ef52506047d09a2b8c6baa8e"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\runtime\\SerialBatchMain.java",
+      "bytes": 11133,
+      "sha256": "0298207e1ab699a40afde134a6a43e6b583250c44f4666e655dc622905b5d9ff"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\m050-pointer-operator\\xor-b\\A",
+      "bytes": 189,
+      "sha256": "0268ce4f301bf2ada8566f4e608180a0670a335a80b9c2b93b67aee2b632bd44"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\m050-pointer-operator\\xor-b\\B",
+      "bytes": 117,
+      "sha256": "fb66036e0b20a8df162da32e453cc148b5ff5ea0d1494439f3c417be0a57d994"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_GSA_B331",
+      "bytes": 476,
+      "sha256": "b669a39358c457bbd739710d2a82e6c7f5bfb20125922b153207209d2bf74350"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_GSA_B332",
+      "bytes": 476,
+      "sha256": "b669a39358c457bbd739710d2a82e6c7f5bfb20125922b153207209d2bf74350"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\e1\\A",
+      "bytes": 184,
+      "sha256": "9447b5add61d6f18bff2708adfd2038c3eb1a9008dd9cf03df5c046eff4a4349"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\e1\\B",
+      "bytes": 115,
+      "sha256": "99055d82958f813de2067a17dde8ea361c749bd4dc916095a4dad1ad8e13ce2b"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\fixed-toggle\\A",
+      "bytes": 193,
+      "sha256": "bea990bbf2c60cb4c39d80dd5b533f83a1eb62f1ad202020c6d4e93cbebc2747"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\fixed-toggle\\B",
+      "bytes": 121,
+      "sha256": "9761054288100948cfcf3610c8d989f16eba68f0f501b90c21b7de9ead380c8f"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\zombies\\zom20a",
+      "bytes": 73,
+      "sha256": "a950e618ea2e127096c85f486fb555c264730d924a2192c407aa66e6e0318eb6"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\zombies\\zom20b",
+      "bytes": 382,
+      "sha256": "af6394c021ccb5e486db507e2ccd787bd5675f8fec88fd2ddbe9f834566852ce"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\zombies\\zom20c",
+      "bytes": 232,
+      "sha256": "3d3f209967f51a7344e0eab582bc04d1e694da5a73e3682a26ed483dcab7a443"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\zombies\\zom20d",
+      "bytes": 382,
+      "sha256": "923dd6abebbb7bb502ec5a02873c26175820ada5c4409d179d8464f0e90cb6fc"
+    }
+  ],
+  "jobs": [
+    {
+      "id": "job-1",
+      "runId": "k2-09__family-stress-20261001-k2-09-2484e7922c4f286b56951162",
+      "cohortId": "k2-09",
+      "seed": "family-stress-20261001-k2-09-2484e7922c4f286b56951162",
+      "battles": 10,
+      "folder": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\m050-xorb-family-stress-20261001\\accelerated\\population-k2-09-xorb-o1\\runs\\k2-09__family-stress-20261001-k2-09-2484e7922c4f286b56951162",
+      "inputs": {
+        "A00_TEST": [
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\m050-pointer-operator\\xor-b\\A",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\m050-xorb-family-stress-20261001\\accelerated\\population-k2-09-xorb-o1\\runs\\k2-09__family-stress-20261001-k2-09-2484e7922c4f286b56951162\\survivors\\A00_TEST1",
+            "bytes": 189,
+            "sha256": "0268ce4f301bf2ada8566f4e608180a0670a335a80b9c2b93b67aee2b632bd44"
+          },
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\m050-pointer-operator\\xor-b\\B",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\m050-xorb-family-stress-20261001\\accelerated\\population-k2-09-xorb-o1\\runs\\k2-09__family-stress-20261001-k2-09-2484e7922c4f286b56951162\\survivors\\A00_TEST2",
+            "bytes": 117,
+            "sha256": "fb66036e0b20a8df162da32e453cc148b5ff5ea0d1494439f3c417be0a57d994"
+          }
+        ],
+        "A_GSA_B33": [
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_GSA_B331",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\m050-xorb-family-stress-20261001\\accelerated\\population-k2-09-xorb-o1\\runs\\k2-09__family-stress-20261001-k2-09-2484e7922c4f286b56951162\\survivors\\A_GSA_B331",
+            "bytes": 476,
+            "sha256": "b669a39358c457bbd739710d2a82e6c7f5bfb20125922b153207209d2bf74350"
+          },
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_GSA_B332",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\m050-xorb-family-stress-20261001\\accelerated\\population-k2-09-xorb-o1\\runs\\k2-09__family-stress-20261001-k2-09-2484e7922c4f286b56951162\\survivors\\A_GSA_B332",
+            "bytes": 476,
+            "sha256": "b669a39358c457bbd739710d2a82e6c7f5bfb20125922b153207209d2bf74350"
+          }
+        ],
+        "CF02_e1": [
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\e1\\A",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\m050-xorb-family-stress-20261001\\accelerated\\population-k2-09-xorb-o1\\runs\\k2-09__family-stress-20261001-k2-09-2484e7922c4f286b56951162\\survivors\\CF02_e11",
+            "bytes": 184,
+            "sha256": "9447b5add61d6f18bff2708adfd2038c3eb1a9008dd9cf03df5c046eff4a4349"
+          },
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\e1\\B",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\m050-xorb-family-stress-20261001\\accelerated\\population-k2-09-xorb-o1\\runs\\k2-09__family-stress-20261001-k2-09-2484e7922c4f286b56951162\\survivors\\CF02_e12",
+            "bytes": 115,
+            "sha256": "99055d82958f813de2067a17dde8ea361c749bd4dc916095a4dad1ad8e13ce2b"
+          }
+        ],
+        "CF05_fixed_toggle": [
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\fixed-toggle\\A",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\m050-xorb-family-stress-20261001\\accelerated\\population-k2-09-xorb-o1\\runs\\k2-09__family-stress-20261001-k2-09-2484e7922c4f286b56951162\\survivors\\CF05_fixed_toggle1",
+            "bytes": 193,
+            "sha256": "bea990bbf2c60cb4c39d80dd5b533f83a1eb62f1ad202020c6d4e93cbebc2747"
+          },
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\fixed-toggle\\B",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\m050-xorb-family-stress-20261001\\accelerated\\population-k2-09-xorb-o1\\runs\\k2-09__family-stress-20261001-k2-09-2484e7922c4f286b56951162\\survivors\\CF05_fixed_toggle2",
+            "bytes": 121,
+            "sha256": "9761054288100948cfcf3610c8d989f16eba68f0f501b90c21b7de9ead380c8f"
+          }
+        ]
+      },
+      "zombies": [
+        {
+          "name": "zom20a",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\zombies\\zom20a",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\m050-xorb-family-stress-20261001\\accelerated\\population-k2-09-xorb-o1\\runs\\k2-09__family-stress-20261001-k2-09-2484e7922c4f286b56951162\\zombies\\zom20a",
+          "bytes": 73,
+          "sha256": "a950e618ea2e127096c85f486fb555c264730d924a2192c407aa66e6e0318eb6"
+        },
+        {
+          "name": "zom20b",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\zombies\\zom20b",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\m050-xorb-family-stress-20261001\\accelerated\\population-k2-09-xorb-o1\\runs\\k2-09__family-stress-20261001-k2-09-2484e7922c4f286b56951162\\zombies\\zom20b",
+          "bytes": 382,
+          "sha256": "af6394c021ccb5e486db507e2ccd787bd5675f8fec88fd2ddbe9f834566852ce"
+        },
+        {
+          "name": "zom20c",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\zombies\\zom20c",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\m050-xorb-family-stress-20261001\\accelerated\\population-k2-09-xorb-o1\\runs\\k2-09__family-stress-20261001-k2-09-2484e7922c4f286b56951162\\zombies\\zom20c",
+          "bytes": 232,
+          "sha256": "3d3f209967f51a7344e0eab582bc04d1e694da5a73e3682a26ed483dcab7a443"
+        },
+        {
+          "name": "zom20d",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\zombies\\zom20d",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\m050-xorb-family-stress-20261001\\accelerated\\population-k2-09-xorb-o1\\runs\\k2-09__family-stress-20261001-k2-09-2484e7922c4f286b56951162\\zombies\\zom20d",
+          "bytes": 382,
+          "sha256": "923dd6abebbb7bb502ec5a02873c26175820ada5c4409d179d8464f0e90cb6fc"
+        }
+      ],
+      "zombieDirectoryEntries": [
+        "zom20a",
+        "zom20b",
+        "zom20c",
+        "zom20d"
+      ],
+      "scorePath": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\m050-xorb-family-stress-20261001\\accelerated\\population-k2-09-xorb-o1\\runs\\k2-09__family-stress-20261001-k2-09-2484e7922c4f286b56951162\\scores.csv",
+      "telemetryPath": null,
+      "args": [
+        "--headless",
+        "--comboSize",
+        "4",
+        "--battlesPerCombo",
+        "10",
+        "--seed",
+        "family-stress-20261001-k2-09-2484e7922c4f286b56951162",
+        "--threads",
+        "1",
+        "--warriorsDir",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\m050-xorb-family-stress-20261001\\accelerated\\population-k2-09-xorb-o1\\runs\\k2-09__family-stress-20261001-k2-09-2484e7922c4f286b56951162\\survivors",
+        "--zombiesDir",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\m050-xorb-family-stress-20261001\\accelerated\\population-k2-09-xorb-o1\\runs\\k2-09__family-stress-20261001-k2-09-2484e7922c4f286b56951162\\zombies",
+        "--outputFile",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\m050-xorb-family-stress-20261001\\accelerated\\population-k2-09-xorb-o1\\runs\\k2-09__family-stress-20261001-k2-09-2484e7922c4f286b56951162\\scores.csv",
+        "--parallel=false"
+      ]
+    }
+  ],
+  "command": {
+    "executable": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\temurin8-jre\\jdk8u504-b01-jre\\bin\\java.exe",
+    "args": [
+      "-cp",
+      "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\m050-xorb-family-stress-20261001\\accelerated\\population-k2-09-xorb-o1\\runtime\\wrapper;C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\m050-xorb-family-stress-20261001\\accelerated\\population-k2-09-xorb-o1\\runtime\\overlay-1;C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\m050-xorb-family-stress-20261001\\accelerated\\population-k2-09-xorb-o1\\runtime\\overlay-2;C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\m050-xorb-family-stress-20261001\\accelerated\\population-k2-09-xorb-o1\\runtime\\base-engine.jar",
+      "SerialBatchMain",
+      "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\m050-xorb-family-stress-20261001\\accelerated\\population-k2-09-xorb-o1\\jobs.nul"
+    ]
+  },
+  "conventions": {
+    "order": "original cohort-major, seed-minor order, one synchronous fresh Competition/Options/Repository per block",
+    "timing": "per-job elapsedSeconds is in-JVM wrapper time; processElapsedSeconds includes JVM startup and shutdown; do not compare the two as equal quantities",
+    "zombies": "copied in original config order without renaming beyond official safeName; directory listing captured; engine itself retains its unsorted enumeration"
+  }
+}

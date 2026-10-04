@@ -1,0 +1,7 @@
+const fs=require('fs'),path=require('path');
+const batch=path.join(__dirname,'batch7');
+const candidates=['camo_a','camo_b','camo_both'].map(id=>{
+ const dir=path.join(batch,id),m=JSON.parse(fs.readFileSync(path.join(dir,'build/manifest.json'),'utf8'));
+ return{id:'a001_'+id,sources:m.map(x=>x.input),warriors:m.map(x=>x.output),sizes:m.map(x=>x.size),sha256:m.map(x=>x.binarySha256),edits:'Changed warrior(s): AX marker1FFF->18FF, initial and worker CALL FAR [BX] FF1F -> CALL FAR [BX+SI] FF18. Same instruction sizes and counts; all original fixed offsets preserved.',hypothesis:'SI=0 on entry into both far-call sites and recursive seed, so alternate ModRM encoding preserves painting while evading exact FF1F or adjacent worker pattern signatures.',failure_modes:'Corrupted SI now changes the indirect operand where old BX-only call might survive. Signature-based opponents may still recognize stack returns or other unchanged bytes; no automatic score gain.',verification:'Official Cpu isolated restricted-memory smoke of modified A/B:20k opcodes at five placements; assertion verifies SI=0 before every FF18 call. Original startup timing and steady launch counts retained.',evidence:path.join(__dirname,'camo-smoke.txt')};
+});
+const out=path.join(batch,'candidates.json');if(fs.existsSync(out))throw Error('immutable exists');fs.writeFileSync(out,JSON.stringify({schema:'cooperative-arena-candidates-v1',baseline:'original_v6',provenance:'Game-code derivatives of friend-provided V6; originals unchanged.',candidates},null,2)+'\n');

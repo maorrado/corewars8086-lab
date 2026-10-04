@@ -1,6 +1,18 @@
 # Second-agent handover — CodeGuru Xtreme research
 
-This is a separate, clean worktree for the second agent on
+Current navigation update, 2026-10-04: the research branch described here has
+been integrated into `codex/optimize-2025-survivors`. The current final reference
+is zchain3; m049/m050 are historical catalog entries. Read `strong-codes/README.md`
+and `study-notes/codex-research-20261004/README.md` before relying on the older
+setup instructions below. Worktree isolation still applies: do not edit another
+agent's active checkout or change its branch.
+
+## Historical second-agent setup (2026-10-03)
+
+The following describes the separate agent2 checkout, not instructions to switch
+the primary checkout away from `codex/optimize-2025-survivors`.
+
+This was a separate, clean worktree for the second agent on
 `agent2/research-2026-10-03`, created from commit
 `bca49e648b057b534c22e35e3480e51787423f26` of
 `codex/optimize-2025-survivors`. Work **only in this directory and branch**.
@@ -23,7 +35,7 @@ research files and belongs to the other agent; do not edit or clean it.
 
 ## Research map and decision rule
 
-- `final/` is the committed Chimera m050 reference, not proof of a universally
+- At this handover's original snapshot, `final/` was the committed Chimera m050 reference, not proof of a universally
   strongest 2026 submission. Its binary hashes and promotion evidence are in
   `final/README.md` and `experiments/m050-promotion-2026-09-28.json`. A known
   `New_Best` regression is documented there too.

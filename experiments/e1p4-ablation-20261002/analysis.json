@@ -1,0 +1,2057 @@
+{
+  "status": "COMPLETED_ABLATION_SCREEN",
+  "manifestSha256": "3350754d8ee30fafaa103f54ac4acf87029ab414a7e7ab807b82c0a3f98500ad",
+  "design": {
+    "panels": 8,
+    "arms": [
+      "e1p3",
+      "callcam",
+      "payloadcam",
+      "e1p4"
+    ],
+    "opponentTeams": 75,
+    "opponentGroupsPerBattle": 3,
+    "zombiesPerBattle": 4,
+    "battlesPerCohort": 50,
+    "cohortsPerPanel": 25,
+    "battlesPerArm": 10000,
+    "totalBattles": 40000,
+    "pairing": "All four candidates receive the same random partition and fresh seed within each panel; every one of the 75 teams appears once per panel.",
+    "primaryMetric": "Candidate team score per battle over the complete 2025 pool."
+  },
+  "engineJar": {
+    "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+    "sha256": "31639072397eaf69d99e90b10d8fa594a7446951f1137b7ebd298378f5ec318d"
+  },
+  "candidateHashes": {
+    "e1p3": [
+      "caced989dd55b98a749d5dc3a2d20d533e14013affb08b84572c9f76f1a05117",
+      "99055d82958f813de2067a17dde8ea361c749bd4dc916095a4dad1ad8e13ce2b"
+    ],
+    "callcam": [
+      "ce0b580bcd5aa8998e684092592e95add92a27d0644cc17e8da6f8b19991cd09",
+      "632d2b0aef76402ca40aa5752b7dc4f849e70f6dac88e4804df22ddc32ebae29"
+    ],
+    "payloadcam": [
+      "43e0a9a716e27118404d50e9bf3d1dda74523e88d1220125e5628858308284b4",
+      "7698520e25df5aac2225e7bec2a8e8964a5a21e91603dd1750f5fdd1a7577df4"
+    ],
+    "e1p4": [
+      "99192c673e5af394ed8194932b52b4f18f092804384f38d1bb2828b189c76b93",
+      "d307b92097ac68ce6073adc1e34917b2f51c0c396235c918dfc913cee7393354"
+    ]
+  },
+  "means": {
+    "e1p3": {
+      "points": 6754.166671999999,
+      "battles": 10000,
+      "meanPointsPerBattle": 0.6754166671999999
+    },
+    "callcam": {
+      "points": 6678.666668,
+      "battles": 10000,
+      "meanPointsPerBattle": 0.6678666668
+    },
+    "payloadcam": {
+      "points": 6745.666666,
+      "battles": 10000,
+      "meanPointsPerBattle": 0.6745666666
+    },
+    "e1p4": {
+      "points": 6772.666676,
+      "battles": 10000,
+      "meanPointsPerBattle": 0.6772666676
+    }
+  },
+  "panelMeans": {
+    "e1p3": [
+      0.6298666703999999,
+      0.6770666623999999,
+      0.6610666688,
+      0.6924000032000001,
+      0.6879999984000001,
+      0.6997333328,
+      0.6668000016,
+      0.6884
+    ],
+    "callcam": [
+      0.6238666672,
+      0.6662666624,
+      0.6558666656000001,
+      0.6924000064000001,
+      0.6775999984000001,
+      0.6937333328,
+      0.6528000016,
+      0.6804
+    ],
+    "payloadcam": [
+      0.6362666687999999,
+      0.6766666591999999,
+      0.6574666688,
+      0.6900000032000001,
+      0.6815999984000001,
+      0.6957333328,
+      0.6720000016,
+      0.6868
+    ],
+    "e1p4": [
+      0.6398666672,
+      0.6786666656,
+      0.659466672,
+      0.6908000000000001,
+      0.6840000016000001,
+      0.6977333328,
+      0.6760000016,
+      0.6916
+    ]
+  },
+  "pairwise": {
+    "callcam-minus-e1p3": {
+      "panelDeltas": [
+        -0.006000003199999937,
+        -0.01079999999999992,
+        -0.005200003199999914,
+        3.2000000427245823e-9,
+        -0.010400000000000076,
+        -0.006000000000000005,
+        -0.014000000000000012,
+        -0.008000000000000007
+      ],
+      "meanDeltaPointsPerBattle": -0.007550000399999979,
+      "relativePercent": -1.117828559265376,
+      "panelStandardDeviation": 0.004273172514320859,
+      "standardError": 0.0015107946310281243,
+      "t95CI": [
+        -0.011122462024320472,
+        -0.003977538775679484
+      ],
+      "positivePanels": 1,
+      "negativePanels": 7,
+      "tiePanels": 0
+    },
+    "payloadcam-minus-e1p3": {
+      "panelDeltas": [
+        0.006399998400000051,
+        -0.00040000319999999867,
+        -0.0035999999999999366,
+        -0.0023999999999999577,
+        -0.006400000000000072,
+        -0.0040000000000000036,
+        0.005199999999999982,
+        -0.0016000000000000458
+      ],
+      "meanDeltaPointsPerBattle": -0.0008500005999999977,
+      "relativePercent": -0.12584833056071165,
+      "panelStandardDeviation": 0.004482027186760327,
+      "standardError": 0.0015846359086103459,
+      "t95CI": [
+        -0.004597069100090077,
+        0.002897067900090082
+      ],
+      "positivePanels": 2,
+      "negativePanels": 6,
+      "tiePanels": 0
+    },
+    "e1p4-minus-e1p3": {
+      "panelDeltas": [
+        0.009999996800000077,
+        0.0016000032000000886,
+        -0.001599996800000003,
+        -0.0016000031999999775,
+        -0.003999996800000072,
+        -0.0020000000000000018,
+        0.009199999999999986,
+        0.0031999999999999806
+      ],
+      "meanDeltaPointsPerBattle": 0.0018500004000000098,
+      "relativePercent": 0.27390505592190245,
+      "panelStandardDeviation": 0.005280420827386116,
+      "standardError": 0.0018669106872817012,
+      "t95CI": [
+        -0.0025645418874642887,
+        0.006264542687464308
+      ],
+      "positivePanels": 4,
+      "negativePanels": 4,
+      "tiePanels": 0
+    },
+    "payloadcam-minus-callcam": {
+      "panelDeltas": [
+        0.012400001599999988,
+        0.010399996799999922,
+        0.0016000031999999775,
+        -0.0024000032000000004,
+        0.0040000000000000036,
+        0.0020000000000000018,
+        0.019199999999999995,
+        0.006399999999999961
+      ],
+      "meanDeltaPointsPerBattle": 0.006699999799999981,
+      "relativePercent": 1.0031942202029929,
+      "panelStandardDeviation": 0.006976696108781745,
+      "standardError": 0.0024666345643986854,
+      "t95CI": [
+        0.0008673358882013938,
+        0.012532663711798567
+      ],
+      "positivePanels": 7,
+      "negativePanels": 1,
+      "tiePanels": 0
+    },
+    "e1p4-minus-callcam": {
+      "panelDeltas": [
+        0.016000000000000014,
+        0.01240000320000001,
+        0.003600006399999911,
+        -0.0016000064000000203,
+        0.006400003200000004,
+        0.0040000000000000036,
+        0.0232,
+        0.011199999999999988
+      ],
+      "meanDeltaPointsPerBattle": 0.009400000799999988,
+      "relativePercent": 1.407466679695054,
+      "panelStandardDeviation": 0.007919596549609428,
+      "standardError": 0.0028000002122452053,
+      "t95CI": [
+        0.002779052392519829,
+        0.016020949207480147
+      ],
+      "positivePanels": 7,
+      "negativePanels": 1,
+      "tiePanels": 0
+    },
+    "e1p4-minus-payloadcam": {
+      "panelDeltas": [
+        0.0035999984000000262,
+        0.0020000064000000872,
+        0.0020000031999999335,
+        0.0007999967999999802,
+        0.0024000032000000004,
+        0.0020000000000000018,
+        0.0040000000000000036,
+        0.0048000000000000265
+      ],
+      "meanDeltaPointsPerBattle": 0.0027000010000000074,
+      "relativePercent": 0.4002571033651498,
+      "panelStandardDeviation": 0.0013136641188493923,
+      "standardError": 0.000464450403319928,
+      "t95CI": [
+        0.0016017503124585244,
+        0.0037982516875414906
+      ],
+      "positivePanels": 8,
+      "negativePanels": 0,
+      "tiePanels": 0
+    }
+  },
+  "contextComparisons": {
+    "callcam": [
+      {
+        "name": "A_TOM_2B2Team",
+        "panels": 8,
+        "meanDelta": -0.08750000000000004,
+        "positivePanels": 0,
+        "negativePanels": 6,
+        "tiePanels": 2
+      },
+      {
+        "name": "A_HRZ_ADDvanced",
+        "panels": 8,
+        "meanDelta": -0.0875,
+        "positivePanels": 0,
+        "negativePanels": 6,
+        "tiePanels": 2
+      },
+      {
+        "name": "Y_MTA_Hexellent",
+        "panels": 8,
+        "meanDelta": -0.030000000000000013,
+        "positivePanels": 0,
+        "negativePanels": 2,
+        "tiePanels": 6
+      },
+      {
+        "name": "A_GSA_ShmuelTurtles",
+        "panels": 8,
+        "meanDelta": -0.030000000000000013,
+        "positivePanels": 0,
+        "negativePanels": 2,
+        "tiePanels": 6
+      },
+      {
+        "name": "A_HRZ_CodeEliteGang",
+        "panels": 8,
+        "meanDelta": -0.024999999999999994,
+        "positivePanels": 0,
+        "negativePanels": 2,
+        "tiePanels": 6
+      },
+      {
+        "name": "Y_TOM_Code_Killer",
+        "panels": 8,
+        "meanDelta": -0.024999999999999994,
+        "positivePanels": 0,
+        "negativePanels": 2,
+        "tiePanels": 6
+      },
+      {
+        "name": "A_HRZ_MOV_AX_WIN",
+        "panels": 8,
+        "meanDelta": -0.0225,
+        "positivePanels": 0,
+        "negativePanels": 1,
+        "tiePanels": 7
+      },
+      {
+        "name": "A_KOB_KosherCode",
+        "panels": 8,
+        "meanDelta": -0.022499999999999992,
+        "positivePanels": 0,
+        "negativePanels": 1,
+        "tiePanels": 7
+      },
+      {
+        "name": "Y_GSA_SigmaSilent",
+        "panels": 8,
+        "meanDelta": -0.020000000000000004,
+        "positivePanels": 0,
+        "negativePanels": 1,
+        "tiePanels": 7
+      },
+      {
+        "name": "Y_BGR_theGlopyGng",
+        "panels": 8,
+        "meanDelta": -0.01875001000000001,
+        "positivePanels": 1,
+        "negativePanels": 1,
+        "tiePanels": 6
+      },
+      {
+        "name": "A_HDS_MAC",
+        "panels": 8,
+        "meanDelta": -0.0175,
+        "positivePanels": 0,
+        "negativePanels": 1,
+        "tiePanels": 7
+      },
+      {
+        "name": "A_TOM_BitBenders",
+        "panels": 8,
+        "meanDelta": -0.0175,
+        "positivePanels": 0,
+        "negativePanels": 1,
+        "tiePanels": 7
+      },
+      {
+        "name": "A_RZL_YANDE",
+        "panels": 8,
+        "meanDelta": -0.015,
+        "positivePanels": 0,
+        "negativePanels": 1,
+        "tiePanels": 7
+      },
+      {
+        "name": "A_WAN_Full_Time_Job",
+        "panels": 8,
+        "meanDelta": -0.013749999999999998,
+        "positivePanels": 1,
+        "negativePanels": 1,
+        "tiePanels": 6
+      },
+      {
+        "name": "A_HDS_NRI",
+        "panels": 8,
+        "meanDelta": -0.012500000000000011,
+        "positivePanels": 0,
+        "negativePanels": 1,
+        "tiePanels": 7
+      },
+      {
+        "name": "A_HRZ_The_Rubber_Duckies",
+        "panels": 8,
+        "meanDelta": -0.012500000000000011,
+        "positivePanels": 0,
+        "negativePanels": 1,
+        "tiePanels": 7
+      },
+      {
+        "name": "A_HLS_EmoMutants",
+        "panels": 8,
+        "meanDelta": -0.012499999999999997,
+        "positivePanels": 0,
+        "negativePanels": 1,
+        "tiePanels": 7
+      },
+      {
+        "name": "A_HRZ_LowKey_WBB",
+        "panels": 8,
+        "meanDelta": -0.012499999999999997,
+        "positivePanels": 0,
+        "negativePanels": 1,
+        "tiePanels": 7
+      },
+      {
+        "name": "A_AML_ByteReapers",
+        "panels": 8,
+        "meanDelta": -0.012499999999999997,
+        "positivePanels": 0,
+        "negativePanels": 1,
+        "tiePanels": 7
+      },
+      {
+        "name": "A_HRZ_Underflow",
+        "panels": 8,
+        "meanDelta": -0.009999999999999995,
+        "positivePanels": 0,
+        "negativePanels": 1,
+        "tiePanels": 7
+      },
+      {
+        "name": "A_IND_cgx123123",
+        "panels": 8,
+        "meanDelta": -0.009999999999999995,
+        "positivePanels": 0,
+        "negativePanels": 1,
+        "tiePanels": 7
+      },
+      {
+        "name": "A_HRZ_Code_Jokers4Life",
+        "panels": 8,
+        "meanDelta": -0.008750010000000003,
+        "positivePanels": 1,
+        "negativePanels": 1,
+        "tiePanels": 6
+      },
+      {
+        "name": "Y_HDS_TRY",
+        "panels": 8,
+        "meanDelta": -0.007500010000000015,
+        "positivePanels": 1,
+        "negativePanels": 1,
+        "tiePanels": 6
+      },
+      {
+        "name": "A_GSA_TheBytes",
+        "panels": 8,
+        "meanDelta": -0.007500000000000007,
+        "positivePanels": 0,
+        "negativePanels": 1,
+        "tiePanels": 7
+      },
+      {
+        "name": "A_HRZ_Ctrl_Alt_Elite",
+        "panels": 8,
+        "meanDelta": -0.007500000000000007,
+        "positivePanels": 0,
+        "negativePanels": 1,
+        "tiePanels": 7
+      },
+      {
+        "name": "A_AVI_AnotherBitInTheWall",
+        "panels": 8,
+        "meanDelta": -0.007500000000000007,
+        "positivePanels": 0,
+        "negativePanels": 1,
+        "tiePanels": 7
+      },
+      {
+        "name": "A_HRZ_stack_attack",
+        "panels": 8,
+        "meanDelta": -0.007500000000000007,
+        "positivePanels": 0,
+        "negativePanels": 1,
+        "tiePanels": 7
+      },
+      {
+        "name": "A_HRZ_The_almogooners",
+        "panels": 8,
+        "meanDelta": -0.0050000000000000044,
+        "positivePanels": 0,
+        "negativePanels": 2,
+        "tiePanels": 6
+      },
+      {
+        "name": "Y_TOM_AND_JERRY",
+        "panels": 8,
+        "meanDelta": -0.0050000000000000044,
+        "positivePanels": 0,
+        "negativePanels": 2,
+        "tiePanels": 6
+      },
+      {
+        "name": "A_GSA_GhostBytes_0x",
+        "panels": 8,
+        "meanDelta": -0.0025000000000000022,
+        "positivePanels": 0,
+        "negativePanels": 1,
+        "tiePanels": 7
+      },
+      {
+        "name": "A_AVI_Fishandpoultry",
+        "panels": 8,
+        "meanDelta": -0.0024999999999999953,
+        "positivePanels": 0,
+        "negativePanels": 1,
+        "tiePanels": 7
+      },
+      {
+        "name": "A_HRZ_TEST_ticals",
+        "panels": 8,
+        "meanDelta": -0.0024999999999999953,
+        "positivePanels": 0,
+        "negativePanels": 1,
+        "tiePanels": 7
+      },
+      {
+        "name": "A_HDS_ATW_Solo",
+        "panels": 8,
+        "meanDelta": -0.0012500000000000011,
+        "positivePanels": 0,
+        "negativePanels": 1,
+        "tiePanels": 7
+      },
+      {
+        "name": "A_OHS_TOMEX",
+        "panels": 8,
+        "meanDelta": -0.0012500000000000011,
+        "positivePanels": 0,
+        "negativePanels": 1,
+        "tiePanels": 7
+      },
+      {
+        "name": "Y_ELD_FriendlyFire",
+        "panels": 8,
+        "meanDelta": -0.0012500000000000011,
+        "positivePanels": 0,
+        "negativePanels": 1,
+        "tiePanels": 7
+      },
+      {
+        "name": "A_TOM_tson_el_akod",
+        "panels": 8,
+        "meanDelta": -0.0012500000000000011,
+        "positivePanels": 0,
+        "negativePanels": 1,
+        "tiePanels": 7
+      },
+      {
+        "name": "A_IND_stuxnet",
+        "panels": 8,
+        "meanDelta": -0.0012500000000000011,
+        "positivePanels": 0,
+        "negativePanels": 1,
+        "tiePanels": 7
+      },
+      {
+        "name": "A_GSA_VanLavan",
+        "panels": 8,
+        "meanDelta": -0.0012499900000000064,
+        "positivePanels": 1,
+        "negativePanels": 1,
+        "tiePanels": 6
+      },
+      {
+        "name": "A_HRZ_L",
+        "panels": 8,
+        "meanDelta": 0,
+        "positivePanels": 0,
+        "negativePanels": 0,
+        "tiePanels": 8
+      },
+      {
+        "name": "A_OHS_cgxPro",
+        "panels": 8,
+        "meanDelta": 0,
+        "positivePanels": 0,
+        "negativePanels": 0,
+        "tiePanels": 8
+      },
+      {
+        "name": "A_HRZ_InCtrl",
+        "panels": 8,
+        "meanDelta": 0,
+        "positivePanels": 0,
+        "negativePanels": 0,
+        "tiePanels": 8
+      },
+      {
+        "name": "A_TOM_Syntax_Terror",
+        "panels": 8,
+        "meanDelta": 0,
+        "positivePanels": 0,
+        "negativePanels": 0,
+        "tiePanels": 8
+      },
+      {
+        "name": "A_WHS_K0F1M_AL_T1L1M",
+        "panels": 8,
+        "meanDelta": 0,
+        "positivePanels": 0,
+        "negativePanels": 0,
+        "tiePanels": 8
+      },
+      {
+        "name": "A_HDS_GoldenLamed",
+        "panels": 8,
+        "meanDelta": 0,
+        "positivePanels": 0,
+        "negativePanels": 0,
+        "tiePanels": 8
+      },
+      {
+        "name": "A_WAN_OnlyCode",
+        "panels": 8,
+        "meanDelta": 0,
+        "positivePanels": 0,
+        "negativePanels": 0,
+        "tiePanels": 8
+      },
+      {
+        "name": "Y_SZR_BrvazimAlSteroidim",
+        "panels": 8,
+        "meanDelta": 0,
+        "positivePanels": 0,
+        "negativePanels": 0,
+        "tiePanels": 8
+      },
+      {
+        "name": "A_HRZ_Registered_Winners",
+        "panels": 8,
+        "meanDelta": 0,
+        "positivePanels": 0,
+        "negativePanels": 0,
+        "tiePanels": 8
+      },
+      {
+        "name": "A_OHS_BatteringRAM",
+        "panels": 8,
+        "meanDelta": 0,
+        "positivePanels": 0,
+        "negativePanels": 0,
+        "tiePanels": 8
+      },
+      {
+        "name": "A_HRZ_Pixar_Lamps",
+        "panels": 8,
+        "meanDelta": 0,
+        "positivePanels": 0,
+        "negativePanels": 0,
+        "tiePanels": 8
+      },
+      {
+        "name": "Y_TOM_The_Crushers",
+        "panels": 8,
+        "meanDelta": 0,
+        "positivePanels": 0,
+        "negativePanels": 0,
+        "tiePanels": 8
+      },
+      {
+        "name": "A_ORT_Pegasus_Hex",
+        "panels": 8,
+        "meanDelta": 0,
+        "positivePanels": 0,
+        "negativePanels": 0,
+        "tiePanels": 8
+      },
+      {
+        "name": "A_ATL_R1DDLE",
+        "panels": 8,
+        "meanDelta": 0,
+        "positivePanels": 0,
+        "negativePanels": 0,
+        "tiePanels": 8
+      },
+      {
+        "name": "Y_TOM_Thefrogs",
+        "panels": 8,
+        "meanDelta": 0,
+        "positivePanels": 0,
+        "negativePanels": 0,
+        "tiePanels": 8
+      },
+      {
+        "name": "A_HRZ_Thingies",
+        "panels": 8,
+        "meanDelta": 0,
+        "positivePanels": 0,
+        "negativePanels": 0,
+        "tiePanels": 8
+      },
+      {
+        "name": "Y_GSA_3Plate_Benchers",
+        "panels": 8,
+        "meanDelta": 0,
+        "positivePanels": 0,
+        "negativePanels": 0,
+        "tiePanels": 8
+      },
+      {
+        "name": "A_ORT_TheGoats",
+        "panels": 8,
+        "meanDelta": 0,
+        "positivePanels": 0,
+        "negativePanels": 0,
+        "tiePanels": 8
+      },
+      {
+        "name": "A_HRZ_TitanicSwimTeam",
+        "panels": 8,
+        "meanDelta": 0,
+        "positivePanels": 0,
+        "negativePanels": 0,
+        "tiePanels": 8
+      },
+      {
+        "name": "A_OHS_TrojanByte",
+        "panels": 8,
+        "meanDelta": 0,
+        "positivePanels": 0,
+        "negativePanels": 0,
+        "tiePanels": 8
+      },
+      {
+        "name": "A_OST_Gamma",
+        "panels": 8,
+        "meanDelta": 0,
+        "positivePanels": 0,
+        "negativePanels": 0,
+        "tiePanels": 8
+      },
+      {
+        "name": "A_HDS_IWDIA_nachalo",
+        "panels": 8,
+        "meanDelta": 0,
+        "positivePanels": 0,
+        "negativePanels": 0,
+        "tiePanels": 8
+      },
+      {
+        "name": "A_HRZ_fisherEXE",
+        "panels": 8,
+        "meanDelta": 0,
+        "positivePanels": 0,
+        "negativePanels": 0,
+        "tiePanels": 8
+      },
+      {
+        "name": "A_HRZ_BinaryBandits",
+        "panels": 8,
+        "meanDelta": 0,
+        "positivePanels": 0,
+        "negativePanels": 0,
+        "tiePanels": 8
+      },
+      {
+        "name": "Y_SZR_The_Chargers",
+        "panels": 8,
+        "meanDelta": 0,
+        "positivePanels": 0,
+        "negativePanels": 0,
+        "tiePanels": 8
+      },
+      {
+        "name": "A_GSA_B33",
+        "panels": 8,
+        "meanDelta": 0,
+        "positivePanels": 0,
+        "negativePanels": 0,
+        "tiePanels": 8
+      },
+      {
+        "name": "A_GSA_GoonSquad",
+        "panels": 8,
+        "meanDelta": 0,
+        "positivePanels": 0,
+        "negativePanels": 0,
+        "tiePanels": 8
+      },
+      {
+        "name": "A_GSA_callfart",
+        "panels": 8,
+        "meanDelta": 9.999999994736442e-9,
+        "positivePanels": 1,
+        "negativePanels": 0,
+        "tiePanels": 7
+      },
+      {
+        "name": "A_HDS_YOY",
+        "panels": 8,
+        "meanDelta": 9.999999994736442e-9,
+        "positivePanels": 1,
+        "negativePanels": 0,
+        "tiePanels": 7
+      },
+      {
+        "name": "A_WAN_Baltika9",
+        "panels": 8,
+        "meanDelta": 0.0012499999999999942,
+        "positivePanels": 1,
+        "negativePanels": 0,
+        "tiePanels": 7
+      },
+      {
+        "name": "A_TOM_anonymous",
+        "panels": 8,
+        "meanDelta": 0.0012499999999999942,
+        "positivePanels": 1,
+        "negativePanels": 0,
+        "tiePanels": 7
+      },
+      {
+        "name": "A_IND_BRA",
+        "panels": 8,
+        "meanDelta": 0.0012500000000000011,
+        "positivePanels": 1,
+        "negativePanels": 0,
+        "tiePanels": 7
+      },
+      {
+        "name": "A_HRZ_PowerRangers",
+        "panels": 8,
+        "meanDelta": 0.0024999899999999797,
+        "positivePanels": 1,
+        "negativePanels": 0,
+        "tiePanels": 7
+      },
+      {
+        "name": "A_HRZ_Grindo_Holics",
+        "panels": 8,
+        "meanDelta": 0.0024999999999999953,
+        "positivePanels": 1,
+        "negativePanels": 0,
+        "tiePanels": 7
+      },
+      {
+        "name": "Y_GSA_LVS_FIT",
+        "panels": 8,
+        "meanDelta": 0.0024999999999999953,
+        "positivePanels": 1,
+        "negativePanels": 0,
+        "tiePanels": 7
+      },
+      {
+        "name": "A_BZV_SKYENT",
+        "panels": 8,
+        "meanDelta": 0.0037499799999999722,
+        "positivePanels": 2,
+        "negativePanels": 0,
+        "tiePanels": 6
+      },
+      {
+        "name": "A_GGN_OpcodeHunter",
+        "panels": 8,
+        "meanDelta": 0.0049999999999999906,
+        "positivePanels": 3,
+        "negativePanels": 0,
+        "tiePanels": 5
+      }
+    ],
+    "payloadcam": [
+      {
+        "name": "A_HLS_EmoMutants",
+        "panels": 8,
+        "meanDelta": -0.17124999999999999,
+        "positivePanels": 0,
+        "negativePanels": 8,
+        "tiePanels": 0
+      },
+      {
+        "name": "A_AML_ByteReapers",
+        "panels": 8,
+        "meanDelta": -0.03999999999999999,
+        "positivePanels": 0,
+        "negativePanels": 2,
+        "tiePanels": 6
+      },
+      {
+        "name": "A_HRZ_LowKey_WBB",
+        "panels": 8,
+        "meanDelta": -0.0375,
+        "positivePanels": 0,
+        "negativePanels": 1,
+        "tiePanels": 7
+      },
+      {
+        "name": "A_HRZ_Grindo_Holics",
+        "panels": 8,
+        "meanDelta": -0.03,
+        "positivePanels": 0,
+        "negativePanels": 2,
+        "tiePanels": 6
+      },
+      {
+        "name": "A_HRZ_Pixar_Lamps",
+        "panels": 8,
+        "meanDelta": -0.024999999999999994,
+        "positivePanels": 0,
+        "negativePanels": 2,
+        "tiePanels": 6
+      },
+      {
+        "name": "A_HRZ_L",
+        "panels": 8,
+        "meanDelta": -0.022499999999999992,
+        "positivePanels": 0,
+        "negativePanels": 1,
+        "tiePanels": 7
+      },
+      {
+        "name": "A_IND_cgx123123",
+        "panels": 8,
+        "meanDelta": -0.022499999999999985,
+        "positivePanels": 1,
+        "negativePanels": 1,
+        "tiePanels": 6
+      },
+      {
+        "name": "A_HDS_GoldenLamed",
+        "panels": 8,
+        "meanDelta": -0.018750000000000003,
+        "positivePanels": 1,
+        "negativePanels": 2,
+        "tiePanels": 5
+      },
+      {
+        "name": "Y_HDS_TRY",
+        "panels": 8,
+        "meanDelta": -0.017500010000000024,
+        "positivePanels": 1,
+        "negativePanels": 2,
+        "tiePanels": 5
+      },
+      {
+        "name": "A_OHS_cgxPro",
+        "panels": 8,
+        "meanDelta": -0.017500000000000016,
+        "positivePanels": 2,
+        "negativePanels": 2,
+        "tiePanels": 4
+      },
+      {
+        "name": "A_GSA_VanLavan",
+        "panels": 8,
+        "meanDelta": -0.01624999500000001,
+        "positivePanels": 0,
+        "negativePanels": 2,
+        "tiePanels": 6
+      },
+      {
+        "name": "A_HRZ_Thingies",
+        "panels": 8,
+        "meanDelta": -0.011250000000000003,
+        "positivePanels": 1,
+        "negativePanels": 1,
+        "tiePanels": 6
+      },
+      {
+        "name": "Y_TOM_Code_Killer",
+        "panels": 8,
+        "meanDelta": -0.007499999999999993,
+        "positivePanels": 2,
+        "negativePanels": 2,
+        "tiePanels": 4
+      },
+      {
+        "name": "A_AVI_Fishandpoultry",
+        "panels": 8,
+        "meanDelta": -0.0050000000000000044,
+        "positivePanels": 0,
+        "negativePanels": 2,
+        "tiePanels": 6
+      },
+      {
+        "name": "A_ORT_TheGoats",
+        "panels": 8,
+        "meanDelta": -0.0050000000000000044,
+        "positivePanels": 0,
+        "negativePanels": 2,
+        "tiePanels": 6
+      },
+      {
+        "name": "Y_TOM_Thefrogs",
+        "panels": 8,
+        "meanDelta": -0.0049999999999999906,
+        "positivePanels": 1,
+        "negativePanels": 3,
+        "tiePanels": 4
+      },
+      {
+        "name": "A_IND_stuxnet",
+        "panels": 8,
+        "meanDelta": -0.0037500000000000033,
+        "positivePanels": 0,
+        "negativePanels": 2,
+        "tiePanels": 6
+      },
+      {
+        "name": "A_HDS_ATW_Solo",
+        "panels": 8,
+        "meanDelta": -0.0037499999999999895,
+        "positivePanels": 0,
+        "negativePanels": 2,
+        "tiePanels": 6
+      },
+      {
+        "name": "A_TOM_Syntax_Terror",
+        "panels": 8,
+        "meanDelta": -0.0025000000000000022,
+        "positivePanels": 0,
+        "negativePanels": 1,
+        "tiePanels": 7
+      },
+      {
+        "name": "Y_GSA_3Plate_Benchers",
+        "panels": 8,
+        "meanDelta": -0.0025000000000000022,
+        "positivePanels": 1,
+        "negativePanels": 2,
+        "tiePanels": 5
+      },
+      {
+        "name": "A_GGN_OpcodeHunter",
+        "panels": 8,
+        "meanDelta": -0.0025000000000000022,
+        "positivePanels": 0,
+        "negativePanels": 1,
+        "tiePanels": 7
+      },
+      {
+        "name": "Y_TOM_AND_JERRY",
+        "panels": 8,
+        "meanDelta": -0.0025000000000000022,
+        "positivePanels": 0,
+        "negativePanels": 1,
+        "tiePanels": 7
+      },
+      {
+        "name": "A_HDS_MAC",
+        "panels": 8,
+        "meanDelta": -0.0024999999999999953,
+        "positivePanels": 1,
+        "negativePanels": 1,
+        "tiePanels": 6
+      },
+      {
+        "name": "A_WAN_OnlyCode",
+        "panels": 8,
+        "meanDelta": -0.0024999999999999883,
+        "positivePanels": 0,
+        "negativePanels": 1,
+        "tiePanels": 7
+      },
+      {
+        "name": "Y_SZR_BrvazimAlSteroidim",
+        "panels": 8,
+        "meanDelta": -0.0024999999999999883,
+        "positivePanels": 0,
+        "negativePanels": 1,
+        "tiePanels": 7
+      },
+      {
+        "name": "A_HRZ_fisherEXE",
+        "panels": 8,
+        "meanDelta": -0.0024999999999999883,
+        "positivePanels": 0,
+        "negativePanels": 1,
+        "tiePanels": 7
+      },
+      {
+        "name": "Y_BGR_theGlopyGng",
+        "panels": 8,
+        "meanDelta": -0.002499995000000005,
+        "positivePanels": 1,
+        "negativePanels": 2,
+        "tiePanels": 5
+      },
+      {
+        "name": "A_TOM_tson_el_akod",
+        "panels": 8,
+        "meanDelta": -0.0012500000000000011,
+        "positivePanels": 0,
+        "negativePanels": 1,
+        "tiePanels": 7
+      },
+      {
+        "name": "A_BZV_SKYENT",
+        "panels": 8,
+        "meanDelta": -2.000000001722846e-8,
+        "positivePanels": 0,
+        "negativePanels": 2,
+        "tiePanels": 6
+      },
+      {
+        "name": "A_OHS_TrojanByte",
+        "panels": 8,
+        "meanDelta": -9.999999994736442e-9,
+        "positivePanels": 0,
+        "negativePanels": 1,
+        "tiePanels": 7
+      },
+      {
+        "name": "A_HDS_YOY",
+        "panels": 8,
+        "meanDelta": -9.999999994736442e-9,
+        "positivePanels": 0,
+        "negativePanels": 1,
+        "tiePanels": 7
+      },
+      {
+        "name": "A_GSA_callfart",
+        "panels": 8,
+        "meanDelta": 0,
+        "positivePanels": 0,
+        "negativePanels": 0,
+        "tiePanels": 8
+      },
+      {
+        "name": "A_GSA_GhostBytes_0x",
+        "panels": 8,
+        "meanDelta": 0,
+        "positivePanels": 0,
+        "negativePanels": 0,
+        "tiePanels": 8
+      },
+      {
+        "name": "A_WHS_K0F1M_AL_T1L1M",
+        "panels": 8,
+        "meanDelta": 0,
+        "positivePanels": 0,
+        "negativePanels": 0,
+        "tiePanels": 8
+      },
+      {
+        "name": "A_OHS_TOMEX",
+        "panels": 8,
+        "meanDelta": 0,
+        "positivePanels": 1,
+        "negativePanels": 1,
+        "tiePanels": 6
+      },
+      {
+        "name": "A_GSA_TheBytes",
+        "panels": 8,
+        "meanDelta": 0,
+        "positivePanels": 1,
+        "negativePanels": 1,
+        "tiePanels": 6
+      },
+      {
+        "name": "A_HRZ_Registered_Winners",
+        "panels": 8,
+        "meanDelta": 0,
+        "positivePanels": 0,
+        "negativePanels": 0,
+        "tiePanels": 8
+      },
+      {
+        "name": "A_ORT_Pegasus_Hex",
+        "panels": 8,
+        "meanDelta": 0,
+        "positivePanels": 1,
+        "negativePanels": 1,
+        "tiePanels": 6
+      },
+      {
+        "name": "A_HRZ_Code_Jokers4Life",
+        "panels": 8,
+        "meanDelta": 0,
+        "positivePanels": 0,
+        "negativePanels": 0,
+        "tiePanels": 8
+      },
+      {
+        "name": "A_WAN_Baltika9",
+        "panels": 8,
+        "meanDelta": 0,
+        "positivePanels": 0,
+        "negativePanels": 0,
+        "tiePanels": 8
+      },
+      {
+        "name": "Y_GSA_LVS_FIT",
+        "panels": 8,
+        "meanDelta": 0,
+        "positivePanels": 0,
+        "negativePanels": 0,
+        "tiePanels": 8
+      },
+      {
+        "name": "A_HRZ_The_almogooners",
+        "panels": 8,
+        "meanDelta": 0,
+        "positivePanels": 0,
+        "negativePanels": 0,
+        "tiePanels": 8
+      },
+      {
+        "name": "Y_ELD_FriendlyFire",
+        "panels": 8,
+        "meanDelta": 0,
+        "positivePanels": 0,
+        "negativePanels": 0,
+        "tiePanels": 8
+      },
+      {
+        "name": "A_HRZ_TitanicSwimTeam",
+        "panels": 8,
+        "meanDelta": 0,
+        "positivePanels": 0,
+        "negativePanels": 0,
+        "tiePanels": 8
+      },
+      {
+        "name": "A_OST_Gamma",
+        "panels": 8,
+        "meanDelta": 0,
+        "positivePanels": 0,
+        "negativePanels": 0,
+        "tiePanels": 8
+      },
+      {
+        "name": "A_HDS_IWDIA_nachalo",
+        "panels": 8,
+        "meanDelta": 0,
+        "positivePanels": 1,
+        "negativePanels": 1,
+        "tiePanels": 6
+      },
+      {
+        "name": "Y_SZR_The_Chargers",
+        "panels": 8,
+        "meanDelta": 0,
+        "positivePanels": 0,
+        "negativePanels": 0,
+        "tiePanels": 8
+      },
+      {
+        "name": "A_IND_BRA",
+        "panels": 8,
+        "meanDelta": 0,
+        "positivePanels": 0,
+        "negativePanels": 0,
+        "tiePanels": 8
+      },
+      {
+        "name": "A_GSA_B33",
+        "panels": 8,
+        "meanDelta": 0,
+        "positivePanels": 0,
+        "negativePanels": 0,
+        "tiePanels": 8
+      },
+      {
+        "name": "A_GSA_GoonSquad",
+        "panels": 8,
+        "meanDelta": 0.0012500000000000011,
+        "positivePanels": 1,
+        "negativePanels": 0,
+        "tiePanels": 7
+      },
+      {
+        "name": "A_HRZ_PowerRangers",
+        "panels": 8,
+        "meanDelta": 0.002499989999999966,
+        "positivePanels": 1,
+        "negativePanels": 1,
+        "tiePanels": 6
+      },
+      {
+        "name": "A_HRZ_Ctrl_Alt_Elite",
+        "panels": 8,
+        "meanDelta": 0.0025000000000000022,
+        "positivePanels": 1,
+        "negativePanels": 0,
+        "tiePanels": 7
+      },
+      {
+        "name": "A_OHS_BatteringRAM",
+        "panels": 8,
+        "meanDelta": 0.0025000000000000022,
+        "positivePanels": 2,
+        "negativePanels": 1,
+        "tiePanels": 5
+      },
+      {
+        "name": "Y_TOM_The_Crushers",
+        "panels": 8,
+        "meanDelta": 0.0025000000000000022,
+        "positivePanels": 2,
+        "negativePanels": 1,
+        "tiePanels": 5
+      },
+      {
+        "name": "A_ATL_R1DDLE",
+        "panels": 8,
+        "meanDelta": 0.0025000000000000022,
+        "positivePanels": 1,
+        "negativePanels": 0,
+        "tiePanels": 7
+      },
+      {
+        "name": "A_TOM_anonymous",
+        "panels": 8,
+        "meanDelta": 0.0025000000000000022,
+        "positivePanels": 1,
+        "negativePanels": 0,
+        "tiePanels": 7
+      },
+      {
+        "name": "A_HRZ_BinaryBandits",
+        "panels": 8,
+        "meanDelta": 0.0025000000000000022,
+        "positivePanels": 1,
+        "negativePanels": 0,
+        "tiePanels": 7
+      },
+      {
+        "name": "A_HRZ_InCtrl",
+        "panels": 8,
+        "meanDelta": 0.0049999999999999906,
+        "positivePanels": 2,
+        "negativePanels": 0,
+        "tiePanels": 6
+      },
+      {
+        "name": "A_HRZ_The_Rubber_Duckies",
+        "panels": 8,
+        "meanDelta": 0.0049999999999999906,
+        "positivePanels": 1,
+        "negativePanels": 0,
+        "tiePanels": 7
+      },
+      {
+        "name": "A_HRZ_Underflow",
+        "panels": 8,
+        "meanDelta": 0.005000000000000018,
+        "positivePanels": 1,
+        "negativePanels": 1,
+        "tiePanels": 6
+      },
+      {
+        "name": "A_RZL_YANDE",
+        "panels": 8,
+        "meanDelta": 0.007499999999999993,
+        "positivePanels": 1,
+        "negativePanels": 1,
+        "tiePanels": 6
+      },
+      {
+        "name": "A_HRZ_TEST_ticals",
+        "panels": 8,
+        "meanDelta": 0.007500000000000007,
+        "positivePanels": 1,
+        "negativePanels": 0,
+        "tiePanels": 7
+      },
+      {
+        "name": "A_HDS_NRI",
+        "panels": 8,
+        "meanDelta": 0.007500004999999976,
+        "positivePanels": 3,
+        "negativePanels": 1,
+        "tiePanels": 4
+      },
+      {
+        "name": "A_HRZ_stack_attack",
+        "panels": 8,
+        "meanDelta": 0.009999999999999995,
+        "positivePanels": 1,
+        "negativePanels": 1,
+        "tiePanels": 6
+      },
+      {
+        "name": "A_TOM_BitBenders",
+        "panels": 8,
+        "meanDelta": 0.010000000000000002,
+        "positivePanels": 2,
+        "negativePanels": 0,
+        "tiePanels": 6
+      },
+      {
+        "name": "Y_GSA_SigmaSilent",
+        "panels": 8,
+        "meanDelta": 0.010000000000000009,
+        "positivePanels": 2,
+        "negativePanels": 0,
+        "tiePanels": 6
+      },
+      {
+        "name": "A_WAN_Full_Time_Job",
+        "panels": 8,
+        "meanDelta": 0.011249999999999996,
+        "positivePanels": 2,
+        "negativePanels": 0,
+        "tiePanels": 6
+      },
+      {
+        "name": "Y_MTA_Hexellent",
+        "panels": 8,
+        "meanDelta": 0.01249999999999999,
+        "positivePanels": 2,
+        "negativePanels": 2,
+        "tiePanels": 4
+      },
+      {
+        "name": "A_AVI_AnotherBitInTheWall",
+        "panels": 8,
+        "meanDelta": 0.012499999999999997,
+        "positivePanels": 1,
+        "negativePanels": 0,
+        "tiePanels": 7
+      },
+      {
+        "name": "A_KOB_KosherCode",
+        "panels": 8,
+        "meanDelta": 0.012500000000000011,
+        "positivePanels": 2,
+        "negativePanels": 1,
+        "tiePanels": 5
+      },
+      {
+        "name": "A_HRZ_CodeEliteGang",
+        "panels": 8,
+        "meanDelta": 0.027500000000000017,
+        "positivePanels": 1,
+        "negativePanels": 2,
+        "tiePanels": 5
+      },
+      {
+        "name": "A_HRZ_ADDvanced",
+        "panels": 8,
+        "meanDelta": 0.037500000000000026,
+        "positivePanels": 7,
+        "negativePanels": 0,
+        "tiePanels": 1
+      },
+      {
+        "name": "A_GSA_ShmuelTurtles",
+        "panels": 8,
+        "meanDelta": 0.044999999999999984,
+        "positivePanels": 2,
+        "negativePanels": 0,
+        "tiePanels": 6
+      },
+      {
+        "name": "A_HRZ_MOV_AX_WIN",
+        "panels": 8,
+        "meanDelta": 0.045000000000000005,
+        "positivePanels": 1,
+        "negativePanels": 1,
+        "tiePanels": 6
+      },
+      {
+        "name": "A_TOM_2B2Team",
+        "panels": 8,
+        "meanDelta": 0.12999999999999998,
+        "positivePanels": 8,
+        "negativePanels": 0,
+        "tiePanels": 0
+      }
+    ],
+    "e1p4": [
+      {
+        "name": "A_HLS_EmoMutants",
+        "panels": 8,
+        "meanDelta": -0.131250005,
+        "positivePanels": 0,
+        "negativePanels": 8,
+        "tiePanels": 0
+      },
+      {
+        "name": "A_AML_ByteReapers",
+        "panels": 8,
+        "meanDelta": -0.03249999999999999,
+        "positivePanels": 0,
+        "negativePanels": 2,
+        "tiePanels": 6
+      },
+      {
+        "name": "A_HRZ_LowKey_WBB",
+        "panels": 8,
+        "meanDelta": -0.03,
+        "positivePanels": 0,
+        "negativePanels": 1,
+        "tiePanels": 7
+      },
+      {
+        "name": "A_HRZ_Grindo_Holics",
+        "panels": 8,
+        "meanDelta": -0.019999999999999997,
+        "positivePanels": 1,
+        "negativePanels": 2,
+        "tiePanels": 5
+      },
+      {
+        "name": "A_HRZ_Pixar_Lamps",
+        "panels": 8,
+        "meanDelta": -0.019999999999999997,
+        "positivePanels": 0,
+        "negativePanels": 2,
+        "tiePanels": 6
+      },
+      {
+        "name": "A_HRZ_L",
+        "panels": 8,
+        "meanDelta": -0.017499999999999995,
+        "positivePanels": 0,
+        "negativePanels": 1,
+        "tiePanels": 7
+      },
+      {
+        "name": "A_OHS_cgxPro",
+        "panels": 8,
+        "meanDelta": -0.01500000000000002,
+        "positivePanels": 2,
+        "negativePanels": 2,
+        "tiePanels": 4
+      },
+      {
+        "name": "A_HDS_GoldenLamed",
+        "panels": 8,
+        "meanDelta": -0.013749999999999998,
+        "positivePanels": 1,
+        "negativePanels": 3,
+        "tiePanels": 4
+      },
+      {
+        "name": "A_GSA_VanLavan",
+        "panels": 8,
+        "meanDelta": -0.012499995,
+        "positivePanels": 1,
+        "negativePanels": 3,
+        "tiePanels": 4
+      },
+      {
+        "name": "Y_HDS_TRY",
+        "panels": 8,
+        "meanDelta": -0.010000010000000017,
+        "positivePanels": 2,
+        "negativePanels": 1,
+        "tiePanels": 5
+      },
+      {
+        "name": "Y_TOM_AND_JERRY",
+        "panels": 8,
+        "meanDelta": -0.007500000000000007,
+        "positivePanels": 0,
+        "negativePanels": 3,
+        "tiePanels": 5
+      },
+      {
+        "name": "A_AVI_Fishandpoultry",
+        "panels": 8,
+        "meanDelta": -0.0075,
+        "positivePanels": 0,
+        "negativePanels": 3,
+        "tiePanels": 5
+      },
+      {
+        "name": "A_HRZ_Thingies",
+        "panels": 8,
+        "meanDelta": -0.006250005000000003,
+        "positivePanels": 1,
+        "negativePanels": 1,
+        "tiePanels": 6
+      },
+      {
+        "name": "A_ORT_TheGoats",
+        "panels": 8,
+        "meanDelta": -0.0050000000000000044,
+        "positivePanels": 0,
+        "negativePanels": 2,
+        "tiePanels": 6
+      },
+      {
+        "name": "A_HRZ_The_almogooners",
+        "panels": 8,
+        "meanDelta": -0.0050000000000000044,
+        "positivePanels": 0,
+        "negativePanels": 2,
+        "tiePanels": 6
+      },
+      {
+        "name": "A_IND_cgx123123",
+        "panels": 8,
+        "meanDelta": -0.0049999999999999906,
+        "positivePanels": 1,
+        "negativePanels": 1,
+        "tiePanels": 6
+      },
+      {
+        "name": "Y_TOM_Thefrogs",
+        "panels": 8,
+        "meanDelta": -0.0049999999999999906,
+        "positivePanels": 1,
+        "negativePanels": 3,
+        "tiePanels": 4
+      },
+      {
+        "name": "A_HDS_ATW_Solo",
+        "panels": 8,
+        "meanDelta": -0.0037499999999999895,
+        "positivePanels": 0,
+        "negativePanels": 2,
+        "tiePanels": 6
+      },
+      {
+        "name": "A_IND_stuxnet",
+        "panels": 8,
+        "meanDelta": -0.0037499899999999947,
+        "positivePanels": 1,
+        "negativePanels": 2,
+        "tiePanels": 5
+      },
+      {
+        "name": "A_TOM_Syntax_Terror",
+        "panels": 8,
+        "meanDelta": -0.0025000000000000022,
+        "positivePanels": 0,
+        "negativePanels": 1,
+        "tiePanels": 7
+      },
+      {
+        "name": "A_GSA_GhostBytes_0x",
+        "panels": 8,
+        "meanDelta": -0.0025000000000000022,
+        "positivePanels": 0,
+        "negativePanels": 1,
+        "tiePanels": 7
+      },
+      {
+        "name": "Y_GSA_3Plate_Benchers",
+        "panels": 8,
+        "meanDelta": -0.0025000000000000022,
+        "positivePanels": 1,
+        "negativePanels": 2,
+        "tiePanels": 5
+      },
+      {
+        "name": "A_WAN_OnlyCode",
+        "panels": 8,
+        "meanDelta": -0.0024999999999999883,
+        "positivePanels": 0,
+        "negativePanels": 1,
+        "tiePanels": 7
+      },
+      {
+        "name": "Y_SZR_BrvazimAlSteroidim",
+        "panels": 8,
+        "meanDelta": -0.0024999999999999883,
+        "positivePanels": 0,
+        "negativePanels": 1,
+        "tiePanels": 7
+      },
+      {
+        "name": "A_HRZ_fisherEXE",
+        "panels": 8,
+        "meanDelta": -0.002499995000000005,
+        "positivePanels": 1,
+        "negativePanels": 1,
+        "tiePanels": 6
+      },
+      {
+        "name": "A_OHS_TOMEX",
+        "panels": 8,
+        "meanDelta": -0.0012500000000000011,
+        "positivePanels": 1,
+        "negativePanels": 2,
+        "tiePanels": 5
+      },
+      {
+        "name": "Y_ELD_FriendlyFire",
+        "panels": 8,
+        "meanDelta": -0.0012500000000000011,
+        "positivePanels": 0,
+        "negativePanels": 1,
+        "tiePanels": 7
+      },
+      {
+        "name": "A_TOM_tson_el_akod",
+        "panels": 8,
+        "meanDelta": -0.0012500000000000011,
+        "positivePanels": 0,
+        "negativePanels": 1,
+        "tiePanels": 7
+      },
+      {
+        "name": "Y_BGR_theGlopyGng",
+        "panels": 8,
+        "meanDelta": -0.0012499950000000037,
+        "positivePanels": 2,
+        "negativePanels": 2,
+        "tiePanels": 4
+      },
+      {
+        "name": "A_GSA_TheBytes",
+        "panels": 8,
+        "meanDelta": -5.0000000112460086e-9,
+        "positivePanels": 1,
+        "negativePanels": 2,
+        "tiePanels": 5
+      },
+      {
+        "name": "A_GSA_callfart",
+        "panels": 8,
+        "meanDelta": 0,
+        "positivePanels": 0,
+        "negativePanels": 0,
+        "tiePanels": 8
+      },
+      {
+        "name": "A_WHS_K0F1M_AL_T1L1M",
+        "panels": 8,
+        "meanDelta": 0,
+        "positivePanels": 0,
+        "negativePanels": 0,
+        "tiePanels": 8
+      },
+      {
+        "name": "A_ORT_Pegasus_Hex",
+        "panels": 8,
+        "meanDelta": 0,
+        "positivePanels": 1,
+        "negativePanels": 1,
+        "tiePanels": 6
+      },
+      {
+        "name": "A_HRZ_TitanicSwimTeam",
+        "panels": 8,
+        "meanDelta": 0,
+        "positivePanels": 0,
+        "negativePanels": 0,
+        "tiePanels": 8
+      },
+      {
+        "name": "A_OHS_TrojanByte",
+        "panels": 8,
+        "meanDelta": 0,
+        "positivePanels": 0,
+        "negativePanels": 0,
+        "tiePanels": 8
+      },
+      {
+        "name": "A_OST_Gamma",
+        "panels": 8,
+        "meanDelta": 0,
+        "positivePanels": 0,
+        "negativePanels": 0,
+        "tiePanels": 8
+      },
+      {
+        "name": "A_HDS_IWDIA_nachalo",
+        "panels": 8,
+        "meanDelta": 0,
+        "positivePanels": 1,
+        "negativePanels": 1,
+        "tiePanels": 6
+      },
+      {
+        "name": "Y_SZR_The_Chargers",
+        "panels": 8,
+        "meanDelta": 0,
+        "positivePanels": 0,
+        "negativePanels": 0,
+        "tiePanels": 8
+      },
+      {
+        "name": "A_HDS_YOY",
+        "panels": 8,
+        "meanDelta": 0,
+        "positivePanels": 0,
+        "negativePanels": 0,
+        "tiePanels": 8
+      },
+      {
+        "name": "A_HDS_MAC",
+        "panels": 8,
+        "meanDelta": 6.938893903907228e-18,
+        "positivePanels": 1,
+        "negativePanels": 1,
+        "tiePanels": 6
+      },
+      {
+        "name": "A_HRZ_Registered_Winners",
+        "panels": 8,
+        "meanDelta": 4.999999983490433e-9,
+        "positivePanels": 2,
+        "negativePanels": 1,
+        "tiePanels": 5
+      },
+      {
+        "name": "A_GSA_B33",
+        "panels": 8,
+        "meanDelta": 4.999999983490433e-9,
+        "positivePanels": 1,
+        "negativePanels": 0,
+        "tiePanels": 7
+      },
+      {
+        "name": "Y_TOM_Code_Killer",
+        "panels": 8,
+        "meanDelta": 1.0000000001675335e-8,
+        "positivePanels": 3,
+        "negativePanels": 3,
+        "tiePanels": 2
+      },
+      {
+        "name": "A_WAN_Baltika9",
+        "panels": 8,
+        "meanDelta": 0.0012499999999999942,
+        "positivePanels": 1,
+        "negativePanels": 0,
+        "tiePanels": 7
+      },
+      {
+        "name": "A_HRZ_Code_Jokers4Life",
+        "panels": 8,
+        "meanDelta": 0.0012500000000000011,
+        "positivePanels": 1,
+        "negativePanels": 0,
+        "tiePanels": 7
+      },
+      {
+        "name": "A_IND_BRA",
+        "panels": 8,
+        "meanDelta": 0.0012500000000000011,
+        "positivePanels": 1,
+        "negativePanels": 0,
+        "tiePanels": 7
+      },
+      {
+        "name": "A_GSA_GoonSquad",
+        "panels": 8,
+        "meanDelta": 0.0012500000000000011,
+        "positivePanels": 1,
+        "negativePanels": 1,
+        "tiePanels": 6
+      },
+      {
+        "name": "A_GGN_OpcodeHunter",
+        "panels": 8,
+        "meanDelta": 0.0024999999999999883,
+        "positivePanels": 3,
+        "negativePanels": 1,
+        "tiePanels": 4
+      },
+      {
+        "name": "Y_GSA_LVS_FIT",
+        "panels": 8,
+        "meanDelta": 0.0024999999999999953,
+        "positivePanels": 1,
+        "negativePanels": 0,
+        "tiePanels": 7
+      },
+      {
+        "name": "A_HRZ_Ctrl_Alt_Elite",
+        "panels": 8,
+        "meanDelta": 0.0025000000000000022,
+        "positivePanels": 1,
+        "negativePanels": 0,
+        "tiePanels": 7
+      },
+      {
+        "name": "A_OHS_BatteringRAM",
+        "panels": 8,
+        "meanDelta": 0.0025000000000000022,
+        "positivePanels": 2,
+        "negativePanels": 1,
+        "tiePanels": 5
+      },
+      {
+        "name": "Y_TOM_The_Crushers",
+        "panels": 8,
+        "meanDelta": 0.0025000000000000022,
+        "positivePanels": 2,
+        "negativePanels": 1,
+        "tiePanels": 5
+      },
+      {
+        "name": "A_ATL_R1DDLE",
+        "panels": 8,
+        "meanDelta": 0.0025000000000000022,
+        "positivePanels": 1,
+        "negativePanels": 0,
+        "tiePanels": 7
+      },
+      {
+        "name": "A_HRZ_BinaryBandits",
+        "panels": 8,
+        "meanDelta": 0.0025000000000000022,
+        "positivePanels": 1,
+        "negativePanels": 0,
+        "tiePanels": 7
+      },
+      {
+        "name": "A_BZV_SKYENT",
+        "panels": 8,
+        "meanDelta": 0.003749989999999981,
+        "positivePanels": 2,
+        "negativePanels": 0,
+        "tiePanels": 6
+      },
+      {
+        "name": "A_TOM_anonymous",
+        "panels": 8,
+        "meanDelta": 0.0037500150000000163,
+        "positivePanels": 4,
+        "negativePanels": 0,
+        "tiePanels": 4
+      },
+      {
+        "name": "A_HRZ_PowerRangers",
+        "panels": 8,
+        "meanDelta": 0.004999989999999968,
+        "positivePanels": 2,
+        "negativePanels": 0,
+        "tiePanels": 6
+      },
+      {
+        "name": "A_HRZ_InCtrl",
+        "panels": 8,
+        "meanDelta": 0.0049999999999999906,
+        "positivePanels": 2,
+        "negativePanels": 0,
+        "tiePanels": 6
+      },
+      {
+        "name": "A_HRZ_TEST_ticals",
+        "panels": 8,
+        "meanDelta": 0.005000005000000023,
+        "positivePanels": 2,
+        "negativePanels": 1,
+        "tiePanels": 5
+      },
+      {
+        "name": "A_RZL_YANDE",
+        "panels": 8,
+        "meanDelta": 0.007499999999999993,
+        "positivePanels": 1,
+        "negativePanels": 1,
+        "tiePanels": 6
+      },
+      {
+        "name": "A_HRZ_The_Rubber_Duckies",
+        "panels": 8,
+        "meanDelta": 0.007499999999999993,
+        "positivePanels": 1,
+        "negativePanels": 0,
+        "tiePanels": 7
+      },
+      {
+        "name": "A_TOM_BitBenders",
+        "panels": 8,
+        "meanDelta": 0.010000000000000002,
+        "positivePanels": 2,
+        "negativePanels": 0,
+        "tiePanels": 6
+      },
+      {
+        "name": "Y_GSA_SigmaSilent",
+        "panels": 8,
+        "meanDelta": 0.010000000000000009,
+        "positivePanels": 2,
+        "negativePanels": 0,
+        "tiePanels": 6
+      },
+      {
+        "name": "A_HDS_NRI",
+        "panels": 8,
+        "meanDelta": 0.010000004999999978,
+        "positivePanels": 3,
+        "negativePanels": 1,
+        "tiePanels": 4
+      },
+      {
+        "name": "A_WAN_Full_Time_Job",
+        "panels": 8,
+        "meanDelta": 0.012500010000000006,
+        "positivePanels": 4,
+        "negativePanels": 1,
+        "tiePanels": 3
+      },
+      {
+        "name": "A_HRZ_Underflow",
+        "panels": 8,
+        "meanDelta": 0.014999990000000005,
+        "positivePanels": 1,
+        "negativePanels": 2,
+        "tiePanels": 5
+      },
+      {
+        "name": "A_HRZ_stack_attack",
+        "panels": 8,
+        "meanDelta": 0.0175,
+        "positivePanels": 1,
+        "negativePanels": 1,
+        "tiePanels": 6
+      },
+      {
+        "name": "Y_MTA_Hexellent",
+        "panels": 8,
+        "meanDelta": 0.01999999999999999,
+        "positivePanels": 2,
+        "negativePanels": 2,
+        "tiePanels": 4
+      },
+      {
+        "name": "A_KOB_KosherCode",
+        "panels": 8,
+        "meanDelta": 0.020000000000000004,
+        "positivePanels": 2,
+        "negativePanels": 1,
+        "tiePanels": 5
+      },
+      {
+        "name": "A_AVI_AnotherBitInTheWall",
+        "panels": 8,
+        "meanDelta": 0.020000005000000015,
+        "positivePanels": 2,
+        "negativePanels": 0,
+        "tiePanels": 6
+      },
+      {
+        "name": "A_HRZ_CodeEliteGang",
+        "panels": 8,
+        "meanDelta": 0.030000000000000027,
+        "positivePanels": 1,
+        "negativePanels": 3,
+        "tiePanels": 4
+      },
+      {
+        "name": "A_GSA_ShmuelTurtles",
+        "panels": 8,
+        "meanDelta": 0.044999999999999984,
+        "positivePanels": 2,
+        "negativePanels": 0,
+        "tiePanels": 6
+      },
+      {
+        "name": "A_HRZ_MOV_AX_WIN",
+        "panels": 8,
+        "meanDelta": 0.045000000000000005,
+        "positivePanels": 1,
+        "negativePanels": 1,
+        "tiePanels": 6
+      },
+      {
+        "name": "A_HRZ_ADDvanced",
+        "panels": 8,
+        "meanDelta": 0.055000000000000014,
+        "positivePanels": 7,
+        "negativePanels": 0,
+        "tiePanels": 1
+      },
+      {
+        "name": "A_TOM_2B2Team",
+        "panels": 8,
+        "meanDelta": 0.13999999999999996,
+        "positivePanels": 8,
+        "negativePanels": 0,
+        "tiePanels": 0
+      }
+    ]
+  },
+  "interpretation": "Ablation screen only. The four-arm field test identifies promising components; it does not promote any variant. Each per-opponent context is a shared 4-team battle including two other opponents, not an isolated duel."
+}

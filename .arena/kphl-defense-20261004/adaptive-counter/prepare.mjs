@@ -1,0 +1,12 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import crypto from 'node:crypto';
+const root='C:/Maor/CodeGuru/corewars8086-lab',session=path.join(root,'.arena/v6-cooperative-20261003'),here=path.join(root,'.arena/kphl-defense-20261004/adaptive-counter');
+const plan=JSON.parse(fs.readFileSync(path.join(session,'plans/kphldef-20261004-confirm-counters.json')));
+plan.id='kphldef-20261004-adapted-guard-counter';
+plan.cohorts=plan.cohorts.filter(c=>c.opponents[0].name==='Counter_boot_hunter');
+for(const c of plan.cohorts)c.opponents[0].warriors=['A','B'].map(w=>path.join(here,'build/guard_hunter'+w));
+const audit=['A','B'].map(w=>{const old=fs.readFileSync(path.join(root,'.arena/kphl-defense-20261004/build/boot_hunter'+w)),next=fs.readFileSync(path.join(here,'build/guard_hunter'+w));const differences=[];if(old.length!==next.length)throw Error('Counter length changed');for(let i=0;i<old.length;i++)if(old[i]!==next[i])differences.push({offset:i,old:old[i],adapted:next[i]});if(differences.length!==1||differences[0].old!==0x31||differences[0].adapted!==0x29)throw Error('Unexpected counter change');return{warrior:w,bytes:next.length,sha256:crypto.createHash('sha256').update(next).digest('hex'),differences};});
+fs.writeFileSync(path.join(session,'plans',plan.id+'.json'),JSON.stringify(plan,null,2)+'\n',{flag:'wx'});
+fs.writeFileSync(path.join(here,'protocol.json'),JSON.stringify({planId:plan.id,scope:'Adversarial follow-up, not broad-field selection. Reuse all four prior boot_hunter seeds, name, size and load ordering. Only one byte changes in each opponent binary; explicitly tests adapted targeting rather than field gain.',battlesPerArm:200,audit},null,2)+'\n',{flag:'wx'});
+console.log(JSON.stringify(audit));

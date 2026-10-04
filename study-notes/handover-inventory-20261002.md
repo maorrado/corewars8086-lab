@@ -1,5 +1,10 @@
 # Repository handover inventory — 2026-10-02
 
+Historical snapshot: the 2026-10-04 integration supersedes this inventory.
+`final/` now holds zchain3; m049/m050 are historical entries in `strong-codes/`.
+Read `codex-research-20261004/README.md` for the additional published research,
+including V6 Guard confirmation and its limitations.
+
 This inventory distinguishes published research evidence from local scratch.
 It is **not** a claim that every local file is in Git, nor that the current
 `final/` pair is the strongest possible 2026 submission.

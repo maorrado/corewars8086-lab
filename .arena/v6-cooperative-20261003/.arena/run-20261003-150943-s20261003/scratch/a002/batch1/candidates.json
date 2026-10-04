@@ -1,0 +1,143 @@
+{
+  "schema": "v6-candidate-batch-v1",
+  "baseline": "original_v6",
+  "provenance": "Modified derivatives of the user's friend-provided Good_Test V6; not an original design.",
+  "requirements": [
+    "All authored/generated files confined to agent scratch.",
+    "Original A/B layout retained exactly, so original absolute internal offsets remain valid.",
+    "Each warrior at most 256 bytes.",
+    "No battle claims; coordinator evaluates identical team identities and paired cohorts/seeds."
+  ],
+  "candidates": [
+    {
+      "id": "a002_b_gap100",
+      "hypothesis": "Reduce B recursive startup from roughly 405 pushes to 85 while preserving the eventual aligned MOVSB handoff and steady-state worker. A unchanged.",
+      "edits": [
+        "B startup stack displacement 0600h -> 0100h"
+      ],
+      "failureModes": [
+        "Less initial far-call stack bombing may surrender early kills.",
+        "Earlier B movement changes collision timing despite identical steady-state worker."
+      ],
+      "sources": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a002\\batch1\\a002_b_gap100\\A.asm",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a002\\batch1\\a002_b_gap100\\B.asm"
+      ],
+      "binaries": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a002\\batch1\\a002_b_gap100\\build\\A",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a002\\batch1\\a002_b_gap100\\build\\B"
+      ],
+      "sizes": [
+        221,
+        202
+      ],
+      "sha256": [
+        "3fa67bed880413901ad618b4f7b248e5782d98de93318271ac540ad1690ca2b7",
+        "337cf57230439a700e604cefb0f254a2190901c65f9567625174c6b3fdad9cdb"
+      ],
+      "byteDiffs": [
+        [],
+        [
+          {
+            "offset": 168,
+            "old": 6,
+            "new": 1
+          }
+        ]
+      ],
+      "baselineHashes": [
+        "3fa67bed880413901ad618b4f7b248e5782d98de93318271ac540ad1690ca2b7",
+        "8579e2c2212d72a413a6daacfe3b91ceb72be648bfc085bfeed9430eeaf6657a"
+      ]
+    },
+    {
+      "id": "a002_zero_startup_gaps",
+      "hypothesis": "Minimal positive-segment recursive handoff: initial SS:SP remains AX, target is CS:AX-50h, leaving approximately 20 self-calls rather than 84/404. Treat startup recursion as bootstrap latency.",
+      "edits": [
+        "A startup gap 0100h -> 0000h",
+        "B startup gap 0600h -> 0000h"
+      ],
+      "failureModes": [
+        "Forego most startup stack paint.",
+        "May expose next relocation before captured zombies establish their own attack."
+      ],
+      "sources": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a002\\batch1\\a002_zero_startup_gaps\\A.asm",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a002\\batch1\\a002_zero_startup_gaps\\B.asm"
+      ],
+      "binaries": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a002\\batch1\\a002_zero_startup_gaps\\build\\A",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a002\\batch1\\a002_zero_startup_gaps\\build\\B"
+      ],
+      "sizes": [
+        221,
+        202
+      ],
+      "sha256": [
+        "d01a17ec20e8caf02c2032d1a47f95f1330ceaeca9c8a2e3cab57f97874db5e0",
+        "db7ecedf6c54ea2d95d8fe67cc87960a2f4347a3cd08e7e4c538da18a199d36f"
+      ],
+      "byteDiffs": [
+        [
+          {
+            "offset": 119,
+            "old": 1,
+            "new": 0
+          }
+        ],
+        [
+          {
+            "offset": 168,
+            "old": 6,
+            "new": 0
+          }
+        ]
+      ],
+      "baselineHashes": [
+        "3fa67bed880413901ad618b4f7b248e5782d98de93318271ac540ad1690ca2b7",
+        "8579e2c2212d72a413a6daacfe3b91ceb72be648bfc085bfeed9430eeaf6657a"
+      ]
+    },
+    {
+      "id": "a002_odd_scanner_stride",
+      "hypothesis": "A captured-zombie scanner uses an odd modular stride, traversing every offset over time instead of staying in a fixed low-byte residue class. Worker unchanged.",
+      "edits": [
+        "A zombie_scan stride 0100h -> 0101h"
+      ],
+      "failureModes": [
+        "Aligned barriers previously encountered at every scan may now be missed on early passes.",
+        "Long coverage period can lose urgency versus dense writers."
+      ],
+      "sources": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a002\\batch1\\a002_odd_scanner_stride\\A.asm",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a002\\batch1\\a002_odd_scanner_stride\\B.asm"
+      ],
+      "binaries": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a002\\batch1\\a002_odd_scanner_stride\\build\\A",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a002\\batch1\\a002_odd_scanner_stride\\build\\B"
+      ],
+      "sizes": [
+        221,
+        202
+      ],
+      "sha256": [
+        "ef3d4677c1b8bc2e09a3595aa2b05131b60a829834200958948ebe99783223fb",
+        "8579e2c2212d72a413a6daacfe3b91ceb72be648bfc085bfeed9430eeaf6657a"
+      ],
+      "byteDiffs": [
+        [
+          {
+            "offset": 160,
+            "old": 0,
+            "new": 1
+          }
+        ],
+        []
+      ],
+      "baselineHashes": [
+        "3fa67bed880413901ad618b4f7b248e5782d98de93318271ac540ad1690ca2b7",
+        "8579e2c2212d72a413a6daacfe3b91ceb72be648bfc085bfeed9430eeaf6657a"
+      ]
+    }
+  ]
+}

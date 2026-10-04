@@ -1,0 +1,4553 @@
+{
+  "status": "FROZEN_BEFORE_RUN",
+  "objective": "Paired fresh-seed comparison of exact e1p4 and the two b01d components plus their combination against all 75 official 2025 teams.",
+  "design": {
+    "panels": 16,
+    "arms": [
+      "control",
+      "a_decoy",
+      "b_band_shift",
+      "b01d"
+    ],
+    "opponentTeams": 75,
+    "groupsPerBattle": 4,
+    "opponentsPerBattle": 3,
+    "zombiesPerBattle": 4,
+    "battlesPerCohort": 50,
+    "cohortsPerPanel": 25,
+    "battlesPerArm": 20000,
+    "totalBattles": 80000,
+    "pairing": "Each panel has a new seed and a fresh random partition of the complete 75-team field; all four arms share the exact same panel seed and cohorts.",
+    "metric": "Candidate team points divided by battles, averaged over all 75-team field contexts.",
+    "components": "e1p4 control; A decoy only; B band shift only; combined b01d."
+  },
+  "engineJar": {
+    "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+    "sha256": "31639072397eaf69d99e90b10d8fa594a7446951f1137b7ebd298378f5ec318d"
+  },
+  "java": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\temurin8-jre\\jdk8u504-b01-jre\\bin\\java.exe",
+  "candidates": {
+    "control": [
+      {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-b01d-e1p4-20261002\\build\\control-A",
+        "bytes": 187,
+        "sha256": "99192c673e5af394ed8194932b52b4f18f092804384f38d1bb2828b189c76b93"
+      },
+      {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-b01d-e1p4-20261002\\build\\control-B",
+        "bytes": 115,
+        "sha256": "d307b92097ac68ce6073adc1e34917b2f51c0c396235c918dfc913cee7393354"
+      }
+    ],
+    "a_decoy": [
+      {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-b01d-e1p4-20261002\\build\\a_decoy-A",
+        "bytes": 192,
+        "sha256": "775080226ca8f9e9a5aac584094c9066bd2c55365ee8cea1e18db26440d9315e"
+      },
+      {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-b01d-e1p4-20261002\\build\\a_decoy-B",
+        "bytes": 115,
+        "sha256": "d307b92097ac68ce6073adc1e34917b2f51c0c396235c918dfc913cee7393354"
+      }
+    ],
+    "b_band_shift": [
+      {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-b01d-e1p4-20261002\\build\\b_band_shift-A",
+        "bytes": 187,
+        "sha256": "99192c673e5af394ed8194932b52b4f18f092804384f38d1bb2828b189c76b93"
+      },
+      {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-b01d-e1p4-20261002\\build\\b_band_shift-B",
+        "bytes": 115,
+        "sha256": "884b4d52e4ef1e57db85c88083d0a8667a6bd252a25728da7f5fdedefa6f33c7"
+      }
+    ],
+    "b01d": [
+      {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-b01d-e1p4-20261002\\build\\b01d-A",
+        "bytes": 192,
+        "sha256": "775080226ca8f9e9a5aac584094c9066bd2c55365ee8cea1e18db26440d9315e"
+      },
+      {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-b01d-e1p4-20261002\\build\\b01d-B",
+        "bytes": 115,
+        "sha256": "884b4d52e4ef1e57db85c88083d0a8667a6bd252a25728da7f5fdedefa6f33c7"
+      }
+    ]
+  },
+  "opponentHashes": {
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\TOM_2B2Team1": {
+      "bytes": 135,
+      "sha256": "bcc371f9a6c803da24ca9b207cc669f3ad303b115c7b6d27afdaafc1f48d0cb5"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\TOM_2B2Team2": {
+      "bytes": 140,
+      "sha256": "bd1a1687a4f99d4a0bb60ae23cb09a505d87c77042de95a27957b1c524df4ab0"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\TOM_Syntax_Terror1": {
+      "bytes": 27,
+      "sha256": "2cb2747ca3e9331b28ca609a228bfd21413a77ee98355c5e8fff4042c56a2a56"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\TOM_Syntax_Terror2": {
+      "bytes": 65,
+      "sha256": "f39bc040a51c504af6baca86ef99bf19351717c91ac4e3af01a2e0ecad193e47"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\AVI_Fishandpoultry1": {
+      "bytes": 75,
+      "sha256": "c8aa0e238c28c8c041cf8318d93f165b7cb2005c71cc055552244f120ea7f065"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\AVI_Fishandpoultry2": {
+      "bytes": 113,
+      "sha256": "3718913ee7debbee757a1fa053699cb80d12cd1985d8218b3ed6cb9f4d87193d"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\HDS_NRI1": {
+      "bytes": 110,
+      "sha256": "8830ca6b843b0508fc2a5771068dad1bc150d2f824d2cd77d7631e523b431bb1"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\HDS_NRI2": {
+      "bytes": 477,
+      "sha256": "1cc40806e6766e591dac071b1256c8b5f325360f0aae448b188dcc87376bb9ab"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\GSA_GhostBytes_0x1": {
+      "bytes": 512,
+      "sha256": "2cf5b8a9974e1e6e46504f5027a2f20f6329cf8944ad15397afdd0f5955d2801"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\GSA_GhostBytes_0x2": {
+      "bytes": 512,
+      "sha256": "08c6ac348985a5f21fecbaf1ee7d7bb56add87cd8d8af2278902df7e60b52238"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_Grindo_Holics1": {
+      "bytes": 505,
+      "sha256": "0fd28370c9b4200dc1d4774a5ab959e76f1f5fe0243dd327626fd8f47c936b51"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_Grindo_Holics2": {
+      "bytes": 480,
+      "sha256": "69791f0bdb90e9ff65fc078f6e863f92c3847700efbdc8e8865e002c96f2934f"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\IND_cgx1231231": {
+      "bytes": 70,
+      "sha256": "b6c07757f0c8b5d20a60c12de9d30c5130badc9c4e342e8a3beec5e92d6f782e"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\IND_cgx1231232": {
+      "bytes": 46,
+      "sha256": "a053a4c9f0b893fe84070894ed08e600964a9d63bc57719b083b8d91186e4315"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\IND_stuxnet1": {
+      "bytes": 80,
+      "sha256": "b4c342926e63b9d8b21f22e744de9cc96312ce7bf9433f5d9c6b76d982763834"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\IND_stuxnet2": {
+      "bytes": 65,
+      "sha256": "2f645003233d8935086b8e5867c013ff3a93d87acbda64c149805c5ba5ccd5bd"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_Ctrl_Alt_Elite1": {
+      "bytes": 44,
+      "sha256": "396faf80539b6f55ee1ce91d06bf40ee0049be5f931e0fd82da0da3c2e70ce79"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_Ctrl_Alt_Elite2": {
+      "bytes": 44,
+      "sha256": "396faf80539b6f55ee1ce91d06bf40ee0049be5f931e0fd82da0da3c2e70ce79"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_The_Rubber_Duckies1": {
+      "bytes": 338,
+      "sha256": "c8270f10aa7f62682bae9ce457a087fe6b391e63107ae748695d35f615a2d72e"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_The_Rubber_Duckies2": {
+      "bytes": 180,
+      "sha256": "d77f23e2eda8675b231d8d53a436dcde422e27fa7936d18059fd338156c58ff4"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_TitanicSwimTeam1": {
+      "bytes": 115,
+      "sha256": "4794558ee17f4265372dd9176b06150026d88e0bb2d481954dec55be8b3aeec0"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_TitanicSwimTeam2": {
+      "bytes": 324,
+      "sha256": "5bb33762a99debde94f5905696bf9e72c552cb9ddbd2e01391efde85b5d92ffc"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_Code_Jokers4Life1": {
+      "bytes": 377,
+      "sha256": "f2222e5041e6fdfe2ab35582cc9df51e3b0498b7b57d90f18c20056239d673b8"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_Code_Jokers4Life2": {
+      "bytes": 12,
+      "sha256": "7ecc90c263e5458e6ac5b880d91efd45c3e0c6345639c3e38153bc161173e8de"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online-young\\TOM_Thefrogs1": {
+      "bytes": 36,
+      "sha256": "8f014d9812cf497a03015d562135e8bdaaa4dd921e5de3e28984ac64642fa050"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online-young\\TOM_Thefrogs2": {
+      "bytes": 16,
+      "sha256": "348c42651bea5001dc5a61a3e15228e4820dbbd4ab0b6df16982dbb38334a504"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\TOM_BitBenders1": {
+      "bytes": 115,
+      "sha256": "97d159491650cf04a236c8c6188555dd17b9e7b1d2b1fe86a4926ef9b9b30d00"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\TOM_BitBenders2": {
+      "bytes": 115,
+      "sha256": "97d159491650cf04a236c8c6188555dd17b9e7b1d2b1fe86a4926ef9b9b30d00"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\HDS_YOY1": {
+      "bytes": 126,
+      "sha256": "a30854eb23928d0a2a16e32fc2db3fbf6f6dec4b843ae73fa4b5ba904eced03f"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\HDS_YOY2": {
+      "bytes": 336,
+      "sha256": "61cdca8ebd5d863f30172e0164c4d0a3d8eb6dae39815aa06465a8904a95dfa9"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online-young\\TOM_The_Crushers1": {
+      "bytes": 74,
+      "sha256": "8daf826ed95b86c1ceef1f0f6e1a8c92fe292fb83e3e651dd75b72064187e5b2"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online-young\\TOM_The_Crushers2": {
+      "bytes": 16,
+      "sha256": "af0ee0bde6599b412201e094453951cf884aa5e5c7e79e32986d4812d9516547"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_The_almogooners1": {
+      "bytes": 512,
+      "sha256": "1beaaf660fe42f02b45b031c46d1b4dda2f7d670f99e6dc27c73c6ae45301d91"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_The_almogooners2": {
+      "bytes": 512,
+      "sha256": "1beaaf660fe42f02b45b031c46d1b4dda2f7d670f99e6dc27c73c6ae45301d91"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\BZV_SKYENT1": {
+      "bytes": 425,
+      "sha256": "71bdf7043da5f50d23bc4d8b729b13ce39a2240775937d7652476abdcbb2705d"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\BZV_SKYENT2": {
+      "bytes": 442,
+      "sha256": "bfca1258902ff47eef60ddc230e67f4c8528c89421377f5a696724506c2fdada"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\GSA_VanLavan1": {
+      "bytes": 511,
+      "sha256": "29bcd91c2654fbe3b40eb0ba46f0b27956fc951185f3ebc7fb78877f739a401e"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\GSA_VanLavan2": {
+      "bytes": 446,
+      "sha256": "649dad7fb2499e54a9474e31784d38f3ad36e801d9649eb0d78d7aabe8e30d1b"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\AML_ByteReapers1": {
+      "bytes": 250,
+      "sha256": "e03726289c7889054f9635a8eea5a25754a819b2016bee5a39ef345f7b6cd3d7"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\AML_ByteReapers2": {
+      "bytes": 501,
+      "sha256": "5fe97a9902546036b12928645654fc44688e084fd7f6e3a9799fd5365f48918e"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\GGN_OpcodeHunter1": {
+      "bytes": 493,
+      "sha256": "d5992bdc307b070ad91e1737a8777125970912b286a392ed6d9a6456d87ed3af"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\GGN_OpcodeHunter2": {
+      "bytes": 503,
+      "sha256": "0ced8fc1ec650a032604e2e149458b54202be7ecabb447999f143659d6ea46b6"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_BinaryBandits1": {
+      "bytes": 468,
+      "sha256": "c6cf8bb109582030c5cd0723399930168aee257dbeac6122507c522f9b383d86"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_BinaryBandits2": {
+      "bytes": 351,
+      "sha256": "be7d4791659d4aacd49dded0044baadf737e123b3dff8ddb497f5be1954c461b"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\ORT_Pegasus_Hex1": {
+      "bytes": 100,
+      "sha256": "8c82f8dc226579917f261847d0a6606c670f47ae4adcd5d4eb41fe4807035537"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\ORT_Pegasus_Hex2": {
+      "bytes": 60,
+      "sha256": "4026ad9d8dd3c66933bf5cc03cd18ed3b7d707f181a054fc43bf07b2239758c1"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online-young\\GSA_SigmaSilent1": {
+      "bytes": 98,
+      "sha256": "5f99b89cf54c876307804f0f38658b46739baa8ff4f14189e0c17713f10ee16c"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online-young\\GSA_SigmaSilent2": {
+      "bytes": 109,
+      "sha256": "8a06a8d64760629cacb4e1ad2c236c5e2fc9b3e0948d3de048a43c2fa386ead9"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\HDS_GoldenLamed1": {
+      "bytes": 16,
+      "sha256": "f76ec20d3e5d9e5dc58734ae0aa90532090d98abbd857baeedc3179c8bd32378"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\HDS_GoldenLamed2": {
+      "bytes": 16,
+      "sha256": "f76ec20d3e5d9e5dc58734ae0aa90532090d98abbd857baeedc3179c8bd32378"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online-young\\HDS_TRY1": {
+      "bytes": 59,
+      "sha256": "d654e9598b1d6e232328341049e95b646e383a504224dbcc4763fc32ac7d37fb"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online-young\\HDS_TRY2": {
+      "bytes": 86,
+      "sha256": "9c498b425a7b6af5fe64b4445efddc821d513955dc7f2c207eb127f141ac1092"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online-young\\TOM_Code_Killer1": {
+      "bytes": 78,
+      "sha256": "388479f220bd757fe9c011cb234cc52ad1e6f12e9deb01a8d247a0e5568c4e22"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online-young\\TOM_Code_Killer2": {
+      "bytes": 106,
+      "sha256": "7fc3754c18976081ccd54f3936d22a493bb1d8420706cde4a5962613f4c9bbf5"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\GSA_callfart1": {
+      "bytes": 512,
+      "sha256": "dfe5017765f2522372bedc2e5e3b72af5597b99ddbfb3444c25f5bde17a4acf3"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\GSA_callfart2": {
+      "bytes": 501,
+      "sha256": "30dafcebde39ba9bf4bbcf21d83a666bc5f0a8e3e4aabcb52310905d389a4f4d"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_PowerRangers1": {
+      "bytes": 77,
+      "sha256": "52aa2ff950b861e97be698661c012ca2f2da158171aa2899c69fe1049fb1abb0"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_PowerRangers2": {
+      "bytes": 19,
+      "sha256": "d105ec96ad325832882dc8820d82a52567780dfdb1abb40a50986e011feff22c"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online-young\\SZR_BrvazimAlSteroidim1": {
+      "bytes": 98,
+      "sha256": "dbc5b61532888cc9246691b72acfc95eb453fb6362d405f79dca61b48b4e3764"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online-young\\SZR_BrvazimAlSteroidim2": {
+      "bytes": 92,
+      "sha256": "6071871d772af0d529769ecf82479b93d30a388feb72df6a41e4c0845100dfd3"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\GSA_ShmuelTurtles1": {
+      "bytes": 207,
+      "sha256": "22de4575872d077b32481da4edf814f6a72136771b931b45a1b0191001b19c3f"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\GSA_ShmuelTurtles2": {
+      "bytes": 13,
+      "sha256": "9198ae7381e5449f42b5f2cb80e0ec1788c4b2bd25b9ec9ed0096383c4c2085c"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\RZL_YANDE1": {
+      "bytes": 338,
+      "sha256": "8e8c89070cc2d1f64bc5e16fc6dbbffb2fc72cb57bf66f16ac5bfe089d60632b"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\RZL_YANDE2": {
+      "bytes": 18,
+      "sha256": "eba9d406edec09cd697bcb706c1bdc133a9a2b63cea3811252ddaaf54e2b8b75"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\HDS_IWDIA_nachalo1": {
+      "bytes": 512,
+      "sha256": "e167f5b550647a852833be5d1a676a5539c67062b68d29564799231dbb326130"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\HDS_IWDIA_nachalo2": {
+      "bytes": 512,
+      "sha256": "82897f9576e656fff06b6a52b4fa7710fedb3c662588d54b49f3b29e3b953ff8"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\KOB_KosherCode1": {
+      "bytes": 46,
+      "sha256": "f333c2d41cce100bb3afee9f2e60b9fda6f93d717602adc369d7719664568184"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\KOB_KosherCode2": {
+      "bytes": 19,
+      "sha256": "f2b704b27b426c0d25f8dc26f1e4876f14cf3d5d1b89d4e7bfbecd0b132af5ac"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\ATL_R1DDLE1": {
+      "bytes": 15,
+      "sha256": "dc1e7b81a57cc7fb13be0a4b32036342b7a7b2c65614bccc28998bec70111803"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\ATL_R1DDLE2": {
+      "bytes": 15,
+      "sha256": "dc1e7b81a57cc7fb13be0a4b32036342b7a7b2c65614bccc28998bec70111803"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\OHS_cgxPro1": {
+      "bytes": 16,
+      "sha256": "128d6e4fb73dec09b71198963573298bb8bac99c3a2daca74759efc48b28a1ce"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\OHS_cgxPro2": {
+      "bytes": 16,
+      "sha256": "128d6e4fb73dec09b71198963573298bb8bac99c3a2daca74759efc48b28a1ce"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\OHS_TOMEX1": {
+      "bytes": 442,
+      "sha256": "d511b9beab4574d1bf126ef9264e3aca2276ea71e81b3a6c9296e217859f54a8"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\OHS_TOMEX2": {
+      "bytes": 442,
+      "sha256": "d511b9beab4574d1bf126ef9264e3aca2276ea71e81b3a6c9296e217859f54a8"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\IND_BRA1": {
+      "bytes": 25,
+      "sha256": "fd42f831ef722a715fc5d89877cf830b366efd1d3a30a2e0612e565de0031015"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\IND_BRA2": {
+      "bytes": 25,
+      "sha256": "fd42f831ef722a715fc5d89877cf830b366efd1d3a30a2e0612e565de0031015"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_Registered_Winners1": {
+      "bytes": 217,
+      "sha256": "1645436c2465df7ac0def9182eb12506e7aa9ca6b719635d2192eab4e38ce70d"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_Registered_Winners2": {
+      "bytes": 115,
+      "sha256": "6a489e8f28e3cbe8e370b8382679938c7635a46fcbbd5f4c263024e2e8dcabab"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\TOM_anonymous1": {
+      "bytes": 379,
+      "sha256": "6f57faeb8622bbc3778c80d450fa03c9efbf8703b58414850a3861f2bcbc83f4"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\TOM_anonymous2": {
+      "bytes": 512,
+      "sha256": "e0cdbe70e170d8bf242e071325971d7590701d330fe089b9d2f815e05a432759"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online-young\\GSA_LVS_FIT1": {
+      "bytes": 92,
+      "sha256": "32d1ed02b689d9d0b10a321511ed19c6d603e7f5c741ec71788cb8b9774d9be6"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online-young\\GSA_LVS_FIT2": {
+      "bytes": 111,
+      "sha256": "92b6705be2d32ef9a46386c4371e7ad2c0ad5eaf279ea6a704ea0a2d0c11c987"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\HDS_MAC1": {
+      "bytes": 39,
+      "sha256": "01fe69503bf6f9092a4df08b0cb7d29ee83a8c9532162b63d3a97ab21e36ad14"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\HDS_MAC2": {
+      "bytes": 43,
+      "sha256": "b983b54b0afc2b8ff78ed361f67745e3d133f28989140ae8da394e740ae2f6b6"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\WAN_Baltika91": {
+      "bytes": 455,
+      "sha256": "dba05606104f4c4805e10023866390bad2fd4c3eed1732e86780a158f061e4c6"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\WAN_Baltika92": {
+      "bytes": 383,
+      "sha256": "30065fd48eab62390508c9357b30e01246e1e56343803df97aa4306ce0fdd9c5"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_LowKey_WBB1": {
+      "bytes": 268,
+      "sha256": "9e6f08b0cf3d7fe60b1c349ce143ed02e2f3ed01e1654164f231a4c46d2aefc9"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_LowKey_WBB2": {
+      "bytes": 12,
+      "sha256": "42abd17f0ecb417669bb7ad2215bfd6a4fe7477c99b1cde736205d5b207484f4"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_stack_attack1": {
+      "bytes": 24,
+      "sha256": "7298748ba797e65564eb58d3f53af67b3457b2400c73069dcbfbe538bd6ee6f1"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_stack_attack2": {
+      "bytes": 83,
+      "sha256": "140a6203d3d0839bd3797cdf1da03613b727c053854dbb8eb0b7e34118355fa9"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\WAN_OnlyCode1": {
+      "bytes": 82,
+      "sha256": "79feca3fa250a6c0406c46fa11fb0ce604758625912695e45040a784121625d8"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\WAN_OnlyCode2": {
+      "bytes": 82,
+      "sha256": "a230910890f8270ad8dcb6c2d304a47ca8c1dd25a418022b80e091e5a8c96658"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online-young\\TOM_AND_JERRY1": {
+      "bytes": 32,
+      "sha256": "0f2a1799845db478549ab951df61323eb863ed496ed87d2e189b2cba510bfa43"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online-young\\TOM_AND_JERRY2": {
+      "bytes": 20,
+      "sha256": "8699a2bb930c1d2d1178aa6c17322db31f1338b8184d6056620abbc5b1c1a65e"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_Thingies1": {
+      "bytes": 512,
+      "sha256": "2a381510bdaf45ab809c11ee0c115c6683b6e3c38148f613c3927026138c8b93"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_Thingies2": {
+      "bytes": 512,
+      "sha256": "2a381510bdaf45ab809c11ee0c115c6683b6e3c38148f613c3927026138c8b93"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\TOM_tson_el_akod1": {
+      "bytes": 13,
+      "sha256": "9198ae7381e5449f42b5f2cb80e0ec1788c4b2bd25b9ec9ed0096383c4c2085c"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\TOM_tson_el_akod2": {
+      "bytes": 13,
+      "sha256": "9198ae7381e5449f42b5f2cb80e0ec1788c4b2bd25b9ec9ed0096383c4c2085c"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_L1": {
+      "bytes": 260,
+      "sha256": "39de1bb615fe8760c528eab9b0cdac26e934010ee5953bb3c88f1ce561cefea0"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_L2": {
+      "bytes": 254,
+      "sha256": "bdd2bb9dbb0dffc2ed7c0fa4f6b1fdf7a067d9784959d26c8c615f6fc3fde901"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\GSA_B331": {
+      "bytes": 476,
+      "sha256": "b669a39358c457bbd739710d2a82e6c7f5bfb20125922b153207209d2bf74350"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\GSA_B332": {
+      "bytes": 476,
+      "sha256": "b669a39358c457bbd739710d2a82e6c7f5bfb20125922b153207209d2bf74350"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\HLS_EmoMutants1": {
+      "bytes": 501,
+      "sha256": "629b28dbff281ca175493f1f40492e52afdf6f9f3c2f8a7e06a8df08a5580711"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\HLS_EmoMutants2": {
+      "bytes": 502,
+      "sha256": "36c6a4f23a988920ed0e2e7a128bd706b5f82871935b6c0dfc5d3c2cbbd65aa0"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_InCtrl1": {
+      "bytes": 50,
+      "sha256": "d7b0b84459fe2295e8a65512ef16c2e698e6d6bee50b1b3b777dc0c2b0c5b7c0"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_InCtrl2": {
+      "bytes": 41,
+      "sha256": "6997d9e87f8c241b3056f8ebfb624bd4bf268ef14329f49c95d4f553146153fa"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\OHS_TrojanByte1": {
+      "bytes": 110,
+      "sha256": "8daa80561913795dab371699ae02d243e11889eafdbd3f198b8b2792ef8caed6"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\OHS_TrojanByte2": {
+      "bytes": 141,
+      "sha256": "7a243cd4100cef57759ded924b53566ac3004a1d23b71a11a1166f0a7cecbc4f"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_MOV_AX_WIN1": {
+      "bytes": 47,
+      "sha256": "ef82df0d92476fa6161d81ff092ea489d4df7ddef88a0dad44705a3cf14f8dd1"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_MOV_AX_WIN2": {
+      "bytes": 46,
+      "sha256": "a1b4b8459ae6b367da93742fb5f3c8bb0fe321e3cf1174f4e7a1dc29ada2a544"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_CodeEliteGang1": {
+      "bytes": 512,
+      "sha256": "18455d457341e1d7b30c782693eeb66cab9f239b7bdc6b372bdcfb41c16dc426"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_CodeEliteGang2": {
+      "bytes": 15,
+      "sha256": "74f611e36a3c93d5f9f5ced87f637120a0810e33a1927ef675a402da5900416f"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\ORT_TheGoats1": {
+      "bytes": 24,
+      "sha256": "74e7a2f5ff930e07fc75a13cc15fadf586f1af66d1f6283532ce47b7c0673a25"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\ORT_TheGoats2": {
+      "bytes": 28,
+      "sha256": "0ab57aed774169d420cb0b6b05414fe6145ef6e99b614b988ed8163e3b11aa42"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_Pixar_Lamps1": {
+      "bytes": 115,
+      "sha256": "500852a7240608e60b8ed36f93d14f09ec08db9f3b9f65358a4d3174a14221a8"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_Pixar_Lamps2": {
+      "bytes": 32,
+      "sha256": "5ab6a833bc63e8497db71b36ae02a835ab1b9f5abef9b42dafabd07b1d671ab5"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\WHS_K0F1M_AL_T1L1M1": {
+      "bytes": 181,
+      "sha256": "51be29ada737ee980285eeb1cce4c445ce345d8b3bf0c9b3d97e2ae09ade3f60"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\WHS_K0F1M_AL_T1L1M2": {
+      "bytes": 171,
+      "sha256": "d7487a752af32ae355c8fbabcaba111150451a26ff9b7c6804ac08b26f85de6f"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online-young\\GSA_3Plate_Benchers1": {
+      "bytes": 121,
+      "sha256": "7e6a8c26c42fa899e58fb02cde83d71406402dc436741098fc334382a76e5872"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online-young\\GSA_3Plate_Benchers2": {
+      "bytes": 121,
+      "sha256": "7e6a8c26c42fa899e58fb02cde83d71406402dc436741098fc334382a76e5872"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_TEST_ticals1": {
+      "bytes": 89,
+      "sha256": "bde8d3995ed1d713bcb7a64eb6f122a3105e0549e28ee8bc3bb951737ed7aa6f"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_TEST_ticals2": {
+      "bytes": 89,
+      "sha256": "bde8d3995ed1d713bcb7a64eb6f122a3105e0549e28ee8bc3bb951737ed7aa6f"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\AVI_AnotherBitInTheWall1": {
+      "bytes": 291,
+      "sha256": "5a78ed74829860373ab4dd7d80bb58fd50234789e3d2cba84c4f8a1cc183ab15"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\AVI_AnotherBitInTheWall2": {
+      "bytes": 271,
+      "sha256": "76b06db3e88a32e0a1f025030e1c14d19c53b9a8f7a0944c76de9d867de55fda"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online-young\\MTA_Hexellent1": {
+      "bytes": 49,
+      "sha256": "70484891cb2f1361ffe98001528a8e0d05ed74f44e7e3696b8d71ac64d0c3962"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online-young\\MTA_Hexellent2": {
+      "bytes": 49,
+      "sha256": "a303a84b1f9fedf1fa0fde29647c5db17ee23bcd63faf16c9f69295e7d60d0a4"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\OHS_BatteringRAM1": {
+      "bytes": 212,
+      "sha256": "6db7c4932a50615520b1eed2f49a9543723d89fb1b70f7507b6241f77d0e9474"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\OHS_BatteringRAM2": {
+      "bytes": 9,
+      "sha256": "5f2531e6a569ae005357df7f8d16fdd7e49020cee96a6ccf16e85d2fb51e4bb1"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online-young\\ELD_FriendlyFire1": {
+      "bytes": 13,
+      "sha256": "9198ae7381e5449f42b5f2cb80e0ec1788c4b2bd25b9ec9ed0096383c4c2085c"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online-young\\ELD_FriendlyFire2": {
+      "bytes": 13,
+      "sha256": "9198ae7381e5449f42b5f2cb80e0ec1788c4b2bd25b9ec9ed0096383c4c2085c"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_fisherEXE1": {
+      "bytes": 92,
+      "sha256": "82b268ce80e540cea8c8a61d6279f613721d5c59b369317af53de5983db3bb49"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_fisherEXE2": {
+      "bytes": 92,
+      "sha256": "ac49b19fc0fb2f62c4a6db6b18c637deebde8ff010d183578e738c429cf8be92"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_Underflow1": {
+      "bytes": 53,
+      "sha256": "79f994bd13bfd25b44a97d420e8a9d6e8f45311a716b21bfb9f10fdc79cde7e4"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_Underflow2": {
+      "bytes": 53,
+      "sha256": "7d5c20977121ffb2ac532f6a4cb6662a2c349f0e833beb9999869ad9df918840"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online-young\\SZR_The_Chargers1": {
+      "bytes": 78,
+      "sha256": "3e7c44b27c9d019d42495a066a7346ada38b9c5bc5e3dbbf484c729ef90bf379"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online-young\\SZR_The_Chargers2": {
+      "bytes": 128,
+      "sha256": "4c43e3d631d94e14dfbc3bb68e80e29aba97156b3244a912675e24b4a2d1f6f9"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online-young\\BGR_theGlopyGng1": {
+      "bytes": 116,
+      "sha256": "8d84a93cdcc76fb45b496184bc68c3535a3564fc9e1ea523a9fcba0c2a5fa6ac"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online-young\\BGR_theGlopyGng2": {
+      "bytes": 103,
+      "sha256": "adfdb3915475338713a2a1e4d7c8cc27a2ff8c6e4ed0a474e6770be72836b97d"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\GSA_TheBytes1": {
+      "bytes": 35,
+      "sha256": "d168c81336006cab440c719f9bf857d146ca2b8b063b95eaccbc274326d58f9b"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\GSA_TheBytes2": {
+      "bytes": 20,
+      "sha256": "7dfdbe1fbfeb2311ef5c1a77621fb43dc0ca5ec23abc566bdf4078d348311351"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_ADDvanced1": {
+      "bytes": 268,
+      "sha256": "ff353ab75e7a3b88b896f64cbb97bfad639412a6e222088d6f52cc189a9e2ebe"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\HRZ_ADDvanced2": {
+      "bytes": 241,
+      "sha256": "509086f3e6ec36b0867ecebe4ba9ecc8faffaf7cc7f4e633dd04f2814981f39c"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\WAN_Full_Time_Job1": {
+      "bytes": 51,
+      "sha256": "451ccffeedd664f6814d45a712f805c71931efada682112e61b801858c3ab4f3"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\WAN_Full_Time_Job2": {
+      "bytes": 1,
+      "sha256": "9e076ceaf246b6003d9c2680a2b4cf0bffd069805902b0b5edeebf49039fe4bd"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\GSA_GoonSquad1": {
+      "bytes": 185,
+      "sha256": "7b092caf2288c03827e2c7189566306f3bcc65e8668d2793659877475eaa8ac7"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\GSA_GoonSquad2": {
+      "bytes": 154,
+      "sha256": "b0092281531189b979faf8b5084d1a6eb1793075f9ae4e56a4437459088fadc7"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\HDS_ATW_Solo1": {
+      "bytes": 166,
+      "sha256": "3433de990452854bfefb8f5e76c2e898f1b4b44cfe3a2533bc54ab6f1e461fa5"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\HDS_ATW_Solo2": {
+      "bytes": 368,
+      "sha256": "1e1079248809e3c1eac0a7768e7726bfad3f6daae78f90c1fd25bb7f12c634a5"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\OST_Gamma1": {
+      "bytes": 398,
+      "sha256": "a470a79b80f6eac90b3613ffc6127722a210923fa5fa80efec4760197a901c63"
+    },
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\OST_Gamma2": {
+      "bytes": 393,
+      "sha256": "0f522f42cecc4b8e2dd7cc8ea914cb7946d7cf1ec0a4877fb876c30137580caa"
+    }
+  },
+  "zombies": [
+    {
+      "name": "zom20a",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\zombies-live\\zom20a",
+      "sha256": "a950e618ea2e127096c85f486fb555c264730d924a2192c407aa66e6e0318eb6",
+      "bytes": 73
+    },
+    {
+      "name": "zom20b",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\zombies-live\\zom20b",
+      "sha256": "af6394c021ccb5e486db507e2ccd787bd5675f8fec88fd2ddbe9f834566852ce",
+      "bytes": 382
+    },
+    {
+      "name": "zom20c",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\zombies-live\\zom20c",
+      "sha256": "3d3f209967f51a7344e0eab582bc04d1e694da5a73e3682a26ed483dcab7a443",
+      "bytes": 232
+    },
+    {
+      "name": "zom20d",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\zombies-live\\zom20d",
+      "sha256": "923dd6abebbb7bb502ec5a02873c26175820ada5c4409d179d8464f0e90cb6fc",
+      "bytes": 382
+    }
+  ],
+  "sourceManifestSha256": "3329d74a2a620cfbdc62a85c09e34476f5165313615bb2661f338dcfea3ec576",
+  "compileManifestSha256": "49b8ea0a46433bd3b4dd9d27b122499209f97f8b041262db2b926151d66f7ada",
+  "panels": [
+    {
+      "panel": 1,
+      "seed": "b01d-e1p4-full-2025-p01-f90acc3645148c3498370afdab0a16a7",
+      "executionOrder": [
+        "b01d",
+        "a_decoy",
+        "b_band_shift",
+        "control"
+      ],
+      "cohorts": [
+        {
+          "id": "p01-c01",
+          "teams": [
+            "A_TOM_2B2Team",
+            "A_WHS_K0F1M_AL_T1L1M",
+            "Y_TOM_The_Crushers"
+          ]
+        },
+        {
+          "id": "p01-c02",
+          "teams": [
+            "A_AVI_Fishandpoultry",
+            "A_GSA_TheBytes",
+            "A_IND_stuxnet"
+          ]
+        },
+        {
+          "id": "p01-c03",
+          "teams": [
+            "A_HRZ_TEST_ticals",
+            "A_TOM_tson_el_akod",
+            "A_HRZ_Pixar_Lamps"
+          ]
+        },
+        {
+          "id": "p01-c04",
+          "teams": [
+            "A_HRZ_Registered_Winners",
+            "A_GSA_callfart",
+            "A_HLS_EmoMutants"
+          ]
+        },
+        {
+          "id": "p01-c05",
+          "teams": [
+            "A_HDS_GoldenLamed",
+            "A_HDS_NRI",
+            "A_HRZ_TitanicSwimTeam"
+          ]
+        },
+        {
+          "id": "p01-c06",
+          "teams": [
+            "Y_SZR_BrvazimAlSteroidim",
+            "Y_SZR_The_Chargers",
+            "A_GSA_VanLavan"
+          ]
+        },
+        {
+          "id": "p01-c07",
+          "teams": [
+            "A_OST_Gamma",
+            "A_OHS_cgxPro",
+            "A_ATL_R1DDLE"
+          ]
+        },
+        {
+          "id": "p01-c08",
+          "teams": [
+            "A_TOM_BitBenders",
+            "A_HDS_IWDIA_nachalo",
+            "A_GSA_B33"
+          ]
+        },
+        {
+          "id": "p01-c09",
+          "teams": [
+            "Y_HDS_TRY",
+            "A_HRZ_Underflow",
+            "Y_GSA_LVS_FIT"
+          ]
+        },
+        {
+          "id": "p01-c10",
+          "teams": [
+            "Y_TOM_AND_JERRY",
+            "A_WAN_Full_Time_Job",
+            "A_OHS_BatteringRAM"
+          ]
+        },
+        {
+          "id": "p01-c11",
+          "teams": [
+            "A_HDS_YOY",
+            "A_HRZ_Code_Jokers4Life",
+            "A_HRZ_stack_attack"
+          ]
+        },
+        {
+          "id": "p01-c12",
+          "teams": [
+            "A_HRZ_CodeEliteGang",
+            "A_HRZ_Ctrl_Alt_Elite",
+            "A_KOB_KosherCode"
+          ]
+        },
+        {
+          "id": "p01-c13",
+          "teams": [
+            "A_AML_ByteReapers",
+            "A_HRZ_InCtrl",
+            "A_GGN_OpcodeHunter"
+          ]
+        },
+        {
+          "id": "p01-c14",
+          "teams": [
+            "A_OHS_TOMEX",
+            "A_BZV_SKYENT",
+            "Y_ELD_FriendlyFire"
+          ]
+        },
+        {
+          "id": "p01-c15",
+          "teams": [
+            "Y_GSA_SigmaSilent",
+            "A_HDS_ATW_Solo",
+            "A_HRZ_MOV_AX_WIN"
+          ]
+        },
+        {
+          "id": "p01-c16",
+          "teams": [
+            "A_HRZ_Grindo_Holics",
+            "A_AVI_AnotherBitInTheWall",
+            "A_HRZ_BinaryBandits"
+          ]
+        },
+        {
+          "id": "p01-c17",
+          "teams": [
+            "A_HRZ_Thingies",
+            "A_HDS_MAC",
+            "A_ORT_TheGoats"
+          ]
+        },
+        {
+          "id": "p01-c18",
+          "teams": [
+            "A_GSA_GoonSquad",
+            "Y_BGR_theGlopyGng",
+            "A_GSA_GhostBytes_0x"
+          ]
+        },
+        {
+          "id": "p01-c19",
+          "teams": [
+            "A_HRZ_The_almogooners",
+            "A_GSA_ShmuelTurtles",
+            "A_HRZ_PowerRangers"
+          ]
+        },
+        {
+          "id": "p01-c20",
+          "teams": [
+            "A_HRZ_LowKey_WBB",
+            "A_HRZ_L",
+            "Y_TOM_Code_Killer"
+          ]
+        },
+        {
+          "id": "p01-c21",
+          "teams": [
+            "A_ORT_Pegasus_Hex",
+            "A_IND_cgx123123",
+            "A_TOM_Syntax_Terror"
+          ]
+        },
+        {
+          "id": "p01-c22",
+          "teams": [
+            "A_WAN_OnlyCode",
+            "A_WAN_Baltika9",
+            "A_RZL_YANDE"
+          ]
+        },
+        {
+          "id": "p01-c23",
+          "teams": [
+            "A_HRZ_ADDvanced",
+            "Y_GSA_3Plate_Benchers",
+            "A_HRZ_The_Rubber_Duckies"
+          ]
+        },
+        {
+          "id": "p01-c24",
+          "teams": [
+            "A_HRZ_fisherEXE",
+            "A_OHS_TrojanByte",
+            "Y_TOM_Thefrogs"
+          ]
+        },
+        {
+          "id": "p01-c25",
+          "teams": [
+            "Y_MTA_Hexellent",
+            "A_TOM_anonymous",
+            "A_IND_BRA"
+          ]
+        }
+      ]
+    },
+    {
+      "panel": 2,
+      "seed": "b01d-e1p4-full-2025-p02-bf3c5a87eba8c4b4c25b7d407830a2c2",
+      "executionOrder": [
+        "a_decoy",
+        "b_band_shift",
+        "control",
+        "b01d"
+      ],
+      "cohorts": [
+        {
+          "id": "p02-c01",
+          "teams": [
+            "A_AVI_AnotherBitInTheWall",
+            "Y_SZR_BrvazimAlSteroidim",
+            "A_HRZ_ADDvanced"
+          ]
+        },
+        {
+          "id": "p02-c02",
+          "teams": [
+            "A_GSA_ShmuelTurtles",
+            "A_TOM_2B2Team",
+            "A_WAN_OnlyCode"
+          ]
+        },
+        {
+          "id": "p02-c03",
+          "teams": [
+            "Y_TOM_The_Crushers",
+            "Y_HDS_TRY",
+            "A_HRZ_Registered_Winners"
+          ]
+        },
+        {
+          "id": "p02-c04",
+          "teams": [
+            "A_TOM_tson_el_akod",
+            "A_GSA_callfart",
+            "A_OHS_BatteringRAM"
+          ]
+        },
+        {
+          "id": "p02-c05",
+          "teams": [
+            "Y_GSA_SigmaSilent",
+            "A_WAN_Baltika9",
+            "Y_TOM_AND_JERRY"
+          ]
+        },
+        {
+          "id": "p02-c06",
+          "teams": [
+            "A_WAN_Full_Time_Job",
+            "A_HRZ_L",
+            "A_HRZ_CodeEliteGang"
+          ]
+        },
+        {
+          "id": "p02-c07",
+          "teams": [
+            "A_TOM_anonymous",
+            "A_GSA_GoonSquad",
+            "A_HRZ_MOV_AX_WIN"
+          ]
+        },
+        {
+          "id": "p02-c08",
+          "teams": [
+            "A_HDS_NRI",
+            "A_TOM_Syntax_Terror",
+            "A_GSA_TheBytes"
+          ]
+        },
+        {
+          "id": "p02-c09",
+          "teams": [
+            "A_TOM_BitBenders",
+            "A_OST_Gamma",
+            "A_HRZ_Code_Jokers4Life"
+          ]
+        },
+        {
+          "id": "p02-c10",
+          "teams": [
+            "A_ORT_Pegasus_Hex",
+            "A_HRZ_LowKey_WBB",
+            "Y_TOM_Thefrogs"
+          ]
+        },
+        {
+          "id": "p02-c11",
+          "teams": [
+            "A_HRZ_Pixar_Lamps",
+            "A_GGN_OpcodeHunter",
+            "A_OHS_cgxPro"
+          ]
+        },
+        {
+          "id": "p02-c12",
+          "teams": [
+            "A_IND_stuxnet",
+            "A_ATL_R1DDLE",
+            "A_HRZ_TEST_ticals"
+          ]
+        },
+        {
+          "id": "p02-c13",
+          "teams": [
+            "A_HRZ_fisherEXE",
+            "Y_GSA_LVS_FIT",
+            "A_HLS_EmoMutants"
+          ]
+        },
+        {
+          "id": "p02-c14",
+          "teams": [
+            "A_HDS_IWDIA_nachalo",
+            "A_AVI_Fishandpoultry",
+            "A_HRZ_The_Rubber_Duckies"
+          ]
+        },
+        {
+          "id": "p02-c15",
+          "teams": [
+            "A_IND_cgx123123",
+            "A_HRZ_InCtrl",
+            "A_HDS_ATW_Solo"
+          ]
+        },
+        {
+          "id": "p02-c16",
+          "teams": [
+            "A_HRZ_BinaryBandits",
+            "A_OHS_TrojanByte",
+            "A_HRZ_TitanicSwimTeam"
+          ]
+        },
+        {
+          "id": "p02-c17",
+          "teams": [
+            "A_AML_ByteReapers",
+            "A_OHS_TOMEX",
+            "Y_SZR_The_Chargers"
+          ]
+        },
+        {
+          "id": "p02-c18",
+          "teams": [
+            "A_ORT_TheGoats",
+            "A_HRZ_The_almogooners",
+            "Y_BGR_theGlopyGng"
+          ]
+        },
+        {
+          "id": "p02-c19",
+          "teams": [
+            "Y_TOM_Code_Killer",
+            "A_HRZ_Ctrl_Alt_Elite",
+            "Y_ELD_FriendlyFire"
+          ]
+        },
+        {
+          "id": "p02-c20",
+          "teams": [
+            "A_HRZ_Grindo_Holics",
+            "A_HRZ_stack_attack",
+            "A_HRZ_Thingies"
+          ]
+        },
+        {
+          "id": "p02-c21",
+          "teams": [
+            "A_HRZ_Underflow",
+            "A_GSA_B33",
+            "A_HDS_MAC"
+          ]
+        },
+        {
+          "id": "p02-c22",
+          "teams": [
+            "A_HDS_YOY",
+            "A_BZV_SKYENT",
+            "A_WHS_K0F1M_AL_T1L1M"
+          ]
+        },
+        {
+          "id": "p02-c23",
+          "teams": [
+            "A_IND_BRA",
+            "A_HDS_GoldenLamed",
+            "Y_GSA_3Plate_Benchers"
+          ]
+        },
+        {
+          "id": "p02-c24",
+          "teams": [
+            "Y_MTA_Hexellent",
+            "A_GSA_GhostBytes_0x",
+            "A_KOB_KosherCode"
+          ]
+        },
+        {
+          "id": "p02-c25",
+          "teams": [
+            "A_GSA_VanLavan",
+            "A_RZL_YANDE",
+            "A_HRZ_PowerRangers"
+          ]
+        }
+      ]
+    },
+    {
+      "panel": 3,
+      "seed": "b01d-e1p4-full-2025-p03-06cb95600a237189cf00adb108331a18",
+      "executionOrder": [
+        "a_decoy",
+        "control",
+        "b01d",
+        "b_band_shift"
+      ],
+      "cohorts": [
+        {
+          "id": "p03-c01",
+          "teams": [
+            "A_HDS_YOY",
+            "A_HRZ_Thingies",
+            "A_HRZ_stack_attack"
+          ]
+        },
+        {
+          "id": "p03-c02",
+          "teams": [
+            "A_HDS_GoldenLamed",
+            "A_TOM_Syntax_Terror",
+            "Y_TOM_AND_JERRY"
+          ]
+        },
+        {
+          "id": "p03-c03",
+          "teams": [
+            "A_GSA_ShmuelTurtles",
+            "A_HRZ_The_Rubber_Duckies",
+            "Y_MTA_Hexellent"
+          ]
+        },
+        {
+          "id": "p03-c04",
+          "teams": [
+            "A_GSA_B33",
+            "A_HLS_EmoMutants",
+            "A_HRZ_Pixar_Lamps"
+          ]
+        },
+        {
+          "id": "p03-c05",
+          "teams": [
+            "A_ATL_R1DDLE",
+            "A_HRZ_fisherEXE",
+            "A_GSA_TheBytes"
+          ]
+        },
+        {
+          "id": "p03-c06",
+          "teams": [
+            "A_AVI_AnotherBitInTheWall",
+            "A_HRZ_Ctrl_Alt_Elite",
+            "Y_HDS_TRY"
+          ]
+        },
+        {
+          "id": "p03-c07",
+          "teams": [
+            "A_OHS_cgxPro",
+            "A_IND_stuxnet",
+            "A_GSA_GoonSquad"
+          ]
+        },
+        {
+          "id": "p03-c08",
+          "teams": [
+            "A_AML_ByteReapers",
+            "A_GGN_OpcodeHunter",
+            "Y_SZR_The_Chargers"
+          ]
+        },
+        {
+          "id": "p03-c09",
+          "teams": [
+            "A_HRZ_PowerRangers",
+            "A_ORT_TheGoats",
+            "Y_SZR_BrvazimAlSteroidim"
+          ]
+        },
+        {
+          "id": "p03-c10",
+          "teams": [
+            "A_HRZ_Registered_Winners",
+            "A_OHS_BatteringRAM",
+            "A_IND_BRA"
+          ]
+        },
+        {
+          "id": "p03-c11",
+          "teams": [
+            "A_HDS_ATW_Solo",
+            "A_HRZ_LowKey_WBB",
+            "A_HRZ_TitanicSwimTeam"
+          ]
+        },
+        {
+          "id": "p03-c12",
+          "teams": [
+            "A_KOB_KosherCode",
+            "Y_GSA_3Plate_Benchers",
+            "A_HRZ_InCtrl"
+          ]
+        },
+        {
+          "id": "p03-c13",
+          "teams": [
+            "A_IND_cgx123123",
+            "Y_TOM_The_Crushers",
+            "A_TOM_tson_el_akod"
+          ]
+        },
+        {
+          "id": "p03-c14",
+          "teams": [
+            "A_HRZ_ADDvanced",
+            "A_OHS_TOMEX",
+            "A_WAN_Full_Time_Job"
+          ]
+        },
+        {
+          "id": "p03-c15",
+          "teams": [
+            "A_HRZ_TEST_ticals",
+            "A_OST_Gamma",
+            "Y_GSA_LVS_FIT"
+          ]
+        },
+        {
+          "id": "p03-c16",
+          "teams": [
+            "A_TOM_2B2Team",
+            "A_HDS_MAC",
+            "Y_ELD_FriendlyFire"
+          ]
+        },
+        {
+          "id": "p03-c17",
+          "teams": [
+            "A_HRZ_Grindo_Holics",
+            "A_HRZ_L",
+            "A_TOM_BitBenders"
+          ]
+        },
+        {
+          "id": "p03-c18",
+          "teams": [
+            "A_WHS_K0F1M_AL_T1L1M",
+            "A_ORT_Pegasus_Hex",
+            "Y_TOM_Thefrogs"
+          ]
+        },
+        {
+          "id": "p03-c19",
+          "teams": [
+            "A_GSA_VanLavan",
+            "Y_TOM_Code_Killer",
+            "A_HRZ_Underflow"
+          ]
+        },
+        {
+          "id": "p03-c20",
+          "teams": [
+            "Y_GSA_SigmaSilent",
+            "A_HRZ_BinaryBandits",
+            "A_WAN_OnlyCode"
+          ]
+        },
+        {
+          "id": "p03-c21",
+          "teams": [
+            "A_HRZ_The_almogooners",
+            "A_OHS_TrojanByte",
+            "A_HDS_NRI"
+          ]
+        },
+        {
+          "id": "p03-c22",
+          "teams": [
+            "A_GSA_callfart",
+            "A_HRZ_CodeEliteGang",
+            "A_AVI_Fishandpoultry"
+          ]
+        },
+        {
+          "id": "p03-c23",
+          "teams": [
+            "Y_BGR_theGlopyGng",
+            "A_TOM_anonymous",
+            "A_HRZ_MOV_AX_WIN"
+          ]
+        },
+        {
+          "id": "p03-c24",
+          "teams": [
+            "A_GSA_GhostBytes_0x",
+            "A_BZV_SKYENT",
+            "A_WAN_Baltika9"
+          ]
+        },
+        {
+          "id": "p03-c25",
+          "teams": [
+            "A_HDS_IWDIA_nachalo",
+            "A_RZL_YANDE",
+            "A_HRZ_Code_Jokers4Life"
+          ]
+        }
+      ]
+    },
+    {
+      "panel": 4,
+      "seed": "b01d-e1p4-full-2025-p04-6384c4f940e75fb4a6d0199c3b379687",
+      "executionOrder": [
+        "a_decoy",
+        "control",
+        "b_band_shift",
+        "b01d"
+      ],
+      "cohorts": [
+        {
+          "id": "p04-c01",
+          "teams": [
+            "A_WAN_Baltika9",
+            "Y_GSA_LVS_FIT",
+            "A_GGN_OpcodeHunter"
+          ]
+        },
+        {
+          "id": "p04-c02",
+          "teams": [
+            "A_HDS_NRI",
+            "A_HRZ_Grindo_Holics",
+            "A_HRZ_The_Rubber_Duckies"
+          ]
+        },
+        {
+          "id": "p04-c03",
+          "teams": [
+            "A_HRZ_CodeEliteGang",
+            "A_OST_Gamma",
+            "Y_SZR_BrvazimAlSteroidim"
+          ]
+        },
+        {
+          "id": "p04-c04",
+          "teams": [
+            "A_AVI_Fishandpoultry",
+            "A_HDS_MAC",
+            "A_HRZ_Code_Jokers4Life"
+          ]
+        },
+        {
+          "id": "p04-c05",
+          "teams": [
+            "Y_HDS_TRY",
+            "A_HDS_YOY",
+            "A_TOM_2B2Team"
+          ]
+        },
+        {
+          "id": "p04-c06",
+          "teams": [
+            "A_HRZ_TEST_ticals",
+            "A_BZV_SKYENT",
+            "A_OHS_cgxPro"
+          ]
+        },
+        {
+          "id": "p04-c07",
+          "teams": [
+            "A_GSA_GoonSquad",
+            "A_OHS_TOMEX",
+            "A_WAN_Full_Time_Job"
+          ]
+        },
+        {
+          "id": "p04-c08",
+          "teams": [
+            "A_WAN_OnlyCode",
+            "A_TOM_BitBenders",
+            "A_HRZ_InCtrl"
+          ]
+        },
+        {
+          "id": "p04-c09",
+          "teams": [
+            "A_HDS_GoldenLamed",
+            "A_AML_ByteReapers",
+            "A_WHS_K0F1M_AL_T1L1M"
+          ]
+        },
+        {
+          "id": "p04-c10",
+          "teams": [
+            "A_ATL_R1DDLE",
+            "A_IND_stuxnet",
+            "A_HRZ_L"
+          ]
+        },
+        {
+          "id": "p04-c11",
+          "teams": [
+            "A_ORT_TheGoats",
+            "A_HRZ_ADDvanced",
+            "A_HRZ_stack_attack"
+          ]
+        },
+        {
+          "id": "p04-c12",
+          "teams": [
+            "A_HRZ_Thingies",
+            "Y_GSA_SigmaSilent",
+            "A_TOM_Syntax_Terror"
+          ]
+        },
+        {
+          "id": "p04-c13",
+          "teams": [
+            "A_TOM_tson_el_akod",
+            "A_HRZ_TitanicSwimTeam",
+            "Y_ELD_FriendlyFire"
+          ]
+        },
+        {
+          "id": "p04-c14",
+          "teams": [
+            "A_GSA_callfart",
+            "A_GSA_VanLavan",
+            "A_HRZ_The_almogooners"
+          ]
+        },
+        {
+          "id": "p04-c15",
+          "teams": [
+            "A_HRZ_Pixar_Lamps",
+            "A_HRZ_LowKey_WBB",
+            "Y_TOM_Code_Killer"
+          ]
+        },
+        {
+          "id": "p04-c16",
+          "teams": [
+            "A_OHS_BatteringRAM",
+            "Y_TOM_AND_JERRY",
+            "A_HRZ_Ctrl_Alt_Elite"
+          ]
+        },
+        {
+          "id": "p04-c17",
+          "teams": [
+            "A_HDS_ATW_Solo",
+            "A_KOB_KosherCode",
+            "A_HDS_IWDIA_nachalo"
+          ]
+        },
+        {
+          "id": "p04-c18",
+          "teams": [
+            "A_RZL_YANDE",
+            "A_GSA_TheBytes",
+            "A_GSA_ShmuelTurtles"
+          ]
+        },
+        {
+          "id": "p04-c19",
+          "teams": [
+            "Y_SZR_The_Chargers",
+            "A_TOM_anonymous",
+            "A_HRZ_MOV_AX_WIN"
+          ]
+        },
+        {
+          "id": "p04-c20",
+          "teams": [
+            "Y_TOM_Thefrogs",
+            "A_AVI_AnotherBitInTheWall",
+            "A_GSA_GhostBytes_0x"
+          ]
+        },
+        {
+          "id": "p04-c21",
+          "teams": [
+            "A_HRZ_PowerRangers",
+            "A_GSA_B33",
+            "A_OHS_TrojanByte"
+          ]
+        },
+        {
+          "id": "p04-c22",
+          "teams": [
+            "A_ORT_Pegasus_Hex",
+            "A_HRZ_BinaryBandits",
+            "Y_MTA_Hexellent"
+          ]
+        },
+        {
+          "id": "p04-c23",
+          "teams": [
+            "A_IND_BRA",
+            "Y_TOM_The_Crushers",
+            "A_HLS_EmoMutants"
+          ]
+        },
+        {
+          "id": "p04-c24",
+          "teams": [
+            "A_HRZ_Underflow",
+            "A_HRZ_fisherEXE",
+            "Y_GSA_3Plate_Benchers"
+          ]
+        },
+        {
+          "id": "p04-c25",
+          "teams": [
+            "A_IND_cgx123123",
+            "Y_BGR_theGlopyGng",
+            "A_HRZ_Registered_Winners"
+          ]
+        }
+      ]
+    },
+    {
+      "panel": 5,
+      "seed": "b01d-e1p4-full-2025-p05-91c48167c9a049ca53d8f79bf95a6613",
+      "executionOrder": [
+        "b01d",
+        "b_band_shift",
+        "a_decoy",
+        "control"
+      ],
+      "cohorts": [
+        {
+          "id": "p05-c01",
+          "teams": [
+            "A_GSA_GhostBytes_0x",
+            "A_AVI_Fishandpoultry",
+            "A_ORT_Pegasus_Hex"
+          ]
+        },
+        {
+          "id": "p05-c02",
+          "teams": [
+            "A_HRZ_CodeEliteGang",
+            "A_TOM_tson_el_akod",
+            "A_IND_cgx123123"
+          ]
+        },
+        {
+          "id": "p05-c03",
+          "teams": [
+            "A_GSA_TheBytes",
+            "A_AML_ByteReapers",
+            "A_TOM_2B2Team"
+          ]
+        },
+        {
+          "id": "p05-c04",
+          "teams": [
+            "Y_HDS_TRY",
+            "A_GSA_GoonSquad",
+            "A_HDS_MAC"
+          ]
+        },
+        {
+          "id": "p05-c05",
+          "teams": [
+            "A_HRZ_Pixar_Lamps",
+            "A_HDS_GoldenLamed",
+            "A_HRZ_Code_Jokers4Life"
+          ]
+        },
+        {
+          "id": "p05-c06",
+          "teams": [
+            "Y_GSA_3Plate_Benchers",
+            "A_HRZ_The_almogooners",
+            "A_HRZ_Thingies"
+          ]
+        },
+        {
+          "id": "p05-c07",
+          "teams": [
+            "Y_TOM_Thefrogs",
+            "Y_GSA_LVS_FIT",
+            "A_GGN_OpcodeHunter"
+          ]
+        },
+        {
+          "id": "p05-c08",
+          "teams": [
+            "A_HRZ_InCtrl",
+            "A_HRZ_Underflow",
+            "A_TOM_Syntax_Terror"
+          ]
+        },
+        {
+          "id": "p05-c09",
+          "teams": [
+            "A_WAN_Full_Time_Job",
+            "A_IND_stuxnet",
+            "A_WAN_Baltika9"
+          ]
+        },
+        {
+          "id": "p05-c10",
+          "teams": [
+            "A_HRZ_PowerRangers",
+            "Y_SZR_BrvazimAlSteroidim",
+            "A_TOM_anonymous"
+          ]
+        },
+        {
+          "id": "p05-c11",
+          "teams": [
+            "A_GSA_B33",
+            "A_HRZ_Registered_Winners",
+            "A_HRZ_BinaryBandits"
+          ]
+        },
+        {
+          "id": "p05-c12",
+          "teams": [
+            "A_HRZ_stack_attack",
+            "A_KOB_KosherCode",
+            "A_BZV_SKYENT"
+          ]
+        },
+        {
+          "id": "p05-c13",
+          "teams": [
+            "A_HRZ_The_Rubber_Duckies",
+            "Y_ELD_FriendlyFire",
+            "A_WHS_K0F1M_AL_T1L1M"
+          ]
+        },
+        {
+          "id": "p05-c14",
+          "teams": [
+            "A_HLS_EmoMutants",
+            "Y_TOM_The_Crushers",
+            "A_RZL_YANDE"
+          ]
+        },
+        {
+          "id": "p05-c15",
+          "teams": [
+            "Y_SZR_The_Chargers",
+            "A_HDS_ATW_Solo",
+            "A_GSA_ShmuelTurtles"
+          ]
+        },
+        {
+          "id": "p05-c16",
+          "teams": [
+            "Y_MTA_Hexellent",
+            "A_HRZ_LowKey_WBB",
+            "A_WAN_OnlyCode"
+          ]
+        },
+        {
+          "id": "p05-c17",
+          "teams": [
+            "Y_GSA_SigmaSilent",
+            "A_AVI_AnotherBitInTheWall",
+            "A_IND_BRA"
+          ]
+        },
+        {
+          "id": "p05-c18",
+          "teams": [
+            "A_OHS_BatteringRAM",
+            "A_OHS_cgxPro",
+            "A_OHS_TrojanByte"
+          ]
+        },
+        {
+          "id": "p05-c19",
+          "teams": [
+            "A_ORT_TheGoats",
+            "A_OHS_TOMEX",
+            "A_HDS_NRI"
+          ]
+        },
+        {
+          "id": "p05-c20",
+          "teams": [
+            "Y_TOM_Code_Killer",
+            "A_HRZ_TEST_ticals",
+            "A_HDS_YOY"
+          ]
+        },
+        {
+          "id": "p05-c21",
+          "teams": [
+            "Y_BGR_theGlopyGng",
+            "A_HRZ_Ctrl_Alt_Elite",
+            "A_TOM_BitBenders"
+          ]
+        },
+        {
+          "id": "p05-c22",
+          "teams": [
+            "A_HRZ_TitanicSwimTeam",
+            "A_GSA_callfart",
+            "A_HRZ_L"
+          ]
+        },
+        {
+          "id": "p05-c23",
+          "teams": [
+            "Y_TOM_AND_JERRY",
+            "A_HRZ_MOV_AX_WIN",
+            "A_GSA_VanLavan"
+          ]
+        },
+        {
+          "id": "p05-c24",
+          "teams": [
+            "A_HDS_IWDIA_nachalo",
+            "A_HRZ_Grindo_Holics",
+            "A_HRZ_fisherEXE"
+          ]
+        },
+        {
+          "id": "p05-c25",
+          "teams": [
+            "A_ATL_R1DDLE",
+            "A_OST_Gamma",
+            "A_HRZ_ADDvanced"
+          ]
+        }
+      ]
+    },
+    {
+      "panel": 6,
+      "seed": "b01d-e1p4-full-2025-p06-b912a01fb33342965fc9007eab5dadff",
+      "executionOrder": [
+        "b_band_shift",
+        "b01d",
+        "a_decoy",
+        "control"
+      ],
+      "cohorts": [
+        {
+          "id": "p06-c01",
+          "teams": [
+            "Y_GSA_LVS_FIT",
+            "A_HDS_GoldenLamed",
+            "A_RZL_YANDE"
+          ]
+        },
+        {
+          "id": "p06-c02",
+          "teams": [
+            "A_HRZ_L",
+            "A_WAN_Baltika9",
+            "Y_SZR_BrvazimAlSteroidim"
+          ]
+        },
+        {
+          "id": "p06-c03",
+          "teams": [
+            "A_HRZ_fisherEXE",
+            "A_HRZ_Ctrl_Alt_Elite",
+            "A_HRZ_Thingies"
+          ]
+        },
+        {
+          "id": "p06-c04",
+          "teams": [
+            "A_GSA_ShmuelTurtles",
+            "A_GSA_GhostBytes_0x",
+            "A_HDS_NRI"
+          ]
+        },
+        {
+          "id": "p06-c05",
+          "teams": [
+            "Y_MTA_Hexellent",
+            "A_ATL_R1DDLE",
+            "A_OHS_TrojanByte"
+          ]
+        },
+        {
+          "id": "p06-c06",
+          "teams": [
+            "Y_TOM_AND_JERRY",
+            "A_WAN_OnlyCode",
+            "A_GSA_TheBytes"
+          ]
+        },
+        {
+          "id": "p06-c07",
+          "teams": [
+            "Y_GSA_SigmaSilent",
+            "A_ORT_TheGoats",
+            "A_ORT_Pegasus_Hex"
+          ]
+        },
+        {
+          "id": "p06-c08",
+          "teams": [
+            "A_GGN_OpcodeHunter",
+            "A_WHS_K0F1M_AL_T1L1M",
+            "A_GSA_VanLavan"
+          ]
+        },
+        {
+          "id": "p06-c09",
+          "teams": [
+            "A_HRZ_The_almogooners",
+            "A_HRZ_MOV_AX_WIN",
+            "A_HRZ_Underflow"
+          ]
+        },
+        {
+          "id": "p06-c10",
+          "teams": [
+            "A_KOB_KosherCode",
+            "A_HRZ_TitanicSwimTeam",
+            "Y_HDS_TRY"
+          ]
+        },
+        {
+          "id": "p06-c11",
+          "teams": [
+            "A_HRZ_CodeEliteGang",
+            "Y_TOM_The_Crushers",
+            "A_HRZ_PowerRangers"
+          ]
+        },
+        {
+          "id": "p06-c12",
+          "teams": [
+            "A_HRZ_Code_Jokers4Life",
+            "A_HLS_EmoMutants",
+            "A_HRZ_Grindo_Holics"
+          ]
+        },
+        {
+          "id": "p06-c13",
+          "teams": [
+            "A_HRZ_InCtrl",
+            "Y_TOM_Code_Killer",
+            "Y_ELD_FriendlyFire"
+          ]
+        },
+        {
+          "id": "p06-c14",
+          "teams": [
+            "A_TOM_BitBenders",
+            "A_IND_stuxnet",
+            "A_OST_Gamma"
+          ]
+        },
+        {
+          "id": "p06-c15",
+          "teams": [
+            "A_AVI_AnotherBitInTheWall",
+            "A_HDS_YOY",
+            "A_HRZ_The_Rubber_Duckies"
+          ]
+        },
+        {
+          "id": "p06-c16",
+          "teams": [
+            "A_HRZ_Registered_Winners",
+            "A_TOM_2B2Team",
+            "Y_BGR_theGlopyGng"
+          ]
+        },
+        {
+          "id": "p06-c17",
+          "teams": [
+            "A_HRZ_LowKey_WBB",
+            "Y_SZR_The_Chargers",
+            "A_HRZ_ADDvanced"
+          ]
+        },
+        {
+          "id": "p06-c18",
+          "teams": [
+            "A_HDS_MAC",
+            "A_OHS_BatteringRAM",
+            "A_HDS_IWDIA_nachalo"
+          ]
+        },
+        {
+          "id": "p06-c19",
+          "teams": [
+            "A_IND_cgx123123",
+            "A_HDS_ATW_Solo",
+            "A_TOM_Syntax_Terror"
+          ]
+        },
+        {
+          "id": "p06-c20",
+          "teams": [
+            "A_IND_BRA",
+            "Y_GSA_3Plate_Benchers",
+            "A_AVI_Fishandpoultry"
+          ]
+        },
+        {
+          "id": "p06-c21",
+          "teams": [
+            "A_WAN_Full_Time_Job",
+            "A_HRZ_Pixar_Lamps",
+            "A_AML_ByteReapers"
+          ]
+        },
+        {
+          "id": "p06-c22",
+          "teams": [
+            "A_GSA_B33",
+            "A_HRZ_TEST_ticals",
+            "A_OHS_cgxPro"
+          ]
+        },
+        {
+          "id": "p06-c23",
+          "teams": [
+            "A_TOM_anonymous",
+            "Y_TOM_Thefrogs",
+            "A_GSA_GoonSquad"
+          ]
+        },
+        {
+          "id": "p06-c24",
+          "teams": [
+            "A_BZV_SKYENT",
+            "A_GSA_callfart",
+            "A_HRZ_BinaryBandits"
+          ]
+        },
+        {
+          "id": "p06-c25",
+          "teams": [
+            "A_OHS_TOMEX",
+            "A_TOM_tson_el_akod",
+            "A_HRZ_stack_attack"
+          ]
+        }
+      ]
+    },
+    {
+      "panel": 7,
+      "seed": "b01d-e1p4-full-2025-p07-abaff13948afd48f6de3ec72928b5e26",
+      "executionOrder": [
+        "a_decoy",
+        "b01d",
+        "control",
+        "b_band_shift"
+      ],
+      "cohorts": [
+        {
+          "id": "p07-c01",
+          "teams": [
+            "A_OHS_BatteringRAM",
+            "A_OHS_cgxPro",
+            "A_HRZ_Thingies"
+          ]
+        },
+        {
+          "id": "p07-c02",
+          "teams": [
+            "A_WAN_Baltika9",
+            "A_OHS_TOMEX",
+            "A_TOM_Syntax_Terror"
+          ]
+        },
+        {
+          "id": "p07-c03",
+          "teams": [
+            "A_HRZ_stack_attack",
+            "A_ORT_TheGoats",
+            "Y_SZR_The_Chargers"
+          ]
+        },
+        {
+          "id": "p07-c04",
+          "teams": [
+            "A_IND_BRA",
+            "A_ATL_R1DDLE",
+            "A_HRZ_CodeEliteGang"
+          ]
+        },
+        {
+          "id": "p07-c05",
+          "teams": [
+            "A_GSA_VanLavan",
+            "A_TOM_tson_el_akod",
+            "A_GSA_GoonSquad"
+          ]
+        },
+        {
+          "id": "p07-c06",
+          "teams": [
+            "Y_TOM_The_Crushers",
+            "A_GSA_B33",
+            "A_WAN_OnlyCode"
+          ]
+        },
+        {
+          "id": "p07-c07",
+          "teams": [
+            "A_ORT_Pegasus_Hex",
+            "A_GSA_callfart",
+            "A_OST_Gamma"
+          ]
+        },
+        {
+          "id": "p07-c08",
+          "teams": [
+            "A_HRZ_The_Rubber_Duckies",
+            "A_HRZ_Registered_Winners",
+            "A_AVI_AnotherBitInTheWall"
+          ]
+        },
+        {
+          "id": "p07-c09",
+          "teams": [
+            "A_HRZ_Ctrl_Alt_Elite",
+            "A_GSA_TheBytes",
+            "A_HRZ_TEST_ticals"
+          ]
+        },
+        {
+          "id": "p07-c10",
+          "teams": [
+            "Y_GSA_LVS_FIT",
+            "A_GSA_ShmuelTurtles",
+            "A_HRZ_Code_Jokers4Life"
+          ]
+        },
+        {
+          "id": "p07-c11",
+          "teams": [
+            "A_IND_stuxnet",
+            "A_AML_ByteReapers",
+            "A_HDS_YOY"
+          ]
+        },
+        {
+          "id": "p07-c12",
+          "teams": [
+            "Y_SZR_BrvazimAlSteroidim",
+            "A_HRZ_The_almogooners",
+            "Y_TOM_Thefrogs"
+          ]
+        },
+        {
+          "id": "p07-c13",
+          "teams": [
+            "Y_MTA_Hexellent",
+            "Y_GSA_3Plate_Benchers",
+            "A_TOM_BitBenders"
+          ]
+        },
+        {
+          "id": "p07-c14",
+          "teams": [
+            "Y_ELD_FriendlyFire",
+            "A_TOM_anonymous",
+            "A_BZV_SKYENT"
+          ]
+        },
+        {
+          "id": "p07-c15",
+          "teams": [
+            "Y_HDS_TRY",
+            "A_OHS_TrojanByte",
+            "A_HRZ_Underflow"
+          ]
+        },
+        {
+          "id": "p07-c16",
+          "teams": [
+            "A_HLS_EmoMutants",
+            "A_HRZ_TitanicSwimTeam",
+            "A_HDS_ATW_Solo"
+          ]
+        },
+        {
+          "id": "p07-c17",
+          "teams": [
+            "A_KOB_KosherCode",
+            "A_HDS_IWDIA_nachalo",
+            "Y_GSA_SigmaSilent"
+          ]
+        },
+        {
+          "id": "p07-c18",
+          "teams": [
+            "A_IND_cgx123123",
+            "A_HRZ_BinaryBandits",
+            "A_HDS_NRI"
+          ]
+        },
+        {
+          "id": "p07-c19",
+          "teams": [
+            "A_WAN_Full_Time_Job",
+            "A_HRZ_fisherEXE",
+            "A_RZL_YANDE"
+          ]
+        },
+        {
+          "id": "p07-c20",
+          "teams": [
+            "A_GGN_OpcodeHunter",
+            "Y_TOM_Code_Killer",
+            "A_HRZ_Grindo_Holics"
+          ]
+        },
+        {
+          "id": "p07-c21",
+          "teams": [
+            "A_GSA_GhostBytes_0x",
+            "A_HDS_GoldenLamed",
+            "A_WHS_K0F1M_AL_T1L1M"
+          ]
+        },
+        {
+          "id": "p07-c22",
+          "teams": [
+            "A_HRZ_InCtrl",
+            "A_HDS_MAC",
+            "A_HRZ_LowKey_WBB"
+          ]
+        },
+        {
+          "id": "p07-c23",
+          "teams": [
+            "A_TOM_2B2Team",
+            "A_HRZ_L",
+            "A_HRZ_MOV_AX_WIN"
+          ]
+        },
+        {
+          "id": "p07-c24",
+          "teams": [
+            "A_HRZ_ADDvanced",
+            "A_HRZ_PowerRangers",
+            "Y_TOM_AND_JERRY"
+          ]
+        },
+        {
+          "id": "p07-c25",
+          "teams": [
+            "A_HRZ_Pixar_Lamps",
+            "Y_BGR_theGlopyGng",
+            "A_AVI_Fishandpoultry"
+          ]
+        }
+      ]
+    },
+    {
+      "panel": 8,
+      "seed": "b01d-e1p4-full-2025-p08-0b32949b4593c47491eaa59751fef21b",
+      "executionOrder": [
+        "control",
+        "b01d",
+        "b_band_shift",
+        "a_decoy"
+      ],
+      "cohorts": [
+        {
+          "id": "p08-c01",
+          "teams": [
+            "A_HRZ_stack_attack",
+            "Y_BGR_theGlopyGng",
+            "A_HDS_GoldenLamed"
+          ]
+        },
+        {
+          "id": "p08-c02",
+          "teams": [
+            "Y_GSA_3Plate_Benchers",
+            "A_GSA_TheBytes",
+            "A_HRZ_BinaryBandits"
+          ]
+        },
+        {
+          "id": "p08-c03",
+          "teams": [
+            "A_HDS_NRI",
+            "A_OST_Gamma",
+            "A_HDS_IWDIA_nachalo"
+          ]
+        },
+        {
+          "id": "p08-c04",
+          "teams": [
+            "A_GSA_callfart",
+            "A_HDS_MAC",
+            "A_HRZ_L"
+          ]
+        },
+        {
+          "id": "p08-c05",
+          "teams": [
+            "A_GSA_VanLavan",
+            "A_WAN_Baltika9",
+            "Y_HDS_TRY"
+          ]
+        },
+        {
+          "id": "p08-c06",
+          "teams": [
+            "A_IND_BRA",
+            "A_GSA_GoonSquad",
+            "A_OHS_BatteringRAM"
+          ]
+        },
+        {
+          "id": "p08-c07",
+          "teams": [
+            "A_HRZ_InCtrl",
+            "A_HDS_ATW_Solo",
+            "A_TOM_BitBenders"
+          ]
+        },
+        {
+          "id": "p08-c08",
+          "teams": [
+            "A_HRZ_TitanicSwimTeam",
+            "Y_TOM_The_Crushers",
+            "Y_TOM_AND_JERRY"
+          ]
+        },
+        {
+          "id": "p08-c09",
+          "teams": [
+            "A_HRZ_TEST_ticals",
+            "A_TOM_tson_el_akod",
+            "Y_MTA_Hexellent"
+          ]
+        },
+        {
+          "id": "p08-c10",
+          "teams": [
+            "A_GSA_ShmuelTurtles",
+            "A_HRZ_Pixar_Lamps",
+            "Y_SZR_The_Chargers"
+          ]
+        },
+        {
+          "id": "p08-c11",
+          "teams": [
+            "Y_GSA_LVS_FIT",
+            "A_TOM_2B2Team",
+            "A_HLS_EmoMutants"
+          ]
+        },
+        {
+          "id": "p08-c12",
+          "teams": [
+            "A_HRZ_Thingies",
+            "A_AVI_Fishandpoultry",
+            "A_HRZ_ADDvanced"
+          ]
+        },
+        {
+          "id": "p08-c13",
+          "teams": [
+            "A_OHS_TrojanByte",
+            "A_WHS_K0F1M_AL_T1L1M",
+            "Y_TOM_Thefrogs"
+          ]
+        },
+        {
+          "id": "p08-c14",
+          "teams": [
+            "A_WAN_OnlyCode",
+            "A_WAN_Full_Time_Job",
+            "A_HRZ_LowKey_WBB"
+          ]
+        },
+        {
+          "id": "p08-c15",
+          "teams": [
+            "A_HRZ_MOV_AX_WIN",
+            "A_AML_ByteReapers",
+            "A_HRZ_The_almogooners"
+          ]
+        },
+        {
+          "id": "p08-c16",
+          "teams": [
+            "A_ATL_R1DDLE",
+            "A_ORT_TheGoats",
+            "A_HRZ_CodeEliteGang"
+          ]
+        },
+        {
+          "id": "p08-c17",
+          "teams": [
+            "A_HRZ_Code_Jokers4Life",
+            "A_OHS_cgxPro",
+            "A_ORT_Pegasus_Hex"
+          ]
+        },
+        {
+          "id": "p08-c18",
+          "teams": [
+            "A_HRZ_Registered_Winners",
+            "A_HRZ_The_Rubber_Duckies",
+            "A_GGN_OpcodeHunter"
+          ]
+        },
+        {
+          "id": "p08-c19",
+          "teams": [
+            "A_HDS_YOY",
+            "A_GSA_GhostBytes_0x",
+            "A_AVI_AnotherBitInTheWall"
+          ]
+        },
+        {
+          "id": "p08-c20",
+          "teams": [
+            "Y_ELD_FriendlyFire",
+            "A_HRZ_PowerRangers",
+            "A_IND_cgx123123"
+          ]
+        },
+        {
+          "id": "p08-c21",
+          "teams": [
+            "A_OHS_TOMEX",
+            "A_BZV_SKYENT",
+            "Y_TOM_Code_Killer"
+          ]
+        },
+        {
+          "id": "p08-c22",
+          "teams": [
+            "A_HRZ_fisherEXE",
+            "A_GSA_B33",
+            "A_HRZ_Underflow"
+          ]
+        },
+        {
+          "id": "p08-c23",
+          "teams": [
+            "A_KOB_KosherCode",
+            "Y_SZR_BrvazimAlSteroidim",
+            "A_TOM_Syntax_Terror"
+          ]
+        },
+        {
+          "id": "p08-c24",
+          "teams": [
+            "A_HRZ_Grindo_Holics",
+            "A_RZL_YANDE",
+            "A_HRZ_Ctrl_Alt_Elite"
+          ]
+        },
+        {
+          "id": "p08-c25",
+          "teams": [
+            "A_TOM_anonymous",
+            "A_IND_stuxnet",
+            "Y_GSA_SigmaSilent"
+          ]
+        }
+      ]
+    },
+    {
+      "panel": 9,
+      "seed": "b01d-e1p4-full-2025-p09-4bc198a07e6089cc1d7c91b9aab94857",
+      "executionOrder": [
+        "b_band_shift",
+        "a_decoy",
+        "control",
+        "b01d"
+      ],
+      "cohorts": [
+        {
+          "id": "p09-c01",
+          "teams": [
+            "Y_HDS_TRY",
+            "A_IND_stuxnet",
+            "A_HRZ_MOV_AX_WIN"
+          ]
+        },
+        {
+          "id": "p09-c02",
+          "teams": [
+            "A_WAN_Baltika9",
+            "A_HRZ_The_Rubber_Duckies",
+            "Y_MTA_Hexellent"
+          ]
+        },
+        {
+          "id": "p09-c03",
+          "teams": [
+            "A_GSA_GhostBytes_0x",
+            "A_GSA_B33",
+            "A_WAN_Full_Time_Job"
+          ]
+        },
+        {
+          "id": "p09-c04",
+          "teams": [
+            "A_HRZ_PowerRangers",
+            "A_GSA_GoonSquad",
+            "Y_TOM_The_Crushers"
+          ]
+        },
+        {
+          "id": "p09-c05",
+          "teams": [
+            "Y_SZR_BrvazimAlSteroidim",
+            "Y_GSA_SigmaSilent",
+            "A_BZV_SKYENT"
+          ]
+        },
+        {
+          "id": "p09-c06",
+          "teams": [
+            "A_OHS_TrojanByte",
+            "A_ORT_Pegasus_Hex",
+            "A_OST_Gamma"
+          ]
+        },
+        {
+          "id": "p09-c07",
+          "teams": [
+            "A_HDS_NRI",
+            "A_HDS_GoldenLamed",
+            "A_HRZ_The_almogooners"
+          ]
+        },
+        {
+          "id": "p09-c08",
+          "teams": [
+            "A_ORT_TheGoats",
+            "Y_TOM_AND_JERRY",
+            "Y_TOM_Thefrogs"
+          ]
+        },
+        {
+          "id": "p09-c09",
+          "teams": [
+            "Y_TOM_Code_Killer",
+            "A_HRZ_Pixar_Lamps",
+            "A_IND_cgx123123"
+          ]
+        },
+        {
+          "id": "p09-c10",
+          "teams": [
+            "A_HDS_MAC",
+            "A_HDS_IWDIA_nachalo",
+            "A_HRZ_stack_attack"
+          ]
+        },
+        {
+          "id": "p09-c11",
+          "teams": [
+            "A_TOM_Syntax_Terror",
+            "A_GSA_ShmuelTurtles",
+            "A_TOM_2B2Team"
+          ]
+        },
+        {
+          "id": "p09-c12",
+          "teams": [
+            "Y_GSA_LVS_FIT",
+            "A_HRZ_CodeEliteGang",
+            "A_HRZ_Grindo_Holics"
+          ]
+        },
+        {
+          "id": "p09-c13",
+          "teams": [
+            "Y_ELD_FriendlyFire",
+            "A_TOM_BitBenders",
+            "A_GGN_OpcodeHunter"
+          ]
+        },
+        {
+          "id": "p09-c14",
+          "teams": [
+            "A_IND_BRA",
+            "A_OHS_BatteringRAM",
+            "A_HRZ_Code_Jokers4Life"
+          ]
+        },
+        {
+          "id": "p09-c15",
+          "teams": [
+            "A_AVI_Fishandpoultry",
+            "A_HRZ_TitanicSwimTeam",
+            "A_HRZ_Underflow"
+          ]
+        },
+        {
+          "id": "p09-c16",
+          "teams": [
+            "A_GSA_VanLavan",
+            "A_OHS_cgxPro",
+            "A_TOM_anonymous"
+          ]
+        },
+        {
+          "id": "p09-c17",
+          "teams": [
+            "Y_BGR_theGlopyGng",
+            "A_HRZ_BinaryBandits",
+            "A_HRZ_ADDvanced"
+          ]
+        },
+        {
+          "id": "p09-c18",
+          "teams": [
+            "A_HDS_ATW_Solo",
+            "A_WAN_OnlyCode",
+            "A_RZL_YANDE"
+          ]
+        },
+        {
+          "id": "p09-c19",
+          "teams": [
+            "A_AVI_AnotherBitInTheWall",
+            "Y_GSA_3Plate_Benchers",
+            "A_TOM_tson_el_akod"
+          ]
+        },
+        {
+          "id": "p09-c20",
+          "teams": [
+            "A_HRZ_Registered_Winners",
+            "A_HRZ_LowKey_WBB",
+            "A_KOB_KosherCode"
+          ]
+        },
+        {
+          "id": "p09-c21",
+          "teams": [
+            "A_WHS_K0F1M_AL_T1L1M",
+            "A_ATL_R1DDLE",
+            "A_HRZ_Thingies"
+          ]
+        },
+        {
+          "id": "p09-c22",
+          "teams": [
+            "A_HRZ_TEST_ticals",
+            "A_HRZ_Ctrl_Alt_Elite",
+            "A_OHS_TOMEX"
+          ]
+        },
+        {
+          "id": "p09-c23",
+          "teams": [
+            "A_HRZ_InCtrl",
+            "A_HDS_YOY",
+            "A_HRZ_fisherEXE"
+          ]
+        },
+        {
+          "id": "p09-c24",
+          "teams": [
+            "A_HLS_EmoMutants",
+            "A_GSA_callfart",
+            "A_AML_ByteReapers"
+          ]
+        },
+        {
+          "id": "p09-c25",
+          "teams": [
+            "Y_SZR_The_Chargers",
+            "A_GSA_TheBytes",
+            "A_HRZ_L"
+          ]
+        }
+      ]
+    },
+    {
+      "panel": 10,
+      "seed": "b01d-e1p4-full-2025-p10-f021a161178bd4207063c42235f3169f",
+      "executionOrder": [
+        "b01d",
+        "b_band_shift",
+        "a_decoy",
+        "control"
+      ],
+      "cohorts": [
+        {
+          "id": "p10-c01",
+          "teams": [
+            "A_WHS_K0F1M_AL_T1L1M",
+            "A_ORT_TheGoats",
+            "A_TOM_BitBenders"
+          ]
+        },
+        {
+          "id": "p10-c02",
+          "teams": [
+            "A_TOM_anonymous",
+            "A_AVI_AnotherBitInTheWall",
+            "A_HRZ_BinaryBandits"
+          ]
+        },
+        {
+          "id": "p10-c03",
+          "teams": [
+            "A_WAN_Baltika9",
+            "A_HRZ_ADDvanced",
+            "A_TOM_2B2Team"
+          ]
+        },
+        {
+          "id": "p10-c04",
+          "teams": [
+            "A_AVI_Fishandpoultry",
+            "A_GSA_TheBytes",
+            "A_IND_cgx123123"
+          ]
+        },
+        {
+          "id": "p10-c05",
+          "teams": [
+            "Y_SZR_BrvazimAlSteroidim",
+            "A_AML_ByteReapers",
+            "A_HRZ_Underflow"
+          ]
+        },
+        {
+          "id": "p10-c06",
+          "teams": [
+            "A_KOB_KosherCode",
+            "A_HRZ_TEST_ticals",
+            "A_OHS_BatteringRAM"
+          ]
+        },
+        {
+          "id": "p10-c07",
+          "teams": [
+            "A_GSA_VanLavan",
+            "A_GSA_ShmuelTurtles",
+            "A_HRZ_MOV_AX_WIN"
+          ]
+        },
+        {
+          "id": "p10-c08",
+          "teams": [
+            "A_HRZ_stack_attack",
+            "A_GSA_GhostBytes_0x",
+            "Y_GSA_LVS_FIT"
+          ]
+        },
+        {
+          "id": "p10-c09",
+          "teams": [
+            "A_HRZ_Code_Jokers4Life",
+            "Y_ELD_FriendlyFire",
+            "A_HDS_YOY"
+          ]
+        },
+        {
+          "id": "p10-c10",
+          "teams": [
+            "A_HRZ_The_almogooners",
+            "A_HLS_EmoMutants",
+            "A_HRZ_Thingies"
+          ]
+        },
+        {
+          "id": "p10-c11",
+          "teams": [
+            "A_RZL_YANDE",
+            "A_ORT_Pegasus_Hex",
+            "A_TOM_Syntax_Terror"
+          ]
+        },
+        {
+          "id": "p10-c12",
+          "teams": [
+            "A_GGN_OpcodeHunter",
+            "A_BZV_SKYENT",
+            "Y_TOM_Code_Killer"
+          ]
+        },
+        {
+          "id": "p10-c13",
+          "teams": [
+            "A_GSA_callfart",
+            "A_HRZ_Pixar_Lamps",
+            "A_OST_Gamma"
+          ]
+        },
+        {
+          "id": "p10-c14",
+          "teams": [
+            "Y_MTA_Hexellent",
+            "A_IND_stuxnet",
+            "A_GSA_GoonSquad"
+          ]
+        },
+        {
+          "id": "p10-c15",
+          "teams": [
+            "A_GSA_B33",
+            "Y_HDS_TRY",
+            "Y_SZR_The_Chargers"
+          ]
+        },
+        {
+          "id": "p10-c16",
+          "teams": [
+            "Y_GSA_3Plate_Benchers",
+            "A_WAN_Full_Time_Job",
+            "A_HRZ_TitanicSwimTeam"
+          ]
+        },
+        {
+          "id": "p10-c17",
+          "teams": [
+            "A_HRZ_Ctrl_Alt_Elite",
+            "A_ATL_R1DDLE",
+            "Y_TOM_Thefrogs"
+          ]
+        },
+        {
+          "id": "p10-c18",
+          "teams": [
+            "A_IND_BRA",
+            "A_OHS_TOMEX",
+            "A_HRZ_Grindo_Holics"
+          ]
+        },
+        {
+          "id": "p10-c19",
+          "teams": [
+            "A_OHS_cgxPro",
+            "A_OHS_TrojanByte",
+            "Y_TOM_The_Crushers"
+          ]
+        },
+        {
+          "id": "p10-c20",
+          "teams": [
+            "A_HRZ_Registered_Winners",
+            "Y_BGR_theGlopyGng",
+            "A_HRZ_L"
+          ]
+        },
+        {
+          "id": "p10-c21",
+          "teams": [
+            "Y_TOM_AND_JERRY",
+            "A_HDS_MAC",
+            "A_HDS_GoldenLamed"
+          ]
+        },
+        {
+          "id": "p10-c22",
+          "teams": [
+            "A_HRZ_fisherEXE",
+            "A_HDS_ATW_Solo",
+            "A_TOM_tson_el_akod"
+          ]
+        },
+        {
+          "id": "p10-c23",
+          "teams": [
+            "A_HRZ_PowerRangers",
+            "A_HRZ_The_Rubber_Duckies",
+            "Y_GSA_SigmaSilent"
+          ]
+        },
+        {
+          "id": "p10-c24",
+          "teams": [
+            "A_HDS_IWDIA_nachalo",
+            "A_HRZ_CodeEliteGang",
+            "A_WAN_OnlyCode"
+          ]
+        },
+        {
+          "id": "p10-c25",
+          "teams": [
+            "A_HDS_NRI",
+            "A_HRZ_LowKey_WBB",
+            "A_HRZ_InCtrl"
+          ]
+        }
+      ]
+    },
+    {
+      "panel": 11,
+      "seed": "b01d-e1p4-full-2025-p11-0b046918aa7dabdc28985aa83942bde8",
+      "executionOrder": [
+        "b_band_shift",
+        "a_decoy",
+        "control",
+        "b01d"
+      ],
+      "cohorts": [
+        {
+          "id": "p11-c01",
+          "teams": [
+            "A_HRZ_L",
+            "Y_GSA_3Plate_Benchers",
+            "A_HRZ_Ctrl_Alt_Elite"
+          ]
+        },
+        {
+          "id": "p11-c02",
+          "teams": [
+            "A_ORT_TheGoats",
+            "A_TOM_tson_el_akod",
+            "A_HRZ_The_almogooners"
+          ]
+        },
+        {
+          "id": "p11-c03",
+          "teams": [
+            "A_TOM_Syntax_Terror",
+            "Y_BGR_theGlopyGng",
+            "A_HRZ_Code_Jokers4Life"
+          ]
+        },
+        {
+          "id": "p11-c04",
+          "teams": [
+            "A_GSA_TheBytes",
+            "A_GSA_GoonSquad",
+            "A_KOB_KosherCode"
+          ]
+        },
+        {
+          "id": "p11-c05",
+          "teams": [
+            "A_WHS_K0F1M_AL_T1L1M",
+            "A_HRZ_BinaryBandits",
+            "A_GSA_callfart"
+          ]
+        },
+        {
+          "id": "p11-c06",
+          "teams": [
+            "A_HRZ_PowerRangers",
+            "Y_TOM_Thefrogs",
+            "Y_TOM_AND_JERRY"
+          ]
+        },
+        {
+          "id": "p11-c07",
+          "teams": [
+            "A_HDS_GoldenLamed",
+            "A_HRZ_Grindo_Holics",
+            "A_ATL_R1DDLE"
+          ]
+        },
+        {
+          "id": "p11-c08",
+          "teams": [
+            "A_IND_stuxnet",
+            "A_BZV_SKYENT",
+            "A_HDS_ATW_Solo"
+          ]
+        },
+        {
+          "id": "p11-c09",
+          "teams": [
+            "A_HRZ_The_Rubber_Duckies",
+            "A_HRZ_Underflow",
+            "A_OST_Gamma"
+          ]
+        },
+        {
+          "id": "p11-c10",
+          "teams": [
+            "Y_MTA_Hexellent",
+            "A_HRZ_MOV_AX_WIN",
+            "A_HRZ_LowKey_WBB"
+          ]
+        },
+        {
+          "id": "p11-c11",
+          "teams": [
+            "A_GSA_ShmuelTurtles",
+            "A_HDS_NRI",
+            "A_HRZ_Pixar_Lamps"
+          ]
+        },
+        {
+          "id": "p11-c12",
+          "teams": [
+            "A_TOM_anonymous",
+            "A_RZL_YANDE",
+            "A_HDS_IWDIA_nachalo"
+          ]
+        },
+        {
+          "id": "p11-c13",
+          "teams": [
+            "A_AVI_Fishandpoultry",
+            "A_OHS_TOMEX",
+            "Y_ELD_FriendlyFire"
+          ]
+        },
+        {
+          "id": "p11-c14",
+          "teams": [
+            "A_HRZ_TitanicSwimTeam",
+            "Y_GSA_SigmaSilent",
+            "A_GSA_B33"
+          ]
+        },
+        {
+          "id": "p11-c15",
+          "teams": [
+            "A_WAN_Full_Time_Job",
+            "A_OHS_BatteringRAM",
+            "A_HDS_YOY"
+          ]
+        },
+        {
+          "id": "p11-c16",
+          "teams": [
+            "Y_SZR_BrvazimAlSteroidim",
+            "A_HLS_EmoMutants",
+            "A_IND_BRA"
+          ]
+        },
+        {
+          "id": "p11-c17",
+          "teams": [
+            "A_HRZ_fisherEXE",
+            "A_IND_cgx123123",
+            "A_HRZ_stack_attack"
+          ]
+        },
+        {
+          "id": "p11-c18",
+          "teams": [
+            "A_GSA_GhostBytes_0x",
+            "Y_SZR_The_Chargers",
+            "Y_TOM_The_Crushers"
+          ]
+        },
+        {
+          "id": "p11-c19",
+          "teams": [
+            "A_WAN_Baltika9",
+            "A_HRZ_ADDvanced",
+            "A_OHS_TrojanByte"
+          ]
+        },
+        {
+          "id": "p11-c20",
+          "teams": [
+            "A_ORT_Pegasus_Hex",
+            "A_WAN_OnlyCode",
+            "Y_TOM_Code_Killer"
+          ]
+        },
+        {
+          "id": "p11-c21",
+          "teams": [
+            "Y_HDS_TRY",
+            "A_HRZ_Registered_Winners",
+            "A_GSA_VanLavan"
+          ]
+        },
+        {
+          "id": "p11-c22",
+          "teams": [
+            "A_AVI_AnotherBitInTheWall",
+            "A_TOM_2B2Team",
+            "A_TOM_BitBenders"
+          ]
+        },
+        {
+          "id": "p11-c23",
+          "teams": [
+            "Y_GSA_LVS_FIT",
+            "A_OHS_cgxPro",
+            "A_HRZ_CodeEliteGang"
+          ]
+        },
+        {
+          "id": "p11-c24",
+          "teams": [
+            "A_AML_ByteReapers",
+            "A_HDS_MAC",
+            "A_HRZ_Thingies"
+          ]
+        },
+        {
+          "id": "p11-c25",
+          "teams": [
+            "A_HRZ_InCtrl",
+            "A_GGN_OpcodeHunter",
+            "A_HRZ_TEST_ticals"
+          ]
+        }
+      ]
+    },
+    {
+      "panel": 12,
+      "seed": "b01d-e1p4-full-2025-p12-a8676891820b5926a85f8c5c5ad1a91c",
+      "executionOrder": [
+        "a_decoy",
+        "b_band_shift",
+        "control",
+        "b01d"
+      ],
+      "cohorts": [
+        {
+          "id": "p12-c01",
+          "teams": [
+            "A_GGN_OpcodeHunter",
+            "A_OHS_TrojanByte",
+            "A_HRZ_Pixar_Lamps"
+          ]
+        },
+        {
+          "id": "p12-c02",
+          "teams": [
+            "A_IND_stuxnet",
+            "A_HDS_YOY",
+            "A_OHS_cgxPro"
+          ]
+        },
+        {
+          "id": "p12-c03",
+          "teams": [
+            "A_HRZ_BinaryBandits",
+            "A_WAN_Full_Time_Job",
+            "A_WHS_K0F1M_AL_T1L1M"
+          ]
+        },
+        {
+          "id": "p12-c04",
+          "teams": [
+            "A_HRZ_Thingies",
+            "Y_ELD_FriendlyFire",
+            "A_WAN_OnlyCode"
+          ]
+        },
+        {
+          "id": "p12-c05",
+          "teams": [
+            "Y_SZR_The_Chargers",
+            "Y_TOM_AND_JERRY",
+            "A_ORT_TheGoats"
+          ]
+        },
+        {
+          "id": "p12-c06",
+          "teams": [
+            "A_RZL_YANDE",
+            "A_HDS_NRI",
+            "A_HRZ_ADDvanced"
+          ]
+        },
+        {
+          "id": "p12-c07",
+          "teams": [
+            "Y_SZR_BrvazimAlSteroidim",
+            "A_BZV_SKYENT",
+            "A_HRZ_fisherEXE"
+          ]
+        },
+        {
+          "id": "p12-c08",
+          "teams": [
+            "A_HRZ_Underflow",
+            "A_HDS_ATW_Solo",
+            "Y_HDS_TRY"
+          ]
+        },
+        {
+          "id": "p12-c09",
+          "teams": [
+            "A_HRZ_CodeEliteGang",
+            "A_HDS_MAC",
+            "A_HRZ_L"
+          ]
+        },
+        {
+          "id": "p12-c10",
+          "teams": [
+            "A_GSA_VanLavan",
+            "Y_GSA_LVS_FIT",
+            "A_GSA_TheBytes"
+          ]
+        },
+        {
+          "id": "p12-c11",
+          "teams": [
+            "Y_MTA_Hexellent",
+            "A_HRZ_LowKey_WBB",
+            "A_WAN_Baltika9"
+          ]
+        },
+        {
+          "id": "p12-c12",
+          "teams": [
+            "A_AML_ByteReapers",
+            "A_ATL_R1DDLE",
+            "Y_GSA_3Plate_Benchers"
+          ]
+        },
+        {
+          "id": "p12-c13",
+          "teams": [
+            "A_HRZ_Ctrl_Alt_Elite",
+            "A_HDS_GoldenLamed",
+            "A_TOM_anonymous"
+          ]
+        },
+        {
+          "id": "p12-c14",
+          "teams": [
+            "A_HRZ_TitanicSwimTeam",
+            "Y_TOM_Thefrogs",
+            "A_HRZ_MOV_AX_WIN"
+          ]
+        },
+        {
+          "id": "p12-c15",
+          "teams": [
+            "A_HDS_IWDIA_nachalo",
+            "A_TOM_Syntax_Terror",
+            "A_AVI_Fishandpoultry"
+          ]
+        },
+        {
+          "id": "p12-c16",
+          "teams": [
+            "A_IND_BRA",
+            "A_GSA_GoonSquad",
+            "A_AVI_AnotherBitInTheWall"
+          ]
+        },
+        {
+          "id": "p12-c17",
+          "teams": [
+            "A_TOM_BitBenders",
+            "A_HRZ_Grindo_Holics",
+            "A_HLS_EmoMutants"
+          ]
+        },
+        {
+          "id": "p12-c18",
+          "teams": [
+            "A_HRZ_Code_Jokers4Life",
+            "A_GSA_B33",
+            "Y_TOM_Code_Killer"
+          ]
+        },
+        {
+          "id": "p12-c19",
+          "teams": [
+            "A_OHS_TOMEX",
+            "A_IND_cgx123123",
+            "A_HRZ_PowerRangers"
+          ]
+        },
+        {
+          "id": "p12-c20",
+          "teams": [
+            "A_HRZ_stack_attack",
+            "A_GSA_ShmuelTurtles",
+            "A_OHS_BatteringRAM"
+          ]
+        },
+        {
+          "id": "p12-c21",
+          "teams": [
+            "A_TOM_tson_el_akod",
+            "A_GSA_callfart",
+            "A_KOB_KosherCode"
+          ]
+        },
+        {
+          "id": "p12-c22",
+          "teams": [
+            "A_OST_Gamma",
+            "A_HRZ_TEST_ticals",
+            "Y_TOM_The_Crushers"
+          ]
+        },
+        {
+          "id": "p12-c23",
+          "teams": [
+            "A_TOM_2B2Team",
+            "Y_BGR_theGlopyGng",
+            "A_HRZ_Registered_Winners"
+          ]
+        },
+        {
+          "id": "p12-c24",
+          "teams": [
+            "A_HRZ_The_Rubber_Duckies",
+            "Y_GSA_SigmaSilent",
+            "A_HRZ_The_almogooners"
+          ]
+        },
+        {
+          "id": "p12-c25",
+          "teams": [
+            "A_HRZ_InCtrl",
+            "A_GSA_GhostBytes_0x",
+            "A_ORT_Pegasus_Hex"
+          ]
+        }
+      ]
+    },
+    {
+      "panel": 13,
+      "seed": "b01d-e1p4-full-2025-p13-9f5d5e5e8b34f308e9799f26d4bc36e9",
+      "executionOrder": [
+        "control",
+        "a_decoy",
+        "b01d",
+        "b_band_shift"
+      ],
+      "cohorts": [
+        {
+          "id": "p13-c01",
+          "teams": [
+            "A_HRZ_InCtrl",
+            "A_HRZ_TitanicSwimTeam",
+            "A_HDS_YOY"
+          ]
+        },
+        {
+          "id": "p13-c02",
+          "teams": [
+            "A_HRZ_Thingies",
+            "A_HRZ_TEST_ticals",
+            "A_IND_stuxnet"
+          ]
+        },
+        {
+          "id": "p13-c03",
+          "teams": [
+            "A_AVI_Fishandpoultry",
+            "Y_GSA_LVS_FIT",
+            "Y_TOM_The_Crushers"
+          ]
+        },
+        {
+          "id": "p13-c04",
+          "teams": [
+            "Y_GSA_3Plate_Benchers",
+            "A_HRZ_The_almogooners",
+            "A_OHS_TrojanByte"
+          ]
+        },
+        {
+          "id": "p13-c05",
+          "teams": [
+            "A_ORT_Pegasus_Hex",
+            "A_HRZ_Underflow",
+            "A_AML_ByteReapers"
+          ]
+        },
+        {
+          "id": "p13-c06",
+          "teams": [
+            "A_HRZ_The_Rubber_Duckies",
+            "A_HRZ_LowKey_WBB",
+            "A_GSA_GoonSquad"
+          ]
+        },
+        {
+          "id": "p13-c07",
+          "teams": [
+            "Y_ELD_FriendlyFire",
+            "A_HRZ_BinaryBandits",
+            "A_GSA_TheBytes"
+          ]
+        },
+        {
+          "id": "p13-c08",
+          "teams": [
+            "A_IND_cgx123123",
+            "A_TOM_2B2Team",
+            "A_IND_BRA"
+          ]
+        },
+        {
+          "id": "p13-c09",
+          "teams": [
+            "A_KOB_KosherCode",
+            "A_ATL_R1DDLE",
+            "A_HRZ_Pixar_Lamps"
+          ]
+        },
+        {
+          "id": "p13-c10",
+          "teams": [
+            "A_HRZ_Ctrl_Alt_Elite",
+            "A_HDS_ATW_Solo",
+            "A_GSA_callfart"
+          ]
+        },
+        {
+          "id": "p13-c11",
+          "teams": [
+            "A_TOM_BitBenders",
+            "A_HRZ_stack_attack",
+            "A_HRZ_CodeEliteGang"
+          ]
+        },
+        {
+          "id": "p13-c12",
+          "teams": [
+            "Y_TOM_Code_Killer",
+            "Y_MTA_Hexellent",
+            "Y_HDS_TRY"
+          ]
+        },
+        {
+          "id": "p13-c13",
+          "teams": [
+            "Y_BGR_theGlopyGng",
+            "Y_GSA_SigmaSilent",
+            "A_GSA_VanLavan"
+          ]
+        },
+        {
+          "id": "p13-c14",
+          "teams": [
+            "A_HDS_IWDIA_nachalo",
+            "Y_TOM_Thefrogs",
+            "A_HRZ_fisherEXE"
+          ]
+        },
+        {
+          "id": "p13-c15",
+          "teams": [
+            "Y_SZR_The_Chargers",
+            "A_TOM_Syntax_Terror",
+            "A_HRZ_ADDvanced"
+          ]
+        },
+        {
+          "id": "p13-c16",
+          "teams": [
+            "A_WAN_Baltika9",
+            "A_OHS_cgxPro",
+            "A_BZV_SKYENT"
+          ]
+        },
+        {
+          "id": "p13-c17",
+          "teams": [
+            "A_HRZ_Registered_Winners",
+            "A_HLS_EmoMutants",
+            "A_HDS_MAC"
+          ]
+        },
+        {
+          "id": "p13-c18",
+          "teams": [
+            "A_GSA_ShmuelTurtles",
+            "A_HRZ_PowerRangers",
+            "A_GSA_GhostBytes_0x"
+          ]
+        },
+        {
+          "id": "p13-c19",
+          "teams": [
+            "A_ORT_TheGoats",
+            "A_RZL_YANDE",
+            "A_GGN_OpcodeHunter"
+          ]
+        },
+        {
+          "id": "p13-c20",
+          "teams": [
+            "A_WAN_OnlyCode",
+            "Y_SZR_BrvazimAlSteroidim",
+            "A_HRZ_MOV_AX_WIN"
+          ]
+        },
+        {
+          "id": "p13-c21",
+          "teams": [
+            "A_TOM_anonymous",
+            "A_HDS_NRI",
+            "A_HDS_GoldenLamed"
+          ]
+        },
+        {
+          "id": "p13-c22",
+          "teams": [
+            "A_HRZ_Code_Jokers4Life",
+            "A_AVI_AnotherBitInTheWall",
+            "A_HRZ_L"
+          ]
+        },
+        {
+          "id": "p13-c23",
+          "teams": [
+            "A_WHS_K0F1M_AL_T1L1M",
+            "A_HRZ_Grindo_Holics",
+            "A_OST_Gamma"
+          ]
+        },
+        {
+          "id": "p13-c24",
+          "teams": [
+            "A_GSA_B33",
+            "A_OHS_TOMEX",
+            "Y_TOM_AND_JERRY"
+          ]
+        },
+        {
+          "id": "p13-c25",
+          "teams": [
+            "A_TOM_tson_el_akod",
+            "A_WAN_Full_Time_Job",
+            "A_OHS_BatteringRAM"
+          ]
+        }
+      ]
+    },
+    {
+      "panel": 14,
+      "seed": "b01d-e1p4-full-2025-p14-a2c22f7d7c10879809ab6761c392413c",
+      "executionOrder": [
+        "control",
+        "b_band_shift",
+        "a_decoy",
+        "b01d"
+      ],
+      "cohorts": [
+        {
+          "id": "p14-c01",
+          "teams": [
+            "A_HRZ_InCtrl",
+            "Y_GSA_SigmaSilent",
+            "Y_TOM_AND_JERRY"
+          ]
+        },
+        {
+          "id": "p14-c02",
+          "teams": [
+            "A_IND_stuxnet",
+            "A_HRZ_fisherEXE",
+            "A_HDS_ATW_Solo"
+          ]
+        },
+        {
+          "id": "p14-c03",
+          "teams": [
+            "A_HRZ_stack_attack",
+            "A_HLS_EmoMutants",
+            "A_HDS_YOY"
+          ]
+        },
+        {
+          "id": "p14-c04",
+          "teams": [
+            "A_AML_ByteReapers",
+            "A_HRZ_MOV_AX_WIN",
+            "A_TOM_tson_el_akod"
+          ]
+        },
+        {
+          "id": "p14-c05",
+          "teams": [
+            "A_HRZ_PowerRangers",
+            "Y_GSA_3Plate_Benchers",
+            "Y_BGR_theGlopyGng"
+          ]
+        },
+        {
+          "id": "p14-c06",
+          "teams": [
+            "A_WAN_OnlyCode",
+            "A_HRZ_Thingies",
+            "A_HRZ_LowKey_WBB"
+          ]
+        },
+        {
+          "id": "p14-c07",
+          "teams": [
+            "A_AVI_Fishandpoultry",
+            "Y_SZR_The_Chargers",
+            "A_TOM_BitBenders"
+          ]
+        },
+        {
+          "id": "p14-c08",
+          "teams": [
+            "A_GSA_GhostBytes_0x",
+            "A_TOM_anonymous",
+            "Y_TOM_Code_Killer"
+          ]
+        },
+        {
+          "id": "p14-c09",
+          "teams": [
+            "A_HDS_IWDIA_nachalo",
+            "A_RZL_YANDE",
+            "A_HRZ_TitanicSwimTeam"
+          ]
+        },
+        {
+          "id": "p14-c10",
+          "teams": [
+            "A_IND_cgx123123",
+            "Y_SZR_BrvazimAlSteroidim",
+            "A_HRZ_Underflow"
+          ]
+        },
+        {
+          "id": "p14-c11",
+          "teams": [
+            "A_HRZ_Registered_Winners",
+            "A_ORT_Pegasus_Hex",
+            "A_HDS_MAC"
+          ]
+        },
+        {
+          "id": "p14-c12",
+          "teams": [
+            "A_HRZ_TEST_ticals",
+            "Y_ELD_FriendlyFire",
+            "A_OHS_BatteringRAM"
+          ]
+        },
+        {
+          "id": "p14-c13",
+          "teams": [
+            "A_HDS_GoldenLamed",
+            "A_HRZ_CodeEliteGang",
+            "A_TOM_Syntax_Terror"
+          ]
+        },
+        {
+          "id": "p14-c14",
+          "teams": [
+            "Y_TOM_The_Crushers",
+            "A_GGN_OpcodeHunter",
+            "A_OHS_TOMEX"
+          ]
+        },
+        {
+          "id": "p14-c15",
+          "teams": [
+            "A_ORT_TheGoats",
+            "A_WAN_Full_Time_Job",
+            "A_AVI_AnotherBitInTheWall"
+          ]
+        },
+        {
+          "id": "p14-c16",
+          "teams": [
+            "A_HRZ_L",
+            "A_OST_Gamma",
+            "A_GSA_ShmuelTurtles"
+          ]
+        },
+        {
+          "id": "p14-c17",
+          "teams": [
+            "Y_TOM_Thefrogs",
+            "A_OHS_cgxPro",
+            "A_GSA_GoonSquad"
+          ]
+        },
+        {
+          "id": "p14-c18",
+          "teams": [
+            "A_HRZ_ADDvanced",
+            "Y_MTA_Hexellent",
+            "A_HRZ_Code_Jokers4Life"
+          ]
+        },
+        {
+          "id": "p14-c19",
+          "teams": [
+            "A_GSA_VanLavan",
+            "A_HRZ_Pixar_Lamps",
+            "A_HDS_NRI"
+          ]
+        },
+        {
+          "id": "p14-c20",
+          "teams": [
+            "A_BZV_SKYENT",
+            "A_GSA_TheBytes",
+            "A_HRZ_BinaryBandits"
+          ]
+        },
+        {
+          "id": "p14-c21",
+          "teams": [
+            "A_TOM_2B2Team",
+            "A_WHS_K0F1M_AL_T1L1M",
+            "Y_GSA_LVS_FIT"
+          ]
+        },
+        {
+          "id": "p14-c22",
+          "teams": [
+            "A_HRZ_Grindo_Holics",
+            "A_OHS_TrojanByte",
+            "A_HRZ_The_Rubber_Duckies"
+          ]
+        },
+        {
+          "id": "p14-c23",
+          "teams": [
+            "A_HRZ_The_almogooners",
+            "A_ATL_R1DDLE",
+            "A_HRZ_Ctrl_Alt_Elite"
+          ]
+        },
+        {
+          "id": "p14-c24",
+          "teams": [
+            "A_GSA_B33",
+            "A_KOB_KosherCode",
+            "A_WAN_Baltika9"
+          ]
+        },
+        {
+          "id": "p14-c25",
+          "teams": [
+            "Y_HDS_TRY",
+            "A_GSA_callfart",
+            "A_IND_BRA"
+          ]
+        }
+      ]
+    },
+    {
+      "panel": 15,
+      "seed": "b01d-e1p4-full-2025-p15-38d21bd3c854b06942daa78468269bdc",
+      "executionOrder": [
+        "a_decoy",
+        "b01d",
+        "b_band_shift",
+        "control"
+      ],
+      "cohorts": [
+        {
+          "id": "p15-c01",
+          "teams": [
+            "A_RZL_YANDE",
+            "A_HRZ_Registered_Winners",
+            "A_IND_BRA"
+          ]
+        },
+        {
+          "id": "p15-c02",
+          "teams": [
+            "Y_MTA_Hexellent",
+            "A_TOM_anonymous",
+            "A_GSA_GhostBytes_0x"
+          ]
+        },
+        {
+          "id": "p15-c03",
+          "teams": [
+            "A_OHS_TOMEX",
+            "A_GSA_callfart",
+            "A_WAN_Full_Time_Job"
+          ]
+        },
+        {
+          "id": "p15-c04",
+          "teams": [
+            "A_WHS_K0F1M_AL_T1L1M",
+            "A_HDS_YOY",
+            "A_GSA_TheBytes"
+          ]
+        },
+        {
+          "id": "p15-c05",
+          "teams": [
+            "A_AML_ByteReapers",
+            "Y_TOM_Thefrogs",
+            "A_OST_Gamma"
+          ]
+        },
+        {
+          "id": "p15-c06",
+          "teams": [
+            "A_ORT_TheGoats",
+            "A_TOM_BitBenders",
+            "A_HRZ_LowKey_WBB"
+          ]
+        },
+        {
+          "id": "p15-c07",
+          "teams": [
+            "A_IND_stuxnet",
+            "A_BZV_SKYENT",
+            "Y_GSA_3Plate_Benchers"
+          ]
+        },
+        {
+          "id": "p15-c08",
+          "teams": [
+            "A_HRZ_PowerRangers",
+            "A_GSA_B33",
+            "A_AVI_AnotherBitInTheWall"
+          ]
+        },
+        {
+          "id": "p15-c09",
+          "teams": [
+            "Y_GSA_SigmaSilent",
+            "A_HRZ_The_almogooners",
+            "A_HRZ_Grindo_Holics"
+          ]
+        },
+        {
+          "id": "p15-c10",
+          "teams": [
+            "Y_BGR_theGlopyGng",
+            "A_TOM_tson_el_akod",
+            "A_ATL_R1DDLE"
+          ]
+        },
+        {
+          "id": "p15-c11",
+          "teams": [
+            "Y_SZR_BrvazimAlSteroidim",
+            "A_TOM_Syntax_Terror",
+            "A_HRZ_stack_attack"
+          ]
+        },
+        {
+          "id": "p15-c12",
+          "teams": [
+            "A_GGN_OpcodeHunter",
+            "A_WAN_Baltika9",
+            "Y_SZR_The_Chargers"
+          ]
+        },
+        {
+          "id": "p15-c13",
+          "teams": [
+            "A_HRZ_The_Rubber_Duckies",
+            "A_HRZ_InCtrl",
+            "A_HDS_MAC"
+          ]
+        },
+        {
+          "id": "p15-c14",
+          "teams": [
+            "A_HRZ_MOV_AX_WIN",
+            "A_HRZ_Underflow",
+            "A_HRZ_Pixar_Lamps"
+          ]
+        },
+        {
+          "id": "p15-c15",
+          "teams": [
+            "A_HDS_NRI",
+            "A_HRZ_Ctrl_Alt_Elite",
+            "A_HRZ_TEST_ticals"
+          ]
+        },
+        {
+          "id": "p15-c16",
+          "teams": [
+            "A_OHS_BatteringRAM",
+            "A_HDS_IWDIA_nachalo",
+            "A_HRZ_Code_Jokers4Life"
+          ]
+        },
+        {
+          "id": "p15-c17",
+          "teams": [
+            "Y_GSA_LVS_FIT",
+            "A_HRZ_fisherEXE",
+            "A_HRZ_Thingies"
+          ]
+        },
+        {
+          "id": "p15-c18",
+          "teams": [
+            "A_HRZ_TitanicSwimTeam",
+            "A_WAN_OnlyCode",
+            "A_TOM_2B2Team"
+          ]
+        },
+        {
+          "id": "p15-c19",
+          "teams": [
+            "A_OHS_TrojanByte",
+            "A_GSA_GoonSquad",
+            "Y_ELD_FriendlyFire"
+          ]
+        },
+        {
+          "id": "p15-c20",
+          "teams": [
+            "A_AVI_Fishandpoultry",
+            "Y_TOM_Code_Killer",
+            "Y_HDS_TRY"
+          ]
+        },
+        {
+          "id": "p15-c21",
+          "teams": [
+            "A_HLS_EmoMutants",
+            "A_KOB_KosherCode",
+            "A_HDS_GoldenLamed"
+          ]
+        },
+        {
+          "id": "p15-c22",
+          "teams": [
+            "A_HDS_ATW_Solo",
+            "A_GSA_VanLavan",
+            "A_HRZ_BinaryBandits"
+          ]
+        },
+        {
+          "id": "p15-c23",
+          "teams": [
+            "A_HRZ_CodeEliteGang",
+            "A_HRZ_ADDvanced",
+            "Y_TOM_The_Crushers"
+          ]
+        },
+        {
+          "id": "p15-c24",
+          "teams": [
+            "A_ORT_Pegasus_Hex",
+            "A_IND_cgx123123",
+            "A_HRZ_L"
+          ]
+        },
+        {
+          "id": "p15-c25",
+          "teams": [
+            "A_OHS_cgxPro",
+            "Y_TOM_AND_JERRY",
+            "A_GSA_ShmuelTurtles"
+          ]
+        }
+      ]
+    },
+    {
+      "panel": 16,
+      "seed": "b01d-e1p4-full-2025-p16-5ff7fd26d9330290913487709f783967",
+      "executionOrder": [
+        "b01d",
+        "b_band_shift",
+        "a_decoy",
+        "control"
+      ],
+      "cohorts": [
+        {
+          "id": "p16-c01",
+          "teams": [
+            "A_TOM_anonymous",
+            "A_WAN_Baltika9",
+            "A_HRZ_Underflow"
+          ]
+        },
+        {
+          "id": "p16-c02",
+          "teams": [
+            "A_RZL_YANDE",
+            "Y_TOM_Code_Killer",
+            "Y_GSA_3Plate_Benchers"
+          ]
+        },
+        {
+          "id": "p16-c03",
+          "teams": [
+            "A_HDS_IWDIA_nachalo",
+            "A_TOM_BitBenders",
+            "A_HRZ_Code_Jokers4Life"
+          ]
+        },
+        {
+          "id": "p16-c04",
+          "teams": [
+            "A_HRZ_stack_attack",
+            "A_WHS_K0F1M_AL_T1L1M",
+            "A_AVI_Fishandpoultry"
+          ]
+        },
+        {
+          "id": "p16-c05",
+          "teams": [
+            "A_HRZ_InCtrl",
+            "A_GSA_callfart",
+            "A_OST_Gamma"
+          ]
+        },
+        {
+          "id": "p16-c06",
+          "teams": [
+            "A_GSA_GhostBytes_0x",
+            "A_ORT_TheGoats",
+            "A_HDS_YOY"
+          ]
+        },
+        {
+          "id": "p16-c07",
+          "teams": [
+            "A_TOM_Syntax_Terror",
+            "A_HRZ_Grindo_Holics",
+            "Y_ELD_FriendlyFire"
+          ]
+        },
+        {
+          "id": "p16-c08",
+          "teams": [
+            "Y_TOM_AND_JERRY",
+            "A_HRZ_L",
+            "A_HDS_GoldenLamed"
+          ]
+        },
+        {
+          "id": "p16-c09",
+          "teams": [
+            "A_ATL_R1DDLE",
+            "A_KOB_KosherCode",
+            "Y_TOM_Thefrogs"
+          ]
+        },
+        {
+          "id": "p16-c10",
+          "teams": [
+            "A_HRZ_Ctrl_Alt_Elite",
+            "A_GGN_OpcodeHunter",
+            "A_WAN_OnlyCode"
+          ]
+        },
+        {
+          "id": "p16-c11",
+          "teams": [
+            "A_TOM_2B2Team",
+            "Y_HDS_TRY",
+            "A_OHS_TOMEX"
+          ]
+        },
+        {
+          "id": "p16-c12",
+          "teams": [
+            "A_GSA_GoonSquad",
+            "A_TOM_tson_el_akod",
+            "A_HRZ_Pixar_Lamps"
+          ]
+        },
+        {
+          "id": "p16-c13",
+          "teams": [
+            "Y_MTA_Hexellent",
+            "A_AML_ByteReapers",
+            "A_HRZ_Thingies"
+          ]
+        },
+        {
+          "id": "p16-c14",
+          "teams": [
+            "A_HRZ_PowerRangers",
+            "A_WAN_Full_Time_Job",
+            "Y_BGR_theGlopyGng"
+          ]
+        },
+        {
+          "id": "p16-c15",
+          "teams": [
+            "Y_SZR_The_Chargers",
+            "A_HRZ_TEST_ticals",
+            "A_GSA_VanLavan"
+          ]
+        },
+        {
+          "id": "p16-c16",
+          "teams": [
+            "A_ORT_Pegasus_Hex",
+            "A_OHS_TrojanByte",
+            "A_HRZ_fisherEXE"
+          ]
+        },
+        {
+          "id": "p16-c17",
+          "teams": [
+            "Y_GSA_LVS_FIT",
+            "A_HDS_NRI",
+            "A_BZV_SKYENT"
+          ]
+        },
+        {
+          "id": "p16-c18",
+          "teams": [
+            "A_IND_BRA",
+            "A_HRZ_BinaryBandits",
+            "A_HRZ_ADDvanced"
+          ]
+        },
+        {
+          "id": "p16-c19",
+          "teams": [
+            "Y_SZR_BrvazimAlSteroidim",
+            "Y_GSA_SigmaSilent",
+            "A_HDS_ATW_Solo"
+          ]
+        },
+        {
+          "id": "p16-c20",
+          "teams": [
+            "A_OHS_BatteringRAM",
+            "A_IND_stuxnet",
+            "A_HRZ_CodeEliteGang"
+          ]
+        },
+        {
+          "id": "p16-c21",
+          "teams": [
+            "A_OHS_cgxPro",
+            "A_HRZ_Registered_Winners",
+            "A_GSA_TheBytes"
+          ]
+        },
+        {
+          "id": "p16-c22",
+          "teams": [
+            "A_HRZ_The_almogooners",
+            "A_GSA_B33",
+            "Y_TOM_The_Crushers"
+          ]
+        },
+        {
+          "id": "p16-c23",
+          "teams": [
+            "A_GSA_ShmuelTurtles",
+            "A_IND_cgx123123",
+            "A_AVI_AnotherBitInTheWall"
+          ]
+        },
+        {
+          "id": "p16-c24",
+          "teams": [
+            "A_HRZ_MOV_AX_WIN",
+            "A_HRZ_LowKey_WBB",
+            "A_HLS_EmoMutants"
+          ]
+        },
+        {
+          "id": "p16-c25",
+          "teams": [
+            "A_HRZ_The_Rubber_Duckies",
+            "A_HDS_MAC",
+            "A_HRZ_TitanicSwimTeam"
+          ]
+        }
+      ]
+    }
+  ],
+  "configs": [
+    {
+      "panel": 1,
+      "arm": "b01d",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\b01d-e1p4-validation-20261002\\configs\\b01d-e1p4-p01-b01d.json",
+      "sha256": "43e9873ec1978d8f6b24aeb9426cf400b1e8071794e3934f1b70919534f498e2",
+      "battles": 1250
+    },
+    {
+      "panel": 1,
+      "arm": "a_decoy",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\b01d-e1p4-validation-20261002\\configs\\b01d-e1p4-p01-a_decoy.json",
+      "sha256": "765b2ff046a9a1a91051676d5ec567d48bf58f7820056179198b29a3c48a80ff",
+      "battles": 1250
+    },
+    {
+      "panel": 1,
+      "arm": "b_band_shift",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\b01d-e1p4-validation-20261002\\configs\\b01d-e1p4-p01-b_band_shift.json",
+      "sha256": "6965ef425dddc8e178574f8bbd8a0ee80e4d519a1c4f9b1c66f40d8659781b42",
+      "battles": 1250
+    },
+    {
+      "panel": 1,
+      "arm": "control",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\b01d-e1p4-validation-20261002\\configs\\b01d-e1p4-p01-control.json",
+      "sha256": "6221f123dad546627344ad2ab9f2a7f8ad732a2650ddddb1e9c99aea8d4bd58e",
+      "battles": 1250
+    },
+    {
+      "panel": 2,
+      "arm": "a_decoy",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\b01d-e1p4-validation-20261002\\configs\\b01d-e1p4-p02-a_decoy.json",
+      "sha256": "10bcd34cc212fcaef8c2d45f059188be660e74cb028c7aec02e075d82fed39bd",
+      "battles": 1250
+    },
+    {
+      "panel": 2,
+      "arm": "b_band_shift",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\b01d-e1p4-validation-20261002\\configs\\b01d-e1p4-p02-b_band_shift.json",
+      "sha256": "fa260d6aaa87f1948cb0fd3924d48b9ee7e8279358ded8aeae2cc54ec6d33c86",
+      "battles": 1250
+    },
+    {
+      "panel": 2,
+      "arm": "control",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\b01d-e1p4-validation-20261002\\configs\\b01d-e1p4-p02-control.json",
+      "sha256": "e1250ee585922dc6f6e578d7ae71e0fc0760fa5696d5aef1a10d937a56924230",
+      "battles": 1250
+    },
+    {
+      "panel": 2,
+      "arm": "b01d",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\b01d-e1p4-validation-20261002\\configs\\b01d-e1p4-p02-b01d.json",
+      "sha256": "cb5fd01e966a34d32d40a7b6284c8612e793ddb5cd3963681ea0a4107feb6380",
+      "battles": 1250
+    },
+    {
+      "panel": 3,
+      "arm": "a_decoy",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\b01d-e1p4-validation-20261002\\configs\\b01d-e1p4-p03-a_decoy.json",
+      "sha256": "dbdee2425c337293907bccf85f41a927573c1a6169a383a0e58da4f326ba1074",
+      "battles": 1250
+    },
+    {
+      "panel": 3,
+      "arm": "control",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\b01d-e1p4-validation-20261002\\configs\\b01d-e1p4-p03-control.json",
+      "sha256": "aae2c9502be2cf03c382725df6f1f4923dda778f5ea0b461bbabcb86bc2e4e9d",
+      "battles": 1250
+    },
+    {
+      "panel": 3,
+      "arm": "b01d",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\b01d-e1p4-validation-20261002\\configs\\b01d-e1p4-p03-b01d.json",
+      "sha256": "ddf9d0ab7e52468b53d6b7998b54af18c23b95815953163722bdfbb55ce70e5c",
+      "battles": 1250
+    },
+    {
+      "panel": 3,
+      "arm": "b_band_shift",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\b01d-e1p4-validation-20261002\\configs\\b01d-e1p4-p03-b_band_shift.json",
+      "sha256": "16864eb96a9e016bcf9f5125484508d39df8779cb23a1b784fde30e4c9708454",
+      "battles": 1250
+    },
+    {
+      "panel": 4,
+      "arm": "a_decoy",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\b01d-e1p4-validation-20261002\\configs\\b01d-e1p4-p04-a_decoy.json",
+      "sha256": "e314ab4fece70a010dbf0a306c9f0c58f7ee5f32a8598f3528fb2c1e7fce6b54",
+      "battles": 1250
+    },
+    {
+      "panel": 4,
+      "arm": "control",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\b01d-e1p4-validation-20261002\\configs\\b01d-e1p4-p04-control.json",
+      "sha256": "b155e5883168d207c1676a4a4163cdec06be5dee6902179fd791af8829fb8610",
+      "battles": 1250
+    },
+    {
+      "panel": 4,
+      "arm": "b_band_shift",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\b01d-e1p4-validation-20261002\\configs\\b01d-e1p4-p04-b_band_shift.json",
+      "sha256": "98cc8a61deeecbad1e56b0ba9a7e4384bf34a20ec42717b91b475ac29e9b642e",
+      "battles": 1250
+    },
+    {
+      "panel": 4,
+      "arm": "b01d",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\b01d-e1p4-validation-20261002\\configs\\b01d-e1p4-p04-b01d.json",
+      "sha256": "2d2f000bd224914e4682940614f15394db1bb96b5168d0be73c6a9eedbd204a9",
+      "battles": 1250
+    },
+    {
+      "panel": 5,
+      "arm": "b01d",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\b01d-e1p4-validation-20261002\\configs\\b01d-e1p4-p05-b01d.json",
+      "sha256": "bf49b6e1bd1103680636383a5cc740e101c3ede03251e72e0d0012f72ed1a1e6",
+      "battles": 1250
+    },
+    {
+      "panel": 5,
+      "arm": "b_band_shift",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\b01d-e1p4-validation-20261002\\configs\\b01d-e1p4-p05-b_band_shift.json",
+      "sha256": "2e30d3bd5bcca65f88e121892e0d84dd55b1725cc3b23316f5e360ada4c51549",
+      "battles": 1250
+    },
+    {
+      "panel": 5,
+      "arm": "a_decoy",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\b01d-e1p4-validation-20261002\\configs\\b01d-e1p4-p05-a_decoy.json",
+      "sha256": "c26ceff46db27c5bc7f3e255f04e6c95c51ff6ae9ba09059518bbcd61d421425",
+      "battles": 1250
+    },
+    {
+      "panel": 5,
+      "arm": "control",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\b01d-e1p4-validation-20261002\\configs\\b01d-e1p4-p05-control.json",
+      "sha256": "fef61607aff41e43464e788ce9e9900b96fd41a49cc4646eb90cc7c0b43ccdd2",
+      "battles": 1250
+    },
+    {
+      "panel": 6,
+      "arm": "b_band_shift",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\b01d-e1p4-validation-20261002\\configs\\b01d-e1p4-p06-b_band_shift.json",
+      "sha256": "04393d9caf9eeeafda612579d4089f90aa58d7d212f1cb17c89062f8e7d71d10",
+      "battles": 1250
+    },
+    {
+      "panel": 6,
+      "arm": "b01d",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\b01d-e1p4-validation-20261002\\configs\\b01d-e1p4-p06-b01d.json",
+      "sha256": "51d4ef63592eec49c2df26689fd455bb5844c12ff4ce8c5b3f55843a61efd1d9",
+      "battles": 1250
+    },
+    {
+      "panel": 6,
+      "arm": "a_decoy",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\b01d-e1p4-validation-20261002\\configs\\b01d-e1p4-p06-a_decoy.json",
+      "sha256": "86e85475e5175c52566982382736bf6df56ab016f17667e45a784fa3be3f9d7c",
+      "battles": 1250
+    },
+    {
+      "panel": 6,
+      "arm": "control",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\b01d-e1p4-validation-20261002\\configs\\b01d-e1p4-p06-control.json",
+      "sha256": "638e4056b7fbc6ad2aed3a2d0999140a4500e88e9bcae5e915572ae817b8aae3",
+      "battles": 1250
+    },
+    {
+      "panel": 7,
+      "arm": "a_decoy",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\b01d-e1p4-validation-20261002\\configs\\b01d-e1p4-p07-a_decoy.json",
+      "sha256": "249f1ebb2b08172fcb04ee7e7f8b10037c636c8b71cd71c2507f42e41757e9de",
+      "battles": 1250
+    },
+    {
+      "panel": 7,
+      "arm": "b01d",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\b01d-e1p4-validation-20261002\\configs\\b01d-e1p4-p07-b01d.json",
+      "sha256": "8f3846a6b73677ba0be469c64899a0210b02f58dc578c7039cc0e8c316b98679",
+      "battles": 1250
+    },
+    {
+      "panel": 7,
+      "arm": "control",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\b01d-e1p4-validation-20261002\\configs\\b01d-e1p4-p07-control.json",
+      "sha256": "5b5109f10272d4dfaf3beb1da74d55283d8b5e4550369d919dae33b510ada52e",
+      "battles": 1250
+    },
+    {
+      "panel": 7,
+      "arm": "b_band_shift",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\b01d-e1p4-validation-20261002\\configs\\b01d-e1p4-p07-b_band_shift.json",
+      "sha256": "f436b7e32471cd702d89acce0dd6b5691ecb4963e4eca1c3ab14885704aef2b2",
+      "battles": 1250
+    },
+    {
+      "panel": 8,
+      "arm": "control",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\b01d-e1p4-validation-20261002\\configs\\b01d-e1p4-p08-control.json",
+      "sha256": "4a0b3be7a8932470c83d81bc9d3b11ed98ccf3cac9a780a3fd17d09fde48dfd1",
+      "battles": 1250
+    },
+    {
+      "panel": 8,
+      "arm": "b01d",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\b01d-e1p4-validation-20261002\\configs\\b01d-e1p4-p08-b01d.json",
+      "sha256": "bc1bb083594ef20d1f5856a157165aa5d38f15f9cac45382108125e345c2b526",
+      "battles": 1250
+    },
+    {
+      "panel": 8,
+      "arm": "b_band_shift",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\b01d-e1p4-validation-20261002\\configs\\b01d-e1p4-p08-b_band_shift.json",
+      "sha256": "403b44268f754d7b7fa6d019c00ac7b5eebe967512feec3ba38eb117b71682d0",
+      "battles": 1250
+    },
+    {
+      "panel": 8,
+      "arm": "a_decoy",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\b01d-e1p4-validation-20261002\\configs\\b01d-e1p4-p08-a_decoy.json",
+      "sha256": "cbddd6e2eee3e9565231d51cb84987cc1f7f770875f30712711ff5a6cac6c304",
+      "battles": 1250
+    },
+    {
+      "panel": 9,
+      "arm": "b_band_shift",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\b01d-e1p4-validation-20261002\\configs\\b01d-e1p4-p09-b_band_shift.json",
+      "sha256": "035154453a2de8d33d6ee7c3bac776ed4dbbbf2d00bdf099127a2f65f2392f27",
+      "battles": 1250
+    },
+    {
+      "panel": 9,
+      "arm": "a_decoy",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\b01d-e1p4-validation-20261002\\configs\\b01d-e1p4-p09-a_decoy.json",
+      "sha256": "b0fca61c94071390e7071540910a394ab1141e255d431e9f69fe2c47611490bd",
+      "battles": 1250
+    },
+    {
+      "panel": 9,
+      "arm": "control",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\b01d-e1p4-validation-20261002\\configs\\b01d-e1p4-p09-control.json",
+      "sha256": "1d73447c94bbe5f6461e08c3ec590c765880ad3b7ddb74314ec7317436693d7f",
+      "battles": 1250
+    },
+    {
+      "panel": 9,
+      "arm": "b01d",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\b01d-e1p4-validation-20261002\\configs\\b01d-e1p4-p09-b01d.json",
+      "sha256": "ca805701b2731af2661ac50f259513c90f1e7cf3c23389949d6c5ae599f72fd3",
+      "battles": 1250
+    },
+    {
+      "panel": 10,
+      "arm": "b01d",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\b01d-e1p4-validation-20261002\\configs\\b01d-e1p4-p10-b01d.json",
+      "sha256": "a92a64ded6a6f5cc0ff0c1819602fec1fb37a5c9fd70eda5efd55e5d707a05ce",
+      "battles": 1250
+    },
+    {
+      "panel": 10,
+      "arm": "b_band_shift",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\b01d-e1p4-validation-20261002\\configs\\b01d-e1p4-p10-b_band_shift.json",
+      "sha256": "6a1d52e85ebfc5c5e6fb6951f8ecab85b5dc3e559bd2b14e963a506b542aa530",
+      "battles": 1250
+    },
+    {
+      "panel": 10,
+      "arm": "a_decoy",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\b01d-e1p4-validation-20261002\\configs\\b01d-e1p4-p10-a_decoy.json",
+      "sha256": "ad348d17d7d48bbde576be24866c2f0541f3fd122a0c8cdccc4f7e9400868d3b",
+      "battles": 1250
+    },
+    {
+      "panel": 10,
+      "arm": "control",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\b01d-e1p4-validation-20261002\\configs\\b01d-e1p4-p10-control.json",
+      "sha256": "3f75a728e638d4b31ee8329d183cbaace0d5c6bc5005c3ac4a2a4ba9ab0d0c78",
+      "battles": 1250
+    },
+    {
+      "panel": 11,
+      "arm": "b_band_shift",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\b01d-e1p4-validation-20261002\\configs\\b01d-e1p4-p11-b_band_shift.json",
+      "sha256": "0a1e3928325b72a5a3360fdfac8f52b84b7408542b71d59e86aa6d1edf52d7ae",
+      "battles": 1250
+    },
+    {
+      "panel": 11,
+      "arm": "a_decoy",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\b01d-e1p4-validation-20261002\\configs\\b01d-e1p4-p11-a_decoy.json",
+      "sha256": "3d21b311aacf2bd44dd172f2f7ad7d65a42c63fcb51b01057908d808e8caa4dd",
+      "battles": 1250
+    },
+    {
+      "panel": 11,
+      "arm": "control",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\b01d-e1p4-validation-20261002\\configs\\b01d-e1p4-p11-control.json",
+      "sha256": "38c31a44bdbf0a75f2a6b801982919d2d556744c1432f11b09e3551e665a47d8",
+      "battles": 1250
+    },
+    {
+      "panel": 11,
+      "arm": "b01d",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\b01d-e1p4-validation-20261002\\configs\\b01d-e1p4-p11-b01d.json",
+      "sha256": "1ffc020f73ec436aa057f6cf416349e340be0cb9a8f39a9f6fbe58f5da43d944",
+      "battles": 1250
+    },
+    {
+      "panel": 12,
+      "arm": "a_decoy",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\b01d-e1p4-validation-20261002\\configs\\b01d-e1p4-p12-a_decoy.json",
+      "sha256": "b0ad00ff8ff593015e7e6085c8b9c15cc46c85e2a8c949ab6080070e23606ab4",
+      "battles": 1250
+    },
+    {
+      "panel": 12,
+      "arm": "b_band_shift",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\b01d-e1p4-validation-20261002\\configs\\b01d-e1p4-p12-b_band_shift.json",
+      "sha256": "d460589be09f6b9a9ebf25f8d9d88972aa16aea52f5850aaeb8c268201a6f022",
+      "battles": 1250
+    },
+    {
+      "panel": 12,
+      "arm": "control",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\b01d-e1p4-validation-20261002\\configs\\b01d-e1p4-p12-control.json",
+      "sha256": "17debfeb5d99180a4dc988b1a54753881f497acbabd64528619c2a476be3808c",
+      "battles": 1250
+    },
+    {
+      "panel": 12,
+      "arm": "b01d",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\b01d-e1p4-validation-20261002\\configs\\b01d-e1p4-p12-b01d.json",
+      "sha256": "512bbd00a91793dde575cca4c0811fe25df6d2ff292545fe77c3dd617d5d0018",
+      "battles": 1250
+    },
+    {
+      "panel": 13,
+      "arm": "control",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\b01d-e1p4-validation-20261002\\configs\\b01d-e1p4-p13-control.json",
+      "sha256": "745be0e75fcabd101b2c955b8740fd758c61655579ef885e32c0debf00982aea",
+      "battles": 1250
+    },
+    {
+      "panel": 13,
+      "arm": "a_decoy",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\b01d-e1p4-validation-20261002\\configs\\b01d-e1p4-p13-a_decoy.json",
+      "sha256": "a08058545eec4045691670b914e88c9e140fcc6113bb09b78a45ca81b4e6cae1",
+      "battles": 1250
+    },
+    {
+      "panel": 13,
+      "arm": "b01d",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\b01d-e1p4-validation-20261002\\configs\\b01d-e1p4-p13-b01d.json",
+      "sha256": "22616a47e7f35e6d8917edc86ab7fc56f6b153ab98d357928f6509df2cc8136e",
+      "battles": 1250
+    },
+    {
+      "panel": 13,
+      "arm": "b_band_shift",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\b01d-e1p4-validation-20261002\\configs\\b01d-e1p4-p13-b_band_shift.json",
+      "sha256": "345e9f4a97b36f06a1def8a5b65f1539d8b9d860f333cdef25cea451306c9a0e",
+      "battles": 1250
+    },
+    {
+      "panel": 14,
+      "arm": "control",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\b01d-e1p4-validation-20261002\\configs\\b01d-e1p4-p14-control.json",
+      "sha256": "480302b4ccc702dfedd29a869569fcd91d54f0f741d7a81bdf541b09a6f20370",
+      "battles": 1250
+    },
+    {
+      "panel": 14,
+      "arm": "b_band_shift",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\b01d-e1p4-validation-20261002\\configs\\b01d-e1p4-p14-b_band_shift.json",
+      "sha256": "37c03b8b46bbb78056e0134000733224de437947540e50ebe86d1208b6da21c6",
+      "battles": 1250
+    },
+    {
+      "panel": 14,
+      "arm": "a_decoy",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\b01d-e1p4-validation-20261002\\configs\\b01d-e1p4-p14-a_decoy.json",
+      "sha256": "acc130b6639aa44d17341cbc0ede302020e068a97a9caad37b5f4896ca4a823a",
+      "battles": 1250
+    },
+    {
+      "panel": 14,
+      "arm": "b01d",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\b01d-e1p4-validation-20261002\\configs\\b01d-e1p4-p14-b01d.json",
+      "sha256": "ec9bbf543d99e9ce369014f0cda9be54ebee3b4a629884982565ee27d9301fba",
+      "battles": 1250
+    },
+    {
+      "panel": 15,
+      "arm": "a_decoy",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\b01d-e1p4-validation-20261002\\configs\\b01d-e1p4-p15-a_decoy.json",
+      "sha256": "117ad0aadd27a4b451f8d606ccb5a52223ffa71753873652d0d2161811bf043e",
+      "battles": 1250
+    },
+    {
+      "panel": 15,
+      "arm": "b01d",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\b01d-e1p4-validation-20261002\\configs\\b01d-e1p4-p15-b01d.json",
+      "sha256": "70039e547c6364fc2b01fda117cec6464052d790744c5ec4e0c1676fe0716c91",
+      "battles": 1250
+    },
+    {
+      "panel": 15,
+      "arm": "b_band_shift",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\b01d-e1p4-validation-20261002\\configs\\b01d-e1p4-p15-b_band_shift.json",
+      "sha256": "4a55c9d82b3f05fa4a8426aedd4c9e49ca153cf42a15e91e9a972868072422fc",
+      "battles": 1250
+    },
+    {
+      "panel": 15,
+      "arm": "control",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\b01d-e1p4-validation-20261002\\configs\\b01d-e1p4-p15-control.json",
+      "sha256": "ef2b5c446ce927f58caa78596d99392da8b4e8d27861322a7971caf04c9152a4",
+      "battles": 1250
+    },
+    {
+      "panel": 16,
+      "arm": "b01d",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\b01d-e1p4-validation-20261002\\configs\\b01d-e1p4-p16-b01d.json",
+      "sha256": "b87913490dd1335cda1e3110b7bcd473ec5f3d94ccb1f8f2807acb2a6793a65e",
+      "battles": 1250
+    },
+    {
+      "panel": 16,
+      "arm": "b_band_shift",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\b01d-e1p4-validation-20261002\\configs\\b01d-e1p4-p16-b_band_shift.json",
+      "sha256": "71f599510c27aab57b86964f8903cc151b37925b4c6c969bc8d55768e09e84bf",
+      "battles": 1250
+    },
+    {
+      "panel": 16,
+      "arm": "a_decoy",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\b01d-e1p4-validation-20261002\\configs\\b01d-e1p4-p16-a_decoy.json",
+      "sha256": "a1feab638db5295f1928bbeebc868f9022352700008f49b13da1104ac03cb264",
+      "battles": 1250
+    },
+    {
+      "panel": 16,
+      "arm": "control",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\b01d-e1p4-validation-20261002\\configs\\b01d-e1p4-p16-control.json",
+      "sha256": "66961a28de98d423d8b965a2ded3d48efe6bc7603540576a9db7156a1cb1d4b7",
+      "battles": 1250
+    }
+  ]
+}

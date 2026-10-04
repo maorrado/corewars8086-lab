@@ -1,0 +1,102 @@
+{
+  "candidates": [
+    {
+      "id": "a003_excludeffb",
+      "baseline": "original_v6",
+      "hypothesis": "Captured A Zombie ignores own-team CS0FFB return frames, avoiding inferred live-seed friendly hits.",
+      "edits": "Only CMP SI immediate changes0FFC to0FFB.",
+      "failureModes": "Same-segment opponent workers are also ignored; exact-only FFB variant begins attacking FFC rivals previously ignored. Detection frequency depends on scanner sampling alignment and Zombie AX history.",
+      "warriors": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch3\\bin\\excludeffb_A",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch3\\bin\\excludeffb_B"
+      ],
+      "sources": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch3\\src\\excludeffb_A.asm",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch3\\src\\excludeffb_B.asm"
+      ],
+      "sha256": [
+        "0b8f13ccd4436e4d16073ba9d375366b68a55147aef2e943b612254465e0a9ce",
+        "8579e2c2212d72a413a6daacfe3b91ceb72be648bfc085bfeed9430eeaf6657a"
+      ],
+      "sizes": [
+        221,
+        202
+      ],
+      "sourceManifest": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch3\\candidates.json"
+    },
+    {
+      "id": "a003_excludeffbffc",
+      "baseline": "original_v6",
+      "hypothesis": "Captured A Zombie ignores own-team CS0FFB return frames, avoiding inferred live-seed friendly hits.",
+      "edits": "Add FFB exclusion before existing FFC exclusion; six extra bytes affect only scanner tail, preserving every internal source dependency.",
+      "failureModes": "Same-segment opponent workers are also ignored; exact-only FFB variant begins attacking FFC rivals previously ignored. Detection frequency depends on scanner sampling alignment and Zombie AX history.",
+      "warriors": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch3\\bin\\excludeffbffc_A",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch3\\bin\\excludeffbffc_B"
+      ],
+      "sources": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch3\\src\\excludeffbffc_A.asm",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch3\\src\\excludeffbffc_B.asm"
+      ],
+      "sha256": [
+        "c7e25d7acc548f65820613574cb6d7315bf039c24eabb1ccb87f30f194bc27b8",
+        "8579e2c2212d72a413a6daacfe3b91ceb72be648bfc085bfeed9430eeaf6657a"
+      ],
+      "sizes": [
+        227,
+        202
+      ],
+      "sourceManifest": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch3\\candidates.json"
+    },
+    {
+      "id": "a003_excludephase",
+      "baseline": "original_v6",
+      "hypothesis": "Exclude own-team-like0FFB return frames only when returnIP modulo0400h equals00A4h, preserving attacks on differently aligned0FFB rivals.",
+      "edits": "Before original FFC filter, check SI0FFB and DI=[BX-2]&03FF, skip only when DI00A4. Original source layout preceding scanner preserved; added scanner instructions use accepted CMP/JNE/MOV/AND/JE.",
+      "failureModes": "Same-aligned V6 rivals still ignored. Extra three instructions on0FFB hits and one branch otherwise slow the scanner; temporary DI is overwritten in found_candidate as before.",
+      "warriors": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch4\\bin\\excludephase_A",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch4\\bin\\excludephase_B"
+      ],
+      "sources": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch4\\src\\excludephase_A.asm",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch4\\src\\excludephase_B.asm"
+      ],
+      "sha256": [
+        "3926b0aa877ff38cd5d75a3e7ef966269f406dac4db4506d178cad1385dc6e51",
+        "8579e2c2212d72a413a6daacfe3b91ceb72be648bfc085bfeed9430eeaf6657a"
+      ],
+      "sizes": [
+        240,
+        202
+      ],
+      "sourceManifest": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch4\\candidates.json"
+    },
+    {
+      "id": "a001_paintless",
+      "sources": [
+        "C:/Maor/CodeGuru/corewars8086-lab/.arena/v6-cooperative-20261003/.arena/run-20261003-150943-s20261003/scratch/a001/batch4/paintless/A.asm",
+        "C:/Maor/CodeGuru/corewars8086-lab/.arena/v6-cooperative-20261003/.arena/run-20261003-150943-s20261003/scratch/a001/batch4/paintless/B.asm"
+      ],
+      "warriors": [
+        "C:/Maor/CodeGuru/corewars8086-lab/.arena/v6-cooperative-20261003/.arena/run-20261003-150943-s20261003/scratch/a001/batch4/paintless/build/A",
+        "C:/Maor/CodeGuru/corewars8086-lab/.arena/v6-cooperative-20261003/.arena/run-20261003-150943-s20261003/scratch/a001/batch4/paintless/build/B"
+      ],
+      "sha256": [
+        "177caf4f4ce2604fa2bd3c0192696d09d0c2c7dd9b9fa5ccac10e6113479cde4",
+        "8a1366299bfa3b99812686152647fe75d659dad734555f23933056609adb00f5"
+      ],
+      "sizes": [
+        221,
+        202
+      ],
+      "edits": "AX marker1FFF->1FA4 and both initial/worker indirect CALL FAR [BX] FF1F->JMP FAR [BX] FF2F in each warrior. Six bytes changed across pair. All original positions, copy lengths, BP/DX/initial SP values unchanged.",
+      "hypothesis": "Direct MOVSB seeds each relocation, eliminating recurring stack-return painting and shortening time spent at any single live destination. Architectural offense/survival contrast.",
+      "failure_modes": "Removes virtually all stack-paint offense; writes only copied worker fragments. Can reduce tournament strength severely despite more relocations. Rapid cycling can repeatedly land on already corrupted destinations.",
+      "verification": "Official Cpu restricted-memory isolated smoke: all5 placements per warrior alive20k opcodes. A997 launches vsbaseline74, B998 vs38. First MOVSB64/60 vs147/463. No scoring claim; War scheduling and opponents deliberately absent.",
+      "evidence": "C:/Maor/CodeGuru/corewars8086-lab/.arena/v6-cooperative-20261003/.arena/run-20261003-150943-s20261003/scratch/a001/paintless-smoke.txt",
+      "sourceManifest": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch4\\candidates.json"
+    }
+  ],
+  "duplicates": []
+}

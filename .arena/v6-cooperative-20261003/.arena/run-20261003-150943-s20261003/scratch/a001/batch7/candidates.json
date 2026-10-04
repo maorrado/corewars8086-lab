@@ -1,0 +1,79 @@
+{
+  "schema": "cooperative-arena-candidates-v1",
+  "baseline": "original_v6",
+  "provenance": "Game-code derivatives of friend-provided V6; originals unchanged.",
+  "candidates": [
+    {
+      "id": "a001_camo_a",
+      "sources": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch7\\camo_a\\A.asm",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch7\\camo_a\\B.asm"
+      ],
+      "warriors": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch7\\camo_a\\build\\A",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch7\\camo_a\\build\\B"
+      ],
+      "sizes": [
+        221,
+        202
+      ],
+      "sha256": [
+        "a192ec7f7217e85048ef95f951baf443cc00e95e00a4d7aea7af6eb6475177b8",
+        "8579e2c2212d72a413a6daacfe3b91ceb72be648bfc085bfeed9430eeaf6657a"
+      ],
+      "edits": "Changed warrior(s): AX marker1FFF->18FF, initial and worker CALL FAR [BX] FF1F -> CALL FAR [BX+SI] FF18. Same instruction sizes and counts; all original fixed offsets preserved.",
+      "hypothesis": "SI=0 on entry into both far-call sites and recursive seed, so alternate ModRM encoding preserves painting while evading exact FF1F or adjacent worker pattern signatures.",
+      "failure_modes": "Corrupted SI now changes the indirect operand where old BX-only call might survive. Signature-based opponents may still recognize stack returns or other unchanged bytes; no automatic score gain.",
+      "verification": "Official Cpu isolated restricted-memory smoke of modified A/B:20k opcodes at five placements; assertion verifies SI=0 before every FF18 call. Original startup timing and steady launch counts retained.",
+      "evidence": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\camo-smoke.txt"
+    },
+    {
+      "id": "a001_camo_b",
+      "sources": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch7\\camo_b\\A.asm",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch7\\camo_b\\B.asm"
+      ],
+      "warriors": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch7\\camo_b\\build\\A",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch7\\camo_b\\build\\B"
+      ],
+      "sizes": [
+        221,
+        202
+      ],
+      "sha256": [
+        "3fa67bed880413901ad618b4f7b248e5782d98de93318271ac540ad1690ca2b7",
+        "2c1afc8be88214de1b7f358d8cacac5d6150eb6905a22780097394b04de0c5b7"
+      ],
+      "edits": "Changed warrior(s): AX marker1FFF->18FF, initial and worker CALL FAR [BX] FF1F -> CALL FAR [BX+SI] FF18. Same instruction sizes and counts; all original fixed offsets preserved.",
+      "hypothesis": "SI=0 on entry into both far-call sites and recursive seed, so alternate ModRM encoding preserves painting while evading exact FF1F or adjacent worker pattern signatures.",
+      "failure_modes": "Corrupted SI now changes the indirect operand where old BX-only call might survive. Signature-based opponents may still recognize stack returns or other unchanged bytes; no automatic score gain.",
+      "verification": "Official Cpu isolated restricted-memory smoke of modified A/B:20k opcodes at five placements; assertion verifies SI=0 before every FF18 call. Original startup timing and steady launch counts retained.",
+      "evidence": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\camo-smoke.txt"
+    },
+    {
+      "id": "a001_camo_both",
+      "sources": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch7\\camo_both\\A.asm",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch7\\camo_both\\B.asm"
+      ],
+      "warriors": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch7\\camo_both\\build\\A",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch7\\camo_both\\build\\B"
+      ],
+      "sizes": [
+        221,
+        202
+      ],
+      "sha256": [
+        "a192ec7f7217e85048ef95f951baf443cc00e95e00a4d7aea7af6eb6475177b8",
+        "2c1afc8be88214de1b7f358d8cacac5d6150eb6905a22780097394b04de0c5b7"
+      ],
+      "edits": "Changed warrior(s): AX marker1FFF->18FF, initial and worker CALL FAR [BX] FF1F -> CALL FAR [BX+SI] FF18. Same instruction sizes and counts; all original fixed offsets preserved.",
+      "hypothesis": "SI=0 on entry into both far-call sites and recursive seed, so alternate ModRM encoding preserves painting while evading exact FF1F or adjacent worker pattern signatures.",
+      "failure_modes": "Corrupted SI now changes the indirect operand where old BX-only call might survive. Signature-based opponents may still recognize stack returns or other unchanged bytes; no automatic score gain.",
+      "verification": "Official Cpu isolated restricted-memory smoke of modified A/B:20k opcodes at five placements; assertion verifies SI=0 before every FF18 call. Original startup timing and steady launch counts retained.",
+      "evidence": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\camo-smoke.txt"
+    }
+  ]
+}

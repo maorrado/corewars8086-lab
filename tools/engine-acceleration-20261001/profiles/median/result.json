@@ -1,0 +1,90 @@
+{
+  "which": "median",
+  "startedAt": "2026-09-30T22:44:53.756Z",
+  "elapsedSeconds": 33.7308626,
+  "sourceRun": "all-v1-08__claude-synthesis-fresh-2-d65bf5b1ac31c1cb8543bb10",
+  "battles": 50,
+  "command": {
+    "java": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\temurin8-jre\\jdk8u504-b01-jre\\bin\\java.exe",
+    "args": [
+      "-Xprof",
+      "-Xloggc:C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\profiles\\median\\gc.log",
+      "-XX:+PrintGCDetails",
+      "-XX:+PrintGCTimeStamps",
+      "-jar",
+      "C:\\Maor\\CodeGuru\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+      "--headless",
+      "--comboSize",
+      "4",
+      "--battlesPerCombo",
+      "50",
+      "--seed",
+      "claude-synthesis-fresh-2-d65bf5b1ac31c1cb8543bb10",
+      "--threads",
+      "1",
+      "--warriorsDir",
+      "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\profiles\\median\\survivors",
+      "--zombiesDir",
+      "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\profiles\\median\\zombies",
+      "--outputFile",
+      "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\profiles\\median\\scores.csv",
+      "--parallel=false"
+    ]
+  },
+  "copied": [
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\profiles\\median\\survivors\\COD_pair1",
+      "sha256": "0268ce4f301bf2ada8566f4e608180a0670a335a80b9c2b93b67aee2b632bd44"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\profiles\\median\\survivors\\COD_pair2",
+      "sha256": "06b5a1ff7bac4b146620de6d1de512dfedf3f28366d6435bf61d49869d971782"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\profiles\\median\\survivors\\A_HRZ_BinaryBandits1",
+      "sha256": "c6cf8bb109582030c5cd0723399930168aee257dbeac6122507c522f9b383d86"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\profiles\\median\\survivors\\A_HRZ_BinaryBandits2",
+      "sha256": "be7d4791659d4aacd49dded0044baadf737e123b3dff8ddb497f5be1954c461b"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\profiles\\median\\survivors\\A_ORT_Pegasus_Hex1",
+      "sha256": "8c82f8dc226579917f261847d0a6606c670f47ae4adcd5d4eb41fe4807035537"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\profiles\\median\\survivors\\A_ORT_Pegasus_Hex2",
+      "sha256": "4026ad9d8dd3c66933bf5cc03cd18ed3b7d707f181a054fc43bf07b2239758c1"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\profiles\\median\\survivors\\Y_GSA_SigmaSilent1",
+      "sha256": "5f99b89cf54c876307804f0f38658b46739baa8ff4f14189e0c17713f10ee16c"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\profiles\\median\\survivors\\Y_GSA_SigmaSilent2",
+      "sha256": "8a06a8d64760629cacb4e1ad2c236c5e2fc9b3e0948d3de048a43c2fa386ead9"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\profiles\\median\\zombies\\zom20a",
+      "sha256": "a950e618ea2e127096c85f486fb555c264730d924a2192c407aa66e6e0318eb6"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\profiles\\median\\zombies\\zom20b",
+      "sha256": "af6394c021ccb5e486db507e2ccd787bd5675f8fec88fd2ddbe9f834566852ce"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\profiles\\median\\zombies\\zom20c",
+      "sha256": "3d3f209967f51a7344e0eab582bc04d1e694da5a73e3682a26ed483dcab7a443"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\profiles\\median\\zombies\\zom20d",
+      "sha256": "923dd6abebbb7bb502ec5a02873c26175820ada5c4409d179d8464f0e90cb6fc"
+    }
+  ],
+  "engineSha256": "31639072397eaf69d99e90b10d8fa594a7446951f1137b7ebd298378f5ec318d",
+  "processStatus": 0,
+  "processError": null,
+  "scoresIdenticalToArchive": true,
+  "completedWarsReported": true,
+  "caveat": "Sample profiler and existing concurrent workloads affect timings; this run locates hotspots, not an optimization speedup estimate."
+}

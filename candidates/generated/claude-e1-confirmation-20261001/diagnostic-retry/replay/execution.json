@@ -1,0 +1,80 @@
+{
+  "status": "PASS",
+  "startedAt": "2026-10-01T02:21:07.808Z",
+  "endedAt": "2026-10-01T02:26:48.553Z",
+  "elapsedSeconds": 340.7425721,
+  "plan": {
+    "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1-confirmation-20261001\\diagnostic-retry\\prepared-plan.json",
+    "bytes": 14512,
+    "sha256": "ada705ac6d0180ea1597c36e75e146d36ce2b2eb623c82ae06ff9a20e8d89d56"
+  },
+  "command": {
+    "executable": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\temurin8-jre\\jdk8u504-b01-jre\\bin\\java.exe",
+    "args": [
+      "-cp",
+      "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1-confirmation-20261001\\diagnostic-retry\\classes;C:\\Maor\\CodeGuru\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+      "WriterAttributionMain",
+      "--headless",
+      "--comboSize",
+      "2",
+      "--battlesPerCombo",
+      "125",
+      "--seed",
+      "claude-synthesis-duel-1-cfec1882f8ac1f4fc47a2263",
+      "--threads",
+      "1",
+      "--warriorsDir",
+      "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\claude-synthesis-audit-20260930\\duel-m050-submitted-first\\duel-m050__claude-synthesis-duel-1-cfec1882f8ac1f4fc47a2263\\survivors",
+      "--zombiesDir",
+      "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\claude-synthesis-audit-20260930\\duel-m050-submitted-first\\duel-m050__claude-synthesis-duel-1-cfec1882f8ac1f4fc47a2263\\zombies",
+      "--outputFile",
+      "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1-confirmation-20261001\\diagnostic-retry\\replay\\scores.csv",
+      "--parallel=false"
+    ]
+  },
+  "validation": {
+    "completedWars": 125,
+    "births": 1000,
+    "deaths": 650,
+    "watchedDeaths": 108,
+    "events": {
+      "competitionStart": 1,
+      "birth": 1000,
+      "observerReady": 125,
+      "hookWrite": 9732,
+      "anchorWrite": 579196,
+      "anchorActivate": 140438,
+      "captureEntryObserved": 125,
+      "death": 650,
+      "warEnd": 125,
+      "complete": 1
+    },
+    "rawScoresEqual": true,
+    "rawTelemetryEquality": "not available in archived fixture",
+    "observerOnly": true
+  },
+  "failure": null,
+  "process": {
+    "status": 0,
+    "signal": null,
+    "error": null
+  },
+  "outputs": {
+    "scores": {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1-confirmation-20261001\\diagnostic-retry\\replay\\scores.csv",
+      "bytes": 116,
+      "sha256": "60a147eb7d9c0f0a8456460f47967878360e6ebf9078b4b800c2af4cd582d7d3"
+    },
+    "events": {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1-confirmation-20261001\\diagnostic-retry\\replay\\writers.jsonl",
+      "bytes": 1247388379,
+      "sha256": "f9cdbdc477b80dba982882c7370cea7e68e7634c7d740d92f4d229b6d6b43867"
+    },
+    "stderr": {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1-confirmation-20261001\\diagnostic-retry\\replay\\process.stderr.txt",
+      "bytes": 146,
+      "sha256": "85d0bf072552e8bba61e548995a99e7b172773170b862ccbd600af942ec219ca"
+    }
+  },
+  "caveat": "Interpret writer attribution only after PASS. This is diagnostic replay, not a new competition result or advantage estimate."
+}

@@ -1,0 +1,136 @@
+{
+  "pointsPerBattle": {
+    "c090": 0.6413333299999999,
+    "m050": 0.647,
+    "entry_lea": 0.6676666619999999,
+    "b_fallthrough": 0.6376666639999999,
+    "both": 0.68033333
+  },
+  "comparisons": [
+    {
+      "candidate": "entry_lea",
+      "control": "c090",
+      "meanDelta": 0.026333331999999997,
+      "relativePercent": 4.106028919470004,
+      "descriptive95CohortInterval": [
+        -0.0063100395963802645,
+        0.058976703596380256
+      ],
+      "cohortCount": 25,
+      "positive": 12,
+      "negative": 4,
+      "tied": 9,
+      "bySeed": [
+        {
+          "seed": "bootstrap-screen-20261001-8138be98e5239be3512c477c",
+          "delta": 0.026333331999999997
+        }
+      ]
+    },
+    {
+      "candidate": "entry_lea",
+      "control": "m050",
+      "meanDelta": 0.020666661999999985,
+      "relativePercent": 3.1942290571870147,
+      "descriptive95CohortInterval": [
+        -0.013358698165779639,
+        0.054692022165779605
+      ],
+      "cohortCount": 25,
+      "positive": 11,
+      "negative": 4,
+      "tied": 10,
+      "bySeed": [
+        {
+          "seed": "bootstrap-screen-20261001-8138be98e5239be3512c477c",
+          "delta": 0.020666661999999985
+        }
+      ]
+    },
+    {
+      "candidate": "b_fallthrough",
+      "control": "c090",
+      "meanDelta": -0.003666666000000003,
+      "relativePercent": -0.5717254707470144,
+      "descriptive95CohortInterval": [
+        -0.011168862807194544,
+        0.0038355308071945375
+      ],
+      "cohortCount": 25,
+      "positive": 1,
+      "negative": 4,
+      "tied": 20,
+      "bySeed": [
+        {
+          "seed": "bootstrap-screen-20261001-8138be98e5239be3512c477c",
+          "delta": -0.003666666000000003
+        }
+      ]
+    },
+    {
+      "candidate": "b_fallthrough",
+      "control": "m050",
+      "meanDelta": -0.00933333600000001,
+      "relativePercent": -1.4425557959814543,
+      "descriptive95CohortInterval": [
+        -0.025689723752710787,
+        0.007023051752710769
+      ],
+      "cohortCount": 25,
+      "positive": 3,
+      "negative": 5,
+      "tied": 17,
+      "bySeed": [
+        {
+          "seed": "bootstrap-screen-20261001-8138be98e5239be3512c477c",
+          "delta": -0.00933333600000001
+        }
+      ]
+    },
+    {
+      "candidate": "both",
+      "control": "c090",
+      "meanDelta": 0.039,
+      "relativePercent": 6.081081112687532,
+      "descriptive95CohortInterval": [
+        0.009480853240508742,
+        0.06851914675949125
+      ],
+      "cohortCount": 25,
+      "positive": 12,
+      "negative": 2,
+      "tied": 11,
+      "bySeed": [
+        {
+          "seed": "bootstrap-screen-20261001-8138be98e5239be3512c477c",
+          "delta": 0.039
+        }
+      ]
+    },
+    {
+      "candidate": "both",
+      "control": "m050",
+      "meanDelta": 0.03333332999999999,
+      "relativePercent": 5.151982998454403,
+      "descriptive95CohortInterval": [
+        0.002502514636720809,
+        0.06416414536327916
+      ],
+      "cohortCount": 25,
+      "positive": 11,
+      "negative": 3,
+      "tied": 11,
+      "bySeed": [
+        {
+          "seed": "bootstrap-screen-20261001-8138be98e5239be3512c477c",
+          "delta": 0.03333332999999999
+        }
+      ]
+    }
+  ],
+  "selectedForFreshHoldout": [
+    "entry_lea",
+    "both"
+  ],
+  "note": "Unchanged prespecified screen selection only; independent fresh holdout still required."
+}

@@ -1,0 +1,51 @@
+{
+  "schema": "cooperative-arena-candidates-v1",
+  "baseline": "original_v6",
+  "provenance": "Variants of friend-provided Good_Test V6.",
+  "candidates": [
+    {
+      "id": "a001_bgap300",
+      "sources": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch6\\bgap300\\A.asm",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch6\\bgap300\\B.asm"
+      ],
+      "warriors": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch6\\bgap300\\build\\A",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch6\\bgap300\\build\\B"
+      ],
+      "sizes": [
+        221,
+        202
+      ],
+      "sha256": [
+        "3fa67bed880413901ad618b4f7b248e5782d98de93318271ac540ad1690ca2b7",
+        "083a76a3d5d33ea4057d931776feecfdb1bb607503ebf12a8584f9ab44f8fc44"
+      ],
+      "edits": "B initial ADD SP,0600h -> ADD SP,0300h only; A exact original. Identical source positions, steady BP/DX, copy counts and opcodes.",
+      "hypothesis": "Test startup latency versus early return-paint offense around exploratory gap400. Initial paint span848 bytes; first MOVSB predicted271 opcodes versus original463.",
+      "failure_modes": "May remove useful early paint or delay first relocation. No new shared baseline adopted; longer-run improvement must be independently confirmed."
+    },
+    {
+      "id": "a001_bgap500",
+      "sources": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch6\\bgap500\\A.asm",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch6\\bgap500\\B.asm"
+      ],
+      "warriors": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch6\\bgap500\\build\\A",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch6\\bgap500\\build\\B"
+      ],
+      "sizes": [
+        221,
+        202
+      ],
+      "sha256": [
+        "3fa67bed880413901ad618b4f7b248e5782d98de93318271ac540ad1690ca2b7",
+        "0135423695637701b12d33b56f276c0eda2ad70756ca3f5e9a2e2e3dcb0f5499"
+      ],
+      "edits": "B initial ADD SP,0600h -> ADD SP,0500h only; A exact original. Identical source positions, steady BP/DX, copy counts and opcodes.",
+      "hypothesis": "Test startup latency versus early return-paint offense around exploratory gap400. Initial paint span1360 bytes; first MOVSB predicted399 opcodes versus original463.",
+      "failure_modes": "May remove useful early paint or delay first relocation. No new shared baseline adopted; longer-run improvement must be independently confirmed."
+    }
+  ]
+}

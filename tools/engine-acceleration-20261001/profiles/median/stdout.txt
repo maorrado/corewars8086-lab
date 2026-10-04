@@ -1,0 +1,162 @@
+CoreWars8086 - headless mode
+
+Loaded warriors: [A_HRZ_BinaryBandits, A_ORT_Pegasus_Hex, COD_pair, Y_GSA_SigmaSilent]
+
+Flat profile of 5.30 secs (138 total ticks): main
+
+  Interpreted + native   Method                        
+ 30.4%     0  +    42    java.io.FileInputStream.open0
+  8.7%    12  +     0    java.lang.ClassLoader.defineClass1
+  7.2%     0  +    10    java.util.zip.ZipFile.read
+  1.4%     0  +     2    java.lang.ClassLoader.findBootstrapClass
+  1.4%     2  +     0    com.google.devtools.common.options.OptionsParser.<clinit>
+  0.7%     0  +     1    java.util.zip.ZipFile.getEntry
+  0.7%     1  +     0    java.util.zip.ZipFile.getEntryBytes
+  0.7%     1  +     0    java.util.zip.ZipFile.getEntrySize
+  0.7%     0  +     1    java.io.WinNTFileSystem.canonicalize0
+  0.7%     1  +     0    java.util.zip.ZipFile.getEntryCSize
+  0.7%     0  +     1    java.lang.Thread.currentThread
+  0.7%     0  +     1    java.lang.Throwable.fillInStackTrace
+  0.7%     0  +     1    java.lang.invoke.MethodHandleNatives.resolve
+  0.7%     1  +     0    java.lang.System.nanoTime
+  0.7%     0  +     1    java.io.WinNTFileSystem.getBooleanAttributes
+  0.7%     0  +     1    sun.reflect.Reflection.getCallerClass
+  0.7%     1  +     0    java.util.zip.ZipFile.freeEntry
+  0.7%     0  +     1    sun.misc.Unsafe.defineAnonymousClass
+  0.7%     1  +     0    java.net.URL.toString
+  0.7%     1  +     0    java.util.zip.ZipFile.getEntryMethod
+  0.7%     0  +     1    java.lang.Class.getEnclosingMethod0
+  0.7%     1  +     0    java.util.HashMap$Values.iterator
+  0.7%     1  +     0    sun.misc.ProxyGenerator.code_aload
+  0.7%     1  +     0    java.lang.invoke.MethodType$ConcurrentWeakInternSet$WeakEntry.<init>
+  0.7%     1  +     0    java.util.WeakHashMap.maskNull
+ 89.9%    61  +    63    Total interpreted (including elided)
+
+     Compiled + native   Method                        
+  0.7%     0  +     1    java.lang.String.length
+  0.7%     1  +     0    java.lang.AbstractStringBuilder.append
+  0.7%     0  +     1    java.lang.invoke.MemberName.getInvocationType
+  0.7%     1  +     0    jdk.internal.org.objectweb.asm.ClassWriter.newUTF8
+  0.7%     1  +     0    java.lang.String.replace
+  0.7%     1  +     0    java.lang.ClassLoader.loadClass
+  0.7%     1  +     0    java.lang.String.indexOf
+  5.1%     5  +     2    Total compiled
+
+         Stub + native   Method                        
+  3.6%     0  +     5    java.util.zip.Inflater.inflateBytes
+  0.7%     0  +     1    java.lang.Class.isArray
+  4.3%     0  +     6    Total stub
+
+  Thread-local ticks:
+  0.7%     1             Class loader
+
+Starting competition (50 wars).
+Competition is over. Ran 50 wars
+Writing scores to file C:\Maor\CodeGuru\corewars8086-lab\tools\engine-acceleration-20261001\profiles\median\scores.csv
+
+Flat profile of 25.13 secs (379 total ticks): CompetitionThread
+
+  Interpreted + native   Method                        
+  5.5%     0  +    21    java.lang.ProcessImpl.create
+  2.1%     8  +     0    org.jline.utils.InfoCmp$Capability.<clinit>
+  2.1%     8  +     0    il.co.codeguru.corewars8086.war.Competition.runWar
+  1.8%     6  +     1    java.lang.ClassLoader.defineClass1
+  1.8%     7  +     0    il.co.codeguru.corewars8086.cpu.Cpu.int87
+  0.8%     3  +     0    java.util.regex.Pattern.split
+  0.5%     2  +     0    java.util.regex.Pattern.compile
+  0.5%     2  +     0    il.co.codeguru.corewars8086.war.War.getLoadOffset
+  0.5%     2  +     0    il.co.codeguru.corewars8086.war.War.loadWarriorGroup
+  0.5%     2  +     0    il.co.codeguru.corewars8086.war.War.<init>
+  0.5%     0  +     2    org.apache.commons.math3.random.AbstractWell.setSeed
+  0.5%     0  +     2    java.io.WinNTFileSystem.canonicalize0
+  0.5%     2  +     0    il.co.codeguru.corewars8086.cpu.Cpu.opcodeFX
+  0.3%     1  +     0    java.lang.String.contains
+  0.3%     1  +     0    java.time.Duration.<clinit>
+  0.3%     1  +     0    java.util.Spliterators.spliterator
+  0.3%     1  +     0    java.util.stream.AbstractPipeline.wrapSink
+  0.3%     1  +     0    java.nio.CharBuffer.hasArray
+  0.3%     1  +     0    java.net.URLClassLoader.findResource
+  0.3%     1  +     0    il.co.codeguru.corewars8086.war.War.isOver
+  0.3%     1  +     0    il.co.codeguru.corewars8086.cpu.CpuState.setZeroFlag
+  0.3%     1  +     0    java.util.Spliterators.<clinit>
+  0.3%     1  +     0    me.tongfei.progressbar.Util.<clinit>
+  0.3%     1  +     0    il.co.codeguru.corewars8086.memory.AbstractRealModeMemory.readExecuteWord
+  0.3%     1  +     0    java.util.stream.Sink$ChainedReference.<init>
+ 32.7%    92  +    32    Total interpreted (including elided)
+
+     Compiled + native   Method                        
+ 15.3%    58  +     0    il.co.codeguru.corewars8086.cpu.Cpu.opcodeFX
+ 13.5%    43  +     8    il.co.codeguru.corewars8086.cpu.Cpu.int87
+  5.3%    20  +     0    il.co.codeguru.corewars8086.war.War.nextRound
+  4.0%    12  +     3    il.co.codeguru.corewars8086.cpu.Cpu.opcode8X
+  3.2%    12  +     0    java.util.stream.ReferencePipeline$2$1.accept
+  2.9%    11  +     0    il.co.codeguru.corewars8086.cpu.Cpu.opcodeCX
+  2.6%     9  +     1    il.co.codeguru.corewars8086.cpu.Cpu.opcodeAX
+  2.4%     9  +     0    il.co.codeguru.corewars8086.war.War.countAliveSurvivorGroups
+  1.6%     6  +     0    il.co.codeguru.corewars8086.war.Competition.runWar
+  1.1%     3  +     1    il.co.codeguru.corewars8086.cpu.Cpu.opcode3X
+  0.8%     2  +     1    java.util.Spliterators$ArraySpliterator.forEachRemaining
+  0.8%     1  +     2    il.co.codeguru.corewars8086.war.War.<init>
+  0.5%     2  +     0    java.util.HashMap.put
+  0.5%     2  +     0    java.util.stream.Sink$ChainedReference.end
+  0.5%     2  +     0    sun.nio.cs.UTF_8$Decoder.decodeArrayLoop
+  0.5%     2  +     0    il.co.codeguru.corewars8086.cpu.OpcodeFetcher.nextWord
+  0.5%     2  +     0    il.co.codeguru.corewars8086.memory.AbstractRealModeMemory.writeWord
+  0.5%     2  +     0    il.co.codeguru.corewars8086.memory.AbstractRealModeMemory.readWord
+  0.5%     2  +     0    java.util.Random.next
+  0.5%     2  +     0    java.util.stream.AbstractPipeline.wrapSink
+  0.3%     1  +     0    il.co.codeguru.corewars8086.cpu.Cpu.callFar
+  0.3%     1  +     0    il.co.codeguru.corewars8086.memory.RestrictedAccessRealModeMemory.readExecuteByte
+  0.3%     1  +     0    com.sun.proxy.$Proxy3.onEndRound
+  0.3%     1  +     0    com.sun.proxy.$Proxy3.onRound
+  0.3%     1  +     0    il.co.codeguru.corewars8086.cpu.Cpu.stosw
+ 62.3%   217  +    19    Total compiled (including elided)
+
+         Stub + native   Method                        
+  1.1%     0  +     4    java.lang.ClassLoader.findBootstrapClass
+  0.5%     0  +     2    java.lang.Throwable.fillInStackTrace
+  0.5%     0  +     2    java.util.zip.Inflater.inflateBytes
+  0.5%     0  +     2    java.lang.Object.clone
+  0.3%     0  +     1    java.lang.ClassLoader.findLoadedClass0
+  0.3%     0  +     1    sun.reflect.Reflection.getClassAccessFlags
+  3.2%     0  +    12    Total stub
+
+  Thread-local ticks:
+  1.6%     6             Class loader
+  0.3%     1             Unknown: no last frame
+
+
+Flat profile of 0.12 secs (1 total ticks): Thread-0
+
+  Thread-local ticks:
+100.0%     1             Unknown: no last frame
+
+
+Flat profile of 18.53 secs (305 total ticks): ProgressBar
+
+  Interpreted + native   Method                        
+ 25.0%     1  +     0    java.time.Duration.toSeconds
+ 25.0%     1  +     0    java.lang.ClassLoader.defineClass1
+ 50.0%     2  +     0    Total interpreted
+
+     Compiled + native   Method                        
+ 25.0%     1  +     0    java.util.regex.Matcher.reset
+ 25.0%     1  +     0    Total compiled
+
+  Thread-local ticks:
+ 98.7%   301             Blocked (of total)
+ 25.0%     1             Unknown: no last frame
+
+
+Flat profile of 24.94 secs (397 total ticks): DestroyJavaVM
+
+  Thread-local ticks:
+100.0%   397             Blocked (of total)
+
+
+Global summary of 30.86 seconds:
+100.0%   549             Received ticks
+  2.4%    13             Received GC ticks
+ 60.1%   330             Compilation
+  1.3%     7             Class loader
+  0.5%     3             Unknown code

@@ -1,0 +1,107 @@
+{
+  "candidates": [
+    {
+      "id": "a001_burst_a",
+      "sources": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch8\\burst_a\\A.asm",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch8\\burst_a\\B.asm"
+      ],
+      "warriors": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch8\\burst_a\\build\\A",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch8\\burst_a\\build\\B"
+      ],
+      "sizes": [
+        236,
+        202
+      ],
+      "sha256": [
+        "d2d3c8b43e2e5a7b726f289d0e8f01f5431b908ba375d4089f10959e558a9d7e",
+        "8579e2c2212d72a413a6daacfe3b91ceb72be648bfc085bfeed9430eeaf6657a"
+      ],
+      "edits": "Changed warriors insert ADD DI,2000h(A)/3000h(B), MOV AX,CCCC, MOV DX,AX, two INT86, MOV DI,[BX] after ES and initial SP setup. Existing MOV DX,stride and MOV AX,1FFF restore those registers. Worker/source and A zombie entry rebased using labels. Exactly six added startup opcodes,15 bytes per changed warrior; no recurring-loop edits.",
+      "hypothesis": "Spend otherwise-unused two INT86 charges on512 lethal bytes before slow starters leave their loaded source. Paint is outside own quantized source bucket, then original recursive painter resumes.",
+      "blast_geometry": "For quantized bucket base Q=floor(initial AH/3Ch)*3C00h modulo65536: A paints Q+4C52h..Q+4E51h; B paints Q+4052h..Q+4251h. Own loaded source lies Q..Q+3CEBh at worst for these236/217-byte warriors. DI has no0FFB low-offset wrap in initial bucket set. Captured B band20h/34h produces still-farther bursts. MOV DI,[BX] works with0/1/2 remaining charges.",
+      "failure_modes": "Six startup opcodes delay normal replication; blast may hit a friendly captured Zombie or teammate. Static placement buckets are only launch safety, not a guarantee of useful enemy hits. Captured Zombies can have fewer charges, reducing burst offense while pointer restoration remains correct.",
+      "verification": "Official Cpu restricted-memory charged fixture2/1: A/B alive20k opcodes at five placements; first MOVSB153/469 versus baseline147/463, launch counts74/38 unchanged. Each512-byte target was seeded NOP and asserted entirelyCCCC immediately after second INT86. Source Cpu.int86 decrements a charge then runs64 stosdw operations; DF clear makes DI+256 per charge.",
+      "evidence": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\burst-smoke-final.txt",
+      "sourceManifest": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch8\\candidates.json"
+    },
+    {
+      "id": "a001_burst_b",
+      "sources": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch8\\burst_b\\A.asm",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch8\\burst_b\\B.asm"
+      ],
+      "warriors": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch8\\burst_b\\build\\A",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch8\\burst_b\\build\\B"
+      ],
+      "sizes": [
+        221,
+        217
+      ],
+      "sha256": [
+        "3fa67bed880413901ad618b4f7b248e5782d98de93318271ac540ad1690ca2b7",
+        "e777ecf2c00e8d37afb37231e6dcfa1b5f0a52b30599d077bbf5e251c9d6c15c"
+      ],
+      "edits": "Changed warriors insert ADD DI,2000h(A)/3000h(B), MOV AX,CCCC, MOV DX,AX, two INT86, MOV DI,[BX] after ES and initial SP setup. Existing MOV DX,stride and MOV AX,1FFF restore those registers. Worker/source and A zombie entry rebased using labels. Exactly six added startup opcodes,15 bytes per changed warrior; no recurring-loop edits.",
+      "hypothesis": "Spend otherwise-unused two INT86 charges on512 lethal bytes before slow starters leave their loaded source. Paint is outside own quantized source bucket, then original recursive painter resumes.",
+      "blast_geometry": "For quantized bucket base Q=floor(initial AH/3Ch)*3C00h modulo65536: A paints Q+4C52h..Q+4E51h; B paints Q+4052h..Q+4251h. Own loaded source lies Q..Q+3CEBh at worst for these236/217-byte warriors. DI has no0FFB low-offset wrap in initial bucket set. Captured B band20h/34h produces still-farther bursts. MOV DI,[BX] works with0/1/2 remaining charges.",
+      "failure_modes": "Six startup opcodes delay normal replication; blast may hit a friendly captured Zombie or teammate. Static placement buckets are only launch safety, not a guarantee of useful enemy hits. Captured Zombies can have fewer charges, reducing burst offense while pointer restoration remains correct.",
+      "verification": "Official Cpu restricted-memory charged fixture2/1: A/B alive20k opcodes at five placements; first MOVSB153/469 versus baseline147/463, launch counts74/38 unchanged. Each512-byte target was seeded NOP and asserted entirelyCCCC immediately after second INT86. Source Cpu.int86 decrements a charge then runs64 stosdw operations; DF clear makes DI+256 per charge.",
+      "evidence": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\burst-smoke-final.txt",
+      "sourceManifest": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch8\\candidates.json"
+    },
+    {
+      "id": "a001_burst_both",
+      "sources": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch8\\burst_both\\A.asm",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch8\\burst_both\\B.asm"
+      ],
+      "warriors": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch8\\burst_both\\build\\A",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch8\\burst_both\\build\\B"
+      ],
+      "sizes": [
+        236,
+        217
+      ],
+      "sha256": [
+        "d2d3c8b43e2e5a7b726f289d0e8f01f5431b908ba375d4089f10959e558a9d7e",
+        "e777ecf2c00e8d37afb37231e6dcfa1b5f0a52b30599d077bbf5e251c9d6c15c"
+      ],
+      "edits": "Changed warriors insert ADD DI,2000h(A)/3000h(B), MOV AX,CCCC, MOV DX,AX, two INT86, MOV DI,[BX] after ES and initial SP setup. Existing MOV DX,stride and MOV AX,1FFF restore those registers. Worker/source and A zombie entry rebased using labels. Exactly six added startup opcodes,15 bytes per changed warrior; no recurring-loop edits.",
+      "hypothesis": "Spend otherwise-unused two INT86 charges on512 lethal bytes before slow starters leave their loaded source. Paint is outside own quantized source bucket, then original recursive painter resumes.",
+      "blast_geometry": "For quantized bucket base Q=floor(initial AH/3Ch)*3C00h modulo65536: A paints Q+4C52h..Q+4E51h; B paints Q+4052h..Q+4251h. Own loaded source lies Q..Q+3CEBh at worst for these236/217-byte warriors. DI has no0FFB low-offset wrap in initial bucket set. Captured B band20h/34h produces still-farther bursts. MOV DI,[BX] works with0/1/2 remaining charges.",
+      "failure_modes": "Six startup opcodes delay normal replication; blast may hit a friendly captured Zombie or teammate. Static placement buckets are only launch safety, not a guarantee of useful enemy hits. Captured Zombies can have fewer charges, reducing burst offense while pointer restoration remains correct.",
+      "verification": "Official Cpu restricted-memory charged fixture2/1: A/B alive20k opcodes at five placements; first MOVSB153/469 versus baseline147/463, launch counts74/38 unchanged. Each512-byte target was seeded NOP and asserted entirelyCCCC immediately after second INT86. Source Cpu.int86 decrements a charge then runs64 stosdw operations; DF clear makes DI+256 per charge.",
+      "evidence": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\burst-smoke-final.txt",
+      "sourceManifest": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch8\\candidates.json"
+    },
+    {
+      "id": "a003_pointerguard",
+      "baseline": "original_v6",
+      "hypothesis": "If advertised Zombie pointer7A00h is untouchedCCCC sentinel, skip blind patching of fixed arenaCCCF..CCD5. Saves four startup opcodes in sentinel case and avoids ungrounded writes; existing patch behavior retained for all other values.",
+      "edits": "A adds CMP BX,CCCC / JE no_zombie_pointer immediately after MOV BX,[7A00]. A worker and zombie offsets use labels; copied worker bytes unchanged. B exact original.",
+      "failureModes": "Non-sentinel corrupt pointer still patches arbitrary bytes. Delaying valid capture by two instructions may regress a compatible old Zombie context. Sentinel-skip removes a small amount of incidental fixed-address offense.",
+      "warriors": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch8\\bin\\pointerguard_A",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch8\\bin\\pointerguard_B"
+      ],
+      "sources": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch8\\src\\pointerguard_A.asm",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch8\\src\\pointerguard_B.asm"
+      ],
+      "sha256": [
+        "71164c8d7308766cd14d64ac6d1342cd1631afce98278fe9dca4d4ab14a3b3f3",
+        "8579e2c2212d72a413a6daacfe3b91ceb72be648bfc085bfeed9430eeaf6657a"
+      ],
+      "sizes": [
+        227,
+        202
+      ],
+      "sourceManifest": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch8\\candidates.json"
+    }
+  ],
+  "duplicates": []
+}

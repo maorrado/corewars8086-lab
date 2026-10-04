@@ -1,4 +1,4 @@
-# DET2 - adaptive lattice (current best)
+# DET2 - adaptive lattice (mixed-field leader)
 
 Date: 2026-10-04 day 2
 

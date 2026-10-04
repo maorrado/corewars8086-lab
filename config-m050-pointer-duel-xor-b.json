@@ -1,0 +1,50 @@
+{
+  "experimentId": "m050-pointer-duel-xor-b",
+  "outputPath": "experiments/smart-counter-2026-09-30/pointer-operator/duel-xor-b.json",
+  "runDirectory": "build/official-runs/smart-counter-2026-09-30/pointer-operator/duel-xor-b",
+  "battles": 250,
+  "threads": 4,
+  "seeds": [
+    "smart-duel-fresh-a",
+    "smart-duel-fresh-b"
+  ],
+  "candidate": {
+    "name": "COD_ptr_xor_b",
+    "warriors": [
+      "build/m050-pointer-operator/xor-b/A",
+      "build/m050-pointer-operator/xor-b/B"
+    ]
+  },
+  "cohorts": [
+    {
+      "id": "vs-smart",
+      "opponents": [
+        {
+          "name": "COD_Smart",
+          "warriors": [
+            "build/smart-counter-2026-09-30/SmartA",
+            "build/smart-counter-2026-09-30/SmartB"
+          ]
+        }
+      ]
+    }
+  ],
+  "zombies": [
+    {
+      "name": "zom20a",
+      "path": "official-2025/zombies-live/zom20a"
+    },
+    {
+      "name": "zom20b",
+      "path": "official-2025/zombies-live/zom20b"
+    },
+    {
+      "name": "zom20c",
+      "path": "official-2025/zombies-live/zom20c"
+    },
+    {
+      "name": "zom20d",
+      "path": "official-2025/zombies-live/zom20d"
+    }
+  ]
+}

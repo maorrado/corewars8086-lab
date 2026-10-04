@@ -1,0 +1,451 @@
+{
+  "status": "FROZEN_SCREEN_INPUTS",
+  "objective": "Fresh-seed screen of exact e1p4 binary against e1p3, m049 and m050 on 2025 published roster.",
+  "design": {
+    "arms": [
+      "m049",
+      "m050",
+      "e1p3",
+      "e1p4"
+    ],
+    "panels": 4,
+    "teams": 75,
+    "cohortsPerPanel": 25,
+    "seedsPerPanel": 2,
+    "battlesPerCohort": 25,
+    "battlesPerArm": 5000,
+    "totalBattles": 20000,
+    "metric": "candidate team points per battle",
+    "pairing": "same cohort compositions and seed strings across all arms",
+    "limitation": "screen only; opponent-conditioned scores are not pure one-on-one results"
+  },
+  "sourceDerivation": "Byte-identical to the user-supplied source as verified by the supplied SHA-256 hashes; derived from the audited e1p3 binaries by changing each FF 1F byte pair to FF 18.",
+  "binaries": {
+    "e1p4A": {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\e1p4-antihunter-20261001\\build\\e1p4A",
+      "bytes": 187,
+      "sha256": "99192c673e5af394ed8194932b52b4f18f092804384f38d1bb2828b189c76b93",
+      "replacements": 3
+    },
+    "e1p4B": {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\e1p4-antihunter-20261001\\build\\e1p4B",
+      "bytes": 115,
+      "sha256": "d307b92097ac68ce6073adc1e34917b2f51c0c396235c918dfc913cee7393354",
+      "replacements": 3
+    }
+  },
+  "candidateWarriorSha256": {
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\m049\\A": "106765da16166d0fa744631e5cfbe403c5eafc30db164eb47e1749e7d365a973",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\m049\\B": "7ed87893a82861b716ad0df6404b1c70282cb983db1a4a607363fd3f27ad6c77",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\m050\\A": "0268ce4f301bf2ada8566f4e608180a0670a335a80b9c2b93b67aee2b632bd44",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\m050\\B": "06b5a1ff7bac4b146620de6d1de512dfedf3f28366d6435bf61d49869d971782",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1p3-check-20261001\\build\\e1p3A": "caced989dd55b98a749d5dc3a2d20d533e14013affb08b84572c9f76f1a05117",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1p3-check-20261001\\build\\e1p3B": "99055d82958f813de2067a17dde8ea361c749bd4dc916095a4dad1ad8e13ce2b",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\e1p4-antihunter-20261001\\build\\e1p4A": "99192c673e5af394ed8194932b52b4f18f092804384f38d1bb2828b189c76b93",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\e1p4-antihunter-20261001\\build\\e1p4B": "d307b92097ac68ce6073adc1e34917b2f51c0c396235c918dfc913cee7393354"
+  },
+  "configs": [
+    {
+      "id": "panel-01-m049",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\e1p4-antihunter-20261001\\frozen\\configs\\panel-01-m049.json",
+      "sha256": "99323b386f3d19ef184dadc5d0e8642ed96293962aeeb1c4ec4180023f167d58",
+      "cohorts": 25,
+      "battlesPerCohort": 25,
+      "seeds": [
+        "e1p4-fresh-20261001-p01-s1-bc579656d8e8b3420fb81227",
+        "e1p4-fresh-20261001-p01-s2-72b04d8aa9c64b2c82b5392d"
+      ],
+      "candidateWarriors": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\m049\\A",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\m049\\B"
+      ]
+    },
+    {
+      "id": "panel-01-m050",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\e1p4-antihunter-20261001\\frozen\\configs\\panel-01-m050.json",
+      "sha256": "b23b438290eeed3de845ab901ee7c0357815e3e6c7aa11cad099419f1a31e358",
+      "cohorts": 25,
+      "battlesPerCohort": 25,
+      "seeds": [
+        "e1p4-fresh-20261001-p01-s1-bc579656d8e8b3420fb81227",
+        "e1p4-fresh-20261001-p01-s2-72b04d8aa9c64b2c82b5392d"
+      ],
+      "candidateWarriors": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\m050\\A",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\m050\\B"
+      ]
+    },
+    {
+      "id": "panel-01-e1p3",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\e1p4-antihunter-20261001\\frozen\\configs\\panel-01-e1p3.json",
+      "sha256": "d0b1ae0c2a688648e62cd4136d0cc2af8d31be9a73e5306ada0dcc0dd8acca9d",
+      "cohorts": 25,
+      "battlesPerCohort": 25,
+      "seeds": [
+        "e1p4-fresh-20261001-p01-s1-bc579656d8e8b3420fb81227",
+        "e1p4-fresh-20261001-p01-s2-72b04d8aa9c64b2c82b5392d"
+      ],
+      "candidateWarriors": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1p3-check-20261001\\build\\e1p3A",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1p3-check-20261001\\build\\e1p3B"
+      ]
+    },
+    {
+      "id": "panel-01-e1p4",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\e1p4-antihunter-20261001\\frozen\\configs\\panel-01-e1p4.json",
+      "sha256": "ec54d6ee96922982be0dc8d4d80a80d143f55b4188be721a2be875b14e9053e3",
+      "cohorts": 25,
+      "battlesPerCohort": 25,
+      "seeds": [
+        "e1p4-fresh-20261001-p01-s1-bc579656d8e8b3420fb81227",
+        "e1p4-fresh-20261001-p01-s2-72b04d8aa9c64b2c82b5392d"
+      ],
+      "candidateWarriors": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\e1p4-antihunter-20261001\\build\\e1p4A",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\e1p4-antihunter-20261001\\build\\e1p4B"
+      ]
+    },
+    {
+      "id": "panel-02-m049",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\e1p4-antihunter-20261001\\frozen\\configs\\panel-02-m049.json",
+      "sha256": "668e843448fe9da8d23bb3ba48f467ff1029c95b504d668968f1cc8ed4d6a3cb",
+      "cohorts": 25,
+      "battlesPerCohort": 25,
+      "seeds": [
+        "e1p4-fresh-20261001-p02-s1-20c74415c7c1a1d5dfa415e3",
+        "e1p4-fresh-20261001-p02-s2-acf9f3a658cc0bdf683842cd"
+      ],
+      "candidateWarriors": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\m049\\A",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\m049\\B"
+      ]
+    },
+    {
+      "id": "panel-02-m050",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\e1p4-antihunter-20261001\\frozen\\configs\\panel-02-m050.json",
+      "sha256": "b9abcf3458b6022cce081352832f162f9e1472e2545af373c3b52114275b2033",
+      "cohorts": 25,
+      "battlesPerCohort": 25,
+      "seeds": [
+        "e1p4-fresh-20261001-p02-s1-20c74415c7c1a1d5dfa415e3",
+        "e1p4-fresh-20261001-p02-s2-acf9f3a658cc0bdf683842cd"
+      ],
+      "candidateWarriors": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\m050\\A",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\m050\\B"
+      ]
+    },
+    {
+      "id": "panel-02-e1p3",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\e1p4-antihunter-20261001\\frozen\\configs\\panel-02-e1p3.json",
+      "sha256": "30f3e29e4430d2307586952acba53cb0ae870e4e12aba7709a02224f65fbf024",
+      "cohorts": 25,
+      "battlesPerCohort": 25,
+      "seeds": [
+        "e1p4-fresh-20261001-p02-s1-20c74415c7c1a1d5dfa415e3",
+        "e1p4-fresh-20261001-p02-s2-acf9f3a658cc0bdf683842cd"
+      ],
+      "candidateWarriors": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1p3-check-20261001\\build\\e1p3A",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1p3-check-20261001\\build\\e1p3B"
+      ]
+    },
+    {
+      "id": "panel-02-e1p4",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\e1p4-antihunter-20261001\\frozen\\configs\\panel-02-e1p4.json",
+      "sha256": "890b81aeac02934cb57b9cad21e476c013b37be0566888671ff3bd924a049433",
+      "cohorts": 25,
+      "battlesPerCohort": 25,
+      "seeds": [
+        "e1p4-fresh-20261001-p02-s1-20c74415c7c1a1d5dfa415e3",
+        "e1p4-fresh-20261001-p02-s2-acf9f3a658cc0bdf683842cd"
+      ],
+      "candidateWarriors": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\e1p4-antihunter-20261001\\build\\e1p4A",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\e1p4-antihunter-20261001\\build\\e1p4B"
+      ]
+    },
+    {
+      "id": "panel-03-m049",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\e1p4-antihunter-20261001\\frozen\\configs\\panel-03-m049.json",
+      "sha256": "3c780a6ba21ba9a13a43203a319a189751f96a72ff6792db46e3cffb9de79ab9",
+      "cohorts": 25,
+      "battlesPerCohort": 25,
+      "seeds": [
+        "e1p4-fresh-20261001-p03-s1-da43c74c3c9aed6c83693e2d",
+        "e1p4-fresh-20261001-p03-s2-566f8a9b0eeb6de8dc48a354"
+      ],
+      "candidateWarriors": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\m049\\A",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\m049\\B"
+      ]
+    },
+    {
+      "id": "panel-03-m050",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\e1p4-antihunter-20261001\\frozen\\configs\\panel-03-m050.json",
+      "sha256": "76fbb2684d00c6c39ad26b4d82112442639bff453022548edd4f738dea58e365",
+      "cohorts": 25,
+      "battlesPerCohort": 25,
+      "seeds": [
+        "e1p4-fresh-20261001-p03-s1-da43c74c3c9aed6c83693e2d",
+        "e1p4-fresh-20261001-p03-s2-566f8a9b0eeb6de8dc48a354"
+      ],
+      "candidateWarriors": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\m050\\A",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\m050\\B"
+      ]
+    },
+    {
+      "id": "panel-03-e1p3",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\e1p4-antihunter-20261001\\frozen\\configs\\panel-03-e1p3.json",
+      "sha256": "e542081b21830096c1dd7319e86afb821eeeb97220892c5adca9d8e393cad7b9",
+      "cohorts": 25,
+      "battlesPerCohort": 25,
+      "seeds": [
+        "e1p4-fresh-20261001-p03-s1-da43c74c3c9aed6c83693e2d",
+        "e1p4-fresh-20261001-p03-s2-566f8a9b0eeb6de8dc48a354"
+      ],
+      "candidateWarriors": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1p3-check-20261001\\build\\e1p3A",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1p3-check-20261001\\build\\e1p3B"
+      ]
+    },
+    {
+      "id": "panel-03-e1p4",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\e1p4-antihunter-20261001\\frozen\\configs\\panel-03-e1p4.json",
+      "sha256": "ef10dfb5b1a0a1c57ece4678148978e5636d1461aa0993c8e5aab952c858e8df",
+      "cohorts": 25,
+      "battlesPerCohort": 25,
+      "seeds": [
+        "e1p4-fresh-20261001-p03-s1-da43c74c3c9aed6c83693e2d",
+        "e1p4-fresh-20261001-p03-s2-566f8a9b0eeb6de8dc48a354"
+      ],
+      "candidateWarriors": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\e1p4-antihunter-20261001\\build\\e1p4A",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\e1p4-antihunter-20261001\\build\\e1p4B"
+      ]
+    },
+    {
+      "id": "panel-04-m049",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\e1p4-antihunter-20261001\\frozen\\configs\\panel-04-m049.json",
+      "sha256": "66ec39722e644a01e39123e8040d36da51c799c9f5368a6907727fe82b042fca",
+      "cohorts": 25,
+      "battlesPerCohort": 25,
+      "seeds": [
+        "e1p4-fresh-20261001-p04-s1-50d99a53e4f8b759dc3b038e",
+        "e1p4-fresh-20261001-p04-s2-0fa360daf1a61957eac16956"
+      ],
+      "candidateWarriors": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\m049\\A",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\m049\\B"
+      ]
+    },
+    {
+      "id": "panel-04-m050",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\e1p4-antihunter-20261001\\frozen\\configs\\panel-04-m050.json",
+      "sha256": "2f92003a485882b02aed9e2f2dab01f59dc3a3bdd7a9fc4a6694f03218b66064",
+      "cohorts": 25,
+      "battlesPerCohort": 25,
+      "seeds": [
+        "e1p4-fresh-20261001-p04-s1-50d99a53e4f8b759dc3b038e",
+        "e1p4-fresh-20261001-p04-s2-0fa360daf1a61957eac16956"
+      ],
+      "candidateWarriors": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\m050\\A",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\m050\\B"
+      ]
+    },
+    {
+      "id": "panel-04-e1p3",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\e1p4-antihunter-20261001\\frozen\\configs\\panel-04-e1p3.json",
+      "sha256": "fee4081be99849e6c52a980028fdb010b81f5cf15c682a4ee73e714e2796de66",
+      "cohorts": 25,
+      "battlesPerCohort": 25,
+      "seeds": [
+        "e1p4-fresh-20261001-p04-s1-50d99a53e4f8b759dc3b038e",
+        "e1p4-fresh-20261001-p04-s2-0fa360daf1a61957eac16956"
+      ],
+      "candidateWarriors": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1p3-check-20261001\\build\\e1p3A",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1p3-check-20261001\\build\\e1p3B"
+      ]
+    },
+    {
+      "id": "panel-04-e1p4",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\e1p4-antihunter-20261001\\frozen\\configs\\panel-04-e1p4.json",
+      "sha256": "8692d8f727da8f8de5fb7c1b1266afb4e94901eb1a7055551fe83586cf1cdb4b",
+      "cohorts": 25,
+      "battlesPerCohort": 25,
+      "seeds": [
+        "e1p4-fresh-20261001-p04-s1-50d99a53e4f8b759dc3b038e",
+        "e1p4-fresh-20261001-p04-s2-0fa360daf1a61957eac16956"
+      ],
+      "candidateWarriors": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\e1p4-antihunter-20261001\\build\\e1p4A",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\e1p4-antihunter-20261001\\build\\e1p4B"
+      ]
+    }
+  ],
+  "randomSeeds": [
+    "e1p4-fresh-20261001-p01-s1-bc579656d8e8b3420fb81227",
+    "e1p4-fresh-20261001-p01-s2-72b04d8aa9c64b2c82b5392d",
+    "e1p4-fresh-20261001-p02-s1-20c74415c7c1a1d5dfa415e3",
+    "e1p4-fresh-20261001-p02-s2-acf9f3a658cc0bdf683842cd",
+    "e1p4-fresh-20261001-p03-s1-da43c74c3c9aed6c83693e2d",
+    "e1p4-fresh-20261001-p03-s2-566f8a9b0eeb6de8dc48a354",
+    "e1p4-fresh-20261001-p04-s1-50d99a53e4f8b759dc3b038e",
+    "e1p4-fresh-20261001-p04-s2-0fa360daf1a61957eac16956"
+  ],
+  "rosterWarriorSha256": {
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\Y_TOM_AND_JERRY1": "0f2a1799845db478549ab951df61323eb863ed496ed87d2e189b2cba510bfa43",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\Y_TOM_AND_JERRY2": "8699a2bb930c1d2d1178aa6c17322db31f1338b8184d6056620abbc5b1c1a65e",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_HRZ_Underflow1": "79f994bd13bfd25b44a97d420e8a9d6e8f45311a716b21bfb9f10fdc79cde7e4",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_HRZ_Underflow2": "7d5c20977121ffb2ac532f6a4cb6662a2c349f0e833beb9999869ad9df918840",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\Y_TOM_Thefrogs1": "8f014d9812cf497a03015d562135e8bdaaa4dd921e5de3e28984ac64642fa050",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\Y_TOM_Thefrogs2": "348c42651bea5001dc5a61a3e15228e4820dbbd4ab0b6df16982dbb38334a504",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_WAN_Full_Time_Job1": "451ccffeedd664f6814d45a712f805c71931efada682112e61b801858c3ab4f3",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_WAN_Full_Time_Job2": "9e076ceaf246b6003d9c2680a2b4cf0bffd069805902b0b5edeebf49039fe4bd",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_GSA_ShmuelTurtles1": "22de4575872d077b32481da4edf814f6a72136771b931b45a1b0191001b19c3f",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_GSA_ShmuelTurtles2": "9198ae7381e5449f42b5f2cb80e0ec1788c4b2bd25b9ec9ed0096383c4c2085c",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_HRZ_Ctrl_Alt_Elite1": "396faf80539b6f55ee1ce91d06bf40ee0049be5f931e0fd82da0da3c2e70ce79",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_HRZ_Ctrl_Alt_Elite2": "396faf80539b6f55ee1ce91d06bf40ee0049be5f931e0fd82da0da3c2e70ce79",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_GSA_GhostBytes_0x1": "2cf5b8a9974e1e6e46504f5027a2f20f6329cf8944ad15397afdd0f5955d2801",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_GSA_GhostBytes_0x2": "08c6ac348985a5f21fecbaf1ee7d7bb56add87cd8d8af2278902df7e60b52238",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_GSA_callfart1": "dfe5017765f2522372bedc2e5e3b72af5597b99ddbfb3444c25f5bde17a4acf3",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_GSA_callfart2": "30dafcebde39ba9bf4bbcf21d83a666bc5f0a8e3e4aabcb52310905d389a4f4d",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_HDS_YOY1": "a30854eb23928d0a2a16e32fc2db3fbf6f6dec4b843ae73fa4b5ba904eced03f",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_HDS_YOY2": "61cdca8ebd5d863f30172e0164c4d0a3d8eb6dae39815aa06465a8904a95dfa9",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_KOB_KosherCode1": "f333c2d41cce100bb3afee9f2e60b9fda6f93d717602adc369d7719664568184",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_KOB_KosherCode2": "f2b704b27b426c0d25f8dc26f1e4876f14cf3d5d1b89d4e7bfbecd0b132af5ac",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_HRZ_ADDvanced1": "ff353ab75e7a3b88b896f64cbb97bfad639412a6e222088d6f52cc189a9e2ebe",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_HRZ_ADDvanced2": "509086f3e6ec36b0867ecebe4ba9ecc8faffaf7cc7f4e633dd04f2814981f39c",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\Y_MTA_Hexellent1": "70484891cb2f1361ffe98001528a8e0d05ed74f44e7e3696b8d71ac64d0c3962",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\Y_MTA_Hexellent2": "a303a84b1f9fedf1fa0fde29647c5db17ee23bcd63faf16c9f69295e7d60d0a4",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_TOM_BitBenders1": "97d159491650cf04a236c8c6188555dd17b9e7b1d2b1fe86a4926ef9b9b30d00",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_TOM_BitBenders2": "97d159491650cf04a236c8c6188555dd17b9e7b1d2b1fe86a4926ef9b9b30d00",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_HRZ_Thingies1": "2a381510bdaf45ab809c11ee0c115c6683b6e3c38148f613c3927026138c8b93",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_HRZ_Thingies2": "2a381510bdaf45ab809c11ee0c115c6683b6e3c38148f613c3927026138c8b93",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_HRZ_InCtrl1": "d7b0b84459fe2295e8a65512ef16c2e698e6d6bee50b1b3b777dc0c2b0c5b7c0",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_HRZ_InCtrl2": "6997d9e87f8c241b3056f8ebfb624bd4bf268ef14329f49c95d4f553146153fa",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_GGN_OpcodeHunter1": "d5992bdc307b070ad91e1737a8777125970912b286a392ed6d9a6456d87ed3af",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_GGN_OpcodeHunter2": "0ced8fc1ec650a032604e2e149458b54202be7ecabb447999f143659d6ea46b6",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_HRZ_TitanicSwimTeam1": "4794558ee17f4265372dd9176b06150026d88e0bb2d481954dec55be8b3aeec0",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_HRZ_TitanicSwimTeam2": "5bb33762a99debde94f5905696bf9e72c552cb9ddbd2e01391efde85b5d92ffc",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_AVI_Fishandpoultry1": "c8aa0e238c28c8c041cf8318d93f165b7cb2005c71cc055552244f120ea7f065",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_AVI_Fishandpoultry2": "3718913ee7debbee757a1fa053699cb80d12cd1985d8218b3ed6cb9f4d87193d",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_IND_cgx1231231": "b6c07757f0c8b5d20a60c12de9d30c5130badc9c4e342e8a3beec5e92d6f782e",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_IND_cgx1231232": "a053a4c9f0b893fe84070894ed08e600964a9d63bc57719b083b8d91186e4315",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_HRZ_MOV_AX_WIN1": "ef82df0d92476fa6161d81ff092ea489d4df7ddef88a0dad44705a3cf14f8dd1",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_HRZ_MOV_AX_WIN2": "a1b4b8459ae6b367da93742fb5f3c8bb0fe321e3cf1174f4e7a1dc29ada2a544",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_HLS_EmoMutants1": "629b28dbff281ca175493f1f40492e52afdf6f9f3c2f8a7e06a8df08a5580711",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_HLS_EmoMutants2": "36c6a4f23a988920ed0e2e7a128bd706b5f82871935b6c0dfc5d3c2cbbd65aa0",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_HRZ_CodeEliteGang1": "18455d457341e1d7b30c782693eeb66cab9f239b7bdc6b372bdcfb41c16dc426",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_HRZ_CodeEliteGang2": "74f611e36a3c93d5f9f5ced87f637120a0810e33a1927ef675a402da5900416f",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_TOM_tson_el_akod1": "9198ae7381e5449f42b5f2cb80e0ec1788c4b2bd25b9ec9ed0096383c4c2085c",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_TOM_tson_el_akod2": "9198ae7381e5449f42b5f2cb80e0ec1788c4b2bd25b9ec9ed0096383c4c2085c",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_TOM_2B2Team1": "bcc371f9a6c803da24ca9b207cc669f3ad303b115c7b6d27afdaafc1f48d0cb5",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_TOM_2B2Team2": "bd1a1687a4f99d4a0bb60ae23cb09a505d87c77042de95a27957b1c524df4ab0",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\Y_TOM_Code_Killer1": "388479f220bd757fe9c011cb234cc52ad1e6f12e9deb01a8d247a0e5568c4e22",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\Y_TOM_Code_Killer2": "7fc3754c18976081ccd54f3936d22a493bb1d8420706cde4a5962613f4c9bbf5",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_HRZ_The_almogooners1": "1beaaf660fe42f02b45b031c46d1b4dda2f7d670f99e6dc27c73c6ae45301d91",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_HRZ_The_almogooners2": "1beaaf660fe42f02b45b031c46d1b4dda2f7d670f99e6dc27c73c6ae45301d91",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_AVI_AnotherBitInTheWall1": "5a78ed74829860373ab4dd7d80bb58fd50234789e3d2cba84c4f8a1cc183ab15",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_AVI_AnotherBitInTheWall2": "76b06db3e88a32e0a1f025030e1c14d19c53b9a8f7a0944c76de9d867de55fda",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_BZV_SKYENT1": "71bdf7043da5f50d23bc4d8b729b13ce39a2240775937d7652476abdcbb2705d",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_BZV_SKYENT2": "bfca1258902ff47eef60ddc230e67f4c8528c89421377f5a696724506c2fdada",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_HRZ_Code_Jokers4Life1": "f2222e5041e6fdfe2ab35582cc9df51e3b0498b7b57d90f18c20056239d673b8",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_HRZ_Code_Jokers4Life2": "7ecc90c263e5458e6ac5b880d91efd45c3e0c6345639c3e38153bc161173e8de",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\Y_GSA_3Plate_Benchers1": "7e6a8c26c42fa899e58fb02cde83d71406402dc436741098fc334382a76e5872",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\Y_GSA_3Plate_Benchers2": "7e6a8c26c42fa899e58fb02cde83d71406402dc436741098fc334382a76e5872",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\Y_SZR_BrvazimAlSteroidim1": "dbc5b61532888cc9246691b72acfc95eb453fb6362d405f79dca61b48b4e3764",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\Y_SZR_BrvazimAlSteroidim2": "6071871d772af0d529769ecf82479b93d30a388feb72df6a41e4c0845100dfd3",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_WAN_OnlyCode1": "79feca3fa250a6c0406c46fa11fb0ce604758625912695e45040a784121625d8",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_WAN_OnlyCode2": "a230910890f8270ad8dcb6c2d304a47ca8c1dd25a418022b80e091e5a8c96658",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_IND_BRA1": "fd42f831ef722a715fc5d89877cf830b366efd1d3a30a2e0612e565de0031015",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_IND_BRA2": "fd42f831ef722a715fc5d89877cf830b366efd1d3a30a2e0612e565de0031015",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_WAN_Baltika91": "dba05606104f4c4805e10023866390bad2fd4c3eed1732e86780a158f061e4c6",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_WAN_Baltika92": "30065fd48eab62390508c9357b30e01246e1e56343803df97aa4306ce0fdd9c5",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\Y_SZR_The_Chargers1": "3e7c44b27c9d019d42495a066a7346ada38b9c5bc5e3dbbf484c729ef90bf379",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\Y_SZR_The_Chargers2": "4c43e3d631d94e14dfbc3bb68e80e29aba97156b3244a912675e24b4a2d1f6f9",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_HRZ_L1": "39de1bb615fe8760c528eab9b0cdac26e934010ee5953bb3c88f1ce561cefea0",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_HRZ_L2": "bdd2bb9dbb0dffc2ed7c0fa4f6b1fdf7a067d9784959d26c8c615f6fc3fde901",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_OHS_BatteringRAM1": "6db7c4932a50615520b1eed2f49a9543723d89fb1b70f7507b6241f77d0e9474",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_OHS_BatteringRAM2": "5f2531e6a569ae005357df7f8d16fdd7e49020cee96a6ccf16e85d2fb51e4bb1",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_ATL_R1DDLE1": "dc1e7b81a57cc7fb13be0a4b32036342b7a7b2c65614bccc28998bec70111803",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_ATL_R1DDLE2": "dc1e7b81a57cc7fb13be0a4b32036342b7a7b2c65614bccc28998bec70111803",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_HDS_IWDIA_nachalo1": "e167f5b550647a852833be5d1a676a5539c67062b68d29564799231dbb326130",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_HDS_IWDIA_nachalo2": "82897f9576e656fff06b6a52b4fa7710fedb3c662588d54b49f3b29e3b953ff8",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_GSA_GoonSquad1": "7b092caf2288c03827e2c7189566306f3bcc65e8668d2793659877475eaa8ac7",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_GSA_GoonSquad2": "b0092281531189b979faf8b5084d1a6eb1793075f9ae4e56a4437459088fadc7",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_HDS_NRI1": "8830ca6b843b0508fc2a5771068dad1bc150d2f824d2cd77d7631e523b431bb1",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_HDS_NRI2": "1cc40806e6766e591dac071b1256c8b5f325360f0aae448b188dcc87376bb9ab",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_AML_ByteReapers1": "e03726289c7889054f9635a8eea5a25754a819b2016bee5a39ef345f7b6cd3d7",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_AML_ByteReapers2": "5fe97a9902546036b12928645654fc44688e084fd7f6e3a9799fd5365f48918e",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_OST_Gamma1": "a470a79b80f6eac90b3613ffc6127722a210923fa5fa80efec4760197a901c63",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_OST_Gamma2": "0f522f42cecc4b8e2dd7cc8ea914cb7946d7cf1ec0a4877fb876c30137580caa",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_ORT_TheGoats1": "74e7a2f5ff930e07fc75a13cc15fadf586f1af66d1f6283532ce47b7c0673a25",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_ORT_TheGoats2": "0ab57aed774169d420cb0b6b05414fe6145ef6e99b614b988ed8163e3b11aa42",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_HDS_ATW_Solo1": "3433de990452854bfefb8f5e76c2e898f1b4b44cfe3a2533bc54ab6f1e461fa5",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_HDS_ATW_Solo2": "1e1079248809e3c1eac0a7768e7726bfad3f6daae78f90c1fd25bb7f12c634a5",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_GSA_VanLavan1": "29bcd91c2654fbe3b40eb0ba46f0b27956fc951185f3ebc7fb78877f739a401e",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_GSA_VanLavan2": "649dad7fb2499e54a9474e31784d38f3ad36e801d9649eb0d78d7aabe8e30d1b",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\Y_TOM_The_Crushers1": "8daf826ed95b86c1ceef1f0f6e1a8c92fe292fb83e3e651dd75b72064187e5b2",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\Y_TOM_The_Crushers2": "af0ee0bde6599b412201e094453951cf884aa5e5c7e79e32986d4812d9516547",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_HDS_MAC1": "01fe69503bf6f9092a4df08b0cb7d29ee83a8c9532162b63d3a97ab21e36ad14",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_HDS_MAC2": "b983b54b0afc2b8ff78ed361f67745e3d133f28989140ae8da394e740ae2f6b6",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_OHS_TOMEX1": "d511b9beab4574d1bf126ef9264e3aca2276ea71e81b3a6c9296e217859f54a8",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_OHS_TOMEX2": "d511b9beab4574d1bf126ef9264e3aca2276ea71e81b3a6c9296e217859f54a8",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_HRZ_LowKey_WBB1": "9e6f08b0cf3d7fe60b1c349ce143ed02e2f3ed01e1654164f231a4c46d2aefc9",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_HRZ_LowKey_WBB2": "42abd17f0ecb417669bb7ad2215bfd6a4fe7477c99b1cde736205d5b207484f4",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_TOM_anonymous1": "6f57faeb8622bbc3778c80d450fa03c9efbf8703b58414850a3861f2bcbc83f4",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_TOM_anonymous2": "e0cdbe70e170d8bf242e071325971d7590701d330fe089b9d2f815e05a432759",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_OHS_TrojanByte1": "8daa80561913795dab371699ae02d243e11889eafdbd3f198b8b2792ef8caed6",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_OHS_TrojanByte2": "7a243cd4100cef57759ded924b53566ac3004a1d23b71a11a1166f0a7cecbc4f",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_HRZ_Pixar_Lamps1": "500852a7240608e60b8ed36f93d14f09ec08db9f3b9f65358a4d3174a14221a8",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_HRZ_Pixar_Lamps2": "5ab6a833bc63e8497db71b36ae02a835ab1b9f5abef9b42dafabd07b1d671ab5",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_TOM_Syntax_Terror1": "2cb2747ca3e9331b28ca609a228bfd21413a77ee98355c5e8fff4042c56a2a56",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_TOM_Syntax_Terror2": "f39bc040a51c504af6baca86ef99bf19351717c91ac4e3af01a2e0ecad193e47",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_HRZ_Registered_Winners1": "1645436c2465df7ac0def9182eb12506e7aa9ca6b719635d2192eab4e38ce70d",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_HRZ_Registered_Winners2": "6a489e8f28e3cbe8e370b8382679938c7635a46fcbbd5f4c263024e2e8dcabab",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\Y_BGR_theGlopyGng1": "8d84a93cdcc76fb45b496184bc68c3535a3564fc9e1ea523a9fcba0c2a5fa6ac",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\Y_BGR_theGlopyGng2": "adfdb3915475338713a2a1e4d7c8cc27a2ff8c6e4ed0a474e6770be72836b97d",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_HRZ_The_Rubber_Duckies1": "c8270f10aa7f62682bae9ce457a087fe6b391e63107ae748695d35f615a2d72e",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_HRZ_The_Rubber_Duckies2": "d77f23e2eda8675b231d8d53a436dcde422e27fa7936d18059fd338156c58ff4",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_GSA_B331": "b669a39358c457bbd739710d2a82e6c7f5bfb20125922b153207209d2bf74350",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_GSA_B332": "b669a39358c457bbd739710d2a82e6c7f5bfb20125922b153207209d2bf74350",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_HRZ_Grindo_Holics1": "0fd28370c9b4200dc1d4774a5ab959e76f1f5fe0243dd327626fd8f47c936b51",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_HRZ_Grindo_Holics2": "69791f0bdb90e9ff65fc078f6e863f92c3847700efbdc8e8865e002c96f2934f",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_IND_stuxnet1": "b4c342926e63b9d8b21f22e744de9cc96312ce7bf9433f5d9c6b76d982763834",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_IND_stuxnet2": "2f645003233d8935086b8e5867c013ff3a93d87acbda64c149805c5ba5ccd5bd",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\Y_GSA_LVS_FIT1": "32d1ed02b689d9d0b10a321511ed19c6d603e7f5c741ec71788cb8b9774d9be6",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\Y_GSA_LVS_FIT2": "92b6705be2d32ef9a46386c4371e7ad2c0ad5eaf279ea6a704ea0a2d0c11c987",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\Y_GSA_SigmaSilent1": "5f99b89cf54c876307804f0f38658b46739baa8ff4f14189e0c17713f10ee16c",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\Y_GSA_SigmaSilent2": "8a06a8d64760629cacb4e1ad2c236c5e2fc9b3e0948d3de048a43c2fa386ead9",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_ORT_Pegasus_Hex1": "8c82f8dc226579917f261847d0a6606c670f47ae4adcd5d4eb41fe4807035537",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_ORT_Pegasus_Hex2": "4026ad9d8dd3c66933bf5cc03cd18ed3b7d707f181a054fc43bf07b2239758c1",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_HDS_GoldenLamed1": "f76ec20d3e5d9e5dc58734ae0aa90532090d98abbd857baeedc3179c8bd32378",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_HDS_GoldenLamed2": "f76ec20d3e5d9e5dc58734ae0aa90532090d98abbd857baeedc3179c8bd32378",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_HRZ_fisherEXE1": "82b268ce80e540cea8c8a61d6279f613721d5c59b369317af53de5983db3bb49",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_HRZ_fisherEXE2": "ac49b19fc0fb2f62c4a6db6b18c637deebde8ff010d183578e738c429cf8be92",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_RZL_YANDE1": "8e8c89070cc2d1f64bc5e16fc6dbbffb2fc72cb57bf66f16ac5bfe089d60632b",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_RZL_YANDE2": "eba9d406edec09cd697bcb706c1bdc133a9a2b63cea3811252ddaaf54e2b8b75",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\Y_HDS_TRY1": "d654e9598b1d6e232328341049e95b646e383a504224dbcc4763fc32ac7d37fb",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\Y_HDS_TRY2": "9c498b425a7b6af5fe64b4445efddc821d513955dc7f2c207eb127f141ac1092",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_OHS_cgxPro1": "128d6e4fb73dec09b71198963573298bb8bac99c3a2daca74759efc48b28a1ce",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_OHS_cgxPro2": "128d6e4fb73dec09b71198963573298bb8bac99c3a2daca74759efc48b28a1ce",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_HRZ_stack_attack1": "7298748ba797e65564eb58d3f53af67b3457b2400c73069dcbfbe538bd6ee6f1",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_HRZ_stack_attack2": "140a6203d3d0839bd3797cdf1da03613b727c053854dbb8eb0b7e34118355fa9",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_HRZ_BinaryBandits1": "c6cf8bb109582030c5cd0723399930168aee257dbeac6122507c522f9b383d86",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_HRZ_BinaryBandits2": "be7d4791659d4aacd49dded0044baadf737e123b3dff8ddb497f5be1954c461b",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_HRZ_PowerRangers1": "52aa2ff950b861e97be698661c012ca2f2da158171aa2899c69fe1049fb1abb0",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_HRZ_PowerRangers2": "d105ec96ad325832882dc8820d82a52567780dfdb1abb40a50986e011feff22c",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\Y_ELD_FriendlyFire1": "9198ae7381e5449f42b5f2cb80e0ec1788c4b2bd25b9ec9ed0096383c4c2085c",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\Y_ELD_FriendlyFire2": "9198ae7381e5449f42b5f2cb80e0ec1788c4b2bd25b9ec9ed0096383c4c2085c",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_GSA_TheBytes1": "d168c81336006cab440c719f9bf857d146ca2b8b063b95eaccbc274326d58f9b",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_GSA_TheBytes2": "7dfdbe1fbfeb2311ef5c1a77621fb43dc0ca5ec23abc566bdf4078d348311351",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_HRZ_TEST_ticals1": "bde8d3995ed1d713bcb7a64eb6f122a3105e0549e28ee8bc3bb951737ed7aa6f",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_HRZ_TEST_ticals2": "bde8d3995ed1d713bcb7a64eb6f122a3105e0549e28ee8bc3bb951737ed7aa6f",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_WHS_K0F1M_AL_T1L1M1": "51be29ada737ee980285eeb1cce4c445ce345d8b3bf0c9b3d97e2ae09ade3f60",
+    "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\public\\A_WHS_K0F1M_AL_T1L1M2": "d7487a752af32ae355c8fbabcaba111150451a26ff9b7c6804ac08b26f85de6f"
+  }
+}

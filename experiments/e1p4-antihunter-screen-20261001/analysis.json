@@ -1,0 +1,113 @@
+{
+  "status": "COMPLETE_FOUR_PANEL_SCREEN_NOT_CONFIRMATORY",
+  "manifestSha256": "db4a1ff8fc63ffc72f5ffd30e25067b1dde53df8296969f100a733e9516a063c",
+  "design": {
+    "panels": 4,
+    "arms": [
+      "e1p3",
+      "e1p4",
+      "m049",
+      "m050"
+    ],
+    "battlesPerArm": 5000,
+    "totalBattles": 20000,
+    "teams": 75,
+    "seatsPerBattle": 4,
+    "seedsPerPanel": 2,
+    "pairedCompositionsAndSeeds": true,
+    "clusterUnit": "panel",
+    "confidence": "unadjusted 95% t intervals with 3 df; three candidate comparisons were examined",
+    "engine": "pinned deterministic-v6 JAR through validated research-batch wrapper; no gameplay overlays",
+    "limitation": "four independent panel-level clusters are too few for confirmation; this is a screen, not promotion evidence"
+  },
+  "meansTeamPointsPerBattle": {
+    "e1p3": 0.6823899988000001,
+    "e1p4": 0.6940233322,
+    "m049": 0.6732166654999999,
+    "m050": 0.6799833329000001
+  },
+  "panels": [
+    {
+      "panel": 1,
+      "e1p3": 0.6691999952000001,
+      "e1p4": 0.6807999952000001,
+      "m049": 0.6539999972,
+      "m050": 0.6662666644
+    },
+    {
+      "panel": 2,
+      "e1p3": 0.6752933344000001,
+      "e1p4": 0.6964933344,
+      "m049": 0.6614000007999999,
+      "m050": 0.665
+    },
+    {
+      "panel": 3,
+      "e1p3": 0.6691999992,
+      "e1p4": 0.6807999992,
+      "m049": 0.6612000008,
+      "m050": 0.6744000000000001
+    },
+    {
+      "panel": 4,
+      "e1p3": 0.7158666664000001,
+      "e1p4": 0.7180000000000001,
+      "m049": 0.7162666632,
+      "m050": 0.7142666672
+    }
+  ],
+  "comparisons": {
+    "e1p3": {
+      "pairedPanelDeltas": [
+        0.011600000000000055,
+        0.021199999999999997,
+        0.011600000000000055,
+        0.002133333600000009
+      ],
+      "meanDeltaPointsPerBattle": 0.011633333400000029,
+      "relativePercent": 1.7047924823718899,
+      "panelStandardDeviation": 0.007784029125216719,
+      "standardError": 0.0038920145626083597,
+      "unadjusted95CI": [
+        -0.0007527939648854926,
+        0.02401946076488555
+      ],
+      "classification": "positive-screen-mean"
+    },
+    "m049": {
+      "pairedPanelDeltas": [
+        0.026799998000000103,
+        0.03509333360000011,
+        0.01959999840000004,
+        0.001733336800000096
+      ],
+      "meanDeltaPointsPerBattle": 0.020806666700000087,
+      "relativePercent": 3.090634526188819,
+      "panelStandardDeviation": 0.014204187563808719,
+      "standardError": 0.007102093781904359,
+      "unadjusted95CI": [
+        -0.0017953654160037767,
+        0.043408698816003954
+      ],
+      "classification": "positive-screen-mean"
+    },
+    "m050": {
+      "pairedPanelDeltas": [
+        0.014533330800000077,
+        0.03149333440000002,
+        0.006399999199999895,
+        0.0037333328000001
+      ],
+      "meanDeltaPointsPerBattle": 0.014039999300000022,
+      "relativePercent": 2.064756387501747,
+      "panelStandardDeviation": 0.012509453198175194,
+      "standardError": 0.006254726599087597,
+      "unadjusted95CI": [
+        -0.005865332255829504,
+        0.03394533085582955
+      ],
+      "classification": "positive-screen-mean"
+    }
+  },
+  "decision": "Promising positive screen for e1p4; all three intervals include zero. Do not promote to final without a larger, independently frozen holdout."
+}

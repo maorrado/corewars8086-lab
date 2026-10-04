@@ -1,0 +1,50 @@
+{
+  "experimentId": "smart-defense-duel-m050-smart-a",
+  "outputPath": "experiments/smart-counter-2026-09-30/defense/m050-smart-a.json",
+  "runDirectory": "build/official-runs/smart-counter-2026-09-30/defense/m050-smart-a",
+  "battles": 250,
+  "threads": 4,
+  "seeds": [
+    "smart-duel-fresh-a",
+    "smart-duel-fresh-b"
+  ],
+  "candidate": {
+    "name": "COD_m050_smart_a",
+    "warriors": [
+      "build/smart-counter-2026-09-30/SmartA",
+      "build/m050-repro/ab_pad_b"
+    ]
+  },
+  "cohorts": [
+    {
+      "id": "vs-smart",
+      "opponents": [
+        {
+          "name": "COD_Smart",
+          "warriors": [
+            "build/smart-counter-2026-09-30/SmartA",
+            "build/smart-counter-2026-09-30/SmartB"
+          ]
+        }
+      ]
+    }
+  ],
+  "zombies": [
+    {
+      "name": "zom20a",
+      "path": "official-2025/zombies-live/zom20a"
+    },
+    {
+      "name": "zom20b",
+      "path": "official-2025/zombies-live/zom20b"
+    },
+    {
+      "name": "zom20c",
+      "path": "official-2025/zombies-live/zom20c"
+    },
+    {
+      "name": "zom20d",
+      "path": "official-2025/zombies-live/zom20d"
+    }
+  ]
+}

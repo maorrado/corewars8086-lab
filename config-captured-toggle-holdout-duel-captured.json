@@ -1,0 +1,64 @@
+{
+  "experimentId": "captured-toggle-holdout-duel-captured",
+  "outputPath": "experiments/smart-counter-2026-09-30/defense/holdout-duel-captured.json",
+  "runDirectory": "build/official-runs/smart-counter-2026-09-30/defense/holdout-duel-captured",
+  "battles": 250,
+  "threads": 4,
+  "seeds": [
+    "captured-duel-holdout-20260930-a",
+    "captured-duel-holdout-20260930-b",
+    "captured-duel-holdout-20260930-c",
+    "captured-duel-holdout-20260930-d"
+  ],
+  "candidate": {
+    "name": "COD_Captured_Toggle_Counter",
+    "warriors": [
+      "build/chimera-captured-toggle-counter/ChimeraA",
+      "build/m050-repro/ab_pad_b"
+    ]
+  },
+  "cohorts": [
+    {
+      "id": "vs-smart",
+      "opponents": [
+        {
+          "name": "COD_Smart",
+          "warriors": [
+            "build/smart-counter-2026-09-30/SmartA",
+            "build/smart-counter-2026-09-30/SmartB"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vs-add-a",
+      "opponents": [
+        {
+          "name": "COD_add_a",
+          "warriors": [
+            "build/smart-step-operators/add-a/A",
+            "build/smart-step-operators/add-a/B"
+          ]
+        }
+      ]
+    }
+  ],
+  "zombies": [
+    {
+      "name": "zom20a",
+      "path": "official-2025/zombies-live/zom20a"
+    },
+    {
+      "name": "zom20b",
+      "path": "official-2025/zombies-live/zom20b"
+    },
+    {
+      "name": "zom20c",
+      "path": "official-2025/zombies-live/zom20c"
+    },
+    {
+      "name": "zom20d",
+      "path": "official-2025/zombies-live/zom20d"
+    }
+  ]
+}

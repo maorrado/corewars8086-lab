@@ -1,0 +1,39 @@
+diff --git a/repos/corewars8086-6.0.0-deterministic/src/main/java/il/co/codeguru/corewars8086/war/War.java b/tools/engine-acceleration-20261001/war/group-count/src/il/co/codeguru/corewars8086/war/War.java
+index 413ccc9..f47a688 100644
+--- a/repos/corewars8086-6.0.0-deterministic/src/main/java/il/co/codeguru/corewars8086/war/War.java
++++ b/tools/engine-acceleration-20261001/war/group-count/src/il/co/codeguru/corewars8086/war/War.java
+@@ -169,12 +169,28 @@ public class War {
+      * Count the number of alive survivor groups - defined as survivor groups with at least one alive survivor.
+      */
+     private long countAliveSurvivorGroups() {
+-        return Arrays.stream(m_warriors)
+-                .filter(Objects::nonNull)  // m_warriors contains null references for indices >= m_numWarriors
+-                .filter(Warrior::isAlive)
+-                .filter(w -> !w.isZombie())
+-                .map(Warrior::getGroupName)
+-                .distinct().count();
++        long count = 0;
++        for (int i = 0; i < m_warriors.length; ++i) {
++            Warrior warrior = m_warriors[i];
++            if (warrior == null || !warrior.isAlive() || warrior.isZombie()) {
++                continue;
++            }
++
++            String groupName = warrior.getGroupName();
++            boolean alreadyCounted = false;
++            for (int j = 0; j < i; ++j) {
++                Warrior previous = m_warriors[j];
++                if (previous != null && previous.isAlive() && !previous.isZombie()
++                        && Objects.equals(groupName, previous.getGroupName())) {
++                    alreadyCounted = true;
++                    break;
++                }
++            }
++            if (!alreadyCounted) {
++                ++count;
++            }
++        }
++        return count;
+     }
+ 	
+     /**

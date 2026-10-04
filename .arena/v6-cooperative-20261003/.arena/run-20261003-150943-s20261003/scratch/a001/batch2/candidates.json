@@ -1,0 +1,95 @@
+{
+  "schema": "cooperative-arena-candidates-v1",
+  "baseline": "original_v6",
+  "provenance": "Variants of friend-provided Good_Test V6; originals untouched.",
+  "candidates": [
+    {
+      "id": "a001_nohop",
+      "sources": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch2\\nohop\\A.asm",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch2\\nohop\\B.asm"
+      ],
+      "warriors": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch2\\nohop\\build\\A",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch2\\nohop\\build\\B"
+      ],
+      "sha256": [
+        "c0b73644265444be7fca0b6c3836c516d7d50d75c3e1a5b73d66e6af795f3eea",
+        "8579e2c2212d72a413a6daacfe3b91ceb72be648bfc085bfeed9430eeaf6657a"
+      ],
+      "sizes": [
+        219,
+        202
+      ],
+      "edits": "Remove A EB00 fall-through jump; label-rebase A worker 88h->86h and zombie entry99h->97h; B unchanged.",
+      "hypothesis": "Saves one initial opcode and two loaded bytes.",
+      "failure_modes": "Earlier startup and shifted original code can alter attack signatures and load placements."
+    },
+    {
+      "id": "a001_shiftattack",
+      "sources": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch2\\shiftattack\\A.asm",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch2\\shiftattack\\B.asm"
+      ],
+      "warriors": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch2\\shiftattack\\build\\A",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch2\\shiftattack\\build\\B"
+      ],
+      "sha256": [
+        "738c09ff1eb1704518dc769b8d9c0fd3ea6c96d81e7ccca0e40e8e66f55d10e1",
+        "8579e2c2212d72a413a6daacfe3b91ceb72be648bfc085bfeed9430eeaf6657a"
+      ],
+      "sizes": [
+        217,
+        202
+      ],
+      "edits": "A found_candidate replaces four ADD SI,SI instructions with MOV CL,4; SHL SI,CL. Earlier layout and all fixed offsets unchanged; B unchanged.",
+      "hypothesis": "Captive zombie computes segment-to-linear conversion in two fewer opcodes.",
+      "failure_modes": "CL changes on hit, but next candidate scan resets it; increased speed can alter attacker timing."
+    },
+    {
+      "id": "a001_strideplus100",
+      "sources": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch2\\strideplus100\\A.asm",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch2\\strideplus100\\B.asm"
+      ],
+      "warriors": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch2\\strideplus100\\build\\A",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch2\\strideplus100\\build\\B"
+      ],
+      "sha256": [
+        "525eaa6f88857568c2ef42bef4c068bd7554be724beaebb2a852197a06031c79",
+        "eb73fdbff6816aefa31a36cb8ac9fd1f57b2297af50efb18d17342b047b40469"
+      ],
+      "sizes": [
+        221,
+        202
+      ],
+      "edits": "A DX4000/BP4400->DX4100/BP4500; B DX2400/BP2C00->DX2500/BP2D00. Length and original offsets unchanged.",
+      "hypothesis": "Odd 0100h relocation strides visit 256 destination bands instead of64 while preserving low A2 bootstrap and original BP-DX paint spans.",
+      "failure_modes": "Broader sweep can enter hostile code more often and alter team interference."
+    },
+    {
+      "id": "a001_strideminus100",
+      "sources": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch2\\strideminus100\\A.asm",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch2\\strideminus100\\B.asm"
+      ],
+      "warriors": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch2\\strideminus100\\build\\A",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch2\\strideminus100\\build\\B"
+      ],
+      "sha256": [
+        "706724c60fed4b74187088e497f4abdeb8605547edeb16aac533d35847a4c488",
+        "5b02a4b603fb0f993e18a1a6c92209f7fd7070ea315b6abab39404f164c7ff06"
+      ],
+      "sizes": [
+        221,
+        202
+      ],
+      "edits": "A DX4000/BP4400->DX3F00/BP4300; B DX2400/BP2C00->DX2300/BP2B00. Length and original offsets unchanged.",
+      "hypothesis": "Contrasting 0100h stride direction visits256 destination bands while preserving bootstrap and original BP-DX paint spans.",
+      "failure_modes": "Broader sweep can enter hostile code more often and alter team interference."
+    }
+  ]
+}

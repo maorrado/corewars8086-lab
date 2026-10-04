@@ -1,0 +1,245 @@
+{
+  "schemaVersion": 1,
+  "experimentId": "m050-pointer-duel-xor-a",
+  "generatedAt": "2026-09-29T23:41:28.200Z",
+  "configPath": "C:\\Maor\\CodeGuru\\corewars8086-lab\\config-m050-pointer-duel-xor-a.json",
+  "configSha256": "e8da2bf75566fc41e75abe42661044712b03a380a5cde81140275b8d2e81524b",
+  "engineJar": {
+    "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+    "sha256": "31639072397eaf69d99e90b10d8fa594a7446951f1137b7ebd298378f5ec318d"
+  },
+  "aggregate": {
+    "battles": 500,
+    "teamPerBattle": 0.47500016800000006,
+    "warrior1PerBattle": 0.39350006000000004,
+    "warrior2PerBattle": 0.0815
+  },
+  "runs": [
+    {
+      "runId": "vs-smart__smart-duel-fresh-a",
+      "cohortId": "vs-smart",
+      "seed": "smart-duel-fresh-a",
+      "battles": 250,
+      "startedAt": "2026-09-29T23:38:43.175Z",
+      "elapsedSeconds": 68.2194556,
+      "command": {
+        "executable": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\temurin8-jre\\jdk8u504-b01-jre\\bin\\java.exe",
+        "args": [
+          "-jar",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+          "--headless",
+          "--comboSize",
+          "2",
+          "--battlesPerCombo",
+          "250",
+          "--seed",
+          "smart-duel-fresh-a",
+          "--threads",
+          "4",
+          "--warriorsDir",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\duel-xor-a\\vs-smart__smart-duel-fresh-a\\survivors",
+          "--zombiesDir",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\duel-xor-a\\vs-smart__smart-duel-fresh-a\\zombies",
+          "--outputFile",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\duel-xor-a\\vs-smart__smart-duel-fresh-a\\scores.csv"
+        ]
+      },
+      "inputs": {
+        "COD_ptr_xor_a": [
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\m050-pointer-operator\\xor-a\\A",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\duel-xor-a\\vs-smart__smart-duel-fresh-a\\survivors\\COD_ptr_xor_a1",
+            "bytes": 189,
+            "sha256": "d61f5448a4e3fee96ddf0331f48ad5f61c35319b00fbb05965ee9be6b0c64d1d"
+          },
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\m050-pointer-operator\\xor-a\\B",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\duel-xor-a\\vs-smart__smart-duel-fresh-a\\survivors\\COD_ptr_xor_a2",
+            "bytes": 117,
+            "sha256": "06b5a1ff7bac4b146620de6d1de512dfedf3f28366d6435bf61d49869d971782"
+          }
+        ],
+        "COD_Smart": [
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\smart-counter-2026-09-30\\SmartA",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\duel-xor-a\\vs-smart__smart-duel-fresh-a\\survivors\\COD_Smart1",
+            "bytes": 191,
+            "sha256": "cc08a35cd78de2e6e5465dc63920e672cf92eea3d8c55521b74d230ddb748c76"
+          },
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\smart-counter-2026-09-30\\SmartB",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\duel-xor-a\\vs-smart__smart-duel-fresh-a\\survivors\\COD_Smart2",
+            "bytes": 119,
+            "sha256": "a87767605c50263f69a30cd12abd25be153051f631d43973462965e5e290875d"
+          }
+        ]
+      },
+      "zombies": [
+        {
+          "name": "zom20a",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\zombies-live\\zom20a",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\duel-xor-a\\vs-smart__smart-duel-fresh-a\\zombies\\zom20a",
+          "bytes": 73,
+          "sha256": "a950e618ea2e127096c85f486fb555c264730d924a2192c407aa66e6e0318eb6"
+        },
+        {
+          "name": "zom20b",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\zombies-live\\zom20b",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\duel-xor-a\\vs-smart__smart-duel-fresh-a\\zombies\\zom20b",
+          "bytes": 382,
+          "sha256": "af6394c021ccb5e486db507e2ccd787bd5675f8fec88fd2ddbe9f834566852ce"
+        },
+        {
+          "name": "zom20c",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\zombies-live\\zom20c",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\duel-xor-a\\vs-smart__smart-duel-fresh-a\\zombies\\zom20c",
+          "bytes": 232,
+          "sha256": "3d3f209967f51a7344e0eab582bc04d1e694da5a73e3682a26ed483dcab7a443"
+        },
+        {
+          "name": "zom20d",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\zombies-live\\zom20d",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\duel-xor-a\\vs-smart__smart-duel-fresh-a\\zombies\\zom20d",
+          "bytes": 382,
+          "sha256": "923dd6abebbb7bb502ec5a02873c26175820ada5c4409d179d8464f0e90cb6fc"
+        }
+      ],
+      "scores": {
+        "groups": {
+          "COD_ptr_xor_a": 120.833374,
+          "COD_Smart": 129.16672
+        },
+        "warriors": {
+          "COD_ptr_xor_a1": 99.250015,
+          "COD_ptr_xor_a2": 21.583332,
+          "COD_Smart1": 75.08333,
+          "COD_Smart2": 54.083324
+        }
+      },
+      "candidate": {
+        "teamRaw": 120.833374,
+        "teamPerBattle": 0.48333349600000003,
+        "warrior1Raw": 99.250015,
+        "warrior1PerBattle": 0.39700006000000004,
+        "warrior2Raw": 21.583332,
+        "warrior2PerBattle": 0.086333328
+      },
+      "telemetry": null,
+      "rawScoreText": "Groups:\nCOD_ptr_xor_a,120.833374\nCOD_Smart,129.16672\n\nWarriors:\nCOD_ptr_xor_a1,99.250015\nCOD_ptr_xor_a2,21.583332\nCOD_Smart1,75.08333\nCOD_Smart2,54.083324\n",
+      "stdout": "CoreWars8086 - headless mode\n\r\nLoaded warriors: [COD_ptr_xor_a, COD_Smart]\r\nStarting competition (250 wars) in parallel.\r\nCompetition is over. Ran 250 wars\r\nWriting scores to file C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\duel-xor-a\\vs-smart__smart-duel-fresh-a\\scores.csv\r\n"
+    },
+    {
+      "runId": "vs-smart__smart-duel-fresh-b",
+      "cohortId": "vs-smart",
+      "seed": "smart-duel-fresh-b",
+      "battles": 250,
+      "startedAt": "2026-09-29T23:39:51.517Z",
+      "elapsedSeconds": 96.6770199,
+      "command": {
+        "executable": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\temurin8-jre\\jdk8u504-b01-jre\\bin\\java.exe",
+        "args": [
+          "-jar",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+          "--headless",
+          "--comboSize",
+          "2",
+          "--battlesPerCombo",
+          "250",
+          "--seed",
+          "smart-duel-fresh-b",
+          "--threads",
+          "4",
+          "--warriorsDir",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\duel-xor-a\\vs-smart__smart-duel-fresh-b\\survivors",
+          "--zombiesDir",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\duel-xor-a\\vs-smart__smart-duel-fresh-b\\zombies",
+          "--outputFile",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\duel-xor-a\\vs-smart__smart-duel-fresh-b\\scores.csv"
+        ]
+      },
+      "inputs": {
+        "COD_ptr_xor_a": [
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\m050-pointer-operator\\xor-a\\A",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\duel-xor-a\\vs-smart__smart-duel-fresh-b\\survivors\\COD_ptr_xor_a1",
+            "bytes": 189,
+            "sha256": "d61f5448a4e3fee96ddf0331f48ad5f61c35319b00fbb05965ee9be6b0c64d1d"
+          },
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\m050-pointer-operator\\xor-a\\B",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\duel-xor-a\\vs-smart__smart-duel-fresh-b\\survivors\\COD_ptr_xor_a2",
+            "bytes": 117,
+            "sha256": "06b5a1ff7bac4b146620de6d1de512dfedf3f28366d6435bf61d49869d971782"
+          }
+        ],
+        "COD_Smart": [
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\smart-counter-2026-09-30\\SmartA",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\duel-xor-a\\vs-smart__smart-duel-fresh-b\\survivors\\COD_Smart1",
+            "bytes": 191,
+            "sha256": "cc08a35cd78de2e6e5465dc63920e672cf92eea3d8c55521b74d230ddb748c76"
+          },
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\smart-counter-2026-09-30\\SmartB",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\duel-xor-a\\vs-smart__smart-duel-fresh-b\\survivors\\COD_Smart2",
+            "bytes": 119,
+            "sha256": "a87767605c50263f69a30cd12abd25be153051f631d43973462965e5e290875d"
+          }
+        ]
+      },
+      "zombies": [
+        {
+          "name": "zom20a",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\zombies-live\\zom20a",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\duel-xor-a\\vs-smart__smart-duel-fresh-b\\zombies\\zom20a",
+          "bytes": 73,
+          "sha256": "a950e618ea2e127096c85f486fb555c264730d924a2192c407aa66e6e0318eb6"
+        },
+        {
+          "name": "zom20b",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\zombies-live\\zom20b",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\duel-xor-a\\vs-smart__smart-duel-fresh-b\\zombies\\zom20b",
+          "bytes": 382,
+          "sha256": "af6394c021ccb5e486db507e2ccd787bd5675f8fec88fd2ddbe9f834566852ce"
+        },
+        {
+          "name": "zom20c",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\zombies-live\\zom20c",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\duel-xor-a\\vs-smart__smart-duel-fresh-b\\zombies\\zom20c",
+          "bytes": 232,
+          "sha256": "3d3f209967f51a7344e0eab582bc04d1e694da5a73e3682a26ed483dcab7a443"
+        },
+        {
+          "name": "zom20d",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\zombies-live\\zom20d",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\duel-xor-a\\vs-smart__smart-duel-fresh-b\\zombies\\zom20d",
+          "bytes": 382,
+          "sha256": "923dd6abebbb7bb502ec5a02873c26175820ada5c4409d179d8464f0e90cb6fc"
+        }
+      ],
+      "scores": {
+        "groups": {
+          "COD_ptr_xor_a": 116.66671,
+          "COD_Smart": 133.33337
+        },
+        "warriors": {
+          "COD_ptr_xor_a1": 97.500015,
+          "COD_ptr_xor_a2": 19.166668,
+          "COD_Smart1": 84.66669,
+          "COD_Smart2": 48.666656
+        }
+      },
+      "candidate": {
+        "teamRaw": 116.66671,
+        "teamPerBattle": 0.46666683999999997,
+        "warrior1Raw": 97.500015,
+        "warrior1PerBattle": 0.39000006000000004,
+        "warrior2Raw": 19.166668,
+        "warrior2PerBattle": 0.076666672
+      },
+      "telemetry": null,
+      "rawScoreText": "Groups:\nCOD_ptr_xor_a,116.66671\nCOD_Smart,133.33337\n\nWarriors:\nCOD_ptr_xor_a1,97.500015\nCOD_ptr_xor_a2,19.166668\nCOD_Smart1,84.66669\nCOD_Smart2,48.666656\n",
+      "stdout": "CoreWars8086 - headless mode\n\r\nLoaded warriors: [COD_ptr_xor_a, COD_Smart]\r\nStarting competition (250 wars) in parallel.\r\nCompetition is over. Ran 250 wars\r\nWriting scores to file C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\duel-xor-a\\vs-smart__smart-duel-fresh-b\\scores.csv\r\n"
+    }
+  ]
+}

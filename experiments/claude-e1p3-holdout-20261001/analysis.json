@@ -1,0 +1,529 @@
+{
+  "status": "COMPLETE_FRESH_HOLDOUT",
+  "recordedAt": "2026-10-01T10:05:36.578Z",
+  "manifestSha256": "62d1a4b5dce3091883ab79269b985c58cf5ed8b905afc357712c7aed46df7a8f",
+  "design": {
+    "finalist": "e1p3",
+    "arms": [
+      "m049",
+      "m050",
+      "e1p3"
+    ],
+    "teams": 75,
+    "composition": {
+      "senior": 62,
+      "youth": 13
+    },
+    "panels": 8,
+    "cohortsPerPanel": 25,
+    "seedsPerPanel": 2,
+    "battlesPerBlock": 25,
+    "battlesPerArm": 10000,
+    "totalBattles": 30000,
+    "threads": 1,
+    "parallel": false,
+    "telemetry": false,
+    "engine": "exact deterministic v6 JAR; no gameplay overlays",
+    "metric": "team points per candidate appearance",
+    "independenceUnit": "eight independently salted panel-level paired deltas; seed/cohort records are nested, not extra independent n",
+    "confidence": {
+      "comparisons": 2,
+      "criticalValue": 3,
+      "note": "Conservative t criticals for Bonferroni two-sided 95% familywise coverage over the predeclared candidate-vs-control contrasts; finalist-vs-e1p3 included when present."
+    },
+    "limitation": "Fresh seeds and new cohort groupings, but the same fixed 75 published 2025 online-stage teams and four Zombies; not a verified 2025 final roster or unseen-opponent test."
+  },
+  "pooledPointsPerAppearance": {
+    "m049": 0.65618333205,
+    "m050": 0.6619499976000001,
+    "e1p3": 0.66624999965
+  },
+  "comparisons": [
+    {
+      "candidate": "e1p3",
+      "reference": "m049",
+      "delta": 0.01006666760000001,
+      "conservativeFamilywiseCI": [
+        0.00153337190238932,
+        0.018599963297610697
+      ],
+      "criticalValue": 3,
+      "classification": "higher-under-holdout-protocol",
+      "pairedPanelDeltas": [
+        {
+          "panel": "panel-01",
+          "delta": 0.02320000000000011
+        },
+        {
+          "panel": "panel-02",
+          "delta": 0.005333334400000056
+        },
+        {
+          "panel": "panel-03",
+          "delta": -0.0012000000000000899
+        },
+        {
+          "panel": "panel-04",
+          "delta": 0.003200002399999957
+        },
+        {
+          "panel": "panel-05",
+          "delta": 0.010266666400000068
+        },
+        {
+          "panel": "panel-06",
+          "delta": 0.012399999200000011
+        },
+        {
+          "panel": "panel-07",
+          "delta": 0.008533337599999968
+        },
+        {
+          "panel": "panel-08",
+          "delta": 0.018800000799999994
+        }
+      ]
+    },
+    {
+      "candidate": "e1p3",
+      "reference": "m050",
+      "delta": 0.004300002050000029,
+      "conservativeFamilywiseCI": [
+        -0.004356539113850196,
+        0.012956543213850254
+      ],
+      "criticalValue": 3,
+      "classification": "inconclusive",
+      "pairedPanelDeltas": [
+        {
+          "panel": "panel-01",
+          "delta": 0.019866667200000077
+        },
+        {
+          "panel": "panel-02",
+          "delta": -0.005066663599999965
+        },
+        {
+          "panel": "panel-03",
+          "delta": -0.00439999840000016
+        },
+        {
+          "panel": "panel-04",
+          "delta": 0.007066672800000062
+        },
+        {
+          "panel": "panel-05",
+          "delta": 0.010400000000000076
+        },
+        {
+          "panel": "panel-06",
+          "delta": 0.001866668800000082
+        },
+        {
+          "panel": "panel-07",
+          "delta": 0.0013333352000001186
+        },
+        {
+          "panel": "panel-08",
+          "delta": 0.003333334399999943
+        }
+      ]
+    }
+  ],
+  "panelScores": {
+    "m049": [
+      0.6475999967999999,
+      0.6641333348,
+      0.6571999984,
+      0.6642666648000001,
+      0.6669333312,
+      0.6596000008,
+      0.6518666632000001,
+      0.6378666663999999
+    ],
+    "m050": [
+      0.6509333295999999,
+      0.6745333328,
+      0.6603999968,
+      0.6603999944,
+      0.6667999976,
+      0.6701333312,
+      0.6590666655999999,
+      0.6533333327999999
+    ],
+    "e1p3": [
+      0.6707999968,
+      0.6694666692000001,
+      0.6559999983999999,
+      0.6674666672,
+      0.6771999976,
+      0.672,
+      0.6604000008,
+      0.6566666671999999
+    ]
+  },
+  "interpretation": "All holdout battles ran on the exact pinned deterministic v6 JAR with no gameplay overlays. Nominal conservative t intervals use eight randomized panel means; they are familywise-conservative for the predeclared contrasts, not universal or unseen-opponent proof.",
+  "limitation": "Fresh independent seeds and new random regroupings of the same 75 published 2025 online-stage teams and same four Zombies. Not a verified historical 2025 final roster or unseen-opponent validation.",
+  "files": [
+    {
+      "panel": "panel-01",
+      "arm": "m049",
+      "config": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1p3-check-20261001\\holdout\\frozen\\panel-01-m049.json",
+        "bytes": 31881,
+        "sha256": "c632b585cdb147e04c9e6c3f387cdad1e655af4f88c8a1abb6c06a093a35366f"
+      },
+      "result": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-e1p3-holdout-20261001\\accelerated\\panel-01-m049\\result.json",
+        "bytes": 577373,
+        "sha256": "1c0dd4553164fd9678c78eef517aaec443998f073b47f6f6a955af8c2030beaa"
+      },
+      "planSha256": "fa9e1926b4b31318f0c5a2d88937bf298c1dd0ceae233a4823e73c936ffc00f8"
+    },
+    {
+      "panel": "panel-01",
+      "arm": "m050",
+      "config": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1p3-check-20261001\\holdout\\frozen\\panel-01-m050.json",
+        "bytes": 31881,
+        "sha256": "9f28b1baa97f64cf2bfd330be03d60fc1c27a4780d61c9af49cf143be9744544"
+      },
+      "result": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-e1p3-holdout-20261001\\accelerated\\panel-01-m050\\result.json",
+        "bytes": 577201,
+        "sha256": "d11c477ba6b8d7531a82cc48989f7a3f35e3acb05d1cae920e9c548bc6252883"
+      },
+      "planSha256": "452e61893ad0a7bae5ffd15892060c7ac6ef9e6ec706b0f9148002ccb2e698ee"
+    },
+    {
+      "panel": "panel-01",
+      "arm": "e1p3",
+      "config": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1p3-check-20261001\\holdout\\frozen\\panel-01-e1p3.json",
+        "bytes": 31849,
+        "sha256": "a7a2389818b794bd716b9f7d4541ee701abb567b9396f252d3a54c2c2d7414b0"
+      },
+      "result": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-e1p3-holdout-20261001\\accelerated\\panel-01-e1p3\\result.json",
+        "bytes": 575583,
+        "sha256": "040d4bd7b3d4910c092080d33833dacc58161e94a532d4f8fea1ba304dee74b4"
+      },
+      "planSha256": "c58ed8311196941c4492219fcf55430e0953d4106e5a5e4f69511a36e1fd9366"
+    },
+    {
+      "panel": "panel-02",
+      "arm": "m049",
+      "config": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1p3-check-20261001\\holdout\\frozen\\panel-02-m049.json",
+        "bytes": 31881,
+        "sha256": "34b198e7ea3a37daf2c311eee1196172cb313f95ccbf3df07f0a7343834f488a"
+      },
+      "result": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-e1p3-holdout-20261001\\accelerated\\panel-02-m049\\result.json",
+        "bytes": 577509,
+        "sha256": "5296367d5226278a5ecd2ad4bc7e349b9dac8f01c3c90ae089027af337395c3f"
+      },
+      "planSha256": "98b7a9a25f12f9c7b5b25a3bec6ff04c9d4208965200983c61e15e5579063486"
+    },
+    {
+      "panel": "panel-02",
+      "arm": "m050",
+      "config": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1p3-check-20261001\\holdout\\frozen\\panel-02-m050.json",
+        "bytes": 31881,
+        "sha256": "13ff7ba6b3e78919f5d5c1a7f3a67db643bd76df2c4a8199c699875c00649456"
+      },
+      "result": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-e1p3-holdout-20261001\\accelerated\\panel-02-m050\\result.json",
+        "bytes": 577209,
+        "sha256": "503711398baea233ae204315e34f7b988531b8b72a899bf310face4105220409"
+      },
+      "planSha256": "37e57ab8ecf71d5f7a9e1bf766a5db210f341005e9056ba9c39559f565ece8aa"
+    },
+    {
+      "panel": "panel-02",
+      "arm": "e1p3",
+      "config": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1p3-check-20261001\\holdout\\frozen\\panel-02-e1p3.json",
+        "bytes": 31849,
+        "sha256": "d92cfc30fc2a72c0025293fcc095aa60ad0ed27e7d7966e908537297d5513e3b"
+      },
+      "result": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-e1p3-holdout-20261001\\accelerated\\panel-02-e1p3\\result.json",
+        "bytes": 575577,
+        "sha256": "09992f73133f094f6e00e0e90485290c4810e25571e3e31c88d750bd52b016a7"
+      },
+      "planSha256": "ff6ad30fc3bd86baf8f43ee03c7282eca3223a6ab7b004b8553882f3a3d9748c"
+    },
+    {
+      "panel": "panel-03",
+      "arm": "m049",
+      "config": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1p3-check-20261001\\holdout\\frozen\\panel-03-m049.json",
+        "bytes": 31881,
+        "sha256": "e36d447b95c1ced0aee3a3b50fb26dc00a9eec93c48a99317897254cc7286770"
+      },
+      "result": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-e1p3-holdout-20261001\\accelerated\\panel-03-m049\\result.json",
+        "bytes": 577330,
+        "sha256": "3658e3204e2b93c0196062cd62f4762493e30e0cbb819d486ce5e2edb566da06"
+      },
+      "planSha256": "5ae2738f3fb19ada906344ce463d98d5151bf727d2306a7651b65d28a89ebf4c"
+    },
+    {
+      "panel": "panel-03",
+      "arm": "m050",
+      "config": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1p3-check-20261001\\holdout\\frozen\\panel-03-m050.json",
+        "bytes": 31881,
+        "sha256": "311098f6e4399f9f4b1e1147e767b8314620e70993a60963312ad51a4d07c764"
+      },
+      "result": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-e1p3-holdout-20261001\\accelerated\\panel-03-m050\\result.json",
+        "bytes": 577571,
+        "sha256": "486d7b5d53fc7b8f3f10f740484026b07288191b8961c09be0df6eb51e8e071f"
+      },
+      "planSha256": "89795ce258a0f48c22f9c2056e8e0f5853600d5aeef3f957a0c74f0f72cbb834"
+    },
+    {
+      "panel": "panel-03",
+      "arm": "e1p3",
+      "config": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1p3-check-20261001\\holdout\\frozen\\panel-03-e1p3.json",
+        "bytes": 31849,
+        "sha256": "2b34470c3b0842d0b4668045c61c16fff9d77cb9ee55a5c145b1fc5e5089acec"
+      },
+      "result": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-e1p3-holdout-20261001\\accelerated\\panel-03-e1p3\\result.json",
+        "bytes": 575741,
+        "sha256": "704e1e4c1c168d083b86e144a3f738440fc8ab5d8e3b9f905720e20513d21b90"
+      },
+      "planSha256": "b08f8cef3dd3411b61f9582d6c37f07002308cc31fb66d461dd1e8fabcc94d02"
+    },
+    {
+      "panel": "panel-04",
+      "arm": "m049",
+      "config": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1p3-check-20261001\\holdout\\frozen\\panel-04-m049.json",
+        "bytes": 31881,
+        "sha256": "14bf6175eaacba1fcdd25687ffe01468e0434ffb26153299154324c8f6fe48a6"
+      },
+      "result": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-e1p3-holdout-20261001\\accelerated\\panel-04-m049\\result.json",
+        "bytes": 577267,
+        "sha256": "340c5b0d454f14836240d4c8882bfe1d0e81d292a5483a9ca317ba7601f8b1bf"
+      },
+      "planSha256": "760bbf65eb88b99eff72c8cdf22a91834ff59b90dee024967247cf101050910b"
+    },
+    {
+      "panel": "panel-04",
+      "arm": "m050",
+      "config": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1p3-check-20261001\\holdout\\frozen\\panel-04-m050.json",
+        "bytes": 31881,
+        "sha256": "def832dd8ac4cb092d4aa866a252933e31b2bc1d94b8e02c7be40833a110e783"
+      },
+      "result": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-e1p3-holdout-20261001\\accelerated\\panel-04-m050\\result.json",
+        "bytes": 577169,
+        "sha256": "bb7a003413203fb695fbac1fb2071e562c7e7e0a8def9b87c8a9b3278d1a267b"
+      },
+      "planSha256": "56138bbf344e3814d76f339ae0507375da5072c6cf4208b7b82820a4a3e18678"
+    },
+    {
+      "panel": "panel-04",
+      "arm": "e1p3",
+      "config": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1p3-check-20261001\\holdout\\frozen\\panel-04-e1p3.json",
+        "bytes": 31849,
+        "sha256": "6e39876ca648473a5c3d8e97429d7d35f486413c1b2f8747a0042db8695d9741"
+      },
+      "result": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-e1p3-holdout-20261001\\accelerated\\panel-04-e1p3\\result.json",
+        "bytes": 575469,
+        "sha256": "cc63889afc305d661a95d86b0628ece62aa056b716d8c3393c765d769b74cbf3"
+      },
+      "planSha256": "a9fc4bd6153dd9cd3bdcdeb8ec55b9ae2194fc2cb3b9e8c2c0f28068d37f2a8f"
+    },
+    {
+      "panel": "panel-05",
+      "arm": "m049",
+      "config": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1p3-check-20261001\\holdout\\frozen\\panel-05-m049.json",
+        "bytes": 31881,
+        "sha256": "99a93c04b0d8d088c7f8993dfa408db8603ed86c9c4fc3488064b1526ca2e2f8"
+      },
+      "result": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-e1p3-holdout-20261001\\accelerated\\panel-05-m049\\result.json",
+        "bytes": 577195,
+        "sha256": "4f3cebac37370cce27a1a10695d7a4921be4c222f6f4483dc4c025dea5973fd7"
+      },
+      "planSha256": "708ede6a4d5dc07dbc4ecd0a9fd71c5ab2a0a56165bc1e024c86942bf751f492"
+    },
+    {
+      "panel": "panel-05",
+      "arm": "m050",
+      "config": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1p3-check-20261001\\holdout\\frozen\\panel-05-m050.json",
+        "bytes": 31881,
+        "sha256": "9aa04d87ae8651395e917d1d8b3e39f2b5bd41601cb7e3df777957c4cdc539d2"
+      },
+      "result": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-e1p3-holdout-20261001\\accelerated\\panel-05-m050\\result.json",
+        "bytes": 577179,
+        "sha256": "85aced1a2bcafeb81e18152082f2048b11c4d7fae45dd7eafa0aef862f490ba1"
+      },
+      "planSha256": "f56c25ca9ef548df5f91ce1391a2e0076275ee927582954f90763c7331dabc1d"
+    },
+    {
+      "panel": "panel-05",
+      "arm": "e1p3",
+      "config": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1p3-check-20261001\\holdout\\frozen\\panel-05-e1p3.json",
+        "bytes": 31849,
+        "sha256": "3f7bfc5d3319c43dd2be5be6eb9d0c52d2cd6e67ad9a543f9fb4b0dc91147afb"
+      },
+      "result": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-e1p3-holdout-20261001\\accelerated\\panel-05-e1p3\\result.json",
+        "bytes": 575649,
+        "sha256": "3459d2d2b655293e82b72e5c3fbc1bb977103981982b1347ac3cab948234534c"
+      },
+      "planSha256": "77c3c6624f2e540eae8faa73c380e864be1965b40c13befeddfc0f762b8e1f18"
+    },
+    {
+      "panel": "panel-06",
+      "arm": "m049",
+      "config": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1p3-check-20261001\\holdout\\frozen\\panel-06-m049.json",
+        "bytes": 31881,
+        "sha256": "2af239563e4839e685d25afd5ec3512578b9820c41ef1264a7dd73cfbe9ab3ab"
+      },
+      "result": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-e1p3-holdout-20261001\\accelerated\\panel-06-m049\\result.json",
+        "bytes": 577521,
+        "sha256": "a636334e8ac2d8a91c987e3bf2363cbb2070bfce79f5b8b938da5289017f87f2"
+      },
+      "planSha256": "ad926385f99ef949eb6dae126b193759c510202b94ace108ce37fcfac04e0b29"
+    },
+    {
+      "panel": "panel-06",
+      "arm": "m050",
+      "config": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1p3-check-20261001\\holdout\\frozen\\panel-06-m050.json",
+        "bytes": 31881,
+        "sha256": "b71a2c9a5a921b59e60afb96b5dde5ac4ff789da2cc07b2c88ce14e136277e03"
+      },
+      "result": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-e1p3-holdout-20261001\\accelerated\\panel-06-m050\\result.json",
+        "bytes": 577584,
+        "sha256": "f121dbc7ae21c542f8fc6d0105c4e05b43b71c406d024f68fcba10cc7b22109a"
+      },
+      "planSha256": "f316726a74c41bb25690530c1f0b778ff7103009812f6a3c6cc7936db24a4ff5"
+    },
+    {
+      "panel": "panel-06",
+      "arm": "e1p3",
+      "config": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1p3-check-20261001\\holdout\\frozen\\panel-06-e1p3.json",
+        "bytes": 31849,
+        "sha256": "73166ed797e97dfc33021ab90eea73e53faa437b31af77d06ee0e7c21cb4052a"
+      },
+      "result": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-e1p3-holdout-20261001\\accelerated\\panel-06-e1p3\\result.json",
+        "bytes": 575875,
+        "sha256": "2a78e83d92ed88baac93f6c8a6807465d91e5010c129a7d050697277e81a9bc3"
+      },
+      "planSha256": "7efd26760f39fc5433d6c5862a7cc59604dca3c610f6a0edefb16f075c92262e"
+    },
+    {
+      "panel": "panel-07",
+      "arm": "m049",
+      "config": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1p3-check-20261001\\holdout\\frozen\\panel-07-m049.json",
+        "bytes": 31881,
+        "sha256": "491f820596c3aa2eac826b96eb141db84c0726c47d172dd5b756f2f76b8295b1"
+      },
+      "result": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-e1p3-holdout-20261001\\accelerated\\panel-07-m049\\result.json",
+        "bytes": 577443,
+        "sha256": "050d26c8b0a8d7e091c3007e874c8f32a1a23e91267b57251e4ed626b7b8cb05"
+      },
+      "planSha256": "1b7716d78e39a047030ade23aab287b637fb4e202608a04743a223794ff6a8a5"
+    },
+    {
+      "panel": "panel-07",
+      "arm": "m050",
+      "config": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1p3-check-20261001\\holdout\\frozen\\panel-07-m050.json",
+        "bytes": 31881,
+        "sha256": "2c04010c63efd0db0d7623f65eae2142f3f24059c786206cbc4d2a37c33247e5"
+      },
+      "result": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-e1p3-holdout-20261001\\accelerated\\panel-07-m050\\result.json",
+        "bytes": 577391,
+        "sha256": "5d8110aede860ea36b1b2cca03b96c659cffc6dee6a7aaa4e597518c8d2530f3"
+      },
+      "planSha256": "b8a8758c0335c9c37cfdc13824daceee64a03c25e72d2420bfd7857b94a47724"
+    },
+    {
+      "panel": "panel-07",
+      "arm": "e1p3",
+      "config": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1p3-check-20261001\\holdout\\frozen\\panel-07-e1p3.json",
+        "bytes": 31849,
+        "sha256": "791a28660a05bce72c4d0273db043b2c2eb98c2f566451d5ce8dd7846f48cad0"
+      },
+      "result": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-e1p3-holdout-20261001\\accelerated\\panel-07-e1p3\\result.json",
+        "bytes": 575591,
+        "sha256": "f1d9cd508482631df9bf9728cc7ff442c5739dd71f930ada784401f8481b8df2"
+      },
+      "planSha256": "ff9862e2ea6f39bd20e8d18fa6c72cf5218462c6aa93caf4a7e7f5fd058be374"
+    },
+    {
+      "panel": "panel-08",
+      "arm": "m049",
+      "config": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1p3-check-20261001\\holdout\\frozen\\panel-08-m049.json",
+        "bytes": 31881,
+        "sha256": "06fcc4fe16d57cc9ff6570707b0d960e2c80048e98de325a01c08585d49a6235"
+      },
+      "result": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-e1p3-holdout-20261001\\accelerated\\panel-08-m049\\result.json",
+        "bytes": 577303,
+        "sha256": "a8c1626eb56d81e284a5323633ab62a4f51eb2c1f49a674ce97d89dfe702a817"
+      },
+      "planSha256": "1dc88e3d62bdc3d1cde9833a87a5bd041d820b56fd51300791b11fa37a07f9d2"
+    },
+    {
+      "panel": "panel-08",
+      "arm": "m050",
+      "config": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1p3-check-20261001\\holdout\\frozen\\panel-08-m050.json",
+        "bytes": 31881,
+        "sha256": "082509be8d2fb5b3eb670376af54b832601965f0617f317373d1e4ec97c5608c"
+      },
+      "result": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-e1p3-holdout-20261001\\accelerated\\panel-08-m050\\result.json",
+        "bytes": 577236,
+        "sha256": "7d78535561e4e45c891268a8d30ff71ef7f4d6e225fa2935e5c4d157a77773e3"
+      },
+      "planSha256": "702948fb2e13dd8fb86c04600924a534d7bfd3a846be06892afab867f13cfe9d"
+    },
+    {
+      "panel": "panel-08",
+      "arm": "e1p3",
+      "config": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1p3-check-20261001\\holdout\\frozen\\panel-08-e1p3.json",
+        "bytes": 31849,
+        "sha256": "2c8169fe808faddcd0021d5b58ae3bd15d6a009a950cd00f5cef023c84401cc3"
+      },
+      "result": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-e1p3-holdout-20261001\\accelerated\\panel-08-e1p3\\result.json",
+        "bytes": 575638,
+        "sha256": "ebcfa8d30fde7423bcc000c50a8926d08c2084eadc83c3f9f7d14b236587a950"
+      },
+      "planSha256": "1b4846767c2f11836005f7bde2ed11a7b82f70678daeafa89792fc2cfae3b190"
+    }
+  ]
+}

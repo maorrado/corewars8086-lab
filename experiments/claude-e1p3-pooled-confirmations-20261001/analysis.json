@@ -1,0 +1,126 @@
+{
+  "status": "COMPLETE_SECONDARY_POOLED_SUMMARY",
+  "suites": [
+    {
+      "id": "e1p3-original",
+      "analysisPath": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-e1p3-holdout-20261001\\analysis.json",
+      "analysisSha256": "9e53d8c248a6fcca025affe799e531c03364abd5cc5af0f487e889b13d387f1d",
+      "pointsPerAppearance": {
+        "m049": 0.65618333205,
+        "m050": 0.6619499976000001,
+        "e1p3": 0.66624999965
+      },
+      "deltas": {
+        "e1p3-m049": [
+          0.02320000000000011,
+          0.005333334400000056,
+          -0.0012000000000000899,
+          0.003200002399999957,
+          0.010266666400000068,
+          0.012399999200000011,
+          0.008533337599999968,
+          0.018800000799999994
+        ],
+        "e1p3-m050": [
+          0.019866667200000077,
+          -0.005066663599999965,
+          -0.00439999840000016,
+          0.007066672800000062,
+          0.010400000000000076,
+          0.001866668800000082,
+          0.0013333352000001186,
+          0.003333334399999943
+        ]
+      }
+    },
+    {
+      "id": "e1p3-with-nop4",
+      "analysisPath": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-e1p3-nop4-holdout-20261001\\analysis.json",
+      "analysisSha256": "14f29f0d6a5153b0338315deb10657f3dc693aa0ae6e6d7e5f2f1d40442807fd",
+      "pointsPerAppearance": {
+        "m049": 0.6564166661999999,
+        "m050": 0.6654033328,
+        "e1p3": 0.6699616664000001
+      },
+      "deltas": {
+        "e1p3-m049": [
+          0.015733336000000153,
+          0.005066671199999928,
+          0.015333335999999975,
+          0.023093327200000124,
+          0.010400001600000097,
+          0.018599999199999995,
+          0.006799999199999962,
+          0.01333333120000002
+        ],
+        "e1p3-m050": [
+          0.01146666960000009,
+          0.00040000400000006486,
+          -0.0015999984000001355,
+          0.010066662400000093,
+          0.010133332800000061,
+          0.007999999200000052,
+          -0.004266665600000108,
+          0.00226666480000004
+        ]
+      }
+    },
+    {
+      "id": "e1p3-third",
+      "analysisPath": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-e1p3-third-holdout-20261001\\analysis.json",
+      "analysisSha256": "f4eddde7f1acf599488fcce2b2aac9c4dbf3c8fa99e7fad03e23dc6875a8fca6",
+      "pointsPerAppearance": {
+        "m049": 0.648266666,
+        "m050": 0.6651916648,
+        "e1p3": 0.6699583319000001
+      },
+      "deltas": {
+        "e1p3-m049": [
+          0.032533332799999926,
+          0.023199999200000265,
+          0.006199998399999962,
+          0.024133328800000076,
+          0.0259999984,
+          0.016800003199999858,
+          0.020799999199999974,
+          0.02386666719999997
+        ],
+        "e1p3-m050": [
+          0.0036000007999998918,
+          0.005199999200000138,
+          -0.0008000000000000229,
+          0.0198666648000001,
+          0.007600002399999917,
+          0.0040000040000000014,
+          -0.002800000799999869,
+          0.0014666663999999274
+        ]
+      }
+    }
+  ],
+  "pooled": [
+    {
+      "comparison": "e1p3-m049",
+      "panels": 24,
+      "pairedMeanDelta": 0.015101111233333348,
+      "conservativeDescriptiveCI": [
+        0.008979710034949795,
+        0.0212225124317169
+      ],
+      "criticalValue": 3.5,
+      "caveat": "Secondary pooled summary across three independent holdouts; third holdout was initiated after reviewing the first two. This does not erase sequential-look selection and is not a universal or unseen-opponent claim."
+    },
+    {
+      "comparison": "e1p3-m050",
+      "panels": 24,
+      "pairedMeanDelta": 0.004541667583333353,
+      "conservativeDescriptiveCI": [
+        -0.00031710202604335377,
+        0.00940043719271006
+      ],
+      "criticalValue": 3.5,
+      "caveat": "Secondary pooled summary across three independent holdouts; third holdout was initiated after reviewing the first two. This does not erase sequential-look selection and is not a universal or unseen-opponent claim."
+    }
+  ],
+  "limitation": "All three suites use new, nonoverlapping seeds and new cohort shuffles but the same 75 published 2025 online-stage teams and four Zombies. The NOP4 holdout also contains NOP4 as an extra arm; exact e1p3/m049/m050 inputs and matched panel schedule are used here."
+}

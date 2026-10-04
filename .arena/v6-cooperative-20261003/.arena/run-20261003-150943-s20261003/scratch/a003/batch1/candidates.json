@@ -1,0 +1,132 @@
+{
+  "schema": "cooperative-v6-candidates-v1",
+  "baseline": "original_v6",
+  "candidates": [
+    {
+      "id": "a003_a128lanes",
+      "hypothesis": "A doubles its destination lane orbit from 64 to 128 positions while retaining the 0400h gap between stack and copy steps; A DX4000/BP4400 become DX4200/BP4600.",
+      "failureModes": "Denser destinations can collide with live future copies; stack orbit also changes from 4 to 128 lanes.",
+      "edits": "A doubles its destination lane orbit from 64 to 128 positions while retaining the 0400h gap between stack and copy steps; A DX4000/BP4400 become DX4200/BP4600.",
+      "baseline": "original_v6",
+      "warriors": [
+        {
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch1\\src\\a128lanes_A.asm",
+          "binary": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch1\\bin\\a128lanes_A",
+          "size": 221,
+          "sha256": "a1517177466926a7336734d0228a1c06f97f6d10e2d736d93108a908a720e00e"
+        },
+        {
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch1\\src\\a128lanes_B.asm",
+          "binary": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch1\\bin\\a128lanes_B",
+          "size": 202,
+          "sha256": "8579e2c2212d72a413a6daacfe3b91ceb72be648bfc085bfeed9430eeaf6657a"
+        }
+      ]
+    },
+    {
+      "id": "a003_b128lanes",
+      "hypothesis": "B doubles its destination lane orbit from 64 to 128 positions, preserving the 0800h difference between stack and copy steps; B DX2400/BP2C00 become DX2200/BP2A00.",
+      "failureModes": "More destinations reduce repeat safety; captured Zombies inherit this schedule too.",
+      "edits": "B doubles its destination lane orbit from 64 to 128 positions, preserving the 0800h difference between stack and copy steps; B DX2400/BP2C00 become DX2200/BP2A00.",
+      "baseline": "original_v6",
+      "warriors": [
+        {
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch1\\src\\b128lanes_A.asm",
+          "binary": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch1\\bin\\b128lanes_A",
+          "size": 221,
+          "sha256": "3fa67bed880413901ad618b4f7b248e5782d98de93318271ac540ad1690ca2b7"
+        },
+        {
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch1\\src\\b128lanes_B.asm",
+          "binary": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch1\\bin\\b128lanes_B",
+          "size": 202,
+          "sha256": "d8c6195b872581f77a4a44921ea1a0c2399d7c477ea6fb86cafe0da9a4580145"
+        }
+      ]
+    },
+    {
+      "id": "a003_bcopynine",
+      "hypothesis": "B starts its first replication with nine words, matching every subsequent replication; initial CX8 becomes CX9.",
+      "failureModes": "One extra startup round increases exposure and might copy a deliberately excluded pointer byte.",
+      "edits": "B starts its first replication with nine words, matching every subsequent replication; initial CX8 becomes CX9.",
+      "baseline": "original_v6",
+      "warriors": [
+        {
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch1\\src\\bcopynine_A.asm",
+          "binary": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch1\\bin\\bcopynine_A",
+          "size": 221,
+          "sha256": "3fa67bed880413901ad618b4f7b248e5782d98de93318271ac540ad1690ca2b7"
+        },
+        {
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch1\\src\\bcopynine_B.asm",
+          "binary": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch1\\bin\\bcopynine_B",
+          "size": 202,
+          "sha256": "1ff7788e60452cdf556dd1b6cc792b9d1d681ca59bd488a669e76596b0e591a4"
+        }
+      ]
+    },
+    {
+      "id": "a003_astackshift",
+      "hypothesis": "A moves its initial return-frame painting 0200h farther from its first destination; SP +100h becomes +300h without changing replication cadence.",
+      "failureModes": "May move useful return bombing away from a favorable interception band.",
+      "edits": "A moves its initial return-frame painting 0200h farther from its first destination; SP +100h becomes +300h without changing replication cadence.",
+      "baseline": "original_v6",
+      "warriors": [
+        {
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch1\\src\\astackshift_A.asm",
+          "binary": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch1\\bin\\astackshift_A",
+          "size": 221,
+          "sha256": "66220a9ae5035e65b2c7f43a6f87cc406a49c3851edf1424f6202f7b81b40341"
+        },
+        {
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch1\\src\\astackshift_B.asm",
+          "binary": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch1\\bin\\astackshift_B",
+          "size": 202,
+          "sha256": "8579e2c2212d72a413a6daacfe3b91ceb72be648bfc085bfeed9430eeaf6657a"
+        }
+      ]
+    },
+    {
+      "id": "a003_bstackshift",
+      "hypothesis": "B moves its initial return-frame painting 0200h closer to its first destination; SP +600h becomes +400h.",
+      "failureModes": "May reduce return-frame attack diversity or collide with another live copy.",
+      "edits": "B moves its initial return-frame painting 0200h closer to its first destination; SP +600h becomes +400h.",
+      "baseline": "original_v6",
+      "warriors": [
+        {
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch1\\src\\bstackshift_A.asm",
+          "binary": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch1\\bin\\bstackshift_A",
+          "size": 221,
+          "sha256": "3fa67bed880413901ad618b4f7b248e5782d98de93318271ac540ad1690ca2b7"
+        },
+        {
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch1\\src\\bstackshift_B.asm",
+          "binary": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch1\\bin\\bstackshift_B",
+          "size": 202,
+          "sha256": "791d510eeb87cfd7cd44b466bd1cd171f2e7d050c44ed0f394dbbf46a9592316"
+        }
+      ]
+    },
+    {
+      "id": "a003_anrg",
+      "hypothesis": "A gains one NRG operation in every worker generation, trading one scheduled operation for potential bonus operations across a roughly 20-operation generation.",
+      "failureModes": "Energy may decay faster than it accumulates; extra copy latency can erase the bonus and segment-relative return signatures change.",
+      "edits": "A gains one NRG operation in every worker generation, trading one scheduled operation for potential bonus operations across a roughly 20-operation generation.",
+      "baseline": "original_v6",
+      "warriors": [
+        {
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch1\\src\\anrg_A.asm",
+          "binary": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch1\\bin\\anrg_A",
+          "size": 223,
+          "sha256": "4ad499139c488181ee9b7c4332cdeeed99ab751ad1427ee947422777bca18174"
+        },
+        {
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch1\\src\\anrg_B.asm",
+          "binary": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch1\\bin\\anrg_B",
+          "size": 202,
+          "sha256": "8579e2c2212d72a413a6daacfe3b91ceb72be648bfc085bfeed9430eeaf6657a"
+        }
+      ]
+    }
+  ]
+}

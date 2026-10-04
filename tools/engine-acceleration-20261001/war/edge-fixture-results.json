@@ -1,0 +1,155 @@
+{
+  "completedAt": "2026-09-30T23:04:40.058Z",
+  "buildManifest": {
+    "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\war\\build-manifest.json",
+    "sha256": "5a6b6d1605c9ba4754a6893bb0a2be70824a453ecd96ea6c50600289eab6f7c1",
+    "bytes": 7663
+  },
+  "fixtureSource": {
+    "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\war\\WarEdgeFixture.java",
+    "sha256": "60c06352c807a14cf4a12a238f1e19efa6d255084e063a64767c4f7f032e7903",
+    "bytes": 9757
+  },
+  "runnerSource": {
+    "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\war\\run-edge-fixture.mjs",
+    "sha256": "c1f2a4d4ab72ae11179416c3708b7ab6b1622bbcd5d3da7d0242e391958ab9cd",
+    "bytes": 4049
+  },
+  "fixtureClasses": [
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\war\\edge-fixture-classes\\WarEdgeFixture$CountingRandom.class",
+      "sha256": "cf1a17e2ac67a99a51f32b4f88380d8ef3bc55bc1d0c8bfe15d6d1eb97714d0b",
+      "bytes": 615
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\war\\edge-fixture-classes\\WarEdgeFixture.class",
+      "sha256": "74395849c74aa0e1e41a0fa8782b8fee8ceca90c8a755973358c8ed7a0489b0f",
+      "bytes": 10290
+    }
+  ],
+  "compileCommand": {
+    "executable": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\temurin8-jdk\\jdk8u504-b01\\bin\\javac.exe",
+    "args": [
+      "-source",
+      "8",
+      "-target",
+      "8",
+      "-encoding",
+      "UTF-8",
+      "-cp",
+      "C:\\Maor\\CodeGuru\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+      "-sourcepath",
+      "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\war",
+      "-d",
+      "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\war\\edge-fixture-classes",
+      "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\war\\WarEdgeFixture.java"
+    ]
+  },
+  "runs": [
+    {
+      "variant": "baseline",
+      "command": {
+        "executable": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\temurin8-jre\\jdk8u504-b01-jre\\bin\\java.exe",
+        "args": [
+          "-Xms16m",
+          "-Xmx128m",
+          "-cp",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\war\\edge-fixture-classes;C:\\Maor\\CodeGuru\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar;C:\\Maor\\CodeGuru\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+          "WarEdgeFixture",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar"
+        ]
+      },
+      "stdout": "{\"status\":\"PASS\",\"speedDomainCases\":65536,\"speedFallbackCases\":8,\"groupCountCases\":37,\"isOverCases\":37,\"rngDrawCases\":14,\"speedDomainSha256\":\"28d78bb6fa2e6ceff0deed8f00dd56514ccafc0cd122a1e19736cc943397dd3a\",\"warClassSha256\":\"0f7330188484a9d67b9b7d1edc9b3c7345634f4a8f52fbf7b2bc4100b1fe5db7\"}\r\n",
+      "stderr": "",
+      "report": {
+        "status": "PASS",
+        "speedDomainCases": 65536,
+        "speedFallbackCases": 8,
+        "groupCountCases": 37,
+        "isOverCases": 37,
+        "rngDrawCases": 14,
+        "speedDomainSha256": "28d78bb6fa2e6ceff0deed8f00dd56514ccafc0cd122a1e19736cc943397dd3a",
+        "warClassSha256": "0f7330188484a9d67b9b7d1edc9b3c7345634f4a8f52fbf7b2bc4100b1fe5db7"
+      }
+    },
+    {
+      "variant": "group-count",
+      "command": {
+        "executable": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\temurin8-jre\\jdk8u504-b01-jre\\bin\\java.exe",
+        "args": [
+          "-Xms16m",
+          "-Xmx128m",
+          "-cp",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\war\\edge-fixture-classes;C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\war\\group-count\\classes;C:\\Maor\\CodeGuru\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+          "WarEdgeFixture",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\war\\group-count\\classes"
+        ]
+      },
+      "stdout": "{\"status\":\"PASS\",\"speedDomainCases\":65536,\"speedFallbackCases\":8,\"groupCountCases\":37,\"isOverCases\":37,\"rngDrawCases\":14,\"speedDomainSha256\":\"28d78bb6fa2e6ceff0deed8f00dd56514ccafc0cd122a1e19736cc943397dd3a\",\"warClassSha256\":\"0e462cc261ebcc1a0863b58a4334c765c7610f473e6c2450daef24cdc79a83dd\"}\r\n",
+      "stderr": "",
+      "report": {
+        "status": "PASS",
+        "speedDomainCases": 65536,
+        "speedFallbackCases": 8,
+        "groupCountCases": 37,
+        "isOverCases": 37,
+        "rngDrawCases": 14,
+        "speedDomainSha256": "28d78bb6fa2e6ceff0deed8f00dd56514ccafc0cd122a1e19736cc943397dd3a",
+        "warClassSha256": "0e462cc261ebcc1a0863b58a4334c765c7610f473e6c2450daef24cdc79a83dd"
+      }
+    },
+    {
+      "variant": "speed-lookup",
+      "command": {
+        "executable": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\temurin8-jre\\jdk8u504-b01-jre\\bin\\java.exe",
+        "args": [
+          "-Xms16m",
+          "-Xmx128m",
+          "-cp",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\war\\edge-fixture-classes;C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\war\\speed-lookup\\classes;C:\\Maor\\CodeGuru\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+          "WarEdgeFixture",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\war\\speed-lookup\\classes"
+        ]
+      },
+      "stdout": "{\"status\":\"PASS\",\"speedDomainCases\":65536,\"speedFallbackCases\":8,\"groupCountCases\":37,\"isOverCases\":37,\"rngDrawCases\":14,\"speedDomainSha256\":\"28d78bb6fa2e6ceff0deed8f00dd56514ccafc0cd122a1e19736cc943397dd3a\",\"warClassSha256\":\"846a3cab61a4d8a420b9995b3d80099477612e16883f351336362edc296e65d8\"}\r\n",
+      "stderr": "",
+      "report": {
+        "status": "PASS",
+        "speedDomainCases": 65536,
+        "speedFallbackCases": 8,
+        "groupCountCases": 37,
+        "isOverCases": 37,
+        "rngDrawCases": 14,
+        "speedDomainSha256": "28d78bb6fa2e6ceff0deed8f00dd56514ccafc0cd122a1e19736cc943397dd3a",
+        "warClassSha256": "846a3cab61a4d8a420b9995b3d80099477612e16883f351336362edc296e65d8"
+      }
+    },
+    {
+      "variant": "combined",
+      "command": {
+        "executable": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\temurin8-jre\\jdk8u504-b01-jre\\bin\\java.exe",
+        "args": [
+          "-Xms16m",
+          "-Xmx128m",
+          "-cp",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\war\\edge-fixture-classes;C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\war\\combined\\classes;C:\\Maor\\CodeGuru\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+          "WarEdgeFixture",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\war\\combined\\classes"
+        ]
+      },
+      "stdout": "{\"status\":\"PASS\",\"speedDomainCases\":65536,\"speedFallbackCases\":8,\"groupCountCases\":37,\"isOverCases\":37,\"rngDrawCases\":14,\"speedDomainSha256\":\"28d78bb6fa2e6ceff0deed8f00dd56514ccafc0cd122a1e19736cc943397dd3a\",\"warClassSha256\":\"b6f8a9fd20429e5c32af7021bfe25c09ca86f3a68e8fac7b73b8789ad7eeedde\"}\r\n",
+      "stderr": "",
+      "report": {
+        "status": "PASS",
+        "speedDomainCases": 65536,
+        "speedFallbackCases": 8,
+        "groupCountCases": 37,
+        "isOverCases": 37,
+        "rngDrawCases": 14,
+        "speedDomainSha256": "28d78bb6fa2e6ceff0deed8f00dd56514ccafc0cd122a1e19736cc943397dd3a",
+        "warClassSha256": "b6f8a9fd20429e5c32af7021bfe25c09ca86f3a68e8fac7b73b8789ad7eeedde"
+      }
+    }
+  ],
+  "note": "Only method-level edge checks ran. No nextRound, nextOpcode, battles, or benchmarks. All four semantic reports agree."
+}

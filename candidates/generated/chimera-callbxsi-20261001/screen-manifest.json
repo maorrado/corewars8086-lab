@@ -1,0 +1,361 @@
+{
+  "schemaVersion": 1,
+  "protocol": "Exploratory paired signature-reencoding screen; same frozen eight-panel online-stage 2025 inputs as e1p3 screen; not fresh holdout evidence.",
+  "hypothesis": "CALL FAR [BX+SI] should address the same far pointer at SI=0 at every bootstrap/worker call site, with the same instruction length but a different ModRM byte (FF 18 instead of FF 1F). This may disrupt signature-specific targeting; general field score is measured separately.",
+  "frozenSuiteManifest": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1-confirmation-20261001\\frozen\\manifest.json",
+  "frozenSuiteManifestSha256": "e1e25fbe3ad90726f3894cfd23438c4f2954b96ae1f13d1d55a9125910ecc596",
+  "variants": [
+    {
+      "id": "m050-callbxsi",
+      "sources": [
+        {
+          "original": "final/ChimeraA.asm",
+          "originalSha256": "b05ae79647c65b67d8486205597dc28c3c6467a80efbd9017bc257e2014999d8",
+          "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\chimera-callbxsi-20261001\\sources\\m050-callbxsi\\ChimeraA.asm",
+          "bytes": 1728,
+          "sha256": "093c9f7f2a85d3a6731494b888335b7dab346a61ad48b35fdfb90b473e7f4582",
+          "changedCalls": 2
+        },
+        {
+          "original": "final/ChimeraB.asm",
+          "originalSha256": "6c909366137b736bf693090093d83a8c1436f7817ccc2cea51b3ea53bfc46144",
+          "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\chimera-callbxsi-20261001\\sources\\m050-callbxsi\\ChimeraB.asm",
+          "bytes": 1101,
+          "sha256": "e56b6200a97a897880c9d9fd8609a38696c7a749e73bda15facd2584a94784ef",
+          "changedCalls": 2
+        }
+      ],
+      "binaries": [
+        {
+          "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\chimera-callbxsi-20261001\\build\\m050-callbxsi\\ChimeraA",
+          "bytes": 189,
+          "sha256": "5e2f987a33ed07f8ac4a6d5994595d663080a37ceddb1707f5e207473c2fd926"
+        },
+        {
+          "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\chimera-callbxsi-20261001\\build\\m050-callbxsi\\ChimeraB",
+          "bytes": 117,
+          "sha256": "d65fcc3f2c531c44ecaf6399fc0bda13249f0c85109ff211550bc87c875fdbb4"
+        }
+      ]
+    },
+    {
+      "id": "e1p3-callbxsi",
+      "sources": [
+        {
+          "original": "candidates/generated/claude-e1p3-check-20261001/e1p3-A.asm",
+          "originalSha256": "f9b60994e70aa30ff649ae8f8c002ce438d2715c02b896c09a062ab8cfd45dda",
+          "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\chimera-callbxsi-20261001\\sources\\e1p3-callbxsi\\ChimeraA.asm",
+          "bytes": 1808,
+          "sha256": "e81c6610cc4e4afc5c76978102df34034b3403f01a4aa5dccfbe094f4a1ec7e4",
+          "changedCalls": 2
+        },
+        {
+          "original": "candidates/generated/claude-e1p3-check-20261001/e1p3-B.asm",
+          "originalSha256": "e9ba9c83727e2463c2a9c908a3edf3be9b496c80554123a881ec5bdf3693cfef",
+          "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\chimera-callbxsi-20261001\\sources\\e1p3-callbxsi\\ChimeraB.asm",
+          "bytes": 1076,
+          "sha256": "2ef953ef02e1be4cc6465ea95d716c9b66d9052a9f4596bfb288ca8d43cbc954",
+          "changedCalls": 2
+        }
+      ],
+      "binaries": [
+        {
+          "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\chimera-callbxsi-20261001\\build\\e1p3-callbxsi\\ChimeraA",
+          "bytes": 187,
+          "sha256": "ce0b580bcd5aa8998e684092592e95add92a27d0644cc17e8da6f8b19991cd09"
+        },
+        {
+          "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\chimera-callbxsi-20261001\\build\\e1p3-callbxsi\\ChimeraB",
+          "bytes": 115,
+          "sha256": "632d2b0aef76402ca40aa5752b7dc4f849e70f6dac88e4804df22ddc32ebae29"
+        }
+      ]
+    }
+  ],
+  "configs": [
+    {
+      "arm": "m050-callbxsi",
+      "panel": "01",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\chimera-callbxsi-screen-20261001\\configs\\m050-callbxsi-panel-01.json",
+      "bytes": 26083,
+      "sha256": "2aaf2aac0cf03fdf1b82f4a4def47d6b827d668b9877c018a674218453a39c13",
+      "sourceConfig": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1-confirmation-20261001\\frozen\\panel-01-m050.json",
+      "sourceConfigBytes": 26082,
+      "sourceConfigSha256": "6d7e1e0027f687a8d020dd1dd3abda6a4ce739e3a3c26c18b2e6f8b3fe27e14f",
+      "seeds": [
+        "e1-confirm-20261001-p1-s1-48255f87a541a9a24be55d45",
+        "e1-confirm-20261001-p1-s2-258c1af4bcb72ada589317b2"
+      ],
+      "cohortCount": 25,
+      "battlesPerCohort": 25,
+      "physicalWars": 1250
+    },
+    {
+      "arm": "m050-callbxsi",
+      "panel": "02",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\chimera-callbxsi-screen-20261001\\configs\\m050-callbxsi-panel-02.json",
+      "bytes": 26083,
+      "sha256": "2d32f1134b82a20b243ebe473c897af8b7438de5267da4f26812ea222d4eba62",
+      "sourceConfig": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1-confirmation-20261001\\frozen\\panel-02-m050.json",
+      "sourceConfigBytes": 26082,
+      "sourceConfigSha256": "c7bb17ec0519733c8e322291344c29d5645d7477af02a063dbbc27b2647326b9",
+      "seeds": [
+        "e1-confirm-20261001-p2-s1-6956e1caa5327540935963f5",
+        "e1-confirm-20261001-p2-s2-133753912b64641603f7cfa0"
+      ],
+      "cohortCount": 25,
+      "battlesPerCohort": 25,
+      "physicalWars": 1250
+    },
+    {
+      "arm": "m050-callbxsi",
+      "panel": "03",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\chimera-callbxsi-screen-20261001\\configs\\m050-callbxsi-panel-03.json",
+      "bytes": 26083,
+      "sha256": "32119319f12d76bb8500ae79ef665969c86f7b9dbf174088f86389f8694e44e9",
+      "sourceConfig": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1-confirmation-20261001\\frozen\\panel-03-m050.json",
+      "sourceConfigBytes": 26082,
+      "sourceConfigSha256": "c723a5da50b529df1b4573abf5cf680aa56bca0e64a77ac4b0fff5e0a84a9453",
+      "seeds": [
+        "e1-confirm-20261001-p3-s1-5f56dcedb6835c4a07656df3",
+        "e1-confirm-20261001-p3-s2-1c492c587e3c9d2442a50a42"
+      ],
+      "cohortCount": 25,
+      "battlesPerCohort": 25,
+      "physicalWars": 1250
+    },
+    {
+      "arm": "m050-callbxsi",
+      "panel": "04",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\chimera-callbxsi-screen-20261001\\configs\\m050-callbxsi-panel-04.json",
+      "bytes": 26083,
+      "sha256": "7e39c8854cf6ca2c6e5c4b71692bc849a38d213fab206f2f732ca9a99147c060",
+      "sourceConfig": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1-confirmation-20261001\\frozen\\panel-04-m050.json",
+      "sourceConfigBytes": 26082,
+      "sourceConfigSha256": "3009510ded7d6d13d9cef16ebfbe1bb9bbd777d85c7626a87d97dcbc99b4410c",
+      "seeds": [
+        "e1-confirm-20261001-p4-s1-60dd93385c025e87d11a3c97",
+        "e1-confirm-20261001-p4-s2-639445ec45b7aaa8a4c49541"
+      ],
+      "cohortCount": 25,
+      "battlesPerCohort": 25,
+      "physicalWars": 1250
+    },
+    {
+      "arm": "m050-callbxsi",
+      "panel": "05",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\chimera-callbxsi-screen-20261001\\configs\\m050-callbxsi-panel-05.json",
+      "bytes": 26083,
+      "sha256": "fc3351105b0d67138ae870833627601ae73c248ba02e130378e313ae2e543a82",
+      "sourceConfig": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1-confirmation-20261001\\frozen\\panel-05-m050.json",
+      "sourceConfigBytes": 26082,
+      "sourceConfigSha256": "3b7863421c1ab733dc8c07ef362b3efc68240726b83a02ccc4f6469e95afe810",
+      "seeds": [
+        "e1-confirm-20261001-p5-s1-ff8661bed94b2a25105d8300",
+        "e1-confirm-20261001-p5-s2-ce16325147c0819854658f26"
+      ],
+      "cohortCount": 25,
+      "battlesPerCohort": 25,
+      "physicalWars": 1250
+    },
+    {
+      "arm": "m050-callbxsi",
+      "panel": "06",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\chimera-callbxsi-screen-20261001\\configs\\m050-callbxsi-panel-06.json",
+      "bytes": 26083,
+      "sha256": "dad0cfa6890ff97d5e152d409e7d4e7b1167258d3824fa3604115d4698a22812",
+      "sourceConfig": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1-confirmation-20261001\\frozen\\panel-06-m050.json",
+      "sourceConfigBytes": 26082,
+      "sourceConfigSha256": "a586fe0d37971f933ecd2acd604b5e67b41433243c3bf4607f21dda5d3cd1caa",
+      "seeds": [
+        "e1-confirm-20261001-p6-s1-337212440998512cd0bdeb5c",
+        "e1-confirm-20261001-p6-s2-2f4da1cc443d5fd001940f45"
+      ],
+      "cohortCount": 25,
+      "battlesPerCohort": 25,
+      "physicalWars": 1250
+    },
+    {
+      "arm": "m050-callbxsi",
+      "panel": "07",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\chimera-callbxsi-screen-20261001\\configs\\m050-callbxsi-panel-07.json",
+      "bytes": 26083,
+      "sha256": "9160462c6d7931808f4500b6161feaf36677fe88d83dc2b4455dee60fb10cb03",
+      "sourceConfig": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1-confirmation-20261001\\frozen\\panel-07-m050.json",
+      "sourceConfigBytes": 26082,
+      "sourceConfigSha256": "0caf0c93bf9d668f4bbc35cc96b611b6b173309b9e6e55c3b9debd06d855a8b9",
+      "seeds": [
+        "e1-confirm-20261001-p7-s1-c4d4d1a2334a1274c979f348",
+        "e1-confirm-20261001-p7-s2-074c4a68033f47978765a249"
+      ],
+      "cohortCount": 25,
+      "battlesPerCohort": 25,
+      "physicalWars": 1250
+    },
+    {
+      "arm": "m050-callbxsi",
+      "panel": "08",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\chimera-callbxsi-screen-20261001\\configs\\m050-callbxsi-panel-08.json",
+      "bytes": 26083,
+      "sha256": "c1f46a074b6ee4ca3fbc79b231e92fb2689a350b1fb3c85bd91b5e9e042beb9a",
+      "sourceConfig": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1-confirmation-20261001\\frozen\\panel-08-m050.json",
+      "sourceConfigBytes": 26082,
+      "sourceConfigSha256": "284a03345392a81140e4e2c50029c366815a1afa2eeeaa857ede37d323529674",
+      "seeds": [
+        "e1-confirm-20261001-p8-s1-4c894f63ebb037d86dbc0be8",
+        "e1-confirm-20261001-p8-s2-df5ff42e7ef258ac8bcd0dba"
+      ],
+      "cohortCount": 25,
+      "battlesPerCohort": 25,
+      "physicalWars": 1250
+    },
+    {
+      "arm": "e1p3-callbxsi",
+      "panel": "01",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\chimera-callbxsi-screen-20261001\\configs\\e1p3-callbxsi-panel-01.json",
+      "bytes": 26083,
+      "sha256": "a4d732689c249222fb8ecf8947650da7d55fe54845dfda4a4d64aaa4f6fe3ae8",
+      "sourceConfig": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1-confirmation-20261001\\frozen\\panel-01-m050.json",
+      "sourceConfigBytes": 26082,
+      "sourceConfigSha256": "6d7e1e0027f687a8d020dd1dd3abda6a4ce739e3a3c26c18b2e6f8b3fe27e14f",
+      "seeds": [
+        "e1-confirm-20261001-p1-s1-48255f87a541a9a24be55d45",
+        "e1-confirm-20261001-p1-s2-258c1af4bcb72ada589317b2"
+      ],
+      "cohortCount": 25,
+      "battlesPerCohort": 25,
+      "physicalWars": 1250
+    },
+    {
+      "arm": "e1p3-callbxsi",
+      "panel": "02",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\chimera-callbxsi-screen-20261001\\configs\\e1p3-callbxsi-panel-02.json",
+      "bytes": 26083,
+      "sha256": "a9bf56ad2e638b066c6e1d1fbefc919e88ee027bde9ab87b3f694c88b522a760",
+      "sourceConfig": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1-confirmation-20261001\\frozen\\panel-02-m050.json",
+      "sourceConfigBytes": 26082,
+      "sourceConfigSha256": "c7bb17ec0519733c8e322291344c29d5645d7477af02a063dbbc27b2647326b9",
+      "seeds": [
+        "e1-confirm-20261001-p2-s1-6956e1caa5327540935963f5",
+        "e1-confirm-20261001-p2-s2-133753912b64641603f7cfa0"
+      ],
+      "cohortCount": 25,
+      "battlesPerCohort": 25,
+      "physicalWars": 1250
+    },
+    {
+      "arm": "e1p3-callbxsi",
+      "panel": "03",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\chimera-callbxsi-screen-20261001\\configs\\e1p3-callbxsi-panel-03.json",
+      "bytes": 26083,
+      "sha256": "3bc085aecb41371a476d4c45e4d1f1ea4bab7a3c03dfc80208ee94fe34d1218c",
+      "sourceConfig": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1-confirmation-20261001\\frozen\\panel-03-m050.json",
+      "sourceConfigBytes": 26082,
+      "sourceConfigSha256": "c723a5da50b529df1b4573abf5cf680aa56bca0e64a77ac4b0fff5e0a84a9453",
+      "seeds": [
+        "e1-confirm-20261001-p3-s1-5f56dcedb6835c4a07656df3",
+        "e1-confirm-20261001-p3-s2-1c492c587e3c9d2442a50a42"
+      ],
+      "cohortCount": 25,
+      "battlesPerCohort": 25,
+      "physicalWars": 1250
+    },
+    {
+      "arm": "e1p3-callbxsi",
+      "panel": "04",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\chimera-callbxsi-screen-20261001\\configs\\e1p3-callbxsi-panel-04.json",
+      "bytes": 26083,
+      "sha256": "3b297592b93f36e5255cd0462ef2913de6b1929545ccd1df604b2199a84c597f",
+      "sourceConfig": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1-confirmation-20261001\\frozen\\panel-04-m050.json",
+      "sourceConfigBytes": 26082,
+      "sourceConfigSha256": "3009510ded7d6d13d9cef16ebfbe1bb9bbd777d85c7626a87d97dcbc99b4410c",
+      "seeds": [
+        "e1-confirm-20261001-p4-s1-60dd93385c025e87d11a3c97",
+        "e1-confirm-20261001-p4-s2-639445ec45b7aaa8a4c49541"
+      ],
+      "cohortCount": 25,
+      "battlesPerCohort": 25,
+      "physicalWars": 1250
+    },
+    {
+      "arm": "e1p3-callbxsi",
+      "panel": "05",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\chimera-callbxsi-screen-20261001\\configs\\e1p3-callbxsi-panel-05.json",
+      "bytes": 26083,
+      "sha256": "0adbfd7f405a58681ed7b18d2e80a60539f08bec0061e4d04d6594d6bb7fdc58",
+      "sourceConfig": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1-confirmation-20261001\\frozen\\panel-05-m050.json",
+      "sourceConfigBytes": 26082,
+      "sourceConfigSha256": "3b7863421c1ab733dc8c07ef362b3efc68240726b83a02ccc4f6469e95afe810",
+      "seeds": [
+        "e1-confirm-20261001-p5-s1-ff8661bed94b2a25105d8300",
+        "e1-confirm-20261001-p5-s2-ce16325147c0819854658f26"
+      ],
+      "cohortCount": 25,
+      "battlesPerCohort": 25,
+      "physicalWars": 1250
+    },
+    {
+      "arm": "e1p3-callbxsi",
+      "panel": "06",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\chimera-callbxsi-screen-20261001\\configs\\e1p3-callbxsi-panel-06.json",
+      "bytes": 26083,
+      "sha256": "eb0024a16d487d6086dcc0f039b879e0ed9f1dc06d97f8b46041b6b8e395b0cc",
+      "sourceConfig": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1-confirmation-20261001\\frozen\\panel-06-m050.json",
+      "sourceConfigBytes": 26082,
+      "sourceConfigSha256": "a586fe0d37971f933ecd2acd604b5e67b41433243c3bf4607f21dda5d3cd1caa",
+      "seeds": [
+        "e1-confirm-20261001-p6-s1-337212440998512cd0bdeb5c",
+        "e1-confirm-20261001-p6-s2-2f4da1cc443d5fd001940f45"
+      ],
+      "cohortCount": 25,
+      "battlesPerCohort": 25,
+      "physicalWars": 1250
+    },
+    {
+      "arm": "e1p3-callbxsi",
+      "panel": "07",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\chimera-callbxsi-screen-20261001\\configs\\e1p3-callbxsi-panel-07.json",
+      "bytes": 26083,
+      "sha256": "2bfccb4907907d56c2adb49faa78f7391cbcbe5d1b03ec9275fb659a3e683737",
+      "sourceConfig": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1-confirmation-20261001\\frozen\\panel-07-m050.json",
+      "sourceConfigBytes": 26082,
+      "sourceConfigSha256": "0caf0c93bf9d668f4bbc35cc96b611b6b173309b9e6e55c3b9debd06d855a8b9",
+      "seeds": [
+        "e1-confirm-20261001-p7-s1-c4d4d1a2334a1274c979f348",
+        "e1-confirm-20261001-p7-s2-074c4a68033f47978765a249"
+      ],
+      "cohortCount": 25,
+      "battlesPerCohort": 25,
+      "physicalWars": 1250
+    },
+    {
+      "arm": "e1p3-callbxsi",
+      "panel": "08",
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\chimera-callbxsi-screen-20261001\\configs\\e1p3-callbxsi-panel-08.json",
+      "bytes": 26083,
+      "sha256": "178aa075f60b43650128ebbefebbdbc3eb36778f0da7a97022c4a43a2b383abd",
+      "sourceConfig": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-e1-confirmation-20261001\\frozen\\panel-08-m050.json",
+      "sourceConfigBytes": 26082,
+      "sourceConfigSha256": "284a03345392a81140e4e2c50029c366815a1afa2eeeaa857ede37d323529674",
+      "seeds": [
+        "e1-confirm-20261001-p8-s1-4c894f63ebb037d86dbc0be8",
+        "e1-confirm-20261001-p8-s2-df5ff42e7ef258ac8bcd0dba"
+      ],
+      "cohortCount": 25,
+      "battlesPerCohort": 25,
+      "physicalWars": 1250
+    }
+  ],
+  "limits": {
+    "armsRun": [
+      "m050-callbxsi",
+      "e1p3-callbxsi"
+    ],
+    "panels": 8,
+    "warsPerArm": 10000,
+    "totalWars": 20000,
+    "threads": 1,
+    "parallel": false,
+    "overlays": []
+  }
+}

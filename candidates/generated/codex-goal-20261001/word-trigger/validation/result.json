@@ -1,0 +1,146 @@
+{
+  "recordedAt": "2026-10-01T00:05:30.565Z",
+  "status": "PASS",
+  "engineMode": "unchanged original JAR; no acceleration overlay",
+  "summary": "Original engine recurrence PASS: offsets=119, paths=357, baselineUnhealthyPaths=8, baselineDeviationsAvoided=0, pairedHealthyFiveGenerationPaths=349, newFaultsOrInvariantFailures=0, steadyOpcodesSaved=3",
+  "offsets": 119,
+  "paths": 357,
+  "healthyPairedPaths": 349,
+  "baselineUnhealthyPaths": 8,
+  "newUnhealthyPaths": 0,
+  "steadyOpcodesSaved": 3,
+  "interpretation": "357 paired inert path cases (main A, main B, direct captured-A entry). 349 satisfy all five-generation invariants on both versions. Eight baseline B paths already fail or deviate, and the candidate also fails/deviates there; these are NOT claimed fixed. No battle score or all-load/hostile-interference guarantee.",
+  "commands": [
+    {
+      "executable": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\temurin8-jdk\\jdk8u504-b01\\bin\\javac.exe",
+      "args": [
+        "-cp",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+        "-d",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\codex-goal-20261001\\word-trigger\\validation\\verified-classes",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\codex-goal-20261001\\word-trigger\\validation\\WorkerRecurrenceFixture.java"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "executable": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\temurin8-jre\\jdk8u504-b01-jre\\bin\\java.exe",
+      "args": [
+        "-cp",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\codex-goal-20261001\\word-trigger\\validation\\verified-classes;C:\\Maor\\CodeGuru\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+        "WorkerRecurrenceFixture",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\codex-goal-20261001\\bootstrap-holdout\\frozen\\build\\m050\\A",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\codex-goal-20261001\\bootstrap-holdout\\frozen\\build\\m050\\B",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\codex-goal-20261001\\word-trigger\\build\\WordA",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\codex-goal-20261001\\word-trigger\\build\\WordB"
+      ],
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "stdout": "BASELINE_DEVIATION load=13311 A=false captured=false old=InvalidOpcodeException:4096:13411 word=InvalidOpcodeException:4096:13412\r\nBASELINE_DEVIATION load=13313 A=false captured=false old=FixtureInvariant: copy cursors at anchor word=false A=false captured=false load=13313 event=0 step=54 p=13474 regs=[8191, 576, 9, 16384, 0, 13476, 17408, 14110, 8192, 4092, 4096, 4092, 13474] word=FixtureInvariant: copy cursors at anchor word=true A=false captured=false load=13313 event=0 step=53 p=13475 regs=[8191, 576, 7, 16384, 0, 13477, 17408, 14111, 8192, 4092, 4096, 4092, 13475]\r\nBASELINE_DEVIATION load=28671 A=false captured=false old=InvalidOpcodeException:4096:28771 word=InvalidOpcodeException:4096:28772\r\nBASELINE_DEVIATION load=28673 A=false captured=false old=FixtureInvariant: copy cursors at anchor word=false A=false captured=false load=28673 event=0 step=54 p=28834 regs=[8191, 576, 9, 16384, 0, 28836, 17408, 29470, 8192, 4092, 4096, 4092, 28834] word=FixtureInvariant: copy cursors at anchor word=true A=false captured=false load=28673 event=0 step=53 p=28835 regs=[8191, 576, 7, 16384, 0, 28837, 17408, 29471, 8192, 4092, 4096, 4092, 28835]\r\nBASELINE_DEVIATION load=44031 A=false captured=false old=InvalidOpcodeException:4096:44131 word=InvalidOpcodeException:4096:44132\r\nBASELINE_DEVIATION load=44033 A=false captured=false old=FixtureInvariant: copy cursors at anchor word=false A=false captured=false load=44033 event=0 step=54 p=44194 regs=[8191, 576, 9, 16384, 0, 44196, 17408, 44830, 8192, 4092, 4096, 4092, 44194] word=FixtureInvariant: copy cursors at anchor word=true A=false captured=false load=44033 event=0 step=53 p=44195 regs=[8191, 576, 7, 16384, 0, 44197, 17408, 44831, 8192, 4092, 4096, 4092, 44195]\r\nBASELINE_DEVIATION load=59391 A=false captured=false old=InvalidOpcodeException:4096:59491 word=InvalidOpcodeException:4096:59492\r\nBASELINE_DEVIATION load=59393 A=false captured=false old=FixtureInvariant: copy cursors at anchor word=false A=false captured=false load=59393 event=0 step=54 p=59554 regs=[8191, 576, 9, 16384, 0, 59556, 17408, 60190, 8192, 4092, 4096, 4092, 59554] word=FixtureInvariant: copy cursors at anchor word=true A=false captured=false load=59393 event=0 step=53 p=59555 regs=[8191, 576, 7, 16384, 0, 59557, 17408, 60191, 8192, 4092, 4096, 4092, 59555]\r\nOriginal engine recurrence PASS: offsets=119, paths=357, baselineUnhealthyPaths=8, baselineDeviationsAvoided=0, pairedHealthyFiveGenerationPaths=349, newFaultsOrInvariantFailures=0, steadyOpcodesSaved=3\r\n",
+      "stderr": ""
+    }
+  ],
+  "binaryIdentities": {
+    "m050A": {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\codex-goal-20261001\\bootstrap-holdout\\frozen\\build\\m050\\A",
+      "bytes": 189,
+      "sha256": "0268ce4f301bf2ada8566f4e608180a0670a335a80b9c2b93b67aee2b632bd44"
+    },
+    "m050B": {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\codex-goal-20261001\\bootstrap-holdout\\frozen\\build\\m050\\B",
+      "bytes": 117,
+      "sha256": "06b5a1ff7bac4b146620de6d1de512dfedf3f28366d6435bf61d49869d971782"
+    },
+    "wordA": {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\codex-goal-20261001\\word-trigger\\build\\WordA",
+      "bytes": 189,
+      "sha256": "82616615d827119202b995649f4b11a59c3f7766ae2c9e762ab2b7ff833b1526"
+    },
+    "wordB": {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\codex-goal-20261001\\word-trigger\\build\\WordB",
+      "bytes": 117,
+      "sha256": "9f0326daa7c0bc2028788a1d5730072ed99032e2e0bad285a779bc47a9c3b778"
+    }
+  },
+  "files": [
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\codex-goal-20261001\\word-trigger\\validation\\WorkerRecurrenceFixture.java",
+      "bytes": 7129,
+      "sha256": "9d4644776cbafa9906a1112a4e9fc46227beaea74b4ff7e927279cd44feba501"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\codex-goal-20261001\\word-trigger\\run-validation.mjs",
+      "bytes": 3778,
+      "sha256": "aa50639c015c1fc7dd1c4e9ab59425b05c4154bd6b54b781c6d98787f26f25b5"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+      "bytes": 6601794,
+      "sha256": "31639072397eaf69d99e90b10d8fa594a7446951f1137b7ebd298378f5ec318d"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\temurin8-jre\\jdk8u504-b01-jre\\bin\\java.exe",
+      "bytes": 304768,
+      "sha256": "46df95bb47e2ba2b10736cee2ab543289c66021611f1ec67d0d55d5128228c20"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\temurin8-jdk\\jdk8u504-b01\\bin\\javac.exe",
+      "bytes": 24184,
+      "sha256": "9f1dae15ffb49c7363c72351cf61f4889ac6896e3df87c1c5553b81745ae8a07"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\codex-goal-20261001\\bootstrap-holdout\\frozen\\build\\m050\\A",
+      "bytes": 189,
+      "sha256": "0268ce4f301bf2ada8566f4e608180a0670a335a80b9c2b93b67aee2b632bd44"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\codex-goal-20261001\\bootstrap-holdout\\frozen\\build\\m050\\B",
+      "bytes": 117,
+      "sha256": "06b5a1ff7bac4b146620de6d1de512dfedf3f28366d6435bf61d49869d971782"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\codex-goal-20261001\\word-trigger\\build\\WordA",
+      "bytes": 189,
+      "sha256": "82616615d827119202b995649f4b11a59c3f7766ae2c9e762ab2b7ff833b1526"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\codex-goal-20261001\\word-trigger\\build\\WordB",
+      "bytes": 117,
+      "sha256": "9f0326daa7c0bc2028788a1d5730072ed99032e2e0bad285a779bc47a9c3b778"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\codex-goal-20261001\\word-trigger\\build\\manifest.json",
+      "bytes": 901,
+      "sha256": "321b49fd025062fda002da690994d6d546f70253aecdd80753774ffb0f557e26"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\codex-goal-20261001\\word-trigger\\WordA.asm",
+      "bytes": 1812,
+      "sha256": "59fb9fd665fc29209997741c7cc494debec167a7494a735350e1a700162c5065"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\codex-goal-20261001\\word-trigger\\WordB.asm",
+      "bytes": 1198,
+      "sha256": "088f2f10118c314d25daa6b5cf47a845194a444c90b57fde0718dcc9a08f5d13"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\codex-goal-20261001\\word-trigger\\validation\\verified-classes\\WorkerRecurrenceFixture$Event.class",
+      "bytes": 521,
+      "sha256": "60d6ce0738c4d53ea9bb4b0932133a2d75c124ec1e0702c55b62824b47d6fa32"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\codex-goal-20261001\\word-trigger\\validation\\verified-classes\\WorkerRecurrenceFixture$Run.class",
+      "bytes": 541,
+      "sha256": "169e56ad8d7f0de028bc41112c38347d6fc6181908d5b44419ee723b20c23cb5"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\codex-goal-20261001\\word-trigger\\validation\\verified-classes\\WorkerRecurrenceFixture.class",
+      "bytes": 8640,
+      "sha256": "24d8b457abf466f9281e0e9742b13f5970cbf7be136a1bb8087ed77c2421f33d"
+    }
+  ]
+}

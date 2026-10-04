@@ -1,0 +1,348 @@
+{
+  "schemaVersion": 1,
+  "experiment": "m050-coverage-preserving-short-dwell-20261001",
+  "status": "source design and finite arithmetic only; no assembly, seeds, or battles",
+  "generator": "candidates/generated/codex-goal-20261001/coverage-dwell/generate.mjs",
+  "generatorSha256": "6f2bce11f1313e7b2b107d9717895f5031142ff2759d62e33dc99648558157a7",
+  "baseline": {
+    "A": {
+      "source": "final/ChimeraA.asm",
+      "sourceSha256": "b05ae79647c65b67d8486205597dc28c3c6467a80efbd9017bc257e2014999d8",
+      "binary": "build/final/ChimeraA",
+      "bytes": 189,
+      "binarySha256": "0268ce4f301bf2ada8566f4e608180a0670a335a80b9c2b93b67aee2b632bd44",
+      "dx": 14336,
+      "bp": 15360,
+      "dxHighOffset": 161,
+      "bpHighOffset": 164,
+      "workerOffset": 172
+    },
+    "B": {
+      "source": "final/ChimeraB.asm",
+      "sourceSha256": "6c909366137b736bf693090093d83a8c1436f7817ccc2cea51b3ea53bfc46144",
+      "binary": "build/final/ChimeraB",
+      "bytes": 117,
+      "binarySha256": "06b5a1ff7bac4b146620de6d1de512dfedf3f28366d6435bf61d49869d971782",
+      "dx": 16384,
+      "bp": 17408,
+      "dxHighOffset": 89,
+      "bpHighOffset": 92,
+      "workerOffset": 100
+    }
+  },
+  "components": {
+    "A-lower": {
+      "letter": "A",
+      "baselineSource": "final/ChimeraA.asm",
+      "source": "candidates/generated/codex-goal-20261001/coverage-dwell/sources/A-lower.asm",
+      "sourceSha256": "a4bfdacc7987fabdd1dd23106d3b0ae8dd7871ff0a79c17e2dcaff3a8ea6732e",
+      "sourceBytes": 1722,
+      "sourceChangedBytes": [
+        1472,
+        1492
+      ],
+      "bp": 15104,
+      "dx": 14848,
+      "steadyTrailBytes": 256,
+      "expectedBinaryBytes": 189,
+      "expectedBinarySha256": "c2c64f994af48d1e82e76071db5d904ae23678a8aafd465dc7a82039a6dc2c2b",
+      "binaryChanges": [
+        {
+          "offset": 161,
+          "original": 56,
+          "replacement": 58
+        },
+        {
+          "offset": 164,
+          "original": 60,
+          "replacement": 59
+        }
+      ],
+      "worker": {
+        "bytes": 17,
+        "offset": 172,
+        "hex": "a5f3a529d4292f8b3fb10931f6ab4fff1f",
+        "unchanged": true
+      },
+      "coverage": {
+        "bp": 15104,
+        "trailBytes": 256,
+        "gcdWithArena": 256,
+        "anchorsPerOrbit": 256,
+        "paintedBytesPerOrbit": 65536,
+        "unpaintedBytesPerOrbit": 0,
+        "minPaintMultiplicity": 1,
+        "maxPaintMultiplicity": 1,
+        "farCallsPerSteadyTrail": 64,
+        "farCallsPerOrbit": 16384,
+        "workerTransitionsPerOrbit": 256,
+        "assumption": "Intact indefinitely executing steady loop, modulo-65536 stack trail; excludes initial gap, worker-copy writes, timing and hostile interference."
+      },
+      "assemblyStatus": "not assembled; expected hash is an in-memory two-byte baseline patch"
+    },
+    "B-lower": {
+      "letter": "B",
+      "baselineSource": "final/ChimeraB.asm",
+      "source": "candidates/generated/codex-goal-20261001/coverage-dwell/sources/B-lower.asm",
+      "sourceSha256": "ae7b8657e19b3d27a074f67c92eb42161f94d1b0791fa1e77c673a232095350e",
+      "sourceBytes": 1095,
+      "sourceChangedBytes": [
+        845,
+        865
+      ],
+      "bp": 17152,
+      "dx": 16896,
+      "steadyTrailBytes": 256,
+      "expectedBinaryBytes": 117,
+      "expectedBinarySha256": "b40603e61caf3a28d8228a1219319a4badfd5a68666d177617f13268e28e17c1",
+      "binaryChanges": [
+        {
+          "offset": 89,
+          "original": 64,
+          "replacement": 66
+        },
+        {
+          "offset": 92,
+          "original": 68,
+          "replacement": 67
+        }
+      ],
+      "worker": {
+        "bytes": 17,
+        "offset": 100,
+        "hex": "a5f3a529d4292f8b3fb10931f6ab4fff1f",
+        "unchanged": true
+      },
+      "coverage": {
+        "bp": 17152,
+        "trailBytes": 256,
+        "gcdWithArena": 256,
+        "anchorsPerOrbit": 256,
+        "paintedBytesPerOrbit": 65536,
+        "unpaintedBytesPerOrbit": 0,
+        "minPaintMultiplicity": 1,
+        "maxPaintMultiplicity": 1,
+        "farCallsPerSteadyTrail": 64,
+        "farCallsPerOrbit": 16384,
+        "workerTransitionsPerOrbit": 256,
+        "assumption": "Intact indefinitely executing steady loop, modulo-65536 stack trail; excludes initial gap, worker-copy writes, timing and hostile interference."
+      },
+      "assemblyStatus": "not assembled; expected hash is an in-memory two-byte baseline patch"
+    },
+    "A-upper": {
+      "letter": "A",
+      "baselineSource": "final/ChimeraA.asm",
+      "source": "candidates/generated/codex-goal-20261001/coverage-dwell/sources/A-upper.asm",
+      "sourceSha256": "595a3056e995ce25e95b29c07da8585eb5ac57ffad7e75a09d31409aacb78bcc",
+      "sourceBytes": 1722,
+      "sourceChangedBytes": [
+        1472,
+        1492
+      ],
+      "bp": 15616,
+      "dx": 15360,
+      "steadyTrailBytes": 256,
+      "expectedBinaryBytes": 189,
+      "expectedBinarySha256": "87155e106697229096aef3d27ba632741791bcd8b1fde3d0cd6d6acc4c900ebf",
+      "binaryChanges": [
+        {
+          "offset": 161,
+          "original": 56,
+          "replacement": 60
+        },
+        {
+          "offset": 164,
+          "original": 60,
+          "replacement": 61
+        }
+      ],
+      "worker": {
+        "bytes": 17,
+        "offset": 172,
+        "hex": "a5f3a529d4292f8b3fb10931f6ab4fff1f",
+        "unchanged": true
+      },
+      "coverage": {
+        "bp": 15616,
+        "trailBytes": 256,
+        "gcdWithArena": 256,
+        "anchorsPerOrbit": 256,
+        "paintedBytesPerOrbit": 65536,
+        "unpaintedBytesPerOrbit": 0,
+        "minPaintMultiplicity": 1,
+        "maxPaintMultiplicity": 1,
+        "farCallsPerSteadyTrail": 64,
+        "farCallsPerOrbit": 16384,
+        "workerTransitionsPerOrbit": 256,
+        "assumption": "Intact indefinitely executing steady loop, modulo-65536 stack trail; excludes initial gap, worker-copy writes, timing and hostile interference."
+      },
+      "assemblyStatus": "not assembled; expected hash is an in-memory two-byte baseline patch"
+    },
+    "B-upper": {
+      "letter": "B",
+      "baselineSource": "final/ChimeraB.asm",
+      "source": "candidates/generated/codex-goal-20261001/coverage-dwell/sources/B-upper.asm",
+      "sourceSha256": "a5526c6e9418a69fdd2955cf9733a0caa009de7cf790c7bf8d4d16c7d91126c1",
+      "sourceBytes": 1095,
+      "sourceChangedBytes": [
+        845,
+        865
+      ],
+      "bp": 17664,
+      "dx": 17408,
+      "steadyTrailBytes": 256,
+      "expectedBinaryBytes": 117,
+      "expectedBinarySha256": "ee615b6f885e038c27fe787bc7be21904f502b1b0d948e462f053f950315a1eb",
+      "binaryChanges": [
+        {
+          "offset": 89,
+          "original": 64,
+          "replacement": 68
+        },
+        {
+          "offset": 92,
+          "original": 68,
+          "replacement": 69
+        }
+      ],
+      "worker": {
+        "bytes": 17,
+        "offset": 100,
+        "hex": "a5f3a529d4292f8b3fb10931f6ab4fff1f",
+        "unchanged": true
+      },
+      "coverage": {
+        "bp": 17664,
+        "trailBytes": 256,
+        "gcdWithArena": 256,
+        "anchorsPerOrbit": 256,
+        "paintedBytesPerOrbit": 65536,
+        "unpaintedBytesPerOrbit": 0,
+        "minPaintMultiplicity": 1,
+        "maxPaintMultiplicity": 1,
+        "farCallsPerSteadyTrail": 64,
+        "farCallsPerOrbit": 16384,
+        "workerTransitionsPerOrbit": 256,
+        "assumption": "Intact indefinitely executing steady loop, modulo-65536 stack trail; excludes initial gap, worker-copy writes, timing and hostile interference."
+      },
+      "assemblyStatus": "not assembled; expected hash is an in-memory two-byte baseline patch"
+    }
+  },
+  "control": {
+    "id": "m050",
+    "A": "baseline.A",
+    "B": "baseline.B"
+  },
+  "arms": [
+    {
+      "id": "lower-strides",
+      "A": "A-lower",
+      "B": "B-lower"
+    },
+    {
+      "id": "upper-strides",
+      "A": "A-upper",
+      "B": "B-upper"
+    }
+  ],
+  "geometryComparisons": [
+    {
+      "side": "A",
+      "bp": 15360,
+      "trailBytes": 1024,
+      "gcdWithArena": 1024,
+      "anchorsPerOrbit": 64,
+      "paintedBytesPerOrbit": 65536,
+      "unpaintedBytesPerOrbit": 0,
+      "minPaintMultiplicity": 1,
+      "maxPaintMultiplicity": 1,
+      "farCallsPerSteadyTrail": 256,
+      "farCallsPerOrbit": 16384,
+      "workerTransitionsPerOrbit": 64,
+      "assumption": "Intact indefinitely executing steady loop, modulo-65536 stack trail; excludes initial gap, worker-copy writes, timing and hostile interference."
+    },
+    {
+      "side": "A",
+      "bp": 15360,
+      "trailBytes": 512,
+      "gcdWithArena": 1024,
+      "anchorsPerOrbit": 64,
+      "paintedBytesPerOrbit": 32768,
+      "unpaintedBytesPerOrbit": 32768,
+      "minPaintMultiplicity": 0,
+      "maxPaintMultiplicity": 1,
+      "farCallsPerSteadyTrail": 128,
+      "farCallsPerOrbit": 8192,
+      "workerTransitionsPerOrbit": 64,
+      "assumption": "Intact indefinitely executing steady loop, modulo-65536 stack trail; excludes initial gap, worker-copy writes, timing and hostile interference."
+    },
+    {
+      "side": "A",
+      "bp": 15360,
+      "trailBytes": 256,
+      "gcdWithArena": 1024,
+      "anchorsPerOrbit": 64,
+      "paintedBytesPerOrbit": 16384,
+      "unpaintedBytesPerOrbit": 49152,
+      "minPaintMultiplicity": 0,
+      "maxPaintMultiplicity": 1,
+      "farCallsPerSteadyTrail": 64,
+      "farCallsPerOrbit": 4096,
+      "workerTransitionsPerOrbit": 64,
+      "assumption": "Intact indefinitely executing steady loop, modulo-65536 stack trail; excludes initial gap, worker-copy writes, timing and hostile interference."
+    },
+    {
+      "side": "B",
+      "bp": 17408,
+      "trailBytes": 1024,
+      "gcdWithArena": 1024,
+      "anchorsPerOrbit": 64,
+      "paintedBytesPerOrbit": 65536,
+      "unpaintedBytesPerOrbit": 0,
+      "minPaintMultiplicity": 1,
+      "maxPaintMultiplicity": 1,
+      "farCallsPerSteadyTrail": 256,
+      "farCallsPerOrbit": 16384,
+      "workerTransitionsPerOrbit": 64,
+      "assumption": "Intact indefinitely executing steady loop, modulo-65536 stack trail; excludes initial gap, worker-copy writes, timing and hostile interference."
+    },
+    {
+      "side": "B",
+      "bp": 17408,
+      "trailBytes": 512,
+      "gcdWithArena": 1024,
+      "anchorsPerOrbit": 64,
+      "paintedBytesPerOrbit": 32768,
+      "unpaintedBytesPerOrbit": 32768,
+      "minPaintMultiplicity": 0,
+      "maxPaintMultiplicity": 1,
+      "farCallsPerSteadyTrail": 128,
+      "farCallsPerOrbit": 8192,
+      "workerTransitionsPerOrbit": 64,
+      "assumption": "Intact indefinitely executing steady loop, modulo-65536 stack trail; excludes initial gap, worker-copy writes, timing and hostile interference."
+    },
+    {
+      "side": "B",
+      "bp": 17408,
+      "trailBytes": 256,
+      "gcdWithArena": 1024,
+      "anchorsPerOrbit": 64,
+      "paintedBytesPerOrbit": 16384,
+      "unpaintedBytesPerOrbit": 49152,
+      "minPaintMultiplicity": 0,
+      "maxPaintMultiplicity": 1,
+      "farCallsPerSteadyTrail": 64,
+      "farCallsPerOrbit": 4096,
+      "workerTransitionsPerOrbit": 64,
+      "assumption": "Intact indefinitely executing steady loop, modulo-65536 stack trail; excludes initial gap, worker-copy writes, timing and hostile interference."
+    }
+  ],
+  "interpretation": {
+    "hypothesis": "Shorter recurring anchor dwell while restoring full ideal stack-trail support through odd-page strides.",
+    "unchanged": "Anchor low byte A2, initial phases/gaps, private/initial/steady copy counts, 17-byte worker, capture code, all source except BP/DX initializers.",
+    "changed": "Two immediate bytes per warrior, recurring anchor order and orbit length, DX, dwell, coverage timing and partner/captured interactions.",
+    "aAlsoAffectsCapturedPath": true,
+    "tradeoff": "A complete ideal paint orbit retains 16384 far CALLs but needs 256 worker transitions instead of 64; full coverage takes extra copy/movement overhead.",
+    "limit": "Geometric support only, not equal wall-clock coverage, guaranteed survival, corrupted-code safety or proof of improved scores."
+  }
+}

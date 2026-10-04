@@ -1,0 +1,12 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import crypto from 'node:crypto';
+const root='C:/Maor/CodeGuru/corewars8086-lab',here=path.join(root,'.arena/kphl-defense-20261004'),session=path.join(root,'.arena/v6-cooperative-20261003');
+const old=path.join(session,'plans/kphldef-20261004-threat-screen.json'),p=JSON.parse(fs.readFileSync(old)),sha=f=>crypto.createHash('sha256').update(fs.readFileSync(f)).digest('hex');
+for(const c of p.cohorts)if(c.opponents[0].name==='Counter_anchor_hunter')c.opponents[0].warriors=['A','B'].map(w=>path.join(here,'counter-recheck','anchor_hunter'+w));
+p.id='kphldef-20261004-threat-screen-corrected';
+fs.writeFileSync(path.join(session,'plans/'+p.id+'.json'),JSON.stringify(p,null,2)+'\n',{flag:'wx'});
+const files=['A','B'].map(w=>path.join(here,'counter-recheck','anchor_hunter'+w));
+for(const f of files)if(fs.readFileSync(f).includes(Buffer.from('ff1fcccc','hex')))throw Error('Correctedhunter selfmatches');
+fs.writeFileSync(path.join(here,'counter-correction.json'),JSON.stringify({reason:'Untestedprototype had firstAX/anchorAX operands swapped. Corrected before threatbenchmark: searchFF1FCCCC, actualownanchorFF18. Initialthreatplan neverrun; correctedplan hasnewID.',files:files.map(f=>({path:f,sha256:sha(f)})),initialPlanSha256:sha(old),correctedPlan:p.id},null,2)+'\n',{flag:'wx'});
+console.log(p.id);

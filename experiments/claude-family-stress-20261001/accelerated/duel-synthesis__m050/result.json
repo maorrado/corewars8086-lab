@@ -1,0 +1,1275 @@
+{
+  "schemaVersion": 2,
+  "experimentId": "claude-family-stress-20261001-duel-synthesis__m050",
+  "generatedAt": "2026-10-01T09:52:09.201Z",
+  "configPath": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\configs\\duel-synthesis__m050.json",
+  "configSha256": "cdd0f9994a5e546deca50c9f4b4081b38b06c33aefcdbffe6c88ee083b580dcb",
+  "config": {
+    "java": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\temurin8-jre\\jdk8u504-b01-jre\\bin\\java.exe",
+    "jar": "C:\\Maor\\CodeGuru\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+    "threads": 1,
+    "parallel": false,
+    "telemetry": false,
+    "zombies": [
+      {
+        "name": "zom20a",
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\zombies\\zom20a"
+      },
+      {
+        "name": "zom20b",
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\zombies\\zom20b"
+      },
+      {
+        "name": "zom20c",
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\zombies\\zom20c"
+      },
+      {
+        "name": "zom20d",
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\zombies\\zom20d"
+      }
+    ],
+    "experimentId": "claude-family-stress-20261001-duel-synthesis__m050",
+    "outputPath": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\original-results\\duel-synthesis__m050.json",
+    "runDirectory": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\original-runs\\duel-synthesis__m050",
+    "candidate": {
+      "name": "DUEL_A",
+      "warriors": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\synthesis\\A",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\synthesis\\B"
+      ]
+    },
+    "battles": 25,
+    "seeds": [
+      "family-duel-20261001-s1-90be56e8f250ff3cee6b4027",
+      "family-duel-20261001-s2-8e9d1055c3d1f81a19e2d080",
+      "family-duel-20261001-s3-e3b0d8d93a2805628448e55b",
+      "family-duel-20261001-s4-578bff73f9d1784648f84b0b",
+      "family-duel-20261001-s5-bb51ce5eb562c928eafb5af6",
+      "family-duel-20261001-s6-c0e0ad3fa4eff807a6046b8a",
+      "family-duel-20261001-s7-a9f8fd98b38562ad06b61646",
+      "family-duel-20261001-s8-954b37bffef9a266dfd261aa"
+    ],
+    "cohorts": [
+      {
+        "id": "duel-synthesis__m050",
+        "opponents": [
+          {
+            "name": "DUEL_B",
+            "warriors": [
+              "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\m050\\A",
+              "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\m050\\B"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "engineJar": {
+    "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runtime\\base-engine.jar",
+    "sha256": "31639072397eaf69d99e90b10d8fa594a7446951f1137b7ebd298378f5ec318d"
+  },
+  "researchExecution": {
+    "mode": "isolated-persistent-serial",
+    "planPath": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\execution-plan.json",
+    "planSha256": "e7852cd2159efbc5bb6be0129f115c76049370e40a7543b15121b1171bc2b877",
+    "baseEngine": {
+      "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+      "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runtime\\base-engine.jar",
+      "bytes": 6601794,
+      "sha256": "31639072397eaf69d99e90b10d8fa594a7446951f1137b7ebd298378f5ec318d"
+    },
+    "wrapper": {
+      "mainClass": "SerialBatchMain",
+      "staged": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runtime\\wrapper",
+      "authoring": [
+        {
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\runtime\\research-batch.mjs",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\authoring\\research-batch.mjs",
+          "bytes": 20041,
+          "sha256": "df8d50e2cb7c15ff01d6e5b72cf32eac3c0fa2e51b3b2a8878c78b566abd20ef"
+        },
+        {
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\runtime\\batch-format.mjs",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\authoring\\batch-format.mjs",
+          "bytes": 1483,
+          "sha256": "46ad7ad4f92b7e9884ce1a008c8bbd65f9093217ef52506047d09a2b8c6baa8e"
+        },
+        {
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\runtime\\SerialBatchMain.java",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\authoring\\SerialBatchMain.java",
+          "bytes": 11133,
+          "sha256": "0298207e1ab699a40afde134a6a43e6b583250c44f4666e655dc622905b5d9ff"
+        }
+      ]
+    },
+    "overlays": [
+      {
+        "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\int87\\classes",
+        "staged": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runtime\\overlay-1"
+      },
+      {
+        "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\war\\combined\\classes",
+        "staged": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runtime\\overlay-2"
+      }
+    ],
+    "runtimeFiles": [
+      {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runtime\\base-engine.jar",
+        "bytes": 6601794,
+        "sha256": "31639072397eaf69d99e90b10d8fa594a7446951f1137b7ebd298378f5ec318d",
+        "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar"
+      },
+      {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runtime\\wrapper\\SerialBatchMain$Job.class",
+        "bytes": 410,
+        "sha256": "fa8c2fc008a1fb564209e23eef5193b37050cead9ce2db635f81928ffb01cc79",
+        "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\runtime\\classes\\SerialBatchMain$Job.class"
+      },
+      {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runtime\\wrapper\\SerialBatchMain$Runner.class",
+        "bytes": 7147,
+        "sha256": "100e9be36aed76e02ff2cd8fae3e420f2b49ea6325752af3b2065723d79d04ec",
+        "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\runtime\\classes\\SerialBatchMain$Runner.class"
+      },
+      {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runtime\\wrapper\\SerialBatchMain.class",
+        "bytes": 5177,
+        "sha256": "06cbeda757e36c075ad255a0b423df842046987d9537ba9bb103a57d40d1023c",
+        "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\runtime\\classes\\SerialBatchMain.class"
+      },
+      {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runtime\\overlay-1\\il\\co\\codeguru\\corewars8086\\cpu\\Cpu.class",
+        "bytes": 29990,
+        "sha256": "e358439ba520a69bb77a591c14d74ca84ad3273c8faa026f52413bd969f6e791",
+        "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\int87\\classes\\il\\co\\codeguru\\corewars8086\\cpu\\Cpu.class"
+      },
+      {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runtime\\overlay-1\\il\\co\\codeguru\\corewars8086\\memory\\RealModeMemoryImpl.class",
+        "bytes": 1582,
+        "sha256": "eab4aa031b78ab182b93d0bc90be6f4f83ec5d1c0076c420acf04920b298c8fc",
+        "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\int87\\classes\\il\\co\\codeguru\\corewars8086\\memory\\RealModeMemoryImpl.class"
+      },
+      {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runtime\\overlay-1\\il\\co\\codeguru\\corewars8086\\memory\\RestrictedAccessRealModeMemory.class",
+        "bytes": 2516,
+        "sha256": "b5baea97eb57dde63934a8da0563a2ec3a964be2c454eafab197c88a844af60b",
+        "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\int87\\classes\\il\\co\\codeguru\\corewars8086\\memory\\RestrictedAccessRealModeMemory.class"
+      },
+      {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runtime\\overlay-2\\il\\co\\codeguru\\corewars8086\\war\\War.class",
+        "bytes": 8673,
+        "sha256": "b6f8a9fd20429e5c32af7021bfe25c09ca86f3a68e8fac7b73b8789ad7eeedde",
+        "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\war\\combined\\classes\\il\\co\\codeguru\\corewars8086\\war\\War.class"
+      }
+    ],
+    "derivedConfig": {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\derived-config.json",
+      "bytes": 2941,
+      "sha256": "e5de9f38f8deb4d8edf108d5d8dec44ae21d70ae3d1c978040f069bf4cc0665a"
+    },
+    "java": {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\temurin8-jre\\jdk8u504-b01-jre\\bin\\java.exe",
+      "bytes": 304768,
+      "sha256": "46df95bb47e2ba2b10736cee2ab543289c66021611f1ec67d0d55d5128228c20"
+    },
+    "command": {
+      "executable": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\temurin8-jre\\jdk8u504-b01-jre\\bin\\java.exe",
+      "args": [
+        "-cp",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runtime\\wrapper;C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runtime\\overlay-1;C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runtime\\overlay-2;C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runtime\\base-engine.jar",
+        "SerialBatchMain",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\jobs.nul"
+      ]
+    },
+    "processElapsedSeconds": 38.160917,
+    "disclaimer": "Isolated research lane with persistent JVM/optional class overlay; not an official cold-engine result or a replacement for final original-engine validation."
+  },
+  "aggregate": {
+    "battles": 200,
+    "teamPerBattle": 0.529166665,
+    "warrior1PerBattle": 0.27666667250000004,
+    "warrior2PerBattle": 0.2525000110000001
+  },
+  "runs": [
+    {
+      "runId": "duel-synthesis__m050__family-duel-20261001-s1-90be56e8f250ff3cee6b4027",
+      "cohortId": "duel-synthesis__m050",
+      "seed": "family-duel-20261001-s1-90be56e8f250ff3cee6b4027",
+      "battles": 25,
+      "startedAt": "2026-10-01T09:51:31.291Z",
+      "elapsedSeconds": 6.4857393,
+      "elapsedConvention": "in-JVM wrapper job, not a cold process",
+      "command": {
+        "executable": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\temurin8-jre\\jdk8u504-b01-jre\\bin\\java.exe",
+        "args": [
+          "-cp",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runtime\\wrapper;C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runtime\\overlay-1;C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runtime\\overlay-2;C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runtime\\base-engine.jar",
+          "SerialBatchMain",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\jobs.nul"
+        ]
+      },
+      "engineArguments": [
+        "--headless",
+        "--comboSize",
+        "2",
+        "--battlesPerCombo",
+        "25",
+        "--seed",
+        "family-duel-20261001-s1-90be56e8f250ff3cee6b4027",
+        "--threads",
+        "1",
+        "--warriorsDir",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s1-90be56e8f250ff3cee6b4027\\survivors",
+        "--zombiesDir",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s1-90be56e8f250ff3cee6b4027\\zombies",
+        "--outputFile",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s1-90be56e8f250ff3cee6b4027\\scores.csv",
+        "--parallel=false"
+      ],
+      "inputs": {
+        "DUEL_A": [
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\synthesis\\A",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s1-90be56e8f250ff3cee6b4027\\survivors\\DUEL_A1",
+            "bytes": 207,
+            "sha256": "3875482b4d57a8d29f474215ed9dd41249bc17c46b1a662c4906554b5d859b9c"
+          },
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\synthesis\\B",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s1-90be56e8f250ff3cee6b4027\\survivors\\DUEL_A2",
+            "bytes": 115,
+            "sha256": "99055d82958f813de2067a17dde8ea361c749bd4dc916095a4dad1ad8e13ce2b"
+          }
+        ],
+        "DUEL_B": [
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\m050\\A",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s1-90be56e8f250ff3cee6b4027\\survivors\\DUEL_B1",
+            "bytes": 189,
+            "sha256": "0268ce4f301bf2ada8566f4e608180a0670a335a80b9c2b93b67aee2b632bd44"
+          },
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\m050\\B",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s1-90be56e8f250ff3cee6b4027\\survivors\\DUEL_B2",
+            "bytes": 117,
+            "sha256": "06b5a1ff7bac4b146620de6d1de512dfedf3f28366d6435bf61d49869d971782"
+          }
+        ]
+      },
+      "zombies": [
+        {
+          "name": "zom20a",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\zombies\\zom20a",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s1-90be56e8f250ff3cee6b4027\\zombies\\zom20a",
+          "bytes": 73,
+          "sha256": "a950e618ea2e127096c85f486fb555c264730d924a2192c407aa66e6e0318eb6"
+        },
+        {
+          "name": "zom20b",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\zombies\\zom20b",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s1-90be56e8f250ff3cee6b4027\\zombies\\zom20b",
+          "bytes": 382,
+          "sha256": "af6394c021ccb5e486db507e2ccd787bd5675f8fec88fd2ddbe9f834566852ce"
+        },
+        {
+          "name": "zom20c",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\zombies\\zom20c",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s1-90be56e8f250ff3cee6b4027\\zombies\\zom20c",
+          "bytes": 232,
+          "sha256": "3d3f209967f51a7344e0eab582bc04d1e694da5a73e3682a26ed483dcab7a443"
+        },
+        {
+          "name": "zom20d",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\zombies\\zom20d",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s1-90be56e8f250ff3cee6b4027\\zombies\\zom20d",
+          "bytes": 382,
+          "sha256": "923dd6abebbb7bb502ec5a02873c26175820ada5c4409d179d8464f0e90cb6fc"
+        }
+      ],
+      "scores": {
+        "groups": {
+          "DUEL_A": 11.5,
+          "DUEL_B": 13.5
+        },
+        "warriors": {
+          "DUEL_A1": 6.0833335,
+          "DUEL_A2": 5.416667,
+          "DUEL_B1": 7.416667,
+          "DUEL_B2": 6.0833335
+        }
+      },
+      "candidate": {
+        "teamRaw": 11.5,
+        "teamPerBattle": 0.46,
+        "warrior1Raw": 6.0833335,
+        "warrior1PerBattle": 0.24333334,
+        "warrior2Raw": 5.416667,
+        "warrior2PerBattle": 0.21666668
+      },
+      "rawScoreText": "Groups:\nDUEL_A,11.5\nDUEL_B,13.5\n\nWarriors:\nDUEL_A1,6.0833335\nDUEL_A2,5.416667\nDUEL_B1,7.416667\nDUEL_B2,6.0833335\n",
+      "stdout": "CoreWars8086 - headless mode\n\nLoaded warriors: [DUEL_A, DUEL_B]\nStarting competition (25 wars).\nCompetition is over. Ran 25 wars\nWriting scores to file C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s1-90be56e8f250ff3cee6b4027\\scores.csv\n",
+      "conservation": {
+        "totalPoints": 25,
+        "unawardedBattles": 0,
+        "tolerance": 0.00025
+      },
+      "scoreFile": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s1-90be56e8f250ff3cee6b4027\\scores.csv",
+        "bytes": 113,
+        "sha256": "706118aef9fb83afe66b7f008ff6f48f99e66d306f79a1529532c1a6991b0a36"
+      },
+      "telemetry": null,
+      "execution": {
+        "planSha256": "e7852cd2159efbc5bb6be0129f115c76049370e40a7543b15121b1171bc2b877",
+        "jobId": "job-1",
+        "baseConfigSha256": "cdd0f9994a5e546deca50c9f4b4081b38b06c33aefcdbffe6c88ee083b580dcb",
+        "researchMode": "isolated-persistent-serial"
+      }
+    },
+    {
+      "runId": "duel-synthesis__m050__family-duel-20261001-s2-8e9d1055c3d1f81a19e2d080",
+      "cohortId": "duel-synthesis__m050",
+      "seed": "family-duel-20261001-s2-8e9d1055c3d1f81a19e2d080",
+      "battles": 25,
+      "startedAt": "2026-10-01T09:51:37.790Z",
+      "elapsedSeconds": 5.9453132,
+      "elapsedConvention": "in-JVM wrapper job, not a cold process",
+      "command": {
+        "executable": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\temurin8-jre\\jdk8u504-b01-jre\\bin\\java.exe",
+        "args": [
+          "-cp",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runtime\\wrapper;C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runtime\\overlay-1;C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runtime\\overlay-2;C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runtime\\base-engine.jar",
+          "SerialBatchMain",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\jobs.nul"
+        ]
+      },
+      "engineArguments": [
+        "--headless",
+        "--comboSize",
+        "2",
+        "--battlesPerCombo",
+        "25",
+        "--seed",
+        "family-duel-20261001-s2-8e9d1055c3d1f81a19e2d080",
+        "--threads",
+        "1",
+        "--warriorsDir",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s2-8e9d1055c3d1f81a19e2d080\\survivors",
+        "--zombiesDir",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s2-8e9d1055c3d1f81a19e2d080\\zombies",
+        "--outputFile",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s2-8e9d1055c3d1f81a19e2d080\\scores.csv",
+        "--parallel=false"
+      ],
+      "inputs": {
+        "DUEL_A": [
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\synthesis\\A",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s2-8e9d1055c3d1f81a19e2d080\\survivors\\DUEL_A1",
+            "bytes": 207,
+            "sha256": "3875482b4d57a8d29f474215ed9dd41249bc17c46b1a662c4906554b5d859b9c"
+          },
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\synthesis\\B",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s2-8e9d1055c3d1f81a19e2d080\\survivors\\DUEL_A2",
+            "bytes": 115,
+            "sha256": "99055d82958f813de2067a17dde8ea361c749bd4dc916095a4dad1ad8e13ce2b"
+          }
+        ],
+        "DUEL_B": [
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\m050\\A",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s2-8e9d1055c3d1f81a19e2d080\\survivors\\DUEL_B1",
+            "bytes": 189,
+            "sha256": "0268ce4f301bf2ada8566f4e608180a0670a335a80b9c2b93b67aee2b632bd44"
+          },
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\m050\\B",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s2-8e9d1055c3d1f81a19e2d080\\survivors\\DUEL_B2",
+            "bytes": 117,
+            "sha256": "06b5a1ff7bac4b146620de6d1de512dfedf3f28366d6435bf61d49869d971782"
+          }
+        ]
+      },
+      "zombies": [
+        {
+          "name": "zom20a",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\zombies\\zom20a",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s2-8e9d1055c3d1f81a19e2d080\\zombies\\zom20a",
+          "bytes": 73,
+          "sha256": "a950e618ea2e127096c85f486fb555c264730d924a2192c407aa66e6e0318eb6"
+        },
+        {
+          "name": "zom20b",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\zombies\\zom20b",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s2-8e9d1055c3d1f81a19e2d080\\zombies\\zom20b",
+          "bytes": 382,
+          "sha256": "af6394c021ccb5e486db507e2ccd787bd5675f8fec88fd2ddbe9f834566852ce"
+        },
+        {
+          "name": "zom20c",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\zombies\\zom20c",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s2-8e9d1055c3d1f81a19e2d080\\zombies\\zom20c",
+          "bytes": 232,
+          "sha256": "3d3f209967f51a7344e0eab582bc04d1e694da5a73e3682a26ed483dcab7a443"
+        },
+        {
+          "name": "zom20d",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\zombies\\zom20d",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s2-8e9d1055c3d1f81a19e2d080\\zombies\\zom20d",
+          "bytes": 382,
+          "sha256": "923dd6abebbb7bb502ec5a02873c26175820ada5c4409d179d8464f0e90cb6fc"
+        }
+      ],
+      "scores": {
+        "groups": {
+          "DUEL_A": 10.5,
+          "DUEL_B": 14.499999
+        },
+        "warriors": {
+          "DUEL_A1": 7.8333335,
+          "DUEL_A2": 2.6666667,
+          "DUEL_B1": 11.166667,
+          "DUEL_B2": 3.3333333
+        }
+      },
+      "candidate": {
+        "teamRaw": 10.5,
+        "teamPerBattle": 0.42,
+        "warrior1Raw": 7.8333335,
+        "warrior1PerBattle": 0.31333334,
+        "warrior2Raw": 2.6666667,
+        "warrior2PerBattle": 0.10666666799999999
+      },
+      "rawScoreText": "Groups:\nDUEL_A,10.5\nDUEL_B,14.499999\n\nWarriors:\nDUEL_A1,7.8333335\nDUEL_A2,2.6666667\nDUEL_B1,11.166667\nDUEL_B2,3.3333333\n",
+      "stdout": "CoreWars8086 - headless mode\n\nLoaded warriors: [DUEL_A, DUEL_B]\nStarting competition (25 wars).\nCompetition is over. Ran 25 wars\nWriting scores to file C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s2-8e9d1055c3d1f81a19e2d080\\scores.csv\n",
+      "conservation": {
+        "totalPoints": 24.999999000000003,
+        "unawardedBattles": 0,
+        "tolerance": 0.00025
+      },
+      "scoreFile": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s2-8e9d1055c3d1f81a19e2d080\\scores.csv",
+        "bytes": 120,
+        "sha256": "9a79f005d7e2369dfbbfcfe6a1835f860dbd08e5da07990f9ec1c8e9a52565bc"
+      },
+      "telemetry": null,
+      "execution": {
+        "planSha256": "e7852cd2159efbc5bb6be0129f115c76049370e40a7543b15121b1171bc2b877",
+        "jobId": "job-2",
+        "baseConfigSha256": "cdd0f9994a5e546deca50c9f4b4081b38b06c33aefcdbffe6c88ee083b580dcb",
+        "researchMode": "isolated-persistent-serial"
+      }
+    },
+    {
+      "runId": "duel-synthesis__m050__family-duel-20261001-s3-e3b0d8d93a2805628448e55b",
+      "cohortId": "duel-synthesis__m050",
+      "seed": "family-duel-20261001-s3-e3b0d8d93a2805628448e55b",
+      "battles": 25,
+      "startedAt": "2026-10-01T09:51:43.734Z",
+      "elapsedSeconds": 6.2071737,
+      "elapsedConvention": "in-JVM wrapper job, not a cold process",
+      "command": {
+        "executable": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\temurin8-jre\\jdk8u504-b01-jre\\bin\\java.exe",
+        "args": [
+          "-cp",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runtime\\wrapper;C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runtime\\overlay-1;C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runtime\\overlay-2;C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runtime\\base-engine.jar",
+          "SerialBatchMain",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\jobs.nul"
+        ]
+      },
+      "engineArguments": [
+        "--headless",
+        "--comboSize",
+        "2",
+        "--battlesPerCombo",
+        "25",
+        "--seed",
+        "family-duel-20261001-s3-e3b0d8d93a2805628448e55b",
+        "--threads",
+        "1",
+        "--warriorsDir",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s3-e3b0d8d93a2805628448e55b\\survivors",
+        "--zombiesDir",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s3-e3b0d8d93a2805628448e55b\\zombies",
+        "--outputFile",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s3-e3b0d8d93a2805628448e55b\\scores.csv",
+        "--parallel=false"
+      ],
+      "inputs": {
+        "DUEL_A": [
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\synthesis\\A",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s3-e3b0d8d93a2805628448e55b\\survivors\\DUEL_A1",
+            "bytes": 207,
+            "sha256": "3875482b4d57a8d29f474215ed9dd41249bc17c46b1a662c4906554b5d859b9c"
+          },
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\synthesis\\B",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s3-e3b0d8d93a2805628448e55b\\survivors\\DUEL_A2",
+            "bytes": 115,
+            "sha256": "99055d82958f813de2067a17dde8ea361c749bd4dc916095a4dad1ad8e13ce2b"
+          }
+        ],
+        "DUEL_B": [
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\m050\\A",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s3-e3b0d8d93a2805628448e55b\\survivors\\DUEL_B1",
+            "bytes": 189,
+            "sha256": "0268ce4f301bf2ada8566f4e608180a0670a335a80b9c2b93b67aee2b632bd44"
+          },
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\m050\\B",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s3-e3b0d8d93a2805628448e55b\\survivors\\DUEL_B2",
+            "bytes": 117,
+            "sha256": "06b5a1ff7bac4b146620de6d1de512dfedf3f28366d6435bf61d49869d971782"
+          }
+        ]
+      },
+      "zombies": [
+        {
+          "name": "zom20a",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\zombies\\zom20a",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s3-e3b0d8d93a2805628448e55b\\zombies\\zom20a",
+          "bytes": 73,
+          "sha256": "a950e618ea2e127096c85f486fb555c264730d924a2192c407aa66e6e0318eb6"
+        },
+        {
+          "name": "zom20b",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\zombies\\zom20b",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s3-e3b0d8d93a2805628448e55b\\zombies\\zom20b",
+          "bytes": 382,
+          "sha256": "af6394c021ccb5e486db507e2ccd787bd5675f8fec88fd2ddbe9f834566852ce"
+        },
+        {
+          "name": "zom20c",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\zombies\\zom20c",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s3-e3b0d8d93a2805628448e55b\\zombies\\zom20c",
+          "bytes": 232,
+          "sha256": "3d3f209967f51a7344e0eab582bc04d1e694da5a73e3682a26ed483dcab7a443"
+        },
+        {
+          "name": "zom20d",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\zombies\\zom20d",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s3-e3b0d8d93a2805628448e55b\\zombies\\zom20d",
+          "bytes": 382,
+          "sha256": "923dd6abebbb7bb502ec5a02873c26175820ada5c4409d179d8464f0e90cb6fc"
+        }
+      ],
+      "scores": {
+        "groups": {
+          "DUEL_A": 12.333333,
+          "DUEL_B": 12.666666
+        },
+        "warriors": {
+          "DUEL_A1": 7.5,
+          "DUEL_A2": 4.8333335,
+          "DUEL_B1": 8.333334,
+          "DUEL_B2": 4.3333335
+        }
+      },
+      "candidate": {
+        "teamRaw": 12.333333,
+        "teamPerBattle": 0.49333331999999996,
+        "warrior1Raw": 7.5,
+        "warrior1PerBattle": 0.3,
+        "warrior2Raw": 4.8333335,
+        "warrior2PerBattle": 0.19333334000000002
+      },
+      "rawScoreText": "Groups:\nDUEL_A,12.333333\nDUEL_B,12.666666\n\nWarriors:\nDUEL_A1,7.5\nDUEL_A2,4.8333335\nDUEL_B1,8.333334\nDUEL_B2,4.3333335\n",
+      "stdout": "CoreWars8086 - headless mode\n\nLoaded warriors: [DUEL_A, DUEL_B]\nStarting competition (25 wars).\nCompetition is over. Ran 25 wars\nWriting scores to file C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s3-e3b0d8d93a2805628448e55b\\scores.csv\n",
+      "conservation": {
+        "totalPoints": 24.999999,
+        "unawardedBattles": 0,
+        "tolerance": 0.00025
+      },
+      "scoreFile": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s3-e3b0d8d93a2805628448e55b\\scores.csv",
+        "bytes": 118,
+        "sha256": "f9abd346505cb3d635ee99bae581098ba2c59ca226df06e22023cde9b37b6b7d"
+      },
+      "telemetry": null,
+      "execution": {
+        "planSha256": "e7852cd2159efbc5bb6be0129f115c76049370e40a7543b15121b1171bc2b877",
+        "jobId": "job-3",
+        "baseConfigSha256": "cdd0f9994a5e546deca50c9f4b4081b38b06c33aefcdbffe6c88ee083b580dcb",
+        "researchMode": "isolated-persistent-serial"
+      }
+    },
+    {
+      "runId": "duel-synthesis__m050__family-duel-20261001-s4-578bff73f9d1784648f84b0b",
+      "cohortId": "duel-synthesis__m050",
+      "seed": "family-duel-20261001-s4-578bff73f9d1784648f84b0b",
+      "battles": 25,
+      "startedAt": "2026-10-01T09:51:49.936Z",
+      "elapsedSeconds": 4.0950237,
+      "elapsedConvention": "in-JVM wrapper job, not a cold process",
+      "command": {
+        "executable": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\temurin8-jre\\jdk8u504-b01-jre\\bin\\java.exe",
+        "args": [
+          "-cp",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runtime\\wrapper;C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runtime\\overlay-1;C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runtime\\overlay-2;C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runtime\\base-engine.jar",
+          "SerialBatchMain",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\jobs.nul"
+        ]
+      },
+      "engineArguments": [
+        "--headless",
+        "--comboSize",
+        "2",
+        "--battlesPerCombo",
+        "25",
+        "--seed",
+        "family-duel-20261001-s4-578bff73f9d1784648f84b0b",
+        "--threads",
+        "1",
+        "--warriorsDir",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s4-578bff73f9d1784648f84b0b\\survivors",
+        "--zombiesDir",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s4-578bff73f9d1784648f84b0b\\zombies",
+        "--outputFile",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s4-578bff73f9d1784648f84b0b\\scores.csv",
+        "--parallel=false"
+      ],
+      "inputs": {
+        "DUEL_A": [
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\synthesis\\A",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s4-578bff73f9d1784648f84b0b\\survivors\\DUEL_A1",
+            "bytes": 207,
+            "sha256": "3875482b4d57a8d29f474215ed9dd41249bc17c46b1a662c4906554b5d859b9c"
+          },
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\synthesis\\B",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s4-578bff73f9d1784648f84b0b\\survivors\\DUEL_A2",
+            "bytes": 115,
+            "sha256": "99055d82958f813de2067a17dde8ea361c749bd4dc916095a4dad1ad8e13ce2b"
+          }
+        ],
+        "DUEL_B": [
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\m050\\A",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s4-578bff73f9d1784648f84b0b\\survivors\\DUEL_B1",
+            "bytes": 189,
+            "sha256": "0268ce4f301bf2ada8566f4e608180a0670a335a80b9c2b93b67aee2b632bd44"
+          },
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\m050\\B",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s4-578bff73f9d1784648f84b0b\\survivors\\DUEL_B2",
+            "bytes": 117,
+            "sha256": "06b5a1ff7bac4b146620de6d1de512dfedf3f28366d6435bf61d49869d971782"
+          }
+        ]
+      },
+      "zombies": [
+        {
+          "name": "zom20a",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\zombies\\zom20a",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s4-578bff73f9d1784648f84b0b\\zombies\\zom20a",
+          "bytes": 73,
+          "sha256": "a950e618ea2e127096c85f486fb555c264730d924a2192c407aa66e6e0318eb6"
+        },
+        {
+          "name": "zom20b",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\zombies\\zom20b",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s4-578bff73f9d1784648f84b0b\\zombies\\zom20b",
+          "bytes": 382,
+          "sha256": "af6394c021ccb5e486db507e2ccd787bd5675f8fec88fd2ddbe9f834566852ce"
+        },
+        {
+          "name": "zom20c",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\zombies\\zom20c",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s4-578bff73f9d1784648f84b0b\\zombies\\zom20c",
+          "bytes": 232,
+          "sha256": "3d3f209967f51a7344e0eab582bc04d1e694da5a73e3682a26ed483dcab7a443"
+        },
+        {
+          "name": "zom20d",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\zombies\\zom20d",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s4-578bff73f9d1784648f84b0b\\zombies\\zom20d",
+          "bytes": 382,
+          "sha256": "923dd6abebbb7bb502ec5a02873c26175820ada5c4409d179d8464f0e90cb6fc"
+        }
+      ],
+      "scores": {
+        "groups": {
+          "DUEL_A": 13.833333,
+          "DUEL_B": 11.166668
+        },
+        "warriors": {
+          "DUEL_A1": 5.166667,
+          "DUEL_A2": 8.666667,
+          "DUEL_B1": 3.6666667,
+          "DUEL_B2": 7.5
+        }
+      },
+      "candidate": {
+        "teamRaw": 13.833333,
+        "teamPerBattle": 0.55333332,
+        "warrior1Raw": 5.166667,
+        "warrior1PerBattle": 0.20666668000000002,
+        "warrior2Raw": 8.666667,
+        "warrior2PerBattle": 0.34666668
+      },
+      "rawScoreText": "Groups:\nDUEL_A,13.833333\nDUEL_B,11.166668\n\nWarriors:\nDUEL_A1,5.166667\nDUEL_A2,8.666667\nDUEL_B1,3.6666667\nDUEL_B2,7.5\n",
+      "stdout": "CoreWars8086 - headless mode\n\nLoaded warriors: [DUEL_A, DUEL_B]\nStarting competition (25 wars).\nCompetition is over. Ran 25 wars\nWriting scores to file C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s4-578bff73f9d1784648f84b0b\\scores.csv\n",
+      "conservation": {
+        "totalPoints": 25.000000999999997,
+        "unawardedBattles": 0,
+        "tolerance": 0.00025
+      },
+      "scoreFile": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s4-578bff73f9d1784648f84b0b\\scores.csv",
+        "bytes": 117,
+        "sha256": "dc8f1f29ad765e7b392d89a145ebb9ea630b542c3a6c298bfd91d7d1452704c6"
+      },
+      "telemetry": null,
+      "execution": {
+        "planSha256": "e7852cd2159efbc5bb6be0129f115c76049370e40a7543b15121b1171bc2b877",
+        "jobId": "job-4",
+        "baseConfigSha256": "cdd0f9994a5e546deca50c9f4b4081b38b06c33aefcdbffe6c88ee083b580dcb",
+        "researchMode": "isolated-persistent-serial"
+      }
+    },
+    {
+      "runId": "duel-synthesis__m050__family-duel-20261001-s5-bb51ce5eb562c928eafb5af6",
+      "cohortId": "duel-synthesis__m050",
+      "seed": "family-duel-20261001-s5-bb51ce5eb562c928eafb5af6",
+      "battles": 25,
+      "startedAt": "2026-10-01T09:51:54.039Z",
+      "elapsedSeconds": 4.2604066,
+      "elapsedConvention": "in-JVM wrapper job, not a cold process",
+      "command": {
+        "executable": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\temurin8-jre\\jdk8u504-b01-jre\\bin\\java.exe",
+        "args": [
+          "-cp",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runtime\\wrapper;C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runtime\\overlay-1;C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runtime\\overlay-2;C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runtime\\base-engine.jar",
+          "SerialBatchMain",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\jobs.nul"
+        ]
+      },
+      "engineArguments": [
+        "--headless",
+        "--comboSize",
+        "2",
+        "--battlesPerCombo",
+        "25",
+        "--seed",
+        "family-duel-20261001-s5-bb51ce5eb562c928eafb5af6",
+        "--threads",
+        "1",
+        "--warriorsDir",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s5-bb51ce5eb562c928eafb5af6\\survivors",
+        "--zombiesDir",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s5-bb51ce5eb562c928eafb5af6\\zombies",
+        "--outputFile",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s5-bb51ce5eb562c928eafb5af6\\scores.csv",
+        "--parallel=false"
+      ],
+      "inputs": {
+        "DUEL_A": [
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\synthesis\\A",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s5-bb51ce5eb562c928eafb5af6\\survivors\\DUEL_A1",
+            "bytes": 207,
+            "sha256": "3875482b4d57a8d29f474215ed9dd41249bc17c46b1a662c4906554b5d859b9c"
+          },
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\synthesis\\B",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s5-bb51ce5eb562c928eafb5af6\\survivors\\DUEL_A2",
+            "bytes": 115,
+            "sha256": "99055d82958f813de2067a17dde8ea361c749bd4dc916095a4dad1ad8e13ce2b"
+          }
+        ],
+        "DUEL_B": [
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\m050\\A",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s5-bb51ce5eb562c928eafb5af6\\survivors\\DUEL_B1",
+            "bytes": 189,
+            "sha256": "0268ce4f301bf2ada8566f4e608180a0670a335a80b9c2b93b67aee2b632bd44"
+          },
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\m050\\B",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s5-bb51ce5eb562c928eafb5af6\\survivors\\DUEL_B2",
+            "bytes": 117,
+            "sha256": "06b5a1ff7bac4b146620de6d1de512dfedf3f28366d6435bf61d49869d971782"
+          }
+        ]
+      },
+      "zombies": [
+        {
+          "name": "zom20a",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\zombies\\zom20a",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s5-bb51ce5eb562c928eafb5af6\\zombies\\zom20a",
+          "bytes": 73,
+          "sha256": "a950e618ea2e127096c85f486fb555c264730d924a2192c407aa66e6e0318eb6"
+        },
+        {
+          "name": "zom20b",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\zombies\\zom20b",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s5-bb51ce5eb562c928eafb5af6\\zombies\\zom20b",
+          "bytes": 382,
+          "sha256": "af6394c021ccb5e486db507e2ccd787bd5675f8fec88fd2ddbe9f834566852ce"
+        },
+        {
+          "name": "zom20c",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\zombies\\zom20c",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s5-bb51ce5eb562c928eafb5af6\\zombies\\zom20c",
+          "bytes": 232,
+          "sha256": "3d3f209967f51a7344e0eab582bc04d1e694da5a73e3682a26ed483dcab7a443"
+        },
+        {
+          "name": "zom20d",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\zombies\\zom20d",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s5-bb51ce5eb562c928eafb5af6\\zombies\\zom20d",
+          "bytes": 382,
+          "sha256": "923dd6abebbb7bb502ec5a02873c26175820ada5c4409d179d8464f0e90cb6fc"
+        }
+      ],
+      "scores": {
+        "groups": {
+          "DUEL_A": 14.166666,
+          "DUEL_B": 10.833333
+        },
+        "warriors": {
+          "DUEL_A1": 7.0833335,
+          "DUEL_A2": 7.0833335,
+          "DUEL_B1": 6.75,
+          "DUEL_B2": 4.0833335
+        }
+      },
+      "candidate": {
+        "teamRaw": 14.166666,
+        "teamPerBattle": 0.56666664,
+        "warrior1Raw": 7.0833335,
+        "warrior1PerBattle": 0.28333334,
+        "warrior2Raw": 7.0833335,
+        "warrior2PerBattle": 0.28333334
+      },
+      "rawScoreText": "Groups:\nDUEL_A,14.166666\nDUEL_B,10.833333\n\nWarriors:\nDUEL_A1,7.0833335\nDUEL_A2,7.0833335\nDUEL_B1,6.75\nDUEL_B2,4.0833335\n",
+      "stdout": "CoreWars8086 - headless mode\n\nLoaded warriors: [DUEL_A, DUEL_B]\nStarting competition (25 wars).\nCompetition is over. Ran 25 wars\nWriting scores to file C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s5-bb51ce5eb562c928eafb5af6\\scores.csv\n",
+      "conservation": {
+        "totalPoints": 24.999999,
+        "unawardedBattles": 0,
+        "tolerance": 0.00025
+      },
+      "scoreFile": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s5-bb51ce5eb562c928eafb5af6\\scores.csv",
+        "bytes": 120,
+        "sha256": "97e1645ca0a4c22934c5fe20fd9c8ca81ea5f7b69139a3bd883a0e9abf6fe35d"
+      },
+      "telemetry": null,
+      "execution": {
+        "planSha256": "e7852cd2159efbc5bb6be0129f115c76049370e40a7543b15121b1171bc2b877",
+        "jobId": "job-5",
+        "baseConfigSha256": "cdd0f9994a5e546deca50c9f4b4081b38b06c33aefcdbffe6c88ee083b580dcb",
+        "researchMode": "isolated-persistent-serial"
+      }
+    },
+    {
+      "runId": "duel-synthesis__m050__family-duel-20261001-s6-c0e0ad3fa4eff807a6046b8a",
+      "cohortId": "duel-synthesis__m050",
+      "seed": "family-duel-20261001-s6-c0e0ad3fa4eff807a6046b8a",
+      "battles": 25,
+      "startedAt": "2026-10-01T09:51:58.297Z",
+      "elapsedSeconds": 3.2834518,
+      "elapsedConvention": "in-JVM wrapper job, not a cold process",
+      "command": {
+        "executable": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\temurin8-jre\\jdk8u504-b01-jre\\bin\\java.exe",
+        "args": [
+          "-cp",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runtime\\wrapper;C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runtime\\overlay-1;C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runtime\\overlay-2;C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runtime\\base-engine.jar",
+          "SerialBatchMain",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\jobs.nul"
+        ]
+      },
+      "engineArguments": [
+        "--headless",
+        "--comboSize",
+        "2",
+        "--battlesPerCombo",
+        "25",
+        "--seed",
+        "family-duel-20261001-s6-c0e0ad3fa4eff807a6046b8a",
+        "--threads",
+        "1",
+        "--warriorsDir",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s6-c0e0ad3fa4eff807a6046b8a\\survivors",
+        "--zombiesDir",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s6-c0e0ad3fa4eff807a6046b8a\\zombies",
+        "--outputFile",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s6-c0e0ad3fa4eff807a6046b8a\\scores.csv",
+        "--parallel=false"
+      ],
+      "inputs": {
+        "DUEL_A": [
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\synthesis\\A",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s6-c0e0ad3fa4eff807a6046b8a\\survivors\\DUEL_A1",
+            "bytes": 207,
+            "sha256": "3875482b4d57a8d29f474215ed9dd41249bc17c46b1a662c4906554b5d859b9c"
+          },
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\synthesis\\B",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s6-c0e0ad3fa4eff807a6046b8a\\survivors\\DUEL_A2",
+            "bytes": 115,
+            "sha256": "99055d82958f813de2067a17dde8ea361c749bd4dc916095a4dad1ad8e13ce2b"
+          }
+        ],
+        "DUEL_B": [
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\m050\\A",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s6-c0e0ad3fa4eff807a6046b8a\\survivors\\DUEL_B1",
+            "bytes": 189,
+            "sha256": "0268ce4f301bf2ada8566f4e608180a0670a335a80b9c2b93b67aee2b632bd44"
+          },
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\m050\\B",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s6-c0e0ad3fa4eff807a6046b8a\\survivors\\DUEL_B2",
+            "bytes": 117,
+            "sha256": "06b5a1ff7bac4b146620de6d1de512dfedf3f28366d6435bf61d49869d971782"
+          }
+        ]
+      },
+      "zombies": [
+        {
+          "name": "zom20a",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\zombies\\zom20a",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s6-c0e0ad3fa4eff807a6046b8a\\zombies\\zom20a",
+          "bytes": 73,
+          "sha256": "a950e618ea2e127096c85f486fb555c264730d924a2192c407aa66e6e0318eb6"
+        },
+        {
+          "name": "zom20b",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\zombies\\zom20b",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s6-c0e0ad3fa4eff807a6046b8a\\zombies\\zom20b",
+          "bytes": 382,
+          "sha256": "af6394c021ccb5e486db507e2ccd787bd5675f8fec88fd2ddbe9f834566852ce"
+        },
+        {
+          "name": "zom20c",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\zombies\\zom20c",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s6-c0e0ad3fa4eff807a6046b8a\\zombies\\zom20c",
+          "bytes": 232,
+          "sha256": "3d3f209967f51a7344e0eab582bc04d1e694da5a73e3682a26ed483dcab7a443"
+        },
+        {
+          "name": "zom20d",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\zombies\\zom20d",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s6-c0e0ad3fa4eff807a6046b8a\\zombies\\zom20d",
+          "bytes": 382,
+          "sha256": "923dd6abebbb7bb502ec5a02873c26175820ada5c4409d179d8464f0e90cb6fc"
+        }
+      ],
+      "scores": {
+        "groups": {
+          "DUEL_A": 14.166667,
+          "DUEL_B": 10.833332
+        },
+        "warriors": {
+          "DUEL_A1": 6.5,
+          "DUEL_A2": 7.666667,
+          "DUEL_B1": 5.166667,
+          "DUEL_B2": 5.6666665
+        }
+      },
+      "candidate": {
+        "teamRaw": 14.166667,
+        "teamPerBattle": 0.56666668,
+        "warrior1Raw": 6.5,
+        "warrior1PerBattle": 0.26,
+        "warrior2Raw": 7.666667,
+        "warrior2PerBattle": 0.30666668
+      },
+      "rawScoreText": "Groups:\nDUEL_A,14.166667\nDUEL_B,10.833332\n\nWarriors:\nDUEL_A1,6.5\nDUEL_A2,7.666667\nDUEL_B1,5.166667\nDUEL_B2,5.6666665\n",
+      "stdout": "CoreWars8086 - headless mode\n\nLoaded warriors: [DUEL_A, DUEL_B]\nStarting competition (25 wars).\nCompetition is over. Ran 25 wars\nWriting scores to file C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s6-c0e0ad3fa4eff807a6046b8a\\scores.csv\n",
+      "conservation": {
+        "totalPoints": 24.999999000000003,
+        "unawardedBattles": 0,
+        "tolerance": 0.00025
+      },
+      "scoreFile": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s6-c0e0ad3fa4eff807a6046b8a\\scores.csv",
+        "bytes": 117,
+        "sha256": "e2e0b0689e075d3833ab2e1ac497d7515f4bc3d6ef5e42135e2a866917d175ee"
+      },
+      "telemetry": null,
+      "execution": {
+        "planSha256": "e7852cd2159efbc5bb6be0129f115c76049370e40a7543b15121b1171bc2b877",
+        "jobId": "job-6",
+        "baseConfigSha256": "cdd0f9994a5e546deca50c9f4b4081b38b06c33aefcdbffe6c88ee083b580dcb",
+        "researchMode": "isolated-persistent-serial"
+      }
+    },
+    {
+      "runId": "duel-synthesis__m050__family-duel-20261001-s7-a9f8fd98b38562ad06b61646",
+      "cohortId": "duel-synthesis__m050",
+      "seed": "family-duel-20261001-s7-a9f8fd98b38562ad06b61646",
+      "battles": 25,
+      "startedAt": "2026-10-01T09:52:01.585Z",
+      "elapsedSeconds": 4.4206596,
+      "elapsedConvention": "in-JVM wrapper job, not a cold process",
+      "command": {
+        "executable": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\temurin8-jre\\jdk8u504-b01-jre\\bin\\java.exe",
+        "args": [
+          "-cp",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runtime\\wrapper;C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runtime\\overlay-1;C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runtime\\overlay-2;C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runtime\\base-engine.jar",
+          "SerialBatchMain",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\jobs.nul"
+        ]
+      },
+      "engineArguments": [
+        "--headless",
+        "--comboSize",
+        "2",
+        "--battlesPerCombo",
+        "25",
+        "--seed",
+        "family-duel-20261001-s7-a9f8fd98b38562ad06b61646",
+        "--threads",
+        "1",
+        "--warriorsDir",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s7-a9f8fd98b38562ad06b61646\\survivors",
+        "--zombiesDir",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s7-a9f8fd98b38562ad06b61646\\zombies",
+        "--outputFile",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s7-a9f8fd98b38562ad06b61646\\scores.csv",
+        "--parallel=false"
+      ],
+      "inputs": {
+        "DUEL_A": [
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\synthesis\\A",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s7-a9f8fd98b38562ad06b61646\\survivors\\DUEL_A1",
+            "bytes": 207,
+            "sha256": "3875482b4d57a8d29f474215ed9dd41249bc17c46b1a662c4906554b5d859b9c"
+          },
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\synthesis\\B",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s7-a9f8fd98b38562ad06b61646\\survivors\\DUEL_A2",
+            "bytes": 115,
+            "sha256": "99055d82958f813de2067a17dde8ea361c749bd4dc916095a4dad1ad8e13ce2b"
+          }
+        ],
+        "DUEL_B": [
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\m050\\A",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s7-a9f8fd98b38562ad06b61646\\survivors\\DUEL_B1",
+            "bytes": 189,
+            "sha256": "0268ce4f301bf2ada8566f4e608180a0670a335a80b9c2b93b67aee2b632bd44"
+          },
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\m050\\B",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s7-a9f8fd98b38562ad06b61646\\survivors\\DUEL_B2",
+            "bytes": 117,
+            "sha256": "06b5a1ff7bac4b146620de6d1de512dfedf3f28366d6435bf61d49869d971782"
+          }
+        ]
+      },
+      "zombies": [
+        {
+          "name": "zom20a",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\zombies\\zom20a",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s7-a9f8fd98b38562ad06b61646\\zombies\\zom20a",
+          "bytes": 73,
+          "sha256": "a950e618ea2e127096c85f486fb555c264730d924a2192c407aa66e6e0318eb6"
+        },
+        {
+          "name": "zom20b",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\zombies\\zom20b",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s7-a9f8fd98b38562ad06b61646\\zombies\\zom20b",
+          "bytes": 382,
+          "sha256": "af6394c021ccb5e486db507e2ccd787bd5675f8fec88fd2ddbe9f834566852ce"
+        },
+        {
+          "name": "zom20c",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\zombies\\zom20c",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s7-a9f8fd98b38562ad06b61646\\zombies\\zom20c",
+          "bytes": 232,
+          "sha256": "3d3f209967f51a7344e0eab582bc04d1e694da5a73e3682a26ed483dcab7a443"
+        },
+        {
+          "name": "zom20d",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\zombies\\zom20d",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s7-a9f8fd98b38562ad06b61646\\zombies\\zom20d",
+          "bytes": 382,
+          "sha256": "923dd6abebbb7bb502ec5a02873c26175820ada5c4409d179d8464f0e90cb6fc"
+        }
+      ],
+      "scores": {
+        "groups": {
+          "DUEL_A": 13.666667,
+          "DUEL_B": 11.333334
+        },
+        "warriors": {
+          "DUEL_A1": 9.083334,
+          "DUEL_A2": 4.5833335,
+          "DUEL_B1": 7.916667,
+          "DUEL_B2": 3.4166667
+        }
+      },
+      "candidate": {
+        "teamRaw": 13.666667,
+        "teamPerBattle": 0.54666668,
+        "warrior1Raw": 9.083334,
+        "warrior1PerBattle": 0.36333336000000005,
+        "warrior2Raw": 4.5833335,
+        "warrior2PerBattle": 0.18333334
+      },
+      "rawScoreText": "Groups:\nDUEL_A,13.666667\nDUEL_B,11.333334\n\nWarriors:\nDUEL_A1,9.083334\nDUEL_A2,4.5833335\nDUEL_B1,7.916667\nDUEL_B2,3.4166667\n",
+      "stdout": "CoreWars8086 - headless mode\n\nLoaded warriors: [DUEL_A, DUEL_B]\nStarting competition (25 wars).\nCompetition is over. Ran 25 wars\nWriting scores to file C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s7-a9f8fd98b38562ad06b61646\\scores.csv\n",
+      "conservation": {
+        "totalPoints": 25.000001,
+        "unawardedBattles": 0,
+        "tolerance": 0.00025
+      },
+      "scoreFile": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s7-a9f8fd98b38562ad06b61646\\scores.csv",
+        "bytes": 123,
+        "sha256": "602d419c1bc3009a29a14e0fb52615884802360ffcd09d9541fda9400d9bd12e"
+      },
+      "telemetry": null,
+      "execution": {
+        "planSha256": "e7852cd2159efbc5bb6be0129f115c76049370e40a7543b15121b1171bc2b877",
+        "jobId": "job-7",
+        "baseConfigSha256": "cdd0f9994a5e546deca50c9f4b4081b38b06c33aefcdbffe6c88ee083b580dcb",
+        "researchMode": "isolated-persistent-serial"
+      }
+    },
+    {
+      "runId": "duel-synthesis__m050__family-duel-20261001-s8-954b37bffef9a266dfd261aa",
+      "cohortId": "duel-synthesis__m050",
+      "seed": "family-duel-20261001-s8-954b37bffef9a266dfd261aa",
+      "battles": 25,
+      "startedAt": "2026-10-01T09:52:06.004Z",
+      "elapsedSeconds": 3.1112705,
+      "elapsedConvention": "in-JVM wrapper job, not a cold process",
+      "command": {
+        "executable": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\temurin8-jre\\jdk8u504-b01-jre\\bin\\java.exe",
+        "args": [
+          "-cp",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runtime\\wrapper;C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runtime\\overlay-1;C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runtime\\overlay-2;C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runtime\\base-engine.jar",
+          "SerialBatchMain",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\jobs.nul"
+        ]
+      },
+      "engineArguments": [
+        "--headless",
+        "--comboSize",
+        "2",
+        "--battlesPerCombo",
+        "25",
+        "--seed",
+        "family-duel-20261001-s8-954b37bffef9a266dfd261aa",
+        "--threads",
+        "1",
+        "--warriorsDir",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s8-954b37bffef9a266dfd261aa\\survivors",
+        "--zombiesDir",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s8-954b37bffef9a266dfd261aa\\zombies",
+        "--outputFile",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s8-954b37bffef9a266dfd261aa\\scores.csv",
+        "--parallel=false"
+      ],
+      "inputs": {
+        "DUEL_A": [
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\synthesis\\A",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s8-954b37bffef9a266dfd261aa\\survivors\\DUEL_A1",
+            "bytes": 207,
+            "sha256": "3875482b4d57a8d29f474215ed9dd41249bc17c46b1a662c4906554b5d859b9c"
+          },
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\synthesis\\B",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s8-954b37bffef9a266dfd261aa\\survivors\\DUEL_A2",
+            "bytes": 115,
+            "sha256": "99055d82958f813de2067a17dde8ea361c749bd4dc916095a4dad1ad8e13ce2b"
+          }
+        ],
+        "DUEL_B": [
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\m050\\A",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s8-954b37bffef9a266dfd261aa\\survivors\\DUEL_B1",
+            "bytes": 189,
+            "sha256": "0268ce4f301bf2ada8566f4e608180a0670a335a80b9c2b93b67aee2b632bd44"
+          },
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\binaries\\m050\\B",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s8-954b37bffef9a266dfd261aa\\survivors\\DUEL_B2",
+            "bytes": 117,
+            "sha256": "06b5a1ff7bac4b146620de6d1de512dfedf3f28366d6435bf61d49869d971782"
+          }
+        ]
+      },
+      "zombies": [
+        {
+          "name": "zom20a",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\zombies\\zom20a",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s8-954b37bffef9a266dfd261aa\\zombies\\zom20a",
+          "bytes": 73,
+          "sha256": "a950e618ea2e127096c85f486fb555c264730d924a2192c407aa66e6e0318eb6"
+        },
+        {
+          "name": "zom20b",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\zombies\\zom20b",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s8-954b37bffef9a266dfd261aa\\zombies\\zom20b",
+          "bytes": 382,
+          "sha256": "af6394c021ccb5e486db507e2ccd787bd5675f8fec88fd2ddbe9f834566852ce"
+        },
+        {
+          "name": "zom20c",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\zombies\\zom20c",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s8-954b37bffef9a266dfd261aa\\zombies\\zom20c",
+          "bytes": 232,
+          "sha256": "3d3f209967f51a7344e0eab582bc04d1e694da5a73e3682a26ed483dcab7a443"
+        },
+        {
+          "name": "zom20d",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\claude-family-stress-20261001\\frozen\\zombies\\zom20d",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s8-954b37bffef9a266dfd261aa\\zombies\\zom20d",
+          "bytes": 382,
+          "sha256": "923dd6abebbb7bb502ec5a02873c26175820ada5c4409d179d8464f0e90cb6fc"
+        }
+      ],
+      "scores": {
+        "groups": {
+          "DUEL_A": 15.666667,
+          "DUEL_B": 9.333334
+        },
+        "warriors": {
+          "DUEL_A1": 6.083333,
+          "DUEL_A2": 9.583334,
+          "DUEL_B1": 2.75,
+          "DUEL_B2": 6.5833335
+        }
+      },
+      "candidate": {
+        "teamRaw": 15.666667,
+        "teamPerBattle": 0.62666668,
+        "warrior1Raw": 6.083333,
+        "warrior1PerBattle": 0.24333332,
+        "warrior2Raw": 9.583334,
+        "warrior2PerBattle": 0.38333336
+      },
+      "rawScoreText": "Groups:\nDUEL_A,15.666667\nDUEL_B,9.333334\n\nWarriors:\nDUEL_A1,6.083333\nDUEL_A2,9.583334\nDUEL_B1,2.75\nDUEL_B2,6.5833335\n",
+      "stdout": "CoreWars8086 - headless mode\n\nLoaded warriors: [DUEL_A, DUEL_B]\nStarting competition (25 wars).\nCompetition is over. Ran 25 wars\nWriting scores to file C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s8-954b37bffef9a266dfd261aa\\scores.csv\n",
+      "conservation": {
+        "totalPoints": 25.000001,
+        "unawardedBattles": 0,
+        "tolerance": 0.00025
+      },
+      "scoreFile": {
+        "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\claude-family-stress-20261001\\accelerated\\duel-synthesis__m050\\runs\\duel-synthesis__m050__family-duel-20261001-s8-954b37bffef9a266dfd261aa\\scores.csv",
+        "bytes": 117,
+        "sha256": "d7e45947460cf60fca2e0b9e79fe93b96fe48cd73940e73dd84a70714c6a0fac"
+      },
+      "telemetry": null,
+      "execution": {
+        "planSha256": "e7852cd2159efbc5bb6be0129f115c76049370e40a7543b15121b1171bc2b877",
+        "jobId": "job-8",
+        "baseConfigSha256": "cdd0f9994a5e546deca50c9f4b4081b38b06c33aefcdbffe6c88ee083b580dcb",
+        "researchMode": "isolated-persistent-serial"
+      }
+    }
+  ]
+}

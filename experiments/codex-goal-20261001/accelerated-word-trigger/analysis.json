@@ -1,0 +1,172 @@
+{
+  "recordedAt": "2026-10-01T00:12:46.984Z",
+  "status": "AUDITED_COMPLETE",
+  "manifestSha256": "4a90ea45736ddaa8ba5dd93b64b36305ae68c3a4f281d520f0d5a3b12b93a959",
+  "battles": 2000,
+  "scores": {
+    "m050": {
+      "battles": 500,
+      "teamPerBattle": 0.64566667,
+      "warrior1PerBattle": 0.33283333400000004,
+      "warrior2PerBattle": 0.3128333326
+    },
+    "a_only": {
+      "battles": 500,
+      "teamPerBattle": 0.483999999,
+      "warrior1PerBattle": 0.38633333400000003,
+      "warrior2PerBattle": 0.09766666599999999
+    },
+    "b_only": {
+      "battles": 500,
+      "teamPerBattle": 0.5563333319999999,
+      "warrior1PerBattle": 0.253666667,
+      "warrior2PerBattle": 0.302666668
+    },
+    "both": {
+      "battles": 500,
+      "teamPerBattle": 0.645666667,
+      "warrior1PerBattle": 0.307333333,
+      "warrior2PerBattle": 0.33833333400000004
+    }
+  },
+  "comparisons": [
+    {
+      "arm": "a_only",
+      "candidate": 0.483999999,
+      "reference": 0.64566667,
+      "meanDelta": -0.16166667099999998,
+      "relativePercent": -25.038720211467627,
+      "descriptive95CohortInterval": [
+        -0.2613624421194828,
+        -0.06197089988051718
+      ],
+      "cohortCount": 25,
+      "positive": 5,
+      "negative": 19,
+      "tied": 1,
+      "bySeed": [
+        {
+          "seed": "word-trigger-screen-20261001-97a52287ad3beefd932b760f",
+          "delta": -0.16166667099999998
+        }
+      ],
+      "note": "Descriptive research screen, not proof of a champion."
+    },
+    {
+      "arm": "b_only",
+      "candidate": 0.5563333319999999,
+      "reference": 0.64566667,
+      "meanDelta": -0.089333338,
+      "relativePercent": -13.835829252267272,
+      "descriptive95CohortInterval": [
+        -0.13754744859380807,
+        -0.04111922740619192
+      ],
+      "cohortCount": 25,
+      "positive": 4,
+      "negative": 18,
+      "tied": 3,
+      "bySeed": [
+        {
+          "seed": "word-trigger-screen-20261001-97a52287ad3beefd932b760f",
+          "delta": -0.089333338
+        }
+      ],
+      "note": "Descriptive research screen, not proof of a champion."
+    },
+    {
+      "arm": "both",
+      "candidate": 0.645666667,
+      "reference": 0.64566667,
+      "meanDelta": -2.9999999928698173e-9,
+      "relativePercent": -4.6463603160278e-7,
+      "descriptive95CohortInterval": [
+        -0.09230035258518868,
+        0.09230034658518868
+      ],
+      "cohortCount": 25,
+      "positive": 12,
+      "negative": 11,
+      "tied": 2,
+      "bySeed": [
+        {
+          "seed": "word-trigger-screen-20261001-97a52287ad3beefd932b760f",
+          "delta": -2.9999999928698173e-9
+        }
+      ],
+      "note": "Descriptive research screen, not proof of a champion."
+    }
+  ],
+  "selectedForFreshHoldout": [],
+  "interpretation": "Exploratory complete paired screen only. A positive arm needs new matched holdout against BOTH exact m049 and m050; no screen promotion.",
+  "commands": [
+    {
+      "args": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\codex-goal-20261001\\word-trigger\\generate-screen.mjs",
+        "--verify"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"status\":\"INPUTS_VERIFIED\",\"manifestSha256\":\"4a90ea45736ddaa8ba5dd93b64b36305ae68c3a4f281d520f0d5a3b12b93a959\",\"files\":201,\"design\":{\"arms\":[\"m050\",\"a_only\",\"b_only\",\"both\"],\"candidateName\":\"COD_pair\",\"published2025Teams\":75,\"seniorTeams\":62,\"youthTeams\":13,\"cohorts\":25,\"opponentSlots\":75,\"repeats\":0,\"seeds\":1,\"battlesPerBlock\":20,\"battlesPerArm\":500,\"totalBattles\":2000,\"threads\":1,\"parallel\":false,\"telemetry\":false}}\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\audit-derived.mjs",
+        "pair",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\codex-goal-20261001\\accelerated-word-trigger\\a_only",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\codex-goal-20261001\\accelerated-word-trigger\\m050"
+      ],
+      "exitCode": 0,
+      "stdout": "{\n  \"candidate\": 0.483999999,\n  \"reference\": 0.64566667,\n  \"meanDelta\": -0.16166667099999998,\n  \"relativePercent\": -25.038720211467627,\n  \"descriptive95CohortInterval\": [\n    -0.2613624421194828,\n    -0.06197089988051718\n  ],\n  \"cohortCount\": 25,\n  \"positive\": 5,\n  \"negative\": 19,\n  \"tied\": 1,\n  \"bySeed\": [\n    {\n      \"seed\": \"word-trigger-screen-20261001-97a52287ad3beefd932b760f\",\n      \"delta\": -0.16166667099999998\n    }\n  ],\n  \"note\": \"Descriptive research screen, not proof of a champion.\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\audit-derived.mjs",
+        "pair",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\codex-goal-20261001\\accelerated-word-trigger\\b_only",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\codex-goal-20261001\\accelerated-word-trigger\\m050"
+      ],
+      "exitCode": 0,
+      "stdout": "{\n  \"candidate\": 0.5563333319999999,\n  \"reference\": 0.64566667,\n  \"meanDelta\": -0.089333338,\n  \"relativePercent\": -13.835829252267272,\n  \"descriptive95CohortInterval\": [\n    -0.13754744859380807,\n    -0.04111922740619192\n  ],\n  \"cohortCount\": 25,\n  \"positive\": 4,\n  \"negative\": 18,\n  \"tied\": 3,\n  \"bySeed\": [\n    {\n      \"seed\": \"word-trigger-screen-20261001-97a52287ad3beefd932b760f\",\n      \"delta\": -0.089333338\n    }\n  ],\n  \"note\": \"Descriptive research screen, not proof of a champion.\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\audit-derived.mjs",
+        "pair",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\codex-goal-20261001\\accelerated-word-trigger\\both",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\codex-goal-20261001\\accelerated-word-trigger\\m050"
+      ],
+      "exitCode": 0,
+      "stdout": "{\n  \"candidate\": 0.645666667,\n  \"reference\": 0.64566667,\n  \"meanDelta\": -2.9999999928698173e-9,\n  \"relativePercent\": -4.6463603160278e-7,\n  \"descriptive95CohortInterval\": [\n    -0.09230035258518868,\n    0.09230034658518868\n  ],\n  \"cohortCount\": 25,\n  \"positive\": 12,\n  \"negative\": 11,\n  \"tied\": 2,\n  \"bySeed\": [\n    {\n      \"seed\": \"word-trigger-screen-20261001-97a52287ad3beefd932b760f\",\n      \"delta\": -2.9999999928698173e-9\n    }\n  ],\n  \"note\": \"Descriptive research screen, not proof of a champion.\"\n}\n",
+      "stderr": ""
+    }
+  ],
+  "files": [
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\codex-goal-20261001\\word-trigger\\screen\\manifest.json",
+      "sha256": "4a90ea45736ddaa8ba5dd93b64b36305ae68c3a4f281d520f0d5a3b12b93a959"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\candidates\\generated\\codex-goal-20261001\\word-trigger\\analyze-screen.mjs",
+      "sha256": "89062f576d1d9fd804fd6ddac2212b539214356dc5c1ec75b83eb287481280ff"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\codex-goal-20261001\\accelerated-word-trigger\\m050\\result.json",
+      "sha256": "00bf7dcd48a8b4b613f69f06694178fc15516bd2558f9dc680ade9ac901f1c08"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\codex-goal-20261001\\accelerated-word-trigger\\a_only\\result.json",
+      "sha256": "4bdc38fa9c4dadd7a49d2086cd342e0e4a25e25cc5224cd5895f8d1bd48f8d5b"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\codex-goal-20261001\\accelerated-word-trigger\\b_only\\result.json",
+      "sha256": "2350236930eca1341a7c1f53c14eb2f1a4f94d30b64a0356e481b8076236a4ba"
+    },
+    {
+      "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\experiments\\codex-goal-20261001\\accelerated-word-trigger\\both\\result.json",
+      "sha256": "b333fa1b2e650ff11c96e595ca1d6369d3f7dcb03dc33a30900d000a6ebe0d32"
+    }
+  ]
+}

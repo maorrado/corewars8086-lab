@@ -1,0 +1,33 @@
+{
+  "baseline": "e1p3 exact source",
+  "variants": {
+    "callcam": {
+      "A": {
+        "source": "candidates/generated/e1p4-ablation-20261002/e1p3-callcam-A.asm",
+        "sourceSha256": "68a4a3c8d13865281d4322ea1417436250010587665c99dc7c1974f65f89c12f",
+        "replacement": "call far [bx] => call far [bx + si]",
+        "occurrences": 2
+      },
+      "B": {
+        "source": "candidates/generated/e1p4-ablation-20261002/e1p3-callcam-B.asm",
+        "sourceSha256": "61c74cfa557514799c2978e583dd3df593b43dff16749d02f30f1d5040c1ac56",
+        "replacement": "call far [bx] => call far [bx + si]",
+        "occurrences": 2
+      }
+    },
+    "payloadcam": {
+      "A": {
+        "source": "candidates/generated/e1p4-ablation-20261002/e1p3-payloadcam-A.asm",
+        "sourceSha256": "6600f7f70a24ad3d0b94a2d9f07052a340f80f7669cd73dc53258a7a13b530d8",
+        "replacement": "mov ax, 01FFFh => mov ax, 018FFh",
+        "occurrences": 1
+      },
+      "B": {
+        "source": "candidates/generated/e1p4-ablation-20261002/e1p3-payloadcam-B.asm",
+        "sourceSha256": "aec0d44a4c0f987d65b5db30d32172c152d48f147f5d43e981490d8bbb66ed82",
+        "replacement": "mov ax, 01FFFh => mov ax, 018FFh",
+        "occurrences": 1
+      }
+    }
+  }
+}

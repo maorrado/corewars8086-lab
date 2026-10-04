@@ -1,0 +1,14 @@
+{
+ "schema":"cooperative-arena-confirmation-selection-v1",
+ "candidate":"a003_pointerguard",
+ "baseline":"original_v6",
+ "selectionEvidence":"results/architectural-refine-persistent.json",
+ "selectionDiff":0.0098333333333333,
+ "selectionStatus":"Exploratory only; confidence interval crosses zero. Not a confirmed gain.",
+ "reason":"Best common-refinement mean, lower paired variance and W10/T11/L4, concrete sentinel guard avoiding unjustified patching. BurstB weaker refined gain; B0400 not convincing and weaker modern exploration. Decision frozen before both new holdouts.",
+ "sha256":["71164c8d7308766cd14d64ac6d1342cd1631afce98278fe9dca4d4ab14a3b3f3","8579e2c2212d72a413a6daacfe3b91ceb72be648bfc085bfeed9430eeaf6657a"],
+ "sizes":[227,202],
+ "confirmationPlans":["pointerguard-confirm-alpha","pointerguard-confirm-beta"],
+ "gate":"Both untouched3000-battle holdouts positive, pooled95% paired Student interval excludeszero. Control/provenance hashes mustmatch; inspect modern/noZombie/historical stress and cold CLI correctness before final adoption.",
+ "failedGate":"Do not broadcast or promote. Any different selected candidate needs fresh confirmation seeds; no reuse of these results as untouched confirmation."
+}

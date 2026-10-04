@@ -1,5 +1,11 @@
 # CodeGuru Xtreme 2025 study and survivor result
 
+This is the historical m050 study and promotion report. Since 2026-10-04 the
+active final reference is zchain3; historical references below to `final/`
+describe its earlier state. Exact m050 sources and binaries are now in
+`strong-codes/11_Chimera_m050_historical/`. Read `strong-codes/README.md` and
+`study-notes/codex-research-20261004/README.md` for the latest measured research.
+
 ## Material studied
 
 All 31 unique supplied recordings were reviewed end to end in their resolved

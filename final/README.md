@@ -4,6 +4,8 @@
 to 233 and 122 bytes, below the 2025 final's 256-byte limit (no signature
 bytes; like m050 they do not satisfy the online-stage 39-byte NOP signature).
 The compiled binaries are byte-identical to the measured `zchain3` arm.
+The publication manifest uses repository-relative paths and LF-normalized source
+hashes to avoid treating a Windows line-ending conversion as a source change.
 
 | File | Size | Binary SHA-256 |
 |---|---:|---|
@@ -18,9 +20,9 @@ same NASM build run directly in Node, which needs no shared 8123 server:
 node agent2/tools/nasm-node.cjs build/final final/ChimeraA.asm final/ChimeraB.asm
 ```
 
-The previous promoted pair, m050 (189/117 bytes, A `0268ce4f…bd44`,
-B `06b5a1ff…1782`), is retrievable with `git show cf37a4a:final/ChimeraA.asm`
-(and `ChimeraB.asm`); its binaries are also in `agent2/build/ref/`.
+The previous promoted pairs are preserved with exact sources, binaries and full
+hashes in `../strong-codes/11_Chimera_m050_historical/` and
+`../strong-codes/12_Chimera_m049_historical/`. Neither is the active final pair.
 
 ## Provenance
 

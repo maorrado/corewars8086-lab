@@ -1,0 +1,27 @@
+{
+  "schema": "cooperative-arena-candidates-v1",
+  "baseline": "original_v6",
+  "provenance": "Variants of the friend-provided Good_Test V6 pair; original sources and binaries unchanged.",
+  "candidates": [
+    {
+      "id": "a001_copy8",
+      "sources": ["C:/Maor/CodeGuru/corewars8086-lab/.arena/v6-cooperative-20261003/.arena/run-20261003-150943-s20261003/scratch/a001/batch1/copy8/A.asm", "C:/Maor/CodeGuru/corewars8086-lab/.arena/v6-cooperative-20261003/.arena/run-20261003-150943-s20261003/scratch/a001/batch1/copy8/B.asm"],
+      "warriors": ["C:/Maor/CodeGuru/corewars8086-lab/.arena/v6-cooperative-20261003/.arena/run-20261003-150943-s20261003/scratch/a001/batch1/copy8/build/A", "C:/Maor/CodeGuru/corewars8086-lab/.arena/v6-cooperative-20261003/.arena/run-20261003-150943-s20261003/scratch/a001/batch1/copy8/build/B"],
+      "sha256": ["ea0835a6bf27d44eb89dac36d26c9f7a954b603e1af93f3482f3f268f2cf7ab9", "224abc1ce8b0934124975fe1ac5dd93c1a73311ec1508e9906d86a9fe645572d"],
+      "sizes": [221, 202],
+      "edits": "A initial active launch CX 9->8; both worker CL 9->8. Private REP copy stays 9 words. No byte-length or fixed-offset changes.",
+      "hypothesis": "One fewer recurring REP MOVSW turn reduces exposed live-copy duration and accelerates relocations.",
+      "failure_modes": "Reduced excess painting can change interference; accelerated generation timing can synchronize unfavorably with enemy scans. Battle strength remains untested."
+    },
+    {
+      "id": "a001_copy7",
+      "sources": ["C:/Maor/CodeGuru/corewars8086-lab/.arena/v6-cooperative-20261003/.arena/run-20261003-150943-s20261003/scratch/a001/batch1/copy7/A.asm", "C:/Maor/CodeGuru/corewars8086-lab/.arena/v6-cooperative-20261003/.arena/run-20261003-150943-s20261003/scratch/a001/batch1/copy7/B.asm"],
+      "warriors": ["C:/Maor/CodeGuru/corewars8086-lab/.arena/v6-cooperative-20261003/.arena/run-20261003-150943-s20261003/scratch/a001/batch1/copy7/build/A", "C:/Maor/CodeGuru/corewars8086-lab/.arena/v6-cooperative-20261003/.arena/run-20261003-150943-s20261003/scratch/a001/batch1/copy7/build/B"],
+      "sha256": ["54f516de62a743c194d478d8c79816b1fa2c70e033f55e2cd77cf4c03becfb78", "10fe9b84132330bbc24e2c82f38c74d2310e1972c11e74993057ac99b5b7e20a"],
+      "sizes": [221, 202],
+      "edits": "A initial active launch CX 9->7, B initial launch CX 8->7; both worker CL 9->7. Private REP copy stays 9 words. No byte-length or fixed-offset changes.",
+      "hypothesis": "Bootstrap MOVSB plus MOVSW plus 7 REP MOVSW iterations copies exactly the 17-byte worker; removing all excess recurring copying saves two REP turns per relocation.",
+      "failure_modes": "Exact-length copying leaves no spare trailing bytes. Corruption in the last far-call operand or timing interactions can negate the nominal speed gain. Requires official-engine smoke and paired scoring."
+    }
+  ]
+}

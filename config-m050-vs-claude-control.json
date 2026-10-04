@@ -1,0 +1,52 @@
+{
+  "experimentId": "m050-vs-claude-control",
+  "outputPath": "experiments/smart-counter-2026-09-30/claude-fixed-toggle/defense-duel-control.json",
+  "runDirectory": "build/official-runs/smart-counter-2026-09-30/claude-fixed-toggle/defense-duel-control",
+  "battles": 250,
+  "threads": 4,
+  "seeds": [
+    "m050-claude-duel-20260930-a",
+    "m050-claude-duel-20260930-b",
+    "m050-claude-duel-20260930-c",
+    "m050-claude-duel-20260930-d"
+  ],
+  "candidate": {
+    "name": "COD_m050_control",
+    "warriors": [
+      "build/m050-repro/ab_pad_a",
+      "build/m050-repro/ab_pad_b"
+    ]
+  },
+  "cohorts": [
+    {
+      "id": "vs-claude",
+      "opponents": [
+        {
+          "name": "COD_claude_fixed_toggle",
+          "warriors": [
+            "build/claude-fixed-toggle-2026-09-30/A",
+            "build/claude-fixed-toggle-2026-09-30/B"
+          ]
+        }
+      ]
+    }
+  ],
+  "zombies": [
+    {
+      "name": "zom20a",
+      "path": "official-2025/zombies-live/zom20a"
+    },
+    {
+      "name": "zom20b",
+      "path": "official-2025/zombies-live/zom20b"
+    },
+    {
+      "name": "zom20c",
+      "path": "official-2025/zombies-live/zom20c"
+    },
+    {
+      "name": "zom20d",
+      "path": "official-2025/zombies-live/zom20d"
+    }
+  ]
+}

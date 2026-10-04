@@ -1,0 +1,133 @@
+{
+  "createdAt": "2026-09-30T23:01:19.397Z",
+  "note": "Semantic differential only; not a speed benchmark or battle proof.",
+  "java": {
+    "path": "tools/temurin8-jre/jdk8u504-b01-jre/bin/java.exe",
+    "sha256": "46df95bb47e2ba2b10736cee2ab543289c66021611f1ec67d0d55d5128228c20"
+  },
+  "jar": {
+    "path": "repos/corewars8086-6.0.0-deterministic/target/corewars8086-6.0.0-jar-with-dependencies.jar",
+    "sha256": "31639072397eaf69d99e90b10d8fa594a7446951f1137b7ebd298378f5ec318d"
+  },
+  "harnessSource": {
+    "path": "tools/engine-acceleration-20261001/validation/EngineDifferential.java",
+    "sha256": "050544cae1fd248cbe7292f59bd032e9fea769f78d75def8a6c90578fc257c6d"
+  },
+  "harnessClasses": [
+    {
+      "path": "tools/engine-acceleration-20261001/validation/classes/EngineDifferential.class",
+      "sha256": "a9860e7f1dbad54033edd0c75886da7e1371e2306ab6be75a9ff2abec1c0b915"
+    },
+    {
+      "path": "tools/engine-acceleration-20261001/validation/classes/EngineDifferential$Action.class",
+      "sha256": "9423cea454a666f1b4b8a6c1c216a6640bf823da86bfc85b1f2b52ceb198208a"
+    },
+    {
+      "path": "tools/engine-acceleration-20261001/validation/classes/EngineDifferential$TraceMemory.class",
+      "sha256": "bac49ec9fef213e9852ca82fc1fe464e596469c472be20888d559982119a4b3c"
+    }
+  ],
+  "runner": {
+    "path": "tools/engine-acceleration-20261001/validation/run-units.mjs",
+    "sha256": "c475d423c3ec3c5ae1fc16f3357d80b142da1f5aa7e981ad2c73027fa6b36711"
+  },
+  "controlSources": [
+    {
+      "original": {
+        "path": "repos/corewars8086-6.0.0-deterministic/src/main/java/il/co/codeguru/corewars8086/cpu/Cpu.java",
+        "sha256": "101e9c3f285ff58076c86094c0b6fa84a3dc2c79f8095849fff02b5dbd4c856e"
+      },
+      "control": {
+        "path": "tools/engine-acceleration-20261001/source-control/src/il/co/codeguru/corewars8086/cpu/Cpu.java",
+        "sha256": "552979b38526810ed30e2c6543e66521f32503c93fba5923d49a66fa48e6cd2f"
+      }
+    },
+    {
+      "original": {
+        "path": "repos/corewars8086-6.0.0-deterministic/src/main/java/il/co/codeguru/corewars8086/memory/RestrictedAccessRealModeMemory.java",
+        "sha256": "ec40db7dfaf2817d1536001dfaf1d48762889eaf5ae34fb9a75b55cf2d6de6f5"
+      },
+      "control": {
+        "path": "tools/engine-acceleration-20261001/source-control/src/il/co/codeguru/corewars8086/memory/RestrictedAccessRealModeMemory.java",
+        "sha256": "7feebf6e192b310186239c63ed9584ba4b521bbbb62c9e4c4cfbcd04cff51fa6"
+      }
+    },
+    {
+      "original": {
+        "path": "repos/corewars8086-6.0.0-deterministic/src/main/java/il/co/codeguru/corewars8086/memory/RealModeMemoryImpl.java",
+        "sha256": "86b1a9115d23cb30ba763d97a1f081501a2a402d0fd10016ffafbb397e475f8d"
+      },
+      "control": {
+        "path": "tools/engine-acceleration-20261001/source-control/src/il/co/codeguru/corewars8086/memory/RealModeMemoryImpl.java",
+        "sha256": "0b81655a66eb1e8556b4d996e180a45dbfdde9bcd30a94a8476d8cec842fc14b"
+      }
+    }
+  ],
+  "runs": [
+    {
+      "variant": "original",
+      "args": [
+        "-cp",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\validation\\classes;C:\\Maor\\CodeGuru\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+        "EngineDifferential"
+      ],
+      "classes": [],
+      "exitCode": 0,
+      "stdoutSha256": "1b0bbf13929db60c33033e8d41b176223592b7ac827b37f7bc96f0e9c5716d9f",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "equalToOriginal": null
+    },
+    {
+      "variant": "source-control",
+      "args": [
+        "-cp",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\validation\\classes;C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\source-control\\classes;C:\\Maor\\CodeGuru\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+        "EngineDifferential"
+      ],
+      "classes": [
+        {
+          "path": "tools/engine-acceleration-20261001/source-control/classes/il/co/codeguru/corewars8086/cpu/Cpu.class",
+          "sha256": "109b4719b9f469856ff652d6459a2fac61890ae088fcb3d4c13a9b5c82cb25a0"
+        },
+        {
+          "path": "tools/engine-acceleration-20261001/source-control/classes/il/co/codeguru/corewars8086/memory/RealModeMemoryImpl.class",
+          "sha256": "a7ef779467503e248e9e1aa495e40daabe70a24c96c29934ef15d501991f8c9e"
+        },
+        {
+          "path": "tools/engine-acceleration-20261001/source-control/classes/il/co/codeguru/corewars8086/memory/RestrictedAccessRealModeMemory.class",
+          "sha256": "bb8d9a2e25cabc059ed342cecd77e2cb3abeeffec745a805cd1878ed7e4e6751"
+        }
+      ],
+      "exitCode": 0,
+      "stdoutSha256": "1b0bbf13929db60c33033e8d41b176223592b7ac827b37f7bc96f0e9c5716d9f",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "equalToOriginal": true
+    },
+    {
+      "variant": "int87",
+      "args": [
+        "-cp",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\validation\\classes;C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\engine-acceleration-20261001\\int87\\classes;C:\\Maor\\CodeGuru\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+        "EngineDifferential"
+      ],
+      "classes": [
+        {
+          "path": "tools/engine-acceleration-20261001/int87/classes/il/co/codeguru/corewars8086/cpu/Cpu.class",
+          "sha256": "e358439ba520a69bb77a591c14d74ca84ad3273c8faa026f52413bd969f6e791"
+        },
+        {
+          "path": "tools/engine-acceleration-20261001/int87/classes/il/co/codeguru/corewars8086/memory/RealModeMemoryImpl.class",
+          "sha256": "eab4aa031b78ab182b93d0bc90be6f4f83ec5d1c0076c420acf04920b298c8fc"
+        },
+        {
+          "path": "tools/engine-acceleration-20261001/int87/classes/il/co/codeguru/corewars8086/memory/RestrictedAccessRealModeMemory.class",
+          "sha256": "b5baea97eb57dde63934a8da0563a2ec3a964be2c454eafab197c88a844af60b"
+        }
+      ],
+      "exitCode": 0,
+      "stdoutSha256": "1b0bbf13929db60c33033e8d41b176223592b7ac827b37f7bc96f0e9c5716d9f",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "equalToOriginal": true
+    }
+  ]
+}

@@ -1,13 +1,21 @@
-# Strong codes - ordered from strongest/newest (01) to reference (10)
+# Strong code catalog
 
-Every folder has `A.asm`, `B.asm` (sources), `A`, `B` (binaries) and a README with size, SHA-256 and what changed.
-Each source was reassembled and checked byte-for-byte against the binary that was actually tested
-(`agent2/tools/make-strong-codes.mjs`). Provenance: Good_Test V6 is friend-provided code; the variants are edits of it
+Folder numbers are navigation order, not a proof of pairwise dominance.
+The first ten entries are Claude's 2026-10-04 measured catalog; entries 11 onward
+are historical references. `final/` remains the already promoted zchain3 pair.
+DET2 is the highest-mean candidate on the published mixed confirmation field,
+not a verified winner against every opponent or a universally robust defense.
+
+Every folder has `A.asm`, `B.asm` (sources), `A`, `B` (binaries) and a provenance README.
+Sizes and complete SHA-256 identities are collected in `manifest.json`.
+All 18 pairs were reassembled and checked byte-for-byte against the catalog binaries
+(`node tools/check-strong-codes.mjs --rebuild`). This verifies identity, not a new performance result.
+Provenance: Good_Test V6 is friend-provided code; the variants are edits of it
 or of our Chimera line. Scores are mean team points per battle on the CoreWars8086 v6 engine (local simulator).
 
 | # | code | date | A / B bytes | status |
 |---|---|---|---|---|
-| 01 | **DET2** | 2026-10-04 day 2 | 214 / 233 | **current best** (confirmed vs rev1 on a fresh field) |
+| 01 | **DET2** | 2026-10-04 day 2 | 214 / 233 | leads the measured mixed confirmation field; not a universal champion |
 | 02 | MC2 | 2026-10-04 day 2 | 214 / 222 | passed the same confirmation, slightly below DET2 |
 | 03 | DETMC (DET2+MC2) | 2026-10-04 day 2 | 214 / 233 | passed the same confirmation, not better than DET2 |
 | 04 | rev1 (KPHL) | 2026-10-04 night | 214 / 222 | night best; beats V6nohunt and V6 on the plain field |
@@ -41,3 +49,23 @@ or of our Chimera line. Scores are mean team points per battle on the CoreWars80
 
 Details: `agent2/day2/RESULTS.md`. Earlier research: `agent2/REPORT.md` (day 1), `agent2/night/NIGHT_REPORT.md` (night).
 No code is claimed to be immune to targeted counters.
+
+## Historical pairs and rejected experiments
+
+The exact m050 and m049 pairs have been moved out of the active final reference
+and retained as sources plus hash-checked binaries:
+
+- [Chimera m050](11_Chimera_m050_historical/README.md).
+- [Chimera m049](12_Chimera_m049_historical/README.md).
+- [combo_zrl03](13_combo_zrl03_historical/README.md),
+  [b01d](14_b01d_historical/README.md),
+  [combo_ah02](15_combo_ah02_historical/README.md),
+  [e1p3](16_e1p3_historical/README.md), and
+  [e1p4](17_e1p4_historical/README.md) retain earlier researched pairs.
+
+[KPHLGuard](research/KPHLGuard/README.md) is a **rejected robust-defense claim**,
+not another recommended champion. It beat the old-signature test 138 to 0 in
+200 battles, but changing one byte in the opposing search reversed the result
+to 0 versus 138. Its broad 2025-field scores tied KPHL exactly. Preserve both
+the positive and the negative evidence; do not advertise it as an unconditional
+improvement. Full Codex evidence: [research index](../study-notes/codex-research-20261004/README.md).

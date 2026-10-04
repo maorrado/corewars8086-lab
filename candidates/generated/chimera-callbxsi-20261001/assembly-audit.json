@@ -1,0 +1,91 @@
+{
+  "status": "PASS",
+  "semanticCondition": "Each entry and worker path clears SI before either CALL FAR site; BX is not changed between the clear and the call.",
+  "result": "Equal byte lengths; only the two ModRM bytes changed from 1F to 18 in each warrior; all other bytes are identical.",
+  "binaries": [
+    {
+      "arm": "m050-callbxsi",
+      "warrior": "A",
+      "bytes": 189,
+      "baseSha256": "0268ce4f301bf2ada8566f4e608180a0670a335a80b9c2b93b67aee2b632bd44",
+      "candidateSha256": "5e2f987a33ed07f8ac4a6d5994595d663080a37ceddb1707f5e207473c2fd926",
+      "differences": [
+        {
+          "offset": 171,
+          "before": 31,
+          "after": 24,
+          "opcode": 255
+        },
+        {
+          "offset": 188,
+          "before": 31,
+          "after": 24,
+          "opcode": 255
+        }
+      ]
+    },
+    {
+      "arm": "m050-callbxsi",
+      "warrior": "B",
+      "bytes": 117,
+      "baseSha256": "06b5a1ff7bac4b146620de6d1de512dfedf3f28366d6435bf61d49869d971782",
+      "candidateSha256": "d65fcc3f2c531c44ecaf6399fc0bda13249f0c85109ff211550bc87c875fdbb4",
+      "differences": [
+        {
+          "offset": 99,
+          "before": 31,
+          "after": 24,
+          "opcode": 255
+        },
+        {
+          "offset": 116,
+          "before": 31,
+          "after": 24,
+          "opcode": 255
+        }
+      ]
+    },
+    {
+      "arm": "e1p3-callbxsi",
+      "warrior": "A",
+      "bytes": 187,
+      "baseSha256": "caced989dd55b98a749d5dc3a2d20d533e14013affb08b84572c9f76f1a05117",
+      "candidateSha256": "ce0b580bcd5aa8998e684092592e95add92a27d0644cc17e8da6f8b19991cd09",
+      "differences": [
+        {
+          "offset": 169,
+          "before": 31,
+          "after": 24,
+          "opcode": 255
+        },
+        {
+          "offset": 186,
+          "before": 31,
+          "after": 24,
+          "opcode": 255
+        }
+      ]
+    },
+    {
+      "arm": "e1p3-callbxsi",
+      "warrior": "B",
+      "bytes": 115,
+      "baseSha256": "99055d82958f813de2067a17dde8ea361c749bd4dc916095a4dad1ad8e13ce2b",
+      "candidateSha256": "632d2b0aef76402ca40aa5752b7dc4f849e70f6dac88e4804df22ddc32ebae29",
+      "differences": [
+        {
+          "offset": 97,
+          "before": 31,
+          "after": 24,
+          "opcode": 255
+        },
+        {
+          "offset": 114,
+          "before": 31,
+          "after": 24,
+          "opcode": 255
+        }
+      ]
+    }
+  ]
+}

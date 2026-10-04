@@ -1,0 +1,69 @@
+{
+  "schema": "cooperative-v6-candidates-v1",
+  "baseline": "original_v6",
+  "candidates": [
+    {
+      "id": "a003_energypaintA",
+      "baseline": "original_v6",
+      "hypothesis": "Generate NRG;CALL FAR[bx] as the paint loop. Earning energy every two mandatory instructions can compensate its extra instruction and speed both paint/copy phases.",
+      "edits": "Affected warrior sets destination low byte A0, seeds 9B9B FF1F, resets AX around two STOSW, changes DI adjustment to SUB3, copies 13 words; all moved worker and A zombie offsets rebased by labels. Unaffected warrior remains exact original.",
+      "failureModes": "NRG-seeded cells are weaker lethal paint; bonuses change teammate/Zombie turn relation; larger worker is exposed two extra rounds and code overwrites become less regular.",
+      "warriors": [
+        {
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch2\\src\\energypaintA_A.asm",
+          "binary": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch2\\bin\\energypaintA_A",
+          "size": 236,
+          "sha256": "b0500b31c30ec632c995589b42bfee93dc11ed2ad250439383491780fbff67c2"
+        },
+        {
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch2\\src\\energypaintA_B.asm",
+          "binary": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch2\\bin\\energypaintA_B",
+          "size": 202,
+          "sha256": "8579e2c2212d72a413a6daacfe3b91ceb72be648bfc085bfeed9430eeaf6657a"
+        }
+      ]
+    },
+    {
+      "id": "a003_energypaintB",
+      "baseline": "original_v6",
+      "hypothesis": "Generate NRG;CALL FAR[bx] as the paint loop. Earning energy every two mandatory instructions can compensate its extra instruction and speed both paint/copy phases.",
+      "edits": "Affected warrior sets destination low byte A0, seeds 9B9B FF1F, resets AX around two STOSW, changes DI adjustment to SUB3, copies 13 words; all moved worker and A zombie offsets rebased by labels. Unaffected warrior remains exact original.",
+      "failureModes": "NRG-seeded cells are weaker lethal paint; bonuses change teammate/Zombie turn relation; larger worker is exposed two extra rounds and code overwrites become less regular.",
+      "warriors": [
+        {
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch2\\src\\energypaintB_A.asm",
+          "binary": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch2\\bin\\energypaintB_A",
+          "size": 221,
+          "sha256": "3fa67bed880413901ad618b4f7b248e5782d98de93318271ac540ad1690ca2b7"
+        },
+        {
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch2\\src\\energypaintB_B.asm",
+          "binary": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch2\\bin\\energypaintB_B",
+          "size": 217,
+          "sha256": "6275613f142f961b5fda547226c63641d79ff031d44ea8646cd738dd14cca407"
+        }
+      ]
+    },
+    {
+      "id": "a003_energypaintAB",
+      "baseline": "original_v6",
+      "hypothesis": "Generate NRG;CALL FAR[bx] as the paint loop. Earning energy every two mandatory instructions can compensate its extra instruction and speed both paint/copy phases.",
+      "edits": "Affected warrior sets destination low byte A0, seeds 9B9B FF1F, resets AX around two STOSW, changes DI adjustment to SUB3, copies 13 words; all moved worker and A zombie offsets rebased by labels. Unaffected warrior remains exact original.",
+      "failureModes": "NRG-seeded cells are weaker lethal paint; bonuses change teammate/Zombie turn relation; larger worker is exposed two extra rounds and code overwrites become less regular.",
+      "warriors": [
+        {
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch2\\src\\energypaintAB_A.asm",
+          "binary": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch2\\bin\\energypaintAB_A",
+          "size": 236,
+          "sha256": "b0500b31c30ec632c995589b42bfee93dc11ed2ad250439383491780fbff67c2"
+        },
+        {
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch2\\src\\energypaintAB_B.asm",
+          "binary": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch2\\bin\\energypaintAB_B",
+          "size": 217,
+          "sha256": "6275613f142f961b5fda547226c63641d79ff031d44ea8646cd738dd14cca407"
+        }
+      ]
+    }
+  ]
+}

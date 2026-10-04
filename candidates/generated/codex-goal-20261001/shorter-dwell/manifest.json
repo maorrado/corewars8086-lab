@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 1,
+  "experiment": "m050-shorter-recurring-anchor-dwell-20261001",
+  "status": "source design only; no seeds, assembly, or battles",
+  "generator": "candidates/generated/codex-goal-20261001/shorter-dwell/generate.mjs",
+  "generatorSha256": "111b116400fa5262acea0ff041307700faad5160aecf2702f3ac1c0cc8f8ec6e",
+  "baseline": {
+    "A": {
+      "source": "final/ChimeraA.asm",
+      "sourceSha256": "b05ae79647c65b67d8486205597dc28c3c6467a80efbd9017bc257e2014999d8",
+      "binary": "build/final/ChimeraA",
+      "bytes": 189,
+      "binarySha256": "0268ce4f301bf2ada8566f4e608180a0670a335a80b9c2b93b67aee2b632bd44",
+      "bp": 15360,
+      "dx": 14336,
+      "immediateHighOffset": 161,
+      "originalLine": "    mov dx, 03800h"
+    },
+    "B": {
+      "source": "final/ChimeraB.asm",
+      "sourceSha256": "6c909366137b736bf693090093d83a8c1436f7817ccc2cea51b3ea53bfc46144",
+      "binary": "build/final/ChimeraB",
+      "bytes": 117,
+      "binarySha256": "06b5a1ff7bac4b146620de6d1de512dfedf3f28366d6435bf61d49869d971782",
+      "bp": 17408,
+      "dx": 16384,
+      "immediateHighOffset": 89,
+      "originalLine": "    mov dx, 04000h"
+    }
+  },
+  "components": {
+    "A-trail512": {
+      "letter": "A",
+      "baselineSource": "final/ChimeraA.asm",
+      "source": "candidates/generated/codex-goal-20261001/shorter-dwell/sources/A-trail512.asm",
+      "sourceSha256": "e90f6331b882756d1bdd7569dd5878802984b52c0d4f411f62b4633ddc7de77b",
+      "sourceBytes": 1722,
+      "sourceChangedByte": 1472,
+      "bp": 15360,
+      "dx": 14848,
+      "steadyTrailBytes": 512,
+      "farCallsPerUndisturbedSteadyTrail": 128,
+      "expectedBinaryBytes": 189,
+      "expectedBinarySha256": "f5d20bb160052bbc2247b91c3737fe51f4bdd81d557396837faf319cc90e4e40",
+      "binaryChangedByte": 161,
+      "originalByte": 56,
+      "newByte": 58,
+      "assemblyStatus": "not assembled; expected hash is an in-memory one-byte baseline patch"
+    },
+    "B-trail512": {
+      "letter": "B",
+      "baselineSource": "final/ChimeraB.asm",
+      "source": "candidates/generated/codex-goal-20261001/shorter-dwell/sources/B-trail512.asm",
+      "sourceSha256": "9ab0a4be0a0e7d1cdd694ded29850718843eec263d7ba23ad91786ac06a6a9a6",
+      "sourceBytes": 1095,
+      "sourceChangedByte": 845,
+      "bp": 17408,
+      "dx": 16896,
+      "steadyTrailBytes": 512,
+      "farCallsPerUndisturbedSteadyTrail": 128,
+      "expectedBinaryBytes": 117,
+      "expectedBinarySha256": "ed236d60c51ca5ff19f482967b47f77bd8583180f34fd6595f4cbcce69555b31",
+      "binaryChangedByte": 89,
+      "originalByte": 64,
+      "newByte": 66,
+      "assemblyStatus": "not assembled; expected hash is an in-memory one-byte baseline patch"
+    },
+    "A-trail256": {
+      "letter": "A",
+      "baselineSource": "final/ChimeraA.asm",
+      "source": "candidates/generated/codex-goal-20261001/shorter-dwell/sources/A-trail256.asm",
+      "sourceSha256": "0c97cddd76848899e08e8f4375fcd8f0f9cfbe3fb5839a81aa18ff92b6e9db40",
+      "sourceBytes": 1722,
+      "sourceChangedByte": 1472,
+      "bp": 15360,
+      "dx": 15104,
+      "steadyTrailBytes": 256,
+      "farCallsPerUndisturbedSteadyTrail": 64,
+      "expectedBinaryBytes": 189,
+      "expectedBinarySha256": "b39583ee5bbc9204d8871cecffa6b0b45d3b35989c0c86853d6a43ef13ce390b",
+      "binaryChangedByte": 161,
+      "originalByte": 56,
+      "newByte": 59,
+      "assemblyStatus": "not assembled; expected hash is an in-memory one-byte baseline patch"
+    },
+    "B-trail256": {
+      "letter": "B",
+      "baselineSource": "final/ChimeraB.asm",
+      "source": "candidates/generated/codex-goal-20261001/shorter-dwell/sources/B-trail256.asm",
+      "sourceSha256": "81f80cc049d836cc84564a0f7b501e152b5100f558149be220216633119a61a6",
+      "sourceBytes": 1095,
+      "sourceChangedByte": 845,
+      "bp": 17408,
+      "dx": 17152,
+      "steadyTrailBytes": 256,
+      "farCallsPerUndisturbedSteadyTrail": 64,
+      "expectedBinaryBytes": 117,
+      "expectedBinarySha256": "c4d961cfb18fd21fb71c7df36298e19a37faf379d38654ac36f76e1307fce214",
+      "binaryChangedByte": 89,
+      "originalByte": 64,
+      "newByte": 67,
+      "assemblyStatus": "not assembled; expected hash is an in-memory one-byte baseline patch"
+    }
+  },
+  "control": {
+    "id": "m050",
+    "A": "baseline.A",
+    "B": "baseline.B"
+  },
+  "arms": [
+    {
+      "id": "both-trail512",
+      "A": "A-trail512",
+      "B": "B-trail512"
+    },
+    {
+      "id": "b-trail512",
+      "A": "baseline.A",
+      "B": "B-trail512"
+    },
+    {
+      "id": "both-trail256",
+      "A": "A-trail256",
+      "B": "B-trail256"
+    },
+    {
+      "id": "b-trail256",
+      "A": "baseline.A",
+      "B": "B-trail256"
+    }
+  ],
+  "interpretation": {
+    "unchanged": "BP, anchor offsets, phases, initial SP gaps, copy counts, worker, capture, other source bytes",
+    "aAlsoAffectsCapturedPath": true,
+    "hypothesis": "Fewer recursive far calls leave each recurring anchor exposed for less time.",
+    "tradeoff": "Fewer painted bytes per visited band and more frequent band visits; not unchanged coverage or immunity.",
+    "limitation": "The 512-byte mechanism has negative historical screens on older designs; this is a current-m050 interaction test."
+  }
+}

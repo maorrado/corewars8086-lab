@@ -1,0 +1,14 @@
+const fs=require('fs'),path=require('path'),cp=require('child_process');
+const root='C:/Maor/CodeGuru/corewars8086-lab';
+const own=root+'/.arena/v6-cooperative-20261003/.arena/run-20261003-150943-s20261003/scratch/a003';
+const base=JSON.parse(fs.readFileSync(root+'/.arena/v6-cooperative-20261003/shared-best.json','utf8'));
+if(base.status!=='confirmed'||base.id!=='original_v6')throw Error('Rebase required');
+let a=fs.readFileSync(root+'/study-notes/good-test-v6/source/V6_1.asm','utf8');
+const b=fs.readFileSync(root+'/study-notes/good-test-v6/source/V6_2.asm','utf8');
+a=a.replace('mov bx, [7A00h]\n','mov bx, [7A00h]\n    cmp bx, 0CCCCh\n    je short no_zombie_pointer\n').replace('    mov ax, si\n','no_zombie_pointer:\n    mov ax, si\n').replace('add di, 0099h','add di, zombie_entry').replace('add si, 0088h','add si, worker');
+const src=own+'/batch8/src',bin=own+'/batch8/bin';fs.mkdirSync(src,{recursive:true});
+fs.writeFileSync(src+'/pointerguard_A.asm',a);fs.writeFileSync(src+'/pointerguard_B.asm',b);
+cp.execFileSync('node',['C:/Maor/CodeGuru/corewars8086-agent2/agent2/tools/nasm-node.cjs',bin,src+'/pointerguard_A.asm',src+'/pointerguard_B.asm'],{stdio:'inherit'});
+const builds=JSON.parse(fs.readFileSync(bin+'/manifest.json','utf8'));
+const candidate={id:'a003_pointerguard',baseline:base.id,hypothesis:'If advertised Zombie pointer7A00h is untouchedCCCC sentinel, skip blind patching of fixed arenaCCCF..CCD5. Saves four startup opcodes in sentinel case and avoids ungrounded writes; existing patch behavior retained for all other values.',edits:'A adds CMP BX,CCCC / JE no_zombie_pointer immediately after MOV BX,[7A00]. A worker and zombie offsets use labels; copied worker bytes unchanged. B exact original.',failureModes:'Non-sentinel corrupt pointer still patches arbitrary bytes. Delaying valid capture by two instructions may regress a compatible old Zombie context. Sentinel-skip removes a small amount of incidental fixed-address offense.',warriors:builds.map(m=>({source:m.input,binary:m.output,size:m.size,sha256:m.binarySha256}))};
+fs.writeFileSync(own+'/batch8/candidates.json',JSON.stringify({schema:'cooperative-v6-candidates-v1',baseline:base.id,candidates:[candidate]},null,2)+'\n');

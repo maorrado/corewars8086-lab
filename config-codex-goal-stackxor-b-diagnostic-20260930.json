@@ -1,0 +1,63 @@
+{
+  "experimentId": "codex-goal-stackxor-b-diagnostic-20260930",
+  "outputPath": "experiments/codex-goal-20260930/diagnostic/stackxor-b-one-cohort.json",
+  "runDirectory": "build/official-runs/codex-goal-20260930/diagnostic/stackxor-b-one-cohort",
+  "battles": 50,
+  "threads": 1,
+  "seeds": [
+    "codex-goal-pair-holdout-20260930-7292"
+  ],
+  "candidate": {
+    "name": "COD_pair",
+    "warriors": [
+      "build/m050-repro/ab_pad_a",
+      "build/codex-goal-20260930/stack-xor/b_xor"
+    ]
+  },
+  "cohorts": [
+    {
+      "id": "goal-fresh-18",
+      "opponents": [
+        {
+          "name": "A_OHS_TrojanByte",
+          "warriors": [
+            "official-2025/survivors-online/OHS_TrojanByte1",
+            "official-2025/survivors-online/OHS_TrojanByte2"
+          ]
+        },
+        {
+          "name": "Y_TOM_AND_JERRY",
+          "warriors": [
+            "official-2025/survivors-online-young/TOM_AND_JERRY1",
+            "official-2025/survivors-online-young/TOM_AND_JERRY2"
+          ]
+        },
+        {
+          "name": "A_HDS_NRI",
+          "warriors": [
+            "official-2025/survivors-online/HDS_NRI1",
+            "official-2025/survivors-online/HDS_NRI2"
+          ]
+        }
+      ]
+    }
+  ],
+  "zombies": [
+    {
+      "name": "zom20a",
+      "path": "official-2025/zombies-live/zom20a"
+    },
+    {
+      "name": "zom20b",
+      "path": "official-2025/zombies-live/zom20b"
+    },
+    {
+      "name": "zom20c",
+      "path": "official-2025/zombies-live/zom20c"
+    },
+    {
+      "name": "zom20d",
+      "path": "official-2025/zombies-live/zom20d"
+    }
+  ]
+}

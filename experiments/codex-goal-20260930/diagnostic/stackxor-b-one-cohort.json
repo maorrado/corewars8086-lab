@@ -1,0 +1,166 @@
+{
+  "schemaVersion": 1,
+  "experimentId": "codex-goal-stackxor-b-diagnostic-20260930",
+  "generatedAt": "2026-09-30T13:13:22.954Z",
+  "configPath": "C:\\Maor\\CodeGuru\\corewars8086-lab\\config-codex-goal-stackxor-b-diagnostic-20260930.json",
+  "configSha256": "0476a5196dc90e33d1310f398a368d8a1f4f308674ef449cf42a4a0b3499dadd",
+  "engineJar": {
+    "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+    "sha256": "31639072397eaf69d99e90b10d8fa594a7446951f1137b7ebd298378f5ec318d"
+  },
+  "aggregate": {
+    "battles": 50,
+    "teamPerBattle": 0.58,
+    "warrior1PerBattle": 0.34,
+    "warrior2PerBattle": 0.24
+  },
+  "runs": [
+    {
+      "runId": "goal-fresh-18__codex-goal-pair-holdout-20260930-7292",
+      "cohortId": "goal-fresh-18",
+      "seed": "codex-goal-pair-holdout-20260930-7292",
+      "battles": 50,
+      "startedAt": "2026-09-30T13:13:18.450Z",
+      "elapsedSeconds": 4.4949042,
+      "command": {
+        "executable": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\temurin8-jre\\jdk8u504-b01-jre\\bin\\java.exe",
+        "args": [
+          "-jar",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+          "--headless",
+          "--comboSize",
+          "4",
+          "--battlesPerCombo",
+          "50",
+          "--seed",
+          "codex-goal-pair-holdout-20260930-7292",
+          "--threads",
+          "1",
+          "--warriorsDir",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\codex-goal-20260930\\diagnostic\\stackxor-b-one-cohort\\goal-fresh-18__codex-goal-pair-holdout-20260930-7292\\survivors",
+          "--zombiesDir",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\codex-goal-20260930\\diagnostic\\stackxor-b-one-cohort\\goal-fresh-18__codex-goal-pair-holdout-20260930-7292\\zombies",
+          "--outputFile",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\codex-goal-20260930\\diagnostic\\stackxor-b-one-cohort\\goal-fresh-18__codex-goal-pair-holdout-20260930-7292\\scores.csv"
+        ]
+      },
+      "inputs": {
+        "COD_pair": [
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\m050-repro\\ab_pad_a",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\codex-goal-20260930\\diagnostic\\stackxor-b-one-cohort\\goal-fresh-18__codex-goal-pair-holdout-20260930-7292\\survivors\\COD_pair1",
+            "bytes": 189,
+            "sha256": "0268ce4f301bf2ada8566f4e608180a0670a335a80b9c2b93b67aee2b632bd44"
+          },
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\codex-goal-20260930\\stack-xor\\b_xor",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\codex-goal-20260930\\diagnostic\\stackxor-b-one-cohort\\goal-fresh-18__codex-goal-pair-holdout-20260930-7292\\survivors\\COD_pair2",
+            "bytes": 117,
+            "sha256": "d162507e4cfa89deae0717b10e6c5896fe37e2af29f336771d9b96bffa86b360"
+          }
+        ],
+        "A_OHS_TrojanByte": [
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\OHS_TrojanByte1",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\codex-goal-20260930\\diagnostic\\stackxor-b-one-cohort\\goal-fresh-18__codex-goal-pair-holdout-20260930-7292\\survivors\\A_OHS_TrojanByte1",
+            "bytes": 110,
+            "sha256": "8daa80561913795dab371699ae02d243e11889eafdbd3f198b8b2792ef8caed6"
+          },
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\OHS_TrojanByte2",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\codex-goal-20260930\\diagnostic\\stackxor-b-one-cohort\\goal-fresh-18__codex-goal-pair-holdout-20260930-7292\\survivors\\A_OHS_TrojanByte2",
+            "bytes": 141,
+            "sha256": "7a243cd4100cef57759ded924b53566ac3004a1d23b71a11a1166f0a7cecbc4f"
+          }
+        ],
+        "Y_TOM_AND_JERRY": [
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online-young\\TOM_AND_JERRY1",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\codex-goal-20260930\\diagnostic\\stackxor-b-one-cohort\\goal-fresh-18__codex-goal-pair-holdout-20260930-7292\\survivors\\Y_TOM_AND_JERRY1",
+            "bytes": 32,
+            "sha256": "0f2a1799845db478549ab951df61323eb863ed496ed87d2e189b2cba510bfa43"
+          },
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online-young\\TOM_AND_JERRY2",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\codex-goal-20260930\\diagnostic\\stackxor-b-one-cohort\\goal-fresh-18__codex-goal-pair-holdout-20260930-7292\\survivors\\Y_TOM_AND_JERRY2",
+            "bytes": 20,
+            "sha256": "8699a2bb930c1d2d1178aa6c17322db31f1338b8184d6056620abbc5b1c1a65e"
+          }
+        ],
+        "A_HDS_NRI": [
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\HDS_NRI1",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\codex-goal-20260930\\diagnostic\\stackxor-b-one-cohort\\goal-fresh-18__codex-goal-pair-holdout-20260930-7292\\survivors\\A_HDS_NRI1",
+            "bytes": 110,
+            "sha256": "8830ca6b843b0508fc2a5771068dad1bc150d2f824d2cd77d7631e523b431bb1"
+          },
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\survivors-online\\HDS_NRI2",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\codex-goal-20260930\\diagnostic\\stackxor-b-one-cohort\\goal-fresh-18__codex-goal-pair-holdout-20260930-7292\\survivors\\A_HDS_NRI2",
+            "bytes": 477,
+            "sha256": "1cc40806e6766e591dac071b1256c8b5f325360f0aae448b188dcc87376bb9ab"
+          }
+        ]
+      },
+      "zombies": [
+        {
+          "name": "zom20a",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\zombies-live\\zom20a",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\codex-goal-20260930\\diagnostic\\stackxor-b-one-cohort\\goal-fresh-18__codex-goal-pair-holdout-20260930-7292\\zombies\\zom20a",
+          "bytes": 73,
+          "sha256": "a950e618ea2e127096c85f486fb555c264730d924a2192c407aa66e6e0318eb6"
+        },
+        {
+          "name": "zom20b",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\zombies-live\\zom20b",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\codex-goal-20260930\\diagnostic\\stackxor-b-one-cohort\\goal-fresh-18__codex-goal-pair-holdout-20260930-7292\\zombies\\zom20b",
+          "bytes": 382,
+          "sha256": "af6394c021ccb5e486db507e2ccd787bd5675f8fec88fd2ddbe9f834566852ce"
+        },
+        {
+          "name": "zom20c",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\zombies-live\\zom20c",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\codex-goal-20260930\\diagnostic\\stackxor-b-one-cohort\\goal-fresh-18__codex-goal-pair-holdout-20260930-7292\\zombies\\zom20c",
+          "bytes": 232,
+          "sha256": "3d3f209967f51a7344e0eab582bc04d1e694da5a73e3682a26ed483dcab7a443"
+        },
+        {
+          "name": "zom20d",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\zombies-live\\zom20d",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\codex-goal-20260930\\diagnostic\\stackxor-b-one-cohort\\goal-fresh-18__codex-goal-pair-holdout-20260930-7292\\zombies\\zom20d",
+          "bytes": 382,
+          "sha256": "923dd6abebbb7bb502ec5a02873c26175820ada5c4409d179d8464f0e90cb6fc"
+        }
+      ],
+      "scores": {
+        "groups": {
+          "A_HDS_NRI": 4,
+          "A_OHS_TrojanByte": 10,
+          "COD_pair": 29,
+          "Y_TOM_AND_JERRY": 6
+        },
+        "warriors": {
+          "A_HDS_NRI1": 3,
+          "A_HDS_NRI2": 1,
+          "A_OHS_TrojanByte1": 3.5,
+          "A_OHS_TrojanByte2": 6.5,
+          "COD_pair1": 17,
+          "COD_pair2": 12,
+          "Y_TOM_AND_JERRY1": 3.5,
+          "Y_TOM_AND_JERRY2": 2.5
+        }
+      },
+      "candidate": {
+        "teamRaw": 29,
+        "teamPerBattle": 0.58,
+        "warrior1Raw": 17,
+        "warrior1PerBattle": 0.34,
+        "warrior2Raw": 12,
+        "warrior2PerBattle": 0.24
+      },
+      "telemetry": null,
+      "rawScoreText": "Groups:\nA_HDS_NRI,4.0\nA_OHS_TrojanByte,10.0\nCOD_pair,29.0\nY_TOM_AND_JERRY,6.0\n\nWarriors:\nA_HDS_NRI1,3.0\nA_HDS_NRI2,1.0\nA_OHS_TrojanByte1,3.5\nA_OHS_TrojanByte2,6.5\nCOD_pair1,17.0\nCOD_pair2,12.0\nY_TOM_AND_JERRY1,3.5\nY_TOM_AND_JERRY2,2.5\n",
+      "stdout": "CoreWars8086 - headless mode\n\r\nLoaded warriors: [A_HDS_NRI, A_OHS_TrojanByte, COD_pair, Y_TOM_AND_JERRY]\r\nStarting competition (50 wars) in parallel.\r\nCompetition is over. Ran 50 wars\r\nWriting scores to file C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\codex-goal-20260930\\diagnostic\\stackxor-b-one-cohort\\goal-fresh-18__codex-goal-pair-holdout-20260930-7292\\scores.csv\r\n"
+    }
+  ]
+}

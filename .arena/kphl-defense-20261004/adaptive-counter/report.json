@@ -1,0 +1,121 @@
+{
+  "schema": "KPHLGuard-adversarial-followup-v1",
+  "generatedAt": "2026-10-04T09:25:43.162Z",
+  "decision": "NOT_ROBUST_AGAINST_ADAPTED_SIGNATURE_HUNTER",
+  "originalPattern": {
+    "hex": "160731FF",
+    "base": {
+      "points": 0,
+      "battles": 200,
+      "pointsPerBattle": 0
+    },
+    "KPHLGuard": {
+      "points": 138,
+      "battles": 200,
+      "pointsPerBattle": 0.69
+    }
+  },
+  "adaptedPattern": {
+    "hex": "160729FF",
+    "base": {
+      "points": 138,
+      "battles": 200,
+      "pointsPerBattle": 0.69
+    },
+    "KPHLGuard": {
+      "points": 0,
+      "battles": 200,
+      "pointsPerBattle": 0
+    }
+  },
+  "pairs": [
+    {
+      "arm": "base",
+      "cohort": "boot_hunter-s0",
+      "seed": "kphldef-20261004-confirm-counters|boot_hunter|s0",
+      "originalPatternPoints": 0,
+      "adaptedPatternPoints": 36.333336
+    },
+    {
+      "arm": "base",
+      "cohort": "boot_hunter-s1",
+      "seed": "kphldef-20261004-confirm-counters|boot_hunter|s1",
+      "originalPatternPoints": 0,
+      "adaptedPatternPoints": 34.833332
+    },
+    {
+      "arm": "base",
+      "cohort": "boot_hunter-s2",
+      "seed": "kphldef-20261004-confirm-counters|boot_hunter|s2",
+      "originalPatternPoints": 0,
+      "adaptedPatternPoints": 34.166668
+    },
+    {
+      "arm": "base",
+      "cohort": "boot_hunter-s3",
+      "seed": "kphldef-20261004-confirm-counters|boot_hunter|s3",
+      "originalPatternPoints": 0,
+      "adaptedPatternPoints": 32.666664
+    },
+    {
+      "arm": "KPHLGuard",
+      "cohort": "boot_hunter-s0",
+      "seed": "kphldef-20261004-confirm-counters|boot_hunter|s0",
+      "originalPatternPoints": 36.333336,
+      "adaptedPatternPoints": 0
+    },
+    {
+      "arm": "KPHLGuard",
+      "cohort": "boot_hunter-s1",
+      "seed": "kphldef-20261004-confirm-counters|boot_hunter|s1",
+      "originalPatternPoints": 34.833332,
+      "adaptedPatternPoints": 0
+    },
+    {
+      "arm": "KPHLGuard",
+      "cohort": "boot_hunter-s2",
+      "seed": "kphldef-20261004-confirm-counters|boot_hunter|s2",
+      "originalPatternPoints": 34.166668,
+      "adaptedPatternPoints": 0
+    },
+    {
+      "arm": "KPHLGuard",
+      "cohort": "boot_hunter-s3",
+      "seed": "kphldef-20261004-confirm-counters|boot_hunter|s3",
+      "originalPatternPoints": 32.666664,
+      "adaptedPatternPoints": 0
+    }
+  ],
+  "counterAudit": [
+    {
+      "warrior": "A",
+      "bytes": 190,
+      "sha256": "e3133f45b4c1faf7ae809cac385e60171285289b2309f0829a6241b06b4498f1",
+      "differences": [
+        {
+          "offset": 8,
+          "old": 49,
+          "adapted": 41
+        }
+      ]
+    },
+    {
+      "warrior": "B",
+      "bytes": 190,
+      "sha256": "e3133f45b4c1faf7ae809cac385e60171285289b2309f0829a6241b06b4498f1",
+      "differences": [
+        {
+          "offset": 8,
+          "old": 49,
+          "adapted": 41
+        }
+      ]
+    }
+  ],
+  "interpretation": "The candidate removes a known fixed signature without changing timing, but creates an equally targetable replacement. A one-byte adjustment of the search constant in each opposing warrior reverses the entire 138-versus-0 outcome on the identical four seeds. This is signature camouflage, not removal of the underlying pre-bootstrap attack surface. No broad-field regression was observed in the earlier field test, but no unconditional improvement or robust immunity is established.",
+  "disposition": "Research candidate only. Do not promote as robust defense or claim guaranteed improvement. Release source hashes remain the same; original narrow positive result remains valid but incomplete.",
+  "results": {
+    "original": ".arena\\v6-cooperative-20261003\\results\\kphldef-20261004-confirm-counters-persistent.json",
+    "adapted": ".arena\\v6-cooperative-20261003\\results\\kphldef-20261004-adapted-guard-counter-persistent.json"
+  }
+}

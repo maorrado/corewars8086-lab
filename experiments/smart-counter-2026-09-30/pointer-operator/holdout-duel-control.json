@@ -1,0 +1,923 @@
+{
+  "schemaVersion": 1,
+  "experimentId": "m050-pointer-holdout-duel-control",
+  "generatedAt": "2026-09-29T23:52:05.110Z",
+  "configPath": "C:\\Maor\\CodeGuru\\corewars8086-lab\\config-m050-pointer-holdout-duel-control.json",
+  "configSha256": "c971ff582b4f54e724e81fb70eecd0dd421fc49c543ecf9b9ec4c90101fc7c9c",
+  "engineJar": {
+    "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+    "sha256": "31639072397eaf69d99e90b10d8fa594a7446951f1137b7ebd298378f5ec318d"
+  },
+  "aggregate": {
+    "battles": 2000,
+    "teamPerBattle": 0.3040833275,
+    "warrior1PerBattle": 0.167,
+    "warrior2PerBattle": 0.13708334
+  },
+  "runs": [
+    {
+      "runId": "vs-smart__m050-pointer-duel-20260930-a",
+      "cohortId": "vs-smart",
+      "seed": "m050-pointer-duel-20260930-a",
+      "battles": 250,
+      "startedAt": "2026-09-29T23:42:48.846Z",
+      "elapsedSeconds": 72.6486116,
+      "command": {
+        "executable": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\temurin8-jre\\jdk8u504-b01-jre\\bin\\java.exe",
+        "args": [
+          "-jar",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+          "--headless",
+          "--comboSize",
+          "2",
+          "--battlesPerCombo",
+          "250",
+          "--seed",
+          "m050-pointer-duel-20260930-a",
+          "--threads",
+          "4",
+          "--warriorsDir",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-smart__m050-pointer-duel-20260930-a\\survivors",
+          "--zombiesDir",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-smart__m050-pointer-duel-20260930-a\\zombies",
+          "--outputFile",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-smart__m050-pointer-duel-20260930-a\\scores.csv"
+        ]
+      },
+      "inputs": {
+        "COD_m050_control": [
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\m050-repro\\ab_pad_a",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-smart__m050-pointer-duel-20260930-a\\survivors\\COD_m050_control1",
+            "bytes": 189,
+            "sha256": "0268ce4f301bf2ada8566f4e608180a0670a335a80b9c2b93b67aee2b632bd44"
+          },
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\m050-repro\\ab_pad_b",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-smart__m050-pointer-duel-20260930-a\\survivors\\COD_m050_control2",
+            "bytes": 117,
+            "sha256": "06b5a1ff7bac4b146620de6d1de512dfedf3f28366d6435bf61d49869d971782"
+          }
+        ],
+        "COD_Smart": [
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\smart-counter-2026-09-30\\SmartA",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-smart__m050-pointer-duel-20260930-a\\survivors\\COD_Smart1",
+            "bytes": 191,
+            "sha256": "cc08a35cd78de2e6e5465dc63920e672cf92eea3d8c55521b74d230ddb748c76"
+          },
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\smart-counter-2026-09-30\\SmartB",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-smart__m050-pointer-duel-20260930-a\\survivors\\COD_Smart2",
+            "bytes": 119,
+            "sha256": "a87767605c50263f69a30cd12abd25be153051f631d43973462965e5e290875d"
+          }
+        ]
+      },
+      "zombies": [
+        {
+          "name": "zom20a",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\zombies-live\\zom20a",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-smart__m050-pointer-duel-20260930-a\\zombies\\zom20a",
+          "bytes": 73,
+          "sha256": "a950e618ea2e127096c85f486fb555c264730d924a2192c407aa66e6e0318eb6"
+        },
+        {
+          "name": "zom20b",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\zombies-live\\zom20b",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-smart__m050-pointer-duel-20260930-a\\zombies\\zom20b",
+          "bytes": 382,
+          "sha256": "af6394c021ccb5e486db507e2ccd787bd5675f8fec88fd2ddbe9f834566852ce"
+        },
+        {
+          "name": "zom20c",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\zombies-live\\zom20c",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-smart__m050-pointer-duel-20260930-a\\zombies\\zom20c",
+          "bytes": 232,
+          "sha256": "3d3f209967f51a7344e0eab582bc04d1e694da5a73e3682a26ed483dcab7a443"
+        },
+        {
+          "name": "zom20d",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\zombies-live\\zom20d",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-smart__m050-pointer-duel-20260930-a\\zombies\\zom20d",
+          "bytes": 382,
+          "sha256": "923dd6abebbb7bb502ec5a02873c26175820ada5c4409d179d8464f0e90cb6fc"
+        }
+      ],
+      "scores": {
+        "groups": {
+          "COD_m050_control": 83.00002,
+          "COD_Smart": 150.00003
+        },
+        "warriors": {
+          "COD_m050_control1": 42.666664,
+          "COD_m050_control2": 40.333324,
+          "COD_Smart1": 76.66666,
+          "COD_Smart2": 73.33333
+        }
+      },
+      "candidate": {
+        "teamRaw": 83.00002,
+        "teamPerBattle": 0.33200008000000003,
+        "warrior1Raw": 42.666664,
+        "warrior1PerBattle": 0.170666656,
+        "warrior2Raw": 40.333324,
+        "warrior2PerBattle": 0.161333296
+      },
+      "telemetry": null,
+      "rawScoreText": "Groups:\nCOD_m050_control,83.00002\nCOD_Smart,150.00003\n\nWarriors:\nCOD_m050_control1,42.666664\nCOD_m050_control2,40.333324\nCOD_Smart1,76.66666\nCOD_Smart2,73.33333\n",
+      "stdout": "CoreWars8086 - headless mode\n\r\nLoaded warriors: [COD_m050_control, COD_Smart]\r\nStarting competition (250 wars) in parallel.\r\nCompetition is over. Ran 250 wars\r\nWriting scores to file C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-smart__m050-pointer-duel-20260930-a\\scores.csv\r\n"
+    },
+    {
+      "runId": "vs-smart__m050-pointer-duel-20260930-b",
+      "cohortId": "vs-smart",
+      "seed": "m050-pointer-duel-20260930-b",
+      "battles": 250,
+      "startedAt": "2026-09-29T23:44:01.600Z",
+      "elapsedSeconds": 77.7329757,
+      "command": {
+        "executable": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\temurin8-jre\\jdk8u504-b01-jre\\bin\\java.exe",
+        "args": [
+          "-jar",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+          "--headless",
+          "--comboSize",
+          "2",
+          "--battlesPerCombo",
+          "250",
+          "--seed",
+          "m050-pointer-duel-20260930-b",
+          "--threads",
+          "4",
+          "--warriorsDir",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-smart__m050-pointer-duel-20260930-b\\survivors",
+          "--zombiesDir",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-smart__m050-pointer-duel-20260930-b\\zombies",
+          "--outputFile",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-smart__m050-pointer-duel-20260930-b\\scores.csv"
+        ]
+      },
+      "inputs": {
+        "COD_m050_control": [
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\m050-repro\\ab_pad_a",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-smart__m050-pointer-duel-20260930-b\\survivors\\COD_m050_control1",
+            "bytes": 189,
+            "sha256": "0268ce4f301bf2ada8566f4e608180a0670a335a80b9c2b93b67aee2b632bd44"
+          },
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\m050-repro\\ab_pad_b",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-smart__m050-pointer-duel-20260930-b\\survivors\\COD_m050_control2",
+            "bytes": 117,
+            "sha256": "06b5a1ff7bac4b146620de6d1de512dfedf3f28366d6435bf61d49869d971782"
+          }
+        ],
+        "COD_Smart": [
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\smart-counter-2026-09-30\\SmartA",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-smart__m050-pointer-duel-20260930-b\\survivors\\COD_Smart1",
+            "bytes": 191,
+            "sha256": "cc08a35cd78de2e6e5465dc63920e672cf92eea3d8c55521b74d230ddb748c76"
+          },
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\smart-counter-2026-09-30\\SmartB",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-smart__m050-pointer-duel-20260930-b\\survivors\\COD_Smart2",
+            "bytes": 119,
+            "sha256": "a87767605c50263f69a30cd12abd25be153051f631d43973462965e5e290875d"
+          }
+        ]
+      },
+      "zombies": [
+        {
+          "name": "zom20a",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\zombies-live\\zom20a",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-smart__m050-pointer-duel-20260930-b\\zombies\\zom20a",
+          "bytes": 73,
+          "sha256": "a950e618ea2e127096c85f486fb555c264730d924a2192c407aa66e6e0318eb6"
+        },
+        {
+          "name": "zom20b",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\zombies-live\\zom20b",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-smart__m050-pointer-duel-20260930-b\\zombies\\zom20b",
+          "bytes": 382,
+          "sha256": "af6394c021ccb5e486db507e2ccd787bd5675f8fec88fd2ddbe9f834566852ce"
+        },
+        {
+          "name": "zom20c",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\zombies-live\\zom20c",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-smart__m050-pointer-duel-20260930-b\\zombies\\zom20c",
+          "bytes": 232,
+          "sha256": "3d3f209967f51a7344e0eab582bc04d1e694da5a73e3682a26ed483dcab7a443"
+        },
+        {
+          "name": "zom20d",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\zombies-live\\zom20d",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-smart__m050-pointer-duel-20260930-b\\zombies\\zom20d",
+          "bytes": 382,
+          "sha256": "923dd6abebbb7bb502ec5a02873c26175820ada5c4409d179d8464f0e90cb6fc"
+        }
+      ],
+      "scores": {
+        "groups": {
+          "COD_m050_control": 81.833336,
+          "COD_Smart": 151.16667
+        },
+        "warriors": {
+          "COD_m050_control1": 45.25,
+          "COD_m050_control2": 36.583336,
+          "COD_Smart1": 79.916664,
+          "COD_Smart2": 71.25
+        }
+      },
+      "candidate": {
+        "teamRaw": 81.833336,
+        "teamPerBattle": 0.327333344,
+        "warrior1Raw": 45.25,
+        "warrior1PerBattle": 0.181,
+        "warrior2Raw": 36.583336,
+        "warrior2PerBattle": 0.146333344
+      },
+      "telemetry": null,
+      "rawScoreText": "Groups:\nCOD_m050_control,81.833336\nCOD_Smart,151.16667\n\nWarriors:\nCOD_m050_control1,45.25\nCOD_m050_control2,36.583336\nCOD_Smart1,79.916664\nCOD_Smart2,71.25\n",
+      "stdout": "CoreWars8086 - headless mode\n\r\nLoaded warriors: [COD_m050_control, COD_Smart]\r\nStarting competition (250 wars) in parallel.\r\nCompetition is over. Ran 250 wars\r\nWriting scores to file C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-smart__m050-pointer-duel-20260930-b\\scores.csv\r\n"
+    },
+    {
+      "runId": "vs-smart__m050-pointer-duel-20260930-c",
+      "cohortId": "vs-smart",
+      "seed": "m050-pointer-duel-20260930-c",
+      "battles": 250,
+      "startedAt": "2026-09-29T23:45:19.415Z",
+      "elapsedSeconds": 77.2803521,
+      "command": {
+        "executable": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\temurin8-jre\\jdk8u504-b01-jre\\bin\\java.exe",
+        "args": [
+          "-jar",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+          "--headless",
+          "--comboSize",
+          "2",
+          "--battlesPerCombo",
+          "250",
+          "--seed",
+          "m050-pointer-duel-20260930-c",
+          "--threads",
+          "4",
+          "--warriorsDir",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-smart__m050-pointer-duel-20260930-c\\survivors",
+          "--zombiesDir",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-smart__m050-pointer-duel-20260930-c\\zombies",
+          "--outputFile",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-smart__m050-pointer-duel-20260930-c\\scores.csv"
+        ]
+      },
+      "inputs": {
+        "COD_m050_control": [
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\m050-repro\\ab_pad_a",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-smart__m050-pointer-duel-20260930-c\\survivors\\COD_m050_control1",
+            "bytes": 189,
+            "sha256": "0268ce4f301bf2ada8566f4e608180a0670a335a80b9c2b93b67aee2b632bd44"
+          },
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\m050-repro\\ab_pad_b",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-smart__m050-pointer-duel-20260930-c\\survivors\\COD_m050_control2",
+            "bytes": 117,
+            "sha256": "06b5a1ff7bac4b146620de6d1de512dfedf3f28366d6435bf61d49869d971782"
+          }
+        ],
+        "COD_Smart": [
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\smart-counter-2026-09-30\\SmartA",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-smart__m050-pointer-duel-20260930-c\\survivors\\COD_Smart1",
+            "bytes": 191,
+            "sha256": "cc08a35cd78de2e6e5465dc63920e672cf92eea3d8c55521b74d230ddb748c76"
+          },
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\smart-counter-2026-09-30\\SmartB",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-smart__m050-pointer-duel-20260930-c\\survivors\\COD_Smart2",
+            "bytes": 119,
+            "sha256": "a87767605c50263f69a30cd12abd25be153051f631d43973462965e5e290875d"
+          }
+        ]
+      },
+      "zombies": [
+        {
+          "name": "zom20a",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\zombies-live\\zom20a",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-smart__m050-pointer-duel-20260930-c\\zombies\\zom20a",
+          "bytes": 73,
+          "sha256": "a950e618ea2e127096c85f486fb555c264730d924a2192c407aa66e6e0318eb6"
+        },
+        {
+          "name": "zom20b",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\zombies-live\\zom20b",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-smart__m050-pointer-duel-20260930-c\\zombies\\zom20b",
+          "bytes": 382,
+          "sha256": "af6394c021ccb5e486db507e2ccd787bd5675f8fec88fd2ddbe9f834566852ce"
+        },
+        {
+          "name": "zom20c",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\zombies-live\\zom20c",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-smart__m050-pointer-duel-20260930-c\\zombies\\zom20c",
+          "bytes": 232,
+          "sha256": "3d3f209967f51a7344e0eab582bc04d1e694da5a73e3682a26ed483dcab7a443"
+        },
+        {
+          "name": "zom20d",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\zombies-live\\zom20d",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-smart__m050-pointer-duel-20260930-c\\zombies\\zom20d",
+          "bytes": 382,
+          "sha256": "923dd6abebbb7bb502ec5a02873c26175820ada5c4409d179d8464f0e90cb6fc"
+        }
+      ],
+      "scores": {
+        "groups": {
+          "COD_m050_control": 77.83333,
+          "COD_Smart": 156.16666
+        },
+        "warriors": {
+          "COD_m050_control1": 41.166668,
+          "COD_m050_control2": 36.666664,
+          "COD_Smart1": 76.5,
+          "COD_Smart2": 79.66667
+        }
+      },
+      "candidate": {
+        "teamRaw": 77.83333,
+        "teamPerBattle": 0.31133332,
+        "warrior1Raw": 41.166668,
+        "warrior1PerBattle": 0.16466667200000001,
+        "warrior2Raw": 36.666664,
+        "warrior2PerBattle": 0.14666665599999998
+      },
+      "telemetry": null,
+      "rawScoreText": "Groups:\nCOD_m050_control,77.83333\nCOD_Smart,156.16666\n\nWarriors:\nCOD_m050_control1,41.166668\nCOD_m050_control2,36.666664\nCOD_Smart1,76.5\nCOD_Smart2,79.66667\n",
+      "stdout": "CoreWars8086 - headless mode\n\r\nLoaded warriors: [COD_m050_control, COD_Smart]\r\nStarting competition (250 wars) in parallel.\r\nCompetition is over. Ran 250 wars\r\nWriting scores to file C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-smart__m050-pointer-duel-20260930-c\\scores.csv\r\n"
+    },
+    {
+      "runId": "vs-smart__m050-pointer-duel-20260930-d",
+      "cohortId": "vs-smart",
+      "seed": "m050-pointer-duel-20260930-d",
+      "battles": 250,
+      "startedAt": "2026-09-29T23:46:36.748Z",
+      "elapsedSeconds": 85.0053904,
+      "command": {
+        "executable": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\temurin8-jre\\jdk8u504-b01-jre\\bin\\java.exe",
+        "args": [
+          "-jar",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+          "--headless",
+          "--comboSize",
+          "2",
+          "--battlesPerCombo",
+          "250",
+          "--seed",
+          "m050-pointer-duel-20260930-d",
+          "--threads",
+          "4",
+          "--warriorsDir",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-smart__m050-pointer-duel-20260930-d\\survivors",
+          "--zombiesDir",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-smart__m050-pointer-duel-20260930-d\\zombies",
+          "--outputFile",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-smart__m050-pointer-duel-20260930-d\\scores.csv"
+        ]
+      },
+      "inputs": {
+        "COD_m050_control": [
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\m050-repro\\ab_pad_a",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-smart__m050-pointer-duel-20260930-d\\survivors\\COD_m050_control1",
+            "bytes": 189,
+            "sha256": "0268ce4f301bf2ada8566f4e608180a0670a335a80b9c2b93b67aee2b632bd44"
+          },
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\m050-repro\\ab_pad_b",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-smart__m050-pointer-duel-20260930-d\\survivors\\COD_m050_control2",
+            "bytes": 117,
+            "sha256": "06b5a1ff7bac4b146620de6d1de512dfedf3f28366d6435bf61d49869d971782"
+          }
+        ],
+        "COD_Smart": [
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\smart-counter-2026-09-30\\SmartA",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-smart__m050-pointer-duel-20260930-d\\survivors\\COD_Smart1",
+            "bytes": 191,
+            "sha256": "cc08a35cd78de2e6e5465dc63920e672cf92eea3d8c55521b74d230ddb748c76"
+          },
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\smart-counter-2026-09-30\\SmartB",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-smart__m050-pointer-duel-20260930-d\\survivors\\COD_Smart2",
+            "bytes": 119,
+            "sha256": "a87767605c50263f69a30cd12abd25be153051f631d43973462965e5e290875d"
+          }
+        ]
+      },
+      "zombies": [
+        {
+          "name": "zom20a",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\zombies-live\\zom20a",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-smart__m050-pointer-duel-20260930-d\\zombies\\zom20a",
+          "bytes": 73,
+          "sha256": "a950e618ea2e127096c85f486fb555c264730d924a2192c407aa66e6e0318eb6"
+        },
+        {
+          "name": "zom20b",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\zombies-live\\zom20b",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-smart__m050-pointer-duel-20260930-d\\zombies\\zom20b",
+          "bytes": 382,
+          "sha256": "af6394c021ccb5e486db507e2ccd787bd5675f8fec88fd2ddbe9f834566852ce"
+        },
+        {
+          "name": "zom20c",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\zombies-live\\zom20c",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-smart__m050-pointer-duel-20260930-d\\zombies\\zom20c",
+          "bytes": 232,
+          "sha256": "3d3f209967f51a7344e0eab582bc04d1e694da5a73e3682a26ed483dcab7a443"
+        },
+        {
+          "name": "zom20d",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\zombies-live\\zom20d",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-smart__m050-pointer-duel-20260930-d\\zombies\\zom20d",
+          "bytes": 382,
+          "sha256": "923dd6abebbb7bb502ec5a02873c26175820ada5c4409d179d8464f0e90cb6fc"
+        }
+      ],
+      "scores": {
+        "groups": {
+          "COD_m050_control": 88.16667,
+          "COD_Smart": 147.83333
+        },
+        "warriors": {
+          "COD_m050_control1": 53.666664,
+          "COD_m050_control2": 34.5,
+          "COD_Smart1": 78.5,
+          "COD_Smart2": 69.333336
+        }
+      },
+      "candidate": {
+        "teamRaw": 88.16667,
+        "teamPerBattle": 0.35266668,
+        "warrior1Raw": 53.666664,
+        "warrior1PerBattle": 0.21466665599999998,
+        "warrior2Raw": 34.5,
+        "warrior2PerBattle": 0.138
+      },
+      "telemetry": null,
+      "rawScoreText": "Groups:\nCOD_m050_control,88.16667\nCOD_Smart,147.83333\n\nWarriors:\nCOD_m050_control1,53.666664\nCOD_m050_control2,34.5\nCOD_Smart1,78.5\nCOD_Smart2,69.333336\n",
+      "stdout": "CoreWars8086 - headless mode\n\r\nLoaded warriors: [COD_m050_control, COD_Smart]\r\nStarting competition (250 wars) in parallel.\r\nCompetition is over. Ran 250 wars\r\nWriting scores to file C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-smart__m050-pointer-duel-20260930-d\\scores.csv\r\n"
+    },
+    {
+      "runId": "vs-add-a__m050-pointer-duel-20260930-a",
+      "cohortId": "vs-add-a",
+      "seed": "m050-pointer-duel-20260930-a",
+      "battles": 250,
+      "startedAt": "2026-09-29T23:48:02.003Z",
+      "elapsedSeconds": 72.9344171,
+      "command": {
+        "executable": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\temurin8-jre\\jdk8u504-b01-jre\\bin\\java.exe",
+        "args": [
+          "-jar",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+          "--headless",
+          "--comboSize",
+          "2",
+          "--battlesPerCombo",
+          "250",
+          "--seed",
+          "m050-pointer-duel-20260930-a",
+          "--threads",
+          "4",
+          "--warriorsDir",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-add-a__m050-pointer-duel-20260930-a\\survivors",
+          "--zombiesDir",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-add-a__m050-pointer-duel-20260930-a\\zombies",
+          "--outputFile",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-add-a__m050-pointer-duel-20260930-a\\scores.csv"
+        ]
+      },
+      "inputs": {
+        "COD_m050_control": [
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\m050-repro\\ab_pad_a",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-add-a__m050-pointer-duel-20260930-a\\survivors\\COD_m050_control1",
+            "bytes": 189,
+            "sha256": "0268ce4f301bf2ada8566f4e608180a0670a335a80b9c2b93b67aee2b632bd44"
+          },
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\m050-repro\\ab_pad_b",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-add-a__m050-pointer-duel-20260930-a\\survivors\\COD_m050_control2",
+            "bytes": 117,
+            "sha256": "06b5a1ff7bac4b146620de6d1de512dfedf3f28366d6435bf61d49869d971782"
+          }
+        ],
+        "COD_add_a": [
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\smart-step-operators\\add-a\\A",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-add-a__m050-pointer-duel-20260930-a\\survivors\\COD_add_a1",
+            "bytes": 191,
+            "sha256": "02d31514d02997a384c2aafaff396797bbb1f59ffac3d2e0500730dc813ca653"
+          },
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\smart-step-operators\\add-a\\B",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-add-a__m050-pointer-duel-20260930-a\\survivors\\COD_add_a2",
+            "bytes": 119,
+            "sha256": "a87767605c50263f69a30cd12abd25be153051f631d43973462965e5e290875d"
+          }
+        ]
+      },
+      "zombies": [
+        {
+          "name": "zom20a",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\zombies-live\\zom20a",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-add-a__m050-pointer-duel-20260930-a\\zombies\\zom20a",
+          "bytes": 73,
+          "sha256": "a950e618ea2e127096c85f486fb555c264730d924a2192c407aa66e6e0318eb6"
+        },
+        {
+          "name": "zom20b",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\zombies-live\\zom20b",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-add-a__m050-pointer-duel-20260930-a\\zombies\\zom20b",
+          "bytes": 382,
+          "sha256": "af6394c021ccb5e486db507e2ccd787bd5675f8fec88fd2ddbe9f834566852ce"
+        },
+        {
+          "name": "zom20c",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\zombies-live\\zom20c",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-add-a__m050-pointer-duel-20260930-a\\zombies\\zom20c",
+          "bytes": 232,
+          "sha256": "3d3f209967f51a7344e0eab582bc04d1e694da5a73e3682a26ed483dcab7a443"
+        },
+        {
+          "name": "zom20d",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\zombies-live\\zom20d",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-add-a__m050-pointer-duel-20260930-a\\zombies\\zom20d",
+          "bytes": 382,
+          "sha256": "923dd6abebbb7bb502ec5a02873c26175820ada5c4409d179d8464f0e90cb6fc"
+        }
+      ],
+      "scores": {
+        "groups": {
+          "COD_add_a": 177.1667,
+          "COD_m050_control": 68.83333
+        },
+        "warriors": {
+          "COD_add_a1": 114.25001,
+          "COD_add_a2": 62.916656,
+          "COD_m050_control1": 37.75,
+          "COD_m050_control2": 31.083338
+        }
+      },
+      "candidate": {
+        "teamRaw": 68.83333,
+        "teamPerBattle": 0.27533332,
+        "warrior1Raw": 37.75,
+        "warrior1PerBattle": 0.151,
+        "warrior2Raw": 31.083338,
+        "warrior2PerBattle": 0.12433335200000001
+      },
+      "telemetry": null,
+      "rawScoreText": "Groups:\nCOD_add_a,177.1667\nCOD_m050_control,68.83333\n\nWarriors:\nCOD_add_a1,114.25001\nCOD_add_a2,62.916656\nCOD_m050_control1,37.75\nCOD_m050_control2,31.083338\n",
+      "stdout": "CoreWars8086 - headless mode\n\r\nLoaded warriors: [COD_add_a, COD_m050_control]\r\nStarting competition (250 wars) in parallel.\r\nCompetition is over. Ran 250 wars\r\nWriting scores to file C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-add-a__m050-pointer-duel-20260930-a\\scores.csv\r\n"
+    },
+    {
+      "runId": "vs-add-a__m050-pointer-duel-20260930-b",
+      "cohortId": "vs-add-a",
+      "seed": "m050-pointer-duel-20260930-b",
+      "battles": 250,
+      "startedAt": "2026-09-29T23:49:14.974Z",
+      "elapsedSeconds": 40.6855326,
+      "command": {
+        "executable": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\temurin8-jre\\jdk8u504-b01-jre\\bin\\java.exe",
+        "args": [
+          "-jar",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+          "--headless",
+          "--comboSize",
+          "2",
+          "--battlesPerCombo",
+          "250",
+          "--seed",
+          "m050-pointer-duel-20260930-b",
+          "--threads",
+          "4",
+          "--warriorsDir",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-add-a__m050-pointer-duel-20260930-b\\survivors",
+          "--zombiesDir",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-add-a__m050-pointer-duel-20260930-b\\zombies",
+          "--outputFile",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-add-a__m050-pointer-duel-20260930-b\\scores.csv"
+        ]
+      },
+      "inputs": {
+        "COD_m050_control": [
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\m050-repro\\ab_pad_a",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-add-a__m050-pointer-duel-20260930-b\\survivors\\COD_m050_control1",
+            "bytes": 189,
+            "sha256": "0268ce4f301bf2ada8566f4e608180a0670a335a80b9c2b93b67aee2b632bd44"
+          },
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\m050-repro\\ab_pad_b",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-add-a__m050-pointer-duel-20260930-b\\survivors\\COD_m050_control2",
+            "bytes": 117,
+            "sha256": "06b5a1ff7bac4b146620de6d1de512dfedf3f28366d6435bf61d49869d971782"
+          }
+        ],
+        "COD_add_a": [
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\smart-step-operators\\add-a\\A",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-add-a__m050-pointer-duel-20260930-b\\survivors\\COD_add_a1",
+            "bytes": 191,
+            "sha256": "02d31514d02997a384c2aafaff396797bbb1f59ffac3d2e0500730dc813ca653"
+          },
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\smart-step-operators\\add-a\\B",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-add-a__m050-pointer-duel-20260930-b\\survivors\\COD_add_a2",
+            "bytes": 119,
+            "sha256": "a87767605c50263f69a30cd12abd25be153051f631d43973462965e5e290875d"
+          }
+        ]
+      },
+      "zombies": [
+        {
+          "name": "zom20a",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\zombies-live\\zom20a",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-add-a__m050-pointer-duel-20260930-b\\zombies\\zom20a",
+          "bytes": 73,
+          "sha256": "a950e618ea2e127096c85f486fb555c264730d924a2192c407aa66e6e0318eb6"
+        },
+        {
+          "name": "zom20b",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\zombies-live\\zom20b",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-add-a__m050-pointer-duel-20260930-b\\zombies\\zom20b",
+          "bytes": 382,
+          "sha256": "af6394c021ccb5e486db507e2ccd787bd5675f8fec88fd2ddbe9f834566852ce"
+        },
+        {
+          "name": "zom20c",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\zombies-live\\zom20c",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-add-a__m050-pointer-duel-20260930-b\\zombies\\zom20c",
+          "bytes": 232,
+          "sha256": "3d3f209967f51a7344e0eab582bc04d1e694da5a73e3682a26ed483dcab7a443"
+        },
+        {
+          "name": "zom20d",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\zombies-live\\zom20d",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-add-a__m050-pointer-duel-20260930-b\\zombies\\zom20d",
+          "bytes": 382,
+          "sha256": "923dd6abebbb7bb502ec5a02873c26175820ada5c4409d179d8464f0e90cb6fc"
+        }
+      ],
+      "scores": {
+        "groups": {
+          "COD_add_a": 176.49998,
+          "COD_m050_control": 71.499985
+        },
+        "warriors": {
+          "COD_add_a1": 113.83335,
+          "COD_add_a2": 62.666656,
+          "COD_m050_control1": 38.000004,
+          "COD_m050_control2": 33.500004
+        }
+      },
+      "candidate": {
+        "teamRaw": 71.499985,
+        "teamPerBattle": 0.28599994,
+        "warrior1Raw": 38.000004,
+        "warrior1PerBattle": 0.152000016,
+        "warrior2Raw": 33.500004,
+        "warrior2PerBattle": 0.134000016
+      },
+      "telemetry": null,
+      "rawScoreText": "Groups:\nCOD_add_a,176.49998\nCOD_m050_control,71.499985\n\nWarriors:\nCOD_add_a1,113.83335\nCOD_add_a2,62.666656\nCOD_m050_control1,38.000004\nCOD_m050_control2,33.500004\n",
+      "stdout": "CoreWars8086 - headless mode\n\r\nLoaded warriors: [COD_add_a, COD_m050_control]\r\nStarting competition (250 wars) in parallel.\r\nCompetition is over. Ran 250 wars\r\nWriting scores to file C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-add-a__m050-pointer-duel-20260930-b\\scores.csv\r\n"
+    },
+    {
+      "runId": "vs-add-a__m050-pointer-duel-20260930-c",
+      "cohortId": "vs-add-a",
+      "seed": "m050-pointer-duel-20260930-c",
+      "battles": 250,
+      "startedAt": "2026-09-29T23:49:55.725Z",
+      "elapsedSeconds": 49.7518819,
+      "command": {
+        "executable": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\temurin8-jre\\jdk8u504-b01-jre\\bin\\java.exe",
+        "args": [
+          "-jar",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+          "--headless",
+          "--comboSize",
+          "2",
+          "--battlesPerCombo",
+          "250",
+          "--seed",
+          "m050-pointer-duel-20260930-c",
+          "--threads",
+          "4",
+          "--warriorsDir",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-add-a__m050-pointer-duel-20260930-c\\survivors",
+          "--zombiesDir",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-add-a__m050-pointer-duel-20260930-c\\zombies",
+          "--outputFile",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-add-a__m050-pointer-duel-20260930-c\\scores.csv"
+        ]
+      },
+      "inputs": {
+        "COD_m050_control": [
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\m050-repro\\ab_pad_a",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-add-a__m050-pointer-duel-20260930-c\\survivors\\COD_m050_control1",
+            "bytes": 189,
+            "sha256": "0268ce4f301bf2ada8566f4e608180a0670a335a80b9c2b93b67aee2b632bd44"
+          },
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\m050-repro\\ab_pad_b",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-add-a__m050-pointer-duel-20260930-c\\survivors\\COD_m050_control2",
+            "bytes": 117,
+            "sha256": "06b5a1ff7bac4b146620de6d1de512dfedf3f28366d6435bf61d49869d971782"
+          }
+        ],
+        "COD_add_a": [
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\smart-step-operators\\add-a\\A",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-add-a__m050-pointer-duel-20260930-c\\survivors\\COD_add_a1",
+            "bytes": 191,
+            "sha256": "02d31514d02997a384c2aafaff396797bbb1f59ffac3d2e0500730dc813ca653"
+          },
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\smart-step-operators\\add-a\\B",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-add-a__m050-pointer-duel-20260930-c\\survivors\\COD_add_a2",
+            "bytes": 119,
+            "sha256": "a87767605c50263f69a30cd12abd25be153051f631d43973462965e5e290875d"
+          }
+        ]
+      },
+      "zombies": [
+        {
+          "name": "zom20a",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\zombies-live\\zom20a",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-add-a__m050-pointer-duel-20260930-c\\zombies\\zom20a",
+          "bytes": 73,
+          "sha256": "a950e618ea2e127096c85f486fb555c264730d924a2192c407aa66e6e0318eb6"
+        },
+        {
+          "name": "zom20b",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\zombies-live\\zom20b",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-add-a__m050-pointer-duel-20260930-c\\zombies\\zom20b",
+          "bytes": 382,
+          "sha256": "af6394c021ccb5e486db507e2ccd787bd5675f8fec88fd2ddbe9f834566852ce"
+        },
+        {
+          "name": "zom20c",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\zombies-live\\zom20c",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-add-a__m050-pointer-duel-20260930-c\\zombies\\zom20c",
+          "bytes": 232,
+          "sha256": "3d3f209967f51a7344e0eab582bc04d1e694da5a73e3682a26ed483dcab7a443"
+        },
+        {
+          "name": "zom20d",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\zombies-live\\zom20d",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-add-a__m050-pointer-duel-20260930-c\\zombies\\zom20d",
+          "bytes": 382,
+          "sha256": "923dd6abebbb7bb502ec5a02873c26175820ada5c4409d179d8464f0e90cb6fc"
+        }
+      ],
+      "scores": {
+        "groups": {
+          "COD_add_a": 179.83331,
+          "COD_m050_control": 67.166664
+        },
+        "warriors": {
+          "COD_add_a1": 117.08334,
+          "COD_add_a2": 62.74999,
+          "COD_m050_control1": 39.083332,
+          "COD_m050_control2": 28.083338
+        }
+      },
+      "candidate": {
+        "teamRaw": 67.166664,
+        "teamPerBattle": 0.268666656,
+        "warrior1Raw": 39.083332,
+        "warrior1PerBattle": 0.156333328,
+        "warrior2Raw": 28.083338,
+        "warrior2PerBattle": 0.11233335200000001
+      },
+      "telemetry": null,
+      "rawScoreText": "Groups:\nCOD_add_a,179.83331\nCOD_m050_control,67.166664\n\nWarriors:\nCOD_add_a1,117.08334\nCOD_add_a2,62.74999\nCOD_m050_control1,39.083332\nCOD_m050_control2,28.083338\n",
+      "stdout": "CoreWars8086 - headless mode\n\r\nLoaded warriors: [COD_add_a, COD_m050_control]\r\nStarting competition (250 wars) in parallel.\r\nCompetition is over. Ran 250 wars\r\nWriting scores to file C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-add-a__m050-pointer-duel-20260930-c\\scores.csv\r\n"
+    },
+    {
+      "runId": "vs-add-a__m050-pointer-duel-20260930-d",
+      "cohortId": "vs-add-a",
+      "seed": "m050-pointer-duel-20260930-d",
+      "battles": 250,
+      "startedAt": "2026-09-29T23:50:45.683Z",
+      "elapsedSeconds": 79.3844584,
+      "command": {
+        "executable": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\temurin8-jre\\jdk8u504-b01-jre\\bin\\java.exe",
+        "args": [
+          "-jar",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+          "--headless",
+          "--comboSize",
+          "2",
+          "--battlesPerCombo",
+          "250",
+          "--seed",
+          "m050-pointer-duel-20260930-d",
+          "--threads",
+          "4",
+          "--warriorsDir",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-add-a__m050-pointer-duel-20260930-d\\survivors",
+          "--zombiesDir",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-add-a__m050-pointer-duel-20260930-d\\zombies",
+          "--outputFile",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-add-a__m050-pointer-duel-20260930-d\\scores.csv"
+        ]
+      },
+      "inputs": {
+        "COD_m050_control": [
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\m050-repro\\ab_pad_a",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-add-a__m050-pointer-duel-20260930-d\\survivors\\COD_m050_control1",
+            "bytes": 189,
+            "sha256": "0268ce4f301bf2ada8566f4e608180a0670a335a80b9c2b93b67aee2b632bd44"
+          },
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\m050-repro\\ab_pad_b",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-add-a__m050-pointer-duel-20260930-d\\survivors\\COD_m050_control2",
+            "bytes": 117,
+            "sha256": "06b5a1ff7bac4b146620de6d1de512dfedf3f28366d6435bf61d49869d971782"
+          }
+        ],
+        "COD_add_a": [
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\smart-step-operators\\add-a\\A",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-add-a__m050-pointer-duel-20260930-d\\survivors\\COD_add_a1",
+            "bytes": 191,
+            "sha256": "02d31514d02997a384c2aafaff396797bbb1f59ffac3d2e0500730dc813ca653"
+          },
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\smart-step-operators\\add-a\\B",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-add-a__m050-pointer-duel-20260930-d\\survivors\\COD_add_a2",
+            "bytes": 119,
+            "sha256": "a87767605c50263f69a30cd12abd25be153051f631d43973462965e5e290875d"
+          }
+        ]
+      },
+      "zombies": [
+        {
+          "name": "zom20a",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\zombies-live\\zom20a",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-add-a__m050-pointer-duel-20260930-d\\zombies\\zom20a",
+          "bytes": 73,
+          "sha256": "a950e618ea2e127096c85f486fb555c264730d924a2192c407aa66e6e0318eb6"
+        },
+        {
+          "name": "zom20b",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\zombies-live\\zom20b",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-add-a__m050-pointer-duel-20260930-d\\zombies\\zom20b",
+          "bytes": 382,
+          "sha256": "af6394c021ccb5e486db507e2ccd787bd5675f8fec88fd2ddbe9f834566852ce"
+        },
+        {
+          "name": "zom20c",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\zombies-live\\zom20c",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-add-a__m050-pointer-duel-20260930-d\\zombies\\zom20c",
+          "bytes": 232,
+          "sha256": "3d3f209967f51a7344e0eab582bc04d1e694da5a73e3682a26ed483dcab7a443"
+        },
+        {
+          "name": "zom20d",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\zombies-live\\zom20d",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-add-a__m050-pointer-duel-20260930-d\\zombies\\zom20d",
+          "bytes": 382,
+          "sha256": "923dd6abebbb7bb502ec5a02873c26175820ada5c4409d179d8464f0e90cb6fc"
+        }
+      ],
+      "scores": {
+        "groups": {
+          "COD_add_a": 177.16663,
+          "COD_m050_control": 69.83332
+        },
+        "warriors": {
+          "COD_add_a1": 118.41669,
+          "COD_add_a2": 58.74999,
+          "COD_m050_control1": 36.416668,
+          "COD_m050_control2": 33.416676
+        }
+      },
+      "candidate": {
+        "teamRaw": 69.83332,
+        "teamPerBattle": 0.27933328,
+        "warrior1Raw": 36.416668,
+        "warrior1PerBattle": 0.145666672,
+        "warrior2Raw": 33.416676,
+        "warrior2PerBattle": 0.133666704
+      },
+      "telemetry": null,
+      "rawScoreText": "Groups:\nCOD_add_a,177.16663\nCOD_m050_control,69.83332\n\nWarriors:\nCOD_add_a1,118.41669\nCOD_add_a2,58.74999\nCOD_m050_control1,36.416668\nCOD_m050_control2,33.416676\n",
+      "stdout": "CoreWars8086 - headless mode\n\r\nLoaded warriors: [COD_add_a, COD_m050_control]\r\nStarting competition (250 wars) in parallel.\r\nCompetition is over. Ran 250 wars\r\nWriting scores to file C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\pointer-operator\\holdout-duel-control\\vs-add-a__m050-pointer-duel-20260930-d\\scores.csv\r\n"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "candidates": [
+    {
+      "id": "a003_pointerguard",
+      "baseline": "original_v6",
+      "hypothesis": "If advertised Zombie pointer7A00h is untouchedCCCC sentinel, skip blind patching of fixed arenaCCCF..CCD5. Saves four startup opcodes in sentinel case and avoids ungrounded writes; existing patch behavior retained for all other values.",
+      "edits": "A adds CMP BX,CCCC / JE no_zombie_pointer immediately after MOV BX,[7A00]. A worker and zombie offsets use labels; copied worker bytes unchanged. B exact original.",
+      "failureModes": "Non-sentinel corrupt pointer still patches arbitrary bytes. Delaying valid capture by two instructions may regress a compatible old Zombie context. Sentinel-skip removes a small amount of incidental fixed-address offense.",
+      "warriors": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch8\\bin\\pointerguard_A",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch8\\bin\\pointerguard_B"
+      ],
+      "sources": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch8\\src\\pointerguard_A.asm",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch8\\src\\pointerguard_B.asm"
+      ],
+      "sha256": [
+        "71164c8d7308766cd14d64ac6d1342cd1631afce98278fe9dca4d4ab14a3b3f3",
+        "8579e2c2212d72a413a6daacfe3b91ceb72be648bfc085bfeed9430eeaf6657a"
+      ],
+      "sizes": [
+        227,
+        202
+      ],
+      "sourceManifest": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\wave5-candidates.json"
+    },
+    {
+      "id": "guard_burstB",
+      "warriors": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch8\\bin\\pointerguard_A",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch8\\burst_b\\build\\B"
+      ],
+      "sources": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch8\\src\\pointerguard_A.asm",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a001\\batch8\\burst_b\\B.asm"
+      ],
+      "sha256": [
+        "71164c8d7308766cd14d64ac6d1342cd1631afce98278fe9dca4d4ab14a3b3f3",
+        "e777ecf2c00e8d37afb37231e6dcfa1b5f0a52b30599d077bbf5e251c9d6c15c"
+      ],
+      "sizes": [
+        227,
+        217
+      ],
+      "hypothesis": "Exploratory combination of confirmed A guard with previously screened B component; no gain assumed.",
+      "provenance": "Original friend V6; guard by Arena a003, B modifications by Arena researchers. Exact frozen source/binary reuse."
+    },
+    {
+      "id": "guard_bgap400",
+      "warriors": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch8\\bin\\pointerguard_A",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch1\\bin\\bstackshift_B"
+      ],
+      "sources": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch8\\src\\pointerguard_A.asm",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch1\\src\\bstackshift_B.asm"
+      ],
+      "sha256": [
+        "71164c8d7308766cd14d64ac6d1342cd1631afce98278fe9dca4d4ab14a3b3f3",
+        "791d510eeb87cfd7cd44b466bd1cd171f2e7d050c44ed0f394dbbf46a9592316"
+      ],
+      "sizes": [
+        227,
+        202
+      ],
+      "hypothesis": "Exploratory combination of confirmed A guard with previously screened B component; no gain assumed.",
+      "provenance": "Original friend V6; guard by Arena a003, B modifications by Arena researchers. Exact frozen source/binary reuse."
+    }
+  ]
+}

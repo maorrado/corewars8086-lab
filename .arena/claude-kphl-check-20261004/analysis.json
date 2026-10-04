@@ -1,0 +1,299 @@
+{
+  "schema": "independent-KPHL-check-v1",
+  "generatedAt": "2026-10-04T08:06:29.183Z",
+  "phaseNames": [
+    "alpha",
+    "beta"
+  ],
+  "summary": {
+    "Claude_KPHL": {
+      "battles": 3000,
+      "points": 2273.3333299999995,
+      "perBattle": 0.7577777766666665,
+      "w1": 0.3645000004,
+      "w2": 0.39327777783333334
+    },
+    "V6Guard": {
+      "battles": 3000,
+      "points": 2226.166671,
+      "perBattle": 0.742055557,
+      "w1": 0.3604166668333333,
+      "w2": 0.3816388891666667
+    },
+    "Claude_V6nohunt": {
+      "battles": 3000,
+      "points": 2244.333337,
+      "perBattle": 0.7481111123333334,
+      "w1": 0.3706666673333333,
+      "w2": 0.37744444433333335
+    }
+  },
+  "contrasts": [
+    {
+      "first": "Claude_KPHL",
+      "second": "V6Guard",
+      "pairedUnits": 150,
+      "diff": 0.015722219666666662,
+      "relativeDiff": 0.0211873888933988,
+      "se": 0.010103410238897832,
+      "ci95": [
+        -0.0042422521048939565,
+        0.03568669143822728
+      ],
+      "simultaneous95ForTwo": [
+        -0.007154720686104201,
+        0.03859916001943753
+      ],
+      "wins": 64,
+      "ties": 27,
+      "losses": 59
+    },
+    {
+      "first": "Claude_KPHL",
+      "second": "Claude_V6nohunt",
+      "pairedUnits": 150,
+      "diff": 0.009666664333333332,
+      "relativeDiff": 0.012921428613970632,
+      "se": 0.010148989421166193,
+      "ci95": [
+        -0.010387872503017408,
+        0.02972120116968407
+      ],
+      "simultaneous95ForTwo": [
+        -0.013313480007935093,
+        0.032646808674601756
+      ],
+      "wins": 61,
+      "ties": 25,
+      "losses": 64
+    }
+  ],
+  "secondaryGuardVsNoHunt": {
+    "first": "V6Guard",
+    "second": "Claude_V6nohunt",
+    "pairedUnits": 150,
+    "diff": -0.00605555533333333,
+    "relativeDiff": -0.008094459811519518,
+    "se": 0.002736338994178171,
+    "ci95": [
+      -0.01146259724442672,
+      -0.0006485134222399399
+    ],
+    "simultaneous95ForTwo": [
+      -0.012251390449853738,
+      0.0001402797831870778
+    ],
+    "wins": 19,
+    "ties": 95,
+    "losses": 36
+  },
+  "phases": [
+    {
+      "id": "kphl-20261004-field-alpha",
+      "resultSha256": "41f484ea73e87ec8bc20a76386439cf6cf7c34d3a907d45b5c2858cf02750f31",
+      "summary": {
+        "Claude_KPHL": {
+          "battles": 1500,
+          "team": 0.7584444426666666,
+          "w1": 0.36211111180000005,
+          "w2": 0.3963333336666666
+        },
+        "V6Guard": {
+          "battles": 1500,
+          "team": 0.7332222233333332,
+          "w1": 0.36222222233333334,
+          "w2": 0.371
+        },
+        "Claude_V6nohunt": {
+          "battles": 1500,
+          "team": 0.7441111126666666,
+          "w1": 0.37311111199999997,
+          "w2": 0.3709999993333333
+        }
+      },
+      "elapsedSeconds": 119.422
+    },
+    {
+      "id": "kphl-20261004-field-beta",
+      "resultSha256": "3af531d1ad5592c0163f5018a5f9b1f0dee4545c91724bb3ea6a8747fd864f47",
+      "summary": {
+        "Claude_KPHL": {
+          "battles": 1500,
+          "team": 0.7571111106666667,
+          "w1": 0.366888889,
+          "w2": 0.390222222
+        },
+        "V6Guard": {
+          "battles": 1500,
+          "team": 0.7508888906666668,
+          "w1": 0.3586111113333333,
+          "w2": 0.3922777783333333
+        },
+        "Claude_V6nohunt": {
+          "battles": 1500,
+          "team": 0.752111112,
+          "w1": 0.3682222226666666,
+          "w2": 0.38388888933333337
+        }
+      },
+      "elapsedSeconds": 117.502
+    }
+  ],
+  "scope": "75 published2025 online-stage teams, same3-opponent cohorts and4 liveZombies. Not actualfinals nor universalstrongest.",
+  "uncertainty": "Paired Student-t approximations over cohort/seed units. Bonferroni2 primary contrasts; repeated fixed-population sampling, not a test of unknown2026 opponents.",
+  "protocol": {
+    "frozenAt": "2026-10-04T08:01:04.956Z",
+    "arms": [
+      {
+        "id": "Claude_KPHL",
+        "warriors": [
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\claude-kphl-check-20261004\\frozen\\KPHLA",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\claude-kphl-check-20261004\\frozen\\KPHLB"
+        ],
+        "files": [
+          {
+            "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\claude-kphl-check-20261004\\frozen\\KPHLA",
+            "bytes": 214,
+            "sha256": "1e9efbcb54cb79f1da0ecaaf41f84418043ff97c93bdef2c1f2eba9a430d262a"
+          },
+          {
+            "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\claude-kphl-check-20261004\\frozen\\KPHLB",
+            "bytes": 222,
+            "sha256": "dd73fad407df01a6890dbab26b895320bc1a81ff4c3ed35b9a3a584b2daee1c7"
+          }
+        ]
+      },
+      {
+        "id": "V6Guard",
+        "warriors": [
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\claude-kphl-check-20261004\\frozen\\V6GuardA",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\claude-kphl-check-20261004\\frozen\\V6GuardB"
+        ],
+        "files": [
+          {
+            "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\claude-kphl-check-20261004\\frozen\\V6GuardA",
+            "bytes": 227,
+            "sha256": "71164c8d7308766cd14d64ac6d1342cd1631afce98278fe9dca4d4ab14a3b3f3"
+          },
+          {
+            "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\claude-kphl-check-20261004\\frozen\\V6GuardB",
+            "bytes": 202,
+            "sha256": "8579e2c2212d72a413a6daacfe3b91ceb72be648bfc085bfeed9430eeaf6657a"
+          }
+        ]
+      },
+      {
+        "id": "Claude_V6nohunt",
+        "warriors": [
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\claude-kphl-check-20261004\\frozen\\V6nohuntA",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\claude-kphl-check-20261004\\frozen\\V6nohuntB"
+        ],
+        "files": [
+          {
+            "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\claude-kphl-check-20261004\\frozen\\V6nohuntA",
+            "bytes": 194,
+            "sha256": "6861894f3c1992cd6c6baa5b2a746178082f5b4b0a1d9969b9a326fe03d86c89"
+          },
+          {
+            "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\claude-kphl-check-20261004\\frozen\\V6nohuntB",
+            "bytes": 202,
+            "sha256": "8579e2c2212d72a413a6daacfe3b91ceb72be648bfc085bfeed9430eeaf6657a"
+          }
+        ]
+      }
+    ],
+    "primary": {
+      "phases": [
+        "alpha",
+        "beta"
+      ],
+      "battlesPerArm": 3000,
+      "pairedUnits": 150,
+      "decision": "Two prespecified contrasts KPHL vs Guard and old noHunt, Student-t over paired cohort/seed means, Bonferroni simultaneous95 intervals. Otherwise unresolved."
+    },
+    "scope": "75 published2025 online-stage teams, three opponents plus candidate, four live2025 Zombies; not actual finals or universal superiority.",
+    "identity": "Separated user pasted code reassembled and checked against Claude rev1 KPHL exact SHA256.",
+    "duels": "Two name/loadorders, independently seeded,100 battles/context; secondary contextual comparison.",
+    "controls": "Same CAND name, cohorts and seeds per arm; unchanged deterministic v6 engine. No final/, commits, pushes, other checkout edits."
+  },
+  "sourceReassembly": [
+    {
+      "input": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\claude-kphl-check-20261004\\KPHLA.asm",
+      "output": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\claude-kphl-check-20261004\\build\\KPHLA",
+      "size": 214,
+      "sourceSha256": "2872f2ac945b14f18d503c8617769190c72d01bdfa4974f4491fcac4cba46ea8",
+      "binarySha256": "1e9efbcb54cb79f1da0ecaaf41f84418043ff97c93bdef2c1f2eba9a430d262a"
+    },
+    {
+      "input": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\claude-kphl-check-20261004\\KPHLB.asm",
+      "output": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\claude-kphl-check-20261004\\build\\KPHLB",
+      "size": 222,
+      "sourceSha256": "a1af2ec75ad8ca3d25ceb296bb854b72a959386e24e0e287028acb0755647047",
+      "binarySha256": "dd73fad407df01a6890dbab26b895320bc1a81ff4c3ed35b9a3a584b2daee1c7"
+    }
+  ],
+  "duels": {
+    "V6Guard": {
+      "battles": 200,
+      "pointsKPHL": 96,
+      "pointsReference": 103.99999399999999,
+      "perBattleKPHL": 0.48,
+      "perBattleReference": 0.51999997,
+      "contexts": [
+        {
+          "cohort": "V6Guard-AAAA_Reference",
+          "seed": "kphl-duel-20261004-fresh|AAAA_Reference",
+          "pointsKPHL": 47.833336,
+          "pointsReference": 52.166664
+        },
+        {
+          "cohort": "V6Guard-ZZZZ_Reference",
+          "seed": "kphl-duel-20261004-fresh|ZZZZ_Reference",
+          "pointsKPHL": 48.166664,
+          "pointsReference": 51.83333
+        }
+      ]
+    },
+    "Claude_V6nohunt": {
+      "battles": 200,
+      "pointsKPHL": 95,
+      "pointsReference": 102.99999600000001,
+      "perBattleKPHL": 0.475,
+      "perBattleReference": 0.51499998,
+      "contexts": [
+        {
+          "cohort": "Claude_V6nohunt-AAAA_Reference",
+          "seed": "kphl-duel-20261004-fresh|AAAA_Reference",
+          "pointsKPHL": 46.5,
+          "pointsReference": 52.5
+        },
+        {
+          "cohort": "Claude_V6nohunt-ZZZZ_Reference",
+          "seed": "kphl-duel-20261004-fresh|ZZZZ_Reference",
+          "pointsKPHL": 48.5,
+          "pointsReference": 50.499996
+        }
+      ]
+    }
+  },
+  "coldVerification": {
+    "passed": true,
+    "battles": 60,
+    "matches": [
+      {
+        "arm": "Claude_KPHL",
+        "scoresSha256": "8863da82e02325c09362e19854551a05a372638e7e1583fc6c47fc7f522f69f4"
+      },
+      {
+        "arm": "V6Guard",
+        "scoresSha256": "4ddedad99ea12dbbecb6bbd54a6b396eb3eb624aec6f7a39d81395a946586194"
+      },
+      {
+        "arm": "Claude_V6nohunt",
+        "scoresSha256": "bc37db2e5c9791528f3bf6968fd14c698c72d656f077e2e0a518c53bf5f6953d"
+      }
+    ],
+    "scope": "3 exact scoreCSV matches, same seeds and binaryinputs, official coldJar versus persistent unmodifiedJar."
+  },
+  "totalExecutedBattleCount": 9460
+}

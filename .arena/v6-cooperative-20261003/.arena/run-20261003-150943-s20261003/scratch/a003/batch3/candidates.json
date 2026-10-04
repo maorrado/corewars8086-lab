@@ -1,0 +1,48 @@
+{
+  "schema": "cooperative-v6-candidates-v1",
+  "baseline": "original_v6",
+  "candidates": [
+    {
+      "id": "a003_excludeffb",
+      "baseline": "original_v6",
+      "hypothesis": "Captured A Zombie ignores own-team CS0FFB return frames, avoiding inferred live-seed friendly hits.",
+      "edits": "Only CMP SI immediate changes0FFC to0FFB.",
+      "failureModes": "Same-segment opponent workers are also ignored; exact-only FFB variant begins attacking FFC rivals previously ignored. Detection frequency depends on scanner sampling alignment and Zombie AX history.",
+      "warriors": [
+        {
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch3\\src\\excludeffb_A.asm",
+          "binary": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch3\\bin\\excludeffb_A",
+          "size": 221,
+          "sha256": "0b8f13ccd4436e4d16073ba9d375366b68a55147aef2e943b612254465e0a9ce"
+        },
+        {
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch3\\src\\excludeffb_B.asm",
+          "binary": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch3\\bin\\excludeffb_B",
+          "size": 202,
+          "sha256": "8579e2c2212d72a413a6daacfe3b91ceb72be648bfc085bfeed9430eeaf6657a"
+        }
+      ]
+    },
+    {
+      "id": "a003_excludeffbffc",
+      "baseline": "original_v6",
+      "hypothesis": "Captured A Zombie ignores own-team CS0FFB return frames, avoiding inferred live-seed friendly hits.",
+      "edits": "Add FFB exclusion before existing FFC exclusion; six extra bytes affect only scanner tail, preserving every internal source dependency.",
+      "failureModes": "Same-segment opponent workers are also ignored; exact-only FFB variant begins attacking FFC rivals previously ignored. Detection frequency depends on scanner sampling alignment and Zombie AX history.",
+      "warriors": [
+        {
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch3\\src\\excludeffbffc_A.asm",
+          "binary": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch3\\bin\\excludeffbffc_A",
+          "size": 227,
+          "sha256": "c7e25d7acc548f65820613574cb6d7315bf039c24eabb1ccb87f30f194bc27b8"
+        },
+        {
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch3\\src\\excludeffbffc_B.asm",
+          "binary": "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a003\\batch3\\bin\\excludeffbffc_B",
+          "size": 202,
+          "sha256": "8579e2c2212d72a413a6daacfe3b91ceb72be648bfc085bfeed9430eeaf6657a"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+diff --git a/repos/corewars8086-6.0.0-deterministic/src/main/java/il/co/codeguru/corewars8086/war/War.java b/tools/engine-acceleration-20261001/war/speed-lookup/src/il/co/codeguru/corewars8086/war/War.java
+index 413ccc9..1e14c39 100644
+--- a/repos/corewars8086-6.0.0-deterministic/src/main/java/il/co/codeguru/corewars8086/war/War.java
++++ b/tools/engine-acceleration-20261001/war/speed-lookup/src/il/co/codeguru/corewars8086/war/War.java
+@@ -218,7 +218,7 @@ public class War {
+     }
+ 
+     /** Maximum possible Warrior speed. */
+-    private final int MAX_SPEED = 16; // when Energy = 0xFFFF 
++    private static final int MAX_SPEED = 16; // when Energy = 0xFFFF 
+     /** Warrior's Energy is decremented every so often rounds. */ 
+     private final int DECELERATION_ROUNDS = 5;
+ 	
+@@ -232,7 +232,23 @@ public class War {
+      * @param energy The warrior's Energy value.
+      * @return the warrior's current speed,
+      */
++    private static final byte[] WARRIOR_SPEED_BY_ENERGY = createWarriorSpeedByEnergy();
++
++    private static byte[] createWarriorSpeedByEnergy() {
++        byte[] speeds = new byte[0x10000];
++        for (int energy = 1; energy < speeds.length; ++energy) {
++            // Preserve the original floating-point formula, including its rounding.
++            speeds[energy] = (byte)Math.min(MAX_SPEED,
++                    1 + (int)(Math.log(energy) / Math.log(2)));
++        }
++        return speeds;
++    }
++
+     private int calculateWarriorSpeed(int energy) {
++        if ((energy & ~0xFFFF) == 0) {
++            return WARRIOR_SPEED_BY_ENERGY[energy];
++        }
++        // Retain the previous result even for values outside unsigned-short input.
+         if (energy == 0) {
+             return 0;
+         } else {

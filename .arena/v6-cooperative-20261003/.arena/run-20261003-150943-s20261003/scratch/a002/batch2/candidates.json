@@ -1,0 +1,95 @@
+{
+  "schema": "v6-candidate-batch-v1",
+  "baseline": "original_v6",
+  "provenance": "Modified derivatives of the user's friend-provided V6.",
+  "candidates": [
+    {
+      "id": "a002_direct_boot_b",
+      "sources": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a002\\batch2\\a002_direct_boot_b\\A.asm",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a002\\batch2\\a002_direct_boot_b\\B.asm"
+      ],
+      "binaries": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a002\\batch2\\a002_direct_boot_b\\build\\A",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a002\\batch2\\a002_direct_boot_b\\build\\B"
+      ],
+      "sizes": [
+        221,
+        203
+      ],
+      "sha256": [
+        "3fa67bed880413901ad618b4f7b248e5782d98de93318271ac540ad1690ca2b7",
+        "8830713ecd5409f2790ec88d27d47562d4f4d077e5a6138fc21dffc0fdaaadc2"
+      ],
+      "hypothesis": "Treat recursive startup as an exposed bootstrap barrier. Enter MOVSB directly, copying A5 then F3A5 from private memory. Preserve original AX=1FFF and SP at natural handoff for subsequent relocations.",
+      "edits": [
+        "B: initial marker 1FFF->1FA4, restore AL=FF after STOSW; SP displacement ->FFB0; initial CALL FAR -> JMP FAR; rebase fixed source/zombie offsets using labels."
+      ],
+      "failureModes": [
+        "Initial stack paint is removed, reducing offense and changing what other scanners see.",
+        "Starting the first worker earlier shifts collisions and captured-zombie coordination.",
+        "Untested architectural transformation; compilation is not CPU or battle evidence."
+      ],
+      "verification": "NASM <=256-byte bound passed. Original unaffected teammate binary hash matched baseline. Worker code remains original; modified source offsets use labels."
+    },
+    {
+      "id": "a002_direct_boot_a",
+      "sources": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a002\\batch2\\a002_direct_boot_a\\A.asm",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a002\\batch2\\a002_direct_boot_a\\B.asm"
+      ],
+      "binaries": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a002\\batch2\\a002_direct_boot_a\\build\\A",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a002\\batch2\\a002_direct_boot_a\\build\\B"
+      ],
+      "sizes": [
+        222,
+        202
+      ],
+      "sha256": [
+        "bc91d01997f5bfcbc0679b493397b44b355228fc07cdbc4b6acad9fb043c15c8",
+        "8579e2c2212d72a413a6daacfe3b91ceb72be648bfc085bfeed9430eeaf6657a"
+      ],
+      "hypothesis": "Treat recursive startup as an exposed bootstrap barrier. Enter MOVSB directly, copying A5 then F3A5 from private memory. Preserve original AX=1FFF and SP at natural handoff for subsequent relocations.",
+      "edits": [
+        "A: initial marker 1FFF->1FA4, restore AL=FF after STOSW; SP displacement ->FFB0; initial CALL FAR -> JMP FAR; rebase fixed source/zombie offsets using labels."
+      ],
+      "failureModes": [
+        "Initial stack paint is removed, reducing offense and changing what other scanners see.",
+        "Starting the first worker earlier shifts collisions and captured-zombie coordination.",
+        "Untested architectural transformation; compilation is not CPU or battle evidence."
+      ],
+      "verification": "NASM <=256-byte bound passed. Original unaffected teammate binary hash matched baseline. Worker code remains original; modified source offsets use labels."
+    },
+    {
+      "id": "a002_direct_boot_both",
+      "sources": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a002\\batch2\\a002_direct_boot_both\\A.asm",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a002\\batch2\\a002_direct_boot_both\\B.asm"
+      ],
+      "binaries": [
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a002\\batch2\\a002_direct_boot_both\\build\\A",
+        "C:\\Maor\\CodeGuru\\corewars8086-lab\\.arena\\v6-cooperative-20261003\\.arena\\run-20261003-150943-s20261003\\scratch\\a002\\batch2\\a002_direct_boot_both\\build\\B"
+      ],
+      "sizes": [
+        222,
+        203
+      ],
+      "sha256": [
+        "bc91d01997f5bfcbc0679b493397b44b355228fc07cdbc4b6acad9fb043c15c8",
+        "8830713ecd5409f2790ec88d27d47562d4f4d077e5a6138fc21dffc0fdaaadc2"
+      ],
+      "hypothesis": "Treat recursive startup as an exposed bootstrap barrier. Enter MOVSB directly, copying A5 then F3A5 from private memory. Preserve original AX=1FFF and SP at natural handoff for subsequent relocations.",
+      "edits": [
+        "A: initial marker 1FFF->1FA4, restore AL=FF after STOSW; SP displacement ->FFB0; initial CALL FAR -> JMP FAR; rebase fixed source/zombie offsets using labels.",
+        "B: initial marker 1FFF->1FA4, restore AL=FF after STOSW; SP displacement ->FFB0; initial CALL FAR -> JMP FAR; rebase fixed source/zombie offsets using labels."
+      ],
+      "failureModes": [
+        "Initial stack paint is removed, reducing offense and changing what other scanners see.",
+        "Starting the first worker earlier shifts collisions and captured-zombie coordination.",
+        "Untested architectural transformation; compilation is not CPU or battle evidence."
+      ],
+      "verification": "NASM <=256-byte bound passed. Original unaffected teammate binary hash matched baseline. Worker code remains original; modified source offsets use labels."
+    }
+  ]
+}

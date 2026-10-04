@@ -1,0 +1,14 @@
+const fs=require('fs'),path=require('path'),cp=require('child_process');
+const root='C:/Maor/CodeGuru/corewars8086-lab';
+const own=root+'/.arena/v6-cooperative-20261003/.arena/run-20261003-150943-s20261003/scratch/a003';
+const base=JSON.parse(fs.readFileSync(root+'/.arena/v6-cooperative-20261003/shared-best.json','utf8'));
+if(base.status!=='confirmed'||base.id!=='original_v6')throw Error('Rebase required');
+const a=fs.readFileSync(root+'/study-notes/good-test-v6/source/V6_1.asm','utf8');
+const b=fs.readFileSync(root+'/study-notes/good-test-v6/source/V6_2.asm','utf8');
+const changed=a.replace('    cmp si, 0FFCh\n', '    cmp si, 0FFBh\n    jne short not_own_phase\n    mov di, [bx - 2]\n    and di, 003FFh\n    cmp di, 000A4h\n    je short next_candidate\nnot_own_phase:\n    cmp si, 0FFCh\n');
+const src=own+'/batch4/src',bin=own+'/batch4/bin';fs.mkdirSync(src,{recursive:true});
+fs.writeFileSync(src+'/excludephase_A.asm',changed);fs.writeFileSync(src+'/excludephase_B.asm',b);
+cp.execFileSync('node',['C:/Maor/CodeGuru/corewars8086-agent2/agent2/tools/nasm-node.cjs',bin,src+'/excludephase_A.asm',src+'/excludephase_B.asm'],{stdio:'inherit'});
+const builds=JSON.parse(fs.readFileSync(bin+'/manifest.json','utf8'));
+const candidate={id:'a003_excludephase',baseline:base.id,hypothesis:'Exclude own-team-like0FFB return frames only when returnIP modulo0400h equals00A4h, preserving attacks on differently aligned0FFB rivals.',edits:'Before original FFC filter, check SI0FFB and DI=[BX-2]&03FF, skip only when DI00A4. Original source layout preceding scanner preserved; added scanner instructions use accepted CMP/JNE/MOV/AND/JE.',failureModes:'Same-aligned V6 rivals still ignored. Extra three instructions on0FFB hits and one branch otherwise slow the scanner; temporary DI is overwritten in found_candidate as before.',warriors:builds.map(m=>({source:m.input,binary:m.output,size:m.size,sha256:m.binarySha256}))};
+fs.writeFileSync(own+'/batch4/candidates.json',JSON.stringify({schema:'cooperative-v6-candidates-v1',baseline:base.id,candidates:[candidate]},null,2)+'\n');

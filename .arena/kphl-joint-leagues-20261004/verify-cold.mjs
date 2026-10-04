@@ -1,0 +1,16 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import crypto from 'node:crypto';
+import {spawnSync} from 'node:child_process';
+const here='C:/Maor/CodeGuru/corewars8086-lab/.arena/kphl-joint-leagues-20261004',agent2='C:/Maor/CodeGuru/corewars8086-agent2';
+const year=process.argv[2];if(!['2024','2025'].includes(year))throw Error('Specifyyear');
+const plan=JSON.parse(fs.readFileSync(path.join(here,'plan-'+year+'.json'))),result=JSON.parse(fs.readFileSync(path.join(here,'result-'+year+'.json')));
+const job=plan.jobs.find(j=>j.teams.includes('Claude_KPHL'));
+const rr=path.join(here,'runs-'+year),output=path.join(rr,'cold-'+job.id+'.csv');if(fs.existsSync(output))throw Error('Refuse existing coldoutput');
+const java=path.join(agent2,'tools/temurin8-jre/jdk8u504-b01-jre/bin/java.exe'),jar=path.join(agent2,'repos/corewars8086-6.0.0-deterministic/target/corewars8086-6.0.0-jar-with-dependencies.jar');
+const r=spawnSync(java,['-jar',jar,'--headless','--parallel=false','--threads','1','--comboSize','4','--battlesPerCombo','1','--seed',job.seed,'--warriorsDir',path.join(rr,job.id,'survivors'),'--zombiesDir',path.join(rr,'zombies'),'--outputFile',output],{encoding:'utf8'});
+if(r.status!==0)throw Error('Cold process failed '+r.stderr);
+const sha=p=>crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex'),expected=result.runs.find(r=>r.id===job.id).sha256,actual=sha(output);
+if(actual!==expected)throw Error('Cold original CSV mismatch');
+const out={year,passed:true,jobId:job.id,teams:job.teams,seed:job.seed,scoresSha256:actual,scope:'One exact fullCSV match with original coldJar for the same scheduled league battle; extra validationbattle excluded from1000 tournament ranking.'};
+fs.writeFileSync(path.join(here,'cold-'+year+'.json'),JSON.stringify(out,null,2)+'\n',{flag:'wx'});console.log(JSON.stringify(out));

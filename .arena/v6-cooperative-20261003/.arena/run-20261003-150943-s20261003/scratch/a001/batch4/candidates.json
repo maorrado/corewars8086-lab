@@ -1,0 +1,17 @@
+{
+ "schema":"cooperative-arena-candidates-v1",
+ "baseline":"original_v6",
+ "provenance":"Derivative of friend-provided V6. Original sources/binaries preserved.",
+ "candidates":[{
+  "id":"a001_paintless",
+  "sources":["C:/Maor/CodeGuru/corewars8086-lab/.arena/v6-cooperative-20261003/.arena/run-20261003-150943-s20261003/scratch/a001/batch4/paintless/A.asm","C:/Maor/CodeGuru/corewars8086-lab/.arena/v6-cooperative-20261003/.arena/run-20261003-150943-s20261003/scratch/a001/batch4/paintless/B.asm"],
+  "warriors":["C:/Maor/CodeGuru/corewars8086-lab/.arena/v6-cooperative-20261003/.arena/run-20261003-150943-s20261003/scratch/a001/batch4/paintless/build/A","C:/Maor/CodeGuru/corewars8086-lab/.arena/v6-cooperative-20261003/.arena/run-20261003-150943-s20261003/scratch/a001/batch4/paintless/build/B"],
+  "sha256":["177caf4f4ce2604fa2bd3c0192696d09d0c2c7dd9b9fa5ccac10e6113479cde4","8a1366299bfa3b99812686152647fe75d659dad734555f23933056609adb00f5"],
+  "sizes":[221,202],
+  "edits":"AX marker1FFF->1FA4 and both initial/worker indirect CALL FAR [BX] FF1F->JMP FAR [BX] FF2F in each warrior. Six bytes changed across pair. All original positions, copy lengths, BP/DX/initial SP values unchanged.",
+  "hypothesis":"Direct MOVSB seeds each relocation, eliminating recurring stack-return painting and shortening time spent at any single live destination. Architectural offense/survival contrast.",
+  "failure_modes":"Removes virtually all stack-paint offense; writes only copied worker fragments. Can reduce tournament strength severely despite more relocations. Rapid cycling can repeatedly land on already corrupted destinations.",
+  "verification":"Official Cpu restricted-memory isolated smoke: all5 placements per warrior alive20k opcodes. A997 launches vsbaseline74, B998 vs38. First MOVSB64/60 vs147/463. No scoring claim; War scheduling and opponents deliberately absent.",
+  "evidence":"C:/Maor/CodeGuru/corewars8086-lab/.arena/v6-cooperative-20261003/.arena/run-20261003-150943-s20261003/scratch/a001/paintless-smoke.txt"
+ }]
+}

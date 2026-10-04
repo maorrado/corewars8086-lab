@@ -1,0 +1,471 @@
+{
+  "schemaVersion": 1,
+  "experimentId": "m050-vs-claude-xor-b",
+  "generatedAt": "2026-09-30T00:05:24.341Z",
+  "configPath": "C:\\Maor\\CodeGuru\\corewars8086-lab\\config-m050-vs-claude-xor-b.json",
+  "configSha256": "f1dc67834e320db6aa9b0ecaf797cbe644310f4c4ffbe58c6115bb3d9b1a7e20",
+  "engineJar": {
+    "path": "C:\\Maor\\CodeGuru\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+    "sha256": "31639072397eaf69d99e90b10d8fa594a7446951f1137b7ebd298378f5ec318d"
+  },
+  "aggregate": {
+    "battles": 1000,
+    "teamPerBattle": 0.5521666700000001,
+    "warrior1PerBattle": 0.187916635,
+    "warrior2PerBattle": 0.36425004
+  },
+  "runs": [
+    {
+      "runId": "vs-claude__m050-claude-duel-20260930-a",
+      "cohortId": "vs-claude",
+      "seed": "m050-claude-duel-20260930-a",
+      "battles": 250,
+      "startedAt": "2026-09-30T00:00:02.911Z",
+      "elapsedSeconds": 91.8207052,
+      "command": {
+        "executable": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\temurin8-jre\\jdk8u504-b01-jre\\bin\\java.exe",
+        "args": [
+          "-jar",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+          "--headless",
+          "--comboSize",
+          "2",
+          "--battlesPerCombo",
+          "250",
+          "--seed",
+          "m050-claude-duel-20260930-a",
+          "--threads",
+          "4",
+          "--warriorsDir",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\claude-fixed-toggle\\defense-duel-xor-b\\vs-claude__m050-claude-duel-20260930-a\\survivors",
+          "--zombiesDir",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\claude-fixed-toggle\\defense-duel-xor-b\\vs-claude__m050-claude-duel-20260930-a\\zombies",
+          "--outputFile",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\claude-fixed-toggle\\defense-duel-xor-b\\vs-claude__m050-claude-duel-20260930-a\\scores.csv"
+        ]
+      },
+      "inputs": {
+        "COD_ptr_xor_b": [
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\m050-pointer-operator\\xor-b\\A",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\claude-fixed-toggle\\defense-duel-xor-b\\vs-claude__m050-claude-duel-20260930-a\\survivors\\COD_ptr_xor_b1",
+            "bytes": 189,
+            "sha256": "0268ce4f301bf2ada8566f4e608180a0670a335a80b9c2b93b67aee2b632bd44"
+          },
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\m050-pointer-operator\\xor-b\\B",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\claude-fixed-toggle\\defense-duel-xor-b\\vs-claude__m050-claude-duel-20260930-a\\survivors\\COD_ptr_xor_b2",
+            "bytes": 117,
+            "sha256": "fb66036e0b20a8df162da32e453cc148b5ff5ea0d1494439f3c417be0a57d994"
+          }
+        ],
+        "COD_claude_fixed_toggle": [
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\claude-fixed-toggle-2026-09-30\\A",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\claude-fixed-toggle\\defense-duel-xor-b\\vs-claude__m050-claude-duel-20260930-a\\survivors\\COD_claude_fixed_toggle1",
+            "bytes": 193,
+            "sha256": "bea990bbf2c60cb4c39d80dd5b533f83a1eb62f1ad202020c6d4e93cbebc2747"
+          },
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\claude-fixed-toggle-2026-09-30\\B",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\claude-fixed-toggle\\defense-duel-xor-b\\vs-claude__m050-claude-duel-20260930-a\\survivors\\COD_claude_fixed_toggle2",
+            "bytes": 121,
+            "sha256": "9761054288100948cfcf3610c8d989f16eba68f0f501b90c21b7de9ead380c8f"
+          }
+        ]
+      },
+      "zombies": [
+        {
+          "name": "zom20a",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\zombies-live\\zom20a",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\claude-fixed-toggle\\defense-duel-xor-b\\vs-claude__m050-claude-duel-20260930-a\\zombies\\zom20a",
+          "bytes": 73,
+          "sha256": "a950e618ea2e127096c85f486fb555c264730d924a2192c407aa66e6e0318eb6"
+        },
+        {
+          "name": "zom20b",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\zombies-live\\zom20b",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\claude-fixed-toggle\\defense-duel-xor-b\\vs-claude__m050-claude-duel-20260930-a\\zombies\\zom20b",
+          "bytes": 382,
+          "sha256": "af6394c021ccb5e486db507e2ccd787bd5675f8fec88fd2ddbe9f834566852ce"
+        },
+        {
+          "name": "zom20c",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\zombies-live\\zom20c",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\claude-fixed-toggle\\defense-duel-xor-b\\vs-claude__m050-claude-duel-20260930-a\\zombies\\zom20c",
+          "bytes": 232,
+          "sha256": "3d3f209967f51a7344e0eab582bc04d1e694da5a73e3682a26ed483dcab7a443"
+        },
+        {
+          "name": "zom20d",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\zombies-live\\zom20d",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\claude-fixed-toggle\\defense-duel-xor-b\\vs-claude__m050-claude-duel-20260930-a\\zombies\\zom20d",
+          "bytes": 382,
+          "sha256": "923dd6abebbb7bb502ec5a02873c26175820ada5c4409d179d8464f0e90cb6fc"
+        }
+      ],
+      "scores": {
+        "groups": {
+          "COD_claude_fixed_toggle": 110.000046,
+          "COD_ptr_xor_b": 139.00003
+        },
+        "warriors": {
+          "COD_claude_fixed_toggle1": 45.666656,
+          "COD_claude_fixed_toggle2": 64.33333,
+          "COD_ptr_xor_b1": 44.83333,
+          "COD_ptr_xor_b2": 94.16667
+        }
+      },
+      "candidate": {
+        "teamRaw": 139.00003,
+        "teamPerBattle": 0.55600012,
+        "warrior1Raw": 44.83333,
+        "warrior1PerBattle": 0.17933332,
+        "warrior2Raw": 94.16667,
+        "warrior2PerBattle": 0.37666668
+      },
+      "telemetry": null,
+      "rawScoreText": "Groups:\nCOD_claude_fixed_toggle,110.000046\nCOD_ptr_xor_b,139.00003\n\nWarriors:\nCOD_claude_fixed_toggle1,45.666656\nCOD_claude_fixed_toggle2,64.33333\nCOD_ptr_xor_b1,44.83333\nCOD_ptr_xor_b2,94.16667\n",
+      "stdout": "CoreWars8086 - headless mode\n\r\nLoaded warriors: [COD_claude_fixed_toggle, COD_ptr_xor_b]\r\nStarting competition (250 wars) in parallel.\r\nCompetition is over. Ran 250 wars\r\nWriting scores to file C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\claude-fixed-toggle\\defense-duel-xor-b\\vs-claude__m050-claude-duel-20260930-a\\scores.csv\r\n"
+    },
+    {
+      "runId": "vs-claude__m050-claude-duel-20260930-b",
+      "cohortId": "vs-claude",
+      "seed": "m050-claude-duel-20260930-b",
+      "battles": 250,
+      "startedAt": "2026-09-30T00:01:34.853Z",
+      "elapsedSeconds": 81.0616799,
+      "command": {
+        "executable": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\temurin8-jre\\jdk8u504-b01-jre\\bin\\java.exe",
+        "args": [
+          "-jar",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+          "--headless",
+          "--comboSize",
+          "2",
+          "--battlesPerCombo",
+          "250",
+          "--seed",
+          "m050-claude-duel-20260930-b",
+          "--threads",
+          "4",
+          "--warriorsDir",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\claude-fixed-toggle\\defense-duel-xor-b\\vs-claude__m050-claude-duel-20260930-b\\survivors",
+          "--zombiesDir",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\claude-fixed-toggle\\defense-duel-xor-b\\vs-claude__m050-claude-duel-20260930-b\\zombies",
+          "--outputFile",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\claude-fixed-toggle\\defense-duel-xor-b\\vs-claude__m050-claude-duel-20260930-b\\scores.csv"
+        ]
+      },
+      "inputs": {
+        "COD_ptr_xor_b": [
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\m050-pointer-operator\\xor-b\\A",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\claude-fixed-toggle\\defense-duel-xor-b\\vs-claude__m050-claude-duel-20260930-b\\survivors\\COD_ptr_xor_b1",
+            "bytes": 189,
+            "sha256": "0268ce4f301bf2ada8566f4e608180a0670a335a80b9c2b93b67aee2b632bd44"
+          },
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\m050-pointer-operator\\xor-b\\B",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\claude-fixed-toggle\\defense-duel-xor-b\\vs-claude__m050-claude-duel-20260930-b\\survivors\\COD_ptr_xor_b2",
+            "bytes": 117,
+            "sha256": "fb66036e0b20a8df162da32e453cc148b5ff5ea0d1494439f3c417be0a57d994"
+          }
+        ],
+        "COD_claude_fixed_toggle": [
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\claude-fixed-toggle-2026-09-30\\A",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\claude-fixed-toggle\\defense-duel-xor-b\\vs-claude__m050-claude-duel-20260930-b\\survivors\\COD_claude_fixed_toggle1",
+            "bytes": 193,
+            "sha256": "bea990bbf2c60cb4c39d80dd5b533f83a1eb62f1ad202020c6d4e93cbebc2747"
+          },
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\claude-fixed-toggle-2026-09-30\\B",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\claude-fixed-toggle\\defense-duel-xor-b\\vs-claude__m050-claude-duel-20260930-b\\survivors\\COD_claude_fixed_toggle2",
+            "bytes": 121,
+            "sha256": "9761054288100948cfcf3610c8d989f16eba68f0f501b90c21b7de9ead380c8f"
+          }
+        ]
+      },
+      "zombies": [
+        {
+          "name": "zom20a",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\zombies-live\\zom20a",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\claude-fixed-toggle\\defense-duel-xor-b\\vs-claude__m050-claude-duel-20260930-b\\zombies\\zom20a",
+          "bytes": 73,
+          "sha256": "a950e618ea2e127096c85f486fb555c264730d924a2192c407aa66e6e0318eb6"
+        },
+        {
+          "name": "zom20b",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\zombies-live\\zom20b",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\claude-fixed-toggle\\defense-duel-xor-b\\vs-claude__m050-claude-duel-20260930-b\\zombies\\zom20b",
+          "bytes": 382,
+          "sha256": "af6394c021ccb5e486db507e2ccd787bd5675f8fec88fd2ddbe9f834566852ce"
+        },
+        {
+          "name": "zom20c",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\zombies-live\\zom20c",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\claude-fixed-toggle\\defense-duel-xor-b\\vs-claude__m050-claude-duel-20260930-b\\zombies\\zom20c",
+          "bytes": 232,
+          "sha256": "3d3f209967f51a7344e0eab582bc04d1e694da5a73e3682a26ed483dcab7a443"
+        },
+        {
+          "name": "zom20d",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\zombies-live\\zom20d",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\claude-fixed-toggle\\defense-duel-xor-b\\vs-claude__m050-claude-duel-20260930-b\\zombies\\zom20d",
+          "bytes": 382,
+          "sha256": "923dd6abebbb7bb502ec5a02873c26175820ada5c4409d179d8464f0e90cb6fc"
+        }
+      ],
+      "scores": {
+        "groups": {
+          "COD_claude_fixed_toggle": 108.6667,
+          "COD_ptr_xor_b": 140.33331
+        },
+        "warriors": {
+          "COD_claude_fixed_toggle1": 47.166656,
+          "COD_claude_fixed_toggle2": 61.49999,
+          "COD_ptr_xor_b1": 46.99999,
+          "COD_ptr_xor_b2": 93.33335
+        }
+      },
+      "candidate": {
+        "teamRaw": 140.33331,
+        "teamPerBattle": 0.5613332400000001,
+        "warrior1Raw": 46.99999,
+        "warrior1PerBattle": 0.18799996,
+        "warrior2Raw": 93.33335,
+        "warrior2PerBattle": 0.3733334
+      },
+      "telemetry": null,
+      "rawScoreText": "Groups:\nCOD_claude_fixed_toggle,108.6667\nCOD_ptr_xor_b,140.33331\n\nWarriors:\nCOD_claude_fixed_toggle1,47.166656\nCOD_claude_fixed_toggle2,61.49999\nCOD_ptr_xor_b1,46.99999\nCOD_ptr_xor_b2,93.33335\n",
+      "stdout": "CoreWars8086 - headless mode\n\r\nLoaded warriors: [COD_claude_fixed_toggle, COD_ptr_xor_b]\r\nStarting competition (250 wars) in parallel.\r\nCompetition is over. Ran 250 wars\r\nWriting scores to file C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\claude-fixed-toggle\\defense-duel-xor-b\\vs-claude__m050-claude-duel-20260930-b\\scores.csv\r\n"
+    },
+    {
+      "runId": "vs-claude__m050-claude-duel-20260930-c",
+      "cohortId": "vs-claude",
+      "seed": "m050-claude-duel-20260930-c",
+      "battles": 250,
+      "startedAt": "2026-09-30T00:02:56.204Z",
+      "elapsedSeconds": 78.1774399,
+      "command": {
+        "executable": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\temurin8-jre\\jdk8u504-b01-jre\\bin\\java.exe",
+        "args": [
+          "-jar",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+          "--headless",
+          "--comboSize",
+          "2",
+          "--battlesPerCombo",
+          "250",
+          "--seed",
+          "m050-claude-duel-20260930-c",
+          "--threads",
+          "4",
+          "--warriorsDir",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\claude-fixed-toggle\\defense-duel-xor-b\\vs-claude__m050-claude-duel-20260930-c\\survivors",
+          "--zombiesDir",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\claude-fixed-toggle\\defense-duel-xor-b\\vs-claude__m050-claude-duel-20260930-c\\zombies",
+          "--outputFile",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\claude-fixed-toggle\\defense-duel-xor-b\\vs-claude__m050-claude-duel-20260930-c\\scores.csv"
+        ]
+      },
+      "inputs": {
+        "COD_ptr_xor_b": [
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\m050-pointer-operator\\xor-b\\A",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\claude-fixed-toggle\\defense-duel-xor-b\\vs-claude__m050-claude-duel-20260930-c\\survivors\\COD_ptr_xor_b1",
+            "bytes": 189,
+            "sha256": "0268ce4f301bf2ada8566f4e608180a0670a335a80b9c2b93b67aee2b632bd44"
+          },
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\m050-pointer-operator\\xor-b\\B",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\claude-fixed-toggle\\defense-duel-xor-b\\vs-claude__m050-claude-duel-20260930-c\\survivors\\COD_ptr_xor_b2",
+            "bytes": 117,
+            "sha256": "fb66036e0b20a8df162da32e453cc148b5ff5ea0d1494439f3c417be0a57d994"
+          }
+        ],
+        "COD_claude_fixed_toggle": [
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\claude-fixed-toggle-2026-09-30\\A",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\claude-fixed-toggle\\defense-duel-xor-b\\vs-claude__m050-claude-duel-20260930-c\\survivors\\COD_claude_fixed_toggle1",
+            "bytes": 193,
+            "sha256": "bea990bbf2c60cb4c39d80dd5b533f83a1eb62f1ad202020c6d4e93cbebc2747"
+          },
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\claude-fixed-toggle-2026-09-30\\B",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\claude-fixed-toggle\\defense-duel-xor-b\\vs-claude__m050-claude-duel-20260930-c\\survivors\\COD_claude_fixed_toggle2",
+            "bytes": 121,
+            "sha256": "9761054288100948cfcf3610c8d989f16eba68f0f501b90c21b7de9ead380c8f"
+          }
+        ]
+      },
+      "zombies": [
+        {
+          "name": "zom20a",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\zombies-live\\zom20a",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\claude-fixed-toggle\\defense-duel-xor-b\\vs-claude__m050-claude-duel-20260930-c\\zombies\\zom20a",
+          "bytes": 73,
+          "sha256": "a950e618ea2e127096c85f486fb555c264730d924a2192c407aa66e6e0318eb6"
+        },
+        {
+          "name": "zom20b",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\zombies-live\\zom20b",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\claude-fixed-toggle\\defense-duel-xor-b\\vs-claude__m050-claude-duel-20260930-c\\zombies\\zom20b",
+          "bytes": 382,
+          "sha256": "af6394c021ccb5e486db507e2ccd787bd5675f8fec88fd2ddbe9f834566852ce"
+        },
+        {
+          "name": "zom20c",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\zombies-live\\zom20c",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\claude-fixed-toggle\\defense-duel-xor-b\\vs-claude__m050-claude-duel-20260930-c\\zombies\\zom20c",
+          "bytes": 232,
+          "sha256": "3d3f209967f51a7344e0eab582bc04d1e694da5a73e3682a26ed483dcab7a443"
+        },
+        {
+          "name": "zom20d",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\zombies-live\\zom20d",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\claude-fixed-toggle\\defense-duel-xor-b\\vs-claude__m050-claude-duel-20260930-c\\zombies\\zom20d",
+          "bytes": 382,
+          "sha256": "923dd6abebbb7bb502ec5a02873c26175820ada5c4409d179d8464f0e90cb6fc"
+        }
+      ],
+      "scores": {
+        "groups": {
+          "COD_claude_fixed_toggle": 113.66671,
+          "COD_ptr_xor_b": 134.33333
+        },
+        "warriors": {
+          "COD_claude_fixed_toggle1": 51.08332,
+          "COD_claude_fixed_toggle2": 62.58333,
+          "COD_ptr_xor_b1": 49.749985,
+          "COD_ptr_xor_b2": 84.58335
+        }
+      },
+      "candidate": {
+        "teamRaw": 134.33333,
+        "teamPerBattle": 0.53733332,
+        "warrior1Raw": 49.749985,
+        "warrior1PerBattle": 0.19899994000000001,
+        "warrior2Raw": 84.58335,
+        "warrior2PerBattle": 0.3383334
+      },
+      "telemetry": null,
+      "rawScoreText": "Groups:\nCOD_claude_fixed_toggle,113.66671\nCOD_ptr_xor_b,134.33333\n\nWarriors:\nCOD_claude_fixed_toggle1,51.08332\nCOD_claude_fixed_toggle2,62.58333\nCOD_ptr_xor_b1,49.749985\nCOD_ptr_xor_b2,84.58335\n",
+      "stdout": "CoreWars8086 - headless mode\n\r\nLoaded warriors: [COD_claude_fixed_toggle, COD_ptr_xor_b]\r\nStarting competition (250 wars) in parallel.\r\nCompetition is over. Ran 250 wars\r\nWriting scores to file C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\claude-fixed-toggle\\defense-duel-xor-b\\vs-claude__m050-claude-duel-20260930-c\\scores.csv\r\n"
+    },
+    {
+      "runId": "vs-claude__m050-claude-duel-20260930-d",
+      "cohortId": "vs-claude",
+      "seed": "m050-claude-duel-20260930-d",
+      "battles": 250,
+      "startedAt": "2026-09-30T00:04:14.517Z",
+      "elapsedSeconds": 69.7963037,
+      "command": {
+        "executable": "C:\\Maor\\CodeGuru\\corewars8086-lab\\tools\\temurin8-jre\\jdk8u504-b01-jre\\bin\\java.exe",
+        "args": [
+          "-jar",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\repos\\corewars8086-6.0.0-deterministic\\target\\corewars8086-6.0.0-jar-with-dependencies.jar",
+          "--headless",
+          "--comboSize",
+          "2",
+          "--battlesPerCombo",
+          "250",
+          "--seed",
+          "m050-claude-duel-20260930-d",
+          "--threads",
+          "4",
+          "--warriorsDir",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\claude-fixed-toggle\\defense-duel-xor-b\\vs-claude__m050-claude-duel-20260930-d\\survivors",
+          "--zombiesDir",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\claude-fixed-toggle\\defense-duel-xor-b\\vs-claude__m050-claude-duel-20260930-d\\zombies",
+          "--outputFile",
+          "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\claude-fixed-toggle\\defense-duel-xor-b\\vs-claude__m050-claude-duel-20260930-d\\scores.csv"
+        ]
+      },
+      "inputs": {
+        "COD_ptr_xor_b": [
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\m050-pointer-operator\\xor-b\\A",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\claude-fixed-toggle\\defense-duel-xor-b\\vs-claude__m050-claude-duel-20260930-d\\survivors\\COD_ptr_xor_b1",
+            "bytes": 189,
+            "sha256": "0268ce4f301bf2ada8566f4e608180a0670a335a80b9c2b93b67aee2b632bd44"
+          },
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\m050-pointer-operator\\xor-b\\B",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\claude-fixed-toggle\\defense-duel-xor-b\\vs-claude__m050-claude-duel-20260930-d\\survivors\\COD_ptr_xor_b2",
+            "bytes": 117,
+            "sha256": "fb66036e0b20a8df162da32e453cc148b5ff5ea0d1494439f3c417be0a57d994"
+          }
+        ],
+        "COD_claude_fixed_toggle": [
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\claude-fixed-toggle-2026-09-30\\A",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\claude-fixed-toggle\\defense-duel-xor-b\\vs-claude__m050-claude-duel-20260930-d\\survivors\\COD_claude_fixed_toggle1",
+            "bytes": 193,
+            "sha256": "bea990bbf2c60cb4c39d80dd5b533f83a1eb62f1ad202020c6d4e93cbebc2747"
+          },
+          {
+            "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\claude-fixed-toggle-2026-09-30\\B",
+            "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\claude-fixed-toggle\\defense-duel-xor-b\\vs-claude__m050-claude-duel-20260930-d\\survivors\\COD_claude_fixed_toggle2",
+            "bytes": 121,
+            "sha256": "9761054288100948cfcf3610c8d989f16eba68f0f501b90c21b7de9ead380c8f"
+          }
+        ]
+      },
+      "zombies": [
+        {
+          "name": "zom20a",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\zombies-live\\zom20a",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\claude-fixed-toggle\\defense-duel-xor-b\\vs-claude__m050-claude-duel-20260930-d\\zombies\\zom20a",
+          "bytes": 73,
+          "sha256": "a950e618ea2e127096c85f486fb555c264730d924a2192c407aa66e6e0318eb6"
+        },
+        {
+          "name": "zom20b",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\zombies-live\\zom20b",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\claude-fixed-toggle\\defense-duel-xor-b\\vs-claude__m050-claude-duel-20260930-d\\zombies\\zom20b",
+          "bytes": 382,
+          "sha256": "af6394c021ccb5e486db507e2ccd787bd5675f8fec88fd2ddbe9f834566852ce"
+        },
+        {
+          "name": "zom20c",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\zombies-live\\zom20c",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\claude-fixed-toggle\\defense-duel-xor-b\\vs-claude__m050-claude-duel-20260930-d\\zombies\\zom20c",
+          "bytes": 232,
+          "sha256": "3d3f209967f51a7344e0eab582bc04d1e694da5a73e3682a26ed483dcab7a443"
+        },
+        {
+          "name": "zom20d",
+          "source": "C:\\Maor\\CodeGuru\\corewars8086-lab\\official-2025\\zombies-live\\zom20d",
+          "target": "C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\claude-fixed-toggle\\defense-duel-xor-b\\vs-claude__m050-claude-duel-20260930-d\\zombies\\zom20d",
+          "bytes": 382,
+          "sha256": "923dd6abebbb7bb502ec5a02873c26175820ada5c4409d179d8464f0e90cb6fc"
+        }
+      ],
+      "scores": {
+        "groups": {
+          "COD_claude_fixed_toggle": 110.50003,
+          "COD_ptr_xor_b": 138.5
+        },
+        "warriors": {
+          "COD_claude_fixed_toggle1": 44.999996,
+          "COD_claude_fixed_toggle2": 65.499985,
+          "COD_ptr_xor_b1": 46.33333,
+          "COD_ptr_xor_b2": 92.16667
+        }
+      },
+      "candidate": {
+        "teamRaw": 138.5,
+        "teamPerBattle": 0.554,
+        "warrior1Raw": 46.33333,
+        "warrior1PerBattle": 0.18533332,
+        "warrior2Raw": 92.16667,
+        "warrior2PerBattle": 0.36866667999999997
+      },
+      "telemetry": null,
+      "rawScoreText": "Groups:\nCOD_claude_fixed_toggle,110.50003\nCOD_ptr_xor_b,138.5\n\nWarriors:\nCOD_claude_fixed_toggle1,44.999996\nCOD_claude_fixed_toggle2,65.499985\nCOD_ptr_xor_b1,46.33333\nCOD_ptr_xor_b2,92.16667\n",
+      "stdout": "CoreWars8086 - headless mode\n\r\nLoaded warriors: [COD_claude_fixed_toggle, COD_ptr_xor_b]\r\nStarting competition (250 wars) in parallel.\r\nCompetition is over. Ran 250 wars\r\nWriting scores to file C:\\Maor\\CodeGuru\\corewars8086-lab\\build\\official-runs\\smart-counter-2026-09-30\\claude-fixed-toggle\\defense-duel-xor-b\\vs-claude__m050-claude-duel-20260930-d\\scores.csv\r\n"
+    }
+  ]
+}
