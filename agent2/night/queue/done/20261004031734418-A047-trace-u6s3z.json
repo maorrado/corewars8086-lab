@@ -1,0 +1,28 @@
+{
+ "job": {
+  "id": "20261004031734418-A047-trace-u6s3z",
+  "agent": "A047",
+  "kind": "trace",
+  "submittedAt": "2026-10-04T03:17:34.420Z",
+  "note": "G13 death attribution / zombie capture timing (screen 2vvu6 -0.033)",
+  "asmA": "agent2/night/scratch/A047/G13_A.asm",
+  "asmB": "agent2/night/scratch/A047/G13_B.asm"
+ },
+ "ok": true,
+ "finishedAt": "2026-10-04T03:20:16.378Z",
+ "seconds": 19.583,
+ "result": {
+  "candidate": {
+   "A": "agent2/night/cand-build/20261004031734418-A047-trace-u6s3z/candA",
+   "B": "agent2/night/cand-build/20261004031734418-A047-trace-u6s3z/candB",
+   "sizeA": 200,
+   "sizeB": 211,
+   "shaA": "9db4b94bcf3f9d3ab0e0df67e0b7da336ff01438f28afb73be44da93f958c480",
+   "shaB": "22875e513071af11ee8ac8adcd50800780941650d4ca86805b64998d6c2c74e5"
+  },
+  "traceDir": "agent2/night/scratch/_trace/nightTR-9db4b94bcf-22875e5130",
+  "battles": 160,
+  "summary": "deaths 177\n  86 wild-cs          memory exception opp\n  41 wild-cs          CPU exception    opp\n  10 wild-cs          CPU exception    self-only\n   7 wild-cs          memory exception self-only\n   6 startup(cs1000)  memory exception zombie\n   6 wild-cs          memory exception zombie\n   5 wild-cs          CPU exception    zombie\n   3 wild-cs          CPU exception    untouched\n   3 startup(cs1000)  CPU exception    zombie\n   3 startup(cs1000)  CPU exception    opp\n   2 startup(cs1000)  memory exception load\n   2 wild-cs          CPU exception    partner\n   1 startup(cs1000)  CPU exception    untouched\n   1 wild-cs          CPU exception    ourZombie\n   1 wild-cs          memory exception untouched\ntop opponent killers: Y_TOM_Code_Killer=30 A_IND_cgx123123=23 A_WAN_Baltika9=14 A_GSA_GhostBytes_0x=13 A_OHS_TrojanByte=11 A_KOB_KosherCode=7 A_WHS_K0F1M_AL_T1L1M=7 A_GGN_OpcodeHunter=7 A_HRZ_Underflow=5 A_HRZ_fisherEXE=4 A_OST_Gamma=2 A_RZL_YANDE=2\n",
+  "note": "phase 'wild-cs' = any CS other than 0FFC/1000 (V6 family uses FAR_SEG 0FFB); examples.json not produced by sum-trace2; raw jsonl in traceDir"
+ }
+}

@@ -1,0 +1,33 @@
+{
+ "agentId": "B053",
+ "revisionUsed": 0,
+ "jobs": ["20261003185200498-B053-threat-gqsy1", "20261003185201244-B053-screen-uunhx"],
+ "candidates": [
+  {"label": "reloc-hook-B6E9", "change": "Both A and B: hook cell 4A17h replaced by 0B6E9h. Affects A mov ax,[cell] (copied to [9769h]), A mov cx,cell before INT 87h, B mov [cell],bx, B mov cx,cell (startup and zombie_entry) and the discarded mov dx,[cell] in phoenix_init. Sizes and offsets are unchanged.",
+   "asmA": "agent2/night/scratch/B053/relocA.asm", "asmB": "agent2/night/scratch/B053/relocB.asm",
+   "shaA": "659e1e70b0173cd16c724cd6c5ced05d35a48cc350dc3a1b364a89eb33a5da6b", "shaB": "3fab1e5b898cd5a2a82b293418cc6cc9464c13dc1354718de955741e5cf483f3",
+   "sizeA": 194, "sizeB": 202, "screenJob": "20261003185201244-B053-screen-uunhx",
+   "screenAllDiff": 0.00242, "screenAllLo": -0.00435, "screenAllHi": 0.00919,
+   "groupNotes": "2025 +0.0040 [-0.0047,0.0127] (only 3 of 25 cohorts changed, W/L 2/1); strong +0.0016; threat +0.0029; multi -0.018 (n=2; V6x3 -0.053). Threat job vs V6-family leads (8 cohorts x 30 each): lead_V6 -0.005 [-0.087,0.076], lead_V6Guard +0.007 [-0.045,0.059], lead_V4 +0.044 [-0.001,0.089]; ALL +0.015 [-0.020,0.050].",
+   "isDefenseFix": true, "promising": false}
+ ],
+ "threatFindings": [
+  {"threat": "Captured zombies in the base are routed through the fixed cell [4A17h]. A: mov cx,4A17h + INT 87h turns E2 F2 81 C3 in zom20a into FF 26 17 4A (jmp [4A17h]). B: mov cx,4A17h + INT 87h turns EB F9 CC CC (zom20b/d) into the same jump, and zombie_entry repeats this search. The cell is written once, by B's 3rd instruction (mov [4A17h],bx, bytes 89 1E 17 4A). It is read whenever a hooked zombie reaches its jmp, which can be long after startup.",
+   "classification": "verified-in-current",
+   "evidence": "Static reading of rev0 A.asm/B.asm. The existing base trace (agent2/night/scratch/_trace/nightTR-6861894f3c-8579e2c221, 2025 cohorts with no V6-family opponent) shows zombie deaths with CS=0FFBh, the base's FAR_SEG, meaning those zombies were running our phoenix: zom20a 68, zom20b 20, zom20d 18, zom20c 0. Many zombie deaths happen after round 1000.",
+   "impact": "This is the base's capture channel (worth about 0.1 points per battle according to the brief)."},
+  {"threat": "An opponent that writes [4A17h] after our B's write can redirect our captured zombies. In the realistic pools, only the V6 family does this (Good_Test_V6/V4/V6Guard B at offset 8, bytes 89 1E 17 4A, with the same FF 26 17 4A hook). So the cell is shared both ways.",
+   "classification": "not-reproduced",
+   "evidence": "Byte scan (agent2/night/scratch/B053/scan.mjs) of the 2025, 2024final, 2024live, counters, peers and refs pools: [4A17h] is written only by the V6 family. Moving our cell to 0B6E9h, which removes the sharing, gave threat job 20261003185200498-B053-threat-gqsy1 ALL +0.015 [-0.020,0.050] (V6 -0.005, V6Guard +0.007, V4 +0.044 [-0.001,0.089]) and screen lead_V6 -0.072, lead_V4 +0.039, lead_V6Guard +0.035, V6x3 -0.053 (single cohorts). Overall the effect is not distinguishable from zero and its sign is mixed.",
+   "impact": "No measurable net cost vs realistic writers. The V4-only gain is borderline and remains a hypothesis."},
+  {"threat": "[5D13h] and [9769h] are cells we write to steal other teams' captured zombies (m050/b01d/e1p4/FixedToggle/Synthesis use 5D13h; HRZ_Registered_Winners uses 9769h). The concern was that these cells could redirect OUR zombies.",
+   "classification": "not-reproduced",
+   "evidence": "Our base never installs jmp [5D13h] or jmp [9769h]: its only INT 87h replacement values use CX=4A17h. A write to these cells only changes whether we receive the other team's zombies. B writes [5D13h] on its 5th instruction and A writes [9769h] on its 5th; the peers write theirs on their 3rd or 4th instruction, so we usually write later and win the race (static timing, not traced).",
+   "impact": "At most this loses the bonus of stolen zombies. It does not take away our own."},
+  {"threat": "A purpose-built opponent that keeps writing [4A17h] could take over our captured zombies, and late-hooked zombies would be most exposed. Our own trail also overwrites [4A17h] over time (64 lattice positions cover the arena), which can strand zombies that reach their hook late.",
+   "classification": "hypothesis",
+   "evidence": "Not tested by B053; no counter code was built in this role (R3 counter role B073 covers it). Note: phoenix_init's mov dx,[4A17h] is harmless because and dx,0 / or dx,0FFBh discards the value.",
+   "impact": "Unknown. A fixed cell is predictable by design. Relocating the cell does not remove this; it only moves the exposure."}
+ ],
+ "recommendation": "Do not promote reloc-hook-B6E9: the screen gives ALL +0.0024 [-0.004,+0.009], below the +0.006 bar, with mixed V6-family cohorts. The hook-cell theft path is real in the code (verified-in-current as a mechanism), but the realistic cell sharing with the V6 family shows no measurable net cost. Defence work in domain 3 should be judged against B073's targeted counter, not against field opponents."
+}

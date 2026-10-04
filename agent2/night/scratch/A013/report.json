@@ -1,0 +1,33 @@
+{
+ "agentId": "A013",
+ "revisionUsed": 0,
+ "jobs": ["20261003203844355-A013-screen-ufu9y", "20261003203845184-A013-screen-urea1", "20261003204512064-A013-screen-kx45u", "20261003204513614-A013-trace-46uvt"],
+ "method": "B only. Captured zombies get their own DX/BP: the main path preloads dx=2400h/bp=2C00h before 'jmp short phoenix_init', the zombie path preloads its own values before falling into phoenix_init; the FAR_SEG obfuscation (mov ?,[4A17h]/and ?,0/or ?,0FFBh/mov [bx+2],?/mov es,?) uses CX instead of DX. B main path: same instruction count and values as rev0, +6 bytes (208 B), zombie_entry moves +6. Generator: agent2/night/scratch/A013/gen.mjs. Gap kept 600h.",
+ "candidates": [
+  {"label": "z1000", "asmB": "agent2/night/scratch/A013/z1000_B.asm", "sizeB": 208, "shaB": "e1b9c1845e3590b0f9da14b137390523ad256f5109142820b1a6c3e3f5ba97e3",
+   "change": "captured zombies DX 1C00h / BP 2C00h (trail 1000h: same rounds per generation at speed 2 as B at speed 1)",
+   "screenJob": "20261003203844355-A013-screen-ufu9y", "screenAllDiff": -0.16126, "screenAllLo": -0.20223, "screenAllHi": -0.12028,
+   "groups": {"2025": -0.18289, "strong": -0.22603, "threat": -0.11146, "multi": -0.0625}, "promising": false},
+  {"label": "z400", "asmB": "agent2/night/scratch/A013/z400_B.asm", "sizeB": 208, "shaB": "fdb48a8cd7b4459d4da103747846301671f111f807b7f3822b42ee3bfa7f6166",
+   "change": "captured zombies DX 2800h / BP 2C00h (trail 400h)",
+   "screenJob": "20261003203845184-A013-screen-urea1", "screenAllDiff": -0.01423, "screenAllLo": -0.03975, "screenAllHi": 0.0113,
+   "groups": {"2025": -0.018, "strong": 0.05397, "threat": -0.03507, "multi": -0.03889}, "promising": false},
+  {"label": "zup", "asmB": "agent2/night/scratch/A013/zup_B.asm", "sizeB": 208, "shaB": "a371e3a37153458ef562c4bd05a286f7aa87c6f44dd62f0acac5216ebcbb03ad",
+   "change": "captured zombies DX CC00h / BP D400h (step upward 2C00h, trail 800h; high relative speed vs A and B streams)",
+   "screenJob": "20261003204512064-A013-screen-kx45u", "screenAllDiff": -0.03277, "screenAllLo": -0.06133, "screenAllHi": -0.00422,
+   "groups": {"2025": -0.02667, "strong": -0.00476, "threat": -0.05139, "multi": -0.05833}, "promising": false}
+ ],
+ "threatFindings": [
+  {"threat": "Captured zombies whose generation period (in rounds) equals B's run in lockstep with B's stream and kill B with their own trail", "classification": "verified-in-other",
+   "evidence": "trace 20261003204513614-A013-trace-46uvt (z1000): 210 deaths vs 161 in base trace nightTR-...-8579e2c221; our deaths with fatal bytes written by a zombie 66 (59 carry the FB 0F trail pattern; CAND2 by zom20b 29, zom20d 26) vs 13 (2 trail pattern) in base. Screen ufu9y -0.161 (W/L 4/46).",
+   "impact": "Large in the variant (-0.16); rev0 avoids it because at speed 2 its zombies move ~2x faster through the arena than B (relative speed 22 B/round vs ~0 in z1000)."},
+  {"threat": "Zombie trail/step retuning (shorter trail or upward step) improves capture value", "classification": "not-reproduced",
+   "evidence": "screens urea1 (z400) -0.0142 [-0.040,+0.011] and kx45u (zup) -0.0328 [-0.061,-0.004].",
+   "impact": "rev0 zombie parameters (DX 2400h/BP 2C00h, trail 800h) appear at or near a local optimum."},
+  {"threat": "GSA_callfart cohort loses deterministically after the B layout change (6-byte shift / FAR_SEG via CX), independent of zombie parameters", "classification": "hypothesis",
+   "evidence": "zomb_callfart diff -0.2389 identical in all three screens (ufu9y, urea1, kx45u), while other cohorts vary; no layout-only control was run.",
+   "impact": "Up to ~-0.005 of screen ALL; a zero-shift implementation would be needed to separate it."}
+ ],
+ "recommendation": "Do not promote. Keep captured zombies on B's parameters (DX 2400h/BP 2C00h). Never give zombies a period in rounds equal to B's (trail 1000h at speed 2): verified self-kill by lockstep. Card considered closed; a layout-only control would be needed only if someone revisits the callfart sensitivity.",
+ "notes": "All results vs base revision 0. Four jobs used (3 screens + 1 trace)."
+}

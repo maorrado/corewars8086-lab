@@ -1,0 +1,65 @@
+{
+ "agentId": "A024",
+ "revisionUsed": 0,
+ "jobs": ["20261003230733923-A024-screen-npxkj", "20261003230734025-A024-screen-nc1yt", "20261003230739643-A024-threat-c1v5o", "20261003230934585-A024-threat-wv8ov"],
+ "candidates": [
+  {
+   "label": "A024-C2 (stripA + compact band math + 4 FF1F decoys, zero net turns)",
+   "change": "A only. (1) Dead zombie_entry/zombie_scan hunter tail removed (= B057 stripA), so A's arena tail reads FF 1F CC CC (natural decoy). (2) Band math rewritten: mov ax,si; xor dx,dx; mov cx,3C00h; div cx; mul cx; add ax,2CA2h (same AX for every load address, 3 turns shorter). (3) The 3 freed turns plus the 1-turn no-op jmp slot hold 4 decoy writes: mov word [0000h],1FFFh; mov word [si+4000h],1FFFh; mov word [si+8000h],1FFFh; mov word [si+0C000h],1FFFh. INT87 is still instr 10 and phoenix_init still starts at turn 22, so phoenix timing equals rev0.",
+   "asmA": "agent2/night/scratch/A024/C2_A.asm",
+   "shaA": "36bf5eee2f9628542daf9f589f91de62d9508498737deec4b3b5362063d724a2",
+   "sizeA": 143,
+   "screenJob": "20261003230734025-A024-screen-nc1yt",
+   "screenAllDiff": 0.01689, "screenAllLo": -0.00359, "screenAllHi": 0.03737,
+   "groupNotes": "Screen nc1yt: cand 0.6625 vs base 0.6456, ALL +0.0169 W/L 13/8; 2025 +0.0333 [-0.0059,+0.0725] 7/1; strong +0.0087 [-0.0173,+0.0347] 3/2; threat -0.0031 [-0.0129,+0.0066] 3/5; multi 0. Searcher cohorts: s2025-15 (2B2Team) +0.467 (dec0A +0.233, C1 +0.367), s2025-10 (OpcodeHunter) +0.200, s2025-22 (ADDvanced) 0, CodeKiller(OH filler) -0.017. Together these give about +0.013 of the ALL. Other cohorts moved by +-0.03 each (net about +0.004), probably noise from the changed arena contents. Losses: lead_zrl03 -0.033, lead_ah02 -0.033, TrojanByte -0.033, s2025-1 -0.033, sstrong-6 -0.033. Threat c1v5o (same spec and cohorts as B066 83rh4, base 0.5788): ALL +0.0847 [0.0379,0.1315] 17/3; OH +0.064 [0.030,0.097] 7/1; 2B2Team +0.163 [0.046,0.279] 6/0 (2B2Team team score 0.2375 -> 0.1125); ADDvanced +0.028 [-0.011,+0.067] 4/2.",
+   "isDefenseFix": true,
+   "promising": true
+  },
+  {
+   "label": "A024-C1 (stripA + dec0A, zero-turn)",
+   "change": "A only: B057 stripA (dead hunter tail removed, A tail = FF 1F CC CC) plus B066 dec0A (the 1-turn no-op jmp short phoenix_init replaced by mov word [0000h],01FFFh). Turn count identical to rev0.",
+   "asmA": "agent2/night/scratch/A024/C1_A.asm",
+   "shaA": "9c44362d0cdd6afe48762e80e099b5ca0001a32786f6acecd369b9b8a3ed2f43",
+   "sizeA": 130,
+   "screenJob": "20261003230733923-A024-screen-npxkj",
+   "screenAllDiff": 0.00956, "screenAllLo": -0.00746, "screenAllHi": 0.02658,
+   "groupNotes": "Screen npxkj: cand 0.6552, ALL +0.0096 W/L 5/7; 2025 +0.0233 3/1; strong +0.0032 (equal to stripA brk24); threat -0.0080 [-0.0158,-0.0002] 0/4 (CodeKiller -0.05, callfart -0.033, zrl03 -0.033, zchain4 -0.011, the same cohorts as dec0A ivs2p and stripA brk24); multi 0. Per cohort it is roughly the union of stripA and dec0A, and super-additive on 2B2Team (+0.367 vs +0.133 and +0.233). Threat wv8ov (same cohorts as 83rh4): ALL +0.0698 [0.0288,0.1107] 14/3; OH +0.050; 2B2Team +0.1375; ADDvanced +0.022. Not marked promising because the threat-group interval is just below 0. C2 contains C1 and does better.",
+   "isDefenseFix": true,
+   "promising": false
+  }
+ ],
+ "threatFindings": [
+  {
+   "threat": "FF 1F CC CC INT87 searchers (OpcodeHunter1, 2B2Team1/2, ADDvanced1/2) hit our dwell anchors; low/spread decoys absorb their single-charge searches",
+   "classification": "verified-in-current",
+   "evidence": "Identical threat cohorts (base 0.5788 in all three jobs): dec0A (1 decoy at 0000h, B066 83rh4) +0.057; C1 (+ A natural tail decoy, wv8ov) +0.070; C2 (+3 more decoys at si+4000h/8000h/C000h, c1v5o) +0.085 [0.038,0.132]. Screens: s2025-15 (2B2Team) +0.233 / +0.367 / +0.467.",
+   "impact": "About +0.05 to +0.16 per searcher cohort; about +0.01 on field S ALL (5/50 cohorts contain a searcher). The ordering dec0A < C1 < C2 is monotone but the step differences are within the CIs (no per-cohort pairing in the threat output), so 'more spread decoys are better' is supported but not proven."
+  },
+  {
+   "threat": "2B2Team1 does not search from DI=0: it does INT86 at ES:DI=A500h first, so its INT87 starts at about A600h and wraps (the engine's int87 loops i=0..FFFF from DI with 16-bit wrap). A decoy only at 0000h is often not the first match",
+   "classification": "verified-in-current",
+   "evidence": "Static: dis86 of official-2025/survivors-online/TOM_2B2Team1 (mov di,A500h; int 86h; mov ax,1FFFh; mov dx,CCCCh; int 87h) plus Cpu.java int87/int86 (stosdw advances DI). Behavioural support: the largest gain from the spread decoys is on 2B2Team (+0.106 -> +0.163 threat, +0.233 -> +0.467 screen). This corrects B066's 'forward from DI=0' for 2B2Team.",
+   "impact": "Explains why spread decoys help more than the single 0000h decoy"
+  },
+  {
+   "threat": "Removing A's dead hunter makes A's arena tail a second natural FF 1F CC CC decoy (like B's tail)",
+   "classification": "verified-in-current",
+   "evidence": "stripA brk24 changed s2025-15 (2B2Team) +0.133 and s2025-10 (OH) +0.033; C1 vs dec0A on the same cohorts: screen s2025-15 +0.367 vs +0.233, threat wv8ov +0.070 vs 83rh4 +0.057.",
+   "impact": "The dead code's best use is to delete it. Its 68 bytes are worth more as a decoy tail than as anything placed there."
+  },
+  {
+   "threat": "si-relative decoy writes ([si+4000h/8000h/C000h]) can land on our own B or on a captured zombie's code (self-harm), roughly 1% of battles",
+   "classification": "hypothesis",
+   "evidence": "Estimate only (3 writes x ~200 B / 64 KiB). Not traced. No multi or V6-family cohort got worse in nc1yt (multi 0, lead_V6/V4 0, V6Guard +0.011). The decoy writes can also hit opponents' code, which may explain small +-0.03 moves in non-searcher cohorts.",
+   "impact": "Small. A trace job on C2 could measure it."
+  },
+  {
+   "threat": "Anchor recovery using the freed bytes (the card's other suggestion)",
+   "classification": "not-reproduced",
+   "evidence": "Not re-tested: A018 already closed it (rw/rwt screens gbff6 -0.015, swv6d -0.001; anchor hits are not recoverable). I used the budget on decoys.",
+   "impact": "none"
+  }
+ ],
+ "recommendation": "promote-candidate: send A024-C2 (A only, agent2/night/scratch/A024/C2_A.asm, 143 B, sha 36bf5eee...) to confirmation as a defense add-on. Screen ALL +0.0169 [-0.0036,+0.0374] with no negative group; threat +0.085 vs the three FF1FCCCC searcher teams. Phoenix and INT87 timing equal rev0, and it only touches A, so it combines cleanly with B-side add-ons (B059 zph, B054 fix2steal); it replaces dec0A and stripA. Expect a pooled confirmation gain of only about +0.004 to +0.008 because searchers are rare (3/75 teams in 2025, 4/42 in 2024 live). It may not pass z=2.5 on its own, so it is a good part of a combination. Do not promote C1 separately (C2 contains it).",
+ "notes": "Band-math equivalence: floor(si/3C00h)*3C00h + 2CA2h gives AH = floor(hi(si)/3Ch)*3Ch + 2Ch and AL = A2h, the same as rev0 for every si. Registers left differently at phoenix_init (CX, DX, flags) are all overwritten there. Template byte 17 becomes CCh (from 8Bh) as in stripA; the worker copy's tail is never a match because the trail byte A4 follows it. Decoy addresses relative to si never hit A itself."
+}

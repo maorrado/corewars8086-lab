@@ -1,0 +1,66 @@
+{
+  "agentId": "B058",
+  "role": "wave 2, domain 8 (dense / sparse CC bombers, early INT86 heavy bombs), R1-verify",
+  "revisionUsed": 0,
+  "base": "rev0 = V6nohunt (A 194 B sha 6861894f, B 202 B sha 8579e2c2)",
+  "jobs": [
+    "20261003195916559-B058-threat-foy12",
+    "20261003200315637-B058-threat-ktxof",
+    "20261003200456117-B058-threat-7v9o9"
+  ],
+  "mechanism": {
+    "anchor_bytes": "Each generation's anchor is the 2-byte far call FF 1F (call far [bx]) written by stosw (AX=1FFFh) at arena P with P mod 100h = 52h for A and B (and captured zombies). A dwells ~256 calls per generation (400h trail / 4), B ~512 (800h trail). A CC on P (FF -> CC = INT3) kills the process; a CC on P+1 only gives FF CC = dec sp, so P itself is the critical byte.",
+    "why_52h_is_pinned": "The rebuild trigger is the low byte of the pushed return IP: it must be A4h (MOVSB), so the anchor IP must be ..A2h; arena offset = IP + 16*FAR_SEG - 10000h, FAR_SEG 0FFBh -> in-page 52h. The in-page offset can only change in 10h steps via FAR_SEG (0FF6h..1000h usable, B055), so every V6-style anchor sits on an address = 2 (mod 10h).",
+    "IND_BRA": "official-2025/survivors-online/IND_BRA1/2 (25 B, identical): mov byte [si],CCh; add si,23h; cmp si,0FF00h; jb; restart at 0400h. Both warriors bomb the same lattice {400h+23h*k} in lockstep (copies add nothing), one byte per 3 rounds, full pass ~5500 rounds. Its own 25-byte body usually contains a lattice point, so it tends to bomb itself."
+  },
+  "candidates": [
+    {
+      "label": "fs8 (causal probe = B055 lat_m30, FAR_SEG 0FF8h, anchor in-page 22h)",
+      "asmA": "agent2/night/scratch/B058/fs8_A.asm",
+      "asmB": "agent2/night/scratch/B058/fs8_B.asm",
+      "shaA": "45d913530e7e9c73b595d2034068cabff0a412c2f34a6b59bca9091703a224f6",
+      "shaB": "6b4b07dea599dad9e67d2a2be097d43d963eeedddb758dbe27757a1fded7dc60",
+      "sizeA": 194,
+      "sizeB": 202,
+      "change": "or dx,0FFBh -> or dx,0FF8h in A and B (byte-identical to B055 lat_m30). Used only to verify causality, not as a proposal.",
+      "screen": "same binaries already screened by B055: 20261003190333199-B055-screen-oauc2 ALL -0.0105 [-0.0339,+0.0129], 2025 -0.026, strong -0.05",
+      "threatJob": "20261003200315637-B058-threat-ktxof: vs B058_pg52 +0.677 [0.568,0.786] W/L 8/0; vs B058_pg22 -0.819 [-0.883,-0.755] W/L 0/8",
+      "promising": false,
+      "isDefenseFix": true,
+      "notes": "Moves the hole, does not close it; general cost already known negative."
+    }
+  ],
+  "counterCodes": [
+    {"name": "B058_pg52", "asmA": "agent2/night/scratch/B058/pg52A.asm", "asmB": "agent2/night/scratch/B058/pg52B.asm", "size": 42, "what": "CCCCh at in-page 52h of every page, 8 pages per 10-instruction loop, partner offset 8000h", "strength": "base team 0.025 (A 0.0125, B 0.0125) over 8 cohorts x 20 battles (foy12) vs 0.8625 vs the in-page-12h control; the bomber itself only 0.18"},
+    {"name": "B058_pgall16", "asmA": "agent2/night/scratch/B058/pgallA.asm", "asmB": "agent2/night/scratch/B058/pgallB.asm", "size": 35, "what": "CCCCh at every address = 2 mod 10h (all possible V6-style anchor offsets)", "strength": "base team 0.519 (A 0.346, B 0.173) over 12 cohorts (7v9o9); bomber itself 0.05"},
+    {"name": "B058_pg22", "asmA": "agent2/night/scratch/B058/pg22A.asm", "asmB": "agent2/night/scratch/B058/pg22B.asm", "size": 42, "what": "pg52 retargeted to in-page 22h (kills FAR_SEG 0FF8h variants)", "strength": "fs8 loses -0.819 vs base on it (ktxof)"},
+    {"name": "B058_pg12ctl", "asmA": "agent2/night/scratch/B058/pg12A.asm", "asmB": "agent2/night/scratch/B058/pg12B.asm", "size": 42, "what": "control: same bomber at in-page 12h (no anchor there)", "strength": "harmless: base 0.8625, bomber 0.019"}
+  ],
+  "threatFindings": [
+    {
+      "threat": "IND_BRA (step-23h single-byte CC sweep) takes points from rev0 by hitting the anchor",
+      "classification": "not-reproduced",
+      "evidence": "foy12 (8 cohorts x 20 battles, IND_BRA + 2 random 2025 teams): IND_BRA team score 0.000 in every cohort; base team 0.806 (A 0.394, B 0.413); the losses come from the other opponents (e.g. cohort #5 Baltika9 10 + Grindo 3 -> base 0.35). Screen field S cohort sthreat-bomb_IND_BRA: base 0.967. Static: lockstep copies bomb one fixed lattice; per A generation the anchor is on that lattice with p ~1/35 and the sweep passes during the dwell with p ~0.05.",
+      "impact": "none measurable; not worth any defense bytes"
+    },
+    {
+      "threat": "Early INT86 heavy bombs hit our load image before we leave it (startup deaths)",
+      "classification": "verified-in-current",
+      "evidence": "Base trace nightTR-6861894f3c-8579e2c221 (job 20261003182659506-B051-trace-pkj3o, re-read with scratch/B058/early.mjs): A_HRZ_Underflow1 INT86 CCCC block at round 7 kills CAND1 at round 8 (cs 1000h, ip-load 14h, 8 x CC, cohort sthreat-movsw_cgx123123); A_GSA_GhostBytes_0x1 INT86 zero block at round 7 corrupts A's image -> death round 68 at ip-load 8Bh (s2025-3); A_RZL_YANDE2 INT86 pattern CC E2 2A CC at round 34 -> CAND1 dies round 34 at ip-load 39h (s2025-1). Also zom20b/c/d writes hit B's image at rounds 19-51 (4 startup deaths of CAND2 at ip-load 8Fh-B4h). Field scan: 37 warriors in the 2025 field carry CD 86; early users (INT86 in the first 20h bytes) include KosherCode, Ctrl_Alt_Elite, Underflow, stack_attack2, K0F1M, TOM_AND_JERRY, YANDE, GoonSquad, Code_Jokers4Life.",
+      "impact": "3 of 161 base deaths (~2%) from opponent INT86 bombs in startup, plus ~4 from zombie writes. Placement is random, so the only lever is time spent in the load image (A001 already showed faster startup is mixed: +0.017 on 2025, -0.025 on strong). No fix proposed."
+    },
+    {
+      "threat": "A page-lattice CC bomber tuned to the fixed anchor in-page offset 52h wipes out rev0",
+      "classification": "verified-in-current",
+      "evidence": "foy12: B058_pg52 (42 B per warrior) -> base team 0.025 (8 cohorts; 6 of 8 exactly 0) vs 0.8625 for the identical bomber at in-page 12h (control). Causal check ktxof: moving the anchor to in-page 22h (FAR_SEG 0FF8h) gives +0.677 vs pg52 and -0.819 vs pg22, so the hole moves exactly with the anchor byte. Critical byte: FF at arena P (P mod 100h = 52h) written by stosw AX=1FFFh in phoenix_init and in the worker (stosw; dec di; call far [bx]).",
+      "impact": "Catastrophic if any opponent ever targets in-page 52h; also hits every V6-family warrior (V6, V4, V6Guard), which share 52h. No 2025 field warrior does this, so the field effect today is zero."
+    },
+    {
+      "threat": "Choosing another FAR_SEG (or randomizing it) closes the bomber hole",
+      "classification": "not-reproduced",
+      "evidence": "7v9o9: B058_pgall16 (35 B) bombs every address = 2 mod 10h, i.e. every position a V6-style anchor can take: base team 0.519 (A 0.346, B 0.173) vs ~0.86 with the control, even though the bomber itself scores only 0.05. ktxof shows a fixed shift only moves the hole; B055 oauc2 shows the shift itself costs ALL -0.0105.",
+      "impact": "The weakness is architectural (a 1-byte-critical anchor dwelling 256/512 rounds at a fixed address); B, with the longer 800h dwell, is hit twice as often as A. A real defense would need a different trigger design or shorter dwell (shorter dwell already rejected by A004)."
+    }
+  ],
+  "recommendation": "No promote-candidate from B058. IND_BRA is not a threat to rev0 (not-reproduced). Early INT86 startup kills are real but small (~2% of deaths) and placement-random; no cheap fix. Main result: a verified architectural hole. A 35-42 byte CC bomber on the anchor lattice (2 mod 10h, or exactly 52h) cuts rev0 from ~0.86 to 0.52 (generic) or 0.03 (tuned). Nothing in the 2025 field does this, so today's ranking is unchanged, but keep scratch/B058/pg52 and pgall16 as robustness probes for any future base (they also hit V6/V4/V6Guard). Do not spend jobs on FAR_SEG shifts or randomization as a fix. Housekeeping note: I accidentally re-ran nasm-node into agent2/night/scratch/B055/build while checking hashes; it rewrote lat_m30_A/B with byte-identical output (same SHA-256)."
+}

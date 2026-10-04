@@ -1,0 +1,122 @@
+{
+ "job": {
+  "id": "20261003190113345-B054-threat-selrj",
+  "agent": "B054",
+  "kind": "threat",
+  "submittedAt": "2026-10-03T19:01:13.349Z",
+  "note": "B054: fixB + steal zrl03 hook [CC13h]",
+  "asmB": "agent2/night/scratch/B054/stealB.asm",
+  "threats": [
+   {
+    "key": "lead_zrl03"
+   },
+   {
+    "name": "zrl03_nosearch_decoyonly",
+    "binA": "agent2/night/scratch/B054/zrl/nosearchA",
+    "binB": "agent2/night/scratch/B054/zrl/nosearchB"
+   },
+   {
+    "name": "zrl03_nodecoy",
+    "binA": "agent2/night/scratch/B054/zrl/nodecoyA",
+    "binB": "agent2/night/scratch/B054/zrl/nodecoyB"
+   }
+  ],
+  "copies": 1,
+  "cohortsPerThreat": 8
+ },
+ "ok": true,
+ "finishedAt": "2026-10-03T19:05:38.702Z",
+ "seconds": 35.2,
+ "result": {
+  "candidate": {
+   "A": "agent2/night/revisions/rev0/A",
+   "B": "agent2/night/cand-build/20261003190113345-B054-threat-selrj/candB",
+   "sizeA": 194,
+   "sizeB": 210,
+   "shaA": "6861894f3c1992cd6c6baa5b2a746178082f5b4b0a1d9969b9a326fe03d86c89",
+   "shaB": "f00c6179c0aebbbbc520f10a29145b6cb64d45a9b54e4cd355905977923f4296"
+  },
+  "baseRevision": 0,
+  "specKey": "936ade5189b2",
+  "battlesPerArm": 480,
+  "candMean": 0.6059,
+  "baseMean": 0.5136,
+  "all": {
+   "n": 24,
+   "diff": 0.09229,
+   "lo": 0.03622,
+   "hi": 0.14836,
+   "wins": 17,
+   "losses": 6
+  },
+  "byThreat": {
+   "lead_zrl03": {
+    "n": 8,
+    "diff": 0.05104,
+    "lo": -0.03866,
+    "hi": 0.14074,
+    "wins": 4,
+    "losses": 4
+   },
+   "zrl03_nosearch_decoyonly": {
+    "n": 8,
+    "diff": 0.14583,
+    "lo": 0.06854,
+    "hi": 0.22312,
+    "wins": 7,
+    "losses": 0
+   },
+   "zrl03_nodecoy": {
+    "n": 8,
+    "diff": 0.08,
+    "lo": -0.03992,
+    "hi": 0.19992,
+    "wins": 6,
+    "losses": 2
+   }
+  },
+  "threatFirstTeamScore": {
+   "vsCand": {
+    "lead_zrl03": 0.3698,
+    "zrl03_nosearch_decoyonly": 0.2031,
+    "zrl03_nodecoy": 0.324
+   },
+   "vsBase": {
+    "lead_zrl03": 0.4354,
+    "zrl03_nosearch_decoyonly": 0.299,
+    "zrl03_nodecoy": 0.4608
+   }
+  },
+  "threatHashes": [
+   {
+    "label": "lead_zrl03",
+    "warriors": [
+     "agent2/frontier-20261003/arms/combo_zrl03/A",
+     "agent2/frontier-20261003/arms/combo_zrl03/B"
+    ]
+   },
+   {
+    "label": "zrl03_nosearch_decoyonly",
+    "warriors": [
+     "agent2/night/scratch/B054/zrl/nosearchA",
+     "agent2/night/scratch/B054/zrl/nosearchB"
+    ],
+    "hashes": [
+     "9f6abdc6a7897d12c2e6b4d866a60b734bd003c8392b923da948e5d769bd87ff",
+     "f1174337c077195e4baa8c581de69dc2666436730e6c6d8cf1269d40f0402290"
+    ]
+   },
+   {
+    "label": "zrl03_nodecoy",
+    "warriors": [
+     "agent2/night/scratch/B054/zrl/nodecoyA",
+     "agent2/night/scratch/B054/zrl/nodecoyB"
+    ],
+    "hashes": [
+     "dfadc4a58626937d06f7ff4d2a26a578d604ee59aba63bdbc266dba05250cc46",
+     "aec05c1f7e14c2fc873916d26c441a71fd4ba145b987275b2c94cc25f1b88c0a"
+    ]
+   }
+  ]
+ }
+}

@@ -1,0 +1,31 @@
+{
+ "agentId": "B089",
+ "role": "Domain 9 self-harm, R4-fix (defense), wave 8",
+ "revisionUsed": 0,
+ "jobs": ["20261004014103058-B089-threat-a4urp", "20261004014103456-B089-threat-i6toy", "20261004014324185-B089-screen-pfmzf", "20261004014324785-B089-threat-udhy4"],
+ "candidates": [
+  {"label": "h34 (half of B059 zph: CX=0 zombie path only)", "asmB": "agent2/night/scratch/B089/h34_B.asm", "shaB": "57e2beea70ffc6a8804f2d1acdcd413ce2dd7e4ca476fa5f39c23fd04ed6c30e", "sizeB": 202,
+   "change": "B only, zero bytes: zombie_entry mov bp,3400h -> 7000h (binary offset 62h: 34h -> 70h). The CX!=0 path keeps 2000h. A = base. h34 + h20 = zph byte for byte.",
+   "screenJob": "20261004014324185-B089-screen-pfmzf", "screenAllDiff": 0.01817, "screenAllLo": -0.00066, "screenAllHi": 0.037,
+   "groupNotes": "Screen (cand 0.6638 vs base 0.6456, W/L 23/9): 2025 +0.0111 [-0.0123,+0.0345] 13/4; strong +0.0254 [-0.061,+0.112] 3/3; threat +0.0293 [0,+0.0587] 7/1 (cgx123123 +0.200, lead_V4 +0.139, TrojanByte +0.067, BinaryBandits -0.033, all other threat cohorts 0..+0.03); multi -0.0083 [-0.0247,+0.008] 0/1. Router threat a4urp (same spec and cohorts as B069 r53y6, 2 copies of each [5D13h] router): ALL +0.1922 [0.1473,0.2371] 19/1 (zph on these cohorts: +0.1996); m050 +0.292, e1p4 +0.267, Synthesis +0.179, FixedToggle +0.135, b01d +0.088 (all lo > 0); base B 0.000-0.144 -> 0.394-0.648. Threat udhy4 (single copy lead_zrl03, zomb_AnotherBit, lead_zchain4, lead_ah02, 6 cohorts each, where zph had lost): ALL +0.0021 [-0.0067,+0.0109]; zrl03, zchain4, ah02 exactly 0 (no battle changed), AnotherBit +0.008 n.s.",
+   "isDefenseFix": true, "promising": true},
+  {"label": "h20 (other half of zph: CX!=0 zombie path only), control", "asmB": "agent2/night/scratch/B089/h20_B.asm", "shaB": "3ed20a6ad64429f603590d4258a318534e1ee1e1ef25092cc2dbeec44a85ee5e", "sizeB": 202,
+   "change": "B only, zero bytes: zombie_entry mov bp,2000h -> 5C00h (binary offset 67h: 20h -> 5Ch). CX=0 path keeps 3400h.",
+   "screenJob": "none (threat only)",
+   "groupNotes": "Router threat i6toy (r53y6 cohorts): ALL -0.0597 [-0.1019,-0.0175] 3/13; m050 -0.104, e1p4 -0.086, b01d -0.065, Synthesis -0.060, FixedToggle +0.017. B stays collapsed (0.006-0.138) and A loses 0.05-0.11. Not a fix.",
+   "isDefenseFix": true, "promising": false}
+ ],
+ "threatFindings": [
+  {"threat": "Theft self-kill with 2 copies of a [5D13h] router (B collapses to 0.00-0.14/battle) is caused by the CX=0 (zombie_fallback, phase 34h) path of zombie_entry, not by the CX!=0 path", "classification": "verified-in-current",
+   "evidence": "Same 20 cohorts (spec key 4f230eb4f697, shared base results): h34 a4urp +0.1922 [0.147,0.237] 19/1, i.e. 96% of zph's +0.1996 (r53y6); h20 i6toy -0.0597 [-0.102,-0.017]. Per member (scratch/B089/members.cjs): base B 0.000/0.144/0.044/0.081/0.125 (m050/b01d/e1p4/FT/Synthesis) -> h34 B 0.648/0.417/0.550/0.394/0.519, h20 B 0.006/0.138/0.050/0.087/0.106.",
+   "impact": "B069 estimated about 0.03 points/battle on the strong pool (15% of cohorts have 2 or more routers). h34 recovers almost all of it with one immediate. Narrows B069's mechanism hypothesis: the collapse comes from zombies that enter zombie_entry with CX=0 and then build phoenixes at B's band + 34h. The geometric cause (lattice relation of 34h to B's 10h at step 2C00h, or the 0E070E17 -> CC counter-bomb charge) is still untraced."},
+  {"threat": "Moving only the CX!=0 zombie phase (20h -> 5Ch) is neutral for the router case", "classification": "not-reproduced",
+   "evidence": "i6toy: it is harmful, -0.060 [-0.102,-0.017], A drops 0.04-0.11 while B stays collapsed.", "impact": "The 2000h -> 5C00h half of zph has no value against routers and costs A points there."},
+  {"threat": "zph's losses against lead_zrl03 (333pz -0.086, mc03n -0.050) and AnotherBit (mc03n -0.043) come from the 2000h -> 5C00h half, not the 3400h half", "classification": "hypothesis",
+   "evidence": "udhy4: h34 changes no battle against single-copy zrl03, zchain4 or ah02 (diff exactly 0 in 18 cohorts) and is +0.008 n.s. vs AnotherBit. The screen's lead_zrl03/zchain4/ah02 cohorts are also 0. h20 was not tested on these, and zph's losses were measured with 2 copies (333pz) or on confirm cohorts, so the attribution is by elimination only.", "impact": "If true, h34 keeps zph's router fix without its lead-team cost."},
+  {"threat": "General cost of moving the CX=0 zombie phase out of B's band", "classification": "not-reproduced",
+   "evidence": "Screen pfmzf ALL +0.0182 [-0.0007,+0.037] 23/9, no clearly negative group (multi -0.008, 1 loss in 2 cohorts). Caveat: earlier B-zombie edits' 2025 screen gains (zph +0.055) did not hold on fresh confirmation partitions; read h34's +0.011 on 2025 as 'no cost', not as a gain.", "impact": "Small/none on field S."}
+ ],
+ "recommendation": "promote-candidate as a defense add-on: use h34 (B: mov bp,3400h -> 7000h only) instead of full zph in the next combination. It removes the verified 2-router theft self-kill (+0.192 vs zph +0.200 on the same cohorts) and had no detected general cost (screen +0.018, no negative group; single-copy zrl03/zchain4/ah02 unchanged, while zph lost there). Port into K/Z1-based B: K_B.asm still has `mov bp, 3400h` at zombie_entry (line 53); change only that immediate. Do not include the 2000h -> 5C00h half (h20 is -0.060 on the router cohorts). As a stand-alone promotion it would face the same problem as zph (mc03n pooled lo < 0): the router case is mostly absent from the 2025/2024 pools, so expect its pooled effect to be small; its value is in the strong/threat groups.",
+ "notes": "Helper: agent2/night/scratch/B089/members.cjs (per-threat A/B/team scores from agent2/night/results/*.json). Provenance: Good_Test V6 is friend-provided; V6nohunt by agent2; B059 zph by B059; split by B089."
+}

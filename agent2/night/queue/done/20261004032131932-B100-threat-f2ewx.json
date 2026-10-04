@@ -1,0 +1,91 @@
+{
+ "job": {
+  "id": "20261004032131932-B100-threat-f2ewx",
+  "agent": "B100",
+  "kind": "threat",
+  "submittedAt": "2026-10-04T03:21:31.934Z",
+  "note": "B100 control: KP on the same LowKey+Baltika9+ah02 mixAll cohorts",
+  "asmA": "agent2/night/scratch/A031/K_A.asm",
+  "asmB": "agent2/night/scratch/B094/KP_B.asm",
+  "threats": [
+   {
+    "key": "movsw_LowKey"
+   },
+   {
+    "key": "movsw_Baltika9"
+   },
+   {
+    "key": "lead_ah02"
+   }
+  ],
+  "cohortsPerThreat": 12,
+  "mixAll": true
+ },
+ "ok": true,
+ "finishedAt": "2026-10-04T03:24:51.638Z",
+ "seconds": 10.367,
+ "result": {
+  "candidate": {
+   "A": "agent2/night/cand-build/20261004032131932-B100-threat-f2ewx/candA",
+   "B": "agent2/night/cand-build/20261004032131932-B100-threat-f2ewx/candB",
+   "sizeA": 196,
+   "sizeB": 222,
+   "shaA": "6d5bbfa6f4e778750d139b99c4c3c66c6faba3296338da217e5f426a3c8dd53a",
+   "shaB": "b275310b903e4c1d026f2c0f8082dba9976b1b12cc5b5fb16561f7045e4a0b62"
+  },
+  "baseRevision": 0,
+  "specKey": "e59afb33510a",
+  "battlesPerArm": 240,
+  "candMean": 0.5104,
+  "baseMean": 0.425,
+  "all": {
+   "n": 12,
+   "diff": 0.08542,
+   "lo": 0.02136,
+   "hi": 0.14947,
+   "wins": 8,
+   "losses": 4
+  },
+  "byThreat": {
+   "mix": {
+    "n": 12,
+    "diff": 0.08542,
+    "lo": 0.02136,
+    "hi": 0.14947,
+    "wins": 8,
+    "losses": 4
+   }
+  },
+  "threatFirstTeamScore": {
+   "vsCand": {
+    "mix": 0.0979
+   },
+   "vsBase": {
+    "mix": 0.0729
+   }
+  },
+  "threatHashes": [
+   {
+    "label": "movsw_LowKey",
+    "warriors": [
+     "official-2025/survivors-online/HRZ_LowKey_WBB1",
+     "official-2025/survivors-online/HRZ_LowKey_WBB2"
+    ]
+   },
+   {
+    "label": "movsw_Baltika9",
+    "warriors": [
+     "official-2025/survivors-online/WAN_Baltika91",
+     "official-2025/survivors-online/WAN_Baltika92"
+    ]
+   },
+   {
+    "label": "lead_ah02",
+    "warriors": [
+     "agent2/frontier-20261003/arms/combo_ah02/A",
+     "agent2/frontier-20261003/arms/combo_ah02/B"
+    ]
+   }
+  ]
+ }
+}

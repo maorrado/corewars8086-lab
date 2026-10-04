@@ -1,0 +1,52 @@
+{
+ "agentId": "A018",
+ "revisionUsed": 0,
+ "jobs": ["20261003215038610-A018-screen-gbff6", "20261003220232576-A018-screen-swv6d", "20261003220233175-A018-threat-c3v6s", "20261003220922487-A018-trace-fg6of"],
+ "candidates": [
+  {
+   "label": "rw",
+   "change": "A and B: anchor recovery word. Init and worker 'stosw; dec di' -> 'stosw; stosw; sub di,3' so a second FF 1F sits at anchor+2 during dwell; worker 17->20 bytes; phoenix_init template copy mov cx,9 -> 10; B first-rebuild mov cx,8 -> 9 (rebuild must copy >= 20 bytes). DX/BP unchanged (DL=0). +1 turn per generation.",
+   "asmA": "agent2/night/scratch/A018/rw_A.asm", "asmB": "agent2/night/scratch/A018/rw_B.asm",
+   "sizeA": 200, "sizeB": 208,
+   "shaA": "7fcbc303cacc609863dba5d22817c89fc1b6da4f4f397b1c207a90f48a912c7d",
+   "shaB": "2a9c558b006dcf9c84c313f0392868c3816364c4c9c597cc5591e9a04438e173",
+   "screenJob": "20261003215038610-A018-screen-gbff6",
+   "screenAllDiff": -0.01512, "screenAllLo": -0.05061, "screenAllHi": 0.02038,
+   "groupNotes": "cand 0.6305 vs base 0.6456, W/L 14/22. 2025 -0.0018 [-0.061,+0.058]; strong -0.0756 [-0.187,+0.036] (1/5); threat +0.0007; multi -0.0972 [-0.201,+0.006] (0/2). lead_V6 -0.072, lead_V6Guard -0.094, lead_V4 +0.106, lead_zrl03 +0.161, smulti-mix -0.15. The +1 turn per generation re-phases every battle, so the diff is dominated by trajectory chaos.",
+   "isDefenseFix": true,
+   "promising": false
+  },
+  {
+   "label": "rwt",
+   "change": "rw plus timing compensation: A add sp,100h -> 0FCh and DX 4000h -> 4004h; B add sp,600h -> 5FCh and DX 2400h -> 2404h (trail one push shorter so every generation triggers on the same turn as base). Side effect found in trace: DL becomes 4, so a '00 10' (add [bx+si],dl) hit now adds 4 to the pointer cell and the recovery call jumps to anchor+4 -> this variant defeats the main recoverable case.",
+   "asmA": "agent2/night/scratch/A018/rwt_A.asm", "asmB": "agent2/night/scratch/A018/rwt_B.asm",
+   "sizeA": 200, "sizeB": 208,
+   "shaA": "ca956095317aa223ddfe67371d35a5c0fc8d215b90ac1b6f5d1c9a5eb6b530f2",
+   "shaB": "77a343c1ec151526273da12abd05236cecf21c288227f0e2f3fd39c84adca65c",
+   "screenJob": "20261003220232576-A018-screen-swv6d",
+   "screenAllDiff": -0.00127, "screenAllLo": -0.02856, "screenAllHi": 0.02603,
+   "groupNotes": "cand 0.6444 vs base 0.6456, W/L 16/20 (14 cohorts identical). 2025 +0.0149 [-0.034,+0.064]; strong -0.0087; threat -0.0133; multi -0.0806 [-0.184,+0.023] (0/2); lead_V6 -0.139, lead_ah02 -0.083, lead_V4 +0.106. Threat c3v6s (Gamma, Underflow, 12 cohorts each): ALL +0.0031 [-0.0147,+0.0209]; Gamma +0.0146, Underflow -0.0083. Trace fg6of: 163 deaths vs base 161 (pkj3o), same classes.",
+   "isDefenseFix": true,
+   "promising": false
+  }
+ ],
+ "threatFindings": [
+  {"threat": "Single-byte ModRM hit FF CC (dec sp) at anchor+1 is recoverable by a second FF 1F at anchor+2 (card premise)", "classification": "not-reproduced",
+   "evidence": "Every FF CC anchor death in traces pkj3o / e85a / e1b9 (KosherCode x2, fisherEXE x3, theGlopyGng) comes from an odd-aligned CC CC word that also overwrites anchor+2, so execution hits INT3 at anchor+2 regardless. Same deaths persist identically (same round) in rwt trace fg6of. Also dec sp would misalign the trail by 1 byte/turn, so the rebuild would fail anyway.",
+   "impact": "0 of 161 traced deaths fixable"},
+  {"threat": "Harmless 2-byte overwrite of the anchor word (00 10 = add [bx+si],dl from CS=1000h dword bombs of HRZ_Underflow / OST_Gamma) falls through to INT3 at anchor+2", "classification": "verified-in-current",
+   "evidence": "Death mode exists: pkj3o 1/161 (Underflow r1161, anchor 00 10, anchor+2 = init CC), e1b9/e85a traces 1 each (Gamma2). In rwt trace fg6of the same battle survives the hit (call via recovery word) but dies one round later at anchor+4 because rwt's DL=4 adds 4 to the pointer cell. rw (DL=0) should survive it but was not traced. Threat c3v6s vs real Gamma/Underflow: +0.003 n.s.; their team scores vs base only 0.017/0.05.",
+   "impact": "about 0.6% of traced deaths; upper bound about +0.002/battle"},
+  {"threat": "00 1F / 10 1F hits (add/adc [bx],bl) at the anchor are recoverable", "classification": "not-reproduced",
+   "evidence": "They corrupt the pointer cell low byte (A2h + C0h = 62h). fg6of: OpcodeHunter/OnlyCode r1841 and Underflow2 r314 survive one round longer via the recovery word, then jump to xx62 (CC) and die.",
+   "impact": "none"},
+  {"threat": "MOVSW trail kill FF A5 (jmp [di+d16])", "classification": "not-reproduced",
+   "evidence": "Recovery word does not apply: the trail overwrites anchor+1..anchor+4. FF A5 deaths 80 (pkj3o) vs 78 (fg6of).",
+   "impact": "unchanged (the dominant death class, about 50%)"},
+  {"threat": "Recovery word introduces new self-harm or breaks rebuild", "classification": "not-reproduced",
+   "evidence": "fg6of 163 deaths vs pkj3o 161, same death classes; many battles die on the identical round; screens near base (rwt -0.001). Rebuild with 20-byte worker and CX 9 works.",
+   "impact": "no measured cost beyond timing chaos"}
+ ],
+ "recommendation": "Do not promote either candidate. The card's mechanism is real but tiny: only about 1 of 161 traced deaths is a harmless 2-byte anchor hit with anchor+2 intact (00 10 from Underflow/Gamma), so the upper bound is about +0.002/battle, which field S cannot resolve. FF CC hits come as odd CC CC words that also kill anchor+2. If anyone revisits this, keep DL=0 (rw form). Timing compensation through DX (rwt) breaks the main recoverable case. The +1 turn per generation in rw only re-phases battles (screen -0.015, strong -0.076, multi -0.097, all n.s.). Card closed.",
+ "notes": "Trace bytes[] start at logged IP-4. Logged IP is after the faulting instruction (fault+1 for CC). Helper: agent2/night/scratch/A018/faults.cjs."
+}

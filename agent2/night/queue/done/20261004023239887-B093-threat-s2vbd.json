@@ -1,0 +1,111 @@
+{
+ "job": {
+  "id": "20261004023239887-B093-threat-s2vbd",
+  "agent": "B093",
+  "kind": "threat",
+  "submittedAt": "2026-10-04T02:32:39.889Z",
+  "note": "B093 KH general-cost check on h34's confirm-negative threats (BinaryBandits, lead_V6, Baltika9)",
+  "asmA": "agent2/night/scratch/B093/KH_A.asm",
+  "asmB": "agent2/night/scratch/B093/KH_B.asm",
+  "threats": [
+   {
+    "key": "movsw_BinaryBandits"
+   },
+   {
+    "key": "lead_V6"
+   },
+   {
+    "key": "movsw_Baltika9"
+   }
+  ],
+  "copies": 1,
+  "cohortsPerThreat": 8
+ },
+ "ok": true,
+ "finishedAt": "2026-10-04T02:34:06.097Z",
+ "seconds": 27.834,
+ "result": {
+  "candidate": {
+   "A": "agent2/night/cand-build/20261004023239887-B093-threat-s2vbd/candA",
+   "B": "agent2/night/cand-build/20261004023239887-B093-threat-s2vbd/candB",
+   "sizeA": 196,
+   "sizeB": 212,
+   "shaA": "6d5bbfa6f4e778750d139b99c4c3c66c6faba3296338da217e5f426a3c8dd53a",
+   "shaB": "0da3b1d954f5437dfa7281bf8ef25fc6845f797a4cd5704539ed3ca5d2630b13"
+  },
+  "baseRevision": 0,
+  "specKey": "f6156f7da5f4",
+  "battlesPerArm": 480,
+  "candMean": 0.5339,
+  "baseMean": 0.5438,
+  "all": {
+   "n": 24,
+   "diff": -0.0099,
+   "lo": -0.04701,
+   "hi": 0.02722,
+   "wins": 10,
+   "losses": 11
+  },
+  "byThreat": {
+   "movsw_BinaryBandits": {
+    "n": 8,
+    "diff": -0.02187,
+    "lo": -0.0843,
+    "hi": 0.04055,
+    "wins": 2,
+    "losses": 4
+   },
+   "lead_V6": {
+    "n": 8,
+    "diff": -0.01094,
+    "lo": -0.08052,
+    "hi": 0.05865,
+    "wins": 4,
+    "losses": 3
+   },
+   "movsw_Baltika9": {
+    "n": 8,
+    "diff": 0.00312,
+    "lo": -0.0652,
+    "hi": 0.07145,
+    "wins": 4,
+    "losses": 4
+   }
+  },
+  "threatFirstTeamScore": {
+   "vsCand": {
+    "movsw_BinaryBandits": 0.1135,
+    "lead_V6": 0.5141,
+    "movsw_Baltika9": 0.2375
+   },
+   "vsBase": {
+    "movsw_BinaryBandits": 0.1313,
+    "lead_V6": 0.5062,
+    "movsw_Baltika9": 0.2031
+   }
+  },
+  "threatHashes": [
+   {
+    "label": "movsw_BinaryBandits",
+    "warriors": [
+     "official-2025/survivors-online/HRZ_BinaryBandits1",
+     "official-2025/survivors-online/HRZ_BinaryBandits2"
+    ]
+   },
+   {
+    "label": "lead_V6",
+    "warriors": [
+     "agent2/night/refs/V6/A",
+     "agent2/night/refs/V6/B"
+    ]
+   },
+   {
+    "label": "movsw_Baltika9",
+    "warriors": [
+     "official-2025/survivors-online/WAN_Baltika91",
+     "official-2025/survivors-online/WAN_Baltika92"
+    ]
+   }
+  ]
+ }
+}

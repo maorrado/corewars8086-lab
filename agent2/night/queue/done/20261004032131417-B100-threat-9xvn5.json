@@ -1,0 +1,91 @@
+{
+ "job": {
+  "id": "20261004032131417-B100-threat-9xvn5",
+  "agent": "B100",
+  "kind": "threat",
+  "submittedAt": "2026-10-04T03:21:31.419Z",
+  "note": "B100 KPT on the KP confirm-losing multiMix composition (LowKey+Baltika9+ah02 together)",
+  "asmA": "agent2/night/scratch/B100/KPT_A.asm",
+  "asmB": "agent2/night/scratch/B100/KPT_B.asm",
+  "threats": [
+   {
+    "key": "movsw_LowKey"
+   },
+   {
+    "key": "movsw_Baltika9"
+   },
+   {
+    "key": "lead_ah02"
+   }
+  ],
+  "cohortsPerThreat": 12,
+  "mixAll": true
+ },
+ "ok": true,
+ "finishedAt": "2026-10-04T03:24:41.264Z",
+ "seconds": 20.198,
+ "result": {
+  "candidate": {
+   "A": "agent2/night/cand-build/20261004032131417-B100-threat-9xvn5/candA",
+   "B": "agent2/night/cand-build/20261004032131417-B100-threat-9xvn5/candB",
+   "sizeA": 196,
+   "sizeB": 222,
+   "shaA": "af3bf51a322b7c98007c8ef08c5423799aa0f55c849ca50d122f104dd93295e5",
+   "shaB": "b275310b903e4c1d026f2c0f8082dba9976b1b12cc5b5fb16561f7045e4a0b62"
+  },
+  "baseRevision": 0,
+  "specKey": "e59afb33510a",
+  "battlesPerArm": 240,
+  "candMean": 0.6444,
+  "baseMean": 0.425,
+  "all": {
+   "n": 12,
+   "diff": 0.21944,
+   "lo": 0.14759,
+   "hi": 0.2913,
+   "wins": 12,
+   "losses": 0
+  },
+  "byThreat": {
+   "mix": {
+    "n": 12,
+    "diff": 0.21944,
+    "lo": 0.14759,
+    "hi": 0.2913,
+    "wins": 12,
+    "losses": 0
+   }
+  },
+  "threatFirstTeamScore": {
+   "vsCand": {
+    "mix": 0.0625
+   },
+   "vsBase": {
+    "mix": 0.0729
+   }
+  },
+  "threatHashes": [
+   {
+    "label": "movsw_LowKey",
+    "warriors": [
+     "official-2025/survivors-online/HRZ_LowKey_WBB1",
+     "official-2025/survivors-online/HRZ_LowKey_WBB2"
+    ]
+   },
+   {
+    "label": "movsw_Baltika9",
+    "warriors": [
+     "official-2025/survivors-online/WAN_Baltika91",
+     "official-2025/survivors-online/WAN_Baltika92"
+    ]
+   },
+   {
+    "label": "lead_ah02",
+    "warriors": [
+     "agent2/frontier-20261003/arms/combo_ah02/A",
+     "agent2/frontier-20261003/arms/combo_ah02/B"
+    ]
+   }
+  ]
+ }
+}

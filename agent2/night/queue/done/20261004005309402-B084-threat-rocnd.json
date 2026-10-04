@@ -1,0 +1,188 @@
+{
+ "job": {
+  "id": "20261004005309402-B084-threat-rocnd",
+  "agent": "B084",
+  "kind": "threat",
+  "submittedAt": "2026-10-04T00:53:09.403Z",
+  "note": "B084 control: B064 p0f (cell CC17h) on same threat spec",
+  "asmB": "agent2/night/scratch/B064/p0fB.asm",
+  "threats": [
+   {
+    "name": "B074planter",
+    "asmA": "agent2/night/scratch/B074/counterA.asm",
+    "asmB": "agent2/night/scratch/B074/counterB.asm"
+   },
+   {
+    "name": "B074ctl",
+    "asmA": "agent2/night/scratch/B074/ctlA.asm",
+    "asmB": "agent2/night/scratch/B074/ctlB.asm"
+   },
+   {
+    "key": "lead_zrl03"
+   },
+   {
+    "key": "lead_ah02"
+   },
+   {
+    "name": "zrl03decoyonly",
+    "binA": "agent2/night/scratch/B054/zrl/nosearchA",
+    "binB": "agent2/night/scratch/B054/zrl/nosearchB"
+   },
+   {
+    "key": "lead_zchain4"
+   }
+  ],
+  "copies": 1,
+  "cohortsPerThreat": 4
+ },
+ "ok": true,
+ "finishedAt": "2026-10-04T00:55:07.611Z",
+ "seconds": 24.817,
+ "result": {
+  "candidate": {
+   "A": "agent2/night/revisions/rev0/A",
+   "B": "agent2/night/cand-build/20261004005309402-B084-threat-rocnd/candB",
+   "sizeA": 194,
+   "sizeB": 211,
+   "shaA": "6861894f3c1992cd6c6baa5b2a746178082f5b4b0a1d9969b9a326fe03d86c89",
+   "shaB": "c83d1fc02d4a8de4cf13ea54dc66da03d60884f70e570db72c9b912635572502"
+  },
+  "baseRevision": 0,
+  "specKey": "b3360c212476",
+  "battlesPerArm": 480,
+  "candMean": 0.5167,
+  "baseMean": 0.5076,
+  "all": {
+   "n": 24,
+   "diff": 0.00903,
+   "lo": -0.02454,
+   "hi": 0.0426,
+   "wins": 9,
+   "losses": 7
+  },
+  "byThreat": {
+   "B074planter": {
+    "n": 4,
+    "diff": -0.07292,
+    "lo": -0.12724,
+    "hi": -0.01859,
+    "wins": 0,
+    "losses": 4
+   },
+   "B074ctl": {
+    "n": 4,
+    "diff": 0.0125,
+    "lo": -0.105,
+    "hi": 0.13,
+    "wins": 2,
+    "losses": 2
+   },
+   "lead_zrl03": {
+    "n": 4,
+    "diff": 0,
+    "lo": 0,
+    "hi": 0,
+    "wins": 0,
+    "losses": 0
+   },
+   "lead_ah02": {
+    "n": 4,
+    "diff": 0.00625,
+    "lo": -0.006,
+    "hi": 0.0185,
+    "wins": 1,
+    "losses": 0
+   },
+   "zrl03decoyonly": {
+    "n": 4,
+    "diff": 0.11458,
+    "lo": 0.02755,
+    "hi": 0.20162,
+    "wins": 3,
+    "losses": 0
+   },
+   "lead_zchain4": {
+    "n": 4,
+    "diff": -0.00625,
+    "lo": -0.06999,
+    "hi": 0.05749,
+    "wins": 3,
+    "losses": 1
+   }
+  },
+  "threatFirstTeamScore": {
+   "vsCand": {
+    "B074planter": 0.3479,
+    "B074ctl": 0.2833,
+    "lead_zrl03": 0.4396,
+    "lead_ah02": 0.5146,
+    "zrl03decoyonly": 0.3125,
+    "lead_zchain4": 0.3312
+   },
+   "vsBase": {
+    "B074planter": 0.3438,
+    "B074ctl": 0.3396,
+    "lead_zrl03": 0.4396,
+    "lead_ah02": 0.5208,
+    "zrl03decoyonly": 0.3896,
+    "lead_zchain4": 0.3125
+   }
+  },
+  "threatHashes": [
+   {
+    "label": "B074planter",
+    "warriors": [
+     "agent2/night/cand-build/20261004005309402-B084-threat-rocnd/threat-0/tA",
+     "agent2/night/cand-build/20261004005309402-B084-threat-rocnd/threat-0/tB"
+    ],
+    "hashes": [
+     "23b54d56da93a8beee947c7961af4a0cecc1d39f7ecec58c290166abf7467fd4",
+     "8c19f4f53cdfd9d943b8ff93c2e8c9808c38da514a32d27a87bb6372964c3b06"
+    ]
+   },
+   {
+    "label": "B074ctl",
+    "warriors": [
+     "agent2/night/cand-build/20261004005309402-B084-threat-rocnd/threat-1/tA",
+     "agent2/night/cand-build/20261004005309402-B084-threat-rocnd/threat-1/tB"
+    ],
+    "hashes": [
+     "505533bcbb0f34443bd7216722242e5d01464f4e6c77da2b7a800bb686190676",
+     "af7367e7014a84d7402f9a3568f93dc09adafb1a9381da5d53dc4ba1e986f10e"
+    ]
+   },
+   {
+    "label": "lead_zrl03",
+    "warriors": [
+     "agent2/frontier-20261003/arms/combo_zrl03/A",
+     "agent2/frontier-20261003/arms/combo_zrl03/B"
+    ]
+   },
+   {
+    "label": "lead_ah02",
+    "warriors": [
+     "agent2/frontier-20261003/arms/combo_ah02/A",
+     "agent2/frontier-20261003/arms/combo_ah02/B"
+    ]
+   },
+   {
+    "label": "zrl03decoyonly",
+    "warriors": [
+     "agent2/night/scratch/B054/zrl/nosearchA",
+     "agent2/night/scratch/B054/zrl/nosearchB"
+    ],
+    "hashes": [
+     "9f6abdc6a7897d12c2e6b4d866a60b734bd003c8392b923da948e5d769bd87ff",
+     "f1174337c077195e4baa8c581de69dc2666436730e6c6d8cf1269d40f0402290"
+    ]
+   },
+   {
+    "label": "lead_zchain4",
+    "warriors": [
+     "agent2/night/refs/zchain4/A",
+     "agent2/night/refs/zchain4/B"
+    ]
+   }
+  ]
+ }
+}

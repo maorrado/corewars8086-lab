@@ -1,0 +1,30 @@
+{
+ "agentId": "B085",
+ "role": "wave 7, domain 5 (lattice undercut), R4-fix",
+ "revisionUsed": 0,
+ "jobs": ["20261004005735145-B085-screen-txodc", "20261004005735918-B085-screen-alu16", "20261004005736505-B085-threat-d9exx", "20261004005737093-B085-threat-dua2j"],
+ "idea": "Split lattice (the open idea from A011), chosen as a complementary-partner defense: one partner stays at in-page 52h, the other moves 50h lower to 02h (FAR_SEG 0FF6h, the lowest valid value). A same-family undercutter wins when it sits 10h-50h below a stream. With partners at 52h and 02h, any clone at 12h-42h (all valid FAR_SEG values 0FF7h-0FFAh) is below the 52h partner but 10h-40h above the 02h partner, so the low partner undercuts it. A clone at 02h only gets the weakest (50h) undercut on the 52h partner. Cost risk: the low partner undercuts its own partner by 50h when they meet (different steps, so rarely), the field lattice relations change, and the low partner's trail CS word becomes F6 0F instead of FB 0F.",
+ "candidates": [
+  {"label": "SB (B only: FAR_SEG 0FFBh -> 0FF6h; B and captured zombies at 02h, A at 52h)",
+   "asmB": "agent2/night/scratch/B085/SB_B.asm", "sizeB": 202, "shaB": "a10b3712279b6e87a4eb482f3dc5851de7f9ded493a221e3ade54ceddf2af8ac",
+   "change": "rev0 B phoenix_init: or dx,0FFBh -> or dx,0FF6h (binary byte 0098h FB -> F6). A = base.",
+   "screenJob": "20261004005735145-B085-screen-txodc", "screenAllDiff": -0.02397, "screenAllLo": -0.05338, "screenAllHi": 0.00545,
+   "groupNotes": "cand 0.6217 vs base 0.6456, W/L 18/20. 2025 +0.0167 [-0.0027,+0.0361] 11/4; strong -0.1796 [-0.3134,-0.0458] 0/7; threat -0.0166 [-0.0499,+0.0167]; multi -0.046. Screen single cohorts: lead_V6 -0.211, Baltika9 -0.133, smulti-mix -0.133, zrl03 +0.056. Threat d9exx (2 copies, 6 cohorts each, 480 battles/arm): ALL +0.0633 [0.0169,0.1097] 19/5; clone22 (B055 lat_m30) +0.091 [0.035,0.147] 5/1; clone42 (A011 fa) +0.135 [0.039,0.231] 6/0; lead_zrl03 +0.045 [-0.053,+0.143]; lead_V6 -0.018 [-0.106,+0.070]. Threat team score vs cand/base: clone22 0.362/0.385, clone42 0.310/0.336, zrl03 0.246/0.305, V6 0.346/0.392.",
+   "promising": false, "isDefenseFix": true},
+  {"label": "SA (A only: FAR_SEG 0FFBh -> 0FF6h; A at 02h, B and captured zombies at 52h)",
+   "asmA": "agent2/night/scratch/B085/SA_A.asm", "sizeA": 194, "shaA": "af53e8cd97827764ea1c08e034a9f2ea38dd274a88d9ef698882f11059f04f0c",
+   "change": "rev0 A phoenix_init: or dx,0FFBh -> or dx,0FF6h. B = base.",
+   "screenJob": "20261004005735918-B085-screen-alu16", "screenAllDiff": -0.03478, "screenAllLo": -0.05304, "screenAllHi": -0.01652,
+   "groupNotes": "cand 0.6108 vs base 0.6456, W/L 13/30. 2025 -0.0302 [-0.0547,-0.0058] 5/14; strong -0.0960 [-0.1626,-0.0295] 2/5; threat -0.0116 [-0.0343,+0.0110]; multi -0.0625 0/2. Threat dua2j (same spec): ALL +0.0409 [0.0076,0.0741] 16/8; clone22 +0.075 [0.006,0.144] 4/2; clone42 +0.101 [0.057,0.146] 6/0; lead_zrl03 -0.034 [-0.103,+0.034] 1/5; lead_V6 +0.022 [-0.001,+0.044]. Threat team score vs cand/base: clone22 0.331/0.385, clone42 0.325/0.336, zrl03 0.343/0.305, V6 0.349/0.392.",
+   "promising": false, "isDefenseFix": true}
+ ],
+ "threatFindings": [
+  {"threat": "Same-family clones 10h-50h below rev0's 52h lattice (B055 lat_m30 at 22h, A011 fa at 42h; 2 copies) take points from the base", "classification": "verified-in-current", "evidence": "Base team scored 0.282 overall in the d9exx/dua2j cohorts; both split candidates gained back clearly on these cohorts (clone22 +0.091 / +0.075, clone42 +0.135 / +0.101, all lo > 0). This agrees with B055 ppsmg/7rw7q."},
+  {"threat": "A partner moved 50h below the other (02h) answers any valid-FAR_SEG undercut clone at 12h-42h", "classification": "verified-in-other", "evidence": "SB (d9exx) and SA (dua2j): both clones answered with lo > 0, 6/0 W/L vs clone42 for both. The effect is larger when B (plus captured zombies) is the low partner."},
+  {"threat": "Split lattice costs on the plain/strong field (any partner off 52h)", "classification": "verified-in-other", "evidence": "SB screen txodc ALL -0.024 (strong -0.180, 0/7); SA screen alu16 ALL -0.035 [-0.053,-0.017] (2025 -0.030 lo < 0; strong -0.096). This repeats the A011/B055/A021 result for whole-team shifts: moving one partner is not cheaper per point than moving both."},
+  {"threat": "zrl03/ah02 (32h) undercut answered by the low partner", "classification": "hypothesis", "evidence": "SB +0.045 n.s. (d9exx), screen zrl03 cohort +0.056; SA -0.034 n.s. (dua2j, 1/5). ah02 in screen: SB -0.022, SA -0.056. Not decided."},
+  {"threat": "V6-family single leaders are answered by the 50h-lower partner", "classification": "not-reproduced", "evidence": "lead_V6 2 copies: SB -0.018, SA +0.022 (both n.s.); in the screen the single lead_V6 cohort was -0.211 for SB. The 50h undercut is too weak to beat the 52h crowd, and the low partner gives up the rev0 same-lattice relation."}
+ ],
+ "recommendation": "Do not promote SB or SA. Both work as a defense against undercut clones (+0.06 / +0.04 ALL on the clone cohorts, lo > 0), but the general cost is 3-6 times the size of the bar (-0.024 and -0.035 ALL; strong group negative for both). Undercut clones do not occur in the 2025/2024 fields (only the Zombie-run F6h streams sit near the window), so this fix is only worth it in a field that holds rev0 clones. Keep both as documented test arms. Domain 5 conclusion: lattice placement trades holes and does not fix them. Every tested off-52h placement (whole team at 02h-42h, or split 52h/02h) loses 0.01-0.035 on field S. Any further undercut defense must change the kill mechanism (the collision between the foreign trail and our rebuild window), not the lattice.",
+ "notes": "Base rev0 (V6nohunt, friend-provided Good_Test V6 minus the [7A00h] patch). Only one byte changed per candidate. The FAR_SEG floor is 0FF6h (0FF5h breaks on the page-00 wrap, per B055). Threat spec for both threat jobs: clone22 = scratch/B055/lat_m30_A/B.asm, clone42 = scratch/A011/fa_A/B.asm, lead_zrl03, lead_V6; 2 copies, 6 cohorts each, 20 battles per cohort."
+}

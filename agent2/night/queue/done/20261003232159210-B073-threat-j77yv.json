@@ -1,0 +1,103 @@
+{
+ "job": {
+  "id": "20261003232159210-B073-threat-j77yv",
+  "agent": "B073",
+  "kind": "threat",
+  "submittedAt": "2026-10-03T23:21:59.213Z",
+  "note": "B073 bodycell fix (hook cells inside own bodies) vs [4A17h] poisoner and ctl; copies 1",
+  "asmA": "agent2/night/scratch/B073/bcA.asm",
+  "asmB": "agent2/night/scratch/B073/bcB.asm",
+  "threats": [
+   {
+    "name": "B073ctl",
+    "asmA": "agent2/night/scratch/B073/ctlA.asm",
+    "asmB": "agent2/night/scratch/B073/ctlB.asm"
+   },
+   {
+    "name": "B073poison",
+    "asmA": "agent2/night/scratch/B073/counterA.asm",
+    "asmB": "agent2/night/scratch/B073/counterB.asm"
+   }
+  ],
+  "copies": 1,
+  "cohortsPerThreat": 12
+ },
+ "ok": true,
+ "finishedAt": "2026-10-03T23:26:55.865Z",
+ "seconds": 15.981,
+ "result": {
+  "candidate": {
+   "A": "agent2/night/cand-build/20261003232159210-B073-threat-j77yv/candA",
+   "B": "agent2/night/cand-build/20261003232159210-B073-threat-j77yv/candB",
+   "sizeA": 201,
+   "sizeB": 213,
+   "shaA": "33e6a01ddf8cadd6ef7242b8cd1ecf48e52929b67ad3bc45e859e9c9e47496ca",
+   "shaB": "08cff08627c6fba1786f55b916670d0d3f54926eae59b534219035c7c2e12551"
+  },
+  "baseRevision": 0,
+  "specKey": "e29c5e934b47",
+  "battlesPerArm": 480,
+  "candMean": 0.3399,
+  "baseMean": 0.2337,
+  "all": {
+   "n": 24,
+   "diff": 0.10625,
+   "lo": 0.06324,
+   "hi": 0.14926,
+   "wins": 20,
+   "losses": 0
+  },
+  "byThreat": {
+   "B073ctl": {
+    "n": 12,
+    "diff": 0.06181,
+    "lo": 0.02731,
+    "hi": 0.09631,
+    "wins": 10,
+    "losses": 0
+   },
+   "B073poison": {
+    "n": 12,
+    "diff": 0.15069,
+    "lo": 0.07881,
+    "hi": 0.22258,
+    "wins": 10,
+    "losses": 0
+   }
+  },
+  "threatFirstTeamScore": {
+   "vsCand": {
+    "B073ctl": 0.3986,
+    "B073poison": 0.4764
+   },
+   "vsBase": {
+    "B073ctl": 0.4674,
+    "B073poison": 0.6333
+   }
+  },
+  "threatHashes": [
+   {
+    "label": "B073ctl",
+    "warriors": [
+     "agent2/night/cand-build/20261003232159210-B073-threat-j77yv/threat-0/tA",
+     "agent2/night/cand-build/20261003232159210-B073-threat-j77yv/threat-0/tB"
+    ],
+    "hashes": [
+     "f34ea6bc8318bdc448934fe3e0bcf5a94f04b38eea2df9919d624da056325c1a",
+     "755cac3f4610a05940343e10cd1c701248909faaad1a5179f82eb82a32171716"
+    ]
+   },
+   {
+    "label": "B073poison",
+    "warriors": [
+     "agent2/night/cand-build/20261003232159210-B073-threat-j77yv/threat-1/tA",
+     "agent2/night/cand-build/20261003232159210-B073-threat-j77yv/threat-1/tB"
+    ],
+    "hashes": [
+     "f34ea6bc8318bdc448934fe3e0bcf5a94f04b38eea2df9919d624da056325c1a",
+     "26790237bb9071901fdc10f7ceafdb0e2edf0ad62897b82a2c779806ccfaf3c6"
+    ]
+   }
+  ]
+ }
+}

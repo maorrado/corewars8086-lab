@@ -1,0 +1,96 @@
+{
+ "job": {
+  "id": "20261003204249525-B062-threat-mrkpn",
+  "agent": "B062",
+  "kind": "threat",
+  "submittedAt": "2026-10-03T20:42:49.528Z",
+  "note": "B062 measure: capture value (nocapA-base) vs real Grindo and Grindo with its 3 dead E2F281C3 decoys broken (F2->F3)",
+  "asmA": "agent2/night/scratch/B062/nocapA.asm",
+  "threats": [
+   {
+    "key": "zomb_Grindo"
+   },
+   {
+    "name": "Grindo_nodecoy",
+    "binA": "agent2/night/scratch/B062/grindo_nd/HRZ_Grindo_Holics1",
+    "binB": "agent2/night/scratch/B062/grindo_nd/HRZ_Grindo_Holics2"
+   }
+  ],
+  "copies": 1,
+  "cohortsPerThreat": 12
+ },
+ "ok": true,
+ "finishedAt": "2026-10-03T20:51:03.933Z",
+ "seconds": 33.901,
+ "result": {
+  "candidate": {
+   "A": "agent2/night/cand-build/20261003204249525-B062-threat-mrkpn/candA",
+   "B": "agent2/night/revisions/rev0/B",
+   "sizeA": 194,
+   "sizeB": 202,
+   "shaA": "c12b87ac9c84d2089774157a86fef40e294a67434c9342d8053d3361d94d8fc9",
+   "shaB": "8579e2c2212d72a413a6daacfe3b91ceb72be648bfc085bfeed9430eeaf6657a"
+  },
+  "baseRevision": 0,
+  "specKey": "8ba12b559ebc",
+  "battlesPerArm": 480,
+  "candMean": 0.3438,
+  "baseMean": 0.4986,
+  "all": {
+   "n": 24,
+   "diff": -0.15486,
+   "lo": -0.19925,
+   "hi": -0.11047,
+   "wins": 0,
+   "losses": 22
+  },
+  "byThreat": {
+   "zomb_Grindo": {
+    "n": 12,
+    "diff": -0.1,
+    "lo": -0.15258,
+    "hi": -0.04742,
+    "wins": 0,
+    "losses": 10
+   },
+   "Grindo_nodecoy": {
+    "n": 12,
+    "diff": -0.20972,
+    "lo": -0.26781,
+    "hi": -0.15163,
+    "wins": 0,
+    "losses": 12
+   }
+  },
+  "threatFirstTeamScore": {
+   "vsCand": {
+    "zomb_Grindo": 0.4563,
+    "Grindo_nodecoy": 0.4083
+   },
+   "vsBase": {
+    "zomb_Grindo": 0.3813,
+    "Grindo_nodecoy": 0.2861
+   }
+  },
+  "threatHashes": [
+   {
+    "label": "zomb_Grindo",
+    "warriors": [
+     "official-2025/survivors-online/HRZ_Grindo_Holics1",
+     "official-2025/survivors-online/HRZ_Grindo_Holics2"
+    ]
+   },
+   {
+    "label": "Grindo_nodecoy",
+    "warriors": [
+     "agent2/night/scratch/B062/grindo_nd/HRZ_Grindo_Holics1",
+     "agent2/night/scratch/B062/grindo_nd/HRZ_Grindo_Holics2"
+    ],
+    "hashes": [
+     "a7ac95d2c59242ffd1af5e62128dec649d7f0332a47def772b159c8601d8b4b0",
+     "8fb8c646f2ece4df06c8694a873ac9764f461b80506f5a19110611e6aa3d7c04"
+    ]
+   }
+  ]
+ }
+}

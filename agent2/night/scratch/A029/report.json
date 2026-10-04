@@ -1,0 +1,60 @@
+{
+ "agentId": "A029",
+ "card": "NRG economics: any place where NRG (9B 9B) pays off (startup? zombies? worker?) given decay 1 per 5 rounds",
+ "revisionUsed": 0,
+ "jobs": ["20261004001621579-A029-screen-18141", "20261004001622105-A029-screen-wcji2", "20261004001826443-A029-screen-lhukp"],
+ "economics": {
+  "engine": "War.nextRound (v6 source): zombies never call updateWarriorEnergy/shouldRunExtraOpcode; survivors lose 1 energy every 5th round and get one extra opcode with probability min(16,1+floor(log2 E))/16. rand.nextInt is called every round for every survivor regardless of energy, so NRG does not change RNG consumption. REP only repeats string opcodes, so each NRG costs at least one turn.",
+  "burst": "A burst of N NRGs costs N turns and returns 5/16*sum_{E=1..N}(1+floor(log2 E)) extra turns spread over the next 5N rounds: N=1 0.31, N=8 6.6, N=16 16.9, N=31 ~40, N=64 102. It breaks even only at N>=16, and all of the cost comes up front.",
+  "loop": "Adding 1 NRG to an L-instruction loop raises energy only if L+1 <= 5*speed. rev0's dwell is a 1-instruction loop (call far [bx]). NRG+call gives call throughput speed/2 <= 1, so it can never beat the plain anchor. Copying NRGs in the worker template costs 2 turns per energy (REP copy + execute), which gives call throughput below 1 for many thousands of rounds. A static NRG block would be overwritten by our own trail, because the 4400h step covers every 400h block.",
+  "conclusion": "rev0 has nowhere NRG pays more than O(1) turns. The only free placements are the dead turns: A's jmp short phoenix_init and the dead mov dx,[4A17h] in A and B."
+ },
+ "candidates": [
+  {
+   "label": "N1",
+   "change": "Dead turns replaced by NRG, so the turn count is unchanged. A: jmp short phoenix_init (EB 00) -> 9B 9B; dead mov dx,[4A17h] in phoenix_init -> 9B 9B (A and B; each warrior is 2 bytes shorter). A starts its phoenix with energy 2, B with energy 1.",
+   "asmA": "agent2/night/scratch/A029/N1_A.asm", "asmB": "agent2/night/scratch/A029/N1_B.asm",
+   "sizeA": 192, "sizeB": 200,
+   "shaA": "99d56227349cbc46134e1f0380806434e6f70ca44659f0a0e92e3c38f7039c23",
+   "shaB": "589c23ab2d9775dab3f6ef308027341660ea17f1a3c580d4df72d2714f7f9288",
+   "screenJob": "20261004001621579-A029-screen-18141",
+   "screenAllDiff": 0.00189, "screenAllLo": -0.00248, "screenAllHi": 0.00626,
+   "groupNotes": "cand 0.6475 vs base 0.6456, W/L 9/6. 2025 +0.0047 [-0.0015,+0.0108] 5/1; strong -0.0111 [-0.0265,+0.0043] 1/4; threat +0.0035 [-0.0027,+0.0096]; multi 0. Only 15 of 50 cohorts changed. Matches the predicted ~0.5 extra turns (no measurable effect).",
+   "promising": false
+  },
+  {
+   "label": "B31",
+   "change": "N1, plus A's jmp slot becomes a 31-NRG burst after INT87 and the band math (30 extra turns before phoenix_init; INT87 is still instruction 10). B = N1_B.",
+   "asmA": "agent2/night/scratch/A029/B31_A.asm", "asmB": "agent2/night/scratch/A029/N1_B.asm",
+   "sizeA": 252, "sizeB": 200,
+   "shaA": "7ed55df37d0f85951583a1a3e540ceeb8ae512f587ed722d23953feaea6d8639",
+   "shaB": "589c23ab2d9775dab3f6ef308027341660ea17f1a3c580d4df72d2714f7f9288",
+   "screenJob": "20261004001622105-A029-screen-wcji2",
+   "screenAllDiff": -0.01045, "screenAllLo": -0.02408, "screenAllHi": 0.00319,
+   "groupNotes": "cand 0.6352. 2025 +0.0044 [-0.0080,+0.0169] 12/6; strong -0.0603 [-0.0998,-0.0208] 2/5; threat -0.0120 [-0.0408,+0.0168] (ah02 -0.122, Baltika9 -0.100, V6 -0.078, zrl03 -0.056; callfart +0.100, V6Guard +0.058); multi -0.0097.",
+   "promising": false
+  },
+  {
+   "label": "D31 (control)",
+   "change": "Same layout and delay as B31, but 30 of the 31 NRGs are mov ax,ax (89 C0), so the energy is the same as N1. Isolates delay from energy. B = N1_B.",
+   "asmA": "agent2/night/scratch/A029/D31_A.asm", "asmB": "agent2/night/scratch/A029/N1_B.asm",
+   "sizeA": 252, "sizeB": 200,
+   "shaA": "36490b70d08485a9044548bb769bc0341a76e7a3e89de453ec5c5b11b16fa10c",
+   "shaB": "589c23ab2d9775dab3f6ef308027341660ea17f1a3c580d4df72d2714f7f9288",
+   "screenJob": "20261004001826443-A029-screen-lhukp",
+   "screenAllDiff": -0.00621, "screenAllLo": -0.0242, "screenAllHi": 0.01178,
+   "groupNotes": "cand 0.6394. 2025 -0.0047; strong -0.0619 [-0.1130,-0.0109] 1/5; threat +0.0221 [-0.0085,+0.0526]; multi -0.0569 [-0.1304,+0.0166]. Cohort-paired contrasts (mean +-2SE over cohorts): B31-D31 ALL -0.004 +-0.014 (the energy of 30 NRGs is worth nothing measurable); D31-N1 ALL -0.008 +-0.018, strong -0.051 +-0.039 (a 30-turn startup delay costs vs the strong group).",
+   "promising": false
+  }
+ ],
+ "threatFindings": [
+  {"threat": "NRG inside captured-zombie code (B's zombie_entry/phoenix_init run by captured zombies) gives them speed", "classification": "not-reproduced", "evidence": "Static, War.java nextRound: zombies run zombieSpeed opcodes and skip updateWarriorEnergy/shouldRunExtraOpcode, so NRG in a zombie is just a lost turn."},
+  {"threat": "NRG in the anchor dwell loop or worker template raises the push rate", "classification": "not-reproduced", "evidence": "Static economics: NRG+call far gives throughput speed/2 <= 1; template NRGs cost 2 turns per energy; a static NRG block gets overwritten by our own trail. No job (no layout can win)."},
+  {"threat": "A startup NRG burst pays off (energy payback after delay)", "classification": "not-reproduced", "evidence": "wcji2 B31 ALL -0.0105 [-0.0241,+0.0032]; paired vs the delay-only control lhukp: B31-D31 ALL -0.004 +-0.014."},
+  {"threat": "Delaying A's phoenix start by ~30 turns after INT87 costs vs strong/V6-family peers", "classification": "verified-in-current", "evidence": "lhukp D31 strong -0.0619 [-0.1130,-0.0109]; wcji2 B31 strong -0.0603 [-0.0998,-0.0208]; D31-N1 strong -0.051 +-0.039 (cohort-paired)."},
+  {"threat": "Free NRG on dead turns is a gain", "classification": "not-reproduced", "evidence": "18141 N1 ALL +0.0019 [-0.0025,+0.0063]; only 15/50 cohorts changed."},
+  {"threat": "Opponents gain from NRG", "classification": "hypothesis", "evidence": "Static byte scan of official-2025: only 8 binaries contain 9B 9B (TrojanByte2 8x, SigmaSilent2 6x, others 1-2x). TrojanByte2 uses them as startup timing padding before its first call far [bx] (dis86). Their effect is not measured, and it is likely minor for the reasons above."}
+ ],
+ "recommendation": "Do not promote. Close the NRG card: in rev0's architecture NRG cannot pay more than O(1) turns. For the dead turns, the decoy writes measured better (dec0A/C2 use A's jmp slot; SD uses the dead mov dx turn for the CC CC decoy word), so N1 should not join combinations. Side result for other cards: any change that delays A's phoenix start by tens of turns after INT87 costs about -0.05 to -0.06 vs the strong group.",
+ "notes": "All screens vs base rev0. One job budget unused. Sources and builds are in agent2/night/scratch/A029/ (build/)."
+}

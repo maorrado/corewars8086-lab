@@ -1,0 +1,26 @@
+{
+ "agentId": "A049",
+ "revisionUsed": 0,
+ "jobs": ["20261004031824702-A049-screen-cyniq", "20261004031830954-A049-threat-kk5a2", "20261004031831161-A049-threat-daxm6", "20261004032333695-A049-threat-2hbqp"],
+ "candidates": [
+  {"label": "R (KP + A003 C1 reorder)",
+   "change": "Zero bytes, same turn count, built on KP (A = A031 K_A, B = B094 KP_B). A: the [4A17h]->[9769h] copy moved after the zom20a INT87 (INT87 at instruction 8 instead of 10, copy at 9-10). B: the startup writes are reordered to les di (3), [5D13h] (4), [0CC13h] (5), [4A17h] (6, was 3), so the [4A17h] hook cell is written after the V6-family B writes at their instruction 3. Generator agent2/night/scratch/A049/mk.cjs.",
+   "asmA": "agent2/night/scratch/A049/R_A.asm", "asmB": "agent2/night/scratch/A049/R_B.asm",
+   "shaA": "c3cfe67514fd7cdb320aa12f5d2ef62abf6b3d9d7396b4a169c56b7d2d2f9a3d", "shaB": "99cfdceef3f86f5ab68ea6d6cbe6349aef2e88d2bc8fa619cd2324b82979d14a", "sizeA": 196, "sizeB": 222,
+   "screenJob": "20261004031824702-A049-screen-cyniq", "screenAllDiff": 0.03077, "screenAllLo": 0.00543, "screenAllHi": 0.05611,
+   "groupNotes": "Vs rev0: cand 0.6764 vs 0.6456, W/L 24/16; 2025 +0.0171 (8/9); strong +0.0685 (4/2); threat +0.0355 [0.0016,0.0693]; multi +0.0319 (2/0). Paired against KP's screen c08bm (same field and seeds): R - KP = +0.0012 (SE 0.0032, W/L 11/10); 2025 0.0000, strong +0.011, threat -0.001, multi 0.000. Nearly all of the gain over rev0 is KP's. Threat jobs (2 copies, 8 cohorts per leader, same spec, same base arm 0.3014): R vs rev0 +0.0115 (V6 +0.018, V4 +0.058, V6Guard -0.042 [-0.079,-0.004]); KP control -0.0082 (V6 -0.020, V4 +0.012, V6Guard -0.016); A-only reorder (R_A + KP_B) -0.0056 (V6 -0.015, V4 +0.010, V6Guard -0.012). Unpaired R - KP: about +0.02 overall (V6 +0.038, V4 +0.046, V6Guard -0.026), not significant; the B-side late [4A17h] write causes both the V6/V4 gain and the V6Guard loss.",
+   "isDefenseFix": false, "promising": true}
+ ],
+ "threatFindings": [
+  {"threat": "[4A17h] hook-cell race against V6-family teams (they write [4A17h] at B instruction 3, the same as KP/rev0)",
+   "classification": "verified-in-current",
+   "evidence": "Threat kk5a2 (R) vs daxm6 (KP) vs 2hbqp (A-only reorder), same spec and base arm: V6 +0.018 / -0.020 / -0.015 and V4 +0.058 / +0.012 / +0.010. The B-side write moved to instruction 6 is what changes these. Small and not significant per leader (8 cohorts each); same direction as A003 (19llx, 5hja6).",
+   "impact": "About +0.04 vs 2 copies of V6/V4 and about 0 on field S (R - KP +0.0012 +- 0.0032)."},
+  {"threat": "A late [4A17h] write loses against V6Guard (V6Guard team score 0.409 vs R against 0.361 vs KP)",
+   "classification": "verified-in-current",
+   "evidence": "kk5a2 lead_V6Guard -0.042 [-0.079,-0.004] W/L 2/6 vs daxm6 -0.016 and 2hbqp -0.012. Same direction as A037 D1 (late [4A17h] write, lwnbx V6Guard -0.049). Mechanism not traced (probably V6Guard's [7A00h] patch reading the cell after our later write).",
+   "impact": "Cancels the V6/V4 gain from the reorder. Moving A's INT87 earlier alone does nothing measurable (2hbqp is about equal to KP)."}
+ ],
+ "recommendation": "R passes the numeric screen rule against rev0 (ALL +0.0308, lo > 0, no negative group), but the paired comparison with KP shows that the C1 reorder adds about nothing on field S (+0.0012 +- 0.0032). It trades V6/V4 cohorts (+) for V6Guard (-). Do not confirm R in place of KP; keep plain KP as the confirmation candidate. The reorder is not worth adding to future combinations unless the V6Guard loss is fixed.",
+ "notes": "Base revision 0 (V6nohunt); NOTICES.md had no new revision. An earlier idea (zom20c capture) was dropped after static analysis: the 2025 zom20c is 5 identical 2Eh-byte blocks (not 8), the live one is the 3rd, its location is not leaked to a fixed cell, and its bombs always land at in-page A5h, so it never hits our 52h anchors. Capturing it would need 3 INT87 charges. Threat jobs give no per-cohort data, so the R - KP threat comparison is unpaired."
+}

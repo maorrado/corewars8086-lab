@@ -1,0 +1,58 @@
+{
+ "agentId": "B056",
+ "revisionUsed": 0,
+ "jobs": ["20261003194335265-B056-threat-i8i0e", "20261003194337069-B056-screen-fqpr7", "20261003195501406-B056-threat-x4a43"],
+ "candidates": [
+  {
+   "label": "B056-reorder (control/defense fix, not a general fix)",
+   "change": "A and B phoenix_init: 'mov bx,imm; push cs; pop ss' -> 'push cs; mov bx,imm; pop ss' (zero bytes, same turn count, identical machine state afterwards). Removes the 4-byte initializer signature 0E 17 89 07 (A offset 43h, B offset 8Fh). Sources agent2/night/scratch/B056/fixA.asm, fixB.asm.",
+   "asmA": "agent2/night/scratch/B056/fixA.asm", "asmB": "agent2/night/scratch/B056/fixB.asm",
+   "shaA": "549d8219eb7956f5b3b07d65732e0dc1ab96b033d12f54f266f4912fee7be637", "shaB": "405730f42d426429961ef27487b7125ffd3b165008935d0288a776a295545bc0",
+   "sizeA": 194, "sizeB": 202,
+   "screenJob": "20261003194337069-B056-screen-fqpr7", "screenAllDiff": 0, "screenAllLo": 0, "screenAllHi": 0,
+   "groupNotes": "Screen field S: cand 0.6456 = base 0.6456; every one of 50 cohorts bit-identical (2025, strong, threat, multi all +0). Threat i8i0e: vs NB_sig0E178907 +0.342 [0.294,0.389] 8/0, vs NB_sigkill +0.321 [0.252,0.390] 8/0, vs NB_orig exactly 0. Threat x4a43: vs NB_sig17890783 exactly 0 (fix and base both 0.0063) -> the fix only moves the hole.",
+   "isDefenseFix": true,
+   "promising": false
+  }
+ ],
+ "threatFindings": [
+  {
+   "threat": "Original New_Best (INT87 search 0E 17 BB 00 -> FF 26 17 4A, the m048-killer) against rev0",
+   "classification": "not-reproduced",
+   "evidence": "rev0 A/B contain no 0E 17 BB 00 (V6 lineage already uses the hardened order 16 1F BB C0/80 02 0E 17). Threat i8i0e NB_orig cohorts: base and reorder candidate produce identical battles (diff exactly 0); base team 0.346/battle there, New_Best team 0.585 (it is a strong same-lineage opponent, not a signature killer of rev0).",
+   "impact": "none via signature; New_Best is still a strong lattice peer"
+  },
+  {
+   "threat": "New_Best-style 4-byte INT87 search-and-replace retargeted at a late-executed rev0 initializer string: 0E 17 89 07 = push cs; pop ss; mov [bx],ax (A offset 43h executed ~turn 39-41; B offset 8Fh executed ~turn 41-43; counter's INT87 runs at its instruction 10-12, std from DI=0, two charges hit A and B)",
+   "classification": "verified-in-current",
+   "evidence": "Threat i8i0e (480 battles/arm, 8 cohorts per threat, base rev0): vs NB_sig0E178907 (New_Best with DX imm 00BBh->0789h, replacement FF 26 17 4A jmp [4A17h]) base team 0.0000/battle (A 0.000, B 0.000 over 160 battles); vs NB_sigkill (same search, replacement CC CC CC CC) base 0.052. Reorder candidate scores 0.342 / 0.373 in the same cohorts (diff +0.342 [0.294,0.389] and +0.321 [0.252,0.390], 8/0 each). Counter team score 0.654 vs base, 0.512 vs candidate. The jmp [4A17h] capture also kills because New_Best2 wins the [4A17h] write race (its instr 4 vs rev0 B instr 3) and the hijacked process runs with DS=private, copying a garbage worker.",
+   "impact": "-0.34 points/battle per cohort containing such a counter; total wipe-out of both warriors"
+  },
+  {
+   "threat": "Generality: any late-executed initializer 4-byte string is exploitable; signature reorders only move the hole",
+   "classification": "verified-in-current",
+   "evidence": "Threat x4a43: counter retargeted to 17 89 07 83 (pop ss; mov [bx],ax; and dx,..; A offset 44h, B offset 90h, present in both rev0 and the reorder fix): base 0.0063 and fix 0.0063 (diff exactly 0, 160 battles), counter team 0.6875.",
+   "impact": "no zero-cost general fix exists; a defense only works against a known published signature (m049-style reorder)"
+  },
+  {
+   "threat": "Realistic exposure: does any published 2025/2024 opponent or reference pair search a 4-byte string present in rev0 A/B?",
+   "classification": "not-reproduced",
+   "evidence": "Static scan agent2/night/scratch/B056/scan.mjs of all INT87 call sites (immediate AX/DX) in official-2025 senior+young, cgx2024 03-live and 05-final2, 2025 zombies, refs V6/V4/V6Guard/zchain4, New_Best: no signature matches any 4-byte window of rev0 A or B. Screen fqpr7: the reorder that changes 7 initializer windows gives bit-identical results on all 1500 field-S battles. Caveat: a few INT87 sites compute AX/DX (ADDvanced, almogooners, OtoGlida, HLS_segment_fault) and are not resolved statically, but they had zero effect in field S cohorts where present.",
+   "impact": "~0 in the archived fields; risk only from a purpose-built counter that copies V6 bytes (V6 code is circulating)"
+  },
+  {
+   "threat": "Anchor searchers FF 1F CC CC (OpcodeHunter1, 2B2Team, PastRAMa, ATO1, JMP2HELL2, segment_fault) matching the dwell-phase anchor FF 1F followed by untouched CC CC",
+   "classification": "hypothesis",
+   "evidence": "Static only: the pattern matches each generation's anchor during dwell, but these searchers fire at their startup (instr ~10-30) before our first anchor exists (~turn 52); not tested here (anchor domain, not initializer).",
+   "impact": "unknown, probably small"
+  }
+ ],
+ "counterCodes": [
+  {"asmA": "agent2/night/scratch/B056/nbsigA.asm", "asmB": "agent2/night/scratch/B056/nbsigB.asm", "strength": "total kill of rev0: base 0.000/battle, counter 0.654 (threat i8i0e)"},
+  {"asmA": "agent2/night/scratch/B056/nbkillA.asm", "asmB": "agent2/night/scratch/B056/nbkillB.asm", "strength": "base 0.052/battle, counter 0.622 (CC replacement)"},
+  {"asmA": "agent2/night/scratch/B056/nbsig2A.asm", "asmB": "agent2/night/scratch/B056/nbsig2B.asm", "strength": "hits rev0 AND the reorder fix: both 0.0063/battle, counter 0.6875 (threat x4a43)"},
+  {"asmA": "agent2/night/scratch/B056/nborigA.asm", "asmB": "agent2/night/scratch/B056/nborigB.asm", "strength": "original New_Best (db form, hashes 81ca1a63/4480aef2): no signature effect on rev0"}
+ ],
+ "recommendation": "Do not promote the reorder (screen exactly 0; it only defeats one specific counter and a 1-word retarget defeats it again). Classify domain 6 as: mechanism verified-in-current and catastrophic against a purpose-built counter, but not present in any archived field. A general defense would require removing late-executed unique initializer strings or racing/decoying searches; worth considering only if a V6-targeting signature counter is expected in the 2026 field. Counters nbsigA/B and nbsig2A/B are ready test cases for R3/R4/R5 roles.",
+ "notes": "New_Best binaries copied from the user's Downloads (agent2/night/scratch/B056/New_Best1/2, sha 81ca1a63..., 4480aef2...). Counters are byte-patched New_Best (only INT87 immediates). Static scanner: agent2/night/scratch/B056/scan.mjs."
+}

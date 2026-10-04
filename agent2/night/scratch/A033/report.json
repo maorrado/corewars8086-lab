@@ -1,0 +1,39 @@
+{
+ "agentId": "A033",
+ "revisionUsed": 0,
+ "jobs": ["20261004004604204-A033-threat-epuig", "20261004004604718-A033-screen-vnmqe", "20261004004807440-A033-screen-u5bnq", "20261004004958074-A033-threat-7f4zg"],
+ "candidates": [
+  {"label": "yB (B only: second b/d capture with order flag + own lattice for the second captured b/d)",
+   "asmB": "agent2/night/scratch/A033/yB.asm", "sizeB": 255, "shaB": "80ae2c3e6ffc900b01e62083f94c1c52eea1ae6649381853cc73fe38ff4a715e",
+   "change": "rev0 B zombie_entry rewritten (B startup, phoenix_init and worker unchanged). Built on A027 xyB. Captured zom20a (CX!=0): reads [4A19h] xor CCCCh as INT87 start (unset cell = DI 0 = rev0), bp 2000h. Captured b/d (CX=0): lea bp,[bx+0FDh]; xor bp,0CCCCh; xchg [4A19h],bp publishes its base+100h in the same instruction slot as xyB and returns the old cell value. First b/d (old = CCCCh): searches EB F9 CC CC backward from its own base+100h (below its own tails), replacement jmp [4A17h], bp 3400h. Second b/d (cell already set): rev0's 0E070E17 -> CC counter-bomb from DI 0, then phoenix with bp 9400h (own lattice point, never the same anchor as the first). Charge budget: A (zom20a), B (top tail), zom20a, each captured b/d = 1 INT87 each; with no early tail consumer (k=0) X needs 2 and Y 2 more = 5 > 4, so Y is only reachable when an opponent consumed X+165h (k=1).",
+   "screenJob": "20261004004604718-A033-screen-vnmqe", "screenAllDiff": 0.01332, "screenAllLo": -0.00479, "screenAllHi": 0.03142,
+   "groupNotes": "screen cand 0.6589 vs base 0.6456, W/L 19/17: 2025 +0.0062 [-0.0116,+0.0240]; strong +0.0705 [-0.0241,+0.1651] (sstrong-1 segment_fault+b01d+e1p4 +0.311, sstrong-5 m050+Synthesis+JMP2HELL +0.171, sstrong-7 -0.044); threat -0.0010 [-0.0243,+0.0222] (V4 +0.072, LowKey +0.067, Baltika9 +0.067, V6 -0.050, BinaryBandits -0.067, IND_BRA -0.067); multi +0.0167. Threat epuig (A027 evtia cohort set, identical base 0.6924): ALL +0.0045 [-0.0236,+0.0326] vs xyB -0.066 / ctl -0.003 / xyK -0.020 on the same cohorts. Threat 7f4zg (fresh mixAll b01d+e1p4+m050, 12 cohorts x 20): ALL +0.2537 [0.1852,0.3221] W/L 12/0 (threat team 0.036 vs cand, 0.138 vs base).",
+   "isDefenseFix": false, "promising": true},
+  {"label": "yC (control: yB with Y capture disabled)",
+   "asmB": "agent2/night/scratch/A033/yC.asm", "sizeB": 255, "shaB": "b13ee49912bbea6469a8c9ddbf54f7199c69bb20d0e4b7c22369b121bf2554f5",
+   "change": "yB with one byte changed: zom20a reads the never-written cell [4A1Bh] instead of [4A19h], so its search always starts at DI 0 (rev0) and the lower zombie Y is never captured via the k=1 route. First/second b/d logic, layout and instruction counts identical to yB.",
+   "screenJob": "20261004004807440-A033-screen-u5bnq", "screenAllDiff": 0.00887, "screenAllLo": -0.00884, "screenAllHi": 0.02658,
+   "groupNotes": "screen cand 0.6545, W/L 17/18: 2025 -0.0016; strong +0.0721 (same sstrong-1/-5 gains as yB); threat -0.0035; multi +0.0167. Paired yB - yC = +0.0044 over 50 cohorts, only 8 cohorts differ (s2025-9 +0.094, s2025-19 +0.067, s2025-22 +0.033, LowKey +0.033, V4 +0.039, V6 -0.017, V6Guard -0.017, sstrong-2 -0.011): the k=1 Y capture itself is worth little; the strong gain comes from the first/second b/d split, not from Y capture.",
+   "isDefenseFix": false, "promising": false}
+ ],
+ "threatFindings": [
+  {"threat": "Charge budget allows capturing the lower zom20b/d (Y) in the common case.",
+   "classification": "not-reproduced",
+   "evidence": "Static (dis86 of zom20b/zom20d): four complete loop copies with tails at +11Ah/+133h/+14Ch/+165h, byte-identical, plus a truncated 5th copy at +16Bh (ends FE 0F, no tail); entry jmp 0139h makes +14Ch live. b and d differ only in the mov di immediate (12 26 vs 26 12) outside the loop, so no 4-byte pattern selects a live tail. Top-down needs 2 charges per zombie; with A, B, zom20a and the captured X (4 charges) and zom20a needing 1, k=0 needs 5. Only k=1 (an opponent consumed X+165h) leaves enough charges.",
+   "impact": "Y capture limited to k=1 battles; measured value small (yB - yC +0.0044 on screen, 8 cohorts changed)."},
+  {"threat": "A027 xyB loss came from the second captured b/d sharing the first's anchor / repeating the b/d search.",
+   "classification": "verified-in-current",
+   "evidence": "Same cohort set as A027 evtia (identical base 0.6924): yB 0.6969 (epuig, +0.0045) vs xyB 0.6267 (-0.066), ctl 0.6889, xyK 0.6726. yB differs from xyB only in the second-b/d path (counter-bomb + bp 9400h instead of b/d search + bp 3400h); which of the two parts matters is not separated.",
+   "impact": "about +0.07 on those cohorts relative to xyB; makes multi-b/d capture non-harmful"},
+  {"threat": "Several b/d zombies stolen through [5D13h] from b01d/e1p4/m050 all run rev0's b/d path on the same band+3400h anchor and waste or kill each other.",
+   "classification": "verified-in-current",
+   "evidence": "Effect verified: threat 7f4zg (fresh mixAll b01d+e1p4+m050) yB +0.254 [0.185,0.322] 12/0; screen sstrong-1 +0.311 and sstrong-5 +0.171 in both yB (vnmqe) and the control yC (u5bnq), so it does not depend on Y capture. Mechanism (anchor collision vs first-b/d search below itself) is a hypothesis: not traced.",
+   "impact": "large against the m050/b01d hook lineage (strong group); 2025 group neutral (+0.006 / -0.002)"},
+  {"threat": "Dropping the 0E070E17 counter-bomb costs.",
+   "classification": "not-reproduced",
+   "evidence": "In yB the counter-bomb is kept only for the second captured b/d; the first b/d spends its charge on the search below itself. Screen 2025 group +0.006 (vnmqe), consistent with B052 (counter-bomb worth nothing measurable).",
+   "impact": "none measurable"}
+ ],
+ "recommendation": "promote-candidate: send yB (B only, 255 B, sha 80ae2c3e) to confirmation. Screen ALL +0.0133 [-0.0048,+0.0314], no negative group; the gain sits in the strong group from [5D13h]-stolen multi-b/d cohorts and replicated on fresh cohorts (7f4zg +0.254, 12/0). Caution: earlier zombie-lattice edits (E2) lost 2025/2024live in confirmation; yB keeps the first b/d at bp 3400h, so the plain-field risk should be smaller, but check 2024live. Conflicts with A026 Z1 in the b/d path (Z1 uses that INT87 slot for an INT86 block); a combination needs a port.",
+ "notes": "Base revision 0 throughout. yB - yC paired screen difference isolates Y capture (+0.0044, 8 cohorts). A smaller variant (only the second-b/d bp 9400h split, without the [4A19h] publish/zom20a read) was not tested and might carry most of the strong gain at lower size."
+}

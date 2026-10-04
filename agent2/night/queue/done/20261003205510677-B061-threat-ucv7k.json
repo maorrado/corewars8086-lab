@@ -1,0 +1,207 @@
+{
+ "job": {
+  "id": "20261003205510677-B061-threat-ucv7k",
+  "agent": "B061",
+  "kind": "threat",
+  "submittedAt": "2026-10-03T20:55:10.680Z",
+  "note": "B061 R2-measure: MOVSW twin probe vs 2024 final2 replicators (which 2024 finalists cost base via cross-family collisions)",
+  "asmA": "agent2/night/scratch/B061/twinA.asm",
+  "asmB": "agent2/night/scratch/B061/twinB.asm",
+  "threats": [
+   {
+    "name": "F24_GSA_OtoGlida",
+    "binA": "repos/corewars8086-survivors/cgx2024/05-final2/GSA_OtoGlida1",
+    "binB": "repos/corewars8086-survivors/cgx2024/05-final2/GSA_OtoGlida2"
+   },
+   {
+    "name": "F24_TOM_ATO",
+    "binA": "repos/corewars8086-survivors/cgx2024/05-final2/TOM_ATO1",
+    "binB": "repos/corewars8086-survivors/cgx2024/05-final2/TOM_ATO2"
+   },
+   {
+    "name": "F24_HRZ_Code_Killers",
+    "binA": "repos/corewars8086-survivors/cgx2024/05-final2/HRZ_Code_Killers1",
+    "binB": "repos/corewars8086-survivors/cgx2024/05-final2/HRZ_Code_Killers2"
+   },
+   {
+    "name": "F24_WHS_Lucas",
+    "binA": "repos/corewars8086-survivors/cgx2024/05-final2/WHS_Lucas1",
+    "binB": "repos/corewars8086-survivors/cgx2024/05-final2/WHS_Lucas2"
+   },
+   {
+    "name": "F24_HLS_segment_fault",
+    "binA": "repos/corewars8086-survivors/cgx2024/05-final2/HLS_segment_fault1",
+    "binB": "repos/corewars8086-survivors/cgx2024/05-final2/HLS_segment_fault2"
+   },
+   {
+    "name": "F24_HRZ_SHRek",
+    "binA": "repos/corewars8086-survivors/cgx2024/05-final2/HRZ_SHRek1",
+    "binB": "repos/corewars8086-survivors/cgx2024/05-final2/HRZ_SHRek2"
+   }
+  ],
+  "copies": 1,
+  "cohortsPerThreat": 4
+ },
+ "ok": true,
+ "finishedAt": "2026-10-03T21:00:18.854Z",
+ "seconds": 36.331,
+ "result": {
+  "candidate": {
+   "A": "agent2/night/cand-build/20261003205510677-B061-threat-ucv7k/candA",
+   "B": "agent2/night/cand-build/20261003205510677-B061-threat-ucv7k/candB",
+   "sizeA": 194,
+   "sizeB": 202,
+   "shaA": "138a4d7dae7fef40b108f5df07fd8dd57bae822c8264be4ef8c770992a83777a",
+   "shaB": "27365f56ae01b9ed927167002cec80879c18aa84c3f15defbb03f3dcf479449e"
+  },
+  "baseRevision": 0,
+  "specKey": "68b93c809be5",
+  "battlesPerArm": 480,
+  "candMean": 0.6649,
+  "baseMean": 0.7444,
+  "all": {
+   "n": 24,
+   "diff": -0.07951,
+   "lo": -0.19402,
+   "hi": 0.03499,
+   "wins": 11,
+   "losses": 11
+  },
+  "byThreat": {
+   "F24_GSA_OtoGlida": {
+    "n": 4,
+    "diff": -0.41667,
+    "lo": -0.44416,
+    "hi": -0.38917,
+    "wins": 0,
+    "losses": 4
+   },
+   "F24_TOM_ATO": {
+    "n": 4,
+    "diff": -0.05625,
+    "lo": -0.19248,
+    "hi": 0.07998,
+    "wins": 1,
+    "losses": 2
+   },
+   "F24_HRZ_Code_Killers": {
+    "n": 4,
+    "diff": -0.4375,
+    "lo": -0.56637,
+    "hi": -0.30863,
+    "wins": 0,
+    "losses": 4
+   },
+   "F24_WHS_Lucas": {
+    "n": 4,
+    "diff": 0.27708,
+    "lo": 0.16326,
+    "hi": 0.39091,
+    "wins": 4,
+    "losses": 0
+   },
+   "F24_HLS_segment_fault": {
+    "n": 4,
+    "diff": 0.01875,
+    "lo": -0.0693,
+    "hi": 0.1068,
+    "wins": 2,
+    "losses": 1
+   },
+   "F24_HRZ_SHRek": {
+    "n": 4,
+    "diff": 0.1375,
+    "lo": 0.113,
+    "hi": 0.162,
+    "wins": 4,
+    "losses": 0
+   }
+  },
+  "threatFirstTeamScore": {
+   "vsCand": {
+    "F24_GSA_OtoGlida": 0.5667,
+    "F24_TOM_ATO": 0.0875,
+    "F24_HRZ_Code_Killers": 0.6687,
+    "F24_WHS_Lucas": 0.05,
+    "F24_HLS_segment_fault": 0.0375,
+    "F24_HRZ_SHRek": 0.0875
+   },
+   "vsBase": {
+    "F24_GSA_OtoGlida": 0.15,
+    "F24_TOM_ATO": 0.0625,
+    "F24_HRZ_Code_Killers": 0.2,
+    "F24_WHS_Lucas": 0.3375,
+    "F24_HLS_segment_fault": 0.0875,
+    "F24_HRZ_SHRek": 0.1375
+   }
+  },
+  "threatHashes": [
+   {
+    "label": "F24_GSA_OtoGlida",
+    "warriors": [
+     "repos/corewars8086-survivors/cgx2024/05-final2/GSA_OtoGlida1",
+     "repos/corewars8086-survivors/cgx2024/05-final2/GSA_OtoGlida2"
+    ],
+    "hashes": [
+     "bc12896cc58f78dc2794d5bec67b69c5e28a91e1e7ba04b26e83bdc96969decf",
+     "44025fc3a557bd9b462c3b3e64e2c2dc9e9707323d3dc35342e0483f373e1fbc"
+    ]
+   },
+   {
+    "label": "F24_TOM_ATO",
+    "warriors": [
+     "repos/corewars8086-survivors/cgx2024/05-final2/TOM_ATO1",
+     "repos/corewars8086-survivors/cgx2024/05-final2/TOM_ATO2"
+    ],
+    "hashes": [
+     "3ea2edb71a192894c850aabc99a63ed62d755743d2cd20463456ff25b6dd6c3c",
+     "10fb5254ed32694b2d1632e41ebe1dd60659594b8fe7fcbf74cd26f95386e646"
+    ]
+   },
+   {
+    "label": "F24_HRZ_Code_Killers",
+    "warriors": [
+     "repos/corewars8086-survivors/cgx2024/05-final2/HRZ_Code_Killers1",
+     "repos/corewars8086-survivors/cgx2024/05-final2/HRZ_Code_Killers2"
+    ],
+    "hashes": [
+     "3bfae9cab4a5dc378745c79f5d888a569fd03e6a75a0bc50fffb59bf5f57e36a",
+     "87e649dce0874662ae90eab978e6b4ca508b712533d368c36d9ee8c5ce091379"
+    ]
+   },
+   {
+    "label": "F24_WHS_Lucas",
+    "warriors": [
+     "repos/corewars8086-survivors/cgx2024/05-final2/WHS_Lucas1",
+     "repos/corewars8086-survivors/cgx2024/05-final2/WHS_Lucas2"
+    ],
+    "hashes": [
+     "0dbd3e44532e9499bff8b14bfe7057b4199ceb133d6b205b2d29140830093ad5",
+     "35d1205db77c17c7f21c77212c6d8a02b35f036613a3fd7e5b92570e9d0e1751"
+    ]
+   },
+   {
+    "label": "F24_HLS_segment_fault",
+    "warriors": [
+     "repos/corewars8086-survivors/cgx2024/05-final2/HLS_segment_fault1",
+     "repos/corewars8086-survivors/cgx2024/05-final2/HLS_segment_fault2"
+    ],
+    "hashes": [
+     "267dbe82e9af96b3a8531afbf32ab08281cdae0bc86c4e340f2008e8ec1c3cc2",
+     "028054edfcdc11162402200d9aa7af823a02f14ff06afe5e786cfecbcb21e931"
+    ]
+   },
+   {
+    "label": "F24_HRZ_SHRek",
+    "warriors": [
+     "repos/corewars8086-survivors/cgx2024/05-final2/HRZ_SHRek1",
+     "repos/corewars8086-survivors/cgx2024/05-final2/HRZ_SHRek2"
+    ],
+    "hashes": [
+     "97d4a93285936f490703326b5cb5318ef9970dde1049b763536ba3ec918fa034",
+     "22ea90aedd797a1a20ce918376fecce5d607e6f375d636021042f4c41fdaf628"
+    ]
+   }
+  ]
+ }
+}

@@ -1,0 +1,12 @@
+{
+ "agentId": "B075",
+ "role": "Domain 5 (lattice undercut), R3-counter",
+ "revisionUsed": 0,
+ "jobs": [],
+ "candidates": [],
+ "threatFindings": [
+  {"threat": "Same-family replicator whose lattice is 10h-50h below the base (52h) takes points from the base", "classification": "verified-in-current", "evidence": "Earlier jobs only: B055 ppsmg (base 0.390/0.354/0.419 vs clones 10h/30h/50h below, 0.456 vs same-lattice control) and 7rw7q; B065 pn6t4 (real zrl03 at 32h: base 0.435 vs 0.528 when zrl03 is moved to 52h)."},
+  {"threat": "Undercut clones compound with 2-3 copies", "classification": "not-reproduced", "evidence": "Earlier jobs only: B060 fu9fg, 3zlpf."}
+ ],
+ "recommendation": "No new counter was built and no candidate was tested. Existing counters for fix testing: scratch/B055/lat_m30_A.asm/lat_m30_B.asm (strongest), scratch/A011/fa_A.asm/fa_B.asm, and B065's zrl03 lattice variants. Nothing to promote."
+}

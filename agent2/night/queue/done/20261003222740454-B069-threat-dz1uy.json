@@ -1,0 +1,92 @@
+{
+ "job": {
+  "id": "20261003222740454-B069-threat-dz1uy",
+  "agent": "B069",
+  "kind": "threat",
+  "submittedAt": "2026-10-03T22:27:40.455Z",
+  "note": "B069 R2: zph vs base, realistic heterogeneous router pair m050+Synthesis (screen cohort sstrong-5 composition) + 1 random 2025 team",
+  "asmB": "agent2/night/scratch/B069/zphB.asm",
+  "threats": [
+   {
+    "name": "m050",
+    "binA": "agent2/build/ref/ChimeraA",
+    "binB": "agent2/build/ref/ChimeraB"
+   },
+   {
+    "name": "Synthesis",
+    "binA": "agent2/build/counter/SYA",
+    "binB": "agent2/build/counter/SYB"
+   }
+  ],
+  "cohortsPerThreat": 12,
+  "mixAll": true
+ },
+ "ok": true,
+ "finishedAt": "2026-10-03T22:27:56.794Z",
+ "seconds": 14.893,
+ "result": {
+  "candidate": {
+   "A": "agent2/night/revisions/rev0/A",
+   "B": "agent2/night/cand-build/20261003222740454-B069-threat-dz1uy/candB",
+   "sizeA": 194,
+   "sizeB": 202,
+   "shaA": "6861894f3c1992cd6c6baa5b2a746178082f5b4b0a1d9969b9a326fe03d86c89",
+   "shaB": "e85a4bf6ac97ca3a0fa9803b7d11c60c7bb29403d464b2ead605a71246bddaf0"
+  },
+  "baseRevision": 0,
+  "specKey": "d8d66b32149e",
+  "battlesPerArm": 240,
+  "candMean": 0.8183,
+  "baseMean": 0.5492,
+  "all": {
+   "n": 12,
+   "diff": 0.2691,
+   "lo": 0.18494,
+   "hi": 0.35325,
+   "wins": 12,
+   "losses": 0
+  },
+  "byThreat": {
+   "mix": {
+    "n": 12,
+    "diff": 0.2691,
+    "lo": 0.18494,
+    "hi": 0.35325,
+    "wins": 12,
+    "losses": 0
+   }
+  },
+  "threatFirstTeamScore": {
+   "vsCand": {
+    "mix": 0.0617
+   },
+   "vsBase": {
+    "mix": 0.196
+   }
+  },
+  "threatHashes": [
+   {
+    "label": "m050",
+    "warriors": [
+     "agent2/build/ref/ChimeraA",
+     "agent2/build/ref/ChimeraB"
+    ],
+    "hashes": [
+     "0268ce4f301bf2ada8566f4e608180a0670a335a80b9c2b93b67aee2b632bd44",
+     "06b5a1ff7bac4b146620de6d1de512dfedf3f28366d6435bf61d49869d971782"
+    ]
+   },
+   {
+    "label": "Synthesis",
+    "warriors": [
+     "agent2/build/counter/SYA",
+     "agent2/build/counter/SYB"
+    ],
+    "hashes": [
+     "3875482b4d57a8d29f474215ed9dd41249bc17c46b1a662c4906554b5d859b9c",
+     "99055d82958f813de2067a17dde8ea361c749bd4dc916095a4dad1ad8e13ce2b"
+    ]
+   }
+  ]
+ }
+}

@@ -1,0 +1,103 @@
+{
+ "job": {
+  "id": "20261003220233175-A018-threat-c3v6s",
+  "agent": "A018",
+  "kind": "threat",
+  "submittedAt": "2026-10-03T22:02:33.181Z",
+  "note": "A018 rwt vs Gamma/Underflow (traced 00 10 anchor hits that the recovery word should survive)",
+  "asmA": "agent2/night/scratch/A018/rwt_A.asm",
+  "asmB": "agent2/night/scratch/A018/rwt_B.asm",
+  "threats": [
+   {
+    "name": "OST_Gamma",
+    "binA": "official-2025/survivors-online/OST_Gamma1",
+    "binB": "official-2025/survivors-online/OST_Gamma2"
+   },
+   {
+    "name": "HRZ_Underflow",
+    "binA": "official-2025/survivors-online/HRZ_Underflow1",
+    "binB": "official-2025/survivors-online/HRZ_Underflow2"
+   }
+  ],
+  "copies": 1,
+  "cohortsPerThreat": 12
+ },
+ "ok": true,
+ "finishedAt": "2026-10-03T22:09:06.572Z",
+ "seconds": 27.301,
+ "result": {
+  "candidate": {
+   "A": "agent2/night/cand-build/20261003220233175-A018-threat-c3v6s/candA",
+   "B": "agent2/night/cand-build/20261003220233175-A018-threat-c3v6s/candB",
+   "sizeA": 200,
+   "sizeB": 208,
+   "shaA": "ca956095317aa223ddfe67371d35a5c0fc8d215b90ac1b6f5d1c9a5eb6b530f2",
+   "shaB": "77a343c1ec151526273da12abd05236cecf21c288227f0e2f3fd39c84adca65c"
+  },
+  "baseRevision": 0,
+  "specKey": "58b6b3591f24",
+  "battlesPerArm": 480,
+  "candMean": 0.7538,
+  "baseMean": 0.7507,
+  "all": {
+   "n": 24,
+   "diff": 0.00313,
+   "lo": -0.01465,
+   "hi": 0.0209,
+   "wins": 6,
+   "losses": 5
+  },
+  "byThreat": {
+   "OST_Gamma": {
+    "n": 12,
+    "diff": 0.01458,
+    "lo": -0.01133,
+    "hi": 0.0405,
+    "wins": 4,
+    "losses": 2
+   },
+   "HRZ_Underflow": {
+    "n": 12,
+    "diff": -0.00833,
+    "lo": -0.03195,
+    "hi": 0.01528,
+    "wins": 2,
+    "losses": 3
+   }
+  },
+  "threatFirstTeamScore": {
+   "vsCand": {
+    "OST_Gamma": 0.0208,
+    "HRZ_Underflow": 0.05
+   },
+   "vsBase": {
+    "OST_Gamma": 0.0167,
+    "HRZ_Underflow": 0.05
+   }
+  },
+  "threatHashes": [
+   {
+    "label": "OST_Gamma",
+    "warriors": [
+     "official-2025/survivors-online/OST_Gamma1",
+     "official-2025/survivors-online/OST_Gamma2"
+    ],
+    "hashes": [
+     "a470a79b80f6eac90b3613ffc6127722a210923fa5fa80efec4760197a901c63",
+     "0f522f42cecc4b8e2dd7cc8ea914cb7946d7cf1ec0a4877fb876c30137580caa"
+    ]
+   },
+   {
+    "label": "HRZ_Underflow",
+    "warriors": [
+     "official-2025/survivors-online/HRZ_Underflow1",
+     "official-2025/survivors-online/HRZ_Underflow2"
+    ],
+    "hashes": [
+     "79f994bd13bfd25b44a97d420e8a9d6e8f45311a716b21bfb9f10fdc79cde7e4",
+     "7d5c20977121ffb2ac532f6a4cb6662a2c349f0e833beb9999869ad9df918840"
+    ]
+   }
+  ]
+ }
+}

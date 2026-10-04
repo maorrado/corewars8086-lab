@@ -1,0 +1,130 @@
+{
+ "job": {
+  "id": "20261004013236726-A038-threat-4qhxq",
+  "agent": "A038",
+  "kind": "threat",
+  "submittedAt": "2026-10-04T01:32:36.728Z",
+  "note": "A038 patA vs zombie mimics",
+  "asmA": "agent2/night/scratch/A038/patA.asm",
+  "threats": [
+   {
+    "key": "zomb_callfart"
+   },
+   {
+    "key": "zomb_Grindo"
+   },
+   {
+    "key": "zomb_AnotherBit"
+   },
+   {
+    "key": "lead_V6"
+   }
+  ],
+  "copies": 1,
+  "cohortsPerThreat": 6
+ },
+ "ok": true,
+ "finishedAt": "2026-10-04T01:34:38.744Z",
+ "seconds": 38.777,
+ "result": {
+  "candidate": {
+   "A": "agent2/night/cand-build/20261004013236726-A038-threat-4qhxq/candA",
+   "B": "agent2/night/revisions/rev0/B",
+   "sizeA": 194,
+   "sizeB": 202,
+   "shaA": "24a2d583bde0d499424970c33ce5b855fb9e439c3b9f4c1de74dc7c428e2f1e0",
+   "shaB": "8579e2c2212d72a413a6daacfe3b91ceb72be648bfc085bfeed9430eeaf6657a"
+  },
+  "baseRevision": 0,
+  "specKey": "14f74bb3c6f2",
+  "battlesPerArm": 480,
+  "candMean": 0.5432,
+  "baseMean": 0.5439,
+  "all": {
+   "n": 24,
+   "diff": -0.00069,
+   "lo": -0.0148,
+   "hi": 0.01341,
+   "wins": 3,
+   "losses": 5
+  },
+  "byThreat": {
+   "zomb_callfart": {
+    "n": 6,
+    "diff": 0.03333,
+    "lo": -0.006,
+    "hi": 0.07267,
+    "wins": 3,
+    "losses": 0
+   },
+   "zomb_Grindo": {
+    "n": 6,
+    "diff": 0,
+    "lo": 0,
+    "hi": 0,
+    "wins": 0,
+    "losses": 0
+   },
+   "zomb_AnotherBit": {
+    "n": 6,
+    "diff": -0.00833,
+    "lo": -0.02467,
+    "hi": 0.008,
+    "wins": 0,
+    "losses": 1
+   },
+   "lead_V6": {
+    "n": 6,
+    "diff": -0.02778,
+    "lo": -0.04648,
+    "hi": -0.00908,
+    "wins": 0,
+    "losses": 4
+   }
+  },
+  "threatFirstTeamScore": {
+   "vsCand": {
+    "zomb_callfart": 0.2028,
+    "zomb_Grindo": 0.3528,
+    "zomb_AnotherBit": 0.0875,
+    "lead_V6": 0.4826
+   },
+   "vsBase": {
+    "zomb_callfart": 0.2444,
+    "zomb_Grindo": 0.3528,
+    "zomb_AnotherBit": 0.0875,
+    "lead_V6": 0.4549
+   }
+  },
+  "threatHashes": [
+   {
+    "label": "zomb_callfart",
+    "warriors": [
+     "official-2025/survivors-online/GSA_callfart1",
+     "official-2025/survivors-online/GSA_callfart2"
+    ]
+   },
+   {
+    "label": "zomb_Grindo",
+    "warriors": [
+     "official-2025/survivors-online/HRZ_Grindo_Holics1",
+     "official-2025/survivors-online/HRZ_Grindo_Holics2"
+    ]
+   },
+   {
+    "label": "zomb_AnotherBit",
+    "warriors": [
+     "official-2025/survivors-online/AVI_AnotherBitInTheWall1",
+     "official-2025/survivors-online/AVI_AnotherBitInTheWall2"
+    ]
+   },
+   {
+    "label": "lead_V6",
+    "warriors": [
+     "agent2/night/refs/V6/A",
+     "agent2/night/refs/V6/B"
+    ]
+   }
+  ]
+ }
+}

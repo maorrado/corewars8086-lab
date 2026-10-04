@@ -1,0 +1,28 @@
+{
+ "job": {
+  "id": "20261004022803386-A043-trace-ziydv",
+  "agent": "A043",
+  "kind": "trace",
+  "submittedAt": "2026-10-04T02:28:03.388Z",
+  "note": "A043 trace of pB8C lane protocol: check partner (B->A) crossfire predicted by phase model near round 2340, vs base partner deaths",
+  "asmA": "agent2/night/scratch/A043/pA.asm",
+  "asmB": "agent2/night/scratch/A043/pB8C.asm"
+ },
+ "ok": true,
+ "finishedAt": "2026-10-04T02:28:32.513Z",
+ "seconds": 17.173,
+ "result": {
+  "candidate": {
+   "A": "agent2/night/cand-build/20261004022803386-A043-trace-ziydv/candA",
+   "B": "agent2/night/cand-build/20261004022803386-A043-trace-ziydv/candB",
+   "sizeA": 193,
+   "sizeB": 207,
+   "shaA": "ccd41d8703d098443a36a1be0335e04b8c265cee497ca179501853bcb4aef933",
+   "shaB": "d37745255573874180270a0146684cd3a10354cfccb8fcb3d9fb17e539970b9d"
+  },
+  "traceDir": "agent2/night/scratch/_trace/nightTR-ccd41d8703-d377452555",
+  "battles": 160,
+  "summary": "deaths 166\n  79 wild-cs          memory exception opp\n  38 wild-cs          CPU exception    opp\n  11 wild-cs          memory exception self-only\n   9 wild-cs          CPU exception    self-only\n   6 startup(cs1000)  CPU exception    opp\n   5 startup(cs1000)  CPU exception    zombie\n   5 wild-cs          CPU exception    untouched\n   4 startup(cs1000)  memory exception zombie\n   2 wild-cs          CPU exception    zombie\n   2 startup(cs1000)  memory exception load\n   2 wild-cs          memory exception zombie\n   2 startup(cs1000)  CPU exception    load\n   1 wild-cs          CPU exception    partner\ntop opponent killers: Y_TOM_Code_Killer=26 A_IND_cgx123123=18 A_OHS_TrojanByte=12 A_WAN_Baltika9=11 A_GSA_GhostBytes_0x=10 A_HRZ_MOV_AX_WIN=8 A_WHS_K0F1M_AL_T1L1M=7 A_KOB_KosherCode=6 A_WAN_OnlyCode=6 A_HRZ_Underflow=6 A_RZL_YANDE=3 A_HRZ_fisherEXE=3\n",
+  "note": "phase 'wild-cs' = any CS other than 0FFC/1000 (V6 family uses FAR_SEG 0FFB); examples.json not produced by sum-trace2; raw jsonl in traceDir"
+ }
+}

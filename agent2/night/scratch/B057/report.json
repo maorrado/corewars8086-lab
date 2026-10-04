@@ -1,0 +1,49 @@
+{
+  "agentId": "B057",
+  "role": "domain7 R1-verify (trail scanners / anchor hunters)",
+  "revisionUsed": 0,
+  "base": "rev0 = V6nohunt (A sha 6861894f, B sha 8579e2c2, sizes 194/202)",
+  "jobs": [
+    "20261003194117571-B057-screen-brk24",
+    "20261003194222177-B057-threat-bqibu"
+  ],
+  "mechanism": {
+    "name": "zombie_scan anchor-hunter (far-call trail detector + anchor bomber)",
+    "location_rev0_A": "bytes 7Eh-C1h (labels zombie_entry/zombie_scan/candidate_check/found_candidate)",
+    "how_it_works": "mov bx,ax (arena ptr); dx=CCCCh. Loop: add bx,100h, skip pages whose first word is arena-fill CCCCh (locating a live/written region). Over 4 consecutive offsets: accept only if [bx+1] high byte is in 0Fh..1Fh (sub al,0Fh; cmp al,10h; ja) i.e. a FAR_SEG-style high byte like 0FFBh; reject word 0FFCh; require [bx]==[bx+4] (two identical words on the 4-byte lattice = a self-similar far-call trail / repeated pointer cell = the anchor signature). On hit: di=[bx-2], map arena offset (sub si,1000h; si*16; di+=si-2), write dx=CCCCh to bomb the computed anchor; loop forever.",
+    "only_entry_in_V6_original": "A at 18h reads bx=[7A00h]; if valid, patches a captured foreign worker at [bx+3]/[bx+5..9] to BE(mov si,imm16=zombie_entry)/FF E6(jmp si), redirecting it into this hunter (bytes 8B 1E 00 7A ... C6 47 05 BE / C7 47 03 90 90). V6nohunt removed exactly that [7A00h] self-redirect block, so nothing ever transfers control to 7Eh. The worker chain ends in call far [bx] (infinite), never falling through to 7Eh."
+  },
+  "candidates": [
+    {
+      "label": "stripA",
+      "file": "agent2/night/scratch/B057/stripA.asm",
+      "sha256": "3591d1fa24e5b3c2c00bb90a9497cb53b4fdbd64883e71532d0bb59d9b16f775",
+      "sizeA": 126,
+      "change": "A only: delete the unreachable zombie_entry/zombie_scan tail (orig 7Eh-C1h, 68 bytes). First 126 bytes (00h-7Dh, through call far [bx]) byte-identical to rev0 A; worker template untouched; B = base.",
+      "screenJob": "20261003194117571-B057-screen-brk24",
+      "screenAllDiff": 0.00378,
+      "screenAllLo": -0.00297,
+      "screenAllHi": 0.01052,
+      "screenGroups": "2025 +0.008 [-0.0035,0.0195] W/L 4/1; strong +0.00317; threat -0.00208 (all 16 threat cohorts =0 except zomb_callfart -0.0333); multi 0",
+      "threatJob": "20261003194222177-B057-threat-bqibu",
+      "threatResult": "ALL -0.00139 [-0.0079,0.0051]; lead_V6 exactly 0 (vsCand=vsBase=0.4597); movsw_cgx123123 exactly 0; zomb_Grindo 0; lead_V6Guard -0.00556 (n=6, CI spans 0)",
+      "promising": false,
+      "groupNotes": "Not a performance candidate; an inertness ablation. ALL diff +0.00378 CI spans 0; identical scores vs V6 and the MOVSW crowd the hunter targets."
+    }
+  ],
+  "threatFindings": [
+    {
+      "threat": "zombie_scan anchor-hunter is an ACTIVE far-call-trail counter in the current base (rev0 V6nohunt)",
+      "classification": "not-reproduced",
+      "evidence": "Static: no instruction in rev0 A reaches offset 7Eh (the [7A00h] self-redirect that was its only entry was removed by V6nohunt; worker ends in infinite call far [bx]). Dynamic: screen brk24 removing the whole tail gives ALL +0.00378 [-0.00297,0.01052] (CI spans 0) and exactly 0 diff on every threat cohort incl lead_V6/lead_V6Guard/movsw_*. Threat bqibu: lead_V6 and movsw_cgx123123 give byte-identical cand=base scores. The hunter does not run and has no effect.",
+      "impact": "68 dead bytes in A; zero behavioral contribution. Removable with no measured cost (stripA)."
+    },
+    {
+      "threat": "The anchor-hunter mechanism exists and is well-formed as a design (verified-in-other: V6 original)",
+      "classification": "verified-in-other",
+      "evidence": "In V6 original A (refs/V6/A, 221B) the [7A00h] block (disasm 18h: 8B 1E 00 7A; 1Ch..32h patch stores mov si,zombie_entry + jmp si into a captured worker) is present and routes a captured foreign replicator into zombie_scan. The scan's accept test (FAR_SEG-high-byte 0Fh..1Fh, reject 0FFCh, [bx]==[bx+4]) matches a self-similar far-call trail anchor; found_candidate writes CCCCh to bomb it. Holdouts 4/5 already measured V6 (hunter active) as WEAKER than V6nohunt (+0.005/+0.008 for nohunt), so re-activating it is known-negative and not re-tested.",
+      "impact": "Confirms domain-7 mechanism is real but net-negative when active in this lineage; the ablation (V6nohunt) is already the shipped base."
+    }
+  ],
+  "recommendation": "Do not promote a performance change from this card. stripA is not promising (ALL +0.00378, CI spans 0). The domain-7 anchor-hunter is CONFIRMED inert in the current base (not-reproduced as an active mechanism): removing all 68 tail bytes costs nothing measurable and leaves V6/MOVSW matchups byte-identical. Suggested zero-risk housekeeping only: a future combination warrior could reclaim those 68 bytes in A (e.g. for B054 fix2steal-style additions) since they are proven dead. Re-activating the hunter (= reverting to V6) is already known worse than base and should not be pursued."
+}

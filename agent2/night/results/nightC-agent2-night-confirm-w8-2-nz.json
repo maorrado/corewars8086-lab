@@ -1,0 +1,2264 @@
+{
+ "schema": "agent2-bench-v1",
+ "planId": "nightC-agent2-night-confirm-w8-2-nz",
+ "engine": "persistent",
+ "generatedAt": "2026-10-04T02:16:26.830Z",
+ "elapsedSeconds": 56.61,
+ "planSha256": "eaf1a3596860603e1aef7537b409e49e8b08822a2caf04157c6a4e5b155ded79",
+ "planPath": "agent2\\night\\plans\\nightC-agent2-night-confirm-w8-2-nz.json",
+ "engineJarSha256": "31639072397eaf69d99e90b10d8fa594a7446951f1137b7ebd298378f5ec318d",
+ "driver": {
+  "class": "A2Batch",
+  "sourceSha256": "32068d0d97e3f649788a40ccada2d5213719aa515c4832b73643e028a5069d8a"
+ },
+ "teamName": "CAND",
+ "armHashes": {
+  "cand": [
+   {
+    "path": "agent2/night/cand-build/20261004015542517-COORD-w8-confirm-cn666/candA",
+    "bytes": 204,
+    "sha256": "6e9af3cea038ab9fd98eb364ecf94e9ab07540e2a6817461d87e1b2941df5b1a"
+   },
+   {
+    "path": "agent2/night/revisions/rev0/B",
+    "bytes": 202,
+    "sha256": "8579e2c2212d72a413a6daacfe3b91ceb72be648bfc085bfeed9430eeaf6657a"
+   }
+  ],
+  "base": [
+   {
+    "path": "agent2/night/revisions/rev0/A",
+    "bytes": 194,
+    "sha256": "6861894f3c1992cd6c6baa5b2a746178082f5b4b0a1d9969b9a326fe03d86c89"
+   },
+   {
+    "path": "agent2/night/revisions/rev0/B",
+    "bytes": 202,
+    "sha256": "8579e2c2212d72a413a6daacfe3b91ceb72be648bfc085bfeed9430eeaf6657a"
+   }
+  ],
+  "V6Guard": [
+   {
+    "path": "agent2/night/refs/V6Guard/A",
+    "bytes": 227,
+    "sha256": "71164c8d7308766cd14d64ac6d1342cd1631afce98278fe9dca4d4ab14a3b3f3"
+   },
+   {
+    "path": "agent2/night/refs/V6Guard/B",
+    "bytes": 202,
+    "sha256": "8579e2c2212d72a413a6daacfe3b91ceb72be648bfc085bfeed9430eeaf6657a"
+   }
+  ],
+  "zchain4": [
+   {
+    "path": "agent2/night/refs/zchain4/A",
+    "bytes": 233,
+    "sha256": "07c238b2d276824f23e54c4d2c74fb9d229e42419b3ff74302447b47bb9fbc49"
+   },
+   {
+    "path": "agent2/night/refs/zchain4/B",
+    "bytes": 122,
+    "sha256": "2fb8f41228b5ded8b7bd6b511c5002f5e646955f2eab8c48a73f358c128c286e"
+   }
+  ],
+  "V6": [
+   {
+    "path": "agent2/night/refs/V6/A",
+    "bytes": 221,
+    "sha256": "3fa67bed880413901ad618b4f7b248e5782d98de93318271ac540ad1690ca2b7"
+   },
+   {
+    "path": "agent2/night/refs/V6/B",
+    "bytes": 202,
+    "sha256": "8579e2c2212d72a413a6daacfe3b91ceb72be648bfc085bfeed9430eeaf6657a"
+   }
+  ]
+ },
+ "opponentHashes": {
+  "official-2025/survivors-online/GSA_B331": "b669a39358c457bbd739710d2a82e6c7f5bfb20125922b153207209d2bf74350",
+  "official-2025/survivors-online/GSA_B332": "b669a39358c457bbd739710d2a82e6c7f5bfb20125922b153207209d2bf74350",
+  "official-2025/survivors-online/AVI_AnotherBitInTheWall1": "5a78ed74829860373ab4dd7d80bb58fd50234789e3d2cba84c4f8a1cc183ab15",
+  "official-2025/survivors-online/AVI_AnotherBitInTheWall2": "76b06db3e88a32e0a1f025030e1c14d19c53b9a8f7a0944c76de9d867de55fda",
+  "official-2025/survivors-online/HRZ_The_almogooners1": "1beaaf660fe42f02b45b031c46d1b4dda2f7d670f99e6dc27c73c6ae45301d91",
+  "official-2025/survivors-online/HRZ_The_almogooners2": "1beaaf660fe42f02b45b031c46d1b4dda2f7d670f99e6dc27c73c6ae45301d91",
+  "official-2025/survivors-online/GSA_GoonSquad1": "7b092caf2288c03827e2c7189566306f3bcc65e8668d2793659877475eaa8ac7",
+  "official-2025/survivors-online/GSA_GoonSquad2": "b0092281531189b979faf8b5084d1a6eb1793075f9ae4e56a4437459088fadc7",
+  "official-2025/survivors-online/HRZ_Code_Jokers4Life1": "f2222e5041e6fdfe2ab35582cc9df51e3b0498b7b57d90f18c20056239d673b8",
+  "official-2025/survivors-online/HRZ_Code_Jokers4Life2": "7ecc90c263e5458e6ac5b880d91efd45c3e0c6345639c3e38153bc161173e8de",
+  "official-2025/survivors-online/HDS_YOY1": "a30854eb23928d0a2a16e32fc2db3fbf6f6dec4b843ae73fa4b5ba904eced03f",
+  "official-2025/survivors-online/HDS_YOY2": "61cdca8ebd5d863f30172e0164c4d0a3d8eb6dae39815aa06465a8904a95dfa9",
+  "official-2025/survivors-online/HLS_EmoMutants1": "629b28dbff281ca175493f1f40492e52afdf6f9f3c2f8a7e06a8df08a5580711",
+  "official-2025/survivors-online/HLS_EmoMutants2": "36c6a4f23a988920ed0e2e7a128bd706b5f82871935b6c0dfc5d3c2cbbd65aa0",
+  "official-2025/survivors-online/BZV_SKYENT1": "71bdf7043da5f50d23bc4d8b729b13ce39a2240775937d7652476abdcbb2705d",
+  "official-2025/survivors-online/BZV_SKYENT2": "bfca1258902ff47eef60ddc230e67f4c8528c89421377f5a696724506c2fdada",
+  "official-2025/survivors-online/KOB_KosherCode1": "f333c2d41cce100bb3afee9f2e60b9fda6f93d717602adc369d7719664568184",
+  "official-2025/survivors-online/KOB_KosherCode2": "f2b704b27b426c0d25f8dc26f1e4876f14cf3d5d1b89d4e7bfbecd0b132af5ac",
+  "official-2025/survivors-online/OHS_TrojanByte1": "8daa80561913795dab371699ae02d243e11889eafdbd3f198b8b2792ef8caed6",
+  "official-2025/survivors-online/OHS_TrojanByte2": "7a243cd4100cef57759ded924b53566ac3004a1d23b71a11a1166f0a7cecbc4f",
+  "official-2025/survivors-online/GGN_OpcodeHunter1": "d5992bdc307b070ad91e1737a8777125970912b286a392ed6d9a6456d87ed3af",
+  "official-2025/survivors-online/GGN_OpcodeHunter2": "0ced8fc1ec650a032604e2e149458b54202be7ecabb447999f143659d6ea46b6",
+  "official-2025/survivors-online-young/MTA_Hexellent1": "70484891cb2f1361ffe98001528a8e0d05ed74f44e7e3696b8d71ac64d0c3962",
+  "official-2025/survivors-online-young/MTA_Hexellent2": "a303a84b1f9fedf1fa0fde29647c5db17ee23bcd63faf16c9f69295e7d60d0a4",
+  "official-2025/survivors-online/ORT_TheGoats1": "74e7a2f5ff930e07fc75a13cc15fadf586f1af66d1f6283532ce47b7c0673a25",
+  "official-2025/survivors-online/ORT_TheGoats2": "0ab57aed774169d420cb0b6b05414fe6145ef6e99b614b988ed8163e3b11aa42",
+  "official-2025/survivors-online/HRZ_Thingies1": "2a381510bdaf45ab809c11ee0c115c6683b6e3c38148f613c3927026138c8b93",
+  "official-2025/survivors-online/HRZ_Thingies2": "2a381510bdaf45ab809c11ee0c115c6683b6e3c38148f613c3927026138c8b93",
+  "official-2025/survivors-online/HRZ_The_Rubber_Duckies1": "c8270f10aa7f62682bae9ce457a087fe6b391e63107ae748695d35f615a2d72e",
+  "official-2025/survivors-online/HRZ_The_Rubber_Duckies2": "d77f23e2eda8675b231d8d53a436dcde422e27fa7936d18059fd338156c58ff4",
+  "official-2025/survivors-online/HRZ_LowKey_WBB1": "9e6f08b0cf3d7fe60b1c349ce143ed02e2f3ed01e1654164f231a4c46d2aefc9",
+  "official-2025/survivors-online/HRZ_LowKey_WBB2": "42abd17f0ecb417669bb7ad2215bfd6a4fe7477c99b1cde736205d5b207484f4",
+  "official-2025/survivors-online-young/TOM_Thefrogs1": "8f014d9812cf497a03015d562135e8bdaaa4dd921e5de3e28984ac64642fa050",
+  "official-2025/survivors-online-young/TOM_Thefrogs2": "348c42651bea5001dc5a61a3e15228e4820dbbd4ab0b6df16982dbb38334a504",
+  "official-2025/survivors-online/HDS_GoldenLamed1": "f76ec20d3e5d9e5dc58734ae0aa90532090d98abbd857baeedc3179c8bd32378",
+  "official-2025/survivors-online/HDS_GoldenLamed2": "f76ec20d3e5d9e5dc58734ae0aa90532090d98abbd857baeedc3179c8bd32378",
+  "official-2025/survivors-online-young/TOM_AND_JERRY1": "0f2a1799845db478549ab951df61323eb863ed496ed87d2e189b2cba510bfa43",
+  "official-2025/survivors-online-young/TOM_AND_JERRY2": "8699a2bb930c1d2d1178aa6c17322db31f1338b8184d6056620abbc5b1c1a65e",
+  "official-2025/survivors-online/WAN_Full_Time_Job1": "451ccffeedd664f6814d45a712f805c71931efada682112e61b801858c3ab4f3",
+  "official-2025/survivors-online/WAN_Full_Time_Job2": "9e076ceaf246b6003d9c2680a2b4cf0bffd069805902b0b5edeebf49039fe4bd",
+  "official-2025/survivors-online/HRZ_TEST_ticals1": "bde8d3995ed1d713bcb7a64eb6f122a3105e0549e28ee8bc3bb951737ed7aa6f",
+  "official-2025/survivors-online/HRZ_TEST_ticals2": "bde8d3995ed1d713bcb7a64eb6f122a3105e0549e28ee8bc3bb951737ed7aa6f",
+  "official-2025/survivors-online/GSA_VanLavan1": "29bcd91c2654fbe3b40eb0ba46f0b27956fc951185f3ebc7fb78877f739a401e",
+  "official-2025/survivors-online/GSA_VanLavan2": "649dad7fb2499e54a9474e31784d38f3ad36e801d9649eb0d78d7aabe8e30d1b",
+  "official-2025/survivors-online/IND_BRA1": "fd42f831ef722a715fc5d89877cf830b366efd1d3a30a2e0612e565de0031015",
+  "official-2025/survivors-online/IND_BRA2": "fd42f831ef722a715fc5d89877cf830b366efd1d3a30a2e0612e565de0031015",
+  "official-2025/survivors-online-young/TOM_Code_Killer1": "388479f220bd757fe9c011cb234cc52ad1e6f12e9deb01a8d247a0e5568c4e22",
+  "official-2025/survivors-online-young/TOM_Code_Killer2": "7fc3754c18976081ccd54f3936d22a493bb1d8420706cde4a5962613f4c9bbf5",
+  "official-2025/survivors-online/TOM_tson_el_akod1": "9198ae7381e5449f42b5f2cb80e0ec1788c4b2bd25b9ec9ed0096383c4c2085c",
+  "official-2025/survivors-online/TOM_tson_el_akod2": "9198ae7381e5449f42b5f2cb80e0ec1788c4b2bd25b9ec9ed0096383c4c2085c",
+  "official-2025/survivors-online/OST_Gamma1": "a470a79b80f6eac90b3613ffc6127722a210923fa5fa80efec4760197a901c63",
+  "official-2025/survivors-online/OST_Gamma2": "0f522f42cecc4b8e2dd7cc8ea914cb7946d7cf1ec0a4877fb876c30137580caa",
+  "official-2025/survivors-online-young/GSA_3Plate_Benchers1": "7e6a8c26c42fa899e58fb02cde83d71406402dc436741098fc334382a76e5872",
+  "official-2025/survivors-online-young/GSA_3Plate_Benchers2": "7e6a8c26c42fa899e58fb02cde83d71406402dc436741098fc334382a76e5872",
+  "official-2025/survivors-online/HRZ_TitanicSwimTeam1": "4794558ee17f4265372dd9176b06150026d88e0bb2d481954dec55be8b3aeec0",
+  "official-2025/survivors-online/HRZ_TitanicSwimTeam2": "5bb33762a99debde94f5905696bf9e72c552cb9ddbd2e01391efde85b5d92ffc",
+  "official-2025/survivors-online/GSA_callfart1": "dfe5017765f2522372bedc2e5e3b72af5597b99ddbfb3444c25f5bde17a4acf3",
+  "official-2025/survivors-online/GSA_callfart2": "30dafcebde39ba9bf4bbcf21d83a666bc5f0a8e3e4aabcb52310905d389a4f4d",
+  "official-2025/survivors-online/HRZ_InCtrl1": "d7b0b84459fe2295e8a65512ef16c2e698e6d6bee50b1b3b777dc0c2b0c5b7c0",
+  "official-2025/survivors-online/HRZ_InCtrl2": "6997d9e87f8c241b3056f8ebfb624bd4bf268ef14329f49c95d4f553146153fa",
+  "official-2025/survivors-online/HDS_MAC1": "01fe69503bf6f9092a4df08b0cb7d29ee83a8c9532162b63d3a97ab21e36ad14",
+  "official-2025/survivors-online/HDS_MAC2": "b983b54b0afc2b8ff78ed361f67745e3d133f28989140ae8da394e740ae2f6b6",
+  "official-2025/survivors-online/HRZ_Pixar_Lamps1": "500852a7240608e60b8ed36f93d14f09ec08db9f3b9f65358a4d3174a14221a8",
+  "official-2025/survivors-online/HRZ_Pixar_Lamps2": "5ab6a833bc63e8497db71b36ae02a835ab1b9f5abef9b42dafabd07b1d671ab5",
+  "official-2025/survivors-online/GSA_ShmuelTurtles1": "22de4575872d077b32481da4edf814f6a72136771b931b45a1b0191001b19c3f",
+  "official-2025/survivors-online/GSA_ShmuelTurtles2": "9198ae7381e5449f42b5f2cb80e0ec1788c4b2bd25b9ec9ed0096383c4c2085c",
+  "official-2025/survivors-online/HRZ_Registered_Winners1": "1645436c2465df7ac0def9182eb12506e7aa9ca6b719635d2192eab4e38ce70d",
+  "official-2025/survivors-online/HRZ_Registered_Winners2": "6a489e8f28e3cbe8e370b8382679938c7635a46fcbbd5f4c263024e2e8dcabab",
+  "official-2025/survivors-online/GSA_TheBytes1": "d168c81336006cab440c719f9bf857d146ca2b8b063b95eaccbc274326d58f9b",
+  "official-2025/survivors-online/GSA_TheBytes2": "7dfdbe1fbfeb2311ef5c1a77621fb43dc0ca5ec23abc566bdf4078d348311351",
+  "official-2025/survivors-online/RZL_YANDE1": "8e8c89070cc2d1f64bc5e16fc6dbbffb2fc72cb57bf66f16ac5bfe089d60632b",
+  "official-2025/survivors-online/RZL_YANDE2": "eba9d406edec09cd697bcb706c1bdc133a9a2b63cea3811252ddaaf54e2b8b75",
+  "official-2025/survivors-online/OHS_BatteringRAM1": "6db7c4932a50615520b1eed2f49a9543723d89fb1b70f7507b6241f77d0e9474",
+  "official-2025/survivors-online/OHS_BatteringRAM2": "5f2531e6a569ae005357df7f8d16fdd7e49020cee96a6ccf16e85d2fb51e4bb1",
+  "official-2025/survivors-online/HDS_NRI1": "8830ca6b843b0508fc2a5771068dad1bc150d2f824d2cd77d7631e523b431bb1",
+  "official-2025/survivors-online/HDS_NRI2": "1cc40806e6766e591dac071b1256c8b5f325360f0aae448b188dcc87376bb9ab",
+  "official-2025/survivors-online/AVI_Fishandpoultry1": "c8aa0e238c28c8c041cf8318d93f165b7cb2005c71cc055552244f120ea7f065",
+  "official-2025/survivors-online/AVI_Fishandpoultry2": "3718913ee7debbee757a1fa053699cb80d12cd1985d8218b3ed6cb9f4d87193d",
+  "official-2025/survivors-online/IND_stuxnet1": "b4c342926e63b9d8b21f22e744de9cc96312ce7bf9433f5d9c6b76d982763834",
+  "official-2025/survivors-online/IND_stuxnet2": "2f645003233d8935086b8e5867c013ff3a93d87acbda64c149805c5ba5ccd5bd",
+  "official-2025/survivors-online/HRZ_L1": "39de1bb615fe8760c528eab9b0cdac26e934010ee5953bb3c88f1ce561cefea0",
+  "official-2025/survivors-online/HRZ_L2": "bdd2bb9dbb0dffc2ed7c0fa4f6b1fdf7a067d9784959d26c8c615f6fc3fde901",
+  "official-2025/survivors-online/HDS_ATW_Solo1": "3433de990452854bfefb8f5e76c2e898f1b4b44cfe3a2533bc54ab6f1e461fa5",
+  "official-2025/survivors-online/HDS_ATW_Solo2": "1e1079248809e3c1eac0a7768e7726bfad3f6daae78f90c1fd25bb7f12c634a5",
+  "official-2025/survivors-online/TOM_2B2Team1": "bcc371f9a6c803da24ca9b207cc669f3ad303b115c7b6d27afdaafc1f48d0cb5",
+  "official-2025/survivors-online/TOM_2B2Team2": "bd1a1687a4f99d4a0bb60ae23cb09a505d87c77042de95a27957b1c524df4ab0",
+  "official-2025/survivors-online/WHS_K0F1M_AL_T1L1M1": "51be29ada737ee980285eeb1cce4c445ce345d8b3bf0c9b3d97e2ae09ade3f60",
+  "official-2025/survivors-online/WHS_K0F1M_AL_T1L1M2": "d7487a752af32ae355c8fbabcaba111150451a26ff9b7c6804ac08b26f85de6f",
+  "official-2025/survivors-online/GSA_GhostBytes_0x1": "2cf5b8a9974e1e6e46504f5027a2f20f6329cf8944ad15397afdd0f5955d2801",
+  "official-2025/survivors-online/GSA_GhostBytes_0x2": "08c6ac348985a5f21fecbaf1ee7d7bb56add87cd8d8af2278902df7e60b52238",
+  "official-2025/survivors-online-young/BGR_theGlopyGng1": "8d84a93cdcc76fb45b496184bc68c3535a3564fc9e1ea523a9fcba0c2a5fa6ac",
+  "official-2025/survivors-online-young/BGR_theGlopyGng2": "adfdb3915475338713a2a1e4d7c8cc27a2ff8c6e4ed0a474e6770be72836b97d",
+  "official-2025/survivors-online/HRZ_BinaryBandits1": "c6cf8bb109582030c5cd0723399930168aee257dbeac6122507c522f9b383d86",
+  "official-2025/survivors-online/HRZ_BinaryBandits2": "be7d4791659d4aacd49dded0044baadf737e123b3dff8ddb497f5be1954c461b",
+  "official-2025/survivors-online/HRZ_Grindo_Holics1": "0fd28370c9b4200dc1d4774a5ab959e76f1f5fe0243dd327626fd8f47c936b51",
+  "official-2025/survivors-online/HRZ_Grindo_Holics2": "69791f0bdb90e9ff65fc078f6e863f92c3847700efbdc8e8865e002c96f2934f",
+  "official-2025/survivors-online/HRZ_Ctrl_Alt_Elite1": "396faf80539b6f55ee1ce91d06bf40ee0049be5f931e0fd82da0da3c2e70ce79",
+  "official-2025/survivors-online/HRZ_Ctrl_Alt_Elite2": "396faf80539b6f55ee1ce91d06bf40ee0049be5f931e0fd82da0da3c2e70ce79",
+  "official-2025/survivors-online-young/TOM_The_Crushers1": "8daf826ed95b86c1ceef1f0f6e1a8c92fe292fb83e3e651dd75b72064187e5b2",
+  "official-2025/survivors-online-young/TOM_The_Crushers2": "af0ee0bde6599b412201e094453951cf884aa5e5c7e79e32986d4812d9516547",
+  "official-2025/survivors-online/IND_cgx1231231": "b6c07757f0c8b5d20a60c12de9d30c5130badc9c4e342e8a3beec5e92d6f782e",
+  "official-2025/survivors-online/IND_cgx1231232": "a053a4c9f0b893fe84070894ed08e600964a9d63bc57719b083b8d91186e4315",
+  "official-2025/survivors-online-young/SZR_BrvazimAlSteroidim1": "dbc5b61532888cc9246691b72acfc95eb453fb6362d405f79dca61b48b4e3764",
+  "official-2025/survivors-online-young/SZR_BrvazimAlSteroidim2": "6071871d772af0d529769ecf82479b93d30a388feb72df6a41e4c0845100dfd3",
+  "official-2025/survivors-online/ATL_R1DDLE1": "dc1e7b81a57cc7fb13be0a4b32036342b7a7b2c65614bccc28998bec70111803",
+  "official-2025/survivors-online/ATL_R1DDLE2": "dc1e7b81a57cc7fb13be0a4b32036342b7a7b2c65614bccc28998bec70111803",
+  "official-2025/survivors-online/TOM_anonymous1": "6f57faeb8622bbc3778c80d450fa03c9efbf8703b58414850a3861f2bcbc83f4",
+  "official-2025/survivors-online/TOM_anonymous2": "e0cdbe70e170d8bf242e071325971d7590701d330fe089b9d2f815e05a432759",
+  "official-2025/survivors-online-young/GSA_SigmaSilent1": "5f99b89cf54c876307804f0f38658b46739baa8ff4f14189e0c17713f10ee16c",
+  "official-2025/survivors-online-young/GSA_SigmaSilent2": "8a06a8d64760629cacb4e1ad2c236c5e2fc9b3e0948d3de048a43c2fa386ead9",
+  "official-2025/survivors-online/HRZ_stack_attack1": "7298748ba797e65564eb58d3f53af67b3457b2400c73069dcbfbe538bd6ee6f1",
+  "official-2025/survivors-online/HRZ_stack_attack2": "140a6203d3d0839bd3797cdf1da03613b727c053854dbb8eb0b7e34118355fa9",
+  "official-2025/survivors-online/HRZ_fisherEXE1": "82b268ce80e540cea8c8a61d6279f613721d5c59b369317af53de5983db3bb49",
+  "official-2025/survivors-online/HRZ_fisherEXE2": "ac49b19fc0fb2f62c4a6db6b18c637deebde8ff010d183578e738c429cf8be92",
+  "official-2025/survivors-online-young/ELD_FriendlyFire1": "9198ae7381e5449f42b5f2cb80e0ec1788c4b2bd25b9ec9ed0096383c4c2085c",
+  "official-2025/survivors-online-young/ELD_FriendlyFire2": "9198ae7381e5449f42b5f2cb80e0ec1788c4b2bd25b9ec9ed0096383c4c2085c",
+  "official-2025/survivors-online/HRZ_PowerRangers1": "52aa2ff950b861e97be698661c012ca2f2da158171aa2899c69fe1049fb1abb0",
+  "official-2025/survivors-online/HRZ_PowerRangers2": "d105ec96ad325832882dc8820d82a52567780dfdb1abb40a50986e011feff22c",
+  "official-2025/survivors-online/TOM_BitBenders1": "97d159491650cf04a236c8c6188555dd17b9e7b1d2b1fe86a4926ef9b9b30d00",
+  "official-2025/survivors-online/TOM_BitBenders2": "97d159491650cf04a236c8c6188555dd17b9e7b1d2b1fe86a4926ef9b9b30d00",
+  "official-2025/survivors-online/OHS_TOMEX1": "d511b9beab4574d1bf126ef9264e3aca2276ea71e81b3a6c9296e217859f54a8",
+  "official-2025/survivors-online/OHS_TOMEX2": "d511b9beab4574d1bf126ef9264e3aca2276ea71e81b3a6c9296e217859f54a8",
+  "official-2025/survivors-online/OHS_cgxPro1": "128d6e4fb73dec09b71198963573298bb8bac99c3a2daca74759efc48b28a1ce",
+  "official-2025/survivors-online/OHS_cgxPro2": "128d6e4fb73dec09b71198963573298bb8bac99c3a2daca74759efc48b28a1ce",
+  "official-2025/survivors-online/HRZ_Underflow1": "79f994bd13bfd25b44a97d420e8a9d6e8f45311a716b21bfb9f10fdc79cde7e4",
+  "official-2025/survivors-online/HRZ_Underflow2": "7d5c20977121ffb2ac532f6a4cb6662a2c349f0e833beb9999869ad9df918840",
+  "official-2025/survivors-online/HRZ_MOV_AX_WIN1": "ef82df0d92476fa6161d81ff092ea489d4df7ddef88a0dad44705a3cf14f8dd1",
+  "official-2025/survivors-online/HRZ_MOV_AX_WIN2": "a1b4b8459ae6b367da93742fb5f3c8bb0fe321e3cf1174f4e7a1dc29ada2a544",
+  "official-2025/survivors-online-young/GSA_LVS_FIT1": "32d1ed02b689d9d0b10a321511ed19c6d603e7f5c741ec71788cb8b9774d9be6",
+  "official-2025/survivors-online-young/GSA_LVS_FIT2": "92b6705be2d32ef9a46386c4371e7ad2c0ad5eaf279ea6a704ea0a2d0c11c987",
+  "official-2025/survivors-online/HRZ_CodeEliteGang1": "18455d457341e1d7b30c782693eeb66cab9f239b7bdc6b372bdcfb41c16dc426",
+  "official-2025/survivors-online/HRZ_CodeEliteGang2": "74f611e36a3c93d5f9f5ced87f637120a0810e33a1927ef675a402da5900416f",
+  "official-2025/survivors-online/WAN_Baltika91": "dba05606104f4c4805e10023866390bad2fd4c3eed1732e86780a158f061e4c6",
+  "official-2025/survivors-online/WAN_Baltika92": "30065fd48eab62390508c9357b30e01246e1e56343803df97aa4306ce0fdd9c5",
+  "official-2025/survivors-online-young/HDS_TRY1": "d654e9598b1d6e232328341049e95b646e383a504224dbcc4763fc32ac7d37fb",
+  "official-2025/survivors-online-young/HDS_TRY2": "9c498b425a7b6af5fe64b4445efddc821d513955dc7f2c207eb127f141ac1092",
+  "official-2025/survivors-online/ORT_Pegasus_Hex1": "8c82f8dc226579917f261847d0a6606c670f47ae4adcd5d4eb41fe4807035537",
+  "official-2025/survivors-online/ORT_Pegasus_Hex2": "4026ad9d8dd3c66933bf5cc03cd18ed3b7d707f181a054fc43bf07b2239758c1",
+  "official-2025/survivors-online/AML_ByteReapers1": "e03726289c7889054f9635a8eea5a25754a819b2016bee5a39ef345f7b6cd3d7",
+  "official-2025/survivors-online/AML_ByteReapers2": "5fe97a9902546036b12928645654fc44688e084fd7f6e3a9799fd5365f48918e",
+  "official-2025/survivors-online/HRZ_ADDvanced1": "ff353ab75e7a3b88b896f64cbb97bfad639412a6e222088d6f52cc189a9e2ebe",
+  "official-2025/survivors-online/HRZ_ADDvanced2": "509086f3e6ec36b0867ecebe4ba9ecc8faffaf7cc7f4e633dd04f2814981f39c",
+  "official-2025/survivors-online-young/SZR_The_Chargers1": "3e7c44b27c9d019d42495a066a7346ada38b9c5bc5e3dbbf484c729ef90bf379",
+  "official-2025/survivors-online-young/SZR_The_Chargers2": "4c43e3d631d94e14dfbc3bb68e80e29aba97156b3244a912675e24b4a2d1f6f9",
+  "official-2025/survivors-online/HDS_IWDIA_nachalo1": "e167f5b550647a852833be5d1a676a5539c67062b68d29564799231dbb326130",
+  "official-2025/survivors-online/HDS_IWDIA_nachalo2": "82897f9576e656fff06b6a52b4fa7710fedb3c662588d54b49f3b29e3b953ff8",
+  "official-2025/survivors-online/TOM_Syntax_Terror1": "2cb2747ca3e9331b28ca609a228bfd21413a77ee98355c5e8fff4042c56a2a56",
+  "official-2025/survivors-online/TOM_Syntax_Terror2": "f39bc040a51c504af6baca86ef99bf19351717c91ac4e3af01a2e0ecad193e47",
+  "official-2025/survivors-online/WAN_OnlyCode1": "79feca3fa250a6c0406c46fa11fb0ce604758625912695e45040a784121625d8",
+  "official-2025/survivors-online/WAN_OnlyCode2": "a230910890f8270ad8dcb6c2d304a47ca8c1dd25a418022b80e091e5a8c96658"
+ },
+ "zombieHashes": [],
+ "summary": {
+  "cand": {
+   "battles": 1000,
+   "team": 0.585500004,
+   "w1": 0.316833332,
+   "w2": 0.268666668
+  },
+  "base": {
+   "battles": 1000,
+   "team": 0.582500004,
+   "w1": 0.314333332,
+   "w2": 0.268166668
+  },
+  "V6Guard": {
+   "battles": 1000,
+   "team": 0.592333336,
+   "w1": 0.319249999,
+   "w2": 0.27308333300000004
+  },
+  "zchain4": {
+   "battles": 1000,
+   "team": 0.576999999,
+   "w1": 0.260749998,
+   "w2": 0.31624999949999993
+  },
+  "V6": {
+   "battles": 1000,
+   "team": 0.587833336,
+   "w1": 0.32066666600000004,
+   "w2": 0.267166667
+  }
+ },
+ "runs": [
+  {
+   "arm": "cand",
+   "cohort": "nz-0",
+   "seed": "a2-af74b2d5472518c6",
+   "battles": 40,
+   "team": 21,
+   "w1": 15.5,
+   "w2": 5.5,
+   "opponents": {
+    "A_GSA_B33": 6,
+    "A_AVI_AnotherBitInTheWall": 4,
+    "A_HRZ_The_almogooners": 9
+   },
+   "scoresSha256": "25a054a30474ad741531a7112e554d99095715964e70bbec8cb8470bf3144dc6",
+   "telemetry": null
+  },
+  {
+   "arm": "cand",
+   "cohort": "nz-1",
+   "seed": "a2-b6b4486c9613a932",
+   "battles": 40,
+   "team": 25,
+   "w1": 15.5,
+   "w2": 9.5,
+   "opponents": {
+    "A_GSA_GoonSquad": 9,
+    "A_HRZ_Code_Jokers4Life": 5,
+    "A_HDS_YOY": 1
+   },
+   "scoresSha256": "dd2c42ffa0e00cc8e2ac98a82c25fcac837899b40202b034a859536242c468d3",
+   "telemetry": null
+  },
+  {
+   "arm": "cand",
+   "cohort": "nz-2",
+   "seed": "a2-d7da9eaa83d41916",
+   "battles": 40,
+   "team": 23.333336,
+   "w1": 11.499999,
+   "w2": 11.833334,
+   "opponents": {
+    "A_HLS_EmoMutants": 0,
+    "A_BZV_SKYENT": 16.666666,
+    "A_KOB_KosherCode": 0
+   },
+   "scoresSha256": "75f8fd19fa14571dde87385c17c51c3565e0b7916e70269c0132c2d27745aadf",
+   "telemetry": null
+  },
+  {
+   "arm": "cand",
+   "cohort": "nz-3",
+   "seed": "a2-add18d651f519ce6",
+   "battles": 40,
+   "team": 17,
+   "w1": 10.5,
+   "w2": 6.5,
+   "opponents": {
+    "A_OHS_TrojanByte": 2,
+    "A_GGN_OpcodeHunter": 13.333334,
+    "Y_MTA_Hexellent": 7.666667
+   },
+   "scoresSha256": "524a9bd76e71ccc0547da381f93b33203043a2d987cd16fcfcb1208fd25a810f",
+   "telemetry": null
+  },
+  {
+   "arm": "cand",
+   "cohort": "nz-4",
+   "seed": "a2-32a65be6d23ab2c1",
+   "battles": 40,
+   "team": 21,
+   "w1": 10,
+   "w2": 11,
+   "opponents": {
+    "A_ORT_TheGoats": 0,
+    "A_HRZ_Thingies": 15,
+    "A_HRZ_The_Rubber_Duckies": 4
+   },
+   "scoresSha256": "6e086a11ee13bd32ab1b4593d75bb897d4b7ab1db3b54c3c1cd0f6b41f1d18c8",
+   "telemetry": null
+  },
+  {
+   "arm": "cand",
+   "cohort": "nz-5",
+   "seed": "a2-181f3528b5dcfe6c",
+   "battles": 40,
+   "team": 24,
+   "w1": 17.5,
+   "w2": 6.5,
+   "opponents": {
+    "A_HRZ_LowKey_WBB": 8,
+    "Y_TOM_Thefrogs": 3.5,
+    "A_HDS_GoldenLamed": 3.5
+   },
+   "scoresSha256": "3010d0be74e5c1879750fcf340db9838ae4b407f5fb0b99a6d42e73a43046744",
+   "telemetry": null
+  },
+  {
+   "arm": "cand",
+   "cohort": "nz-6",
+   "seed": "a2-69e1b2f3eec89163",
+   "battles": 40,
+   "team": 27,
+   "w1": 18.5,
+   "w2": 8.5,
+   "opponents": {
+    "Y_TOM_AND_JERRY": 7,
+    "A_WAN_Full_Time_Job": 3,
+    "A_HRZ_TEST_ticals": 3
+   },
+   "scoresSha256": "ae445574492a0bffca1a16a8ce4cc1f616edaddef7800b82c24cbf6bb0f67a1a",
+   "telemetry": null
+  },
+  {
+   "arm": "cand",
+   "cohort": "nz-7",
+   "seed": "a2-2b57fc741d9cdae0",
+   "battles": 40,
+   "team": 15.5,
+   "w1": 5,
+   "w2": 10.5,
+   "opponents": {
+    "A_GSA_VanLavan": 5.5,
+    "A_IND_BRA": 0,
+    "Y_TOM_Code_Killer": 19
+   },
+   "scoresSha256": "5c639cc41a6a5e360028d6d771d9003aa9a6b7008f459bb8177814577e164f65",
+   "telemetry": null
+  },
+  {
+   "arm": "cand",
+   "cohort": "nz-8",
+   "seed": "a2-da37bc77039e5700",
+   "battles": 40,
+   "team": 25,
+   "w1": 7.5,
+   "w2": 17.5,
+   "opponents": {
+    "A_TOM_tson_el_akod": 1,
+    "A_OST_Gamma": 0,
+    "Y_GSA_3Plate_Benchers": 14
+   },
+   "scoresSha256": "107056faf0a1368c66ac9b7c74cfbfc6c9b63bbf867ea5a3764b351fe9b1d6b1",
+   "telemetry": null
+  },
+  {
+   "arm": "cand",
+   "cohort": "nz-9",
+   "seed": "a2-58f485658950c9c0",
+   "battles": 40,
+   "team": 35,
+   "w1": 27.5,
+   "w2": 7.5,
+   "opponents": {
+    "A_HRZ_TitanicSwimTeam": 0,
+    "A_GSA_callfart": 4,
+    "A_HRZ_InCtrl": 1
+   },
+   "scoresSha256": "c2bd551723e5373565efacdbfa7d8eca05e8b782ba42ae69bf850fdd6f2af1f7",
+   "telemetry": null
+  },
+  {
+   "arm": "cand",
+   "cohort": "nz-10",
+   "seed": "a2-ad92dc65aae35613",
+   "battles": 40,
+   "team": 34,
+   "w1": 17.5,
+   "w2": 16.5,
+   "opponents": {
+    "A_HDS_MAC": 1,
+    "A_HRZ_Pixar_Lamps": 3,
+    "A_GSA_ShmuelTurtles": 2
+   },
+   "scoresSha256": "e7efc82eca1bebc472db941ec5bb1d64813202c6eb29d0a5a004ae959c54219f",
+   "telemetry": null
+  },
+  {
+   "arm": "cand",
+   "cohort": "nz-11",
+   "seed": "a2-1cc8c59498c1699b",
+   "battles": 40,
+   "team": 29.666668,
+   "w1": 13.333333,
+   "w2": 16.333334,
+   "opponents": {
+    "A_HRZ_Registered_Winners": 9.333333,
+    "A_GSA_TheBytes": 0,
+    "A_RZL_YANDE": 1
+   },
+   "scoresSha256": "c9246e5645c5da68159308153212276ae0139275fd611e7ca858418b9c16df7c",
+   "telemetry": null
+  },
+  {
+   "arm": "cand",
+   "cohort": "nz-12",
+   "seed": "a2-c95d39a5549b8cd1",
+   "battles": 40,
+   "team": 14,
+   "w1": 10,
+   "w2": 4,
+   "opponents": {
+    "A_OHS_BatteringRAM": 9,
+    "A_HDS_NRI": 1,
+    "A_AVI_Fishandpoultry": 16
+   },
+   "scoresSha256": "9be0897e4de9e1900ea4a751b923dc339c19f11cadf1669d6461d2aaad838acb",
+   "telemetry": null
+  },
+  {
+   "arm": "cand",
+   "cohort": "nz-13",
+   "seed": "a2-f6564f7d5a0385fe",
+   "battles": 40,
+   "team": 19,
+   "w1": 6,
+   "w2": 13,
+   "opponents": {
+    "A_IND_stuxnet": 8.5,
+    "A_HRZ_L": 7.5,
+    "A_HDS_ATW_Solo": 5
+   },
+   "scoresSha256": "594fdc21d2501bdcfbf36ea214dc66aa08938ce2d4d2ac829a3c44c1ae6c8f06",
+   "telemetry": null
+  },
+  {
+   "arm": "cand",
+   "cohort": "nz-14",
+   "seed": "a2-b8d9946331263bf8",
+   "battles": 40,
+   "team": 13,
+   "w1": 6.5,
+   "w2": 6.5,
+   "opponents": {
+    "A_TOM_2B2Team": 4,
+    "A_WHS_K0F1M_AL_T1L1M": 13,
+    "A_GSA_GhostBytes_0x": 10
+   },
+   "scoresSha256": "53f41b1374d2a693c23be17174228ff45eabe37548d62d8ee08f74e8095800f7",
+   "telemetry": null
+  },
+  {
+   "arm": "cand",
+   "cohort": "nz-15",
+   "seed": "a2-2f90f2801c6ead8b",
+   "battles": 40,
+   "team": 8,
+   "w1": 3,
+   "w2": 5,
+   "opponents": {
+    "Y_BGR_theGlopyGng": 2,
+    "A_HRZ_BinaryBandits": 18,
+    "A_HRZ_Grindo_Holics": 12
+   },
+   "scoresSha256": "2165f5ebb811af16b1acae4078b749ee48464ccad6629c263b61804e5dc96ed6",
+   "telemetry": null
+  },
+  {
+   "arm": "cand",
+   "cohort": "nz-16",
+   "seed": "a2-1e4fa0ed5e084563",
+   "battles": 40,
+   "team": 22,
+   "w1": 12.5,
+   "w2": 9.5,
+   "opponents": {
+    "A_HRZ_Ctrl_Alt_Elite": 11.666666,
+    "Y_TOM_The_Crushers": 6.3333335,
+    "A_IND_cgx123123": 0
+   },
+   "scoresSha256": "2b84897a78f717f22b0cba57a9648ba357545c897d6c7c63c4ec7e05ebc285b7",
+   "telemetry": null
+  },
+  {
+   "arm": "cand",
+   "cohort": "nz-17",
+   "seed": "a2-c40194165c293028",
+   "battles": 40,
+   "team": 28,
+   "w1": 14.5,
+   "w2": 13.5,
+   "opponents": {
+    "Y_SZR_BrvazimAlSteroidim": 6,
+    "A_ATL_R1DDLE": 4,
+    "A_TOM_anonymous": 1
+   },
+   "scoresSha256": "28adfe2ecc36706e5ad998cfbc8eba3a75347971b005498e441da0fce064db96",
+   "telemetry": null
+  },
+  {
+   "arm": "cand",
+   "cohort": "nz-18",
+   "seed": "a2-2218b582dbf989bb",
+   "battles": 40,
+   "team": 30,
+   "w1": 13,
+   "w2": 17,
+   "opponents": {
+    "Y_GSA_SigmaSilent": 0,
+    "A_HRZ_stack_attack": 6,
+    "A_HRZ_fisherEXE": 4
+   },
+   "scoresSha256": "b6589a0c0157b3db8eac868f95b9ad5ac2cd05fc236292b64a46e77c0f0b9f03",
+   "telemetry": null
+  },
+  {
+   "arm": "cand",
+   "cohort": "nz-19",
+   "seed": "a2-4f6e3f9b306b9ea5",
+   "battles": 40,
+   "team": 12,
+   "w1": 7.5,
+   "w2": 4.5,
+   "opponents": {
+    "Y_ELD_FriendlyFire": 5,
+    "A_HRZ_PowerRangers": 8,
+    "A_TOM_BitBenders": 15
+   },
+   "scoresSha256": "7c139b9dc4a5aa630f34b170e7ddabf3355129d2af7d1f96ef61c7e0e7f6e45f",
+   "telemetry": null
+  },
+  {
+   "arm": "cand",
+   "cohort": "nz-20",
+   "seed": "a2-34a9d306b456571d",
+   "battles": 40,
+   "team": 22,
+   "w1": 7,
+   "w2": 15,
+   "opponents": {
+    "A_OHS_TOMEX": 9,
+    "A_OHS_cgxPro": 3.6666665,
+    "A_HRZ_Underflow": 4.333333
+   },
+   "scoresSha256": "0eb90229f3a3e03361676a554bed95e7b42fd9134966582fa4ef2a000bc0a541",
+   "telemetry": null
+  },
+  {
+   "arm": "cand",
+   "cohort": "nz-21",
+   "seed": "a2-108493d850349266",
+   "battles": 40,
+   "team": 28,
+   "w1": 17,
+   "w2": 11,
+   "opponents": {
+    "A_HRZ_MOV_AX_WIN": 5,
+    "Y_GSA_LVS_FIT": 4,
+    "A_HRZ_CodeEliteGang": 3
+   },
+   "scoresSha256": "94c5e5196f7d43c9b5b60d229ccc35e43dcc507e62698e611863ce2d463b8dd7",
+   "telemetry": null
+  },
+  {
+   "arm": "cand",
+   "cohort": "nz-22",
+   "seed": "a2-b9c2a034a4171214",
+   "battles": 40,
+   "team": 39,
+   "w1": 27,
+   "w2": 12,
+   "opponents": {
+    "A_WAN_Baltika9": 0,
+    "Y_HDS_TRY": 0,
+    "A_ORT_Pegasus_Hex": 1
+   },
+   "scoresSha256": "907a7c8a765aec8bda5677684c7729914eea0de2109bbf99cedd3bdfb45c237c",
+   "telemetry": null
+  },
+  {
+   "arm": "cand",
+   "cohort": "nz-23",
+   "seed": "a2-85922ddb8769d2d3",
+   "battles": 40,
+   "team": 21,
+   "w1": 3,
+   "w2": 18,
+   "opponents": {
+    "A_AML_ByteReapers": 3,
+    "A_HRZ_ADDvanced": 12.5,
+    "Y_SZR_The_Chargers": 3.5
+   },
+   "scoresSha256": "e1cb76af5219451255a2f9cac38cb442d01c89dc6684063e5cd11e9a6bbf57d9",
+   "telemetry": null
+  },
+  {
+   "arm": "cand",
+   "cohort": "nz-24",
+   "seed": "a2-176070a8fd787ef3",
+   "battles": 40,
+   "team": 32,
+   "w1": 20,
+   "w2": 12,
+   "opponents": {
+    "A_HDS_IWDIA_nachalo": 0,
+    "A_TOM_Syntax_Terror": 5,
+    "A_WAN_OnlyCode": 3
+   },
+   "scoresSha256": "4b43c790d67a91efc943bdf41ec60d6afc135f958911923f4db286a4af4b4eb3",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "nz-0",
+   "seed": "a2-af74b2d5472518c6",
+   "battles": 40,
+   "team": 21,
+   "w1": 15.5,
+   "w2": 5.5,
+   "opponents": {
+    "A_GSA_B33": 5,
+    "A_AVI_AnotherBitInTheWall": 4,
+    "A_HRZ_The_almogooners": 10
+   },
+   "scoresSha256": "4a9a16b4e77e47192593a735f946381292a24438502f19e4f2e77778285442e2",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "nz-1",
+   "seed": "a2-b6b4486c9613a932",
+   "battles": 40,
+   "team": 25,
+   "w1": 15.5,
+   "w2": 9.5,
+   "opponents": {
+    "A_GSA_GoonSquad": 9,
+    "A_HRZ_Code_Jokers4Life": 5,
+    "A_HDS_YOY": 1
+   },
+   "scoresSha256": "dd2c42ffa0e00cc8e2ac98a82c25fcac837899b40202b034a859536242c468d3",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "nz-2",
+   "seed": "a2-d7da9eaa83d41916",
+   "battles": 40,
+   "team": 23.333336,
+   "w1": 11.499999,
+   "w2": 11.833334,
+   "opponents": {
+    "A_HLS_EmoMutants": 0,
+    "A_BZV_SKYENT": 16.666666,
+    "A_KOB_KosherCode": 0
+   },
+   "scoresSha256": "75f8fd19fa14571dde87385c17c51c3565e0b7916e70269c0132c2d27745aadf",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "nz-3",
+   "seed": "a2-add18d651f519ce6",
+   "battles": 40,
+   "team": 17,
+   "w1": 10.5,
+   "w2": 6.5,
+   "opponents": {
+    "A_OHS_TrojanByte": 2,
+    "A_GGN_OpcodeHunter": 13.333334,
+    "Y_MTA_Hexellent": 7.666667
+   },
+   "scoresSha256": "524a9bd76e71ccc0547da381f93b33203043a2d987cd16fcfcb1208fd25a810f",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "nz-4",
+   "seed": "a2-32a65be6d23ab2c1",
+   "battles": 40,
+   "team": 21,
+   "w1": 10,
+   "w2": 11,
+   "opponents": {
+    "A_ORT_TheGoats": 0,
+    "A_HRZ_Thingies": 15,
+    "A_HRZ_The_Rubber_Duckies": 4
+   },
+   "scoresSha256": "6e086a11ee13bd32ab1b4593d75bb897d4b7ab1db3b54c3c1cd0f6b41f1d18c8",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "nz-5",
+   "seed": "a2-181f3528b5dcfe6c",
+   "battles": 40,
+   "team": 24,
+   "w1": 17.5,
+   "w2": 6.5,
+   "opponents": {
+    "A_HRZ_LowKey_WBB": 8,
+    "Y_TOM_Thefrogs": 3.5,
+    "A_HDS_GoldenLamed": 3.5
+   },
+   "scoresSha256": "3010d0be74e5c1879750fcf340db9838ae4b407f5fb0b99a6d42e73a43046744",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "nz-6",
+   "seed": "a2-69e1b2f3eec89163",
+   "battles": 40,
+   "team": 27,
+   "w1": 18.5,
+   "w2": 8.5,
+   "opponents": {
+    "Y_TOM_AND_JERRY": 7,
+    "A_WAN_Full_Time_Job": 3,
+    "A_HRZ_TEST_ticals": 3
+   },
+   "scoresSha256": "ae445574492a0bffca1a16a8ce4cc1f616edaddef7800b82c24cbf6bb0f67a1a",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "nz-7",
+   "seed": "a2-2b57fc741d9cdae0",
+   "battles": 40,
+   "team": 15.5,
+   "w1": 5,
+   "w2": 10.5,
+   "opponents": {
+    "A_GSA_VanLavan": 5.5,
+    "A_IND_BRA": 0,
+    "Y_TOM_Code_Killer": 19
+   },
+   "scoresSha256": "5c639cc41a6a5e360028d6d771d9003aa9a6b7008f459bb8177814577e164f65",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "nz-8",
+   "seed": "a2-da37bc77039e5700",
+   "battles": 40,
+   "team": 25,
+   "w1": 7.5,
+   "w2": 17.5,
+   "opponents": {
+    "A_TOM_tson_el_akod": 1,
+    "A_OST_Gamma": 0,
+    "Y_GSA_3Plate_Benchers": 14
+   },
+   "scoresSha256": "107056faf0a1368c66ac9b7c74cfbfc6c9b63bbf867ea5a3764b351fe9b1d6b1",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "nz-9",
+   "seed": "a2-58f485658950c9c0",
+   "battles": 40,
+   "team": 35,
+   "w1": 27.5,
+   "w2": 7.5,
+   "opponents": {
+    "A_HRZ_TitanicSwimTeam": 0,
+    "A_GSA_callfart": 4,
+    "A_HRZ_InCtrl": 1
+   },
+   "scoresSha256": "c2bd551723e5373565efacdbfa7d8eca05e8b782ba42ae69bf850fdd6f2af1f7",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "nz-10",
+   "seed": "a2-ad92dc65aae35613",
+   "battles": 40,
+   "team": 34,
+   "w1": 17.5,
+   "w2": 16.5,
+   "opponents": {
+    "A_HDS_MAC": 1,
+    "A_HRZ_Pixar_Lamps": 3,
+    "A_GSA_ShmuelTurtles": 2
+   },
+   "scoresSha256": "e7efc82eca1bebc472db941ec5bb1d64813202c6eb29d0a5a004ae959c54219f",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "nz-11",
+   "seed": "a2-1cc8c59498c1699b",
+   "battles": 40,
+   "team": 29.666668,
+   "w1": 13.333333,
+   "w2": 16.333334,
+   "opponents": {
+    "A_HRZ_Registered_Winners": 9.333333,
+    "A_GSA_TheBytes": 0,
+    "A_RZL_YANDE": 1
+   },
+   "scoresSha256": "c9246e5645c5da68159308153212276ae0139275fd611e7ca858418b9c16df7c",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "nz-12",
+   "seed": "a2-c95d39a5549b8cd1",
+   "battles": 40,
+   "team": 14,
+   "w1": 10,
+   "w2": 4,
+   "opponents": {
+    "A_OHS_BatteringRAM": 9,
+    "A_HDS_NRI": 1,
+    "A_AVI_Fishandpoultry": 16
+   },
+   "scoresSha256": "9be0897e4de9e1900ea4a751b923dc339c19f11cadf1669d6461d2aaad838acb",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "nz-13",
+   "seed": "a2-f6564f7d5a0385fe",
+   "battles": 40,
+   "team": 18,
+   "w1": 5,
+   "w2": 13,
+   "opponents": {
+    "A_IND_stuxnet": 8.5,
+    "A_HRZ_L": 7.5,
+    "A_HDS_ATW_Solo": 6
+   },
+   "scoresSha256": "2a8c1172d47a200aeb489a1f34b8e680d1d4952bc7305fa395eec35f0d96204b",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "nz-14",
+   "seed": "a2-b8d9946331263bf8",
+   "battles": 40,
+   "team": 13,
+   "w1": 6.5,
+   "w2": 6.5,
+   "opponents": {
+    "A_TOM_2B2Team": 4,
+    "A_WHS_K0F1M_AL_T1L1M": 13,
+    "A_GSA_GhostBytes_0x": 10
+   },
+   "scoresSha256": "53f41b1374d2a693c23be17174228ff45eabe37548d62d8ee08f74e8095800f7",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "nz-15",
+   "seed": "a2-2f90f2801c6ead8b",
+   "battles": 40,
+   "team": 8,
+   "w1": 3,
+   "w2": 5,
+   "opponents": {
+    "Y_BGR_theGlopyGng": 2,
+    "A_HRZ_BinaryBandits": 18,
+    "A_HRZ_Grindo_Holics": 12
+   },
+   "scoresSha256": "2165f5ebb811af16b1acae4078b749ee48464ccad6629c263b61804e5dc96ed6",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "nz-16",
+   "seed": "a2-1e4fa0ed5e084563",
+   "battles": 40,
+   "team": 22,
+   "w1": 12.5,
+   "w2": 9.5,
+   "opponents": {
+    "A_HRZ_Ctrl_Alt_Elite": 11.666666,
+    "Y_TOM_The_Crushers": 6.3333335,
+    "A_IND_cgx123123": 0
+   },
+   "scoresSha256": "2b84897a78f717f22b0cba57a9648ba357545c897d6c7c63c4ec7e05ebc285b7",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "nz-17",
+   "seed": "a2-c40194165c293028",
+   "battles": 40,
+   "team": 28,
+   "w1": 14.5,
+   "w2": 13.5,
+   "opponents": {
+    "Y_SZR_BrvazimAlSteroidim": 6,
+    "A_ATL_R1DDLE": 4,
+    "A_TOM_anonymous": 1
+   },
+   "scoresSha256": "28adfe2ecc36706e5ad998cfbc8eba3a75347971b005498e441da0fce064db96",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "nz-18",
+   "seed": "a2-2218b582dbf989bb",
+   "battles": 40,
+   "team": 30,
+   "w1": 13,
+   "w2": 17,
+   "opponents": {
+    "Y_GSA_SigmaSilent": 0,
+    "A_HRZ_stack_attack": 6,
+    "A_HRZ_fisherEXE": 4
+   },
+   "scoresSha256": "a478cee40cb8af9cd22122a4175e56785ab4455bb7e389d93d0176052dd3741f",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "nz-19",
+   "seed": "a2-4f6e3f9b306b9ea5",
+   "battles": 40,
+   "team": 12,
+   "w1": 7.5,
+   "w2": 4.5,
+   "opponents": {
+    "Y_ELD_FriendlyFire": 5,
+    "A_HRZ_PowerRangers": 8,
+    "A_TOM_BitBenders": 15
+   },
+   "scoresSha256": "7c139b9dc4a5aa630f34b170e7ddabf3355129d2af7d1f96ef61c7e0e7f6e45f",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "nz-20",
+   "seed": "a2-34a9d306b456571d",
+   "battles": 40,
+   "team": 22,
+   "w1": 7,
+   "w2": 15,
+   "opponents": {
+    "A_OHS_TOMEX": 9,
+    "A_OHS_cgxPro": 3.6666665,
+    "A_HRZ_Underflow": 4.333333
+   },
+   "scoresSha256": "0eb90229f3a3e03361676a554bed95e7b42fd9134966582fa4ef2a000bc0a541",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "nz-21",
+   "seed": "a2-108493d850349266",
+   "battles": 40,
+   "team": 27,
+   "w1": 16,
+   "w2": 11,
+   "opponents": {
+    "A_HRZ_MOV_AX_WIN": 6,
+    "Y_GSA_LVS_FIT": 4,
+    "A_HRZ_CodeEliteGang": 3
+   },
+   "scoresSha256": "f346d5963b8cd003a4334f01f1be1d4172e087602360201458cab3c3134a16de",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "nz-22",
+   "seed": "a2-b9c2a034a4171214",
+   "battles": 40,
+   "team": 39,
+   "w1": 27,
+   "w2": 12,
+   "opponents": {
+    "A_WAN_Baltika9": 0,
+    "Y_HDS_TRY": 0,
+    "A_ORT_Pegasus_Hex": 1
+   },
+   "scoresSha256": "907a7c8a765aec8bda5677684c7729914eea0de2109bbf99cedd3bdfb45c237c",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "nz-23",
+   "seed": "a2-85922ddb8769d2d3",
+   "battles": 40,
+   "team": 21,
+   "w1": 3,
+   "w2": 18,
+   "opponents": {
+    "A_AML_ByteReapers": 3,
+    "A_HRZ_ADDvanced": 12.5,
+    "Y_SZR_The_Chargers": 3.5
+   },
+   "scoresSha256": "e1cb76af5219451255a2f9cac38cb442d01c89dc6684063e5cd11e9a6bbf57d9",
+   "telemetry": null
+  },
+  {
+   "arm": "base",
+   "cohort": "nz-24",
+   "seed": "a2-176070a8fd787ef3",
+   "battles": 40,
+   "team": 31,
+   "w1": 19.5,
+   "w2": 11.5,
+   "opponents": {
+    "A_HDS_IWDIA_nachalo": 0,
+    "A_TOM_Syntax_Terror": 5,
+    "A_WAN_OnlyCode": 4
+   },
+   "scoresSha256": "0a9dea6bc8791557f5826827af9574a094a2bbef1569fc3087b8903d965e49e4",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "nz-0",
+   "seed": "a2-af74b2d5472518c6",
+   "battles": 40,
+   "team": 22,
+   "w1": 16.5,
+   "w2": 5.5,
+   "opponents": {
+    "A_GSA_B33": 5,
+    "A_AVI_AnotherBitInTheWall": 4,
+    "A_HRZ_The_almogooners": 9
+   },
+   "scoresSha256": "b6b6a62734277ac4b9e34a439bf101ca1c68c032867caa562ebd00d692395975",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "nz-1",
+   "seed": "a2-b6b4486c9613a932",
+   "battles": 40,
+   "team": 25,
+   "w1": 15.5,
+   "w2": 9.5,
+   "opponents": {
+    "A_GSA_GoonSquad": 9,
+    "A_HRZ_Code_Jokers4Life": 5,
+    "A_HDS_YOY": 1
+   },
+   "scoresSha256": "dd2c42ffa0e00cc8e2ac98a82c25fcac837899b40202b034a859536242c468d3",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "nz-2",
+   "seed": "a2-d7da9eaa83d41916",
+   "battles": 40,
+   "team": 23.666668,
+   "w1": 10.916666,
+   "w2": 12.749999,
+   "opponents": {
+    "A_HLS_EmoMutants": 0,
+    "A_BZV_SKYENT": 16.333332,
+    "A_KOB_KosherCode": 0
+   },
+   "scoresSha256": "76968271f44cf1db90e77b0f2708ad2006e1aaa1c2b0eac3cfb69f0232f2a788",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "nz-3",
+   "seed": "a2-add18d651f519ce6",
+   "battles": 40,
+   "team": 16.5,
+   "w1": 10.5,
+   "w2": 6,
+   "opponents": {
+    "A_OHS_TrojanByte": 2,
+    "A_GGN_OpcodeHunter": 13.833334,
+    "Y_MTA_Hexellent": 7.666667
+   },
+   "scoresSha256": "a39c521a54777148b1c0c6917a33ab091b9c294eb953d4302ba817b47bcb363a",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "nz-4",
+   "seed": "a2-32a65be6d23ab2c1",
+   "battles": 40,
+   "team": 20,
+   "w1": 9.5,
+   "w2": 10.5,
+   "opponents": {
+    "A_ORT_TheGoats": 0,
+    "A_HRZ_Thingies": 15,
+    "A_HRZ_The_Rubber_Duckies": 5
+   },
+   "scoresSha256": "beeb9fafa8b92c3bcc4d2ead42c5c596e504fdcb9f35ed2a337423921793597b",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "nz-5",
+   "seed": "a2-181f3528b5dcfe6c",
+   "battles": 40,
+   "team": 24,
+   "w1": 16,
+   "w2": 8,
+   "opponents": {
+    "A_HRZ_LowKey_WBB": 9,
+    "Y_TOM_Thefrogs": 2.5,
+    "A_HDS_GoldenLamed": 4.5
+   },
+   "scoresSha256": "ef917a18902ae7241e3f60ea6bfcc7dd1b8d1e4fb56c76b9cac98fa0bbcd9cf1",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "nz-6",
+   "seed": "a2-69e1b2f3eec89163",
+   "battles": 40,
+   "team": 28,
+   "w1": 19,
+   "w2": 9,
+   "opponents": {
+    "Y_TOM_AND_JERRY": 6,
+    "A_WAN_Full_Time_Job": 3,
+    "A_HRZ_TEST_ticals": 3
+   },
+   "scoresSha256": "9914f70a298f306e42fbc120b9a560bc50eb8d084979bbeda37c7f419cb8ecc2",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "nz-7",
+   "seed": "a2-2b57fc741d9cdae0",
+   "battles": 40,
+   "team": 14.5,
+   "w1": 4,
+   "w2": 10.5,
+   "opponents": {
+    "A_GSA_VanLavan": 5.5,
+    "A_IND_BRA": 0,
+    "Y_TOM_Code_Killer": 20
+   },
+   "scoresSha256": "0094a2dad0a77bb2067845e1a97f5d70bbff593a907136e33c4ba07a6f5fa1bb",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "nz-8",
+   "seed": "a2-da37bc77039e5700",
+   "battles": 40,
+   "team": 26,
+   "w1": 7.5,
+   "w2": 18.5,
+   "opponents": {
+    "A_TOM_tson_el_akod": 1,
+    "A_OST_Gamma": 0,
+    "Y_GSA_3Plate_Benchers": 13
+   },
+   "scoresSha256": "4c7e70fa75676a7201ef6d9964da92fb570b2913ecfb63c8c5906052d0db30fb",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "nz-9",
+   "seed": "a2-58f485658950c9c0",
+   "battles": 40,
+   "team": 36,
+   "w1": 28.5,
+   "w2": 7.5,
+   "opponents": {
+    "A_HRZ_TitanicSwimTeam": 0,
+    "A_GSA_callfart": 3,
+    "A_HRZ_InCtrl": 1
+   },
+   "scoresSha256": "611bd209784d5cc98747b1cb29d6756037a609d9875eb5fbad59d4b6736883f9",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "nz-10",
+   "seed": "a2-ad92dc65aae35613",
+   "battles": 40,
+   "team": 34,
+   "w1": 17.5,
+   "w2": 16.5,
+   "opponents": {
+    "A_HDS_MAC": 1,
+    "A_HRZ_Pixar_Lamps": 3,
+    "A_GSA_ShmuelTurtles": 2
+   },
+   "scoresSha256": "e7efc82eca1bebc472db941ec5bb1d64813202c6eb29d0a5a004ae959c54219f",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "nz-11",
+   "seed": "a2-1cc8c59498c1699b",
+   "battles": 40,
+   "team": 29.666668,
+   "w1": 13.333333,
+   "w2": 16.333334,
+   "opponents": {
+    "A_HRZ_Registered_Winners": 9.333333,
+    "A_GSA_TheBytes": 0,
+    "A_RZL_YANDE": 1
+   },
+   "scoresSha256": "c9246e5645c5da68159308153212276ae0139275fd611e7ca858418b9c16df7c",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "nz-12",
+   "seed": "a2-c95d39a5549b8cd1",
+   "battles": 40,
+   "team": 14,
+   "w1": 10,
+   "w2": 4,
+   "opponents": {
+    "A_OHS_BatteringRAM": 9,
+    "A_HDS_NRI": 1,
+    "A_AVI_Fishandpoultry": 16
+   },
+   "scoresSha256": "9be0897e4de9e1900ea4a751b923dc339c19f11cadf1669d6461d2aaad838acb",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "nz-13",
+   "seed": "a2-f6564f7d5a0385fe",
+   "battles": 40,
+   "team": 18,
+   "w1": 5,
+   "w2": 13,
+   "opponents": {
+    "A_IND_stuxnet": 9.5,
+    "A_HRZ_L": 7.5,
+    "A_HDS_ATW_Solo": 5
+   },
+   "scoresSha256": "e963ab961e784c5633155087d351ce7671f996afa18fe8598ea01e7c932182ca",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "nz-14",
+   "seed": "a2-b8d9946331263bf8",
+   "battles": 40,
+   "team": 14,
+   "w1": 7,
+   "w2": 7,
+   "opponents": {
+    "A_TOM_2B2Team": 4,
+    "A_WHS_K0F1M_AL_T1L1M": 13,
+    "A_GSA_GhostBytes_0x": 9
+   },
+   "scoresSha256": "155a6a9da40f45eed89ddce060d387a0d45805034af148e219e4a8fd0373bdac",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "nz-15",
+   "seed": "a2-2f90f2801c6ead8b",
+   "battles": 40,
+   "team": 8,
+   "w1": 3,
+   "w2": 5,
+   "opponents": {
+    "Y_BGR_theGlopyGng": 2,
+    "A_HRZ_BinaryBandits": 18,
+    "A_HRZ_Grindo_Holics": 12
+   },
+   "scoresSha256": "2165f5ebb811af16b1acae4078b749ee48464ccad6629c263b61804e5dc96ed6",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "nz-16",
+   "seed": "a2-1e4fa0ed5e084563",
+   "battles": 40,
+   "team": 25,
+   "w1": 15,
+   "w2": 10,
+   "opponents": {
+    "A_HRZ_Ctrl_Alt_Elite": 8.666666,
+    "Y_TOM_The_Crushers": 6.3333335,
+    "A_IND_cgx123123": 0
+   },
+   "scoresSha256": "f3968fb2344669ad35066395448b090dea5b6fbec23652ac643874a52a3b5143",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "nz-17",
+   "seed": "a2-c40194165c293028",
+   "battles": 40,
+   "team": 28,
+   "w1": 15,
+   "w2": 13,
+   "opponents": {
+    "Y_SZR_BrvazimAlSteroidim": 6,
+    "A_ATL_R1DDLE": 4,
+    "A_TOM_anonymous": 1
+   },
+   "scoresSha256": "1f927767d02d16c820de4ca7066c23d9a35f5fdbfa1e4a276a5a1474d731481f",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "nz-18",
+   "seed": "a2-2218b582dbf989bb",
+   "battles": 40,
+   "team": 30,
+   "w1": 12.5,
+   "w2": 17.5,
+   "opponents": {
+    "Y_GSA_SigmaSilent": 0,
+    "A_HRZ_stack_attack": 6,
+    "A_HRZ_fisherEXE": 4
+   },
+   "scoresSha256": "b162971c0566ed610ae178124657685008c7c2cc2c90f0a9592dc9a8f94db747",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "nz-19",
+   "seed": "a2-4f6e3f9b306b9ea5",
+   "battles": 40,
+   "team": 13,
+   "w1": 8.5,
+   "w2": 4.5,
+   "opponents": {
+    "Y_ELD_FriendlyFire": 5,
+    "A_HRZ_PowerRangers": 7,
+    "A_TOM_BitBenders": 15
+   },
+   "scoresSha256": "6aa8e27c35797589bb206b9bf69ee062554c7e920d4b7631b1c007f308e2d448",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "nz-20",
+   "seed": "a2-34a9d306b456571d",
+   "battles": 40,
+   "team": 23,
+   "w1": 7.5,
+   "w2": 15.5,
+   "opponents": {
+    "A_OHS_TOMEX": 8,
+    "A_OHS_cgxPro": 4.6666665,
+    "A_HRZ_Underflow": 3.3333335
+   },
+   "scoresSha256": "78a0ab80199c9eaf4cb4c9b8b4cd4143556a238221f908cd087779002cc99a2d",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "nz-21",
+   "seed": "a2-108493d850349266",
+   "battles": 40,
+   "team": 27,
+   "w1": 16.5,
+   "w2": 10.5,
+   "opponents": {
+    "A_HRZ_MOV_AX_WIN": 2,
+    "Y_GSA_LVS_FIT": 6,
+    "A_HRZ_CodeEliteGang": 5
+   },
+   "scoresSha256": "64364325d98992a47188765f252225e4f9977e8222203a6a78c0b6ba2038e32c",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "nz-22",
+   "seed": "a2-b9c2a034a4171214",
+   "battles": 40,
+   "team": 39,
+   "w1": 27,
+   "w2": 12,
+   "opponents": {
+    "A_WAN_Baltika9": 0,
+    "Y_HDS_TRY": 0,
+    "A_ORT_Pegasus_Hex": 1
+   },
+   "scoresSha256": "907a7c8a765aec8bda5677684c7729914eea0de2109bbf99cedd3bdfb45c237c",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "nz-23",
+   "seed": "a2-85922ddb8769d2d3",
+   "battles": 40,
+   "team": 22,
+   "w1": 5,
+   "w2": 17,
+   "opponents": {
+    "A_AML_ByteReapers": 2,
+    "A_HRZ_ADDvanced": 11.5,
+    "Y_SZR_The_Chargers": 4.5
+   },
+   "scoresSha256": "20f073bc17238a40262678e1d18885b0c51cbc47e751f83fdb79075afdf787a0",
+   "telemetry": null
+  },
+  {
+   "arm": "V6Guard",
+   "cohort": "nz-24",
+   "seed": "a2-176070a8fd787ef3",
+   "battles": 40,
+   "team": 32,
+   "w1": 18.5,
+   "w2": 13.5,
+   "opponents": {
+    "A_HDS_IWDIA_nachalo": 0,
+    "A_TOM_Syntax_Terror": 4,
+    "A_WAN_OnlyCode": 4
+   },
+   "scoresSha256": "241562f6a93557aadfc56f5916d62e5925e2c710449d2c6b635bdf8e86f8f53b",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "nz-0",
+   "seed": "a2-af74b2d5472518c6",
+   "battles": 40,
+   "team": 16,
+   "w1": 8,
+   "w2": 8,
+   "opponents": {
+    "A_GSA_B33": 6,
+    "A_AVI_AnotherBitInTheWall": 3,
+    "A_HRZ_The_almogooners": 15
+   },
+   "scoresSha256": "b59c127284e0ae3699662f45deb11e55f400e1ab46b23c27b4d1834efa02e924",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "nz-1",
+   "seed": "a2-b6b4486c9613a932",
+   "battles": 40,
+   "team": 22,
+   "w1": 8.5,
+   "w2": 13.5,
+   "opponents": {
+    "A_GSA_GoonSquad": 7,
+    "A_HRZ_Code_Jokers4Life": 7,
+    "A_HDS_YOY": 4
+   },
+   "scoresSha256": "370d15101b0997a479de33d41f2ce562ca6af18d2540523faf8321640dc114e4",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "nz-2",
+   "seed": "a2-d7da9eaa83d41916",
+   "battles": 40,
+   "team": 31.166668,
+   "w1": 15.5,
+   "w2": 15.666666,
+   "opponents": {
+    "A_HLS_EmoMutants": 0,
+    "A_BZV_SKYENT": 8.833333,
+    "A_KOB_KosherCode": 0
+   },
+   "scoresSha256": "0c57cb8416c9dd601fa2cdcd9bf254c10f7e8da148774b2401f035a4650947c3",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "nz-3",
+   "seed": "a2-add18d651f519ce6",
+   "battles": 40,
+   "team": 14.5,
+   "w1": 4.5,
+   "w2": 10,
+   "opponents": {
+    "A_OHS_TrojanByte": 2,
+    "A_GGN_OpcodeHunter": 14.333333,
+    "Y_MTA_Hexellent": 9.166667
+   },
+   "scoresSha256": "29b22a23e48f5b80465adff40edccd1cc0e3ddc95c7bb52863f6ac0b5b96db0a",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "nz-4",
+   "seed": "a2-32a65be6d23ab2c1",
+   "battles": 40,
+   "team": 24,
+   "w1": 12.5,
+   "w2": 11.5,
+   "opponents": {
+    "A_ORT_TheGoats": 0,
+    "A_HRZ_Thingies": 11,
+    "A_HRZ_The_Rubber_Duckies": 5
+   },
+   "scoresSha256": "0401c30c5c2514c50dbc06ef2a050e9f7a6496b598b4a0e77319f5c313bcffab",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "nz-5",
+   "seed": "a2-181f3528b5dcfe6c",
+   "battles": 40,
+   "team": 16,
+   "w1": 11.5,
+   "w2": 4.5,
+   "opponents": {
+    "A_HRZ_LowKey_WBB": 13,
+    "Y_TOM_Thefrogs": 3.3333335,
+    "A_HDS_GoldenLamed": 7.6666665
+   },
+   "scoresSha256": "905e091b7fca45cfc49f0905737ef9136858a97b64bc69b4b286031794d9ba9d",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "nz-6",
+   "seed": "a2-69e1b2f3eec89163",
+   "battles": 40,
+   "team": 27,
+   "w1": 9.5,
+   "w2": 17.5,
+   "opponents": {
+    "Y_TOM_AND_JERRY": 5,
+    "A_WAN_Full_Time_Job": 4,
+    "A_HRZ_TEST_ticals": 4
+   },
+   "scoresSha256": "9ac126f79a07204dc9cd4d87cd16eeb17899d78f1407beeac62a1b7b3b24bfee",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "nz-7",
+   "seed": "a2-2b57fc741d9cdae0",
+   "battles": 40,
+   "team": 12.666666,
+   "w1": 5,
+   "w2": 7.666667,
+   "opponents": {
+    "A_GSA_VanLavan": 10.833332,
+    "A_IND_BRA": 0,
+    "Y_TOM_Code_Killer": 16.5
+   },
+   "scoresSha256": "be450cddba52e8a48fa07b041de167adc766ea69a911363c9a456fba0aaccad3",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "nz-8",
+   "seed": "a2-da37bc77039e5700",
+   "battles": 40,
+   "team": 34,
+   "w1": 18,
+   "w2": 16,
+   "opponents": {
+    "A_TOM_tson_el_akod": 0,
+    "A_OST_Gamma": 0,
+    "Y_GSA_3Plate_Benchers": 6
+   },
+   "scoresSha256": "7286b48d6f9c9f60c86e7b3a12439786fbd6976c714bcada4d504efc55e68ac8",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "nz-9",
+   "seed": "a2-58f485658950c9c0",
+   "battles": 40,
+   "team": 29.5,
+   "w1": 10.5,
+   "w2": 19,
+   "opponents": {
+    "A_HRZ_TitanicSwimTeam": 0,
+    "A_GSA_callfart": 5.5,
+    "A_HRZ_InCtrl": 5
+   },
+   "scoresSha256": "8bbf45baba565d482331130f2e28bb8b3f6344ca312bc2239a8b3ef8cdee7d50",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "nz-10",
+   "seed": "a2-ad92dc65aae35613",
+   "battles": 40,
+   "team": 37,
+   "w1": 15,
+   "w2": 22,
+   "opponents": {
+    "A_HDS_MAC": 0,
+    "A_HRZ_Pixar_Lamps": 2,
+    "A_GSA_ShmuelTurtles": 1
+   },
+   "scoresSha256": "c79dabfe5de7ef816051b927e98a1143ab684325d039d953343f3bb71025f394",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "nz-11",
+   "seed": "a2-1cc8c59498c1699b",
+   "battles": 40,
+   "team": 18.333332,
+   "w1": 14.916665,
+   "w2": 3.4166665,
+   "opponents": {
+    "A_HRZ_Registered_Winners": 19.666668,
+    "A_GSA_TheBytes": 2,
+    "A_RZL_YANDE": 0
+   },
+   "scoresSha256": "6e136bee3cec6c1003c9b8a73d5c2af024f0a6aa2c68e7f56b1a5af42ad20bcc",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "nz-12",
+   "seed": "a2-c95d39a5549b8cd1",
+   "battles": 40,
+   "team": 13,
+   "w1": 8.5,
+   "w2": 4.5,
+   "opponents": {
+    "A_OHS_BatteringRAM": 4,
+    "A_HDS_NRI": 11,
+    "A_AVI_Fishandpoultry": 12
+   },
+   "scoresSha256": "d40c2a83e39311246ea8901c0006558f2329628dae9d4cad899b20f3d6a7d088",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "nz-13",
+   "seed": "a2-f6564f7d5a0385fe",
+   "battles": 40,
+   "team": 14.833333,
+   "w1": 6.333333,
+   "w2": 8.5,
+   "opponents": {
+    "A_IND_stuxnet": 13.166666,
+    "A_HRZ_L": 10,
+    "A_HDS_ATW_Solo": 2
+   },
+   "scoresSha256": "63b554884027011a1c432ffd6a06dfdeb7b309ef310f174095be28129e87c96c",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "nz-14",
+   "seed": "a2-b8d9946331263bf8",
+   "battles": 40,
+   "team": 14,
+   "w1": 6,
+   "w2": 8,
+   "opponents": {
+    "A_TOM_2B2Team": 7,
+    "A_WHS_K0F1M_AL_T1L1M": 12,
+    "A_GSA_GhostBytes_0x": 7
+   },
+   "scoresSha256": "6f3221bb4bbd0b4f36c3f1f80a26082971870317bce66ccafc112ac152ec459d",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "nz-15",
+   "seed": "a2-2f90f2801c6ead8b",
+   "battles": 40,
+   "team": 10,
+   "w1": 5.5,
+   "w2": 4.5,
+   "opponents": {
+    "Y_BGR_theGlopyGng": 4,
+    "A_HRZ_BinaryBandits": 15,
+    "A_HRZ_Grindo_Holics": 10
+   },
+   "scoresSha256": "f915e49e0ad9162dd71450a224c3212af94bbd85b85d783d55841c125f02c0d2",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "nz-16",
+   "seed": "a2-1e4fa0ed5e084563",
+   "battles": 40,
+   "team": 31,
+   "w1": 4,
+   "w2": 27,
+   "opponents": {
+    "A_HRZ_Ctrl_Alt_Elite": 0.6666667,
+    "Y_TOM_The_Crushers": 2.3333335,
+    "A_IND_cgx123123": 5
+   },
+   "scoresSha256": "0a1888f0caf3ff81fd44827a33141b3f5c4a679c5f4301df26c0be4f79bd408e",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "nz-17",
+   "seed": "a2-c40194165c293028",
+   "battles": 40,
+   "team": 26,
+   "w1": 11.5,
+   "w2": 14.5,
+   "opponents": {
+    "Y_SZR_BrvazimAlSteroidim": 5,
+    "A_ATL_R1DDLE": 7,
+    "A_TOM_anonymous": 1
+   },
+   "scoresSha256": "8b37d298e44e5dd4127a44f29a7626ee9a602642255ef70bf0605f6371db11d8",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "nz-18",
+   "seed": "a2-2218b582dbf989bb",
+   "battles": 40,
+   "team": 28,
+   "w1": 16.5,
+   "w2": 11.5,
+   "opponents": {
+    "Y_GSA_SigmaSilent": 0,
+    "A_HRZ_stack_attack": 7,
+    "A_HRZ_fisherEXE": 5
+   },
+   "scoresSha256": "6677eb89ae93fa403b83314fb5c992990a05629434d75e61f8a55ecce6e0c141",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "nz-19",
+   "seed": "a2-4f6e3f9b306b9ea5",
+   "battles": 40,
+   "team": 16,
+   "w1": 4.5,
+   "w2": 11.5,
+   "opponents": {
+    "Y_ELD_FriendlyFire": 6,
+    "A_HRZ_PowerRangers": 5,
+    "A_TOM_BitBenders": 13
+   },
+   "scoresSha256": "11b45b3e74862d39fea9219496030e91cfdf6a4b9a2848903d6afb6152ea0f8e",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "nz-20",
+   "seed": "a2-34a9d306b456571d",
+   "battles": 40,
+   "team": 23,
+   "w1": 12.5,
+   "w2": 10.5,
+   "opponents": {
+    "A_OHS_TOMEX": 6,
+    "A_OHS_cgxPro": 8,
+    "A_HRZ_Underflow": 3
+   },
+   "scoresSha256": "dc8b7ae871ac177dcd3e2cde0f63ea851209f0cece4da3b3dcd3d8999235ceda",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "nz-21",
+   "seed": "a2-108493d850349266",
+   "battles": 40,
+   "team": 29,
+   "w1": 16,
+   "w2": 13,
+   "opponents": {
+    "A_HRZ_MOV_AX_WIN": 5,
+    "Y_GSA_LVS_FIT": 3,
+    "A_HRZ_CodeEliteGang": 3
+   },
+   "scoresSha256": "2124c617a2d60782191e4dc449b4720d45f0d9043978050023a012fb2e1eedfd",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "nz-22",
+   "seed": "a2-b9c2a034a4171214",
+   "battles": 40,
+   "team": 40,
+   "w1": 20.5,
+   "w2": 19.5,
+   "opponents": {
+    "A_WAN_Baltika9": 0,
+    "Y_HDS_TRY": 0,
+    "A_ORT_Pegasus_Hex": 0
+   },
+   "scoresSha256": "db81e4110b33d9e6b7aac8c44bf5d4aeab3c9e652f7c298cb0f100bc60e47ef1",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "nz-23",
+   "seed": "a2-85922ddb8769d2d3",
+   "battles": 40,
+   "team": 20,
+   "w1": 9.5,
+   "w2": 10.5,
+   "opponents": {
+    "A_AML_ByteReapers": 1,
+    "A_HRZ_ADDvanced": 18,
+    "Y_SZR_The_Chargers": 1
+   },
+   "scoresSha256": "5cce7f6adc518e55eca716f3663d9b903e6f0de9f3ecfb541b4ed43a1da0adb9",
+   "telemetry": null
+  },
+  {
+   "arm": "zchain4",
+   "cohort": "nz-24",
+   "seed": "a2-176070a8fd787ef3",
+   "battles": 40,
+   "team": 30,
+   "w1": 6,
+   "w2": 24,
+   "opponents": {
+    "A_HDS_IWDIA_nachalo": 0,
+    "A_TOM_Syntax_Terror": 9,
+    "A_WAN_OnlyCode": 1
+   },
+   "scoresSha256": "44a0436265670b23d9da499fd52585e43d1172a0536aca9b78b3c8711ebab7c7",
+   "telemetry": null
+  },
+  {
+   "arm": "V6",
+   "cohort": "nz-0",
+   "seed": "a2-af74b2d5472518c6",
+   "battles": 40,
+   "team": 23,
+   "w1": 17.5,
+   "w2": 5.5,
+   "opponents": {
+    "A_GSA_B33": 6,
+    "A_AVI_AnotherBitInTheWall": 2,
+    "A_HRZ_The_almogooners": 9
+   },
+   "scoresSha256": "387d5185d7204e4d9b32dd0e0e3d415948ba8ba10cc57ab6a27aea0804e663db",
+   "telemetry": null
+  },
+  {
+   "arm": "V6",
+   "cohort": "nz-1",
+   "seed": "a2-b6b4486c9613a932",
+   "battles": 40,
+   "team": 24.5,
+   "w1": 16.5,
+   "w2": 8,
+   "opponents": {
+    "A_GSA_GoonSquad": 10.5,
+    "A_HRZ_Code_Jokers4Life": 4,
+    "A_HDS_YOY": 1
+   },
+   "scoresSha256": "ed423828b4369330e8cca662e2b1e4cf507b5e7efc510c72ca9a3b81f62ddf75",
+   "telemetry": null
+  },
+  {
+   "arm": "V6",
+   "cohort": "nz-2",
+   "seed": "a2-d7da9eaa83d41916",
+   "battles": 40,
+   "team": 22.333334,
+   "w1": 11.166667,
+   "w2": 11.166667,
+   "opponents": {
+    "A_HLS_EmoMutants": 0,
+    "A_BZV_SKYENT": 17.666668,
+    "A_KOB_KosherCode": 0
+   },
+   "scoresSha256": "d00ea94a362da264cfc2710db23a8ee910db8ed3860031fe9a8c38e6ccca5e44",
+   "telemetry": null
+  },
+  {
+   "arm": "V6",
+   "cohort": "nz-3",
+   "seed": "a2-add18d651f519ce6",
+   "battles": 40,
+   "team": 16.5,
+   "w1": 10.5,
+   "w2": 6,
+   "opponents": {
+    "A_OHS_TrojanByte": 2,
+    "A_GGN_OpcodeHunter": 12.833334,
+    "Y_MTA_Hexellent": 8.666667
+   },
+   "scoresSha256": "24471d8306ee102e4b77a0fef0a540f43feb38ea6e8150de45cc2cdbb9458ec9",
+   "telemetry": null
+  },
+  {
+   "arm": "V6",
+   "cohort": "nz-4",
+   "seed": "a2-32a65be6d23ab2c1",
+   "battles": 40,
+   "team": 19,
+   "w1": 9.5,
+   "w2": 9.5,
+   "opponents": {
+    "A_ORT_TheGoats": 0,
+    "A_HRZ_Thingies": 16,
+    "A_HRZ_The_Rubber_Duckies": 5
+   },
+   "scoresSha256": "128aa679b826719b6541dede9e5417a8abea4934089cb20f37ae3b9583697497",
+   "telemetry": null
+  },
+  {
+   "arm": "V6",
+   "cohort": "nz-5",
+   "seed": "a2-181f3528b5dcfe6c",
+   "battles": 40,
+   "team": 26,
+   "w1": 17.5,
+   "w2": 8.5,
+   "opponents": {
+    "A_HRZ_LowKey_WBB": 8,
+    "Y_TOM_Thefrogs": 2.5,
+    "A_HDS_GoldenLamed": 3.5
+   },
+   "scoresSha256": "615259e20502783b618b57cbe1078a11f574fd5bc13b7f063026c940d7ff572f",
+   "telemetry": null
+  },
+  {
+   "arm": "V6",
+   "cohort": "nz-6",
+   "seed": "a2-69e1b2f3eec89163",
+   "battles": 40,
+   "team": 29,
+   "w1": 20,
+   "w2": 9,
+   "opponents": {
+    "Y_TOM_AND_JERRY": 5,
+    "A_WAN_Full_Time_Job": 3,
+    "A_HRZ_TEST_ticals": 3
+   },
+   "scoresSha256": "817fd44f320abe16cffac8f66a464afdb17c5c94030d5c1dbf8e939a71ef49a0",
+   "telemetry": null
+  },
+  {
+   "arm": "V6",
+   "cohort": "nz-7",
+   "seed": "a2-2b57fc741d9cdae0",
+   "battles": 40,
+   "team": 13.5,
+   "w1": 4.5,
+   "w2": 9,
+   "opponents": {
+    "A_GSA_VanLavan": 6.5,
+    "A_IND_BRA": 0,
+    "Y_TOM_Code_Killer": 20
+   },
+   "scoresSha256": "b57a2b955771b73396d6088a0f367ba09ad39a7147319c5821add18b310e5db2",
+   "telemetry": null
+  },
+  {
+   "arm": "V6",
+   "cohort": "nz-8",
+   "seed": "a2-da37bc77039e5700",
+   "battles": 40,
+   "team": 26,
+   "w1": 8.5,
+   "w2": 17.5,
+   "opponents": {
+    "A_TOM_tson_el_akod": 1,
+    "A_OST_Gamma": 0,
+    "Y_GSA_3Plate_Benchers": 13
+   },
+   "scoresSha256": "4d9cb12a5bb52d098f0ad4d35f721f75311d43776c761db22e1f5b2c870c21f2",
+   "telemetry": null
+  },
+  {
+   "arm": "V6",
+   "cohort": "nz-9",
+   "seed": "a2-58f485658950c9c0",
+   "battles": 40,
+   "team": 36.5,
+   "w1": 30,
+   "w2": 6.5,
+   "opponents": {
+    "A_HRZ_TitanicSwimTeam": 0,
+    "A_GSA_callfart": 2.5,
+    "A_HRZ_InCtrl": 1
+   },
+   "scoresSha256": "f4343a74e71b118a655c3fdf763705f0c41f5fcd3b2bc5499162d8ce7a4226b2",
+   "telemetry": null
+  },
+  {
+   "arm": "V6",
+   "cohort": "nz-10",
+   "seed": "a2-ad92dc65aae35613",
+   "battles": 40,
+   "team": 34,
+   "w1": 17.5,
+   "w2": 16.5,
+   "opponents": {
+    "A_HDS_MAC": 1,
+    "A_HRZ_Pixar_Lamps": 3,
+    "A_GSA_ShmuelTurtles": 2
+   },
+   "scoresSha256": "e7efc82eca1bebc472db941ec5bb1d64813202c6eb29d0a5a004ae959c54219f",
+   "telemetry": null
+  },
+  {
+   "arm": "V6",
+   "cohort": "nz-11",
+   "seed": "a2-1cc8c59498c1699b",
+   "battles": 40,
+   "team": 29.500002,
+   "w1": 11.499999,
+   "w2": 18,
+   "opponents": {
+    "A_HRZ_Registered_Winners": 9.5,
+    "A_GSA_TheBytes": 0,
+    "A_RZL_YANDE": 1
+   },
+   "scoresSha256": "1c0fa2a5d7b727d7bda825afc8b1ba970e3447fb22dab61bc56aa471ba172eb6",
+   "telemetry": null
+  },
+  {
+   "arm": "V6",
+   "cohort": "nz-12",
+   "seed": "a2-c95d39a5549b8cd1",
+   "battles": 40,
+   "team": 15,
+   "w1": 10.5,
+   "w2": 4.5,
+   "opponents": {
+    "A_OHS_BatteringRAM": 8,
+    "A_HDS_NRI": 1,
+    "A_AVI_Fishandpoultry": 16
+   },
+   "scoresSha256": "7a13cbd6a2bb7eaa5b04e158693c464cd4afb1756d853ec12a7e69b6cbe0488f",
+   "telemetry": null
+  },
+  {
+   "arm": "V6",
+   "cohort": "nz-13",
+   "seed": "a2-f6564f7d5a0385fe",
+   "battles": 40,
+   "team": 18,
+   "w1": 5,
+   "w2": 13,
+   "opponents": {
+    "A_IND_stuxnet": 9.5,
+    "A_HRZ_L": 8.5,
+    "A_HDS_ATW_Solo": 4
+   },
+   "scoresSha256": "3399446e82725a43ed2b8880de2ab01be30ab11e1f9e908973868b14ed3e2660",
+   "telemetry": null
+  },
+  {
+   "arm": "V6",
+   "cohort": "nz-14",
+   "seed": "a2-b8d9946331263bf8",
+   "battles": 40,
+   "team": 14,
+   "w1": 7,
+   "w2": 7,
+   "opponents": {
+    "A_TOM_2B2Team": 4,
+    "A_WHS_K0F1M_AL_T1L1M": 13,
+    "A_GSA_GhostBytes_0x": 9
+   },
+   "scoresSha256": "31d5a4723c6c16d62d2a1611ce0904400df21fafd9dc254986cebe70941764f1",
+   "telemetry": null
+  },
+  {
+   "arm": "V6",
+   "cohort": "nz-15",
+   "seed": "a2-2f90f2801c6ead8b",
+   "battles": 40,
+   "team": 8,
+   "w1": 3,
+   "w2": 5,
+   "opponents": {
+    "Y_BGR_theGlopyGng": 2,
+    "A_HRZ_BinaryBandits": 18,
+    "A_HRZ_Grindo_Holics": 12
+   },
+   "scoresSha256": "b1c629347daa7c2e41fdca63266de15fa424bce96c6cc7aeb25ae8983f77b3df",
+   "telemetry": null
+  },
+  {
+   "arm": "V6",
+   "cohort": "nz-16",
+   "seed": "a2-1e4fa0ed5e084563",
+   "battles": 40,
+   "team": 21,
+   "w1": 12.5,
+   "w2": 8.5,
+   "opponents": {
+    "A_HRZ_Ctrl_Alt_Elite": 12.666666,
+    "Y_TOM_The_Crushers": 6.3333335,
+    "A_IND_cgx123123": 0
+   },
+   "scoresSha256": "39aab36cfd534f32d9bebe8374a340e8109531d1c62ed894324c66fb413f0c3b",
+   "telemetry": null
+  },
+  {
+   "arm": "V6",
+   "cohort": "nz-17",
+   "seed": "a2-c40194165c293028",
+   "battles": 40,
+   "team": 28,
+   "w1": 14.5,
+   "w2": 13.5,
+   "opponents": {
+    "Y_SZR_BrvazimAlSteroidim": 5,
+    "A_ATL_R1DDLE": 4,
+    "A_TOM_anonymous": 2
+   },
+   "scoresSha256": "626094595087721bcf1e89b5008002a8af02ea9d52d15640e78e464818617d06",
+   "telemetry": null
+  },
+  {
+   "arm": "V6",
+   "cohort": "nz-18",
+   "seed": "a2-2218b582dbf989bb",
+   "battles": 40,
+   "team": 30,
+   "w1": 12.5,
+   "w2": 17.5,
+   "opponents": {
+    "Y_GSA_SigmaSilent": 0,
+    "A_HRZ_stack_attack": 6,
+    "A_HRZ_fisherEXE": 4
+   },
+   "scoresSha256": "822d6fd0edac20f8f0165404d61a7446878a7ea8305758d414ba6e533cebbc4a",
+   "telemetry": null
+  },
+  {
+   "arm": "V6",
+   "cohort": "nz-19",
+   "seed": "a2-4f6e3f9b306b9ea5",
+   "battles": 40,
+   "team": 11,
+   "w1": 7.5,
+   "w2": 3.5,
+   "opponents": {
+    "Y_ELD_FriendlyFire": 6,
+    "A_HRZ_PowerRangers": 7,
+    "A_TOM_BitBenders": 16
+   },
+   "scoresSha256": "64b67a57985b50162a580b828476eb0229b143a3702fb30dd1303575f0646ad9",
+   "telemetry": null
+  },
+  {
+   "arm": "V6",
+   "cohort": "nz-20",
+   "seed": "a2-34a9d306b456571d",
+   "battles": 40,
+   "team": 23,
+   "w1": 7.5,
+   "w2": 15.5,
+   "opponents": {
+    "A_OHS_TOMEX": 8,
+    "A_OHS_cgxPro": 4.6666665,
+    "A_HRZ_Underflow": 3.3333335
+   },
+   "scoresSha256": "78a0ab80199c9eaf4cb4c9b8b4cd4143556a238221f908cd087779002cc99a2d",
+   "telemetry": null
+  },
+  {
+   "arm": "V6",
+   "cohort": "nz-21",
+   "seed": "a2-108493d850349266",
+   "battles": 40,
+   "team": 28,
+   "w1": 17,
+   "w2": 11,
+   "opponents": {
+    "A_HRZ_MOV_AX_WIN": 2,
+    "Y_GSA_LVS_FIT": 6,
+    "A_HRZ_CodeEliteGang": 4
+   },
+   "scoresSha256": "f644eae5e7fb6bffae9c087abecb802d51b6f1d54eddfa5abad78785141826b2",
+   "telemetry": null
+  },
+  {
+   "arm": "V6",
+   "cohort": "nz-22",
+   "seed": "a2-b9c2a034a4171214",
+   "battles": 40,
+   "team": 39,
+   "w1": 27,
+   "w2": 12,
+   "opponents": {
+    "A_WAN_Baltika9": 0,
+    "Y_HDS_TRY": 0,
+    "A_ORT_Pegasus_Hex": 1
+   },
+   "scoresSha256": "907a7c8a765aec8bda5677684c7729914eea0de2109bbf99cedd3bdfb45c237c",
+   "telemetry": null
+  },
+  {
+   "arm": "V6",
+   "cohort": "nz-23",
+   "seed": "a2-85922ddb8769d2d3",
+   "battles": 40,
+   "team": 21,
+   "w1": 4,
+   "w2": 17,
+   "opponents": {
+    "A_AML_ByteReapers": 2,
+    "A_HRZ_ADDvanced": 12.5,
+    "Y_SZR_The_Chargers": 4.5
+   },
+   "scoresSha256": "f272a7ba1b8167e87ff9b79b8e1d0634d7c29a9eb3393dfe4cb6b15d85743bd4",
+   "telemetry": null
+  },
+  {
+   "arm": "V6",
+   "cohort": "nz-24",
+   "seed": "a2-176070a8fd787ef3",
+   "battles": 40,
+   "team": 32,
+   "w1": 18,
+   "w2": 14,
+   "opponents": {
+    "A_HDS_IWDIA_nachalo": 0,
+    "A_TOM_Syntax_Terror": 3,
+    "A_WAN_OnlyCode": 5
+   },
+   "scoresSha256": "ea0ac890bfac54ef1f73d1a7df188512648e284d743d1d6f38cfa454db7898bf",
+   "telemetry": null
+  }
+ ]
+}

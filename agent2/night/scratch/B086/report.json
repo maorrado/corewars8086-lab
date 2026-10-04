@@ -1,0 +1,46 @@
+{
+ "agentId": "B086",
+ "revisionUsed": 0,
+ "jobs": ["20261004013641374-B086-screen-ooxys", "20261004013641930-B086-threat-jaslw", "20261004014036826-B086-screen-dtfx1", "20261004014037398-B086-threat-ss87t"],
+ "candidates": [
+  {
+   "label": "dA (A only: dead tail -> decoy copy of A's late-executed bytes)",
+   "change": "rev0 A bytes 00h-7Eh unchanged (all executed code plus the 18th template byte 89h kept as db). The dead zombie_entry/zombie_scan tail (never reached in rev0) is replaced by a byte copy of A[04h..7Eh] followed by A1 17 4A (the 3 bytes that follow the real template, so the windows straddling the template end are duplicated too) and FF 1F (keeps an FF 1F CC CC arena tail). Every 4-byte window starting at A offset 04h..7Eh now occurs twice in A, the dead copy at the higher address, so a backward (std) INT87 search hits the dead copy first. Zero executed-instruction or timing change. Generator agent2/night/scratch/B086/mk.cjs.",
+   "asmA": "agent2/night/scratch/B086/dA.asm",
+   "shaA": "c0995aedf6942269f51843ef676359bef762c39ea96089ca8aa20610efb60287",
+   "sizeA": 255,
+   "screenJob": "20261004013641374-B086-screen-ooxys",
+   "screenAllDiff": 0.00356, "screenAllLo": -0.00246, "screenAllHi": 0.00958,
+   "groupNotes": "Screen: cand 0.6492 vs base 0.6456, W/L 6/3; 2025 +0.0093 [-0.0017,+0.0203] 4/0; strong -0.0016 [-0.0047,+0.0015] 0/1; threat -0.0028 [-0.0090,+0.0034] 2/2 (Baltika9 -0.033, CodeKiller -0.033, zrl03 +0.017, zchain4 +0.006); multi 0. Threat jaslw (1 copy, 4 cohorts x 20 battles per counter; rev0 scored 0.000 in every cohort): nbsig +0.181 [0.107,0.256] 4/0; nbkill +0.135 [0.076,0.195] 4/0; nbsig2 +0.133 [0.110,0.156] 4/0; tplsig (B076) +0.148 [0.041,0.255] 4/0; dsig (distinct A/B windows, backward) +0.204 [0.130,0.279] 4/0; aware (forward on A, backward on B) 0 (both arms 0). ALL +0.134 [0.098,0.169] 20/0.",
+   "isDefenseFix": true,
+   "promising": true
+  },
+  {
+   "label": "dAB (dA + B decoy behind the startup jmp)",
+   "change": "A = dA. B: 54-byte dead copy of B[8Fh..0C4h] (phoenix_init from push cs; pop ss through the worker's mov cl,9) inserted between the startup's jmp short phoenix_init and zombie_entry; the existing jmp skips it, so no instruction is added. Only label-derived immediates move (lea bx zombie_entry 39h->6Fh, jmp EB44->EB7A, add si 0B9h->0EFh, sub si 62h->98h). The B decoy is BELOW B's real code, so it absorbs FORWARD searches for those windows. Generator agent2/night/scratch/B086/mkb.cjs.",
+   "asmA": "agent2/night/scratch/B086/dA.asm", "asmB": "agent2/night/scratch/B086/dB.asm",
+   "shaA": "c0995aedf6942269f51843ef676359bef762c39ea96089ca8aa20610efb60287", "shaB": "6fafb2fd3cc73d6fff168d54074f85593074cabe1ed39f23a8a4383b9f67f4fa",
+   "sizeA": 255, "sizeB": 256,
+   "screenJob": "20261004014036826-B086-screen-dtfx1",
+   "screenAllDiff": 0.00059, "screenAllLo": -0.00839, "screenAllHi": 0.00958,
+   "groupNotes": "Screen: cand 0.6462 vs 0.6456, W/L 14/16 (B layout change perturbs many cohorts); 2025 +0.0007; strong +0.0010; threat -0.0010 (CodeKiller +0.05, AnotherBit +0.033, V6 -0.05, ah02 -0.05, zchain4 -0.039); multi +0.011. Threat ss87t (rev0 0.001): nbkill +0.202 [0.139,0.265]; fwdkill (forward 0E 17 89 07) +0.183 [0.124,0.243]; fwdsig2 (forward 17 89 07 83) +0.244 [0.137,0.350]; tplsig +0.202 [0.132,0.272]; dsig +0.198 [0.096,0.299]; aware 0. ALL +0.172 [0.129,0.214] 20/0. The extra forward coverage over dA is analytic only (dA was not run against forward counters).",
+   "isDefenseFix": true,
+   "promising": false
+  }
+ ],
+ "threatFindings": [
+  {"threat": "Backward (std, DI=0) same-signature INT87 counters on a window shared by A and B (B056 nbsig 0E 17 89 07 -> jmp [4A17h], nbkill -> CC, nbsig2 17 89 07 83, B076 tplsig B1 09 31 F6) wipe out rev0", "classification": "verified-in-current", "evidence": "jaslw: rev0 0.000/battle in all 16 cohorts; dA +0.133..+0.181 each (4/0). ss87t: nbkill/tplsig rev0 ~0, dAB +0.20.", "impact": "with the decoy exactly one warrior dies instead of both: +0.13..+0.20 per battle vs such a counter"},
+  {"threat": "Backward counters with distinct A and B signatures (A 16 1F BB C0, B 16 1F BB 80 = V6 phoenix-cell idiom)", "classification": "verified-in-current", "evidence": "jaslw dsig: rev0 0.000, dA +0.204 [0.130,0.279] 4/0 (A survives); ss87t dsig dAB +0.198.", "impact": "dA fully protects A against any backward search of its late code"},
+  {"threat": "Forward (cld, DI=0) same-signature counters (fwdkill 0E 17 89 07, fwdsig2 17 89 07 83)", "classification": "verified-in-current", "evidence": "ss87t: rev0 ~0.001; dAB +0.183 and +0.244 (4/0 each). dA alone was not measured on forward counters; analytic expectation: one survivor only when A loads below B (about half of the dAB gain) - hypothesis.", "impact": "the B decoy below B's phoenix code is what covers forward same-signature searches"},
+  {"threat": "Decoy-aware counter: forward search on an A window (skips A's upper decoy) plus a B window not in B's decoy", "classification": "verified-in-current", "evidence": "jaslw and ss87t aware: rev0 0 and candidate 0 (diff exactly 0; counter team 0.79 / 0.54).", "impact": "one-sided decoys only raise the bar; a counter tailored to the decoy layout still wipes both. Two-sided decoys for A need 127 + 2x123 bytes > 256, so no full fix fits in 256 bytes"},
+  {"threat": "Windows left uncovered by dAB: B startup windows not duplicated in the zombie path (e.g. B9 17 4A EB, FD CD 87 FC), B phoenix_init head 7Dh..8Eh for forward searches, and any B window for a backward search that A does not share", "classification": "hypothesis", "evidence": "static window listing (agent2/night/scratch/B086/mkc.cjs prints 49 B-only windows); not run.", "impact": "a B-targeted counter still kills B; the defense only guarantees the A side"},
+  {"threat": "Field cost of carrying the decoys (larger bodies, dead copies of our code)", "classification": "not-reproduced", "evidence": "ooxys dA ALL +0.0036 [-0.0025,+0.0096] W/L 6/3; dtfx1 dAB ALL +0.0006 [-0.0084,+0.0096] W/L 14/16 (noisier because B's layout moves).", "impact": "no measurable cost; dA is the cleaner variant"}
+ ],
+ "counterCodes": [
+  {"asmA": "agent2/night/scratch/B086/counterA.asm", "asmB": "agent2/night/scratch/B086/counterB.asm", "strength": "dsig: rev0 0.000/battle (counter team 0.80); dA 0.204"},
+  {"asmA": "agent2/night/scratch/B086/awareA.asm", "asmB": "agent2/night/scratch/B086/counterB.asm", "strength": "aware: 0.000 vs rev0, dA and dAB (counter team 0.79 / 0.54)"},
+  {"asmA": "agent2/night/scratch/B086/fwdkillA.asm", "asmB": "agent2/night/scratch/B086/fwdkillB.asm", "strength": "forward nbkill: rev0 ~0.00, dAB 0.18"},
+  {"asmA": "agent2/night/scratch/B086/fwdsig2A.asm", "asmB": "agent2/night/scratch/B086/fwdsig2B.asm", "strength": "forward nbsig2: rev0 ~0.00, dAB 0.24"}
+ ],
+ "recommendation": "Do not promote on its own: dA is a cheap defense add-on, not a field gain. Screen +0.0036 (below the +0.006 field bar, no negative group); +0.13..+0.20 vs every backward signature counter tested; executed code identical to rev0. Carry it into the next combination where A has room: it needs A's late region (start+04h..template end) duplicated above the real code. That fits rev0/SD-style A, but not E1/K as-is (their A late code is longer), unless the decoy covers only phoenix_init+template. dAB adds forward-search cover but perturbs B's layout (W/L 14/16, ALL +0.0006); keep it documented, do not promote it. Neither variant stops a decoy-aware counter (aware = 0)."
+}

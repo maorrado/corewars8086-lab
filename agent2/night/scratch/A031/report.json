@@ -1,0 +1,43 @@
+{
+ "agentId": "A031",
+ "revisionUsed": 0,
+ "card": "Defensive INT 86h: overwrite our own abandoned initializer to remove signatures, or bomb regions opponents use to locate us; measure.",
+ "jobs": ["20261004004550627-A031-screen-ktggg", "20261004004550710-A031-threat-fm2tw", "20261004004550795-A031-threat-vdhwq", "20261004004742270-A031-screen-nwqyk"],
+ "candidates": [
+  {
+   "label": "E1 (A only)",
+   "asmA": "agent2/night/scratch/A031/E1_A.asm",
+   "shaA": "40db225b01c5d9e6a5cf1a2ac23bd679335e23d0910fcfc5e6c873da308b3a68",
+   "sizeA": 198,
+   "change": "rev0 A: right after the zom20a INT 87h, mov di,0FF80h; mov ax,1FFFh; mov dx,0CCCCh; int 86h (A's own, previously unused charge; DF=0, ES=arena) -> 64 FF 1F CC CC decoys at 0FF80h..007Fh (wraps through 0000h). Band math replaced by 16-bit DIV (mov ax,si; xor dx,dx; mov cx,3C00h; div cx; mul cx; add ax,2CA2h; same AX as rev0) and the no-op jmp short phoenix_init removed, so phoenix_init starts on the same turn as rev0 (11 instructions INT87 -> phoenix_init in both). B = base.",
+   "screenJob": "20261004004550627-A031-screen-ktggg",
+   "screenAllDiff": 0.01056, "screenAllLo": -0.00343, "screenAllHi": 0.02454,
+   "groupNotes": "cand 0.6562 vs base 0.6456, W/L 8/6, 36/50 cohorts identical. 2025 +0.0193 [-0.0072,+0.0459] 5/3; strong 0 (all 7 identical); threat -0.0017 [-0.0115,+0.0080] 2/3 (CodeKiller -0.05, zrl03 -0.033, Grindo +0.033, callfart +0.033); multi +0.036 (smulti-mix +0.072). Gain from the searcher cohorts s2025-10 (OpcodeHunter) +0.200, s2025-15 (2B2Team) +0.267, smulti-mix +0.072 (= +0.0108 of ALL); the remaining changed cohorts add up to -0.0002 of ALL. Threat fm2tw (2025 searchers, same spec as A026 i8gtc): ALL +0.084 [0.041,0.127] 15/3; OH +0.086 [0.035,0.138] 7/1, 2B2Team +0.144 [0.045,0.243] 6/1, ADDvanced +0.022 n.s. (Z1 on the same spec: +0.061). Threat vdhwq (2024 live searchers, same spec as A026 fz8gf): ALL +0.053 [0.016,0.090] 12/4; JMP2HELL +0.129 [0.036,0.223] 4/0, segment_fault +0.058 4/0, PastRAMa +0.046 3/1, ATO -0.021 n.s. (Z1 on the same spec: +0.042, JMP2HELL -0.008).",
+   "promising": true,
+   "isDefenseFix": false
+  },
+  {
+   "label": "K (E1 + A022 SD + A026 Z1)",
+   "asmA": "agent2/night/scratch/A031/K_A.asm",
+   "asmB": "agent2/night/scratch/A031/K_B.asm",
+   "shaA": "6d5bbfa6f4e778750d139b99c4c3c66c6faba3296338da217e5f426a3c8dd53a",
+   "shaB": "c71fe517807d7703a00269a30273b407a24904049cbc1bce21097b87de4fc695",
+   "sizeA": 196, "sizeB": 212,
+   "change": "A = E1 + SD edits (phoenix_init mov cx,9 -> 10; dead mov dx,[4A17h] dropped; db 0CCh,0CCh after the worker). B = A026 Z1_B (zombie-path INT86 blocks, 16-bit DIV zombie band math) + the same SD edits. B startup unchanged. This is the coordinator's planned C2+SD+Z1 combination with E1 in place of C2.",
+   "screenJob": "20261004004742270-A031-screen-nwqyk",
+   "screenAllDiff": 0.01638, "screenAllLo": -0.00434, "screenAllHi": 0.0371,
+   "groupNotes": "cand 0.6620 vs base 0.6456, W/L 17/12. 2025 +0.0284 [-0.0101,+0.0670] 9/3 (s2025-15 2B2Team +0.433, s2025-10 OH +0.200, s2025-16 -0.117); strong +0.0103 [-0.0046,+0.0252] 3/1; threat -0.0017 [-0.0223,+0.0189] 4/7 (Baltika9 +0.10, callfart +0.05, TrojanByte -0.067, BinaryBandits -0.067, IND_BRA -0.033, zchain4 -0.033); multi +0.032 (smulti-mix +0.072, V6x3 -0.008). Searcher gains are sub-additive on field S (E1 +0.0106, SD +0.0104, Z1 +0.0100 alone; K +0.0164). No threat job for K.",
+   "promising": true,
+   "isDefenseFix": false
+  }
+ ],
+ "threatFindings": [
+  {"threat": "FF1FCCCC INT87 searchers of the 2025 field (OpcodeHunter1 forward from 0, 2B2Team1 forward from ~A600h with wrap, ADDvanced) hit rev0's live anchors; a warrior-own INT86 block at the arena ends absorbs them", "classification": "verified-in-current", "evidence": "threat fm2tw ALL +0.084 [0.041,0.127] 15/3 (OH +0.086, 2B2Team +0.144); screen ktggg s2025-10 +0.200, s2025-15 +0.267; vs Z1 i8gtc +0.061 on the same spec", "impact": "~+0.01 of screen ALL"},
+  {"threat": "2024-live searchers (segment_fault1/PastRAMa backward from FFFFh, JMP2HELL2) hit rev0 anchors; captured-zombie blocks (Z1) only work where 2025 Zombies are captured, an A-own block works in every battle", "classification": "verified-in-current", "evidence": "threat vdhwq ALL +0.053 [0.016,0.090] 12/4; JMP2HELL +0.129 [0.036,0.223] 4/0 (Z1 fz8gf: -0.008), segment_fault +0.058, PastRAMa +0.046; ATO -0.021 n.s.", "impact": "should help the confirm 2024live and no-Zombie groups where Z1 showed nothing (not measured: field S has no 2024live/no-Zombie group)"},
+  {"threat": "ATO1 (2024 live) not absorbed by the 0FF80h-007Fh block although its INT87 starts near 001Ah; likely it searches before A's INT86 (A instr 14) or with another DI", "classification": "hypothesis", "evidence": "vdhwq ATO -0.021 [-0.062,+0.020]; static dis86 only"},
+  {"threat": "Abandoned initializer bytes give opponents a signature to locate us (would justify overwriting it)", "classification": "not-reproduced", "evidence": "static agent2/night/scratch/A031/sig.mjs: 358 INT87 sites in 515 binaries (2023-2025 pools, zombies, 2024 final2/live): the only signature that matches rev0 A/B arena images is FF1FCCCC at B+0C8h, B's natural tail decoy, which helps us (B066 padB, A022 SDc). Overwriting the initializer would remove it; not built. Startup-time template/initializer signature attacks (B056, B076) act before any post-startup overwrite could."},
+  {"threat": "Self-harm of a fixed INT86 block at 0FF80h-007Fh (own/partner code or anchors overwritten)", "classification": "not-reproduced", "evidence": "screen ktggg: changed non-searcher cohorts sum to -0.0002 of ALL (36/50 cohorts identical, strong group all identical); static: no code loaded below 400h or above FC00h, only lattice point inside is 0052h (B band-4 first anchor), written after the block"}
+ ],
+ "recommendation": "E1 is a clean, turn-neutral A-startup defense (screen +0.0106, effect confined to searcher cohorts, replicated in two threat jobs, better than Z1 on the same specs and covering backward-from-FFFF 2024 searchers). It competes with C2 for the same A startup turns; prefer E1 (or E1 + C2's stripped tail) in the combination because it also covers 2024live/no-Zombie fields where Z1 and C2's forward decoys did not. Promote-candidate for confirmation: K (E1+SD+Z1, screen +0.0164, no group negative) as the combination; E1 alone if a single-edit confirm is preferred. Neither is a confirmed improvement.",
+ "notes": "Helper: agent2/night/scratch/A031/sig.mjs (INT87 signature scan vs rev0 arena images). Builds in agent2/night/scratch/A031/build/. All jobs vs base rev0."
+}

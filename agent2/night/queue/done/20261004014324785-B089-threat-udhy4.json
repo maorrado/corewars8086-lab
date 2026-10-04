@@ -1,0 +1,130 @@
+{
+ "job": {
+  "id": "20261004014324785-B089-threat-udhy4",
+  "agent": "B089",
+  "kind": "threat",
+  "submittedAt": "2026-10-04T01:43:24.787Z",
+  "note": "B089 R4-fix: h34 on threats where zph lost (zrl03, AnotherBit, zchain4, ah02)",
+  "asmB": "agent2/night/scratch/B089/h34_B.asm",
+  "threats": [
+   {
+    "key": "lead_zrl03"
+   },
+   {
+    "key": "zomb_AnotherBit"
+   },
+   {
+    "key": "lead_zchain4"
+   },
+   {
+    "key": "lead_ah02"
+   }
+  ],
+  "copies": 1,
+  "cohortsPerThreat": 6
+ },
+ "ok": true,
+ "finishedAt": "2026-10-04T01:46:28.700Z",
+ "seconds": 39.894,
+ "result": {
+  "candidate": {
+   "A": "agent2/night/revisions/rev0/A",
+   "B": "agent2/night/cand-build/20261004014324785-B089-threat-udhy4/candB",
+   "sizeA": 194,
+   "sizeB": 202,
+   "shaA": "6861894f3c1992cd6c6baa5b2a746178082f5b4b0a1d9969b9a326fe03d86c89",
+   "shaB": "57e2beea70ffc6a8804f2d1acdcd413ce2dd7e4ca476fa5f39c23fd04ed6c30e"
+  },
+  "baseRevision": 0,
+  "specKey": "e0a8cf8954b6",
+  "battlesPerArm": 480,
+  "candMean": 0.6413,
+  "baseMean": 0.6392,
+  "all": {
+   "n": 24,
+   "diff": 0.00208,
+   "lo": -0.00672,
+   "hi": 0.01089,
+   "wins": 1,
+   "losses": 2
+  },
+  "byThreat": {
+   "lead_zrl03": {
+    "n": 6,
+    "diff": 0,
+    "lo": 0,
+    "hi": 0,
+    "wins": 0,
+    "losses": 0
+   },
+   "zomb_AnotherBit": {
+    "n": 6,
+    "diff": 0.00833,
+    "lo": -0.02891,
+    "hi": 0.04558,
+    "wins": 1,
+    "losses": 2
+   },
+   "lead_zchain4": {
+    "n": 6,
+    "diff": 0,
+    "lo": 0,
+    "hi": 0,
+    "wins": 0,
+    "losses": 0
+   },
+   "lead_ah02": {
+    "n": 6,
+    "diff": 0,
+    "lo": 0,
+    "hi": 0,
+    "wins": 0,
+    "losses": 0
+   }
+  },
+  "threatFirstTeamScore": {
+   "vsCand": {
+    "lead_zrl03": 0.4306,
+    "zomb_AnotherBit": 0.05,
+    "lead_zchain4": 0.3153,
+    "lead_ah02": 0.4458
+   },
+   "vsBase": {
+    "lead_zrl03": 0.4306,
+    "zomb_AnotherBit": 0.0417,
+    "lead_zchain4": 0.3153,
+    "lead_ah02": 0.4458
+   }
+  },
+  "threatHashes": [
+   {
+    "label": "lead_zrl03",
+    "warriors": [
+     "agent2/frontier-20261003/arms/combo_zrl03/A",
+     "agent2/frontier-20261003/arms/combo_zrl03/B"
+    ]
+   },
+   {
+    "label": "zomb_AnotherBit",
+    "warriors": [
+     "official-2025/survivors-online/AVI_AnotherBitInTheWall1",
+     "official-2025/survivors-online/AVI_AnotherBitInTheWall2"
+    ]
+   },
+   {
+    "label": "lead_zchain4",
+    "warriors": [
+     "agent2/night/refs/zchain4/A",
+     "agent2/night/refs/zchain4/B"
+    ]
+   },
+   {
+    "label": "lead_ah02",
+    "warriors": [
+     "agent2/frontier-20261003/arms/combo_ah02/A",
+     "agent2/frontier-20261003/arms/combo_ah02/B"
+    ]
+   }
+  ]
+ }
+}

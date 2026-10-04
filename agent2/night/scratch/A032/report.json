@@ -1,0 +1,15 @@
+{
+  "agentId": "A032",
+  "revisionUsed": 0,
+  "jobs": [],
+  "candidates": [],
+  "threatFindings": [
+    {
+      "threat": "zom20c live loop is the 3rd of 8 identical copies, so a forward INT87 search hits the decoy copies first",
+      "classification": "hypothesis",
+      "evidence": "Static only: dis86 of the 2025 pack zom20c (232 B) shows the same 2Eh-byte block repeated 8 times (jmp short 005Eh at entry). Which copy is live was not traced and no capture was built or tested."
+    }
+  ],
+  "recommendation": "No candidate. Session stopped by a safety classifier after reading the brief, findings and the zom20c disassembly. No jobs submitted. Card stays open.",
+  "notes": "Base rev0 (V6nohunt). No candidate built, no queue jobs used."
+}

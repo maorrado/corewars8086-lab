@@ -1,0 +1,123 @@
+{
+ "job": {
+  "id": "20261003210732986-B065-threat-pn6t4",
+  "agent": "B065",
+  "kind": "threat",
+  "submittedAt": "2026-10-03T21:07:32.988Z",
+  "note": "R2 lattice measure: zrl03 (32h, 20h below rev0) vs zrl03 moved to 52h (same) and 62h (10h above)",
+  "asmA": "agent2/night/scratch/B065/probe_lat22_A.asm",
+  "asmB": "agent2/night/scratch/B065/probe_lat22_B.asm",
+  "threats": [
+   {
+    "key": "lead_zrl03"
+   },
+   {
+    "name": "zrl03_lat52",
+    "binA": "agent2/night/scratch/B065/bin/zrl03_lat52_A",
+    "binB": "agent2/night/scratch/B065/bin/zrl03_lat52_B"
+   },
+   {
+    "name": "zrl03_lat62",
+    "binA": "agent2/night/scratch/B065/bin/zrl03_lat62_A",
+    "binB": "agent2/night/scratch/B065/bin/zrl03_lat62_B"
+   }
+  ],
+  "copies": 1,
+  "cohortsPerThreat": 8
+ },
+ "ok": true,
+ "finishedAt": "2026-10-03T21:10:56.014Z",
+ "seconds": 80.719,
+ "result": {
+  "candidate": {
+   "A": "agent2/night/cand-build/20261003210732986-B065-threat-pn6t4/candA",
+   "B": "agent2/night/cand-build/20261003210732986-B065-threat-pn6t4/candB",
+   "sizeA": 194,
+   "sizeB": 202,
+   "shaA": "45d913530e7e9c73b595d2034068cabff0a412c2f34a6b59bca9091703a224f6",
+   "shaB": "6b4b07dea599dad9e67d2a2be097d43d963eeedddb758dbe27757a1fded7dc60"
+  },
+  "baseRevision": 0,
+  "specKey": "647eccc0bb14",
+  "battlesPerArm": 480,
+  "candMean": 0.5674,
+  "baseMean": 0.5457,
+  "all": {
+   "n": 24,
+   "diff": 0.0217,
+   "lo": -0.03753,
+   "hi": 0.08094,
+   "wins": 11,
+   "losses": 12
+  },
+  "byThreat": {
+   "lead_zrl03": {
+    "n": 8,
+    "diff": 0.13594,
+    "lo": 0.05414,
+    "hi": 0.21773,
+    "wins": 6,
+    "losses": 2
+   },
+   "zrl03_lat52": {
+    "n": 8,
+    "diff": 0.03021,
+    "lo": -0.06642,
+    "hi": 0.12683,
+    "wins": 5,
+    "losses": 3
+   },
+   "zrl03_lat62": {
+    "n": 8,
+    "diff": -0.10104,
+    "lo": -0.15664,
+    "hi": -0.04544,
+    "wins": 0,
+    "losses": 7
+   }
+  },
+  "threatFirstTeamScore": {
+   "vsCand": {
+    "lead_zrl03": 0.3453,
+    "zrl03_lat52": 0.399,
+    "zrl03_lat62": 0.3698
+   },
+   "vsBase": {
+    "lead_zrl03": 0.5036,
+    "zrl03_lat52": 0.4125,
+    "zrl03_lat62": 0.2573
+   }
+  },
+  "threatHashes": [
+   {
+    "label": "lead_zrl03",
+    "warriors": [
+     "agent2/frontier-20261003/arms/combo_zrl03/A",
+     "agent2/frontier-20261003/arms/combo_zrl03/B"
+    ]
+   },
+   {
+    "label": "zrl03_lat52",
+    "warriors": [
+     "agent2/night/scratch/B065/bin/zrl03_lat52_A",
+     "agent2/night/scratch/B065/bin/zrl03_lat52_B"
+    ],
+    "hashes": [
+     "0a0d6ff493b64e9faa38659127ca53c8518c5e1dba4b0da0fd840f920c7278f7",
+     "cf0e4c0b4637a6aca5cf23c16956ef17ff5eef8846e8de3d4d49702bb738aa5c"
+    ]
+   },
+   {
+    "label": "zrl03_lat62",
+    "warriors": [
+     "agent2/night/scratch/B065/bin/zrl03_lat62_A",
+     "agent2/night/scratch/B065/bin/zrl03_lat62_B"
+    ],
+    "hashes": [
+     "25b1773c21a724ff16f5a08ab0c30963ed7ee68c1dbe0842aca130c0251b2bfa",
+     "fb6f94c9a50397b28ba1a818c359bcf71706a8a7705ea70414eec3ec262086c4"
+    ]
+   }
+  ]
+ }
+}

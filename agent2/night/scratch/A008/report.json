@@ -1,0 +1,28 @@
+{
+ "agentId": "A008",
+ "revisionUsed": 0,
+ "card": "B's step (BP 2C00h / DX 2400h) vs V4's 2800h/2000h (32 positions) vs other full-coverage steps",
+ "jobs": ["20261003193807310-A008-screen-dexm5", "20261003193807646-A008-screen-y2pgb", "20261003193808002-A008-screen-lbl1g", "20261003194511578-A008-threat-k145x"],
+ "model": {"file": "agent2/night/scratch/A008/phase-sim.mjs", "what": "A005 partner-crossfire model with B's BP as a parameter (arg 8). A killed by B summed over 18 startup-delay settings x 25 band combos (450 runs): 2C00h 197, 2800h 220, 2400h 111, 5400h 87, 0C00h 48. Crossfire is only ~1-2% of deaths (A005), so this was not used to choose candidates."},
+ "v4Note": "V4's step (2800h) was not re-screened: holdout 5 already measured V4 at about -0.033 vs V6 in the pooled field (V6nohunt-V4 +0.0416, V6nohunt-V6 +0.0082), with V4 ahead only in the zchain4-present group. Source: agent2/NOTES.md.",
+ "candidates": [
+  {"label": "s24", "file": "agent2/night/scratch/A008/s24_B.asm", "sizeB": 202, "shaB": "d8c7dfda3e8c565dc08199773417bf6a3cf2d2aebca4ebc3ef9a0b421f1c2cb4",
+   "change": "B only: mov bp,2C00h -> 2400h; mov dx,2400h -> 1C00h (step 9x400h, full coverage, trail 800h kept; captured zombies use it too)",
+   "screenJob": "20261003193807310-A008-screen-dexm5", "all": {"diff": -0.00003, "lo": -0.03655, "hi": 0.0365}, "groups": {"2025": -0.01267, "strong": 0.06048, "threat": 0.00785, "multi": -0.11667}, "promising": false},
+  {"label": "s34", "file": "agent2/night/scratch/A008/s34_B.asm", "sizeB": 202, "shaB": "6426ff011538270eebf90a60bdcaf93ffaddc42188d355ea9a922e5d9753627d",
+   "change": "B only: bp 2C00h -> 3400h; dx 2400h -> 2C00h (step 13x400h, full coverage, trail 800h)",
+   "screenJob": "20261003193807646-A008-screen-y2pgb", "all": {"diff": 0.00535, "lo": -0.03139, "hi": 0.04208}, "groups": {"2025": -0.01956, "strong": 0.05317, "threat": 0.03215, "multi": -0.06528},
+   "threatJob": "20261003194511578-A008-threat-k145x", "threat": {"all": 0.02813, "lo": -0.00806, "hi": 0.06431, "lead_V6": 0.02847, "lead_V6Guard": 0.03208, "lead_V4": 0.01694, "lead_zchain4": 0.035, "copies": 3, "cohorts": 24}, "promising": false},
+  {"label": "sD4", "file": "agent2/night/scratch/A008/sD4_B.asm", "sizeB": 202, "shaB": "de787f33c3fcd378a6dc9ef94d31b50c79d7dd2537ab39a577ceea45e150111d",
+   "change": "B only: bp 2C00h -> D400h (= -2C00h, B moves upward); dx 2400h -> CC00h (trail 800h)",
+   "screenJob": "20261003193808002-A008-screen-lbl1g", "all": {"diff": -0.00093, "lo": -0.03288, "hi": 0.03102}, "groups": {"2025": -0.02822, "strong": 0.08968, "threat": 0.01028, "multi": -0.06667}, "promising": false}
+ ],
+ "crossScreenPattern": "All three other steps give the same direction in each cohort. Mean of the 3 diffs per cohort: 2025 -0.020 (se 0.018), strong +0.068 (se 0.044; sstrong-1 [b01d, e1p4, HLS_segment_fault] +0.31 in all three), threat +0.017, multi -0.083 (se 0.019), ALL +0.0015. Steady per-cohort effects in all three: s2025-25 (GoldenLamed/InCtrl/SKYENT) -0.27, movsw_TrojanByte -0.19, movsw_BinaryBandits -0.23, cgx123123 +0.24, lead_V4 +0.16, lead_zrl03 +0.13. This is a trade-off: 2C00h is good on the 2025 field and against MOVSW crowds, and other steps are better against the strong/peer field. Changing the step makes screens about 4x noisier (ALL SE ~0.018) than 1-turn edits.",
+ "threatFindings": [
+  {"threat": "V4's 32-position step (2800h) is worse than V6's 2C00h overall", "classification": "verified-in-other", "evidence": "holdout 5 (agent2/NOTES.md): V6nohunt - V4 +0.0416 [+0.027,+0.056] pooled vs V6nohunt - V6 +0.0082; V4 ahead only when zchain4 is present (-0.046). Not re-screened."},
+  {"threat": "Other full-coverage B steps lose in multi-copy V6-family cohorts (screen multi -0.065 to -0.117)", "classification": "not-reproduced", "evidence": "threat k145x (s34, 3 copies, 24 cohorts x 20): lead_V6 +0.028, lead_V6Guard +0.032, lead_V4 +0.017, lead_zchain4 +0.035, ALL +0.028 [-0.008,+0.064]. The screen multi group has only 2 cohorts; smulti-mix was not tested separately."},
+  {"threat": "Step 2C00h is specifically exploited by strong/peer field opponents (b01d/e1p4 cohort sstrong-1) and by zrl03/ah02/V4", "classification": "hypothesis", "evidence": "Same positive sign in all 3 screens (sstrong-1 +0.27..+0.35, lead_zrl03 +0.07..+0.21, lead_V4 +0.05..+0.24), but each cohort has only 30 battles with one seed. Not traced."},
+  {"threat": "B's 800h trail kills A (partner crossfire) at a rate that depends on step", "classification": "hypothesis", "evidence": "Model only (phase-sim.mjs): 2C00h 197/450 vs 0C00h 48/450. A005 measured crossfire at ~1-2% of deaths, so at most ~0.004 is at stake."}
+ ],
+ "recommendation": "Do not promote any step variant. None reaches ALL >= +0.006 with no negative group: all lose about 0.02 on the 2025 field and gain about 0.07 on the strong field. If the coordinator values the strong/peer field more, s34 (best ALL +0.0054, threat +0.032, V6-family 3-copy stress +0.028) or sD4 (strong +0.090 [0.021,0.158], 6/0) could get a confirmation run. A step choice per field cannot be made from one screen because step changes are noisy. V4's 2800h is already known to be worse (holdout 5)."
+}

@@ -1,0 +1,72 @@
+{
+ "agentId": "A026",
+ "revisionUsed": 0,
+ "jobs": [
+  "20261004002131545-A026-screen-15xh2",
+  "20261004002138071-A026-threat-i8gtc",
+  "20261004002309145-A026-threat-fz8gf",
+  "20261004002401489-A026-threat-ustgi"
+ ],
+ "candidates": [
+  {
+   "label": "A026-Z1 (B only: captured zombies plant FF1FCCCC decoy blocks with their own INT 86h)",
+   "change": "B only (A = rev0). zom20a path (CX!=0): after its b/d INT87, mov ax,1FFFh; int 86h with DI=0, DF=1, DX=CCCCh -> 64 dwords FF 1F CC CC at 0FF04h..0003h (no code is ever loaded below 400h or above FC00h, and these pages hold no anchor of our 52h/400h lattice). b/d path (CX=0): the 0E070E17 CC counter-bomb INT87 (worth nothing, B052) is replaced by mov di,bx; and di,0FC00h; add di,0164h; mov ax,1FFFh; mov dx,0CCCCh; int 86h -> block [X+68h,X+168h), X=(own load+3) and FC00h: inside the zombie's own MIN_GAP zone, on pages 4k/4k+1 outside in-page 52h-67h of pages 4k, so it cannot hit loaded code or our anchors/workers. Zombie band math switched to 16-bit DIV (mov ax,si; xor dx,dx; mov cx,3C00h; div cx; mul cx; add ax,bp; mov al,0A2h; same AX), so both zombie paths reach phoenix_init on the same turn as rev0. B's own startup unchanged; B's FF 1F CC CC tail decoy kept. Second INT86 charge of each zombie still unused.",
+   "asmB": "agent2/night/scratch/A026/Z1_B.asm",
+   "shaB": "16be94ae0f6f0ed28a73ca40e5ebf5dd04bd452f6bd69a07cb6b467e43083293",
+   "sizeB": 214,
+   "screenJob": "20261004002131545-A026-screen-15xh2",
+   "screenAllDiff": 0.01,
+   "screenAllLo": -0.00817,
+   "screenAllHi": 0.02816,
+   "groupNotes": "Screen 15xh2: cand 0.6556 vs base 0.6456, ALL +0.0100 [-0.0082,+0.0282] W/L 11/11. 2025 +0.0224 [-0.0114,+0.0562] 6/4; strong +0.0048 [-0.0070,+0.0165]; threat -0.0059 [-0.0248,+0.0130] 3/6; multi 0. Gain sits in the searcher cohorts: s2025-10 (OpcodeHunter) +0.200, s2025-15 (2B2Team) +0.367; s2025-22 (ADDvanced) 0. The other 47 cohorts sum to about -0.07 (mean -0.0014). Screen-negative threat cohorts re-checked in ustgi: TrojanByte 0, BinaryBandits -0.008, IND_BRA -0.008, zchain4 +0.040 (ALL +0.0059 [-0.0114,+0.0232]), so those screen negatives were noise. Mechanism: threat i8gtc (same cohorts as B066 83rh4 dec0A) ALL +0.0611 [0.0171,0.1052] 13/5 (OH +0.055, 2B2Team +0.119, ADDvanced +0.009), equal to dec0A's +0.057. Threat fz8gf (2024 live searchers) ALL +0.0417 [0.0067,0.0767] 12/4: PastRAMa +0.096 4/0, segment_fault +0.083 4/0 (it searches backward from FFFFh, which the top half of the block catches and dec0A's single [0000h] dword does not), ATO -0.004, JMP2HELL -0.008. No-Zombie fields: zombie path never runs, so behavior is identical to rev0 (not measured).",
+   "isDefenseFix": true,
+   "promising": true
+  }
+ ],
+ "threatFindings": [
+  {
+   "threat": "Captured zombies arrive with 2 unused INT 86h charges each; rev0 never spends them",
+   "classification": "verified-in-current",
+   "evidence": "Static: zom20a-d binaries contain no INT 86h; Cpu.java int86 uses per-process bomb1 count. Z1 spends one per zombie and changes only searcher cohorts measurably (15xh2, ustgi).",
+   "impact": "A free resource that costs no A/B turns; zombie timing can be kept identical by trimming the zombie band math."
+  },
+  {
+   "threat": "A captured zom20b/d knows its own load address (BX = load+3 from its 'mov bx,ax; add bx,3' prologue); zom20a does not (BX is churned by mul)",
+   "classification": "verified-in-current",
+   "evidence": "dis86 of zom20b/zom20d at 0139h and zom20a; Warrior.java sets AX = load offset. Used by Z1's b/d block.",
+   "impact": "Gives a placement that is always clear of loaded code (MIN_GAP 1024). The own-location block's separate value was not ablated (hypothesis that it adds anything beyond the FF04-0003 block)."
+  },
+  {
+   "threat": "Forward-from-0 FF1FCCCC INT87 searchers (OpcodeHunter1, ADDvanced, 2B2Team1 after wrap) hit rev0 anchors; a zombie-planted block at FF04h-0003h absorbs them",
+   "classification": "verified-in-current",
+   "evidence": "Threat i8gtc ALL +0.0611 [0.0171,0.1052] 13/5 (OH +0.055 6/1, 2B2Team +0.119 5/3, ADD +0.009); screen 15xh2 s2025-10 +0.200, s2025-15 +0.367.",
+   "impact": "Same size as B066 dec0A (+0.057 on these cohorts); about +0.01 on field S ALL."
+  },
+  {
+   "threat": "Backward-from-FFFFh FF1FCCCC searcher (2024 live HLS_segment_fault1: mov di,FFFFh; std; int 87h) takes points from rev0; PastRAMa (2024 live) also",
+   "classification": "verified-in-current",
+   "evidence": "Threat fz8gf: segment_fault +0.083 [0.018,0.149] 4/0, PastRAMa +0.096 [0.024,0.168] 4/0 (both cand minus base, paired). ATO -0.004 and JMP2HELL -0.008 (no effect).",
+   "impact": "The top part of the block (FF04-FFFF) covers backward searchers that A-side decoys at 0000h/si+k (dec0A, C2) do not; relevant to the confirm's 2024live group."
+  },
+  {
+   "threat": "Screen negatives in TrojanByte, BinaryBandits, IND_BRA, zchain4 cohorts (-0.03 to -0.067) caused by Z1",
+   "classification": "not-reproduced",
+   "evidence": "Threat ustgi (fresh cohorts, 6 each): ALL +0.0059 [-0.0114,+0.0232]; TrojanByte 0, BinaryBandits -0.008, IND_BRA -0.008, zchain4 +0.040.",
+   "impact": "none"
+  },
+  {
+   "threat": "Zombie INT86 can wipe other zombies or finish the b/d chain (capture the lower b/d zombie)",
+   "classification": "not-reproduced",
+   "evidence": "Static only: zombies load at least 1024 bytes from other code (War.java MIN_GAP), so a 256-byte block placed relative to the zombie's own location cannot reach another zombie. Each b/d has 4 identical EB F9 CC CC tails (live 3rd from top); capturing both from the top needs 2+2 INT87s plus 1 for zom20a = 5 charges, the team has 4 (A, B, zom20a, first b/d). A scanning loop could find the lower zombie but costs thousands of turns; not built.",
+   "impact": "No cheap capture extension; card's INT86 value is decoy planting."
+  },
+  {
+   "threat": "2B2Team1 starts its INT87 at A600h (after its own INT86 at A500h), so a block exactly at A600h would always absorb it",
+   "classification": "hypothesis",
+   "evidence": "Static dis86 of TOM_2B2Team1 (A024 also). Not built: a fixed A600h block can land on A's or B's body while they are still in startup (~1.4% of battles), likely costing more than the ~+0.002 field gain.",
+   "impact": "small"
+  }
+ ],
+ "recommendation": "promote-candidate (low-medium confidence): Z1 (B only, 214 B, sha 16be94ae) passes the screen bar (ALL +0.0100, no clearly negative group, the screen-negative cohorts did not replicate in ustgi) and its mechanism replicates in two paired threat jobs (+0.061 on 2025 searchers, +0.042 on 2024-live searchers). Its gain overlaps dec0A/C2 for forward-from-0 searchers; the new part is the top-of-arena half that also catches backward searchers (segment_fault). Best use: add Z1's zombie-path edits to the planned C2-A + SD combination (Z1 touches only zombie_entry/zombie paths; SD's B edits are in phoenix_init and are compatible). Remaining free resource: each zombie's second INT86 charge.",
+ "notes": "Base rev0 (V6nohunt), unchanged during the session. Build: agent2/night/scratch/A026/build/Z1_B."
+}

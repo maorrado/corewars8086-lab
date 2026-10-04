@@ -1,0 +1,101 @@
+{
+ "job": {
+  "id": "20261003185243078-B051-threat-pgt9t",
+  "agent": "B051",
+  "kind": "threat",
+  "submittedAt": "2026-10-03T18:52:43.080Z",
+  "note": "B051: 12-cohort replication: MOVSW-family rev0 twin (lattice 53) vs MOVSB rev0 copy control, both vs base",
+  "threats": [
+   {
+    "name": "ctrl_rev0copy_MOVSB52",
+    "binA": "agent2/night/revisions/rev0/A",
+    "binB": "agent2/night/revisions/rev0/B"
+   },
+   {
+    "name": "B051_V6MOVSW53",
+    "asmA": "agent2/night/scratch/B051/cMovswA.asm",
+    "asmB": "agent2/night/scratch/B051/cMovswB.asm"
+   }
+  ],
+  "copies": 1,
+  "cohortsPerThreat": 12
+ },
+ "ok": true,
+ "finishedAt": "2026-10-03T18:58:35.148Z",
+ "seconds": 71.359,
+ "result": {
+  "candidate": {
+   "A": "agent2/night/revisions/rev0/A",
+   "B": "agent2/night/revisions/rev0/B",
+   "sizeA": 194,
+   "sizeB": 202,
+   "shaA": "6861894f3c1992cd6c6baa5b2a746178082f5b4b0a1d9969b9a326fe03d86c89",
+   "shaB": "8579e2c2212d72a413a6daacfe3b91ceb72be648bfc085bfeed9430eeaf6657a"
+  },
+  "baseRevision": 0,
+  "specKey": "6f8b39092fb0",
+  "battlesPerArm": 480,
+  "candMean": 0.3767,
+  "baseMean": 0.3767,
+  "all": {
+   "n": 24,
+   "diff": 0,
+   "lo": 0,
+   "hi": 0,
+   "wins": 0,
+   "losses": 0
+  },
+  "byThreat": {
+   "ctrl_rev0copy_MOVSB52": {
+    "n": 12,
+    "diff": 0,
+    "lo": 0,
+    "hi": 0,
+    "wins": 0,
+    "losses": 0
+   },
+   "B051_V6MOVSW53": {
+    "n": 12,
+    "diff": 0,
+    "lo": 0,
+    "hi": 0,
+    "wins": 0,
+    "losses": 0
+   }
+  },
+  "threatFirstTeamScore": {
+   "vsCand": {
+    "ctrl_rev0copy_MOVSB52": 0.4941,
+    "B051_V6MOVSW53": 0.5472
+   },
+   "vsBase": {
+    "ctrl_rev0copy_MOVSB52": 0.4941,
+    "B051_V6MOVSW53": 0.5472
+   }
+  },
+  "threatHashes": [
+   {
+    "label": "ctrl_rev0copy_MOVSB52",
+    "warriors": [
+     "agent2/night/revisions/rev0/A",
+     "agent2/night/revisions/rev0/B"
+    ],
+    "hashes": [
+     "6861894f3c1992cd6c6baa5b2a746178082f5b4b0a1d9969b9a326fe03d86c89",
+     "8579e2c2212d72a413a6daacfe3b91ceb72be648bfc085bfeed9430eeaf6657a"
+    ]
+   },
+   {
+    "label": "B051_V6MOVSW53",
+    "warriors": [
+     "agent2/night/cand-build/20261003185243078-B051-threat-pgt9t/threat-1/tA",
+     "agent2/night/cand-build/20261003185243078-B051-threat-pgt9t/threat-1/tB"
+    ],
+    "hashes": [
+     "138a4d7dae7fef40b108f5df07fd8dd57bae822c8264be4ef8c770992a83777a",
+     "27365f56ae01b9ed927167002cec80879c18aa84c3f15defbb03f3dcf479449e"
+    ]
+   }
+  ]
+ }
+}

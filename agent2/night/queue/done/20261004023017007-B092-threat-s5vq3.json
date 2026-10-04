@@ -1,0 +1,154 @@
+{
+ "job": {
+  "id": "20261004023017007-B092-threat-s5vq3",
+  "agent": "B092",
+  "kind": "threat",
+  "submittedAt": "2026-10-04T02:30:17.009Z",
+  "note": "B092: locpatA alone vs 2024-live teams of the losing w8-2 l24 cohorts (A026 fz8gf spec, base cached) - is the 2024live loss real?",
+  "asmA": "agent2/night/scratch/A038/locpatA.asm",
+  "threats": [
+   {
+    "name": "PastRAMa24L",
+    "binA": "repos/corewars8086-survivors/cgx2024/03-live/BZV_PastRAMa1",
+    "binB": "repos/corewars8086-survivors/cgx2024/03-live/BZV_PastRAMa2"
+   },
+   {
+    "name": "ATO24L",
+    "binA": "repos/corewars8086-survivors/cgx2024/03-live/TOM_ATO1",
+    "binB": "repos/corewars8086-survivors/cgx2024/03-live/TOM_ATO2"
+   },
+   {
+    "name": "JMP2HELL24L",
+    "binA": "repos/corewars8086-survivors/cgx2024/03-live/HRZ_JMP2HELL1",
+    "binB": "repos/corewars8086-survivors/cgx2024/03-live/HRZ_JMP2HELL2"
+   },
+   {
+    "name": "segfault24L",
+    "binA": "repos/corewars8086-survivors/cgx2024/03-live/HLS_segment_fault1",
+    "binB": "repos/corewars8086-survivors/cgx2024/03-live/HLS_segment_fault2"
+   }
+  ],
+  "copies": 1,
+  "cohortsPerThreat": 6
+ },
+ "ok": true,
+ "finishedAt": "2026-10-04T02:31:03.309Z",
+ "seconds": 10.211,
+ "result": {
+  "candidate": {
+   "A": "agent2/night/cand-build/20261004023017007-B092-threat-s5vq3/candA",
+   "B": "agent2/night/revisions/rev0/B",
+   "sizeA": 204,
+   "sizeB": 202,
+   "shaA": "6e9af3cea038ab9fd98eb364ecf94e9ab07540e2a6817461d87e1b2941df5b1a",
+   "shaB": "8579e2c2212d72a413a6daacfe3b91ceb72be648bfc085bfeed9430eeaf6657a"
+  },
+  "baseRevision": 0,
+  "specKey": "cb0c2ae55eee",
+  "battlesPerArm": 480,
+  "candMean": 0.6083,
+  "baseMean": 0.625,
+  "all": {
+   "n": 24,
+   "diff": -0.01667,
+   "lo": -0.03616,
+   "hi": 0.00282,
+   "wins": 4,
+   "losses": 8
+  },
+  "byThreat": {
+   "PastRAMa24L": {
+    "n": 6,
+    "diff": -0.02083,
+    "lo": -0.05754,
+    "hi": 0.01587,
+    "wins": 1,
+    "losses": 2
+   },
+   "ATO24L": {
+    "n": 6,
+    "diff": -0.0125,
+    "lo": -0.05201,
+    "hi": 0.02701,
+    "wins": 1,
+    "losses": 2
+   },
+   "JMP2HELL24L": {
+    "n": 6,
+    "diff": -0.01667,
+    "lo": -0.07133,
+    "hi": 0.038,
+    "wins": 1,
+    "losses": 1
+   },
+   "segfault24L": {
+    "n": 6,
+    "diff": -0.01667,
+    "lo": -0.04933,
+    "hi": 0.016,
+    "wins": 1,
+    "losses": 3
+   }
+  },
+  "threatFirstTeamScore": {
+   "vsCand": {
+    "PastRAMa24L": 0.075,
+    "ATO24L": 0.2833,
+    "JMP2HELL24L": 0.0875,
+    "segfault24L": 0.2083
+   },
+   "vsBase": {
+    "PastRAMa24L": 0.0667,
+    "ATO24L": 0.275,
+    "JMP2HELL24L": 0.1,
+    "segfault24L": 0.2083
+   }
+  },
+  "threatHashes": [
+   {
+    "label": "PastRAMa24L",
+    "warriors": [
+     "repos/corewars8086-survivors/cgx2024/03-live/BZV_PastRAMa1",
+     "repos/corewars8086-survivors/cgx2024/03-live/BZV_PastRAMa2"
+    ],
+    "hashes": [
+     "2b65bfc68cf05ee0bd5b3eef49fc67fd16abcc87cf26ec8cade2a3fff0b177f1",
+     "146aeed0535cda8da3c787c0d94f50edfcaa9d5aceb69d09ed7aa8b7c3f83071"
+    ]
+   },
+   {
+    "label": "ATO24L",
+    "warriors": [
+     "repos/corewars8086-survivors/cgx2024/03-live/TOM_ATO1",
+     "repos/corewars8086-survivors/cgx2024/03-live/TOM_ATO2"
+    ],
+    "hashes": [
+     "2142affbecf19b8c6ed7295d392b1b8120df19ed93b60a9abb82d9f1b42efb6c",
+     "051d33e47921fda63f11229d34659a7373671b8d30707f7c1e33046fae9415f3"
+    ]
+   },
+   {
+    "label": "JMP2HELL24L",
+    "warriors": [
+     "repos/corewars8086-survivors/cgx2024/03-live/HRZ_JMP2HELL1",
+     "repos/corewars8086-survivors/cgx2024/03-live/HRZ_JMP2HELL2"
+    ],
+    "hashes": [
+     "ace77c08a46478565dabc401afef2e75b8698d5763990c3538fceb229213e8f3",
+     "a3c2b03117407eed9969e2372f43bb55b4c08ba240ef5737c2c438ef36dde954"
+    ]
+   },
+   {
+    "label": "segfault24L",
+    "warriors": [
+     "repos/corewars8086-survivors/cgx2024/03-live/HLS_segment_fault1",
+     "repos/corewars8086-survivors/cgx2024/03-live/HLS_segment_fault2"
+    ],
+    "hashes": [
+     "6500cf5c4c08cbf95a9f61941e1b35dab02a5362b2c67108d2b62bfba0224a5f",
+     "192d67de007685b3829b04323900a2a48eb7d26a5fa84a1cd1cde22f8df29c10"
+    ]
+   }
+  ]
+ }
+}

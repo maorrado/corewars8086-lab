@@ -1,0 +1,29 @@
+{
+ "agentId": "B072",
+ "revisionUsed": 0,
+ "jobs": ["20261003231053818-B072-threat-mw9zq", "20261003231054207-B072-threat-kgfp5", "20261003231054561-B072-screen-lsu16", "20261003231726670-B072-threat-nwnic"],
+ "counterCodes": [
+  {"name": "zdeny", "asmA": "agent2/night/scratch/B072/counterA.asm", "asmB": "agent2/night/scratch/B072/counterB.asm", "sizes": [212, 122], "sha256": ["b3927f67096266bb90a783fd63fa6f2c943b448f32a07c9e7f4423827836b22f", "2fb8f41228b5ded8b7bd6b511c5002f5e646955f2eab8c48a73f358c128c286e"],
+   "design": "zchain4 body (agent2 lineage); A steals zom20a at its 8th instruction (les ax,[si+data] -> INT 87h E2 F2 81 C3 -> FF 26 13 CC = jmp [0CC13h]), i.e. before rev0 A's 10th-instruction INT 87h; B = zchain4 B (decoy-immune 0F EB F9 CC b/d capture); every captured zombie spends its INT 87h capturing the other live b/d tail; [0FFECh]/[0FFE8h] EB F9 decoys absorb rev0 B's backward search. Startup length equal to zchain4 A (control = library lead_zchain4).",
+   "strength": "vs rev0: threat team score 0.389 (mw9zq, 12 cohorts) and 0.453 (nwnic, fresh 12 cohorts) vs 0.311 for the zchain4 control; rev0 team score 0.548/0.489 in zdeny cohorts vs 0.623 in zchain4 cohorts (unpaired fills). 3 copies (kgfp5): rev0 0.282 vs 3x zdeny, 0.379 vs 3x zchain4."},
+  {"name": "zdeny4", "asmA": "agent2/night/scratch/B072/zdeny4A.asm", "asmB": "agent2/night/scratch/B072/counterB.asm", "sizes": [208, 122], "sha256": ["37fd80cd2bf28f5e7851041c8b1e5ee452e579ba872cce43f90f9e2ce71a9c84", "2fb8f41228b5ded8b7bd6b511c5002f5e646955f2eab8c48a73f358c128c286e"],
+   "design": "zdeny, but A only disarms zom20a at its 4th instruction (INT 87h with BX=CX=0: E2 F2 81 C3 -> 00 00 00 00, no capture). Earliest possible denial; defeats any timing fix.",
+   "strength": "nwnic: threat team 0.402 vs base and 0.401 vs fixA; rev0 team 0.487 in these cohorts."}
+ ],
+ "candidates": [
+  {"label": "fixA (early87)", "asmA": "agent2/night/scratch/B072/fixA.asm", "sizeA": 198, "shaA": "2af9bf68a298a3b6d274afcdb96d8a6e47eb48936d5bd4827eebd06bf31526eb", "asmB": "(base rev0 B)", "sizeB": 202, "shaB": "8579e2c2212d72a413a6daacfe3b91ceb72be648bfc085bfeed9430eeaf6657a",
+   "change": "rev0 A only: mov si,ax; les ax,[si+z20a_data] (dw 0F2E2h,1000h -> AX and ES=arena in one step); mov dx; mov bx; mov cx; int 087h now the 6th instruction (was 10th); then the [4A17h]->[9769h] copy and two nops so the startup instruction count is unchanged; jmp short phoenix_init now skips the 4-byte data.",
+   "screenJob": "20261003231054561-B072-screen-lsu16", "screenAllDiff": 0.00039, "screenAllLo": -0.01083, "screenAllHi": 0.01161,
+   "groupNotes": "screen lsu16: 2025 +0.0062 [-0.0113,+0.0237] 7/7; strong -0.0064; threat -0.0042; multi -0.0125 (n=2). Threat jobs: vs zdeny +0.114 [0.052,0.177] 9/3 (mw9zq) and +0.070 [0.011,0.128] 8/3 (nwnic replicate); vs zchain4 0.000 (mw9zq); vs 3x zdeny +0.024 n.s., vs 3x zchain4 +0.056 [0.029,0.084] (kgfp5); vs zdeny4 -0.003 n.s. (no effect by construction).",
+   "isDefenseFix": true, "promising": true}
+ ],
+ "threatFindings": [
+  {"threat": "An opponent that patches zom20a's E2 F2 81 C3 before rev0 A's 10th-instruction INT 87h steals zom20a and with it rev0's b/d chain", "classification": "verified-in-current", "evidence": "mw9zq: fixA (INT87 at instr 6) vs base in zdeny cohorts +0.114 [0.052,0.177], zdeny's own score 0.389 -> 0.276, rev0 B share 0.274 -> 0.420; replicate nwnic +0.070 [0.011,0.128], zdeny 0.453 -> 0.322. Same fix vs zchain4 control: 0.000.", "impact": "about 0.07-0.11 points/battle in cohorts with such a team"},
+  {"threat": "Full zombie denial (zom20a steal + decoy-immune b/d capture + EB F9 top decoys) by one field team lowers rev0's score versus the same body without the zom20a steal", "classification": "hypothesis", "evidence": "unpaired cohorts (different fills): rev0 0.548 vs zdeny, 0.623 vs zchain4 (mw9zq); counter score 0.389 vs 0.311. Paired evidence is only the fix delta above.", "impact": "~0.075 estimated, unpaired"},
+  {"threat": "A pure disarm of zom20a at the 4th instruction cannot be answered by moving rev0's INT 87h earlier (6 is the minimum with mov si/les/3 movs/int)", "classification": "verified-in-current", "evidence": "nwnic: fixA vs base in zdeny4 cohorts -0.0035 [-0.008,+0.001], 0/2; zdeny4 scores 0.402 vs base, 0.401 vs fixA; rev0 0.487 in these cohorts, same level as vs zdeny (0.489)", "impact": "timing fix only covers stealers at instr >= 7"},
+  {"threat": "With 3 copies of the counter the timing fix loses most of its value", "classification": "hypothesis", "evidence": "kgfp5: fixA vs 3x zdeny +0.024 [-0.019,+0.067]; rev0 0.282 vs 3x zdeny vs 0.379 vs 3x zchain4 (unpaired). Several b/d stealers and decoys still take the chain even when rev0 wins zom20a.", "impact": "unclear"},
+  {"threat": "Real 2025/2024 teams steal zom20a before rev0 A's instr 10", "classification": "not-reproduced", "evidence": "no such team in the field per B062/A003 static scans; screen lsu16 2025 group with fixA +0.006 n.s. (no field gain from winning the race earlier)", "impact": "~0 on archived fields"}
+ ],
+ "recommendation": "Do not promote fixA stand-alone (screen ALL +0.0004; it only matters against a purpose-built early stealer, absent from archived fields). It is a near-zero-cost defense (instruction count preserved, A 198 B) that clearly neutralizes the zdeny counter (+0.114, replicated +0.070) and supersedes the A part of A003 C1 (which only reaches instr 8, tying zdeny). Reasonable to include in a later combination (with B054 fix2steal, B059 zph). Add zdeny (counterA/counterB) and zdeny4 to the threat library as zombie-competition test cases; note zdeny4 (disarm at instr 4) is not fixable by timing.",
+ "notes": "Helper: agent2/night/scratch/B072/pt.cjs <specKey> <candPrefix> prints per-threat team means from results files. zdeny body is zchain4 (agent2 lineage); fixA is a small edit of Good_Test V6 (friend-provided) via V6nohunt."
+}

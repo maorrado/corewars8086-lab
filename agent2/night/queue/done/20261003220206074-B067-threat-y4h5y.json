@@ -1,0 +1,153 @@
+{
+ "job": {
+  "id": "20261003220206074-B067-threat-y4h5y",
+  "agent": "B067",
+  "kind": "threat",
+  "submittedAt": "2026-10-03T22:02:06.077Z",
+  "note": "B067 domain7 measure: base vs real 2024 ido_itay (FF1F anchor hunter), ido with rev0-segment patch, generic V6 zombie_scan hunter team, and its no-bomb control",
+  "threats": [
+   {
+    "name": "ido24live",
+    "binA": "agent2/night/scratch/B067/bin/ido1",
+    "binB": "agent2/night/scratch/B067/bin/ido2"
+   },
+   {
+    "name": "idoFB",
+    "binA": "agent2/night/scratch/B067/bin/ido1",
+    "binB": "agent2/night/scratch/B067/bin/ido2fb"
+   },
+   {
+    "name": "huntV6",
+    "asmA": "agent2/night/scratch/B067/huntA.asm",
+    "asmB": "agent2/night/scratch/B067/huntB.asm"
+   },
+   {
+    "name": "huntOff",
+    "asmA": "agent2/night/scratch/B067/hoffA.asm",
+    "asmB": "agent2/night/scratch/B067/hoffB.asm"
+   }
+  ],
+  "copies": 1,
+  "cohortsPerThreat": 6
+ },
+ "ok": true,
+ "finishedAt": "2026-10-03T22:06:31.152Z",
+ "seconds": 46.201,
+ "result": {
+  "candidate": {
+   "A": "agent2/night/revisions/rev0/A",
+   "B": "agent2/night/revisions/rev0/B",
+   "sizeA": 194,
+   "sizeB": 202,
+   "shaA": "6861894f3c1992cd6c6baa5b2a746178082f5b4b0a1d9969b9a326fe03d86c89",
+   "shaB": "8579e2c2212d72a413a6daacfe3b91ceb72be648bfc085bfeed9430eeaf6657a"
+  },
+  "baseRevision": 0,
+  "specKey": "14263d9c5ffa",
+  "battlesPerArm": 480,
+  "candMean": 0.6753,
+  "baseMean": 0.6753,
+  "all": {
+   "n": 24,
+   "diff": 0,
+   "lo": 0,
+   "hi": 0,
+   "wins": 0,
+   "losses": 0
+  },
+  "byThreat": {
+   "ido24live": {
+    "n": 6,
+    "diff": 0,
+    "lo": 0,
+    "hi": 0,
+    "wins": 0,
+    "losses": 0
+   },
+   "idoFB": {
+    "n": 6,
+    "diff": 0,
+    "lo": 0,
+    "hi": 0,
+    "wins": 0,
+    "losses": 0
+   },
+   "huntV6": {
+    "n": 6,
+    "diff": 0,
+    "lo": 0,
+    "hi": 0,
+    "wins": 0,
+    "losses": 0
+   },
+   "huntOff": {
+    "n": 6,
+    "diff": 0,
+    "lo": 0,
+    "hi": 0,
+    "wins": 0,
+    "losses": 0
+   }
+  },
+  "threatFirstTeamScore": {
+   "vsCand": {
+    "ido24live": 0.025,
+    "idoFB": 0.075,
+    "huntV6": 0.2611,
+    "huntOff": 0.0083
+   },
+   "vsBase": {
+    "ido24live": 0.025,
+    "idoFB": 0.075,
+    "huntV6": 0.2611,
+    "huntOff": 0.0083
+   }
+  },
+  "threatHashes": [
+   {
+    "label": "ido24live",
+    "warriors": [
+     "agent2/night/scratch/B067/bin/ido1",
+     "agent2/night/scratch/B067/bin/ido2"
+    ],
+    "hashes": [
+     "9188f6f10a26724701b05a1308948a237cf99488a0d53ef88aa60e18ed5c9215",
+     "c869bee685e9ed4e4fb2f0c30394b85218baccc9239303de593181ad41d6239e"
+    ]
+   },
+   {
+    "label": "idoFB",
+    "warriors": [
+     "agent2/night/scratch/B067/bin/ido1",
+     "agent2/night/scratch/B067/bin/ido2fb"
+    ],
+    "hashes": [
+     "9188f6f10a26724701b05a1308948a237cf99488a0d53ef88aa60e18ed5c9215",
+     "ef89446b7d1f1361af959437d0b2a18991c966b961aa7cbbcd8464842baad45a"
+    ]
+   },
+   {
+    "label": "huntV6",
+    "warriors": [
+     "agent2/night/cand-build/20261003220206074-B067-threat-y4h5y/threat-2/tA",
+     "agent2/night/cand-build/20261003220206074-B067-threat-y4h5y/threat-2/tB"
+    ],
+    "hashes": [
+     "7375405d5d9a78207fe6a551e2450481c44dc0f2803d91d3a86f06ece6dc0603",
+     "5857b8be2375bd04902c22b8204cbae0d96196ee981f14926d10e13f942fa369"
+    ]
+   },
+   {
+    "label": "huntOff",
+    "warriors": [
+     "agent2/night/cand-build/20261003220206074-B067-threat-y4h5y/threat-3/tA",
+     "agent2/night/cand-build/20261003220206074-B067-threat-y4h5y/threat-3/tB"
+    ],
+    "hashes": [
+     "87d5a3cbe2cb1cdaa822e98d2e9e6ce55937e4a3fc1362507ddb250f50fce43e",
+     "a2d244c5847ed608aec92fde24c13d0b9c727c58cb3b3739b02ced7aadc1bc02"
+    ]
+   }
+  ]
+ }
+}

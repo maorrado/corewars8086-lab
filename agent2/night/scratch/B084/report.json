@@ -1,0 +1,35 @@
+{
+ "agentId": "B084",
+ "revisionUsed": 0,
+ "jobs": ["20261004005309095-B084-screen-tcluu", "20261004005309240-B084-threat-qpbgf", "20261004005309402-B084-threat-rocnd", "20261004005838358-B084-threat-znzho"],
+ "candidates": [
+  {"label": "p0f13 (B only)", "asmB": "agent2/night/scratch/B084/p0f13B.asm", "sizeB": 211, "shaB": "9936114735ca8c6dbd5926b6bc6d76dcc02d7d397d76afb91822810a045239d9",
+   "change": "B064 p0f (both b/d INT 87h searches use 0F EB F9 CC, push cs/pop es -> les di,[si+es_ptr]) with the hook cell moved 0CC17h -> 0CC13h: mov [0CC17h],bx -> mov [0CC13h],bx and both replacement CX 1726h -> 1326h, so patched tails become jmp [0CC13h] (byte-identical to combo_zrl03 B's replacement). One write at instr 5 serves our own captures and steals the captures of zrl03/ah02/zchain4 (they write [0CC13h] once at instr 3). Zero extra instructions; startup INT 87h stays the 12th instruction.",
+   "screenJob": "20261004005309095-B084-screen-tcluu", "screenAllDiff": 0.01775, "screenAllLo": -0.00014, "screenAllHi": 0.03564,
+   "groupNotes": "cand 0.6634 base 0.6456, W/L 16/12. 2025 +0.0016 [-0.0152,+0.0183] 6/7; strong +0.0526 [-0.0298,+0.1351] 3/3; threat +0.0306 [-0.0023,+0.0634] 7/1 (lead_zrl03 +0.167, lead_ah02 +0.222, zchain4 +0.022); multi -0.0042 (n=2, V6x3 -0.008). Per-cohort diffs equal B064 p0f's screen 8mp8r everywhere except steal cohorts (sstrong-4 +0.144, s2025-17 -0.033, zrl03/ah02/zchain4), i.e. p0f13 = p0f gains (sstrong-1 +0.261, s2025-10 +0.144) + fix2steal steal gains, additive. Gain concentrated in ~5 cohorts. Threat qpbgf (4 cohorts/threat, 1 copy): ALL +0.079 [0.029,0.128] 16/7; zrl03 +0.173 [0.099,0.246] 4/0 (zrl03 team 0.440 -> 0.321); ah02 +0.200 [0.103,0.297] 4/0 (0.521 -> 0.333); zrl03 decoy-only +0.115 [0.028,0.202]; zchain4 +0.046 n.s.; B074 planter -0.073 [-0.127,-0.019] 0/4; B074 ctl +0.0125 n.s. Same spec with p0f (rocnd): identical on planter/ctl/decoy-only, 0 on zrl03/ah02 -> steal is the whole zrl03/ah02 gain. Replication znzho (12 fresh cohorts each): planter -0.024 [-0.069,+0.022] 6/6, ctl -0.044 [-0.105,+0.016] 2/8; pooled over 32 cohorts about -0.033 vs zchain4-body counters with a late (instr 15) 0F EB F9 CC search and late [0CC13h] write.",
+   "isDefenseFix": true, "promising": true},
+  {"label": "p0f2c (B only, UNTESTED)", "asmB": "agent2/night/scratch/B084/p0f2cB.asm", "sizeB": 212, "shaB": "5292cec189da5e12a2476c7506a8f2031e8b99d44991b0df851c5ecc15285f3b",
+   "change": "B064 p0f (private cell 0CC17h for own captures) + mov [0CC13h],bx steal; les di,[si+es_ptr] + mov dx,0CCF9h merged into les dx,[si+dx_es] (dw 0CCF9h,1000h; DI=0 from warrior init) so startup INT 87h stays the 12th instruction. Answer to the hypothetical shared-cell race of p0f13. Not run (job budget used).",
+   "screenJob": "", "groupNotes": "not screened", "isDefenseFix": true, "promising": false}
+ ],
+ "threatFindings": [
+  {"threat": "combo_zrl03/ah02 (and zchain4) capture the live zom20b/d tail with 0F EB F9 CC -> jmp [0CC13h] before rev0's searches; reusing the same replacement and writing [0CC13h] later steals those captures at zero instruction cost.",
+   "classification": "verified-in-current",
+   "evidence": "qpbgf vs rocnd (same cohorts): p0f13 zrl03 +0.173 [0.099,0.246] 4/0, ah02 +0.200 [0.103,0.297] 4/0 vs p0f (cell 0CC17h) 0.000 / +0.006; screen tcluu lead_zrl03 +0.167, lead_ah02 +0.222, sstrong-4 +0.144 (p0f 0).",
+   "impact": "about +0.17..+0.20 points/battle in zrl03/ah02 cohorts; nothing elsewhere"},
+  {"threat": "EB F9 decoys (zrl03 FFECh/FFE8h, decoy-only variant) absorb rev0 B's b/d searches; the 0F EB F9 CC window skips them.",
+   "classification": "verified-in-current",
+   "evidence": "qpbgf and rocnd, zrl03decoyonly (scratch/B054/zrl/nosearch): +0.115 [0.028,0.202] 3/0 for both p0f and p0f13 (decoy team 0.390 -> 0.313). Replicates B054 ojb8m (+0.150) with a different fix.",
+   "impact": "~0.1/battle when a pure decoy planter is present; real zrl03 consumes the tails itself, so the decoys alone are redundant there"},
+  {"threat": "B074 hypothesis: p0f is immune to INT 86h EB F9 CC CC decoy blocks and therefore recovers the planter's damage.",
+   "classification": "not-reproduced",
+   "evidence": "rocnd (p0f) and qpbgf (p0f13): B074planter -0.073 [-0.127,-0.019] 0/4 (identical numbers); replication znzho: -0.024 [-0.069,+0.022] 6/6. The search does skip the block (static), but the planter also blocks A's zom20a search, so there is no captured zom20a for the second b/d search and nothing is recovered.",
+   "impact": "no gain vs the planter; possibly a small loss (pooled ~-0.036 over 16 cohorts)"},
+  {"threat": "p0f-pattern searches lose slightly against zchain4-body teams whose own 0F EB F9 CC searches run later than ours (instr 15) and that write [0CC13h] late (instr 9): our search eats the top dead tail so their zero-writer lands on the live tail, and/or (p0f13 only) their late [0CC13h] write receives our own b/d captures.",
+   "classification": "hypothesis",
+   "evidence": "znzho: B074 ctl (same timing, patterns broken) -0.044 [-0.105,+0.016] 2/8, planter -0.024 n.s.; job ALL -0.034 [-0.071,+0.003] 8/14. In the first 8 cohorts p0f and p0f13 gave identical results (no cell-race effect visible there); no p0f control on the 24 replication cohorts and no trace, so the two mechanisms are not separated. p0f2c (private cell + steal) would answer the cell-race part.",
+   "impact": "about -0.03/battle in such cohorts; no 2025 field team has this timing (zrl03/ah02/zchain4 write [0CC13h] at instr 3 and search at instr 8)"}
+ ],
+ "recommendation": "promote-candidate for confirmation: p0f13 (B only, agent2/night/scratch/B084/p0f13B.asm). Screen ALL +0.0178 [-0.0001,+0.0356], no clearly negative group; it is the zero-instruction union of B064 p0f and B054 fix2steal's steal and its per-cohort diffs are exactly their sum. Caveats: the gain sits in ~5 cohorts (sstrong-1, s2025-10, sstrong-4, zrl03, ah02), the 2025 group is flat, fix2steal alone confirmed at only +0.0058 pooled, and vs tailored zchain4-body counters with late searches/late [0CC13h] writes it is about -0.03 (n.s.). It is also a natural B side for the planned C2-A + SD + Z1 combination (Z1 replaces the b/d-path 0E070E17 INT87, p0f13 touches the b/d search constants and startup; check overlap before merging). If the cell race matters, test p0f2c (untested source provided).",
+ "notes": "rev0 throughout. p0f source reassembles to B064's sha c83d1fc0. Threat spec for qpbgf/rocnd: B074 counter, B074 ctl, lead_zrl03, lead_ah02, B054 zrl03 nosearch (decoy-only) binaries, lead_zchain4; 4 cohorts x 20 battles each, 1 copy."
+}

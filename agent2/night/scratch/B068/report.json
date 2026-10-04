@@ -1,0 +1,41 @@
+{
+ "agentId": "B068",
+ "role": "wave 4, domain 8 (dense / sparse CC bombers, early INT86 heavy bombs), R2-measure",
+ "revisionUsed": 0,
+ "base": "rev0 = V6nohunt (A 194 B sha 6861894f, B 202 B sha 8579e2c2)",
+ "jobs": [
+  "20261003221256313-B068-threat-ogq11",
+  "20261003221257987-B068-threat-sgkrp",
+  "20261003221258612-B068-threat-mcyhv",
+  "20261003221532329-B068-threat-lrfq6"
+ ],
+ "method": "All 4 jobs are threat jobs with candidate = base. The job diff is therefore 0 by construction. The measurement is the base team score per threat label, read from results/nightT-<specKey>-base-rev0.json with scratch/B068/tsum.mjs. Each real 2025 bomber is paired with a byte-patched ablation of itself (scratch/B068/mkbin.mjs, binaries in scratch/B068/bin). With --copies 3 a cohort has no random filler, so real and control cohorts have the same composition and differ only in seed. Prevalence comes from a static first-execution-path scan (scratch/B068/scan.mjs -> scan.json). Realistic-field impact comes from an additive opponent-effect model fitted to every existing rev0 run in pure-2025 cohorts (scratch/B068/obs2.mjs -> obs2.json; 632 unique runs, 21,660 battles). Trace re-read: scratch/B068/int86deaths.mjs.",
+ "prevalence": {
+  "definition": "EARLY86 = INT 86h reached within the first 25 instructions of the first execution path (unconditional jumps followed). CC = the binary contains a CCh/CCCCh store and no far call (broad heuristic).",
+  "2025": "75 teams: CD 86 present in 26, EARLY86 in 15 (GhostBytes, GoonSquad, callfart, EmoMutants, ADDvanced, Ctrl_Alt_Elite, Underflow, stack_attack, KosherCode, Gamma, 2B2Team, Baltika9, K0F1M, SigmaSilent, TOM_AND_JERRY), CC heuristic 22. True dense or sparse CC sweepers: 4 teams share the 13-byte 'stosw CCCC / add di,0Bh' code (TOM_tson_el_akod, ELD_FriendlyFire, HRZ_CodeEliteGang2, GSA_ShmuelTurtles2), plus R1DDLE (rep stosw CCCC forward from its own load) and IND_BRA (step 23h).",
+  "2024live": "42 teams: CD 86 in 13, EARLY86 in 9, CC heuristic 11",
+  "2024final": "12 teams: CD 86 in 4, EARLY86 in 2 (OtoGlida, segment_fault), CC heuristic 2",
+  "2023final": "42 teams: CD 86 in 16, EARLY86 in 6, CC heuristic 14"
+ },
+ "realisticFieldImpact": "Additive model, base points/battle relative to the average 2025 opponent (mu 0.706, mean base 0.686): R1DDLE +0.020 (24 runs), tson_el_akod +0.071, FriendlyFire +0.049, CodeEliteGang +0.016, ShmuelTurtles +0.055, Underflow +0.039, IND_BRA +0.082. All of these are easier than the average opponent. Class means: CC-bomber teams +0.036 (they take 0.056 pts/battle themselves), EARLY86 teams -0.026, other teams +0.028. The EARLY86 deficit comes from replicators that also call INT86 (2B2Team -0.190, Baltika9 -0.160, callfart -0.094, K0F1M -0.080, ADDvanced -0.068). The pure early bombers are all >= -0.016. Traces (4 existing trace files on the same 8 cohorts): 3 of 148-210 CAND deaths come from an opponent INT86 block, all during startup (Underflow1 r7, YANDE2 r34, YANDE1 r31).",
+ "candidates": [],
+ "counterCodes": [
+  {"name": "UF_no86", "bin": "agent2/night/scratch/B068/bin/UF_no86_1, UF_no86_2", "what": "HRZ_Underflow with both CD 86 -> 90 90. Control for the early-INT86 cost."},
+  {"name": "RD_idle", "bin": "agent2/night/scratch/B068/bin/RD_idle_1, RD_idle_2", "what": "ATL_R1DDLE with rep stosw -> jmp $. Idle control."},
+  {"name": "TS_nop", "bin": "agent2/night/scratch/B068/bin/TS_nop_1, TS_nop_2", "what": "TOM_tson_el_akod with stosw -> nop. Same loop timing, no writes."}
+ ],
+ "jobResults": {
+  "ogq11 (Underflow x3 real vs INT86->NOP, 12 cohorts x 20 each)": "base 0.7625 (SE 0.029) vs 0.8458 (SE 0.019): -0.083 +- 0.035, z -2.4. Threat teams 0.2375 vs 0.1542. Per copy about -0.028, per bomb about -0.007.",
+  "sgkrp (R1DDLE x3 real vs idle)": "base 0.7708 (SE 0.032) vs 0.9979 (SE 0.002): -0.227 +- 0.032, z -7.0. Threat teams 0.229 vs 0.002. A 0.356 vs 0.521, B 0.415 vs 0.477.",
+  "mcyhv (tson_el_akod x3 real vs stosw->nop)": "base 0.9375 (SE 0.014) vs 0.9917 (SE 0.006): -0.054 +- 0.015, z -3.6. Threat teams 0.058 vs 0.008.",
+  "lrfq6 (R1DDLE x1 real vs idle, 2 random 2025 fillers, fillers not paired)": "base 0.6958 (SE 0.052) vs 0.8292 (SE 0.033): -0.133 +- 0.061, z -2.2. R1DDLE's own score 0.0375 vs 0.0042. Adjusted for filler strength with the obs2 model: residual -0.119 +- 0.035. The control is a free kill, not an average team, so this is the cost of R1DDLE relative to a sitting duck. It is not a field-level hole."
+ },
+ "threatFindings": [
+  {"threat": "Early INT86 heavy bombs (fired before rev0 leaves its load image) cost base points", "classification": "verified-in-current", "evidence": "ogq11: 3x Underflow (4 CCCC blocks per team at own load+4000h/+8000h, turns ~5-8) vs the same code with INT86 removed: base -0.083 +- 0.035 (z -2.4). Traces: 3 of ~150-210 deaths per trace are startup kills by opponent INT86 blocks.", "impact": "About -0.007 per early bomb, -0.028 per Underflow-like team. Rough 2025 field estimate: 0.6 EARLY86 teams per cohort, so at most about 0.01-0.02/battle, and less because many early blocks are not CC. The bombs land at turns 5-8, before any startup could finish, so placement is random and no cheap fix exists. Shrinking A's image (stripA, -68 B) cuts the hit area by about 15%, roughly 0.002/battle."},
+  {"threat": "Dense rep-stosw CC sweep (R1DDLE) kills rev0 anchors when the sweeper survives", "classification": "verified-in-current", "evidence": "sgkrp: 3x R1DDLE -0.227 +- 0.032 (z -7) vs idle twins. lrfq6: a single copy in random 2025 cohorts gives -0.133 +- 0.061 (filler-adjusted -0.119) vs an idle twin. R1DDLE itself scores 0.0375.", "impact": "A sweep writes CC at 2 bytes/turn over the whole arena, and only the FF byte of an anchor needs to be hit, so the sweep eventually kills each anchor. rev0 survives because its trails overwrite the sweeper's 2-byte rep stosw first. In the real field R1DDLE is an average-to-easy opponent (model effect +0.020, base 0.693 in its cohorts vs field mean 0.686). There is no field-level hole and no cheap fix: a CC executed at the anchor always kills."},
+  {"threat": "13-step sparse CC bomber (stosw CCCC / add di,0Bh; shared by 4 teams in 2025)", "classification": "verified-in-current", "evidence": "mcyhv: 3x tson_el_akod -0.054 +- 0.015 (z -3.6) vs stosw->nop twins.", "impact": "About -0.018 per copy relative to a free kill. In the field these 4 teams are easier than the average opponent (model effects +0.016..+0.071)."},
+  {"threat": "Dense or early bombers form a field-level hole in rev0 (realistic 2025/2024 pools)", "classification": "not-reproduced", "evidence": "obs2 additive model on 632 existing rev0 pure-2025 runs: CC-bomber class mean effect +0.036, pure early-INT86 bombers all >= -0.016. B058 foy12: IND_BRA scores 0. Only a purpose-built 52h page-lattice bomber (B058 pg52) is dangerous.", "impact": "None measurable at field level. Defense bytes are not justified."},
+  {"threat": "The EARLY86 class deficit (-0.026) is caused by INT86 bombing", "classification": "hypothesis", "evidence": "The deficit comes from replicators that also use INT86: 2B2Team (explained by its FF 1F CC CC INT87 search, B066), Baltika9 and K0F1M (MOVSW anchor kill, B051/B061), and callfart (zombie decoys, B052/B062). Their INT86 was not ablated.", "impact": "Probably small. Not tested."}
+ ],
+ "recommendation": "No promotion candidate; this was a measurement role. Domain 8 does not justify defense bytes. Early INT86 bombs cost about 0.007 per bomb (about 0.01-0.02/battle on the 2025 field at most) and cannot be dodged, because they land before any startup could finish. Real dense or sparse CC sweepers (R1DDLE, the tson family of 4 teams, IND_BRA) do kill rev0 when they survive (3-copy stress: -0.23 / -0.05). In realistic cohorts, though, they are easier than the average opponent. The only verified dangerous bomber is a purpose-built 52h page-lattice bomber (B058). Treat this domain as closed unless the field changes; if bytes are reclaimed (stripA), the smaller image gives a tiny early-INT86 benefit."
+}

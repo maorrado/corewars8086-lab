@@ -1,0 +1,102 @@
+{
+ "job": {
+  "id": "20261004001611067-B076-threat-aiipe",
+  "agent": "B076",
+  "kind": "threat",
+  "submittedAt": "2026-10-04T00:16:11.068Z",
+  "note": "B076 rare-window (B1 09 31 F6) vs common-window (29 D4 29 2F) template counters, 1 copy; cand = C2 (A024) A + base B",
+  "asmA": "agent2/night/scratch/A024/C2_A.asm",
+  "threats": [
+   {
+    "name": "tplsig",
+    "asmA": "agent2/night/scratch/B076/counterA.asm",
+    "asmB": "agent2/night/scratch/B076/counterB.asm"
+   },
+   {
+    "name": "tplcom",
+    "asmA": "agent2/night/scratch/B076/comA.asm",
+    "asmB": "agent2/night/scratch/B076/comB.asm"
+   }
+  ],
+  "copies": 1,
+  "cohortsPerThreat": 12
+ },
+ "ok": true,
+ "finishedAt": "2026-10-04T00:17:02.141Z",
+ "seconds": 22.381,
+ "result": {
+  "candidate": {
+   "A": "agent2/night/cand-build/20261004001611067-B076-threat-aiipe/candA",
+   "B": "agent2/night/revisions/rev0/B",
+   "sizeA": 143,
+   "sizeB": 202,
+   "shaA": "36bf5eee2f9628542daf9f589f91de62d9508498737deec4b3b5362063d724a2",
+   "shaB": "8579e2c2212d72a413a6daacfe3b91ceb72be648bfc085bfeed9430eeaf6657a"
+  },
+  "baseRevision": 0,
+  "specKey": "89293e0ff632",
+  "battlesPerArm": 480,
+  "candMean": 0.0413,
+  "baseMean": 0.0413,
+  "all": {
+   "n": 24,
+   "diff": 0,
+   "lo": 0,
+   "hi": 0,
+   "wins": 0,
+   "losses": 0
+  },
+  "byThreat": {
+   "tplsig": {
+    "n": 12,
+    "diff": 0,
+    "lo": 0,
+    "hi": 0,
+    "wins": 0,
+    "losses": 0
+   },
+   "tplcom": {
+    "n": 12,
+    "diff": 0,
+    "lo": 0,
+    "hi": 0,
+    "wins": 0,
+    "losses": 0
+   }
+  },
+  "threatFirstTeamScore": {
+   "vsCand": {
+    "tplsig": 0.6576,
+    "tplcom": 0.6611
+   },
+   "vsBase": {
+    "tplsig": 0.6472,
+    "tplcom": 0.6451
+   }
+  },
+  "threatHashes": [
+   {
+    "label": "tplsig",
+    "warriors": [
+     "agent2/night/cand-build/20261004001611067-B076-threat-aiipe/threat-0/tA",
+     "agent2/night/cand-build/20261004001611067-B076-threat-aiipe/threat-0/tB"
+    ],
+    "hashes": [
+     "6098599c6b67d06986eb431bfc34d8010152f207a0ed68ce85bc7991016604bf",
+     "5aac73bf59d628b1e7bc96d1d4e6a12b0bc9404e54b1aef61249b6324a7f5ae9"
+    ]
+   },
+   {
+    "label": "tplcom",
+    "warriors": [
+     "agent2/night/cand-build/20261004001611067-B076-threat-aiipe/threat-1/tA",
+     "agent2/night/cand-build/20261004001611067-B076-threat-aiipe/threat-1/tB"
+    ],
+    "hashes": [
+     "8000298023cbcb6ba56a52491c32609fae1baa73ed661ce7af5a5d89d9542fc5",
+     "69b5eb2fb11c3c2689185720b1effddf1b8548c0011b75868876b170ca3cf046"
+    ]
+   }
+  ]
+ }
+}

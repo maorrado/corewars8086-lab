@@ -1,0 +1,28 @@
+{
+ "agentId": "A021",
+ "revisionUsed": 0,
+ "jobs": ["20261003230911125-A021-screen-a0xw2", "20261003230912153-A021-screen-7eku1", "20261003231331216-A021-screen-0dlmm", "20261003232302909-A021-threat-lf8gu"],
+ "mechanism": "Trail word pair = IP word (A4 xx) + CS word (FAR_SEG lo, hi). AL must stay A2h (A4 = MOVSB rebuild trigger), so the lattice in-page offset is fixed by FAR_SEG mod 16: in-page = A2h + 10h*(FAR_SEG mod 16) mod 100h. Engine (Cpu.java): 0F invalid, F6 /1 and F7 /1 invalid, FB = STI valid (1 turn), F1 invalid, F0/F4 unsupported. With FB 0F, an opponent entering at the CS low byte dies after one extra turn (STI then 0F); with F6 0F / F7 0F it dies on the first byte. Entering at A4 or xx behaves the same for all choices (imm16 opcodes in xx turn the trail into a sled either way). So F6/F7 only buy 1 turn at one entry offset, and they force lattice 02h/12h. Keeping 52h needs FAR_SEG = xxBh: only 6Bh is invalid, but 106Bh faults whenever AH = FCh (A and B visit every AH = 0 mod 4 value), and 0F6Bh loses half the IP range. FB 0F is the only lethal 52h choice with full IP range.",
+ "candidates": [
+  {"label": "F7", "asmA": "agent2/night/scratch/A021/F7_A.asm", "asmB": "agent2/night/scratch/A021/F7_B.asm", "shaA": "71ee02e25fb47c7f97f973d852b7f7e84fedcd92125abbd07b4d126e3a28d86f", "shaB": "a211ec685bdc334eebd379c8fecc67b026750584dda3c2d0a4b9815f79b766f0", "sizeA": 194, "sizeB": 202,
+   "change": "or dx,0FFBh -> 0FF7h in A and B (CS word F7 0F, instantly invalid; lattice 52h -> 12h)",
+   "screenJob": "20261003230911125-A021-screen-a0xw2", "screen": {"ALL": -0.02605, "lo": -0.0529, "hi": 0.0008, "2025": -0.01111, "strong": -0.125, "threat": -0.00955, "multi": 0.00139}, "promising": false},
+  {"label": "N0B (lethality ablation)", "asmA": "agent2/night/scratch/A021/N0B_A.asm", "asmB": "agent2/night/scratch/A021/N0B_B.asm", "shaA": "c348915718b9b0e38966fc2d297aa0dd2d066e754802d632bd5d572544c15b3f", "shaB": "bedfb9cdc35576b9e695315437c8b85770337c382619be356b363ee0da03eb3f", "sizeA": 194, "sizeB": 202,
+   "change": "or dx,0FFBh -> 100Bh in A and B (CS word 0B 10 = OR DX,[BX+SI], a sled; lattice stays 52h; anchors +100h, so the first generation's trail is 100h shorter)",
+   "screenJob": "20261003230912153-A021-screen-7eku1", "screen": {"ALL": -0.03699, "lo": -0.07185, "hi": -0.00213, "2025": -0.00933, "strong": -0.18849, "threat": -0.01372, "multi": -0.03889}, "promising": false},
+  {"label": "N0Bg (gap-corrected lethality ablation)", "asmA": "agent2/night/scratch/A021/N0Bg_A.asm", "asmB": "agent2/night/scratch/A021/N0Bg_B.asm", "shaA": "e559456e0f110f74fbcd4cfc6fd75d5572cd9270a3e304c1dc4d973612980592", "shaB": "474e9308239c350102a7d6a2f08ffcf00729e49f0b2e6488d4318d4c38ab22f4", "sizeA": 194, "sizeB": 202,
+   "change": "N0B plus add sp,100h -> 200h (A) and 600h -> 700h (B), so the SP-to-anchor distance equals rev0; the only differences from rev0 are the trail CS word and a uniform +100h shift",
+   "screenJob": "20261003231331216-A021-screen-0dlmm", "screen": {"ALL": -0.00035, "lo": -0.03254, "hi": 0.03185, "2025": 0.01556, "strong": -0.11008, "threat": 0.03562, "multi": -0.10278},
+   "threatJob": "20261003232302909-A021-threat-lf8gu", "threat": {"ALL": 0.02427, "lo": -0.03543, "hi": 0.08397, "lead_V6": -0.01319, "lead_V6Guard": -0.01389, "lead_zchain4": 0.16653, "lead_V4": -0.04236, "copies": 2},
+   "promising": false},
+  {"label": "F6 (built, not screened)", "asmA": "agent2/night/scratch/A021/F6_A.asm", "asmB": "agent2/night/scratch/A021/F6_B.asm", "shaA": "af53e8cd97827764ea1c08e034a9f2ea38dd274a88d9ef698882f11059f04f0c", "shaB": "a10b3712279b6e87a4eb482f3dc5851de7f9ded493a221e3ade54ceddf2af8ac", "sizeA": 194, "sizeB": 202,
+   "change": "or dx,0FFBh -> 0FF6h (CS word F6 0F, lattice 02h). Byte-identical to B055 lat_m50; not screened (single-offset shift, F7 already negative)", "promising": false}
+ ],
+ "threatFindings": [
+  {"threat": "A more lethal CS word (F6/F7 /1, invalid on the first byte) adds kills over FB 0F", "classification": "not-reproduced", "evidence": "Static (Cpu.java): it saves only one turn (the STI) at one of four entry offsets. Screen a0xw2 (F7): ALL -0.026, strong -0.125. The loss matches the 12h lattice cost seen at 22h/32h/42h."},
+  {"threat": "Trail CS-word lethality (FB 0F vs a 0B 10 sled) is worth points vs the field or V6-family multi-copy", "classification": "not-reproduced", "evidence": "N0Bg screen 0dlmm: ALL -0.0004 [-0.033,+0.032]; 2025 +0.016, threat +0.036, strong -0.110 (n.s.), multi -0.103 (2 cohorts). Threat lf8gu, 2 copies each: ALL +0.024 [-0.035,+0.084]; V6 -0.013, V6Guard -0.014, V4 -0.042, zchain4 +0.167."},
+  {"threat": "Shorter first-generation trail (SP-anchor 50h instead of 150h) costs points", "classification": "verified-in-current", "evidence": "N0B 7eku1 ALL -0.037 [-0.072,-0.002] vs N0Bg 0dlmm -0.0004 (same CS word, only the A/B gap differs). Single-screen pair; paired difference about +0.037."},
+  {"threat": "A lethal CS word on the 52h lattice other than FB 0F exists with full IP range", "classification": "not-reproduced", "evidence": "Static: only 6Bh is invalid among xBh low bytes; 106Bh faults at AH=FCh, which A (step 44h) and B (step 2Ch) both reach because AH = 0 mod 4; 0F6Bh loses IPs below 9450h."}
+ ],
+ "recommendation": "Do not promote. Keep FAR_SEG 0FFBh. F6/F7 only buy one turn of lethality and force lattice 02h/12h (F7 screen -0.026, strong -0.125). The ablation shows that CS-word lethality has no measurable net value (sled word ALL -0.0004; vs 2 copies of V6 leaders +0.024 n.s.). The first-generation SP-to-anchor distance (150h) does matter (N0B -0.037). Close the card."
+}

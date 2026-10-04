@@ -1,0 +1,142 @@
+{
+ "job": {
+  "id": "20261004005422846-B082-threat-2r899",
+  "agent": "B082",
+  "kind": "threat",
+  "submittedAt": "2026-10-04T00:54:22.848Z",
+  "note": "B082 locA2 vs Grindo, planter, Registered_Winners ([9769h] timing), V6 (INT87 instr 11 vs 10)",
+  "asmA": "agent2/night/scratch/B082/locA2.asm",
+  "threats": [
+   {
+    "key": "zomb_Grindo"
+   },
+   {
+    "name": "B052plant",
+    "asmA": "agent2/night/scratch/B052/plantA.asm",
+    "asmB": "agent2/night/scratch/B052/plantB.asm"
+   },
+   {
+    "name": "RegWinners",
+    "binA": "official-2025/survivors-online/HRZ_Registered_Winners1",
+    "binB": "official-2025/survivors-online/HRZ_Registered_Winners2"
+   },
+   {
+    "key": "lead_V6"
+   }
+  ],
+  "copies": 1,
+  "cohortsPerThreat": 6
+ },
+ "ok": true,
+ "finishedAt": "2026-10-04T00:56:52.629Z",
+ "seconds": 34.224,
+ "result": {
+  "candidate": {
+   "A": "agent2/night/cand-build/20261004005422846-B082-threat-2r899/candA",
+   "B": "agent2/night/revisions/rev0/B",
+   "sizeA": 204,
+   "sizeB": 202,
+   "shaA": "cfea7b401134a0293df5ad5a5f1676f45045204f7314c3b150e8f9cd68962f06",
+   "shaB": "8579e2c2212d72a413a6daacfe3b91ceb72be648bfc085bfeed9430eeaf6657a"
+  },
+  "baseRevision": 0,
+  "specKey": "9ce1d3a39ba3",
+  "battlesPerArm": 480,
+  "candMean": 0.6892,
+  "baseMean": 0.5823,
+  "all": {
+   "n": 24,
+   "diff": 0.10694,
+   "lo": 0.05051,
+   "hi": 0.16338,
+   "wins": 15,
+   "losses": 4
+  },
+  "byThreat": {
+   "zomb_Grindo": {
+    "n": 6,
+    "diff": 0.14583,
+    "lo": 0.06742,
+    "hi": 0.22425,
+    "wins": 6,
+    "losses": 0
+   },
+   "B052plant": {
+    "n": 6,
+    "diff": 0.275,
+    "lo": 0.16839,
+    "hi": 0.38161,
+    "wins": 6,
+    "losses": 0
+   },
+   "RegWinners": {
+    "n": 6,
+    "diff": -0.00556,
+    "lo": -0.03528,
+    "hi": 0.02417,
+    "wins": 1,
+    "losses": 3
+   },
+   "lead_V6": {
+    "n": 6,
+    "diff": 0.0125,
+    "lo": -0.01507,
+    "hi": 0.04007,
+    "wins": 2,
+    "losses": 1
+   }
+  },
+  "threatFirstTeamScore": {
+   "vsCand": {
+    "zomb_Grindo": 0.2833,
+    "B052plant": 0,
+    "RegWinners": 0.0403,
+    "lead_V6": 0.5
+   },
+   "vsBase": {
+    "zomb_Grindo": 0.4333,
+    "B052plant": 0.0083,
+    "RegWinners": 0.025,
+    "lead_V6": 0.5125
+   }
+  },
+  "threatHashes": [
+   {
+    "label": "zomb_Grindo",
+    "warriors": [
+     "official-2025/survivors-online/HRZ_Grindo_Holics1",
+     "official-2025/survivors-online/HRZ_Grindo_Holics2"
+    ]
+   },
+   {
+    "label": "B052plant",
+    "warriors": [
+     "agent2/night/cand-build/20261004005422846-B082-threat-2r899/threat-1/tA",
+     "agent2/night/cand-build/20261004005422846-B082-threat-2r899/threat-1/tB"
+    ],
+    "hashes": [
+     "516e6a03b19a837ce15ff5021393b2b9aab11082154f953342b292184cdc4574",
+     "516e6a03b19a837ce15ff5021393b2b9aab11082154f953342b292184cdc4574"
+    ]
+   },
+   {
+    "label": "RegWinners",
+    "warriors": [
+     "official-2025/survivors-online/HRZ_Registered_Winners1",
+     "official-2025/survivors-online/HRZ_Registered_Winners2"
+    ],
+    "hashes": [
+     "1645436c2465df7ac0def9182eb12506e7aa9ca6b719635d2192eab4e38ce70d",
+     "6a489e8f28e3cbe8e370b8382679938c7635a46fcbbd5f4c263024e2e8dcabab"
+    ]
+   },
+   {
+    "label": "lead_V6",
+    "warriors": [
+     "agent2/night/refs/V6/A",
+     "agent2/night/refs/V6/B"
+    ]
+   }
+  ]
+ }
+}

@@ -1,0 +1,91 @@
+{
+ "job": {
+  "id": "20261004013755974-A037-threat-lwnbx",
+  "agent": "A037",
+  "kind": "threat",
+  "submittedAt": "2026-10-04T01:37:55.976Z",
+  "note": "D1 replication vs V6Guard/V6, 1 copy, 12 cohorts each (V6Guard leaned negative in 6vw1o/8c6hg)",
+  "asmA": "agent2/night/scratch/A037/d1A.asm",
+  "asmB": "agent2/night/scratch/A037/d1B.asm",
+  "threats": [
+   {
+    "key": "lead_V6Guard"
+   },
+   {
+    "key": "lead_V6"
+   }
+  ],
+  "copies": 1,
+  "cohortsPerThreat": 12
+ },
+ "ok": true,
+ "finishedAt": "2026-10-04T01:40:13.294Z",
+ "seconds": 58.11,
+ "result": {
+  "candidate": {
+   "A": "agent2/night/cand-build/20261004013755974-A037-threat-lwnbx/candA",
+   "B": "agent2/night/cand-build/20261004013755974-A037-threat-lwnbx/candB",
+   "sizeA": 204,
+   "sizeB": 202,
+   "shaA": "a24d3b07ce59e7d9e4190245917e10b7b26b4e074fc2c94c21e7f9f30550bb66",
+   "shaB": "9befc8279a8a7bc1323ccb7f86a74d86fa781216f16963f225f1e38ad167002e"
+  },
+  "baseRevision": 0,
+  "specKey": "15013435d766",
+  "battlesPerArm": 480,
+  "candMean": 0.4372,
+  "baseMean": 0.449,
+  "all": {
+   "n": 24,
+   "diff": -0.01181,
+   "lo": -0.04637,
+   "hi": 0.02276,
+   "wins": 8,
+   "losses": 14
+  },
+  "byThreat": {
+   "lead_V6Guard": {
+    "n": 12,
+    "diff": -0.04931,
+    "lo": -0.09179,
+    "hi": -0.00682,
+    "wins": 1,
+    "losses": 11
+   },
+   "lead_V6": {
+    "n": 12,
+    "diff": 0.02569,
+    "lo": -0.0213,
+    "hi": 0.07269,
+    "wins": 7,
+    "losses": 3
+   }
+  },
+  "threatFirstTeamScore": {
+   "vsCand": {
+    "lead_V6Guard": 0.4958,
+    "lead_V6": 0.466
+   },
+   "vsBase": {
+    "lead_V6Guard": 0.4493,
+    "lead_V6": 0.4604
+   }
+  },
+  "threatHashes": [
+   {
+    "label": "lead_V6Guard",
+    "warriors": [
+     "agent2/night/refs/V6Guard/A",
+     "agent2/night/refs/V6Guard/B"
+    ]
+   },
+   {
+    "label": "lead_V6",
+    "warriors": [
+     "agent2/night/refs/V6/A",
+     "agent2/night/refs/V6/B"
+    ]
+   }
+  ]
+ }
+}

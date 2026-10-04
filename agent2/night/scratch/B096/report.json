@@ -1,0 +1,34 @@
+{
+ "agentId": "B096",
+ "revisionUsed": 0,
+ "jobs": ["20261004030839189-B096-screen-tjf1k", "20261004030839376-B096-threat-qvq5f", "20261004030839573-B096-threat-q3pyu", "20261004031044504-B096-threat-p3n0l"],
+ "audit": "Domain-6 fixes proposed so far: B056 reorder (0 bytes; only moves the weak spot, x4a43), B086 dA (A-only upper decoy copy of late A code; jaslw +0.134, screen ooxys +0.0036), B086 dAB (adds a 54-byte B decoy; screen dtfx1 +0.0006, B 256 B), B076 non-contiguous template (untested, loses B's tail decoy). Best = dA: zero executed change, A-only, largest measured effect. dAB's B part cannot be ported to KP_B (222 B + 54 > 256). Combination partner chosen: KP (B094; the only candidate whose confirm passed the pooled gate, wave 9).",
+ "candidates": [
+  {
+   "label": "KPd = KP with B086 dA ported to K_A (KdA + KP_B)",
+   "change": "A = A031 K_A bytes 00h..80h unchanged (all executed code, worker, CC CC guard, 20th template byte 89h). The dead zombie_entry/zombie_scan tail is replaced by a 125-byte copy of K_A[04h..80h], so every 4-byte window starting at 04h..7Dh also exists at a higher address in A (checked statically). No executed instruction or turn changes; the 10-word template copy is byte-identical. B = B094 KP_B unchanged. Generator agent2/night/scratch/B096/mk.cjs.",
+   "asmA": "agent2/night/scratch/B096/KdA.asm",
+   "asmB": "agent2/night/scratch/B094/KP_B.asm",
+   "shaA": "aa27db39236d471d8e5f7a0cf028ea2a5b1fcdbfee0b89dc5486a9f2a3a7d7ee",
+   "shaB": "b275310b903e4c1d026f2c0f8082dba9976b1b12cc5b5fb16561f7045e4a0b62",
+   "sizeA": 254,
+   "sizeB": 222,
+   "screenJob": "20261004030839189-B096-screen-tjf1k",
+   "screenAllDiff": 0.02842, "screenAllLo": 0.00284, "screenAllHi": 0.054,
+   "groupNotes": "Screen vs rev0: cand 0.674 vs 0.6456, W/L 22/17; 2025 +0.0184; strong +0.0558; threat +0.0316 (zrl03 +0.200, ah02 +0.239); multi +0.0319. Paired per cohort vs KP's screen c08bm (same field/seeds, identical base values): KPd-KP ALL -0.0011 [-0.0039,+0.0017], only 6/50 cohorts changed (W/L 2/4); 2025 +0.0013 (s2025-14 +0.033); strong -0.0016 (sstrong-1 -0.011); threat -0.0049 [-0.0123,+0.0026] (Baltika9 -0.033, CodeKiller -0.033, Grindo -0.033, zchain4 +0.022); multi 0. Baltika9 and CodeKiller were also -0.033 (1 battle each) when dA was added to rev0 (ooxys). Threat qvq5f (1 copy, 4 cohorts x 20 battles each): KPd vs signature counters ALL +0.141 [0.113,0.169] 24/0 (nbsig +0.210, nbkill +0.169, nbsig2 +0.129, tplsig +0.092, dsig +0.115, fwdkill +0.131). Control q3pyu (KP without decoy, same cohorts: identical base/threat-vs-base values): ALL +0.002 [-0.002,+0.006], i.e. KP is as exposed as rev0; paired KPd-KP on the counters about +0.139. Threat p3n0l (2 copies of each counter): KPd +0.0005 (all 0 except dsig +0.003): the decoy is exhausted by 2 counter teams.",
+   "isDefenseFix": true,
+   "promising": true
+  }
+ ],
+ "threatFindings": [
+  {"threat": "Purpose-built backward 4-byte INT87 signature counters on phoenix_init/template windows shared by A and B (nbsig 0E 17 89 07, nbkill, nbsig2 17 89 07 83, tplsig B1 09 31 F6, dsig A 16 1F BB C0 / B 16 1F BB 80) wipe out KP exactly as they wipe out rev0", "classification": "verified-in-current", "evidence": "q3pyu: KP 0.002/battle vs these counters (rev0 0.000); E1/SD/Z1/p0f13 edits leave every targeted window in place", "impact": "a single published-code counter scores ~0.55-0.71 against KP and leaves KP ~0; affects any team built on the V6/K template"},
+  {"threat": "dA upper decoy keeps one warrior alive inside KP (fix survives the combination)", "classification": "verified-in-current", "evidence": "qvq5f +0.141 [0.113,0.169] 24/0 vs control q3pyu +0.002 on identical cohorts", "impact": "+0.09..+0.21 per battle per counter at 1 copy"},
+  {"threat": "Forward (cld) same-signature counter fwdkill 0E 17 89 07 is partly answered by the A-only upper decoy", "classification": "verified-in-current", "evidence": "qvq5f fwdkill +0.131 [0.035,0.228] 4/0 (B086 left this as a hypothesis; dAB's B decoy gave +0.183 on rev0)", "impact": "the B lower decoy of dAB is not needed for most of the forward gain"},
+  {"threat": "Two copies of a signature counter (4 INT87 charges) exhaust the single decoy and wipe KPd", "classification": "verified-in-current", "evidence": "p3n0l: KPd 0.0005/battle (5 of 6 counters exactly 0)", "impact": "the fix only raises the cost of the attack to two teams or a decoy-aware window choice (B086 aware: 0); no complete fix fits in 256 bytes"},
+  {"threat": "General field cost of carrying the decoy inside KP", "classification": "not-reproduced", "evidence": "tjf1k vs c08bm paired: -0.0011 [-0.0039,+0.0017], 44/50 cohorts bit-identical", "impact": "about 0; field S cannot resolve below ~0.004"},
+  {"threat": "The larger A body costs a battle vs MOVSW threats Baltika9/CodeKiller (same -0.033 in both dA-on-rev0 and dA-on-KP screens)", "classification": "hypothesis", "evidence": "ooxys and tjf1k, 1 battle of 30 per cohort, same seeds; not traced", "impact": "<= 0.002/battle on the field if real"},
+  {"threat": "Archived 2023-2025 searchers that match our initializer windows", "classification": "not-reproduced", "evidence": "B056 static scan + fqpr7; A031 sig.mjs (only FF 1F CC CC, handled by E1/SD/Z1 decoys)", "impact": "the defended threat is hypothetical for the archived fields; relevant only if opponents tailor counters to published V6-family code"}
+ ],
+ "recommendation": "Do not spend a separate confirm on the decoy. If the coordinator re-confirms KP (as the wave-9 lessons suggest), KdA can replace K_A at no measured cost (paired -0.0011 n.s., 44/50 cohorts identical) and adds +0.14 per battle against single-copy initializer-signature counters. That makes it a low-priority promote-candidate add-on, not a field gain. Caveats: (1) 2 counter copies or a decoy-aware counter still wipe it. (2) KdA uses 254 of A's 256 bytes, so it blocks A-side combinations that need the dead-tail space (KL/locpatA A = 214 B); KT's 1-byte A edit still fits. Pick the A-side field edit first and add the decoy only if space remains. If no confirm slot is used for it, keep KP as is.",
+ "notes": "All jobs on base revision 0. Helper agent2/night/scratch/B096/mk.cjs builds KdA from agent2/night/scratch/A031/K_A.asm. Pairing used perCohort from queue/done/<job>.json (same field S seeds, base values identical)."
+}

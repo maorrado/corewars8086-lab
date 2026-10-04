@@ -1,0 +1,81 @@
+{
+ "agentId": "A039",
+ "role": "wave 8 performance: b/d capture search parameters (start DI, direction, pattern choice)",
+ "revisionUsed": 0,
+ "jobs": [
+  "20261004013746990-A039-screen-fby9g",
+  "20261004013811416-A039-threat-lth21",
+  "20261004014240636-A039-screen-09b1x",
+  "20261004014449722-A039-threat-y93aj"
+ ],
+ "staticAnalysis": {
+  "pattern": "zom20b/d bodies (382 B) hold 5 copies of a 0x19-byte block at +107h,+120h,+139h(live entry),+152h,+16Bh (last truncated after 81 C7 FE 0F); EB F9 tails at +11Ah,+133h,+14Ch(live),+165h. Every 4-byte window overlapping the live loop (+147h..+14Dh) also occurs in the top copy (+152h) and in the two lower copies, so no pattern choice makes the live tail the first match in either direction: backward needs 2 searches (top decoy, then live), forward needs 3. Bytes before c0 (FF 56 D6 / 7E C1 04) break the period only below the bottom copy.",
+  "engine": "repos/corewars8086-6.0.0 Cpu.int87: compares word AX then DX at ES:DI+-i, writes BX,CX at the first match, DI is NOT updated, so nobody can learn where a search hit.",
+  "direction": "Forward search costs one extra charge per b/d zombie; not built.",
+  "startDI": "Every top-down tail consumer (V6 family, MOV_AX_WIN, LowKey, TOM_anonymous, RW, OpcodeHunter2 decoys at FFF4h-FFFCh, zrl03/ah02 decoys at FFE8h/FFECh) competes for the topmost b/d zombie. A start at B's own load address picks the first b/d below B (same zombie as before when both are above B, P about 1/3). Captured zombies execute zombie_entry inside B's body, so [4A17h] (= B's zombie_entry) gives them the same start point with no extra instructions."
+ },
+ "candidates": [
+  {
+   "label": "locB (B only: b/d searches start at B's load address)",
+   "asmB": "agent2/night/scratch/A039/locB.asm",
+   "sizeB": 204,
+   "shaB": "9db214f865d35fba4ad764fd813fb24400aab7d507c4041fc0a354913f04dde5",
+   "change": "rev0 B: mov si,ax -> mov di,ax; lea bx,[si+zombie_entry] -> [di+...]; after the startup INT87 mov ax,si -> mov ax,di; add si,worker-start -> lea si,[di+worker-start]; zombie_entry xor di,di -> mov di,[4A17h]. Startup INT87 stays the 12th instruction; zombie-path instruction counts unchanged; +2 bytes. Builder agent2/night/scratch/A039/mk.cjs.",
+   "screenJob": "20261004013746990-A039-screen-fby9g",
+   "screenAllDiff": 0.00789,
+   "screenAllLo": -0.00451,
+   "screenAllHi": 0.02028,
+   "groupNotes": "cand 0.6535 vs base 0.6456, W/L 18/12. 2025 +0.0076 [-0.0098,+0.0249] 8/3 (s2025-2 MOV_AX_WIN cohort +0.133, s2025-10 OpcodeHunter +0.067, s2025-9 Registered_Winners -0.133); strong +0.015 [-0.018,+0.048]; threat +0.010 [-0.014,+0.034] (zrl03 +0.056, zchain4 +0.072, V4 +0.083, BinaryBandits -0.10, V6 -0.033); multi -0.031 [-0.069,+0.008] 0/2 (V6x3 -0.011, mix(V4,Grindo,Baltika9) -0.050). Threat lth21 (1 copy, 4 cohorts x 20 each): ALL +0.0174 [-0.0089,+0.0437] 8/5; V6 -0.021, zrl03 +0.0625, LowKey 0, MOV_AX_WIN 0 (4/4 identical), OpcodeHunter +0.050 3/1, TOM_anonymous +0.0125. Threat y93aj (2 copies, 8 cohorts each): ALL +0.0025 [-0.0089,+0.0139] 6/12; V6x2 -0.005 1/7, V4x2 +0.005, rev0x2 +0.0075 -> the screen's multi loss is not reproduced at that size.",
+   "isDefenseFix": false,
+   "promising": true
+  },
+  {
+   "label": "p0f13locB (B084 p0f13 + locB)",
+   "asmB": "agent2/night/scratch/A039/p0f13locB.asm",
+   "sizeB": 213,
+   "shaB": "ff8f78ffb985df4b847e972964c4bd4dd5bd12121259f4e576ab9e9d78c0b22a",
+   "change": "agent2/night/scratch/B084/p0f13B.asm with the same locB edits; les di,[si+es_ptr] -> les bp,[di+es_ptr] (ES=1000h, BP dummy, DI keeps the load address). Startup INT87 still the 12th instruction.",
+   "screenJob": "20261004014240636-A039-screen-09b1x",
+   "screenAllDiff": 0.01347,
+   "screenAllLo": -0.00551,
+   "screenAllHi": 0.03245,
+   "groupNotes": "cand 0.6591, W/L 20/18. 2025 +0.0078; strong +0.055 [-0.027,+0.137]; threat +0.011 (zrl03 +0.122, ah02 +0.089, TrojanByte -0.067, BinaryBandits -0.10); multi -0.039 [-0.061,-0.017] 0/2. Below p0f13 alone on the same field (tcluu +0.0178, multi -0.004): the location start adds nothing on top of p0f's decoy-immune window and adds a multi loss.",
+   "isDefenseFix": false,
+   "promising": false
+  }
+ ],
+ "threatFindings": [
+  {
+   "threat": "One INT87 search can capture a zom20b/d zombie at an unknown address (pattern or direction choice)",
+   "classification": "not-reproduced",
+   "evidence": "static: zom20b/d dumps (period-0x19 copies, the live tail is 2nd from the top and 3rd from the bottom for every window) and Cpu.int87 (first match only, DI unchanged). Each b/d capture costs 2 backward charges or 3 forward charges.",
+   "impact": "closes the pattern-choice and direction parts of this card"
+  },
+  {
+   "threat": "Top-down tail consumers (MOV_AX_WIN, LowKey, TOM_anonymous) shift which of our searches hits the live tail; a start at B's own address avoids them",
+   "classification": "not-reproduced",
+   "evidence": "threat lth21: MOV_AX_WIN 0 (4/4 cohorts identical), LowKey 0, TOM_anonymous +0.0125; only the screen cohort s2025-2 (MOV_AX_WIN) moved (+0.133, 1 cohort).",
+   "impact": "below resolution"
+  },
+  {
+   "threat": "OpcodeHunter2 / zrl03 top-of-arena EB F9 decoys partly avoided by starting the search at B's address",
+   "classification": "hypothesis",
+   "evidence": "lth21 OpcodeHunter +0.050 [-0.022,+0.122] 3/1, zrl03 +0.0625 [-0.019,+0.144] 2/0; screen fby9g s2025-10 +0.067, zrl03 +0.056. Same direction as B064/B084 (verified there for p0f), but not significant here, and it overlaps p0f13 (combo 09b1x below p0f13 alone).",
+   "impact": "about +0.05 per affected battle at most; p0f's 0F window already removes these decoys"
+  },
+  {
+   "threat": "A location-based b/d start loses in V6-family crowds (multi-copy cohorts)",
+   "classification": "not-reproduced",
+   "evidence": "screen fby9g multi -0.031 0/2 and 09b1x multi -0.039 0/2 (same two cohorts), but threat y93aj with 2 copies x 8 cohorts: V6 -0.005 1/7, V4 +0.005, rev0self +0.0075, ALL +0.0025 n.s.",
+   "impact": "at most about -0.005 vs V6 crowds; the screen's 2 multi cohorts are mostly chance"
+  },
+  {
+   "threat": "Registered_Winners loses its [9769h]-routed b/d captures to us less often when our searches no longer start where RW's do",
+   "classification": "hypothesis",
+   "evidence": "screen fby9g s2025-9 (Registered_Winners) -0.133; single cohort, no targeted job.",
+   "impact": "unknown; worth a check if locB is ever combined"
+  }
+ ],
+ "recommendation": "Do not promote. locB meets the numerical screen bar (+0.0079) only barely, its threat gains (OpcodeHunter, zrl03) are the same decoy effects p0f13 already captures, and combining it with p0f13 lowered the screen (+0.0135 vs +0.0178 for p0f13 alone) with a clearly negative multi group. The b/d search parameter space looks used up: one INT87 cannot hit the live tail first in either direction, and B054/B064/B084 already cover start-DI skips and the decoy-immune window. If the coordinator wants a b/d change in the next combination, use p0f13 as it is, not locB.",
+ "notes": "Helper/builder: agent2/night/scratch/A039/mk.cjs (derives locB from rev0 B and p0f13locB from scratch/B084/p0f13B.asm). Builds in agent2/night/scratch/A039/build."
+}

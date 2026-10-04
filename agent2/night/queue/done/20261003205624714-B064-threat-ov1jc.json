@@ -1,0 +1,121 @@
+{
+ "job": {
+  "id": "20261003205624714-B064-threat-ov1jc",
+  "agent": "B064",
+  "kind": "threat",
+  "submittedAt": "2026-10-03T20:56:24.719Z",
+  "note": "B064 nocapB ablation (b/d capture off) vs EB F9 decoy carriers OpcodeHunter (plants FFFC/FFF8/FFF4) and Thefrogs (static), control IND_BRA",
+  "binB": "agent2/night/scratch/B064/build/nocapB",
+  "threats": [
+   {
+    "name": "OpcodeHunter",
+    "binA": "official-2025/survivors-online/GGN_OpcodeHunter1",
+    "binB": "official-2025/survivors-online/GGN_OpcodeHunter2"
+   },
+   {
+    "name": "Thefrogs",
+    "binA": "official-2025/survivors-online-young/TOM_Thefrogs1",
+    "binB": "official-2025/survivors-online-young/TOM_Thefrogs2"
+   },
+   {
+    "key": "bomb_IND_BRA"
+   }
+  ],
+  "cohortsPerThreat": 8
+ },
+ "ok": true,
+ "finishedAt": "2026-10-03T21:02:01.704Z",
+ "seconds": 40.278,
+ "result": {
+  "candidate": {
+   "A": "agent2/night/revisions/rev0/A",
+   "B": "agent2/night/scratch/B064/build/nocapB",
+   "sizeA": 194,
+   "sizeB": 202,
+   "shaA": "6861894f3c1992cd6c6baa5b2a746178082f5b4b0a1d9969b9a326fe03d86c89",
+   "shaB": "a09d7d54e998a1e2743818ff2b04708070209b052980fd861e5a0ad35caaf267"
+  },
+  "baseRevision": 0,
+  "specKey": "1bd27f1e885d",
+  "battlesPerArm": 480,
+  "candMean": 0.6771,
+  "baseMean": 0.708,
+  "all": {
+   "n": 24,
+   "diff": -0.0309,
+   "lo": -0.05279,
+   "hi": -0.00902,
+   "wins": 3,
+   "losses": 14
+  },
+  "byThreat": {
+   "OpcodeHunter": {
+    "n": 8,
+    "diff": 0.0125,
+    "lo": -0.012,
+    "hi": 0.037,
+    "wins": 1,
+    "losses": 0
+   },
+   "Thefrogs": {
+    "n": 8,
+    "diff": -0.05625,
+    "lo": -0.09526,
+    "hi": -0.01724,
+    "wins": 1,
+    "losses": 7
+   },
+   "bomb_IND_BRA": {
+    "n": 8,
+    "diff": -0.04896,
+    "lo": -0.0811,
+    "hi": -0.01682,
+    "wins": 1,
+    "losses": 7
+   }
+  },
+  "threatFirstTeamScore": {
+   "vsCand": {
+    "OpcodeHunter": 0.1708,
+    "Thefrogs": 0.0656,
+    "bomb_IND_BRA": 0.0125
+   },
+   "vsBase": {
+    "OpcodeHunter": 0.1833,
+    "Thefrogs": 0.0594,
+    "bomb_IND_BRA": 0.0125
+   }
+  },
+  "threatHashes": [
+   {
+    "label": "OpcodeHunter",
+    "warriors": [
+     "official-2025/survivors-online/GGN_OpcodeHunter1",
+     "official-2025/survivors-online/GGN_OpcodeHunter2"
+    ],
+    "hashes": [
+     "d5992bdc307b070ad91e1737a8777125970912b286a392ed6d9a6456d87ed3af",
+     "0ced8fc1ec650a032604e2e149458b54202be7ecabb447999f143659d6ea46b6"
+    ]
+   },
+   {
+    "label": "Thefrogs",
+    "warriors": [
+     "official-2025/survivors-online-young/TOM_Thefrogs1",
+     "official-2025/survivors-online-young/TOM_Thefrogs2"
+    ],
+    "hashes": [
+     "8f014d9812cf497a03015d562135e8bdaaa4dd921e5de3e28984ac64642fa050",
+     "348c42651bea5001dc5a61a3e15228e4820dbbd4ab0b6df16982dbb38334a504"
+    ]
+   },
+   {
+    "label": "bomb_IND_BRA",
+    "warriors": [
+     "official-2025/survivors-online/IND_BRA1",
+     "official-2025/survivors-online/IND_BRA2"
+    ]
+   }
+  ]
+ }
+}

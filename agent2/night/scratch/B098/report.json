@@ -1,0 +1,48 @@
+{
+ "agentId": "B098",
+ "role": "wave 10, domain 8 (dense/sparse CC bombers, early INT86 heavy bombs), R5-cost (audit + combination screen)",
+ "revisionUsed": 0,
+ "jobs": ["20261004031828157-B098-screen-os8if", "20261004031828507-B098-threat-o3e9k", "20261004031828728-B098-threat-1xzx0", "20261004032200822-B098-screen-g2moe"],
+ "audit": "Domain-8 fixes proposed so far: B088 mix4 (zero-byte per-battle mixed lattice 22h/32h/42h/52h from [4A17h]&3; only defense ever built for this domain). B058/B068: early INT86 bombs ~2% of deaths, no cheap fix (only image size). Real field bombers (IND_BRA, R1DDLE, tson) are lattice-blind (B068/B088). Best = mix4 (works vs the purpose-built 52h bomber, zero bytes in rev0). Combination partner: KP (B094 = K_A + KP_B), the only candidate whose confirm passed the pooled gate. K's SD removed the dead mov dx,[4A17h] from phoenix_init, so mix4 needs that read back (+1 turn, +4 bytes per side); KPt is the turn-only control so that KPm-KP splits into timing and lattice parts. Pairing helper: agent2/night/scratch/B098/pair.cjs (per-cohort cand-minus-cand on identical base values; KP reference = B094 screen c08bm).",
+ "candidates": [
+  {
+   "label": "KPm = KP + mix4 (mixed lattice)",
+   "change": "A = A031 K_A, B = B094 KP_B; in phoenix_init of both: mov dx,[4A17h] re-inserted after rep movsw (as in rev0) and and dx,0 / or dx,0FFBh -> and dx,3 / or dx,0FF8h. Worker, template, startup and zombie paths unchanged. +1 turn per phoenix_init.",
+   "asmA": "agent2/night/scratch/B098/KPm_A.asm",
+   "asmB": "agent2/night/scratch/B098/KPm_B.asm",
+   "shaA": "a7599619f5658344843829890f89a07375ad075427819c5ea191ab1d8ef91f45",
+   "shaB": "2c3cf194b1545ad479f80033418d743057d13c2c34b6117a56e0e89c86c091f0",
+   "sizeA": 200, "sizeB": 226,
+   "screenJob": "20261004031828157-B098-screen-os8if",
+   "screenAllDiff": 0.00433, "screenAllLo": -0.02203, "screenAllHi": 0.03069,
+   "groupNotes": "vs base rev0: cand 0.6500 vs 0.6456, W/L 23/21; 2025 -0.0018; strong -0.0623 [-0.1246,-0.0000] 2/5; threat +0.0366; multi +0.0556. Paired vs KP (c08bm): ALL -0.0252 [-0.0471,-0.0033] 14/24; 2025 -0.0189 [-0.0357,-0.0021] 4/12; strong -0.1197 [-0.2292,-0.0102] 2/5 (sstrong-1 -0.363, -5 -0.192, -4 -0.172, -7 -0.150); threat +0.0002; multi +0.024. Split with KPt (g2moe): timing part KPt-KP -0.0089 [-0.0211,+0.0032] n.s.; lattice part KPm-KPt -0.0163 [-0.0404,+0.0079], strong -0.113 [-0.239,+0.014] 2/5 (sstrong-1 -0.40), 2025 -0.012 7/12. Threat o3e9k vs 1xzx0 (same cohorts, 1 copy, 4x20 per threat; KPm-KP from identical base values): B058_pg52 +0.6625 (KPm +0.6625 [0.554,0.771] 4/0 vs base, bomber team 0.044 vs KP 0.169), B058_pg22 -0.325 (KPm -0.331 [-0.399,-0.264] 0/4), B088_pgadapt -0.548 (KPm -0.6125 0/4, bomber team 0.233 vs 0.096), bomb_IND_BRA -0.0625 (KPm -0.050 [-0.085,-0.015] 0/3 vs KP +0.0125), lead_zchain4 +0.040, lead_zrl03 +0.027.",
+   "isDefenseFix": true,
+   "promising": false
+  },
+  {
+   "label": "KPt = KP + dead mov dx,[4A17h] (turn control, not a proposal)",
+   "change": "KPm with the lattice immediates restored (and dx,0 / or dx,0FFBh): only the +1-turn dead read re-added in phoenix_init (rev0 timing for that step).",
+   "asmA": "agent2/night/scratch/B098/KPt_A.asm",
+   "asmB": "agent2/night/scratch/B098/KPt_B.asm",
+   "shaA": "56454016a3d8f3992034ed6c5c4e794670b50cc72de9da842777939b5b00026f",
+   "shaB": "966d5770048fcb1c65242b4862834bf99d54d761eb563f6074b23174269ce9e1",
+   "sizeA": 200, "sizeB": 226,
+   "screenJob": "20261004032200822-B098-screen-g2moe",
+   "screenAllDiff": 0.0206, "screenAllLo": -0.00501, "screenAllHi": 0.0462,
+   "groupNotes": "vs base: cand 0.6662, W/L 23/19; 2025 +0.0098; strong +0.0502; threat +0.0255; multi +0.0125. Paired vs KP: ALL -0.0089 [-0.0211,+0.0032] 15/19 (2025 -0.007, strong -0.007, threat -0.011, multi -0.019): SD's dropped turn is worth about +0.009 inside KP (n.s.). Control only.",
+   "isDefenseFix": false,
+   "promising": false
+  }
+ ],
+ "threatFindings": [
+  {"threat": "Static page-lattice CC bomber tuned to in-page 52h wipes KP exactly as it wipes rev0", "classification": "verified-in-current", "evidence": "1xzx0: KP vs B058_pg52 diff 0 vs rev0 (bomber team 0.169 vs KP, 0.181 vs base).", "impact": "Large vs a purpose-built probe; no field warrior targets 52h (B058/B068/B088)."},
+  {"threat": "mix4 still answers the 52h bomber inside KP", "classification": "verified-in-current", "evidence": "o3e9k vs 1xzx0: KPm-KP +0.6625 on B058_pg52 (4/0).", "impact": "Defense survives the port."},
+  {"threat": "Mixed lattice opens the other offsets and is defeated by a [4A17h]-reading bomber", "classification": "verified-in-current", "evidence": "o3e9k vs 1xzx0: B058_pg22 -0.325, B088_pgadapt -0.548 (KPm 0/4 on both).", "impact": "Worst case vs an informed attacker is worse than KP (KP is hit by pgadapt in only 1/4 of battles)."},
+  {"threat": "Mixed lattice has a general cost on the strong group (lattice-sensitive 2024 finals/Chimera peers) and the plain 2025 field", "classification": "verified-in-current", "evidence": "os8if vs c08bm: KPm-KP ALL -0.0252 [-0.0471,-0.0033], strong -0.120 lo<0, 2025 -0.019 lo<0; lattice part (os8if vs g2moe) strong -0.113 2/5, sstrong-1 -0.40. Consistent with mix4 alone (irh7d strong -0.045) and MP-p0f13 (f30mc 2025 -0.023).", "impact": "About -0.016 (lattice) -0.009 (re-added turn) per battle on field S; disqualifies mix4 as a general-purpose addition."},
+  {"threat": "IND_BRA (real 2025 bomber) cohorts score lower with the mixed lattice", "classification": "verified-in-current", "evidence": "o3e9k: KPm vs bomb_IND_BRA -0.050 [-0.085,-0.015] 0/3 vs KP +0.0125 (1xzx0); screen IND_BRA cohort KPm-KPt -0.033. Small sample (4 cohorts x 20).", "impact": "Small (~-0.06 in IND_BRA cohorts); mechanism not traced (IND_BRA team score 0.0375 vs 0.0125)."},
+  {"threat": "K-family (KP) loses to IND_BRA", "classification": "hypothesis", "evidence": "Confirms lean negative (w1 -0.017, KH -0.029, KP ubyb2 -0.017, all n=3, n.s.); 1xzx0 KP +0.0125 n.s.; screen c08bm IND_BRA cohort -0.033 (1 battle).", "impact": "At most ~0.02 in IND_BRA cohorts; not resolved."},
+  {"threat": "mix4's losses to zchain4/zrl03 carry into KP", "classification": "not-reproduced", "evidence": "o3e9k vs 1xzx0: KPm-KP zchain4 +0.040, zrl03 +0.027 (B088 wfvlw had mix4 vs rev0 -0.076/-0.036); p0f13 repair holds (cf. B095 udjgk).", "impact": "No interaction cost on the leaders."},
+  {"threat": "Early INT86 heavy bombs at startup", "classification": "verified-in-other", "evidence": "Not re-tested; B058 pkj3o (~2% of deaths), B068 ogq11 (~-0.007/bomb). KP images (196/222 B) and KPm (200/226 B) are larger than rev0 (194/202 B).", "impact": "Larger image is a slightly larger target: hypothesis, no job spent."}
+ ],
+ "recommendation": "Do not promote mix4, alone or inside KP. Ported onto KP (KPm) it keeps its defense vs the purpose-built 52h bomber (+0.66) but loses -0.325 vs a 22h bomber and -0.548 vs a [4A17h]-reading bomber, and its general cost is now resolved: KPm-KP -0.025 [-0.047,-0.003] on field S (strong -0.12, 2025 -0.019, both lo<0), of which about -0.016 is the mixed lattice and -0.009 the re-added phoenix_init turn. The bomber threat it answers does not exist in any field. Keep KP (without mix4) as the combination target; do not reintroduce the dead mov dx,[4A17h] that SD removed. Domain 8 stays closed for field purposes; a private-coin lattice would still pay the strong-group lattice cost and is not worth a job."
+}

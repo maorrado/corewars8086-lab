@@ -1,0 +1,43 @@
+{
+ "agentId": "A044",
+ "role": "wave 9 performance: self-harm at startup (hook-cell writes, INT87 replacements, stosw)",
+ "revisionUsed": 0,
+ "jobs": ["20261004023040251-A044-screen-dfpb0", "20261004023042048-A044-screen-h248k", "20261004023441686-A044-screen-w244e", "20261004023636955-A044-trace-s5eyb"],
+ "candidates": [
+  {"label": "GA", "asmA": "agent2/night/scratch/A044/GA_A.asm", "asmB": "base", "sizeA": 206, "shaA": "9565510e62897722744d2e31752eb805626b0c1a1f497f3df7157070f163c5a2",
+   "change": "A only. [9769h] hook write guarded: cmp word [9767h],0CCCCh at r2, jne at r6 skips 'mov bp,[4A17h]; mov [9769h],bp' (r7/r8, rev0 r4/r5) when any code lies under the cell. push cs/pop es/mov ax,0F2E2h replaced by les ax,[si+z20a_data] (dw 0F2E2h,1000h placed after jmp short phoenix_init). INT87 stays r10, phoenix_init r22, so anchor timing = rev0.",
+   "screenJob": "20261004023040251-A044-screen-dfpb0", "screenAllDiff": 0.00045, "screenAllLo": -0.00369, "screenAllHi": 0.00458,
+   "groupNotes": "W/L 5/6 (only 11/50 cohorts changed: low-chaos edit). 2025 +0.002 (2/1); strong +0.0032; threat -0.0031 (Baltika9 -0.033, zrl03 -0.033, callfart +0.033); multi 0. Trace s5eyb vs base pkj3o (same cohorts/seeds): the pkj3o hook-cell self-kill (sthreat-movsw_cgx123123 w5, A load 972Ch) is gone (winners zom20a,CAND1,CAND2 vs zom20a,CAND2); 8/160 battles change winners, net about 0; A startup deaths 12 vs 2, mostly in battles A lost anyway (zombie fixed writes now land on different instructions).",
+   "isDefenseFix": true, "promising": false},
+  {"label": "GAB", "asmA": "agent2/night/scratch/A044/GA_A.asm", "asmB": "agent2/night/scratch/A044/GAB_B.asm", "sizeA": 206, "sizeB": 216,
+   "shaA": "9565510e62897722744d2e31752eb805626b0c1a1f497f3df7157070f163c5a2", "shaB": "d4ae1e91dcc4c698e5cde927bc604e24b2242c60017a22ba1f0ffc2833dca883",
+   "change": "GA + B guard: mov dx,[4A15h]; cmp dx,[5D11h]; jne skip (r3-r5); writes [4A17h] r6 (rev0 r3) and [5D13h] r7 (rev0 r5); les ax,[si+bd_data] (dw 0F9EBh,1000h); DX (=CCCCh) doubles as the search word; skip path mov dx,0CCCCh/jmp keeps INT87 at r12.",
+   "screenJob": "20261004023042048-A044-screen-h248k", "screenAllDiff": -0.00526, "screenAllLo": -0.0156, "screenAllHi": 0.00508,
+   "groupNotes": "W/L 15/19. 2025 -0.0044 (8/7); strong -0.0191 (1/3); threat -0.0021 (V6Guard +0.101, CodeKiller +0.05, several -0.033); multi +0.0069 (2/0).",
+   "isDefenseFix": true, "promising": false},
+  {"label": "GT (control)", "asmA": "agent2/night/scratch/A044/GA_A.asm", "asmB": "agent2/night/scratch/A044/GT_B.asm", "sizeA": 206, "sizeB": 213,
+   "shaA": "9565510e62897722744d2e31752eb805626b0c1a1f497f3df7157070f163c5a2", "shaB": "72bbe661db1a7d12b3f1ed52b2cce7681eadd9b93abfa53ebee3ae87694b73ff",
+   "change": "GAB layout and timing with the B guard disabled (mov dx,0CCCCh; cmp dx,dx). Isolates the B guard from the later B writes / layout.",
+   "screenJob": "20261004023441686-A044-screen-w244e", "screenAllDiff": -0.00177, "screenAllLo": -0.00926, "screenAllHi": 0.00573,
+   "groupNotes": "W/L 12/17. 2025 +0.0002; strong -0.0143; threat +0.0011 (V6Guard +0.089); multi -0.0056. GAB minus GT ~ -0.0035 (2025 -0.0046) = cost of the B guard; strong loss (-0.014/-0.019) comes with the later B hook writes/layout, not the guard.",
+   "isDefenseFix": false, "promising": false}
+ ],
+ "threatFindings": [
+  {"threat": "A's own [9769h] hook write overwrites A's pending startup code", "classification": "verified-in-current",
+   "evidence": "Base trace pkj3o sthreat-movsw_cgx123123 w5 r37 (A load 972Ch, already found by B059). GA trace s5eyb, same battle: A survives (winners zom20a,CAND1,CAND2 vs zom20a,CAND2). Field value is about 0: screen dfpb0 ALL +0.00045 [-0.0037,+0.0046].",
+   "impact": "Static MC (B069 startup-mc.mjs, rev0 phases): [9769h] hits A 0.18%, B 0.19%, B zombie_entry 0.19% of battles. The guard fixes them, but it also skips the write whenever foreign code lies at 9767h (a few % of battles), which drops the write's chance damage to rivals. Net about 0."},
+  {"threat": "B's [4A17h]/[5D13h] hook writes overwrite own or partner pending code", "classification": "verified-in-current",
+   "evidence": "Static MC: [4A17h] hits A 0.21%, B 0.20%; [5D13h] hits A 0.18%, B 0.20% of battles. A content guard (GAB) costs about -0.0035 vs its own unguarded control GT (h248k -0.0053 vs w244e -0.0018). Likely cause (hypothesis): the guard also fires on rival/zombie code at 4A15h/5D11h, so [4A17h] stays unset and the zom20a capture jumps into garbage.",
+   "impact": "<= ~0.003 points/battle ceiling. An exact self-only check (SI range per cell) costs 3+ turns per cell. Not worth it."},
+  {"threat": "INT87 replacements (A: E2F281C3->FF26174A forward; B: EBF9CCCC backward; zombie 0E070E17->CC) matching our own or partner code", "classification": "not-reproduced",
+   "evidence": "Static: no 4-byte match in rev0 A/B, GA_A or GAB_B. A's tail is EB C1 CC CC; mov ax/mov dx immediates are split by opcode bytes; new data words E2 F2 00 10 and EB F9 00 10 do not match.",
+   "impact": "none"},
+  {"threat": "Own anchor stosw (FF 1F) or first trail on own/partner pending code", "classification": "verified-in-other",
+   "evidence": "B059 (pkj3o, Baltika9 w17) and the static MC: A-anchor->A 0.023%, A-anchor->B 0.018%, B-anchor->B 0.025%, A-trail0->B 0.035%. The larger channel is the captured-zombie first trail (Za-trail0->B 0.79%), fixed by zph/h34 (already confirmed at about 0).",
+   "impact": "negligible"},
+  {"threat": "zom20b/d fixed-word writes (x612h/x226h) and zom20c writes landing on our pending startup code; lethality depends on which instruction lies under the write", "classification": "verified-in-current",
+   "evidence": "Trace s5eyb vs pkj3o (same loads): GA has 12 A startup deaths vs 2 in base. Example: sthreat-movsw_CodeKiller w1, A load 25FEh, zom20b writes 77B6h at 2612h in round 4. In GA that word lands on 'mov bp,[4A17h]' (lethal). In rev0 the same address is the immediate of 'mov cx,4A17h' (only spoils the INT87 replacement). s2025-2 w4: a zom20c A4 4B write lands on GA's 'push ss'; in rev0 it hits the dead 'mov dx,[4A17h]' operand. Only 8/160 battles change winners, net about 0: most of these A's die later in base anyway.",
+   "impact": "Any A-startup layout edit reshuffles which battles these zombie writes kill. Ranking layout edits on the screen picks up this chaos. Not fixed."}
+ ],
+ "recommendation": "Do not promote anything from A044. GA is a correct, low-chaos fix (11/50 cohorts changed; it removes the traced [9769h] self-kill) but is worth about 0 on the field (+0.0005) for +12 bytes. GAB and the B guard are negative. The hook-cell self-harm channel is closed as too small to fix: each cell is about 0.4% of battles, and both guard types tested here or costed out (content check or SI-range check) cost about as much as they save. Side note for combinations: later B hook writes (r6/r7) gain vs V6Guard (+0.09/+0.10 in both B screens, same as A003 C1) but lean negative on the strong group (-0.014/-0.019)."
+}

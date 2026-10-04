@@ -1,0 +1,138 @@
+bits 16
+; A050 (wave 10) control SN1ctl_B: SN1_B layout and timing, bomb writes replaced by reads (no bombs).
+; Base: rev0 = V6nohunt (Good_Test V6, friend-provided code; [7A00h] patch removed by agent2).
+; Change (agent2/A050): every captured zombie, after its INT 87h and get_ip, runs 1 passes
+; of a page-lattice CC bomber over all pages except the two pages holding B's body, writing
+; CCCCh at in-page offsets A3h (cgx123123, TOM_Code_Killer), 03h (TrojanByte1, Baltika91),
+; C1h (TOMEX/BatteringRAM/B33/3Plate/Chargers/K0F1M), E3h (TrojanByte2), 32h (zrl03/ah02),
+; then falls into the unchanged phoenix (replicator) path. Our own lattice (52h..65h) is never hit.
+
+; Good_Test V6 warrior 2 (friend-provided; reconstructed source in
+; study-notes/good-test-v6/source/). agent2 label form: hard-coded internal
+; offsets replaced by label arithmetic with the original operand widths.
+
+start:
+    mov si, ax
+    lea bx, [word si + zombie_entry - start]
+    mov [4A17h], bx
+    push cs
+    mov [5D13h], bx
+    pop es
+    mov ax, 0F9EBh
+    mov dx, 0CCCCh
+    mov bx, 026FFh
+    mov cx, 04A17h
+    std
+    int 087h
+    cld
+    mov ax, si
+    mov al, ah
+    xor ah, ah
+    mov ch, 03Ch
+    div ch
+    mul ch
+    mov ah, al
+    add ah, 10h
+    mov al, 0A2h
+    add si, strict word worker - start
+    jmp short phoenix_init
+
+zombie_entry:
+    xor di, di
+    std
+    mov bp, 3400h
+    jcxz zombie_fallback
+    mov bp, 2000h
+    push cs
+    pop es
+    mov ax, 0F9EBh
+    mov dx, 0CCCCh
+    mov bx, 026FFh
+    mov cx, 04A17h
+    jmp short zombie_search
+
+zombie_fallback:
+    mov ax, 070Eh
+    mov dx, 170Eh
+    mov bl, 0CCh
+
+zombie_search:
+    int 087h
+    cld
+    call get_ip
+
+get_ip:
+    pop si
+    sub si, strict word get_ip - start
+sniper:
+    push cs
+    pop ds
+    mov bx, si
+    mov bl, 80h
+    add bh, 2
+    mov ax, 0CCCCh
+    mov dx, 1
+sn_pass:
+    mov cx, 254
+sn_page:
+    mov ax, [bx + 23h]
+    mov ax, [bx + 41h]
+    mov ax, [bx + 63h]
+    mov ax, [bx - 7Dh]
+    mov ax, [bx - 4Eh]
+    inc bh
+    loop sn_page
+    add bh, 2
+    dec dx
+    jnz sn_pass
+    mov ax, si
+    mov al, ah
+    xor ah, ah
+    mov ch, 03Ch
+    div ch
+    mul ch
+    mov ah, al
+    add ax, bp
+    mov al, 0A2h
+    add si, strict word worker - start
+
+phoenix_init:
+    push ss
+    pop es
+    xor di, di
+    mov cx, 9
+    rep movsw
+    mov dx, [4A17h]
+    push ss
+    pop ds
+    mov bx, 0280h
+    push cs
+    pop ss
+    mov [bx], ax
+    and dx, 0
+    or dx, 0FFBh
+    mov [bx + 2], dx
+    xor si, si
+    mov di, ax
+    mov es, dx
+    mov sp, di
+    add sp, 00600h
+    mov cx, 8
+    mov dx, 02400h
+    mov bp, 02C00h
+    mov ax, 01FFFh
+    stosw
+    dec di
+    call far [bx]
+
+worker:
+    movsw
+    rep movsw
+    sub sp, dx
+    sub [bx], bp
+    mov di, [bx]
+    mov cl, 9
+    xor si, si
+    stosw
+    dec di
+    call far [bx]

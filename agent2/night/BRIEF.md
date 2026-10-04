@@ -78,7 +78,7 @@ pointer is CCCCh; A.asm there), zchain4 (our Chimera lineage, best on the plain 
   25 cohorts 2025 field, 7 strong (2024 final+counters+Chimera peers), 16 single-threat cohorts, 2 multi-copy).
   Paired by cohort+seed. Noise: SE of ALL ≈ 0.004–0.008. Treat ALL diff > +0.006 with no badly negative group as promising.
 - `threat`: forced counter opponents: `--threats '[{"key":"zomb_Grindo"},{"name":"myCounter","asmA":"path","asmB":"path"}]'
-  --copies 1..3 --cohortsPerThreat 2..12 [--mixAll]` — library keys in `agent2/night/threats/library.json`
+  --copies 1..3 --cohortsPerThreat 2..12 [--mixAll]` (capped by the daemon at 24 cohorts x 20 battles per arm; same-family clone cohorts are slow because they often run to the 200,000-round cap) — library keys in `agent2/night/threats/library.json`
   (movsw_Baltika9 movsw_TrojanByte movsw_cgx123123 movsw_CodeKiller movsw_LowKey movsw_BinaryBandits zomb_Grindo
   zomb_callfart zomb_AnotherBit bomb_IND_BRA lead_V6 lead_V4 lead_V6Guard lead_zchain4 lead_zrl03 lead_ah02).
   Reports candidate−base by threat and the threat team's own score vs each.

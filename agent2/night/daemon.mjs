@@ -116,8 +116,9 @@ function threatSpec(job) {
 }
 function threatCohorts(job, spec) {
   const copies = Math.min(3, Math.max(1, job.copies ?? 1));
-  const per = Math.min(12, Math.max(2, job.cohortsPerThreat ?? 6));
-  const key = shaStr(JSON.stringify({ spec: spec.map((s) => [s.label, s.hashes ?? s.team.warriors]), copies, per, mix: !!job.mixAll })).slice(0, 12);
+  const nT = job.mixAll ? 1 : spec.length;
+  const per = Math.max(2, Math.min(12, job.cohortsPerThreat ?? 6, Math.floor(24 / nT)));
+  const key = shaStr(JSON.stringify({ v: 2, battles: 20, spec: spec.map((s) => [s.label, s.hashes ?? s.team.warriors]), copies, per, mix: !!job.mixAll })).slice(0, 12);
   const salt = `agent2-night-threat-${key}`;
   const r = F.rng(salt); const base = F.field2025();
   const cohorts = [];
@@ -131,14 +132,14 @@ function threat(job, cand) {
   const spec = threatSpec(job);
   const { key, cohorts } = threatCohorts(job, spec);
   const bp = `nightT-${key}-base-rev${base.rev}`;
-  const baseRes = fs.existsSync(`${N}/results/${bp}.json`) ? readJ(`${N}/results/${bp}.json`) : runPlan(bp, [{ id: "base", warriors: [base.A, base.B] }], cohorts, 30, "z2025");
+  const baseRes = fs.existsSync(`${N}/results/${bp}.json`) ? readJ(`${N}/results/${bp}.json`) : runPlan(bp, [{ id: "base", warriors: [base.A, base.B] }], cohorts, 20, "z2025");
   const cp = `nightT-${key}-${cand.shaA.slice(0, 10)}-${cand.shaB.slice(0, 10)}`;
-  const candRes = fs.existsSync(`${N}/results/${cp}.json`) ? readJ(`${N}/results/${cp}.json`) : runPlan(cp, [{ id: "cand", warriors: [cand.A, cand.B] }], cohorts, 30, "z2025");
+  const candRes = fs.existsSync(`${N}/results/${cp}.json`) ? readJ(`${N}/results/${cp}.json`) : runPlan(cp, [{ id: "cand", warriors: [cand.A, cand.B] }], cohorts, 20, "z2025");
   const cs = scores(candRes, "cand"), bs = scores(baseRes, "base");
   const byThreat = {};
   for (const c of cohorts) { const k = `${c.id}|${c.seeds[0]}`; (byThreat[c.threat] ??= []).push(cs[k].v - bs[k].v); }
-  const threatScore = (sc) => { const o = {}; for (const c of cohorts) { const k = `${c.id}|${c.seeds[0]}`; const tn = c.opponents[0].name; (o[c.threat] ??= []).push(sc[k].opp[tn] / 30); } return Object.fromEntries(Object.entries(o).map(([t, a]) => [t, +(a.reduce((x, y) => x + y, 0) / a.length).toFixed(4)])); };
-  return { baseRevision: base.rev, specKey: key, battlesPerArm: cohorts.length * 30,
+  const threatScore = (sc) => { const o = {}; for (const c of cohorts) { const k = `${c.id}|${c.seeds[0]}`; const tn = c.opponents[0].name; (o[c.threat] ??= []).push(sc[k].opp[tn] / 20); } return Object.fromEntries(Object.entries(o).map(([t, a]) => [t, +(a.reduce((x, y) => x + y, 0) / a.length).toFixed(4)])); };
+  return { baseRevision: base.rev, specKey: key, battlesPerArm: cohorts.length * 20,
     candMean: +(Object.values(cs).reduce((a, x) => a + x.v, 0) / cohorts.length).toFixed(4), baseMean: +(Object.values(bs).reduce((a, x) => a + x.v, 0) / cohorts.length).toFixed(4),
     all: stat(cohorts.map((c) => cs[`${c.id}|${c.seeds[0]}`].v - bs[`${c.id}|${c.seeds[0]}`].v)),
     byThreat: Object.fromEntries(Object.entries(byThreat).map(([t, d]) => [t, stat(d)])),

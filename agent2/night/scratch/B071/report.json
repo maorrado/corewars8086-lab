@@ -1,0 +1,14 @@
+{
+ "agentId": "B071",
+ "role": "wave 5, domain 1 (MOVSW-family trails vs MOVSB anchors), R3-counter, defense",
+ "revisionUsed": 0,
+ "jobs": [],
+ "candidates": [],
+ "counterCodes": [],
+ "threatFindings": [
+  {"threat": "MOVSW-family trail turns the FF 1F anchor into FF A5 and kills it", "classification": "verified-in-current", "evidence": "Earlier work only (B051 trace pkj3o: 80-82 of 161 deaths; B061 traces). B071 ran no job."},
+  {"threat": "Engine treats 0Fh as invalid, so a mid-trail MOVSW pass that leaves 0F A5 on the anchor is also fatal", "classification": "hypothesis", "evidence": "Static only: engine-v6-opcodes.md says 0Fh is invalid. Not checked with a trace."}
+ ],
+ "recommendation": "No candidate and no counter-code from B071; the session stopped before any asm was written or any job was submitted. Card still open. Existing counters for this weakness: scratch/B051/cMovswA.asm/cMovswB.asm (= B060 movsw53), with 3 copies leaving base at 0.060 (B060 fu9fg).",
+ "notes": "Session stopped early. Read BRIEF, shared-best (revision 0), NOTICES (empty), FINDINGS waves 1-4 and the B051/B060/B061 reports. 0 of 4 queue jobs used."
+}

@@ -1,0 +1,65 @@
+{
+ "agentId": "B066",
+ "revisionUsed": 0,
+ "jobs": ["20261003214943014-B066-threat-hzq6i", "20261003214943443-B066-threat-asd0g", "20261003214943828-B066-screen-twd8z", "20261003215828833-B066-threat-83rh4"],
+ "candidates": [
+  {
+   "label": "B066-dec0A (defense fix)",
+   "change": "A only: the 1-turn no-op 'jmp short phoenix_init' (it jumps to the next instruction) is replaced by 'mov word [0000h],01FFFh' (same turn count, +4 bytes). Arena 0000h then reads FF 1F CC CC, the INT87 signature of the 2025 searchers OpcodeHunter1, 2B2Team1/2 and ADDvanced1/2. They search forward from DI=0, so address 0 is the first match and their replacement lands there instead of on our anchors or B's worker template. Source agent2/night/scratch/B066/dec0A.asm.",
+   "asmA": "agent2/night/scratch/B066/dec0A.asm",
+   "shaA": "2fadd3dee76a5a5fb0211cdd253b943956fa3051d445d3d32023a84d80214106", "sizeA": 198,
+   "screenJob": "",
+   "groupNotes": "Not screened (budget used). Threat 83rh4 (1 copy, 8 cohorts per threat, 480 battles/arm): ALL +0.0573 [0.0212,0.0934] W/L 13/3; OH_real +0.047 [0.007,0.087] 5/1; TB_real (2B2Team) +0.106 [0.013,0.200] 5/2; ADD_real (ADDvanced) +0.019 [0.001,0.037] 3/0. Most of the gain is in B's score. Searcher team scores drop: 2B2Team 0.2375 -> 0.1625, OpcodeHunter 0.165 -> 0.142, ADDvanced 0.194 -> 0.175. Expected effect on field S is about +0.005 ALL, because only 5/50 cohorts contain a searcher. The general cost is unmeasured: turn count is unchanged, and the B size change in padB left every non-searcher cohort of field S bit-identical, but a screen is still needed.",
+   "isDefenseFix": true,
+   "promising": true
+  },
+  {
+   "label": "B066-padB (ablation: removes B's natural decoy)",
+   "change": "B only: 'db 090h' appended after the worker (B 203 B). B's arena tail changes from FF 1F CC CC to FF 1F 90 CC, and template byte 17 changes from CCh to 90h. Source agent2/night/scratch/B066/padB.asm.",
+   "asmB": "agent2/night/scratch/B066/padB.asm",
+   "shaB": "3ad7fc704d2a4b59394b46d80acca8030a9060d3ab6ee09925d71aca393fe56e", "sizeB": 203,
+   "screenJob": "20261003214943828-B066-screen-twd8z", "screenAllDiff": -0.00578, "screenAllLo": -0.01182, "screenAllHi": 0.00026,
+   "groupNotes": "Screen twd8z: ALL -0.0058 W/L 0/4. 2025 -0.0089 (0/3), strong 0, threat -0.0042 (CodeKiller cohort -0.067), multi 0. Only the 4 cohorts that contain an FF1FCCCC searcher changed, all negative: s2025-10 OpcodeHunter -0.122, s2025-15 2B2Team -0.033, s2025-22 ADDvanced -0.067, sthreat-CodeKiller (OpcodeHunter filler) -0.067. The 5th searcher cohort (callfart+OpcodeHunter) was 0. Threat hzq6i: ALL -0.042 [-0.064,-0.020] 0/12 (OH -0.038, 2B2Team -0.046). Control asd0g with neutered searchers (DX CCCC->CCCD): -0.011 [-0.024,+0.001] 0/3, and all 3 negative cohorts there have a real OpcodeHunter or ADDvanced filler.",
+   "isDefenseFix": false,
+   "promising": false
+  }
+ ],
+ "threatFindings": [
+  {
+   "threat": "Published INT87 searchers for FF 1F CC CC (call far [bx] followed by untouched arena): 2025 GGN_OpcodeHunter1 (forward from DI=0 at its turn ~50, replacement CC CC 00 00), TOM_2B2Team1/2 (forward, turn ~100+ after loop delays), HRZ_ADDvanced1/2 (forward from DI=0, replacement CC CC CC CC). Also 2024 online/live BZV_PastRAMa, TOM_ATO1, HRZ_JMP2HELL2 and HLS_segment_fault1 (live), and 2023 Assembly_Beasts, Cookies_Army and Mydoom. None in the 2024 final versions (segment_fault final searches FF 18 CC CC / CC CC FF 1C; ATO2 final searches 89 D8 FF E3).",
+   "classification": "verified-in-current",
+   "evidence": "Static scan agent2/night/scratch/B066/scan.mjs, which matches rev0 padded with CCh as it sits in the arena, plus dis86 resolution of the ADDvanced sites (AX 1FFF, DX=AX=CCCC). Prevalence: 3/75 teams in field2025, 4/42 in field2024live, 0/12 in 2024 final; 5/50 field S cohorts contain one. Correction to B056: their scan matched only inside the binary, but rev0 B ends with FF 1F (worker call far [bx] at offset C8h), so in the arena B's tail reads FF 1F CC CC.",
+   "impact": "On average these searchers take points from rev0 mainly through B (anchors / zombie template). Exact base cost cannot be read from my jobs because base-vs-neutered comparisons are unpaired (2B2Team cohorts: base 0.491 vs 0.780 with neutered 2B2Team, different fillers). A lower bound comes from the paired decoy gain: +0.057/battle in searcher cohorts (+0.106 vs 2B2Team)."
+  },
+  {
+   "threat": "B's own arena tail FF 1F CC CC acts as a natural decoy that absorbs these searches (removing it exposes anchors)",
+   "classification": "verified-in-current",
+   "evidence": "padB removes the tail match. Threat hzq6i -0.042 [-0.064,-0.020] 0/12. In screen twd8z only searcher cohorts change, all negative (-0.0058 ALL). The neutered-searcher control asd0g is ~0 apart from cohorts with real searcher fillers.",
+   "impact": "~-0.06 per searcher cohort if removed. Do not reorder or pad B's tail without adding a decoy elsewhere."
+  },
+  {
+   "threat": "2B2Team gets most of its points vs rev0 from the FF1FCCCC search",
+   "classification": "verified-in-current",
+   "evidence": "2B2Team team score vs base: real 0.233 (hzq6i) / 0.2375 (83rh4) vs neutered 0.067 (asd0g). Different cohorts, but the gap is large. dec0A cuts it to 0.1625.",
+   "impact": "2B2Team cohorts are where the decoy pays most (+0.106)"
+  },
+  {
+   "threat": "A low-address FF 1F CC CC decoy at arena 0000h, written at zero turn cost, intercepts the forward-from-0 searchers",
+   "classification": "verified-in-current",
+   "evidence": "dec0A threat 83rh4: +0.0573 [0.0212,0.0934] 13/3, all three searchers positive.",
+   "impact": "+0.05 per searcher cohort; ~+0.005 on field S ALL (estimated, not screened)"
+  },
+  {
+   "threat": "Purpose-built 4-byte INT87 signature counters on late initializer bytes (B056 nbsig/nbsig2)",
+   "classification": "verified-in-other",
+   "evidence": "Not re-tested here (B056 i8i0e/x4a43). No archived 2023-2025 searcher matches a rev0 initializer window other than the FF1FCCCC tail/anchor pattern (scan.mjs). Unresolved computed sites: almogooners searches C3 90 EB C1 (no match); 2023 YudaAndSons/CyberBullies/MonkeyBall left unresolved.",
+   "impact": "only from a future V6-targeted counter"
+  }
+ ],
+ "counterCodes": [
+  {"asmA": "agent2/night/scratch/B066/bin/OHn1 (+ official OpcodeHunter2)", "asmB": "agent2/night/scratch/B066/bin/OHn2", "strength": "control: OpcodeHunter with signature neutered (FF1FCDCC)"},
+  {"asmA": "agent2/night/scratch/B066/bin/TBn1", "asmB": "agent2/night/scratch/B066/bin/TBn2", "strength": "control: 2B2Team neutered; team score drops 0.233 -> 0.067"}
+ ],
+ "recommendation": "Screen dec0A (A only, 198 B, sha 2fadd3de) on field S, then consider it for confirmation as a defense add-on. It is turn-neutral and specific to the FF1FCCCC searchers (+0.057 in their cohorts, 13/3), and should combine cleanly with B054 fix2steal (B), B059 zph (B) and A003 C1. Do not promote padB. Keep B's FF 1F CC CC tail as it is: it is a working decoy (-0.0058 on field S when removed). Coordinator note: B056's 'archived searchers match rev0: not-reproduced' should be amended, because FF1FCCCC searchers in 2025 do match B's arena tail and our dwell anchors.",
+ "notes": "Neutered binaries were made by changing DX CCCC to CDCC before each INT87 (bin/OHn1 3 sites, TBn1 2, TBn2 1). OHn2 is an unmodified copy of OpcodeHunter2, which has no FF1F search. dec0A writes 1FFFh to [0000h] with DS=arena before phoenix_init. Rare side effect if a warrior is loaded at 0000h."
+}

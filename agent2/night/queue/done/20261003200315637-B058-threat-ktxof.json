@@ -1,0 +1,103 @@
+{
+ "job": {
+  "id": "20261003200315637-B058-threat-ktxof",
+  "agent": "B058",
+  "kind": "threat",
+  "submittedAt": "2026-10-03T20:03:15.639Z",
+  "note": "B058 causal check: FAR_SEG 0FF8h (anchor in-page 22h, =B055 lat_m30) vs page bombers at 52h and 22h",
+  "asmA": "agent2/night/scratch/B058/fs8_A.asm",
+  "asmB": "agent2/night/scratch/B058/fs8_B.asm",
+  "threats": [
+   {
+    "name": "B058_pg52",
+    "asmA": "agent2/night/scratch/B058/pg52A.asm",
+    "asmB": "agent2/night/scratch/B058/pg52B.asm"
+   },
+   {
+    "name": "B058_pg22",
+    "asmA": "agent2/night/scratch/B058/pg22A.asm",
+    "asmB": "agent2/night/scratch/B058/pg22B.asm"
+   }
+  ],
+  "copies": 1,
+  "cohortsPerThreat": 8
+ },
+ "ok": true,
+ "finishedAt": "2026-10-03T20:03:37.120Z",
+ "seconds": 20.56,
+ "result": {
+  "candidate": {
+   "A": "agent2/night/cand-build/20261003200315637-B058-threat-ktxof/candA",
+   "B": "agent2/night/cand-build/20261003200315637-B058-threat-ktxof/candB",
+   "sizeA": 194,
+   "sizeB": 202,
+   "shaA": "45d913530e7e9c73b595d2034068cabff0a412c2f34a6b59bca9091703a224f6",
+   "shaB": "6b4b07dea599dad9e67d2a2be097d43d963eeedddb758dbe27757a1fded7dc60"
+  },
+  "baseRevision": 0,
+  "specKey": "6f014272106c",
+  "battlesPerArm": 320,
+  "candMean": 0.3635,
+  "baseMean": 0.4344,
+  "all": {
+   "n": 16,
+   "diff": -0.07083,
+   "lo": -0.45425,
+   "hi": 0.31258,
+   "wins": 8,
+   "losses": 8
+  },
+  "byThreat": {
+   "B058_pg52": {
+    "n": 8,
+    "diff": 0.67708,
+    "lo": 0.5677,
+    "hi": 0.78647,
+    "wins": 8,
+    "losses": 0
+   },
+   "B058_pg22": {
+    "n": 8,
+    "diff": -0.81875,
+    "lo": -0.88274,
+    "hi": -0.75476,
+    "wins": 0,
+    "losses": 8
+   }
+  },
+  "threatFirstTeamScore": {
+   "vsCand": {
+    "B058_pg52": 0.0188,
+    "B058_pg22": 0.0906
+   },
+   "vsBase": {
+    "B058_pg52": 0.1219,
+    "B058_pg22": 0.0156
+   }
+  },
+  "threatHashes": [
+   {
+    "label": "B058_pg52",
+    "warriors": [
+     "agent2/night/cand-build/20261003200315637-B058-threat-ktxof/threat-0/tA",
+     "agent2/night/cand-build/20261003200315637-B058-threat-ktxof/threat-0/tB"
+    ],
+    "hashes": [
+     "7f42eaeb180772e8bbc3c614578c1c7791659ff3040d7e825b8fab4e10cbb08c",
+     "8aff0736e87dc85f47aea6c1acdee935ff5749acea9ee542d85c839ac96d0e84"
+    ]
+   },
+   {
+    "label": "B058_pg22",
+    "warriors": [
+     "agent2/night/cand-build/20261003200315637-B058-threat-ktxof/threat-1/tA",
+     "agent2/night/cand-build/20261003200315637-B058-threat-ktxof/threat-1/tB"
+    ],
+    "hashes": [
+     "6021247534fe33b5038e863a149a21e2b5876e952c80674bda17e34b2e9efcdc",
+     "a638c3fcf26deb86d005609de9f80b030dd49ea7ce8b8e202fdeefc91522d64b"
+    ]
+   }
+  ]
+ }
+}

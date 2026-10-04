@@ -1,0 +1,201 @@
+{
+ "job": {
+  "id": "20261003205504536-B061-threat-ar196",
+  "agent": "B061",
+  "kind": "threat",
+  "submittedAt": "2026-10-03T20:55:04.539Z",
+  "note": "B061 R2-measure: MOVSW twin probe vs unlibraried suspects (K0F1M dynamic MOVSW; YOY/TOMEX/B33 al=A1 lineage) and controls (OpcodeHunter MOVSB, IND_BRA bomber)",
+  "asmA": "agent2/night/scratch/B061/twinA.asm",
+  "asmB": "agent2/night/scratch/B061/twinB.asm",
+  "threats": [
+   {
+    "name": "K0F1M",
+    "binA": "official-2025/survivors-online/WHS_K0F1M_AL_T1L1M1",
+    "binB": "official-2025/survivors-online/WHS_K0F1M_AL_T1L1M2"
+   },
+   {
+    "name": "YOY",
+    "binA": "official-2025/survivors-online/HDS_YOY1",
+    "binB": "official-2025/survivors-online/HDS_YOY2"
+   },
+   {
+    "name": "TOMEX",
+    "binA": "official-2025/survivors-online/OHS_TOMEX1",
+    "binB": "official-2025/survivors-online/OHS_TOMEX2"
+   },
+   {
+    "name": "B33",
+    "binA": "official-2025/survivors-online/GSA_B331",
+    "binB": "official-2025/survivors-online/GSA_B332"
+   },
+   {
+    "name": "OpcodeHunter",
+    "binA": "official-2025/survivors-online/GGN_OpcodeHunter1",
+    "binB": "official-2025/survivors-online/GGN_OpcodeHunter2"
+   },
+   {
+    "key": "bomb_IND_BRA"
+   }
+  ],
+  "copies": 1,
+  "cohortsPerThreat": 4
+ },
+ "ok": true,
+ "finishedAt": "2026-10-03T20:59:42.513Z",
+ "seconds": 34.581,
+ "result": {
+  "candidate": {
+   "A": "agent2/night/cand-build/20261003205504536-B061-threat-ar196/candA",
+   "B": "agent2/night/cand-build/20261003205504536-B061-threat-ar196/candB",
+   "sizeA": 194,
+   "sizeB": 202,
+   "shaA": "138a4d7dae7fef40b108f5df07fd8dd57bae822c8264be4ef8c770992a83777a",
+   "shaB": "27365f56ae01b9ed927167002cec80879c18aa84c3f15defbb03f3dcf479449e"
+  },
+  "baseRevision": 0,
+  "specKey": "da03b1875926",
+  "battlesPerArm": 480,
+  "candMean": 0.7104,
+  "baseMean": 0.6931,
+  "all": {
+   "n": 24,
+   "diff": 0.01736,
+   "lo": -0.0394,
+   "hi": 0.07412,
+   "wins": 10,
+   "losses": 10
+  },
+  "byThreat": {
+   "K0F1M": {
+    "n": 4,
+    "diff": -0.08125,
+    "lo": -0.25208,
+    "hi": 0.08958,
+    "wins": 2,
+    "losses": 2
+   },
+   "YOY": {
+    "n": 4,
+    "diff": 0.02292,
+    "lo": -0.07785,
+    "hi": 0.12368,
+    "wins": 1,
+    "losses": 3
+   },
+   "TOMEX": {
+    "n": 4,
+    "diff": -0.0625,
+    "lo": -0.136,
+    "hi": 0.011,
+    "wins": 1,
+    "losses": 3
+   },
+   "B33": {
+    "n": 4,
+    "diff": 0.14375,
+    "lo": -0.05161,
+    "hi": 0.33911,
+    "wins": 3,
+    "losses": 1
+   },
+   "OpcodeHunter": {
+    "n": 4,
+    "diff": 0.01875,
+    "lo": -0.0622,
+    "hi": 0.0997,
+    "wins": 2,
+    "losses": 1
+   },
+   "bomb_IND_BRA": {
+    "n": 4,
+    "diff": 0.0625,
+    "lo": -0.06,
+    "hi": 0.185,
+    "wins": 1,
+    "losses": 0
+   }
+  },
+  "threatFirstTeamScore": {
+   "vsCand": {
+    "K0F1M": 0.3563,
+    "YOY": 0.0375,
+    "TOMEX": 0.0875,
+    "B33": 0.0125,
+    "OpcodeHunter": 0.125,
+    "bomb_IND_BRA": 0
+   },
+   "vsBase": {
+    "K0F1M": 0.2,
+    "YOY": 0.0625,
+    "TOMEX": 0.0625,
+    "B33": 0.0125,
+    "OpcodeHunter": 0.2,
+    "bomb_IND_BRA": 0.0125
+   }
+  },
+  "threatHashes": [
+   {
+    "label": "K0F1M",
+    "warriors": [
+     "official-2025/survivors-online/WHS_K0F1M_AL_T1L1M1",
+     "official-2025/survivors-online/WHS_K0F1M_AL_T1L1M2"
+    ],
+    "hashes": [
+     "51be29ada737ee980285eeb1cce4c445ce345d8b3bf0c9b3d97e2ae09ade3f60",
+     "d7487a752af32ae355c8fbabcaba111150451a26ff9b7c6804ac08b26f85de6f"
+    ]
+   },
+   {
+    "label": "YOY",
+    "warriors": [
+     "official-2025/survivors-online/HDS_YOY1",
+     "official-2025/survivors-online/HDS_YOY2"
+    ],
+    "hashes": [
+     "a30854eb23928d0a2a16e32fc2db3fbf6f6dec4b843ae73fa4b5ba904eced03f",
+     "61cdca8ebd5d863f30172e0164c4d0a3d8eb6dae39815aa06465a8904a95dfa9"
+    ]
+   },
+   {
+    "label": "TOMEX",
+    "warriors": [
+     "official-2025/survivors-online/OHS_TOMEX1",
+     "official-2025/survivors-online/OHS_TOMEX2"
+    ],
+    "hashes": [
+     "d511b9beab4574d1bf126ef9264e3aca2276ea71e81b3a6c9296e217859f54a8",
+     "d511b9beab4574d1bf126ef9264e3aca2276ea71e81b3a6c9296e217859f54a8"
+    ]
+   },
+   {
+    "label": "B33",
+    "warriors": [
+     "official-2025/survivors-online/GSA_B331",
+     "official-2025/survivors-online/GSA_B332"
+    ],
+    "hashes": [
+     "b669a39358c457bbd739710d2a82e6c7f5bfb20125922b153207209d2bf74350",
+     "b669a39358c457bbd739710d2a82e6c7f5bfb20125922b153207209d2bf74350"
+    ]
+   },
+   {
+    "label": "OpcodeHunter",
+    "warriors": [
+     "official-2025/survivors-online/GGN_OpcodeHunter1",
+     "official-2025/survivors-online/GGN_OpcodeHunter2"
+    ],
+    "hashes": [
+     "d5992bdc307b070ad91e1737a8777125970912b286a392ed6d9a6456d87ed3af",
+     "0ced8fc1ec650a032604e2e149458b54202be7ecabb447999f143659d6ea46b6"
+    ]
+   },
+   {
+    "label": "bomb_IND_BRA",
+    "warriors": [
+     "official-2025/survivors-online/IND_BRA1",
+     "official-2025/survivors-online/IND_BRA2"
+    ]
+   }
+  ]
+ }
+}

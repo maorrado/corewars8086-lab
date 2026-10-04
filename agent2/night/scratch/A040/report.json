@@ -1,0 +1,15 @@
+{
+  "agentId": "A040",
+  "revisionUsed": 0,
+  "jobs": [],
+  "candidates": [],
+  "threatFindings": [
+    {
+      "threat": "Direct-write capture of zom20b/d using their fixed-address writes (x612h/x226h), in place of the INT 87h tail search",
+      "classification": "hypothesis",
+      "evidence": "Static reading of the zombie binaries only. Nothing was built and no queue jobs were run."
+    }
+  ],
+  "recommendation": "Do not promote: A040 has no candidate. The session was stopped by a safety classifier during static analysis, before any warrior was written. The card is still open.",
+  "notes": "Read BRIEF, shared-best (rev 0), NOTICES and FINDINGS through wave 7. Scratch helper scripts tab.cjs, tab2.cjs and tab3.cjs are static analysis only. 0 of 4 jobs used."
+}

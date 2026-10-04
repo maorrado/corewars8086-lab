@@ -1,0 +1,108 @@
+{
+ "job": {
+  "id": "20261003210454949-B063-threat-ew9rp",
+  "agent": "B063",
+  "kind": "threat",
+  "submittedAt": "2026-10-03T21:04:54.951Z",
+  "note": "B063: does B059 zph (stolen-zombie phase fix) remove the B self-kill caused by [5D13h] theft in b01d+e1p4+segfault cohorts? (notheft gave +0.198 there)",
+  "asmB": "agent2/night/scratch/B063/zphB.asm",
+  "threats": [
+   {
+    "name": "b01d",
+    "binA": "agent2/build/ref/b01dA",
+    "binB": "agent2/build/ref/b01dB"
+   },
+   {
+    "name": "e1p4",
+    "binA": "agent2/build/ref/e1p4A",
+    "binB": "agent2/build/ref/e1p4B"
+   },
+   {
+    "name": "segfault",
+    "binA": "repos/corewars8086-survivors/cgx2024/05-final2/HLS_segment_fault1",
+    "binB": "repos/corewars8086-survivors/cgx2024/05-final2/HLS_segment_fault2"
+   }
+  ],
+  "cohortsPerThreat": 12,
+  "mixAll": true
+ },
+ "ok": true,
+ "finishedAt": "2026-10-03T21:06:26.245Z",
+ "seconds": 16.196,
+ "result": {
+  "candidate": {
+   "A": "agent2/night/revisions/rev0/A",
+   "B": "agent2/night/cand-build/20261003210454949-B063-threat-ew9rp/candB",
+   "sizeA": 194,
+   "sizeB": 202,
+   "shaA": "6861894f3c1992cd6c6baa5b2a746178082f5b4b0a1d9969b9a326fe03d86c89",
+   "shaB": "e85a4bf6ac97ca3a0fa9803b7d11c60c7bb29403d464b2ead605a71246bddaf0"
+  },
+  "baseRevision": 0,
+  "specKey": "16c24f659281",
+  "battlesPerArm": 240,
+  "candMean": 0.8762,
+  "baseMean": 0.5856,
+  "all": {
+   "n": 12,
+   "diff": 0.29063,
+   "lo": 0.21937,
+   "hi": 0.36188,
+   "wins": 12,
+   "losses": 0
+  },
+  "byThreat": {
+   "mix": {
+    "n": 12,
+    "diff": 0.29063,
+    "lo": 0.21937,
+    "hi": 0.36188,
+    "wins": 12,
+    "losses": 0
+   }
+  },
+  "threatFirstTeamScore": {
+   "vsCand": {
+    "mix": 0.0426
+   },
+   "vsBase": {
+    "mix": 0.1013
+   }
+  },
+  "threatHashes": [
+   {
+    "label": "b01d",
+    "warriors": [
+     "agent2/build/ref/b01dA",
+     "agent2/build/ref/b01dB"
+    ],
+    "hashes": [
+     "775080226ca8f9e9a5aac584094c9066bd2c55365ee8cea1e18db26440d9315e",
+     "884b4d52e4ef1e57db85c88083d0a8667a6bd252a25728da7f5fdedefa6f33c7"
+    ]
+   },
+   {
+    "label": "e1p4",
+    "warriors": [
+     "agent2/build/ref/e1p4A",
+     "agent2/build/ref/e1p4B"
+    ],
+    "hashes": [
+     "99192c673e5af394ed8194932b52b4f18f092804384f38d1bb2828b189c76b93",
+     "d307b92097ac68ce6073adc1e34917b2f51c0c396235c918dfc913cee7393354"
+    ]
+   },
+   {
+    "label": "segfault",
+    "warriors": [
+     "repos/corewars8086-survivors/cgx2024/05-final2/HLS_segment_fault1",
+     "repos/corewars8086-survivors/cgx2024/05-final2/HLS_segment_fault2"
+    ],
+    "hashes": [
+     "267dbe82e9af96b3a8531afbf32ab08281cdae0bc86c4e340f2008e8ec1c3cc2",
+     "028054edfcdc11162402200d9aa7af823a02f14ff06afe5e786cfecbcb21e931"
+    ]
+   }
+  ]
+ }
+}

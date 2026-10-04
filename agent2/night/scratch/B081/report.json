@@ -1,0 +1,30 @@
+{
+ "agentId": "B081",
+ "role": "wave 7, domain 1 (MOVSW-family trails vs our MOVSB-family FF 1F anchors), R4-fix, defense",
+ "revisionUsed": 0,
+ "jobs": [],
+ "candidates": [],
+ "threatFindings": [
+  {
+   "threat": "MOVSW-family trail kills the live FF 1F anchor (transient FF A5, then CShi A5 ... settled state)",
+   "classification": "verified-in-current",
+   "evidence": "No new job. Earlier traces pkj3o/4sf0x (B051, B061): about half of traced base deaths. Static check this wave: killers IND_cgx123123 (anchor in-page A3h, CS 1000h, trail 300h, step 3500h), TOM_Code_Killer1/2 (A3h, CS 1000h, trail 300h), WAN_Baltika91 (CS 0FF6h, in-page 03h, trail 300h), OHS_TrojanByte1/2 (CS 1006h/1004h)."
+  },
+  {
+   "threat": "A byte-level change of the anchor/dwell encoding that is safe against both MOVSB and MOVSW trails exists",
+   "classification": "not-reproduced",
+   "evidence": "Static residue analysis: MOVSB trails write 4-byte blocks starting at residue 2, MOVSW at residue 3. Any 2-byte dwell instruction is either split by one family (transient opcode with the foreign byte) or overwritten atomically with foreign non-trigger bytes (e.g. FB 0F from V6-family CS words, 0F invalid in Cpu.java). Agrees with B051/B061."
+  },
+  {
+   "threat": "Lattice offset choice changes how often MOVSW trails cover our anchor",
+   "classification": "not-reproduced",
+   "evidence": "Static page count: a 300h MOVSW trail covers our in-page offset on 3 pages per generation whatever our offset; our 400h trail covers theirs on 4 pages. Only timing decides who is crossed first."
+  },
+  {
+   "threat": "Near-equal anchor velocity of A (-4400h/275 turns) and cgx123123 (-3500h/~204 turns) makes the cgx outcome long-lived, which may explain why A_t800 helps vs cgx",
+   "classification": "hypothesis",
+   "evidence": "Arithmetic only; not tested."
+  }
+ ],
+ "recommendation": "Nothing to promote. No fix candidate was built or screened (session stopped early, 0 of 4 jobs used). The FF A5 kill cannot be fixed by re-encoding the anchor. The only tested lever with replicated MOVSW gains is A's 800h trail (A015/COORD-w3, nozombie cost). Card stays open for a structural defense."
+}

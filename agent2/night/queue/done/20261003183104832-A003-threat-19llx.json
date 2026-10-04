@@ -1,0 +1,151 @@
+{
+ "job": {
+  "id": "20261003183104832-A003-threat-19llx",
+  "agent": "A003",
+  "kind": "threat",
+  "submittedAt": "2026-10-03T18:31:04.833Z",
+  "note": "A003 C1 threat: V6-family cell race (copies 2) + zom20a mimic carriers",
+  "asmA": "agent2/night/scratch/A003/c1A.asm",
+  "asmB": "agent2/night/scratch/A003/c1B.asm",
+  "threats": [
+   {
+    "key": "lead_V6"
+   },
+   {
+    "key": "lead_V4"
+   },
+   {
+    "key": "lead_V6Guard"
+   },
+   {
+    "key": "zomb_Grindo"
+   },
+   {
+    "key": "zomb_callfart"
+   }
+  ],
+  "copies": 2,
+  "cohortsPerThreat": 8
+ },
+ "ok": true,
+ "finishedAt": "2026-10-03T18:47:44.600Z",
+ "seconds": 927.52,
+ "result": {
+  "candidate": {
+   "A": "agent2/night/cand-build/20261003183104832-A003-threat-19llx/candA",
+   "B": "agent2/night/cand-build/20261003183104832-A003-threat-19llx/candB",
+   "sizeA": 194,
+   "sizeB": 202,
+   "shaA": "20ab6af2caf1c8a4f2dc2a1d6c4b498ad62bd81965067b9faf14ae6eaf2b4c63",
+   "shaB": "142eeac85d3b8e62079661f4bb9affc1de9eb52ddc087f3f6a54b7050681e97a"
+  },
+  "baseRevision": 0,
+  "specKey": "ef4ecb4572d1",
+  "battlesPerArm": 1200,
+  "candMean": 0.3108,
+  "baseMean": 0.2966,
+  "all": {
+   "n": 40,
+   "diff": 0.01424,
+   "lo": 0.00005,
+   "hi": 0.02842,
+   "wins": 17,
+   "losses": 9
+  },
+  "byThreat": {
+   "lead_V6": {
+    "n": 8,
+    "diff": 0.00347,
+    "lo": -0.03102,
+    "hi": 0.03796,
+    "wins": 2,
+    "losses": 4
+   },
+   "lead_V4": {
+    "n": 8,
+    "diff": 0.03785,
+    "lo": -0.00242,
+    "hi": 0.07812,
+    "wins": 6,
+    "losses": 2
+   },
+   "lead_V6Guard": {
+    "n": 8,
+    "diff": 0.02569,
+    "lo": -0.01905,
+    "hi": 0.07043,
+    "wins": 6,
+    "losses": 2
+   },
+   "zomb_Grindo": {
+    "n": 8,
+    "diff": 0,
+    "lo": 0,
+    "hi": 0,
+    "wins": 0,
+    "losses": 0
+   },
+   "zomb_callfart": {
+    "n": 8,
+    "diff": 0.00417,
+    "lo": -0.00929,
+    "hi": 0.01762,
+    "wins": 3,
+    "losses": 1
+   }
+  },
+  "threatFirstTeamScore": {
+   "vsCand": {
+    "lead_V6": 0.3312,
+    "lead_V4": 0.3413,
+    "lead_V6Guard": 0.3285,
+    "zomb_Grindo": 0.4153,
+    "zomb_callfart": 0.2378
+   },
+   "vsBase": {
+    "lead_V6": 0.3229,
+    "lead_V4": 0.3437,
+    "lead_V6Guard": 0.3274,
+    "zomb_Grindo": 0.4083,
+    "zomb_callfart": 0.2316
+   }
+  },
+  "threatHashes": [
+   {
+    "label": "lead_V6",
+    "warriors": [
+     "agent2/night/refs/V6/A",
+     "agent2/night/refs/V6/B"
+    ]
+   },
+   {
+    "label": "lead_V4",
+    "warriors": [
+     "agent2/night/refs/V4/A",
+     "agent2/night/refs/V4/B"
+    ]
+   },
+   {
+    "label": "lead_V6Guard",
+    "warriors": [
+     "agent2/night/refs/V6Guard/A",
+     "agent2/night/refs/V6Guard/B"
+    ]
+   },
+   {
+    "label": "zomb_Grindo",
+    "warriors": [
+     "official-2025/survivors-online/HRZ_Grindo_Holics1",
+     "official-2025/survivors-online/HRZ_Grindo_Holics2"
+    ]
+   },
+   {
+    "label": "zomb_callfart",
+    "warriors": [
+     "official-2025/survivors-online/GSA_callfart1",
+     "official-2025/survivors-online/GSA_callfart2"
+    ]
+   }
+  ]
+ }
+}

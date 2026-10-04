@@ -1,0 +1,129 @@
+{
+ "job": {
+  "id": "20261003194335265-B056-threat-i8i0e",
+  "agent": "B056",
+  "kind": "threat",
+  "submittedAt": "2026-10-03T19:43:35.267Z",
+  "note": "B056 verify: fix=push cs/mov bx/pop ss reorder (removes 0E 17 89 07) vs New_Best orig / retargeted to rev0 sig (capture) / retargeted kill (CCCC)",
+  "asmA": "agent2/night/scratch/B056/fixA.asm",
+  "asmB": "agent2/night/scratch/B056/fixB.asm",
+  "threats": [
+   {
+    "name": "NB_orig",
+    "asmA": "agent2/night/scratch/B056/nborigA.asm",
+    "asmB": "agent2/night/scratch/B056/nborigB.asm"
+   },
+   {
+    "name": "NB_sig0E178907",
+    "asmA": "agent2/night/scratch/B056/nbsigA.asm",
+    "asmB": "agent2/night/scratch/B056/nbsigB.asm"
+   },
+   {
+    "name": "NB_sigkill",
+    "asmA": "agent2/night/scratch/B056/nbkillA.asm",
+    "asmB": "agent2/night/scratch/B056/nbkillB.asm"
+   }
+  ],
+  "copies": 1,
+  "cohortsPerThreat": 8
+ },
+ "ok": true,
+ "finishedAt": "2026-10-03T19:51:09.532Z",
+ "seconds": 71.316,
+ "result": {
+  "candidate": {
+   "A": "agent2/night/cand-build/20261003194335265-B056-threat-i8i0e/candA",
+   "B": "agent2/night/cand-build/20261003194335265-B056-threat-i8i0e/candB",
+   "sizeA": 194,
+   "sizeB": 202,
+   "shaA": "549d8219eb7956f5b3b07d65732e0dc1ab96b033d12f54f266f4912fee7be637",
+   "shaB": "405730f42d426429961ef27487b7125ffd3b165008935d0288a776a295545bc0"
+  },
+  "baseRevision": 0,
+  "specKey": "b869a3ea598a",
+  "battlesPerArm": 480,
+  "candMean": 0.3535,
+  "baseMean": 0.1326,
+  "all": {
+   "n": 24,
+   "diff": 0.22083,
+   "lo": 0.15156,
+   "hi": 0.2901,
+   "wins": 16,
+   "losses": 0
+  },
+  "byThreat": {
+   "NB_orig": {
+    "n": 8,
+    "diff": 0,
+    "lo": 0,
+    "hi": 0,
+    "wins": 0,
+    "losses": 0
+   },
+   "NB_sig0E178907": {
+    "n": 8,
+    "diff": 0.34167,
+    "lo": 0.29425,
+    "hi": 0.38909,
+    "wins": 8,
+    "losses": 0
+   },
+   "NB_sigkill": {
+    "n": 8,
+    "diff": 0.32083,
+    "lo": 0.25166,
+    "hi": 0.39001,
+    "wins": 8,
+    "losses": 0
+   }
+  },
+  "threatFirstTeamScore": {
+   "vsCand": {
+    "NB_orig": 0.5854,
+    "NB_sig0E178907": 0.5115,
+    "NB_sigkill": 0.488
+   },
+   "vsBase": {
+    "NB_orig": 0.5854,
+    "NB_sig0E178907": 0.6542,
+    "NB_sigkill": 0.6224
+   }
+  },
+  "threatHashes": [
+   {
+    "label": "NB_orig",
+    "warriors": [
+     "agent2/night/cand-build/20261003194335265-B056-threat-i8i0e/threat-0/tA",
+     "agent2/night/cand-build/20261003194335265-B056-threat-i8i0e/threat-0/tB"
+    ],
+    "hashes": [
+     "81ca1a63b58475f77b8e6934e8340bdfef48fce54434a2d15e4735da2b2342fc",
+     "4480aef28714010549a86c7fd8f0022f7f63687aac46a887d35937762a2c65a3"
+    ]
+   },
+   {
+    "label": "NB_sig0E178907",
+    "warriors": [
+     "agent2/night/cand-build/20261003194335265-B056-threat-i8i0e/threat-1/tA",
+     "agent2/night/cand-build/20261003194335265-B056-threat-i8i0e/threat-1/tB"
+    ],
+    "hashes": [
+     "1253954b6ddadfc824a2183ed126a7ff739113b94c3842f43ea5bdd8193b388e",
+     "84427d5597475d9c7bfb5e9e4feadc974ed092116228681e90b2baa4ebbc19d1"
+    ]
+   },
+   {
+    "label": "NB_sigkill",
+    "warriors": [
+     "agent2/night/cand-build/20261003194335265-B056-threat-i8i0e/threat-2/tA",
+     "agent2/night/cand-build/20261003194335265-B056-threat-i8i0e/threat-2/tB"
+    ],
+    "hashes": [
+     "6003a4d17fa36fa0196544391f3c0643530b6c690cd186a299e8f30f126740cc",
+     "8cd6834d39f83f706bb1d094d860ec29b49a35cd05a5ee5c3236cc1798b9f590"
+    ]
+   }
+  ]
+ }
+}

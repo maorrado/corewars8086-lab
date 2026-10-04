@@ -1,0 +1,12 @@
+{
+ "agentId": "B097",
+ "role": "wave 10, domain 7 (trail scanners / anchor hunters), R5-cost, defense",
+ "revisionUsed": 0,
+ "jobs": [],
+ "candidates": [],
+ "threatFindings": [
+  {"threat": "A far-call trail hunter that decodes the anchor from the pushed trail kills rev0 anchors", "classification": "verified-in-other", "evidence": "No new job. Prior evidence only: B067 threat y4h5y (rev0 0.333 vs 0.875 against the no-bomb control).", "impact": "Not re-measured by B097."},
+  {"threat": "A low-cost defense fix for this weakness has been proposed and tested", "classification": "not-reproduced", "evidence": "Audit of FINDINGS.md waves 1-9 and scratch reports B067, B077, B087: no defense fix was ever built or screened for domain 7. B067 judged that no cheap fix exists; B077 and B087 stopped without building anything. B067 hz is an offensive use of hunting by captured zombies, not a defense (confirm xkwd0 pooled -0.0172, not promoted).", "impact": "Nothing to audit for general cost or combination with KP."}
+ ],
+ "recommendation": "Do not promote anything from domain 7. No defense fix exists to promote, and B097 built no candidate and ran no jobs (the session was stopped by a safety classifier while reading the sources). The audit result is that the domain-7 card has no tested fix after waves 4, 6, 8 and 10. Prior evidence (B067) says no such hunter appears in the 2022-2025 pools, so the realistic field cost is about 0. Suggestion: close the card. Keep the existing B067 test case available for robustness checks, and do not hand this card to more agents."
+}

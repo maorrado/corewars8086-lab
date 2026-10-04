@@ -1,0 +1,35 @@
+{
+ "agentId": "B091",
+ "role": "wave 9, domain 1 (MOVSW-family trails vs our FF 1F anchors), R5-cost, defense",
+ "revisionUsed": 0,
+ "jobs": ["20261004021851863-B091-screen-l64tb", "20261004021852062-B091-threat-u3c11", "20261004021852264-B091-threat-i687p", "20261004021852456-B091-threat-yrx3b"],
+ "audit": "Domain-1 fixes in FINDINGS: family switch (B051, rejected -0.05/-0.17), lattice undercut lat_m30 (B055/B060, trades holes), FF 18 re-encoding c18 (A017, does not touch FF A5), recovery word (A018, no effect on FF A5), E2 (A016: cgx +0.153 in confirm but 2024live -0.077), h34 (B089: cgx +0.094 in confirm, pooled -0.006), A_t800 (A015: A mov dx,04000h -> 03C00h). A_t800 is the best: it is the only fix whose MOVSW gains replicated in the confirm (hi50u: cgx +0.171, Baltika9 +0.150, LowKey +0.125, CodeKiller +0.092, TrojanByte +0.054, all 3/0; threat group lo > 0). Its known general cost from hi50u: pooled +0.0012 (none), nozombie -0.050 [-0.110,+0.010] 9/15. Combination partner chosen: A031 K (E1 + SD + Z1), the best-confirmed combination so far (pooled +0.0087, nozombie +0.0115); K touches A's startup/template and B's zombie paths, A_t800 touches only A's phoenix DX, so they are code-disjoint.",
+ "candidates": [
+  {
+   "label": "KT",
+   "change": "A031 K + A015 A_t800: K_A with phoenix_init mov dx,04000h -> 03C00h (A trail per generation BP-DX = 800h; one byte at offset 62h, 40h -> 3Ch); B = K_B unchanged (A022 SD + A026 Z1).",
+   "asmA": "agent2/night/scratch/B091/KT_A.asm", "asmB": "agent2/night/scratch/B091/KT_B.asm",
+   "sizeA": 196, "sizeB": 212,
+   "shaA": "af3bf51a322b7c98007c8ef08c5423799aa0f55c849ca50d122f104dd93295e5",
+   "shaB": "c71fe517807d7703a00269a30273b407a24904049cbc1bce21097b87de4fc695",
+   "screenJob": "20261004021851863-B091-screen-l64tb",
+   "screenAllDiff": 0.02519, "screenAllLo": -0.00687, "screenAllHi": 0.05724,
+   "groupNotes": "cand 0.6708 vs base 0.6456, W/L 28/17. 2025 +0.0331 [-0.0113,+0.0776] 13/8; strong -0.0602 [-0.1816,+0.0613] 2/5 (per-cohort identical to A_t800's q84cd strong loss, e.g. sstrong-5 -0.316 in both; A_t800's confirm strong was +0.002); threat +0.0493 [+0.0048,+0.0938] 11/4 (cgx +0.200, Baltika9 +0.133, CodeKiller +0.133, zrl03 +0.111, lead_V6 -0.156 single cohort); multi +0.0317 2/0. Paired on field S: KT-K +0.0088 [-0.021,+0.039] (threat +0.051 lo>0, strong -0.071); KT-A_t800 +0.0096 [-0.006,+0.025] (2025 +0.018); additivity residual KT-(K+A_t800) -0.0068 [-0.018,+0.004] (near-additive). Threat u3c11 (21my5 spec): ALL +0.0729 [0.0139,0.1320] 17/5, cgx +0.1625 4/0, Baltika9 +0.150 4/0, zrl03 +0.165 4/0, CodeKiller -0.067 n.s., V6 +0.013, V6Guard +0.015. Threat yrx3b (1a8ek distinct MOVSW crowd): +0.181 [0.105,0.257] 11/0 (A_t800 alone +0.1875; paired -0.006 n.s.). Control i687p (K alone, 21my5 spec): +0.003 n.s., cgx +0.013, CodeKiller -0.063 0/3.",
+   "isDefenseFix": true,
+   "promising": true
+  }
+ ],
+ "threatFindings": [
+  {"threat": "MOVSW-family trails (cgx123123, Baltika9, TrojanByte crowd) take points from rev0; A's 800h trail (A_t800) is the best available fix", "classification": "verified-in-current", "evidence": "u3c11: KT cgx +0.1625 4/0, Baltika9 +0.150 4/0; yrx3b distinct MOVSW crowd +0.181 11/0 (base 0.354, crowd team 0.439 -> 0.272); consistent with A015 21my5, B070 1a8ek and confirm hi50u.", "impact": "~+0.15 per battle in cohorts with cgx123123/Baltika9; field-level ~+0.006-0.01"},
+  {"threat": "The A_t800 MOVSW defense survives combination with K (E1+SD+Z1)", "classification": "verified-in-current", "evidence": "Paired on the same cohorts: KT-A_t800 on 21my5 spec cgx 0.000, ALL +0.023 n.s.; on 1a8ek spec -0.006 [-0.022,+0.010]; field S threat group KT +0.049 vs A_t800 +0.052.", "impact": "no interference"},
+  {"threat": "K by itself defends against MOVSW trails", "classification": "not-reproduced", "evidence": "i687p (K alone): ALL +0.003 [-0.018,+0.024], cgx +0.013, CodeKiller -0.063 [-0.109,-0.016] 0/3; field S nwqyk MOVSW cohorts 0 / -0.067.", "impact": "K's gains are searcher-decoy gains, orthogonal to domain 1"},
+  {"threat": "K and A_t800 gains add on field S", "classification": "verified-in-current", "evidence": "l64tb vs nwqyk and q84cd per cohort: residual KT-(K+A_t800) -0.0068 [-0.018,+0.004]; 2025 -0.011 n.s. Many cohorts have KT = A_t800 exactly (A's DX dominates the per-cohort outcome); K's gain survives in its searcher cohorts (s2025-15 +0.300, s2025-10 +0.111).", "impact": "KT screen +0.025, best field-S screen of the night, but A_t800 alone screened +0.016 and confirmed +0.001"},
+  {"threat": "A_t800 general cost on the strong group", "classification": "not-reproduced", "evidence": "KT strong -0.060 reproduces A_t800's q84cd strong per-cohort losses exactly (same cohorts, so not independent evidence); on fresh strong cohorts A_t800 confirm hi50u was +0.0023.", "impact": "probably cohort-specific chaos; still a risk"},
+  {"threat": "A_t800 general cost on the no-Zombie field", "classification": "hypothesis", "evidence": "Only evidence is confirm hi50u nozombie -0.050 [-0.110,+0.010] 9/15; field S and threat jobs always run with the 2025 Zombie pack, so no queue job here can test it. K's own nozombie (+0.0115 in a26f6) may offset part of it.", "impact": "likely to fail the -0.01 nozombie promotion gate if real"},
+  {"threat": "A_t800 loses against the V6 leader", "classification": "not-reproduced", "evidence": "Field S sthreat-lead_V6 -0.156 (single cohort, also -0.128 for A_t800) but u3c11 lead_V6 +0.0125 n.s. over 4 cohorts and A015 21my5 +0.010.", "impact": "none measurable"},
+  {"threat": "CodeKiller is fixed by the 800h trail", "classification": "not-reproduced", "evidence": "u3c11 CodeKiller -0.067 [-0.32,+0.19] 1/2; field S single cohort +0.133; hi50u confirm +0.092 3/0. Mixed.", "impact": "unclear"},
+  {"threat": "Mechanism: A's 800h trail beats MOVSW teams by changing A's anchor velocity relative to theirs (B081 velocity hypothesis)", "classification": "hypothesis", "evidence": "Not traced (no trace job spent).", "impact": "-"}
+ ],
+ "recommendation": "KT meets the screen bar (ALL +0.0252, threat +0.049 lo>0, no group significantly negative) and is the best domain-1 defense combined with the best general combination; the MOVSW defense and K's searcher gains add without interference. Do NOT promote on this evidence: (1) its two parts each confirmed at only +0.001 (A_t800) and +0.009 (K) pooled, so the expected confirm pooled is about +0.01, below what one confirm resolves at z=2.5; (2) A_t800's confirm nozombie -0.050 would probably fail the nozombie gate (K offsets ~+0.01); (3) its strong screen loss -0.060 is A_t800's known per-cohort pattern. If the coordinator spends one confirmation on a domain-1 candidate, KT is the one to use, and its nozombie group is the decisive check. Otherwise keep A_t800 as an add-on for any future combination that has a nozombie surplus.",
+ "notes": "Helpers: agent2/night/scratch/B091/pair.cjs (paired per-cohort comparison of two screen jobs, with additivity), agent2/night/scratch/B091/tpair.cjs (paired comparison of cached threat results with the same spec key)."
+}

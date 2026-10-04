@@ -1,0 +1,41 @@
+{
+ "agentId": "B059",
+ "role": "Domain 9 self-harm, R1-verify (defense)",
+ "revisionUsed": 0,
+ "jobs": ["20261003200132745-B059-screen-956md", "20261003200133363-B059-trace-4sf0x", "20261003200358218-B059-screen-ki0sb", "20261003200358468-B059-threat-333pz"],
+ "tools": ["agent2/night/scratch/B059/selfharm.mjs (death classifier incl. our-trail-pattern zombie kills)", "agent2/night/scratch/B059/zdeaths.mjs", "agent2/night/scratch/B059/base_selfharm.txt", "agent2/night/scratch/B059/zph_selfharm.txt"],
+ "candidates": [
+  {"label": "zph", "files": {"B": "agent2/night/scratch/B059/zph_B.asm"}, "sizeB": 202, "shaB": "e85a4bf6ac97ca3a0fa9803b7d11c60c7bb29403d464b2ead605a71246bddaf0",
+   "change": "B only, zero bytes: zombie_entry phases mov bp,2000h -> 5C00h (zom20a-captured, CX!=0) and mov bp,3400h -> 7000h (b/d-captured, CX=0). Captured-zombie first anchor/trail [band+Z:52h, band+Z+6:A2h) moves one band (3Ch pages) up, so it can never cover B's own code (pages band..band+3Ch:C9h). B's own stream, A, lattice 52h, FAR_SEG unchanged.",
+   "screenJob": "20261003200132745-B059-screen-956md", "all": {"diff": 0.03701, "lo": 0.01255, "hi": 0.06147, "WL": "30/17"},
+   "groups": {"2025": 0.05467, "strong": 0.04325, "threat": 0.01146, "multi": -0.00139},
+   "threatJob": "20261003200358468-B059-threat-333pz", "threat": {"all": 0.01486, "lo": -0.02166, "hi": 0.05138, "lead_V6": 0.0625, "lead_V6Guard": -0.01042, "lead_V4": 0.06875, "lead_zrl03": -0.08583, "zomb_Grindo": 0.025, "zomb_callfart": 0.02917},
+   "traceJob": "20261003200133363-B059-trace-4sf0x", "trace": "same 8 cohorts/seeds as base trace pkj3o: deaths 148 vs 161; the 3 base B startup self-kills by own captured zombies are gone; 1 new A startup kill by a captured zombie trail (random A position, same rate class as before); team points in trace 112.5 vs 98.5 /160 battles.",
+   "notes": "Screen effect (+0.037) is larger than the mechanism alone explains (~2% of battles lose B at startup); part is likely chaotic screen luck (robustness variant zph2 only +0.005). lead_zrl03 -0.086 in the threat job (n=4, CI crosses 0; screen lead_zrl03 +0.011).",
+   "promising": true},
+  {"label": "zph2", "files": {"B": "agent2/night/scratch/B059/zph2_B.asm"}, "sizeB": 202, "shaB": "48035db0dbec068bfaefa95c12c868bccbb11a8e989631c6ae814d7e0125df8b",
+   "change": "Robustness variant: zombie phases 2000h -> 9C00h, 3400h -> B000h (also outside B's own band, +7Ch pages).",
+   "screenJob": "20261003200358218-B059-screen-ki0sb", "all": {"diff": 0.00461, "lo": -0.02426, "hi": 0.03348, "WL": "20/23"},
+   "groups": {"2025": 0.02244, "strong": -0.01111, "threat": -0.01771, "multi": 0.01528},
+   "notes": "Same direction on the 2025 field (+0.022) but below bar; suggests the true effect of moving zombies off B's code is small-positive and the zph screen number is partly luck.",
+   "promising": false}
+ ],
+ "threatFindings": [
+  {"threat": "Captured zombie's first anchor write (stosw FF 1F) / first trail lands on B's own not-yet-executed startup code (zombie phases band+20h / band+34h lie inside B's own load band)", "classification": "verified-in-current",
+   "evidence": "Base trace pkj3o (dir agent2/night/scratch/_trace/nightTR-6861894f3c-8579e2c221): s2025-1 w2 r47 B load 97BCh, zom20a-captured zombie (band 78h+20h) wrote FF 1F at 9852h = B offset 96h, over 'or dx,0FFBh' (81 CA) -> B executed call far [bx] with segment 0 -> 0000:88A2 memory exception; s2025-1 w15 r56 B load 33A3h, b/d-captured zombie (band 0+34h) wrote FF 1F at 3452h = B offset AFh over 'mov bp,2C00h' (BD 00) -> B skipped its own stosw and called its CC-filled target 10A2h; s2025-1 w12 r52 B load EDCCh, zom20b-captured trail A4 E8 FB 0F (anchor E852h, trail up to EEA2h) over B offset A6h during phoenix_init. 3/161 deaths, all B, rounds 47-56. Fix trace 4sf0x (same cohorts/seeds): 0 such B deaths.",
+   "impact": "~2% of battles lose B at startup; fix zph screen +0.037 [0.013,0.061] (likely partly luck; variant +0.005)."},
+  {"threat": "Own startup hook-cell writes ([9769h] by A, [4A17h]/[5D13h] by B) land on our own pending code", "classification": "verified-in-current",
+   "evidence": "Base trace pkj3o sthreat-movsw_cgx123123 w5 r37: A load 972Ch, A's 'mov [9769h],ax' (offset 07h) overwrote A offsets 3Dh-3Eh (operand of 'mov dx,[4A17h]' and 'push ss') with B's zombie_entry address -> A executed 15 1F BB C0 -> CPU exception. Model: 3 cells x 2 warriors x ~0.2-0.3% (live code length / 64K) ~ 1.5% of battles; only 1/161 deaths observed.",
+   "impact": "small (<=1.5% battles); no fix tested (guard would cost bytes/turns at startup, A001/A003 show startup timing is sensitive)."},
+  {"threat": "A's own anchor stosw (FF 1F at band+2Ch:52h) overwrites A's pending 'dec di' when A's load puts offset 6Ah on the anchor", "classification": "verified-in-current",
+   "evidence": "Base trace pkj3o sthreat-movsw_Baltika9 w17 r141: A load DFE8h, anchor E052h = A offset 6Ah ('dec di'); DI stayed E0A4h, first rebuild off by one, A died at r141 executing its own startup bytes.",
+   "impact": "negligible (one exact load alignment per band, ~1/15000 uniform)."},
+  {"threat": "Captured-zombie trails / shared anchors killing our survivors in steady state", "classification": "verified-in-other",
+   "evidence": "Base trace pkj3o: 0 steady-state CAND deaths with our trail pattern written by a zombie (the 4 zombie-attributed steady deaths carry zom20b/zom20c own bytes). Candidate trace 4sf0x: s2025-4 w19 r254 A killed at shared anchor E852h by a captured zom20d's worker rebuild byte (29h) - same-anchor collision of A and a B-family zombie stream.",
+   "impact": "rare (<=1/150 deaths); no fix needed."},
+  {"threat": "Partner crossfire (B's 800h trail over A's worker mid-rebuild)", "classification": "verified-in-current",
+   "evidence": "Already established by A005 (trace nd583 = pkj3o, 4 partner-attributed A deaths); not re-tested here. Candidate trace 4sf0x shows 0 partner-attributed deaths (chaotic, not attributable to the fix).",
+   "impact": "~1-2% of deaths (A005)."}
+ ],
+ "recommendation": "Send zph (B only, 202 B, sha e85a4bf6...) to confirmation: zero-byte change, mechanism verified with exact bytes in the base trace and removed in the paired candidate trace, screen ALL +0.037 [0.013,0.061] with no negative group. Expect the true gain to be smaller (robustness variant zph2 +0.005, 2025 +0.022); watch lead_zrl03 (threat job -0.086, n=4, CI crosses 0) and V6Guard (-0.010). zph composes with A003 C1 and B054 fix2steal (different instructions; fix2steal also edits zombie_entry, so port by changing only the two mov bp immediates)."
+}

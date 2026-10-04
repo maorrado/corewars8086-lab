@@ -1,0 +1,27 @@
+{
+ "job": {
+  "id": "20261004023113488-A042-trace-cwax5",
+  "agent": "A042",
+  "kind": "trace",
+  "submittedAt": "2026-10-04T02:31:13.489Z",
+  "note": "A042 trace z42 (zombie lattice 42h): do captured-zombie trails kill A/B?",
+  "asmB": "agent2/night/scratch/A042/z42_B.asm"
+ },
+ "ok": true,
+ "finishedAt": "2026-10-04T02:33:21.266Z",
+ "seconds": 15.815,
+ "result": {
+  "candidate": {
+   "A": "agent2/night/revisions/rev0/A",
+   "B": "agent2/night/cand-build/20261004023113488-A042-trace-cwax5/candB",
+   "sizeA": 194,
+   "sizeB": 202,
+   "shaA": "6861894f3c1992cd6c6baa5b2a746178082f5b4b0a1d9969b9a326fe03d86c89",
+   "shaB": "6ae02b0fe4ae3ee6c39491e85c08125f541650f26ad7f607f6fb3860106a7117"
+  },
+  "traceDir": "agent2/night/scratch/_trace/nightTR-6861894f3c-6ae02b0fe4",
+  "battles": 160,
+  "summary": "deaths 196\n  81 wild-cs          memory exception opp\n  48 wild-cs          CPU exception    zombie\n  31 wild-cs          CPU exception    opp\n   9 wild-cs          memory exception self-only\n   5 wild-cs          CPU exception    untouched\n   5 wild-cs          CPU exception    self-only\n   4 startup(cs1000)  CPU exception    opp\n   3 startup(cs1000)  memory exception zombie\n   2 wild-cs          CPU exception    partner\n   2 startup(cs1000)  CPU exception    zombie\n   2 startup(cs1000)  memory exception load\n   2 wild-cs          memory exception zombie\n   1 wild-cs          CPU exception    load\n   1 startup(cs1000)  CPU exception    load\ntop opponent killers: Y_TOM_Code_Killer=32 A_IND_cgx123123=21 A_WAN_Baltika9=16 A_GSA_GhostBytes_0x=13 A_OHS_TrojanByte=10 A_KOB_KosherCode=4 A_HRZ_Underflow=4 A_HRZ_fisherEXE=3 A_WHS_K0F1M_AL_T1L1M=3 A_GGN_OpcodeHunter=3 A_RZL_YANDE=2 Y_ELD_FriendlyFire=2\n",
+  "note": "phase 'wild-cs' = any CS other than 0FFC/1000 (V6 family uses FAR_SEG 0FFB); examples.json not produced by sum-trace2; raw jsonl in traceDir"
+ }
+}

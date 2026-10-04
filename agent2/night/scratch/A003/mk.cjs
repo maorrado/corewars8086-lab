@@ -1,0 +1,11 @@
+const fs=require('fs');const D='agent2/night/scratch/A003';
+let a=fs.readFileSync('agent2/night/revisions/rev0/A.asm','utf8').replace(/\r/g,'');
+const oldA='    mov ax, [4A17h]\n    mov [9769h], ax\n    mov ax, 0F2E2h\n    mov dx, 0C381h\n    mov bx, 026FFh\n    mov cx, 04A17h\n    int 087h\n';
+const newA='    mov ax, 0F2E2h\n    mov dx, 0C381h\n    mov bx, 026FFh\n    mov cx, 04A17h\n    int 087h              ; A003: zom20a capture moved to instruction 8 (was 10)\n    mov ax, [4A17h]       ; A003: cell copy after INT87 (round 9, after B writes [4A17h] at round 6)\n    mov [9769h], ax\n';
+if(!a.includes(oldA))throw 'A';a=a.replace(oldA,newA).replace('; agent2 variant: removed the [7A00h] redirect patch (ablation)','; agent2 variant: removed the [7A00h] redirect patch (ablation)\n; A003 (night 2026-10-03): INT87 before the [4A17h]->[9769h] cell copy');
+fs.writeFileSync(D+'/c1A.asm',a);
+let b=fs.readFileSync('agent2/night/revisions/rev0/B.asm','utf8').replace(/\r/g,'');
+const oldB='    mov [4A17h], bx\n    push cs\n    mov [5D13h], bx\n    pop es\n';
+const newB='    push cs\n    pop es\n    mov [5D13h], bx       ; A003: still instruction 5 (beats m050/b01d writes at 3-4)\n    mov [4A17h], bx       ; A003: instruction 6 (was 3) -> after V6-family writes at 3\n';
+if(!b.includes(oldB))throw 'B';b=b.replace(oldB,newB).replace('; offsets replaced by label arithmetic with the original operand widths.','; offsets replaced by label arithmetic with the original operand widths.\n; A003 (night 2026-10-03): [4A17h] hook cell written late (instr 6) to win the cell race');
+fs.writeFileSync(D+'/c1B.asm',b);

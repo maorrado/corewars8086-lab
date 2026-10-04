@@ -1,0 +1,123 @@
+{
+ "job": {
+  "id": "20261004044048188-COORD-final-threat-nz8jk",
+  "agent": "COORD-final",
+  "kind": "threat",
+  "submittedAt": "2026-10-04T04:40:48.190Z",
+  "note": "final report: multi-copy (3 copies) rev0 vs rev1",
+  "asmA": "agent2/night/revisions/rev0/A.asm",
+  "asmB": "agent2/night/revisions/rev0/B.asm",
+  "threats": [
+   {
+    "name": "movswTwin",
+    "asmA": "agent2/night/scratch/B051/cMovswA.asm",
+    "asmB": "agent2/night/scratch/B051/cMovswB.asm"
+   },
+   {
+    "name": "undercut10",
+    "asmA": "agent2/night/scratch/A011/fa_A.asm",
+    "asmB": "agent2/night/scratch/A011/fa_B.asm"
+   },
+   {
+    "key": "movsw_cgx123123"
+   }
+  ],
+  "copies": 3,
+  "cohortsPerThreat": 8
+ },
+ "ok": true,
+ "finishedAt": "2026-10-04T04:51:54.957Z",
+ "seconds": 62.122,
+ "result": {
+  "candidate": {
+   "A": "agent2/night/cand-build/20261004044048188-COORD-final-threat-nz8jk/candA",
+   "B": "agent2/night/cand-build/20261004044048188-COORD-final-threat-nz8jk/candB",
+   "sizeA": 194,
+   "sizeB": 202,
+   "shaA": "6861894f3c1992cd6c6baa5b2a746178082f5b4b0a1d9969b9a326fe03d86c89",
+   "shaB": "8579e2c2212d72a413a6daacfe3b91ceb72be648bfc085bfeed9430eeaf6657a"
+  },
+  "baseRevision": 1,
+  "specKey": "38d74694bc21",
+  "battlesPerArm": 480,
+  "candMean": 0.2497,
+  "baseMean": 0.35,
+  "all": {
+   "n": 24,
+   "diff": -0.10035,
+   "lo": -0.14844,
+   "hi": -0.05226,
+   "wins": 2,
+   "losses": 17
+  },
+  "byThreat": {
+   "movswTwin": {
+    "n": 8,
+    "diff": 0.00052,
+    "lo": -0.00977,
+    "hi": 0.01081,
+    "wins": 1,
+    "losses": 2
+   },
+   "undercut10": {
+    "n": 8,
+    "diff": -0.05156,
+    "lo": -0.07925,
+    "hi": -0.02387,
+    "wins": 1,
+    "losses": 7
+   },
+   "movsw_cgx123123": {
+    "n": 8,
+    "diff": -0.25,
+    "lo": -0.30238,
+    "hi": -0.19762,
+    "wins": 0,
+    "losses": 8
+   }
+  },
+  "threatFirstTeamScore": {
+   "vsCand": {
+    "movswTwin": 0.2917,
+    "undercut10": 0.3187,
+    "movsw_cgx123123": 0.0969
+   },
+   "vsBase": {
+    "movswTwin": 0.2901,
+    "undercut10": 0.2865,
+    "movsw_cgx123123": 0.0323
+   }
+  },
+  "threatHashes": [
+   {
+    "label": "movswTwin",
+    "warriors": [
+     "agent2/night/cand-build/20261004044048188-COORD-final-threat-nz8jk/threat-0/tA",
+     "agent2/night/cand-build/20261004044048188-COORD-final-threat-nz8jk/threat-0/tB"
+    ],
+    "hashes": [
+     "138a4d7dae7fef40b108f5df07fd8dd57bae822c8264be4ef8c770992a83777a",
+     "27365f56ae01b9ed927167002cec80879c18aa84c3f15defbb03f3dcf479449e"
+    ]
+   },
+   {
+    "label": "undercut10",
+    "warriors": [
+     "agent2/night/cand-build/20261004044048188-COORD-final-threat-nz8jk/threat-1/tA",
+     "agent2/night/cand-build/20261004044048188-COORD-final-threat-nz8jk/threat-1/tB"
+    ],
+    "hashes": [
+     "69dd274a0358a1afd40e2278af70a9b68ece21a4059baab36206d0369b1fd5f9",
+     "c9cbe903fd42c2f037c6ca44d26c0d7ebab22767a394f52caf07cb3913baa50f"
+    ]
+   },
+   {
+    "label": "movsw_cgx123123",
+    "warriors": [
+     "official-2025/survivors-online/IND_cgx1231231",
+     "official-2025/survivors-online/IND_cgx1231232"
+    ]
+   }
+  ]
+ }
+}

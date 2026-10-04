@@ -1,0 +1,57 @@
+{
+ "agentId": "A045",
+ "role": "wave 9, performance; card: pointer cell vs stack (verify no SP/stack interaction can corrupt the private pointer cells or the template in any stream)",
+ "revisionUsed": 0,
+ "jobs": ["20261004022743399-A045-screen-32p2t"],
+ "candidates": [
+  {
+   "label": "cell7FC",
+   "change": "Verification ablation. A and B phoenix_init: mov bx,2C0h (A) / mov bx,280h (B) -> mov bx,7FCh, so the pointer cell (IP word, FAR_SEG word) sits at private 7FCh..7FFh, directly under the private push slot 7FEh. Also used by captured Zombies (they run B's phoenix_init on their own private stack). 2 bytes differ per binary; same size, same turn counts. If any stream pushed to its private stack after phoenix_init, the cell would be overwritten and the results would differ.",
+   "asmA": "agent2/night/scratch/A045/cellA.asm",
+   "asmB": "agent2/night/scratch/A045/cellB.asm",
+   "sizeA": 194, "sizeB": 202,
+   "shaA": "9fe819a5caf86417c76c5a59813807525db5d70e59b917ebade23c4f2fb89b77",
+   "shaB": "b2c5facd797b6917ee86115f19fa04dbd68d97732724009ce20964af5070b5c2",
+   "screenJob": "20261004022743399-A045-screen-32p2t",
+   "screenAllDiff": -0.00033, "screenAllLo": -0.00231, "screenAllHi": 0.00164,
+   "groupNotes": "cand 0.6453 vs base 0.6456, W/L 1/2. 2025 -0.00067 [-0.00466,+0.00333] 1/2; strong 0 (7/7 cohorts bit-identical); threat 0 (16/16 identical, incl. all six movsw threats); multi 0 (2/2 identical). Only s2025-1 (+0.033, KosherCode/Gamma/YANDE), s2025-16 (-0.017) and s2025-22 (-0.033) differ, by one battle each. Those differences come either from the 2 changed arena-visible body bytes or from hijacked streams that run foreign code with DS=private (see threat 3).",
+   "isDefenseFix": false,
+   "promising": false
+  }
+ ],
+ "threatFindings": [
+  {
+   "threat": "SP/stack pushes corrupt the private pointer cell or the worker template in some stream (A, B, captured zom20a via CX!=0 path, captured zom20b/d via CX=0 path, foreign-captured Zombies via [5D13h]/[4A17h])",
+   "classification": "not-reproduced",
+   "evidence": "Static: v6 Warrior.java gives each process write access only to its own stack [SS:0..SS:800h], the arena and its own group's shared memory (linear checks). Private writes in rev0 are only the template copy (ES=SS:0..11h), the cell init/update (DS:BX) and startup pushes at 7FEh (push cs/ss, call get_ip). After push cs/pop ss, SS=1000h, so every later push (call far trail) goes to the arena. zom20a/b/d never change SS/SP before capture (zom20b/d push ds/pop es is balanced); zom20c changes SS but rev0 never captures it. Rebuild reads private[0..14h] (B first gen [0..12h]) and never reaches the cell or 7FEh. Measured: screen 32p2t with the cell moved to 7FCh (right under the push slot): 47/50 cohorts bit-identical, ALL -0.0003 [-0.0023,+0.0016].",
+   "impact": "None. The pointer cell can sit anywhere in private 0..7FBh, with no measurable effect."
+  },
+  {
+   "threat": "Cross-process write into our private memory through the inclusive stack-region end (RealModeMemoryRegion is inclusive, so the region [seg:0, seg:800h] covers the first byte of the next allocated block)",
+   "classification": "not-reproduced",
+   "evidence": "Static (RealModeMemoryRegion.isInRegion uses <=; War.loadWarriorGroup allocates group shared 400h, then one 800h stack per member). A's SS:800h is B's template[0] (A5), but A never writes SS:800h because its pushes start at SP=800h and go to 7FEh. The previous group's last member's 800h byte is our team-shared byte 0, which rev0 does not use. A captured Zombie's template follows its own group's shared memory. Every other private byte can be written only by its owner.",
+   "impact": "None for rev0. Do not use team-shared byte 0 for state."
+  },
+  {
+   "threat": "A hijacked stream running foreign code with DS=private writes into its own cell/template (for example KosherCode C7 07 CC CC = mov word [bx],0CCCCh)",
+   "classification": "hypothesis",
+   "evidence": "Trace pkj3o (rev0) has a CAND1 death with bx=800h while it executed KosherCode bytes C7 07 CC CC at 0FFB:9CB5. In screen 32p2t one of the 3 changed cohorts (s2025-1) contains KosherCode. I could not separate this from the arena-visible byte change without a per-battle trace. It affects only the stream that is already hijacked, because each stream (A, B, each captured Zombie) has its own private memory.",
+   "impact": "At most 1 battle per 30 in 3 of 50 cohorts, both signs. Not worth a fix."
+  },
+  {
+   "threat": "MOVSW-family anchor kill (FF A5 d16 = jmp [di+d16]) works through the DS=private read",
+   "classification": "verified-in-current",
+   "evidence": "Traces pkj3o (rev0) and 4sf0x (zph), checked with helper scratch/A045/ffa5.cjs: 250 of the 487 deaths of our streams with CS=0FFBh are memory exceptions on FF A5. In 249/250, DI = anchor+1 (the dwell state). In all 250 the effective address DI+d16 is >= 800h, outside the readable private stack. The A5 writers are CodeKiller 79, cgx123123 82, TrojanByte 31, Baltika9 31, K0F1M 23, zom20b 3, own 1. The high byte of d16 is 00 in 161 cases, so EA = anchor+1+(attacker page). Another 25 deaths (16 of them captured zom20a) are cases where EA landed inside private memory: the word read was 0000, the jump went to 0FFB:0000, and execution there is outside the arena (fatal fetch at IP 0001).",
+   "impact": "About half of steady-state deaths. No cheap fix through DS: any DS that makes arbitrary offsets readable puts the cell into the arena. A rescue word in private memory covers only anchors on pages 0-7 (about 1/32) and would need ~1000 REP STOSW turns to fill."
+  },
+  {
+   "threat": "Segment choice makes some SP/DI/IP values fault (SS=1000h, ES=CS=0FFBh)",
+   "classification": "not-reproduced",
+   "evidence": "Static: SS=1000h maps every SP into the arena. With ES=CS=0FFBh, offsets below 50h would fault, but anchors are always xxA2 (BP and DX are multiples of 100h) and the rebuild ends at most at anchor+15h (FFB7h), so neither DI nor IP ever reaches a faulting offset.",
+   "impact": "None."
+  }
+ ],
+ "counterCodes": [],
+ "recommendation": "Do not promote cell7FC. It is a verification ablation (ALL -0.0003, 47/50 cohorts bit-identical), not an improvement. Close the card: no SP or stack interaction can corrupt the pointer cells or the template in any rev0 stream, including captured Zombies. Private memory is a safe place for state (the cell may move anywhere in 0..7FBh). Avoid team-shared byte 0, which the previous group's last member can write through the inclusive region end. The main measured weakness this card touches is the MOVSW FF A5 kill. It works through the DS=private read fault and cannot be fixed by choosing the cell or DS location. Helpers: scratch/A045/scan.cjs, fatal.cjs, ffa5.cjs, zz.cjs (trace readers).",
+ "notes": "One queue job used of 4. I built no performance candidate because the static and trace analysis found nothing to fix in this card's domain; the cheap levers next to it (template tail decoys SD, captured-Zombie phases zph/h34, step/gap/phase) are already covered in FINDINGS."
+}

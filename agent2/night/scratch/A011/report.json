@@ -1,0 +1,28 @@
+{
+ "agentId": "A011",
+ "revisionUsed": 0,
+ "jobs": ["20261003203358839-A011-screen-l10ch", "20261003203359022-A011-screen-pcyuz", "20261003203642330-A011-threat-466df", "20261003203643029-A011-threat-wn8cm"],
+ "mechanism": "Single knob: or dx,0FFBh in phoenix_init of A and B (B's copy also serves captured zombies). Anchor in-page offset = A2h - 16*(1000h-FAR_SEG): 0FFAh -> 42h, 0FF9h -> 32h. Trail CS word becomes FA 0F / F9 0F. No other code depends on 0FFBh (A's 0FFCh compare is dead code).",
+ "candidates": [
+  {"label": "fa (FAR_SEG 0FFAh, lattice 42h)", "asmA": "agent2/night/scratch/A011/fa_A.asm", "asmB": "agent2/night/scratch/A011/fa_B.asm",
+   "shaA": "69dd274a0358a1afd40e2278af70a9b68ece21a4059baab36206d0369b1fd5f9", "shaB": "c9cbe903fd42c2f037c6ca44d26c0d7ebab22767a394f52caf07cb3913baa50f", "sizeA": 194, "sizeB": 202,
+   "change": "or dx,0FFBh -> or dx,0FFAh in A and B",
+   "screen": {"job": "20261003203358839-A011-screen-l10ch", "ALL": -0.01878, "lo": -0.05616, "hi": 0.0186, "2025": -0.01467, "strong": -0.07698, "threat": -0.01858, "multi": 0.13194, "notable": "lead_zchain4 +0.228, lead_V6Guard +0.175, smulti-V6x3 +0.258, lead_ah02 -0.411, lead_zrl03 -0.111, lead_V6 -0.006"},
+   "threatJob": {"job": "20261003203642330-A011-threat-466df", "copies": 2, "ALL": 0.10236, "lead_V6": 0.31042, "lead_V6Guard": 0.34271, "lead_V4": 0.19583, "lead_zchain4": 0.25458, "lead_zrl03": -0.16854, "lead_ah02": -0.32083},
+   "promising": false},
+  {"label": "f9 (FAR_SEG 0FF9h, lattice 32h)", "asmA": "agent2/night/scratch/A011/f9_A.asm", "asmB": "agent2/night/scratch/A011/f9_B.asm",
+   "shaA": "4e5bdc1f32703a8d5a1f4342074c4ece10586da1c81908f51a8a8898581b2905", "shaB": "95ecfc2acfde2318e3d8f8a5305b6256edfaa3d0e9b31277f833803d628f602d", "sizeA": 194, "sizeB": 202,
+   "change": "or dx,0FFBh -> or dx,0FF9h in A and B",
+   "screen": {"job": "20261003203359022-A011-screen-pcyuz", "ALL": -0.01388, "lo": -0.04086, "hi": 0.0131, "2025": -0.02156, "strong": -0.05873, "threat": 0.01233, "multi": 0.02917, "notable": "lead_zrl03 +0.228, lead_V6Guard +0.147, smulti-V6x3 +0.153, lead_zchain4 -0.128, CodeKiller -0.117"},
+   "threatJob": {"job": "20261003203643029-A011-threat-wn8cm", "copies": 2, "ALL": 0.06507, "lead_V6": 0.225, "lead_V6Guard": 0.18542, "lead_V4": -0.07292, "lead_zchain4": 0.00396, "lead_zrl03": 0.07667, "lead_ah02": -0.02771},
+   "promising": false}
+ ],
+ "threatFindings": [
+  {"threat": "Lattice undercut 10h below a V6-family crowd (2 copies V6/V6Guard/V4) wins strongly", "classification": "verified-in-other", "evidence": "fa threat 466df: lead_V6 +0.310, V6Guard +0.343, V4 +0.196 (all 4/0); f9 (20h below) wn8cm: V6 +0.225, V6Guard +0.185 but V4 -0.073 (0/4)"},
+  {"threat": "Plain-field cost of moving the lattice below 52h", "classification": "verified-in-other", "evidence": "2025 group: fa -0.015, f9 -0.022, B055 0FF8h -0.026; strong: -0.077 / -0.059 / -0.05. All three undercuts negative overall (-0.019, -0.014, -0.011)."},
+  {"threat": "zrl03/ah02 (lattice ~32h) beat any lattice 10h above them", "classification": "verified-in-other", "evidence": "fa (42h) 466df: zrl03 -0.169 (0/4), ah02 -0.321 (0/4); at 32h (wn8cm) zrl03 +0.077, ah02 -0.028"},
+  {"threat": "rev0 (52h) is undercut-exposed by single V6-family leaders in a mixed field", "classification": "not-reproduced", "evidence": "screen cohorts with one lead_V6 copy: fa -0.006, f9 -0.022; the gain appears only with 2+ copies (threat jobs, smulti-V6x3 +0.26/+0.15)"},
+  {"threat": "zchain4 sits just below/at our lattice so a 10h undercut beats it", "classification": "hypothesis", "evidence": "fa vs zchain4 +0.255 (466df, 2 copies) and +0.228 in screen, but f9 ~0 and B055 0FF8h -0.067; non-monotonic, not traced"}
+ ],
+ "recommendation": "Do not promote 0FFAh or 0FF9h: both lose on the plain 2025 and strong groups (screen ALL -0.019 and -0.014), matching B055's 0FF8h result. The lattice is a field-composition bet: 0FFAh is a strong anti-V6-crowd setting (+0.20..+0.34 per leader with 2 copies, +0.25 vs zchain4) but hands zrl03/ah02 a free undercut (-0.17/-0.32). Only consider 0FFAh if the expected field is dominated by multiple 52h V6-family copies and has no 32h zrl03-style teams. Keep 0FFBh as base."
+}

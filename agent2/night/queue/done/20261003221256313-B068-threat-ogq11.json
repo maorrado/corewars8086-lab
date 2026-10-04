@@ -1,0 +1,101 @@
+{
+ "job": {
+  "id": "20261003221256313-B068-threat-ogq11",
+  "agent": "B068",
+  "kind": "threat",
+  "submittedAt": "2026-10-03T22:12:56.315Z",
+  "note": "B068 measure: cost of early INT86 heavy bombs (Underflow x3 real vs INT86->NOP), cand=base",
+  "threats": [
+   {
+    "name": "UF_real",
+    "binA": "official-2025/survivors-online/HRZ_Underflow1",
+    "binB": "official-2025/survivors-online/HRZ_Underflow2"
+   },
+   {
+    "name": "UF_no86",
+    "binA": "agent2/night/scratch/B068/bin/UF_no86_1",
+    "binB": "agent2/night/scratch/B068/bin/UF_no86_2"
+   }
+  ],
+  "copies": 3,
+  "cohortsPerThreat": 12
+ },
+ "ok": true,
+ "finishedAt": "2026-10-03T22:13:18.760Z",
+ "seconds": 17.444,
+ "result": {
+  "candidate": {
+   "A": "agent2/night/revisions/rev0/A",
+   "B": "agent2/night/revisions/rev0/B",
+   "sizeA": 194,
+   "sizeB": 202,
+   "shaA": "6861894f3c1992cd6c6baa5b2a746178082f5b4b0a1d9969b9a326fe03d86c89",
+   "shaB": "8579e2c2212d72a413a6daacfe3b91ceb72be648bfc085bfeed9430eeaf6657a"
+  },
+  "baseRevision": 0,
+  "specKey": "633871bb1506",
+  "battlesPerArm": 480,
+  "candMean": 0.8042,
+  "baseMean": 0.8042,
+  "all": {
+   "n": 24,
+   "diff": 0,
+   "lo": 0,
+   "hi": 0,
+   "wins": 0,
+   "losses": 0
+  },
+  "byThreat": {
+   "UF_real": {
+    "n": 12,
+    "diff": 0,
+    "lo": 0,
+    "hi": 0,
+    "wins": 0,
+    "losses": 0
+   },
+   "UF_no86": {
+    "n": 12,
+    "diff": 0,
+    "lo": 0,
+    "hi": 0,
+    "wins": 0,
+    "losses": 0
+   }
+  },
+  "threatFirstTeamScore": {
+   "vsCand": {
+    "UF_real": 0.0667,
+    "UF_no86": 0.0667
+   },
+   "vsBase": {
+    "UF_real": 0.0667,
+    "UF_no86": 0.0667
+   }
+  },
+  "threatHashes": [
+   {
+    "label": "UF_real",
+    "warriors": [
+     "official-2025/survivors-online/HRZ_Underflow1",
+     "official-2025/survivors-online/HRZ_Underflow2"
+    ],
+    "hashes": [
+     "79f994bd13bfd25b44a97d420e8a9d6e8f45311a716b21bfb9f10fdc79cde7e4",
+     "7d5c20977121ffb2ac532f6a4cb6662a2c349f0e833beb9999869ad9df918840"
+    ]
+   },
+   {
+    "label": "UF_no86",
+    "warriors": [
+     "agent2/night/scratch/B068/bin/UF_no86_1",
+     "agent2/night/scratch/B068/bin/UF_no86_2"
+    ],
+    "hashes": [
+     "5944f145c7532edb7c20aaa0c0522e1e2d4bf236b1971e9f3a208ffdd6ad2da1",
+     "6d6e5b46b86193fa4d83bab94bd6e261a5d6e11f5078e7b588d7cb56e6753495"
+    ]
+   }
+  ]
+ }
+}

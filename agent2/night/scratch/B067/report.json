@@ -1,0 +1,44 @@
+{
+ "agentId": "B067",
+ "role": "wave 4, domain 7 (trail scanners / anchor hunters), R2-measure, defense",
+ "revisionUsed": 0,
+ "jobs": [
+  "20261003220206074-B067-threat-y4h5y",
+  "20261003220908184-B067-screen-s8pzc",
+  "20261003221300248-B067-screen-xcl3y",
+  "20261003221300515-B067-threat-pbt3f"
+ ],
+ "prevalence": {
+  "staticScan": "agent2/night/scratch/B067/scanpool.mjs + scanimm.mjs over 926 binaries (693 unique) of official-2025 (online, young, zombies) and cgx2022-2024(y). The only code that compares memory against a far-call tag (1FFFh = FF 1F, or a segment-like word 0F00h-10FFh) is GSA_ido_itay2 (cgx2024 online1/online2/live; not in the 2024 finals). It watches one word 800h above itself, treats it as a pushed IP and checks [IP-2]==FF 1F, so it assumes CS=1000h. 2025 pools: no trail hunter. Other memory scanners are not trail hunters: ORT_Pegasus_Hex2 (looks for any non-CC byte from address 0, then INT 86h), OST_Gamma1 (fixed cells x5A5h/x6A5h of one family), zombie-capture readers of [1243h] (AML_ByteReapers, TOM_2B2Team2), self-check loops (GGN_OpcodeHunter1). V6's own zombie_scan only runs when something writes [7A00h]; no 2025 binary contains the bytes 00 7A.",
+  "traceReread": "agent2/night/scratch/B067/deaths.mjs over the existing trace dirs (pkj3o base, 46uvt, 4sf0x): 4-7% of rev0 deaths are single-word hits on the dwelling anchor (KosherCode1 stride-12 CCCCh bomber, RZL_YANDE1, ELD_FriendlyFire, HRZ_Underflow1, HRZ_MOV_AX_WIN2, GGN_OpcodeHunter1). All of them are blind bombers or copiers, not trail decoders. 84-101 of 161 base deaths are trail overwrites (MOVSW crowd)."
+ },
+ "counterCodes": [
+  {"label": "huntV6", "asmA": "agent2/night/scratch/B067/huntA.asm", "asmB": "agent2/night/scratch/B067/huntB.asm", "sizes": [68, 71], "sha": ["7375405d5d9a7820", "5857b8be2375bd04"], "what": "Good_Test V6 zombie_scan (friend-provided) run directly as a standalone team. It decodes anchor = W:IP-2 from any trail whose CS word has high byte 0Fh-1Fh (except 0FFCh) and bombs it with CCCCh. Control: hoffA.asm/hoffB.asm (bomb write replaced by nop nop).", "strength": "y4h5y: hunter team scores 0.261; base 0.333 vs it, against 0.875 vs the no-bomb control huntOff. Different fills, n=6 cohorts each."},
+  {"label": "idoFB", "binA": "agent2/night/scratch/B067/bin/ido1", "binB": "agent2/night/scratch/B067/bin/ido2fb", "what": "Real cgx2024 live GSA_ido_itay pair with one byte patched (add si,-2 -> add si,-52h) so its FF 1F check hits FAR_SEG 0FFBh anchors.", "strength": "y4h5y: team 0.075 vs 0.025 for the unpatched pair; base 0.717 vs 0.776 (n.s.). Weak, because it watches only a few cells."}
+ ],
+ "candidates": [
+  {
+   "label": "hz",
+   "files": ["agent2/night/scratch/B067/hzA.asm", "agent2/night/scratch/B067/hzB.asm"],
+   "sizeA": 202, "sizeB": 209,
+   "shaA": "352d9d4dff754365d526c6713e1604d6e3e7afd67edfab0bcbccd070f9540d42",
+   "shaB": "654adcb7237dce2b5ca540d47a32f6390e9b785ba6fbb8c055b00f30d4b66901",
+   "change": "A: at startup writes its zombie_entry address to arena cell [4A19h] (lea dx,[si+zombie_entry-start]; mov [4A19h],dx; INT87 moves from instr 10 to 12). The dead V6 zombie_scan tail now skips 0FFBh (own FAR_SEG) instead of 0FFCh. B: zombie_fallback (captured zom20b/d, CX=0) does its counter-bomb INT 87h, then cld; jmp [4A19h], so it runs the trail hunter instead of a phoenix. The zom20a path is unchanged.",
+   "screenJob": "20261003220908184-B067-screen-s8pzc",
+   "screenAllDiff": 0.01759, "screenAllLo": -0.00805, "screenAllHi": 0.04323,
+   "groups": "2025 +0.0002 [-0.034,0.035] W/L 12/10; strong +0.033; threat +0.041 [-0.000,0.083] (cgx +0.2, Baltika9 +0.1, TrojanByte +0.1, V4 +0.23, BinaryBandits -0.07); multi -0.0083 [-0.0138,-0.0029]",
+   "control": "hzOff (hzOffA.asm, sha b82b560a9bddfdff; hunter bomb write replaced by nop nop) screen 20261003221300248-B067-screen-xcl3y ALL -0.0373 [-0.0605,-0.0141], 2025 -0.052. Paired hz minus hzOff on the same S cohorts (pair.mjs): ALL +0.0549 [0.0349,0.0748], 2025 +0.0524 [0.0264,0.0785], threat +0.066 [0.023,0.109]. So the hunter's bombs are what makes up for losing the b/d phoenix copies.",
+   "threatJob": "20261003221300515-B067-threat-pbt3f: ALL +0.0149 [-0.034,0.064]; cgx123123 +0.088 (team 0.30->0.20), Baltika9 +0.069 (0.20->0.16), TrojanByte +0.015 (0.10->0.025), CodeKiller -0.152 [-0.286,-0.018] (team 0.125->0.175), zrl03 +0.006, AnotherBit +0.065; n=4 each",
+   "promising": true,
+   "groupNotes": "Passes the numeric bar (ALL +0.0176 >= +0.006, multi -0.008 > -0.01), but marginal: the 2025 group is flat, multi is slightly negative over only 2 cohorts, and CodeKiller was -0.15 in the threat job (+0.017 in the screen). The hunting mechanism itself is causally supported (hz minus hzOff +0.055)."
+  }
+ ],
+ "threatFindings": [
+  {"threat": "A segment-aware far-call trail hunter (decodes W:IP-2 from the pushed trail and bombs the anchor) kills rev0 anchors", "classification": "verified-in-current", "evidence": "Counter-code huntV6 (V6 zombie_scan standalone), threat y4h5y: rev0 0.333 vs huntV6 and 0.875 vs the identical no-bomb control huntOff (n=6 each, unpaired fills; about -0.54/battle). Hunter team score 0.261 vs 0.008.", "impact": "Structural for every far-call trail design (rev0, V6 family, zchain4, MOVSW crowd). A FAR_SEG whose high byte is not 0Fh/10h cannot cover the arena, so there is no cheap fix. Realistic cost today is about 0 because no such hunter exists in the pools."},
+  {"threat": "Real archived anchor hunters (GSA_ido_itay2, cgx2024) cost rev0 points", "classification": "not-reproduced", "evidence": "y4h5y: ido24live team score 0.025, rev0 0.776. It assumes CS=1000h (checks [IP-2]==FF 1F), which misses the 0FFBh trail of rev0, where the anchor is IP-52h. With the 1-byte patch to IP-52h (idoFB) the team scores 0.075 and rev0 0.717 (n.s.): its single-cell watch is too sparse to matter.", "impact": "~0. The FAR_SEG offset plus ido's sparse sampling protect rev0."},
+  {"threat": "Trail hunters are common in the 2024/2025 fields", "classification": "not-reproduced", "evidence": "Static scan of 693 unique 2022-2025 binaries: the only far-call-tag compare is ido_itay2 (2024 online/live). The trace re-read found no deaths from decoded-trail hits; anchor spot hits (4-7% of deaths) come from blind bombers (KosherCode, YANDE, FriendlyFire, Underflow, MOV_AX_WIN, OpcodeHunter1).", "impact": "0 of the 2025 teams. Watch any 2026 field for this design."},
+  {"threat": "lead_V6's hunter (zombie_scan behind the [7A00h] redirect) is active against rev0 in the fields", "classification": "hypothesis", "evidence": "Static only: no 2025 binary contains the bytes 00 7A, so [7A00h] stays CCCCh and V6 only writes junk at CCCFh-CCD9h. Consistent with B057 (brk24/bqibu). No new job.", "impact": "None measurable"},
+  {"threat": "Domain-7 hunting used offensively by our own captured zombies (sparing 0FFBh) gains points vs the MOVSW crowd", "classification": "verified-in-current", "evidence": "hz screen s8pzc +0.0176 [-0.008,0.043]; control hzOff xcl3y -0.037; paired hz-hzOff +0.055 [0.035,0.075]; threat pbt3f cgx +0.088, Baltika9 +0.069 but CodeKiller -0.152 (n=4).", "impact": "Net +0.018 on S (n.s.). Mechanism +0.055 relative to idle zombies."}
+ ],
+ "recommendation": "Defense: no fix proposed. The only effective hunter is purpose-built (huntV6, about -0.54/battle) and appears nowhere in the 2022-2025 pools. The one archived FF 1F hunter (ido_itay) is harmless, helped by FAR_SEG 0FFBh. Keep 0FFBh and keep huntV6 (scratch/B067/huntA/B.asm) as a library threat for future robustness checks. Candidate hz (captured b/d zombies run a hunter that spares our own segment) meets the screen bar (ALL +0.0176) and its mechanism is causally supported (+0.055 vs the hzOff control), but 2025 is flat, multi is -0.008 and CodeKiller was -0.15 in a small threat job. It can go to confirmation as a low-confidence promote-candidate. It is compatible with zph's zom20a-path BP change (zph's 3400h edit becomes moot)."
+}

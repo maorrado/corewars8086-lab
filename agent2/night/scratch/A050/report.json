@@ -1,0 +1,30 @@
+{
+ "agentId": "A050",
+ "revisionUsed": 0,
+ "jobs": ["20261004031644862-A050-screen-xgbrv", "20261004031645621-A050-threat-cocnr", "20261004031900017-A050-screen-cocue", "20261004032428899-A050-screen-rsm8l"],
+ "candidates": [
+  {"label": "SN_B", "asmB": "agent2/night/scratch/A050/SN_B.asm", "shaB": "cc3b46d33d37e91ca68eb75f626a6aba990b6c9958a2bad5be24b377706af85c", "sizeB": 245,
+   "change": "B only (A = rev0). New role for captured zombies: after INT87 and get_ip every captured zombie runs 6 passes of a page-lattice CC sniper (push cs/pop ds; BX = B page + 2 pages + 80h; per page mov [bx+23h/41h/63h/-7Dh/-4Eh],0CCCCh = in-page A3h, C1h, E3h, 03h, 32h; inc bh; loop 254 pages; skip B's own 2 pages), then the unchanged rev0 phoenix. 43 bytes added before phoenix_init; B member startup path unchanged.",
+   "screenJob": "20261004031644862-A050-screen-xgbrv", "screenAllDiff": -0.07839, "screenAllLo": -0.12043, "screenAllHi": -0.03635,
+   "groupNotes": "cand 0.5672 vs base 0.6456; 2025 -0.110 [-0.164,-0.056] 5/20; strong -0.158 [-0.247,-0.070] 0/7; threat -0.002; multi -0.008. Gains vs targets: zrl03 +0.183, ah02 +0.350, Baltika9 +0.10, TrojanByte +0.10. Threat cocnr (1 copy, 4 cohorts each): ALL +0.034 [-0.033,+0.100]; cgx123123 +0.179 [0.004,0.354] (cgx team 0.233 -> 0.063), zrl03 +0.094 (team 0.385 -> 0.167), ah02 +0.077 (0.390 -> 0.263), CodeKiller -0.038, TrojanByte -0.05, Baltika9 -0.06.",
+   "promising": false, "isDefenseFix": false},
+  {"label": "SN1_B", "asmB": "agent2/night/scratch/A050/SN1_B.asm", "shaB": "d78b350f5763fd2e55bd190076cd8b05a1090c602d3ae7c9f2674e447e5dd295", "sizeB": 245,
+   "change": "SN_B with 1 sniper pass (dx 6 -> 1, one byte at offset 74h).",
+   "screenJob": "20261004031900017-A050-screen-cocue", "screenAllDiff": -0.04024, "screenAllLo": -0.07446, "screenAllHi": -0.00601,
+   "groupNotes": "cand 0.6054; 2025 -0.070 [-0.116,-0.023] 5/17; strong -0.102 [-0.187,-0.017] 0/7; threat +0.026 (zrl03 +0.156, ah02 +0.194, Baltika9 +0.167, V4 +0.2, zchain4 +0.117); multi +0.011.",
+   "promising": false, "isDefenseFix": false},
+  {"label": "SN1ctl_B (control)", "asmB": "agent2/night/scratch/A050/SN1ctl_B.asm", "shaB": "b3f6f10d3eb9360087668d9e6b7d0658ebf5472e73432c9af29d97a682fdbdb7", "sizeB": 245,
+   "change": "SN1_B with the 5 bomb writes turned into reads (opcode 89h -> 8Bh, 5 bytes): identical layout and zombie delay, no bombs.",
+   "screenJob": "20261004032428899-A050-screen-rsm8l", "screenAllDiff": -0.10027, "screenAllLo": -0.12782, "screenAllHi": -0.07271,
+   "groupNotes": "cand 0.5454; 2025 -0.107 2/21; strong -0.169 0/7; threat -0.068 1/14; multi -0.031. Paired SN1 - SN1ctl (same cohorts/seeds, computed from perCohort): ALL +0.060 [+0.035,+0.085] 31/8; 2025 +0.037 [+0.003,+0.072]; strong +0.068 [+0.009,+0.127]; threat +0.094 [+0.048,+0.141] (zrl03 +0.222, ah02 +0.244, Baltika9 +0.200, TrojanByte +0.200, zchain4 +0.178, BinaryBandits +0.167, CodeKiller +0.117, cgx +0.100); V6-family cohorts exactly 0 (52h lattice not bombed).",
+   "promising": false, "isDefenseFix": false}
+ ],
+ "threatFindings": [
+  {"threat": "A page-lattice CC sniper on in-page A3h/03h/C1h/E3h/32h kills far-call replicators whose anchors stay on those lattices (cgx123123 A3h step 3500h, zrl03/ah02 32h, TrojanByte/Baltika9 03h/E3h)", "classification": "verified-in-current", "evidence": "threat cocnr: cgx team 0.233 -> 0.063, zrl03 0.385 -> 0.167, ah02 0.390 -> 0.263; matched control: SN1 - SN1ctl paired ALL +0.060 [+0.035,+0.085] 31/8, threat +0.094 lo > 0, V6-family cohorts exactly 0.", "impact": "Strong weapon vs MOVSW and 32h crowds (+0.1..+0.24 per targeted cohort) when the carrier is free."},
+  {"threat": "Delaying captured zombies' replicator start (about one sniper pass, ~1800 zombie instructions) plus a 43-byte B layout shift costs a lot", "classification": "verified-in-current", "evidence": "SN1ctl rsm8l ALL -0.100 [-0.128,-0.073] 4/43, strong -0.169 0/7. Split delay vs layout: hypothesis (earlier pad/bc2 work put pure layout cost near 0..-0.01).", "impact": "Zombie time is the most expensive resource in rev0; any zombie-side role change must not delay the phoenix."},
+  {"threat": "Sniper net-helps vs CodeKiller/TrojanByte/Baltika9 against base", "classification": "hypothesis", "evidence": "Positive vs matched control in single screen cohorts (+0.117/+0.200/+0.200) but negative vs base in cocnr (-0.038/-0.05/-0.06, n=4, n.s.), where the zombie-delay cost dominates.", "impact": "unclear"},
+  {"threat": "Static lattice map of 2025 MOVSW teams (TOMEX/BatteringRAM/B33/3Plate/Chargers/K0F1M at C1h, Code_Killer A3h, TrojanByte1/Baltika91 03h)", "classification": "hypothesis", "evidence": "Static disassembly (dis86) and B065 lattice.txt only; cgx A3h is supported by cocnr.", "impact": "Target list for any future lattice sniper."}
+ ],
+ "recommendation": "Do not promote any A050 candidate (all screens clearly negative: SN_B -0.078, SN1_B -0.040). Report the mechanism: a page-lattice CC sniper is a strong new weapon (+0.060 [+0.035,+0.085] vs a matched no-bomb control, gains in every group, biggest vs zrl03/ah02/zchain4/MOVSW teams), but captured zombies are too valuable as an early replicator to carry it (the delay costs ~-0.10). A future role could look for a cheaper carrier (for example a few bombs per generation, or a member-side burst limited to a few hundred turns), screened with the same read-instead-of-write control.",
+ "notes": "Card: radical new strategy family. Prototype: zombie lattice sniper. All screens against rev0 (= current base). Generator agent2/night/scratch/A050/mk.cjs; binaries agent2/night/scratch/A050/build/."
+}

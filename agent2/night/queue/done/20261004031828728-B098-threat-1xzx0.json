@@ -1,0 +1,189 @@
+{
+ "job": {
+  "id": "20261004031828728-B098-threat-1xzx0",
+  "agent": "B098",
+  "kind": "threat",
+  "submittedAt": "2026-10-04T03:18:28.730Z",
+  "note": "B098 control: KP on the same threat cohorts",
+  "asmA": "agent2/night/scratch/A031/K_A.asm",
+  "asmB": "agent2/night/scratch/B094/KP_B.asm",
+  "threats": [
+   {
+    "name": "B058_pg52",
+    "asmA": "agent2/night/scratch/B058/pg52A.asm",
+    "asmB": "agent2/night/scratch/B058/pg52B.asm"
+   },
+   {
+    "name": "B058_pg22",
+    "asmA": "agent2/night/scratch/B058/pg22A.asm",
+    "asmB": "agent2/night/scratch/B058/pg22B.asm"
+   },
+   {
+    "name": "B088_pgadapt",
+    "asmA": "agent2/night/scratch/B088/pgadaptA.asm",
+    "asmB": "agent2/night/scratch/B088/pgadaptB.asm"
+   },
+   {
+    "key": "bomb_IND_BRA"
+   },
+   {
+    "key": "lead_zchain4"
+   },
+   {
+    "key": "lead_zrl03"
+   }
+  ],
+  "copies": 1,
+  "cohortsPerThreat": 4
+ },
+ "ok": true,
+ "finishedAt": "2026-10-04T03:22:06.421Z",
+ "seconds": 14.759,
+ "result": {
+  "candidate": {
+   "A": "agent2/night/cand-build/20261004031828728-B098-threat-1xzx0/candA",
+   "B": "agent2/night/cand-build/20261004031828728-B098-threat-1xzx0/candB",
+   "sizeA": 196,
+   "sizeB": 222,
+   "shaA": "6d5bbfa6f4e778750d139b99c4c3c66c6faba3296338da217e5f426a3c8dd53a",
+   "shaB": "b275310b903e4c1d026f2c0f8082dba9976b1b12cc5b5fb16561f7045e4a0b62"
+  },
+  "baseRevision": 0,
+  "specKey": "77f00894b1a4",
+  "battlesPerArm": 480,
+  "candMean": 0.5767,
+  "baseMean": 0.5597,
+  "all": {
+   "n": 24,
+   "diff": 0.01701,
+   "lo": -0.02076,
+   "hi": 0.05479,
+   "wins": 11,
+   "losses": 4
+  },
+  "byThreat": {
+   "B058_pg52": {
+    "n": 4,
+    "diff": 0,
+    "lo": 0,
+    "hi": 0,
+    "wins": 0,
+    "losses": 0
+   },
+   "B058_pg22": {
+    "n": 4,
+    "diff": -0.00625,
+    "lo": -0.03708,
+    "hi": 0.02458,
+    "wins": 1,
+    "losses": 1
+   },
+   "B088_pgadapt": {
+    "n": 4,
+    "diff": -0.06458,
+    "lo": -0.1813,
+    "hi": 0.05213,
+    "wins": 2,
+    "losses": 2
+   },
+   "bomb_IND_BRA": {
+    "n": 4,
+    "diff": 0.0125,
+    "lo": -0.012,
+    "hi": 0.037,
+    "wins": 1,
+    "losses": 0
+   },
+   "lead_zchain4": {
+    "n": 4,
+    "diff": 0.07292,
+    "lo": -0.00609,
+    "hi": 0.15192,
+    "wins": 4,
+    "losses": 0
+   },
+   "lead_zrl03": {
+    "n": 4,
+    "diff": 0.0875,
+    "lo": -0.06824,
+    "hi": 0.24324,
+    "wins": 3,
+    "losses": 1
+   }
+  },
+  "threatFirstTeamScore": {
+   "vsCand": {
+    "B058_pg52": 0.1688,
+    "B058_pg22": 0,
+    "B088_pgadapt": 0.0958,
+    "bomb_IND_BRA": 0.0125,
+    "lead_zchain4": 0.2396,
+    "lead_zrl03": 0.3083
+   },
+   "vsBase": {
+    "B058_pg52": 0.1813,
+    "B058_pg22": 0.0125,
+    "B088_pgadapt": 0.0875,
+    "bomb_IND_BRA": 0.0125,
+    "lead_zchain4": 0.3375,
+    "lead_zrl03": 0.5146
+   }
+  },
+  "threatHashes": [
+   {
+    "label": "B058_pg52",
+    "warriors": [
+     "agent2/night/cand-build/20261004031828728-B098-threat-1xzx0/threat-0/tA",
+     "agent2/night/cand-build/20261004031828728-B098-threat-1xzx0/threat-0/tB"
+    ],
+    "hashes": [
+     "7f42eaeb180772e8bbc3c614578c1c7791659ff3040d7e825b8fab4e10cbb08c",
+     "8aff0736e87dc85f47aea6c1acdee935ff5749acea9ee542d85c839ac96d0e84"
+    ]
+   },
+   {
+    "label": "B058_pg22",
+    "warriors": [
+     "agent2/night/cand-build/20261004031828728-B098-threat-1xzx0/threat-1/tA",
+     "agent2/night/cand-build/20261004031828728-B098-threat-1xzx0/threat-1/tB"
+    ],
+    "hashes": [
+     "6021247534fe33b5038e863a149a21e2b5876e952c80674bda17e34b2e9efcdc",
+     "a638c3fcf26deb86d005609de9f80b030dd49ea7ce8b8e202fdeefc91522d64b"
+    ]
+   },
+   {
+    "label": "B088_pgadapt",
+    "warriors": [
+     "agent2/night/cand-build/20261004031828728-B098-threat-1xzx0/threat-2/tA",
+     "agent2/night/cand-build/20261004031828728-B098-threat-1xzx0/threat-2/tB"
+    ],
+    "hashes": [
+     "24c66cf9909be6f14f5562747f0e172b14af45d4edc9da7e8fe0e2c688f69489",
+     "58f3614b044dcfd32e23b7d77a1bd0ea5433aa494b2e3cb75481e0507bc80a5c"
+    ]
+   },
+   {
+    "label": "bomb_IND_BRA",
+    "warriors": [
+     "official-2025/survivors-online/IND_BRA1",
+     "official-2025/survivors-online/IND_BRA2"
+    ]
+   },
+   {
+    "label": "lead_zchain4",
+    "warriors": [
+     "agent2/night/refs/zchain4/A",
+     "agent2/night/refs/zchain4/B"
+    ]
+   },
+   {
+    "label": "lead_zrl03",
+    "warriors": [
+     "agent2/frontier-20261003/arms/combo_zrl03/A",
+     "agent2/frontier-20261003/arms/combo_zrl03/B"
+    ]
+   }
+  ]
+ }
+}

@@ -1,0 +1,171 @@
+{
+ "job": {
+  "id": "20261003205457669-B061-threat-1u12p",
+  "agent": "B061",
+  "kind": "threat",
+  "submittedAt": "2026-10-03T20:54:57.672Z",
+  "note": "B061 R2-measure: MOVSW twin of rev0 (B051 cMovsw53, AL A3) as paired family-collision probe vs the 6 movsw library keys; candidate-base = net cost of cross-family collision",
+  "asmA": "agent2/night/scratch/B061/twinA.asm",
+  "asmB": "agent2/night/scratch/B061/twinB.asm",
+  "threats": [
+   {
+    "key": "movsw_CodeKiller"
+   },
+   {
+    "key": "movsw_cgx123123"
+   },
+   {
+    "key": "movsw_Baltika9"
+   },
+   {
+    "key": "movsw_TrojanByte"
+   },
+   {
+    "key": "movsw_LowKey"
+   },
+   {
+    "key": "movsw_BinaryBandits"
+   }
+  ],
+  "copies": 1,
+  "cohortsPerThreat": 4
+ },
+ "ok": true,
+ "finishedAt": "2026-10-03T20:59:07.920Z",
+ "seconds": 56.43,
+ "result": {
+  "candidate": {
+   "A": "agent2/night/cand-build/20261003205457669-B061-threat-1u12p/candA",
+   "B": "agent2/night/cand-build/20261003205457669-B061-threat-1u12p/candB",
+   "sizeA": 194,
+   "sizeB": 202,
+   "shaA": "138a4d7dae7fef40b108f5df07fd8dd57bae822c8264be4ef8c770992a83777a",
+   "shaB": "27365f56ae01b9ed927167002cec80879c18aa84c3f15defbb03f3dcf479449e"
+  },
+  "baseRevision": 0,
+  "specKey": "b7d185d97886",
+  "battlesPerArm": 480,
+  "candMean": 0.6726,
+  "baseMean": 0.675,
+  "all": {
+   "n": 24,
+   "diff": -0.00243,
+   "lo": -0.07085,
+   "hi": 0.06599,
+   "wins": 14,
+   "losses": 10
+  },
+  "byThreat": {
+   "movsw_CodeKiller": {
+    "n": 4,
+    "diff": 0.025,
+    "lo": -0.05987,
+    "hi": 0.10987,
+    "wins": 3,
+    "losses": 1
+   },
+   "movsw_cgx123123": {
+    "n": 4,
+    "diff": 0.1625,
+    "lo": 0.07882,
+    "hi": 0.24618,
+    "wins": 4,
+    "losses": 0
+   },
+   "movsw_Baltika9": {
+    "n": 4,
+    "diff": 0.075,
+    "lo": -0.08874,
+    "hi": 0.23874,
+    "wins": 2,
+    "losses": 2
+   },
+   "movsw_TrojanByte": {
+    "n": 4,
+    "diff": -0.18958,
+    "lo": -0.21207,
+    "hi": -0.16709,
+    "wins": 0,
+    "losses": 4
+   },
+   "movsw_LowKey": {
+    "n": 4,
+    "diff": -0.075,
+    "lo": -0.32082,
+    "hi": 0.17082,
+    "wins": 3,
+    "losses": 1
+   },
+   "movsw_BinaryBandits": {
+    "n": 4,
+    "diff": -0.0125,
+    "lo": -0.14744,
+    "hi": 0.12244,
+    "wins": 2,
+    "losses": 2
+   }
+  },
+  "threatFirstTeamScore": {
+   "vsCand": {
+    "movsw_CodeKiller": 0.1625,
+    "movsw_cgx123123": 0.225,
+    "movsw_Baltika9": 0.1875,
+    "movsw_TrojanByte": 0.3646,
+    "movsw_LowKey": 0.2188,
+    "movsw_BinaryBandits": 0.2625
+   },
+   "vsBase": {
+    "movsw_CodeKiller": 0.175,
+    "movsw_cgx123123": 0.325,
+    "movsw_Baltika9": 0.2125,
+    "movsw_TrojanByte": 0.1625,
+    "movsw_LowKey": 0.175,
+    "movsw_BinaryBandits": 0.125
+   }
+  },
+  "threatHashes": [
+   {
+    "label": "movsw_CodeKiller",
+    "warriors": [
+     "official-2025/survivors-online-young/TOM_Code_Killer1",
+     "official-2025/survivors-online-young/TOM_Code_Killer2"
+    ]
+   },
+   {
+    "label": "movsw_cgx123123",
+    "warriors": [
+     "official-2025/survivors-online/IND_cgx1231231",
+     "official-2025/survivors-online/IND_cgx1231232"
+    ]
+   },
+   {
+    "label": "movsw_Baltika9",
+    "warriors": [
+     "official-2025/survivors-online/WAN_Baltika91",
+     "official-2025/survivors-online/WAN_Baltika92"
+    ]
+   },
+   {
+    "label": "movsw_TrojanByte",
+    "warriors": [
+     "official-2025/survivors-online/OHS_TrojanByte1",
+     "official-2025/survivors-online/OHS_TrojanByte2"
+    ]
+   },
+   {
+    "label": "movsw_LowKey",
+    "warriors": [
+     "official-2025/survivors-online/HRZ_LowKey_WBB1",
+     "official-2025/survivors-online/HRZ_LowKey_WBB2"
+    ]
+   },
+   {
+    "label": "movsw_BinaryBandits",
+    "warriors": [
+     "official-2025/survivors-online/HRZ_BinaryBandits1",
+     "official-2025/survivors-online/HRZ_BinaryBandits2"
+    ]
+   }
+  ]
+ }
+}

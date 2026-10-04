@@ -1,0 +1,128 @@
+{
+ "job": {
+  "id": "20261003215828833-B066-threat-83rh4",
+  "agent": "B066",
+  "kind": "threat",
+  "submittedAt": "2026-10-03T21:58:28.839Z",
+  "note": "dec0A: A jmp-to-next no-op -> mov word [0],1FFFh decoy for 2025 FF1FCCCC INT87 searchers (same turn count)",
+  "asmA": "agent2/night/scratch/B066/dec0A.asm",
+  "threats": [
+   {
+    "name": "OH_real",
+    "binA": "official-2025/survivors-online/GGN_OpcodeHunter1",
+    "binB": "official-2025/survivors-online/GGN_OpcodeHunter2"
+   },
+   {
+    "name": "TB_real",
+    "binA": "official-2025/survivors-online/TOM_2B2Team1",
+    "binB": "official-2025/survivors-online/TOM_2B2Team2"
+   },
+   {
+    "name": "ADD_real",
+    "binA": "official-2025/survivors-online/HRZ_ADDvanced1",
+    "binB": "official-2025/survivors-online/HRZ_ADDvanced2"
+   }
+  ],
+  "copies": 1,
+  "cohortsPerThreat": 8
+ },
+ "ok": true,
+ "finishedAt": "2026-10-03T22:02:30.757Z",
+ "seconds": 51.506,
+ "result": {
+  "candidate": {
+   "A": "agent2/night/cand-build/20261003215828833-B066-threat-83rh4/candA",
+   "B": "agent2/night/revisions/rev0/B",
+   "sizeA": 198,
+   "sizeB": 202,
+   "shaA": "2fadd3dee76a5a5fb0211cdd253b943956fa3051d445d3d32023a84d80214106",
+   "shaB": "8579e2c2212d72a413a6daacfe3b91ceb72be648bfc085bfeed9430eeaf6657a"
+  },
+  "baseRevision": 0,
+  "specKey": "376b18efee26",
+  "battlesPerArm": 480,
+  "candMean": 0.6361,
+  "baseMean": 0.5788,
+  "all": {
+   "n": 24,
+   "diff": 0.05729,
+   "lo": 0.02118,
+   "hi": 0.09341,
+   "wins": 13,
+   "losses": 3
+  },
+  "byThreat": {
+   "OH_real": {
+    "n": 8,
+    "diff": 0.04688,
+    "lo": 0.00664,
+    "hi": 0.08711,
+    "wins": 5,
+    "losses": 1
+   },
+   "TB_real": {
+    "n": 8,
+    "diff": 0.10625,
+    "lo": 0.01284,
+    "hi": 0.19966,
+    "wins": 5,
+    "losses": 2
+   },
+   "ADD_real": {
+    "n": 8,
+    "diff": 0.01875,
+    "lo": 0.00082,
+    "hi": 0.03668,
+    "wins": 3,
+    "losses": 0
+   }
+  },
+  "threatFirstTeamScore": {
+   "vsCand": {
+    "OH_real": 0.1417,
+    "TB_real": 0.1625,
+    "ADD_real": 0.175
+   },
+   "vsBase": {
+    "OH_real": 0.1646,
+    "TB_real": 0.2375,
+    "ADD_real": 0.1938
+   }
+  },
+  "threatHashes": [
+   {
+    "label": "OH_real",
+    "warriors": [
+     "official-2025/survivors-online/GGN_OpcodeHunter1",
+     "official-2025/survivors-online/GGN_OpcodeHunter2"
+    ],
+    "hashes": [
+     "d5992bdc307b070ad91e1737a8777125970912b286a392ed6d9a6456d87ed3af",
+     "0ced8fc1ec650a032604e2e149458b54202be7ecabb447999f143659d6ea46b6"
+    ]
+   },
+   {
+    "label": "TB_real",
+    "warriors": [
+     "official-2025/survivors-online/TOM_2B2Team1",
+     "official-2025/survivors-online/TOM_2B2Team2"
+    ],
+    "hashes": [
+     "bcc371f9a6c803da24ca9b207cc669f3ad303b115c7b6d27afdaafc1f48d0cb5",
+     "bd1a1687a4f99d4a0bb60ae23cb09a505d87c77042de95a27957b1c524df4ab0"
+    ]
+   },
+   {
+    "label": "ADD_real",
+    "warriors": [
+     "official-2025/survivors-online/HRZ_ADDvanced1",
+     "official-2025/survivors-online/HRZ_ADDvanced2"
+    ],
+    "hashes": [
+     "ff353ab75e7a3b88b896f64cbb97bfad639412a6e222088d6f52cc189a9e2ebe",
+     "509086f3e6ec36b0867ecebe4ba9ecc8faffaf7cc7f4e633dd04f2814981f39c"
+    ]
+   }
+  ]
+ }
+}

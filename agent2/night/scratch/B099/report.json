@@ -1,0 +1,32 @@
+{
+ "agentId": "B099",
+ "role": "wave 10, domain 9 (self-harm), R5-cost, defense",
+ "revisionUsed": 0,
+ "jobs": ["20261004031729580-B099-screen-33wcc", "20261004031730100-B099-threat-00vzu", "20261004031730604-B099-threat-yerwq", "20261004031731298-B099-threat-h8e7v"],
+ "audit": "Domain-9 self-harm fixes so far: B059 zph (both zombie phases; confirm mc03n +0.0092 pooled, n.s.), B089 h34 (CX=0 half of zph, 1 byte; a4urp router fix +0.192, h20 half harmful; confirm 8jsb6 -0.0061), A016 E2 (confirm 15igt -0.0212, 2024live -0.077), A044 GA/GAB guards (~0 / -0.005), A041 LS (multi -0.062), A035 LK/LKbd and A042 z62/z42 (rejected). Best = h34: smallest change, the only fix with a large replicated threat effect (a4urp, e93n6 inside K) and no measured general cost. Combination partner = B094 KP, the only candidate whose confirm passed the pooled gate (ubyb2 +0.0211, failed only multi by 0.003). KP+h34 had not been built by anyone (B093 did K+h34 = KH).",
+ "candidates": [
+  {
+   "label": "KPH = KP (B094) + h34 (B089)",
+   "change": "A = A031 K_A (= KP's A, unchanged). B = B094 KP_B with one byte changed: zombie_entry mov bp,3400h -> 7000h (binary offset 47h, byte 34h -> 70h), the phase used by captured b/d zombies (CX=0 path, incl. zombies stolen via [5D13h]/[0CC13h]). Size and timing unchanged.",
+   "asmA": "agent2/night/scratch/B099/KPH_A.asm",
+   "asmB": "agent2/night/scratch/B099/KPH_B.asm",
+   "shaA": "6d5bbfa6f4e778750d139b99c4c3c66c6faba3296338da217e5f426a3c8dd53a",
+   "shaB": "dd73fad407df01a6890dbab26b895320bc1a81ff4c3ed35b9a3a584b2daee1c7",
+   "sizeA": 196,
+   "sizeB": 222,
+   "screenJob": "20261004031729580-B099-screen-33wcc",
+   "screenAllDiff": 0.04115, "screenAllLo": 0.00964, "screenAllHi": 0.07266,
+   "groupNotes": "Screen vs rev0: cand 0.6868 vs 0.6456, W/L 27/18; 2025 +0.0249 [-0.020,+0.070] 12/10; strong +0.0475 [-0.058,+0.152] 3/4; threat +0.0668 [0.013,0.120] 11/3 (ah02 +0.372, cgx123123 +0.233, V4 +0.183, zrl03 +0.089; BinaryBandits -0.033, IND_BRA -0.033); multi +0.0167 (1/1). Paired per cohort vs KP screen c08bm (same field/seeds, 0 base mismatches; scratch/B099/pair.cjs): KPH-KP ALL +0.0116 [-0.0064,+0.0296] 26/15; 2025 +0.0078 [-0.016,+0.031]; strong -0.0099 [-0.055,+0.035]; threat +0.0304 [-0.007,+0.068] (cgx123123 +0.200, V4 +0.150, ah02 +0.133, zrl03 -0.111); multi -0.015 (smulti-mix -0.033). Caution: the cgx123123/V4 gains are the same fixed field-S cohorts where h34 gained in pfmzf and bfcms; on fresh confirms h34 alone was -0.006 pooled (8jsb6) and KH +0.004 (81s5c). Router threat (spec 4f230eb4f697, 2 copies of m050/b01d/e1p4/FixedToggle/Synthesis, 20 cohorts x 20): KPH 00vzu +0.146 [0.092,0.200] 17/3 vs KP control yerwq +0.055 [0.007,0.103] 12/4 (same base 0.6691), so h34 adds +0.091 inside KP (m050 +0.073, b01d +0.079, e1p4 +0.269, FixedToggle +0.035, Synthesis 0.000); KH e93n6 on the same spec +0.189, so the h34 and p0f13 router effects overlap. Interaction with p0f13's [0CC13h] steal (spec b3360c212476 = B094 3xuy5): KPH h8e7v +0.134 [0.068,0.201] vs KP 3xuy5 +0.108: zrl03 +0.261 vs +0.183, ah02 +0.346 vs +0.198, zrl03 decoy-only +0.092 vs +0.169, zchain4 +0.069 vs +0.058, planter/ctl identical.",
+   "isDefenseFix": true,
+   "promising": true
+  }
+ ],
+ "threatFindings": [
+  {"threat": "Self-kill when two [5D13h]-router peers (m050/b01d/e1p4/FixedToggle/Synthesis lineage) deliver captured b/d zombies onto B's CX=0 phase 3400h", "classification": "verified-in-current", "evidence": "00vzu: rev0 0.6691 vs KPH 0.8153 on the router spec; same as a4urp/e93n6.", "impact": "Large in router cohorts (+0.15 to +0.19 for the fix); these routers are our own lineage/peers and do not appear in the official 2023-2025 fields, so the field value is about 0."},
+  {"threat": "KP (p0f13 search window + [0CC13h]) already removes part of the router self-kill", "classification": "verified-in-other", "evidence": "yerwq KP +0.055 [0.007,0.103] vs K alone y1rpn +0.010 on the same spec (m050 +0.170, Synthesis +0.106); mechanism not traced.", "impact": "h34's added value inside KP is +0.091, about half of its value inside K (+0.179). Sub-additive."},
+  {"threat": "h34 interferes with captures stolen via [0CC13h] from zrl03/ah02/zchain4 (they enter the CX=0 path whose phase h34 changes)", "classification": "not-reproduced", "evidence": "h8e7v vs 3xuy5 (same spec key): zrl03 +0.078, ah02 +0.148, zchain4 +0.011 in favour of KPH; only the decoy-only zrl03 variant -0.077 (n=4). Field-S zrl03 cohort -0.111 (one cohort).", "impact": "No interaction cost measured; possibly a gain vs real zrl03/ah02."},
+  {"threat": "h34 has a general cost on the plain field", "classification": "not-reproduced", "evidence": "Paired KPH-KP on field S +0.0116 [-0.0064,+0.0296]; 2025 +0.0078, strong -0.0099 n.s.", "impact": "Field S cannot rule out the -0.006 pooled seen in confirm 8jsb6 (h34 alone); the field-S gain is concentrated in cohorts that already failed to replicate twice, so the real general effect is likely about 0 (hypothesis)."},
+  {"threat": "Captured-zombie trails / own startup writes / partner collisions as a field-level loss", "classification": "verified-in-other", "evidence": "No new job. Earlier traces: pkj3o 3/161 startup self-kills (B059), partner kills 2/168 (A041), zombie kills about 1/160 with the corrected att.mjs (A042); guards ~0 (A044).", "impact": "Each <= 0.004/battle; no further domain-9 fix is worth a confirm on its own."}
+ ],
+ "recommendation": "promote-candidate (conditional). KPH passes the screen bar (ALL +0.041 [0.010,0.073], no negative group) and adds a replicated, targeted router-theft defense on top of KP (+0.091 on the router spec) without hurting KP's zrl03/ah02/zchain4 steal (h8e7v vs 3xuy5 +0.027). But its field-S edge over KP (+0.012, n.s.) comes from cohorts where h34 has never replicated on fresh fields. Suggested: confirm KPH and KP on the same fresh salt (paired arms, more multi cohorts). Promote KPH only if pooled KPH-KP is not below about -0.005 and the multi gate passes; otherwise promote KP and keep h34 as a 1-byte router defense for later. Do not confirm h34 alone again. Domain 9 otherwise closed: no other self-harm fix has value above noise."
+}

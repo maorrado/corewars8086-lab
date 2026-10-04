@@ -1,0 +1,57 @@
+{
+ "agentId": "B064",
+ "role": "Domain 4 R2-measure (decoys that waste our INT87 searches)",
+ "revisionUsed": 0,
+ "jobs": ["20261003205624714-B064-threat-ov1jc", "20261003205625409-B064-threat-gi5xk", "20261003210437045-B064-threat-uue4q", "20261003210437606-B064-screen-8mp8r"],
+ "prevalence": {
+  "tool": "agent2/night/scratch/B064/scan.mjs (byte search over field2025, 2024live, 2024final, 2023final, counters, peers; arena CC fill appended)",
+  "B_pattern_EB_F9_CC_CC": {
+   "planted_high_decoys": "2025: GGN_OpcodeHunter2 (mov word [FFFCh]/[FFF8h]/[FFF4h],F9EBh at its instr 1-3 = three decoys at the very top of the arena; its own first EB F9 CC CC search at instr 12 with BX:CX=0 eats one). Peers/leaders: combo_zrl03/ah02 ([FFECh]/[FFE8h], see B054). None in 2024 live/final or 2023.",
+   "static_copies": "2025: TOM_Thefrogs1 +22h (live jmp of a self-copying frog, so copies move around the arena), GGN_OpcodeHunter2 +1F5h (end of an EB F9 run). 2024 live: GSA_sapir_nogakfar1 +3Ah (live bomber loop). None of them is preceded by 0Fh (preceding bytes A5 / F9 / 0B), whereas every zom20b/d tail is preceded by 0Fh.",
+   "tail_consumers": "2025 EB F9 CC CC searchers (they change which of our searches hits the live tail): HRZ_MOV_AX_WIN1/2 (instr 6, BX:CX=0), HRZ_Registered_Winners1/2 (jmp [9769h]), HRZ_LowKey_WBB1 (two), TOM_anonymous1/2, GGN_OpcodeHunter2 (three). Plus the V6/Chimera/m050/b01d/e1p4/FixedToggle/Synthesis peers and counters.",
+   "field_frequency": "decoy carriers are 2 of 75 teams in the 2025 pool (OpcodeHunter, Thefrogs) and 1 of 42 in 2024 live; with 3 opponents per battle about 4% of 2025 battles contain each one."
+  },
+  "A_pattern_E2_F2_81_C3": "static mimics only in HRZ_Grindo_Holics1/2 and GSA_callfart1/2 (domain 2, measured by B052/B062); searchers Fishandpoultry2 and HDS_YOY2 search after us (A003). Not re-measured here."
+ },
+ "candidates": [
+  {"label": "p0f (B only, decoy-immune b/d capture window)", "asmB": "agent2/night/scratch/B064/p0fB.asm", "sizeB": 211, "shaB": "c83d1fc02d4a8de4cf13ea54dc66da03d60884f70e570db72c9b912635572502",
+   "change": "rev0 B: both b/d INT87 searches use AX=0EB0Fh DX=0CCF9h (bytes 0F EB F9 CC) instead of EB F9 CC CC, replacement BX=0FF0Fh CX=1726h (bytes 0F FF 26 17), so the tail becomes jmp [0CC17h] (tail+3 keeps its CC); zombie_entry is also written to [0CC17h] (mov [0CC17h],bx after the [5D13h] write); push cs/pop es replaced by les di,[si+es_ptr] with dw 0000h,1000h so DI=0 as before and the startup INT87 stays the 12th instruction. A = base. Builder: agent2/night/scratch/B064/mkp0f.cjs.",
+   "screenJob": "20261003210437606-B064-screen-8mp8r", "screenAllDiff": 0.00653, "screenAllLo": -0.00719, "screenAllHi": 0.02025,
+   "groupNotes": "screen cand 0.6522 vs base 0.6456: 2025 +0.0029 [-0.0137,+0.0194] W/L 6/6 (OpcodeHunter cohort s2025-10 +0.144); strong +0.032 [-0.046,+0.109] (sstrong-1 b01d/e1p4 +0.261); threat +0.0024 [-0.0077,+0.0125] (lead_zrl03 +0.017, lead_ah02 -0.033); multi -0.0042 [-0.0123,+0.0040]. Threat job uue4q (8 cohorts x 20 per threat, same cohorts as ov1jc/gi5xk): ALL +0.0347 [0.0100,0.0594] W/L 14/4; OpcodeHunter +0.044 [-0.019,+0.106] W/L 5/2; Thefrogs +0.047 [0.009,0.084] W/L 6/1; IND_BRA control +0.014 [-0.004,+0.031].",
+   "isDefenseFix": true, "promising": true},
+  {"label": "skipB (= B054 fix2steal, reused as decoy-skip instrument)", "asmB": "agent2/night/scratch/B064/skipB.asm", "sizeB": 212, "shaB": "e0afe47d2d159710c124e05ea23bf71d59a86ce044b0d5229be58be9923481b6",
+   "change": "identical to agent2/night/scratch/B054/fix2stealB.asm (searches start at DI=0FFE0h, [0CC13h] steal); used only to measure the high-planted-decoy cost.",
+   "screenJob": "20261003205625409-B064-threat-gi5xk (threat, no new screen; B054 screen yolqz exists)",
+   "groupNotes": "threat gi5xk: ALL +0.0285 [0.0060,0.0510]; OpcodeHunter +0.050 [-0.004,+0.104] W/L 5/2; Thefrogs +0.0125 n.s. (6/8 cohorts identical); IND_BRA +0.023 [-0.005,+0.050].",
+   "isDefenseFix": true, "promising": false},
+  {"label": "nocapB (ablation, measurement only)", "asmB": "agent2/night/scratch/B064/nocapB.asm", "sizeB": 202, "shaB": "a09d7d54e998a1e2743818ff2b04708070209b052980fd861e5a0ad35caaf267",
+   "change": "rev0 B with both mov dx,0CCCCh -> mov dx,0C3C3h (EB F9 C3 C3 never matches): b/d capture off, timing and layout unchanged.",
+   "screenJob": "20261003205624714-B064-threat-ov1jc (threat)",
+   "groupNotes": "threat ov1jc: b/d capture value = base - nocapB: IND_BRA control +0.049 [0.017,0.081] (nocap W/L 1/7), Thefrogs +0.056 [0.017,0.095], OpcodeHunter -0.0125 [-0.037,+0.012] with 7 of 8 OpcodeHunter cohorts bit-identical (diff exactly 0) -> with OpcodeHunter present the b/d capture never happens.",
+   "isDefenseFix": false, "promising": false}
+ ],
+ "threatFindings": [
+  {"threat": "GGN_OpcodeHunter2 plants three EB F9 decoys at FFFCh/FFF8h/FFF4h (its instr 1-3); rev0 B's backward-from-0 startup search and the captured-zom20a search hit decoys, so the whole b/d capture is lost.",
+   "classification": "verified-in-current",
+   "evidence": "threat ov1jc: nocapB-base in OpcodeHunter cohorts = 0.000 in 7/8 cohorts (mean -0.0125) vs -0.049 in IND_BRA control and -0.056 in Thefrogs cohorts; threat gi5xk: decoy-skip B +0.050 [-0.004,0.104] W/L 5/2 in the same cohorts; threat uue4q: p0f +0.044; screen 8mp8r OpcodeHunter cohort s2025-10 +0.144.",
+   "impact": "about 0.05 points/battle in battles with OpcodeHunter (= the full b/d capture value); about 4% of 2025 battles -> roughly 0.002 points/battle averaged over the 2025 field"},
+  {"threat": "TOM_Thefrogs1 carries a live EB F9 CC CC (jmp at the end of a self-copying frog) that can absorb a b/d search wherever its copies sit above the zombies.",
+   "classification": "verified-in-current",
+   "evidence": "threat uue4q: p0f (pattern immune to non-0F-preceded copies) +0.047 [0.009,0.084] W/L 6/1 in Thefrogs cohorts vs control IND_BRA +0.014 n.s.; decoy-skip at FFE0h does not help (gi5xk +0.0125, 6/8 identical), consistent with mobile copies not at the top. b/d capture still worth 0.056 there on average (ov1jc), so the decoy hits only part of the battles. Caveat: p0f also changes hook cell/layout; one job, 8 cohorts.",
+   "impact": "about 0.03-0.05 points/battle with Thefrogs present (~4% of 2025 battles) -> ~0.002/battle field average"},
+  {"threat": "Static EB F9 CC CC copies in GGN_OpcodeHunter2 (+1F5h) and GSA_sapir_nogakfar1 (2024 live, +3Ah) act as decoys.",
+   "classification": "hypothesis",
+   "evidence": "static scan only (scan.mjs); OpcodeHunter cohorts are dominated by its planted decoys, sapir not tested.",
+   "impact": "unknown, at most the b/d capture value (~0.05) in a few % of battles"},
+  {"threat": "The b/d capture chain (B startup + captured-zom20a search) is worth about 0.05 points/battle in ordinary 2025 cohorts.",
+   "classification": "verified-in-current",
+   "evidence": "threat ov1jc control IND_BRA cohorts: nocapB-base -0.049 [-0.081,-0.017], W/L 1/7; Thefrogs -0.056.",
+   "impact": "upper bound of what any B-pattern decoy can take: ~0.05/battle"},
+  {"threat": "zrl03/ah02 planted decoys (FFECh/FFE8h).",
+   "classification": "verified-in-other",
+   "evidence": "Not re-measured; B054 (ojb8m, yolqz, confirm w1). p0f is immune to them by pattern but does not steal [CC13h]: screen 8mp8r lead_zrl03 +0.017, lead_ah02 -0.033 (single cohorts) vs fix2steal +0.167/+0.222.",
+   "impact": "see B054"}
+ ],
+ "recommendation": "promote-candidate (marginal) for confirmation: p0f B (agent2/night/scratch/B064/p0fB.asm, 211 B, sha c83d1fc0...). Screen ALL +0.0065 [-0.0072,+0.0203] just at the bar, no negative group (multi -0.004), and on its threats it clearly helps: +0.035 [0.010,0.059] pooled, OpcodeHunter +0.044, Thefrogs +0.047. Unlike the FFE0h skip (B054) it is immune to decoys at any address (all known field decoys are not preceded by 0Fh) and keeps INT87 at instr 12. Best tested as a combination with B054's [CC13h] steal (worth +0.13..0.26 vs zrl03/ah02 in confirm w1) and B059 zph, since all three touch B only; adding mov [0CC13h],bx would push INT87 to instr 13 unless another instruction is dropped. Realistic-field cost of B-side decoys is small (~0.004 points/battle over the 2025 field), so do not expect a large 2025-pool gain; the gain is robustness vs decoy planters. A counter that plants 0F EB F9 CC decoys would defeat p0f too (no absolute immunity).",
+ "notes": "rev0 used for all jobs. The three threat jobs share one cohort set (spec key from ov1jc), so nocapB/skipB/p0f are paired cohort by cohort with the same base run."
+}

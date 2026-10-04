@@ -1,0 +1,96 @@
+{
+ "job": {
+  "id": "20261003221731142-B070-threat-22av5",
+  "agent": "B070",
+  "kind": "threat",
+  "submittedAt": "2026-10-03T22:17:31.145Z",
+  "note": "B070 combined attack: the 3 costliest 2025 opponents (Grindo, 2B2Team, Baltika9) in one cohort; cand = B059 zph",
+  "asmB": "agent2/night/scratch/B070/zphB.asm",
+  "threats": [
+   {
+    "key": "zomb_Grindo"
+   },
+   {
+    "name": "2B2Team",
+    "binA": "official-2025/survivors-online/TOM_2B2Team1",
+    "binB": "official-2025/survivors-online/TOM_2B2Team2"
+   },
+   {
+    "key": "movsw_Baltika9"
+   }
+  ],
+  "cohortsPerThreat": 12,
+  "mixAll": true
+ },
+ "ok": true,
+ "finishedAt": "2026-10-03T22:19:44.834Z",
+ "seconds": 16.177,
+ "result": {
+  "candidate": {
+   "A": "agent2/night/revisions/rev0/A",
+   "B": "agent2/night/cand-build/20261003221731142-B070-threat-22av5/candB",
+   "sizeA": 194,
+   "sizeB": 202,
+   "shaA": "6861894f3c1992cd6c6baa5b2a746178082f5b4b0a1d9969b9a326fe03d86c89",
+   "shaB": "e85a4bf6ac97ca3a0fa9803b7d11c60c7bb29403d464b2ead605a71246bddaf0"
+  },
+  "baseRevision": 0,
+  "specKey": "67eeae016742",
+  "battlesPerArm": 240,
+  "candMean": 0.2458,
+  "baseMean": 0.2708,
+  "all": {
+   "n": 12,
+   "diff": -0.025,
+   "lo": -0.06218,
+   "hi": 0.01218,
+   "wins": 3,
+   "losses": 5
+  },
+  "byThreat": {
+   "mix": {
+    "n": 12,
+    "diff": -0.025,
+    "lo": -0.06218,
+    "hi": 0.01218,
+    "wins": 3,
+    "losses": 5
+   }
+  },
+  "threatFirstTeamScore": {
+   "vsCand": {
+    "mix": 0.1917
+   },
+   "vsBase": {
+    "mix": 0.2
+   }
+  },
+  "threatHashes": [
+   {
+    "label": "zomb_Grindo",
+    "warriors": [
+     "official-2025/survivors-online/HRZ_Grindo_Holics1",
+     "official-2025/survivors-online/HRZ_Grindo_Holics2"
+    ]
+   },
+   {
+    "label": "2B2Team",
+    "warriors": [
+     "official-2025/survivors-online/TOM_2B2Team1",
+     "official-2025/survivors-online/TOM_2B2Team2"
+    ],
+    "hashes": [
+     "bcc371f9a6c803da24ca9b207cc669f3ad303b115c7b6d27afdaafc1f48d0cb5",
+     "bd1a1687a4f99d4a0bb60ae23cb09a505d87c77042de95a27957b1c524df4ab0"
+    ]
+   },
+   {
+    "label": "movsw_Baltika9",
+    "warriors": [
+     "official-2025/survivors-online/WAN_Baltika91",
+     "official-2025/survivors-online/WAN_Baltika92"
+    ]
+   }
+  ]
+ }
+}

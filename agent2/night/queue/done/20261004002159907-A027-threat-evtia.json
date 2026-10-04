@@ -1,0 +1,142 @@
+{
+ "job": {
+  "id": "20261004002159907-A027-threat-evtia",
+  "agent": "A027",
+  "kind": "threat",
+  "submittedAt": "2026-10-04T00:21:59.908Z",
+  "note": "A027 xyB vs early tail consumers (k=1) + V6",
+  "asmB": "agent2/night/scratch/A027/xyB.asm",
+  "threats": [
+   {
+    "name": "MOVAXWIN",
+    "binA": "official-2025/survivors-online/HRZ_MOV_AX_WIN1",
+    "binB": "official-2025/survivors-online/HRZ_MOV_AX_WIN2"
+   },
+   {
+    "key": "movsw_LowKey"
+   },
+   {
+    "name": "TOManon",
+    "binA": "official-2025/survivors-online/TOM_anonymous1",
+    "binB": "official-2025/survivors-online/TOM_anonymous2"
+   },
+   {
+    "key": "lead_V6"
+   }
+  ],
+  "copies": 1,
+  "cohortsPerThreat": 6
+ },
+ "ok": true,
+ "finishedAt": "2026-10-04T00:23:15.658Z",
+ "seconds": 31.077,
+ "result": {
+  "candidate": {
+   "A": "agent2/night/revisions/rev0/A",
+   "B": "agent2/night/cand-build/20261004002159907-A027-threat-evtia/candB",
+   "sizeA": 194,
+   "sizeB": 231,
+   "shaA": "6861894f3c1992cd6c6baa5b2a746178082f5b4b0a1d9969b9a326fe03d86c89",
+   "shaB": "13778e28f5a0a62acc95da142b8391ca540cd70510656bbee34219b6a2156fb0"
+  },
+  "baseRevision": 0,
+  "specKey": "fb9491dc83fa",
+  "battlesPerArm": 480,
+  "candMean": 0.6267,
+  "baseMean": 0.6924,
+  "all": {
+   "n": 24,
+   "diff": -0.06562,
+   "lo": -0.10473,
+   "hi": -0.02652,
+   "wins": 2,
+   "losses": 12
+  },
+  "byThreat": {
+   "MOVAXWIN": {
+    "n": 6,
+    "diff": 0.00417,
+    "lo": -0.004,
+    "hi": 0.01233,
+    "wins": 1,
+    "losses": 0
+   },
+   "movsw_LowKey": {
+    "n": 6,
+    "diff": -0.1375,
+    "lo": -0.24316,
+    "hi": -0.03184,
+    "wins": 0,
+    "losses": 5
+   },
+   "TOManon": {
+    "n": 6,
+    "diff": -0.1,
+    "lo": -0.17591,
+    "hi": -0.02409,
+    "wins": 0,
+    "losses": 4
+   },
+   "lead_V6": {
+    "n": 6,
+    "diff": -0.02917,
+    "lo": -0.06799,
+    "hi": 0.00966,
+    "wins": 1,
+    "losses": 3
+   }
+  },
+  "threatFirstTeamScore": {
+   "vsCand": {
+    "MOVAXWIN": 0.0083,
+    "movsw_LowKey": 0.0833,
+    "TOManon": 0.0083,
+    "lead_V6": 0.4035
+   },
+   "vsBase": {
+    "MOVAXWIN": 0.0167,
+    "movsw_LowKey": 0.0917,
+    "TOManon": 0.0083,
+    "lead_V6": 0.3771
+   }
+  },
+  "threatHashes": [
+   {
+    "label": "MOVAXWIN",
+    "warriors": [
+     "official-2025/survivors-online/HRZ_MOV_AX_WIN1",
+     "official-2025/survivors-online/HRZ_MOV_AX_WIN2"
+    ],
+    "hashes": [
+     "ef82df0d92476fa6161d81ff092ea489d4df7ddef88a0dad44705a3cf14f8dd1",
+     "a1b4b8459ae6b367da93742fb5f3c8bb0fe321e3cf1174f4e7a1dc29ada2a544"
+    ]
+   },
+   {
+    "label": "movsw_LowKey",
+    "warriors": [
+     "official-2025/survivors-online/HRZ_LowKey_WBB1",
+     "official-2025/survivors-online/HRZ_LowKey_WBB2"
+    ]
+   },
+   {
+    "label": "TOManon",
+    "warriors": [
+     "official-2025/survivors-online/TOM_anonymous1",
+     "official-2025/survivors-online/TOM_anonymous2"
+    ],
+    "hashes": [
+     "6f57faeb8622bbc3778c80d450fa03c9efbf8703b58414850a3861f2bcbc83f4",
+     "e0cdbe70e170d8bf242e071325971d7590701d330fe089b9d2f815e05a432759"
+    ]
+   },
+   {
+    "label": "lead_V6",
+    "warriors": [
+     "agent2/night/refs/V6/A",
+     "agent2/night/refs/V6/B"
+    ]
+   }
+  ]
+ }
+}

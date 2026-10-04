@@ -1,0 +1,129 @@
+{
+ "job": {
+  "id": "20261003210732765-B065-threat-m58nr",
+  "agent": "B065",
+  "kind": "threat",
+  "submittedAt": "2026-10-03T21:07:32.767Z",
+  "note": "R2 lattice measure: OpcodeHunter2 same-lattice control (52h), 10h above (62h), original (rotating 02-82h)",
+  "asmA": "agent2/night/scratch/B065/probe_lat22_A.asm",
+  "asmB": "agent2/night/scratch/B065/probe_lat22_B.asm",
+  "threats": [
+   {
+    "name": "OH_lat52",
+    "binA": "agent2/night/scratch/B065/bin/OH1",
+    "binB": "agent2/night/scratch/B065/bin/OH2_lat52"
+   },
+   {
+    "name": "OH_lat62",
+    "binA": "agent2/night/scratch/B065/bin/OH1",
+    "binB": "agent2/night/scratch/B065/bin/OH2_lat62"
+   },
+   {
+    "name": "OH_orig",
+    "binA": "official-2025/survivors-online/GGN_OpcodeHunter1",
+    "binB": "official-2025/survivors-online/GGN_OpcodeHunter2"
+   }
+  ],
+  "copies": 1,
+  "cohortsPerThreat": 8
+ },
+ "ok": true,
+ "finishedAt": "2026-10-03T21:09:35.286Z",
+ "seconds": 55.208,
+ "result": {
+  "candidate": {
+   "A": "agent2/night/cand-build/20261003210732765-B065-threat-m58nr/candA",
+   "B": "agent2/night/cand-build/20261003210732765-B065-threat-m58nr/candB",
+   "sizeA": 194,
+   "sizeB": 202,
+   "shaA": "45d913530e7e9c73b595d2034068cabff0a412c2f34a6b59bca9091703a224f6",
+   "shaB": "6b4b07dea599dad9e67d2a2be097d43d963eeedddb758dbe27757a1fded7dc60"
+  },
+  "baseRevision": 0,
+  "specKey": "a4d364629d64",
+  "battlesPerArm": 480,
+  "candMean": 0.4911,
+  "baseMean": 0.5778,
+  "all": {
+   "n": 24,
+   "diff": -0.08663,
+   "lo": -0.12617,
+   "hi": -0.04709,
+   "wins": 4,
+   "losses": 19
+  },
+  "byThreat": {
+   "OH_lat52": {
+    "n": 8,
+    "diff": -0.11875,
+    "lo": -0.17746,
+    "hi": -0.06004,
+    "wins": 1,
+    "losses": 7
+   },
+   "OH_lat62": {
+    "n": 8,
+    "diff": -0.03177,
+    "lo": -0.11001,
+    "hi": 0.04647,
+    "wins": 2,
+    "losses": 5
+   },
+   "OH_orig": {
+    "n": 8,
+    "diff": -0.10938,
+    "lo": -0.16716,
+    "hi": -0.05159,
+    "wins": 1,
+    "losses": 7
+   }
+  },
+  "threatFirstTeamScore": {
+   "vsCand": {
+    "OH_lat52": 0.3677,
+    "OH_lat62": 0.3047,
+    "OH_orig": 0.3146
+   },
+   "vsBase": {
+    "OH_lat52": 0.2865,
+    "OH_lat62": 0.2438,
+    "OH_orig": 0.2281
+   }
+  },
+  "threatHashes": [
+   {
+    "label": "OH_lat52",
+    "warriors": [
+     "agent2/night/scratch/B065/bin/OH1",
+     "agent2/night/scratch/B065/bin/OH2_lat52"
+    ],
+    "hashes": [
+     "d5992bdc307b070ad91e1737a8777125970912b286a392ed6d9a6456d87ed3af",
+     "f43ba2b77d819322d7ccff3b99bd5ec682145c6e29d4f148d23233d66adc806f"
+    ]
+   },
+   {
+    "label": "OH_lat62",
+    "warriors": [
+     "agent2/night/scratch/B065/bin/OH1",
+     "agent2/night/scratch/B065/bin/OH2_lat62"
+    ],
+    "hashes": [
+     "d5992bdc307b070ad91e1737a8777125970912b286a392ed6d9a6456d87ed3af",
+     "9a05f82110bcb672a920f8ca464e2bf8158d5fa77f2deb04e5b78d60591c5819"
+    ]
+   },
+   {
+    "label": "OH_orig",
+    "warriors": [
+     "official-2025/survivors-online/GGN_OpcodeHunter1",
+     "official-2025/survivors-online/GGN_OpcodeHunter2"
+    ],
+    "hashes": [
+     "d5992bdc307b070ad91e1737a8777125970912b286a392ed6d9a6456d87ed3af",
+     "0ced8fc1ec650a032604e2e149458b54202be7ecabb447999f143659d6ea46b6"
+    ]
+   }
+  ]
+ }
+}

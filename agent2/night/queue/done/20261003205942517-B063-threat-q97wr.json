@@ -1,0 +1,109 @@
+{
+ "job": {
+  "id": "20261003205942517-B063-threat-q97wr",
+  "agent": "B063",
+  "kind": "threat",
+  "submittedAt": "2026-10-03T20:59:42.520Z",
+  "note": "B063 notheft vs sstrong-1 composition (b01d+e1p4+segment_fault, two 5D13h hook users) - replicate screen +0.233",
+  "asmA": "agent2/night/scratch/B063/notheftA.asm",
+  "asmB": "agent2/night/scratch/B063/notheftB.asm",
+  "threats": [
+   {
+    "name": "b01d",
+    "binA": "agent2/build/ref/b01dA",
+    "binB": "agent2/build/ref/b01dB"
+   },
+   {
+    "name": "e1p4",
+    "binA": "agent2/build/ref/e1p4A",
+    "binB": "agent2/build/ref/e1p4B"
+   },
+   {
+    "name": "segfault",
+    "binA": "repos/corewars8086-survivors/cgx2024/05-final2/HLS_segment_fault1",
+    "binB": "repos/corewars8086-survivors/cgx2024/05-final2/HLS_segment_fault2"
+   }
+  ],
+  "cohortsPerThreat": 12,
+  "mixAll": true
+ },
+ "ok": true,
+ "finishedAt": "2026-10-03T21:02:59.229Z",
+ "seconds": 31.63,
+ "result": {
+  "candidate": {
+   "A": "agent2/night/cand-build/20261003205942517-B063-threat-q97wr/candA",
+   "B": "agent2/night/cand-build/20261003205942517-B063-threat-q97wr/candB",
+   "sizeA": 194,
+   "sizeB": 202,
+   "shaA": "09fcf3c877190c4fbd80dda6fee2f3b76b62ffe0a9a6c0da176c5c168d52e99f",
+   "shaB": "e1daea1ea3ca3c8c6a46717ccd5760f37b390fade065b7c9dbf715367b23c060"
+  },
+  "baseRevision": 0,
+  "specKey": "16c24f659281",
+  "battlesPerArm": 240,
+  "candMean": 0.7833,
+  "baseMean": 0.5856,
+  "all": {
+   "n": 12,
+   "diff": 0.19778,
+   "lo": 0.13615,
+   "hi": 0.25941,
+   "wins": 11,
+   "losses": 1
+  },
+  "byThreat": {
+   "mix": {
+    "n": 12,
+    "diff": 0.19778,
+    "lo": 0.13615,
+    "hi": 0.25941,
+    "wins": 11,
+    "losses": 1
+   }
+  },
+  "threatFirstTeamScore": {
+   "vsCand": {
+    "mix": 0.091
+   },
+   "vsBase": {
+    "mix": 0.1013
+   }
+  },
+  "threatHashes": [
+   {
+    "label": "b01d",
+    "warriors": [
+     "agent2/build/ref/b01dA",
+     "agent2/build/ref/b01dB"
+    ],
+    "hashes": [
+     "775080226ca8f9e9a5aac584094c9066bd2c55365ee8cea1e18db26440d9315e",
+     "884b4d52e4ef1e57db85c88083d0a8667a6bd252a25728da7f5fdedefa6f33c7"
+    ]
+   },
+   {
+    "label": "e1p4",
+    "warriors": [
+     "agent2/build/ref/e1p4A",
+     "agent2/build/ref/e1p4B"
+    ],
+    "hashes": [
+     "99192c673e5af394ed8194932b52b4f18f092804384f38d1bb2828b189c76b93",
+     "d307b92097ac68ce6073adc1e34917b2f51c0c396235c918dfc913cee7393354"
+    ]
+   },
+   {
+    "label": "segfault",
+    "warriors": [
+     "repos/corewars8086-survivors/cgx2024/05-final2/HLS_segment_fault1",
+     "repos/corewars8086-survivors/cgx2024/05-final2/HLS_segment_fault2"
+    ],
+    "hashes": [
+     "267dbe82e9af96b3a8531afbf32ab08281cdae0bc86c4e340f2008e8ec1c3cc2",
+     "028054edfcdc11162402200d9aa7af823a02f14ff06afe5e786cfecbcb21e931"
+    ]
+   }
+  ]
+ }
+}

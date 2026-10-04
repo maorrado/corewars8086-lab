@@ -1,0 +1,154 @@
+{
+ "job": {
+  "id": "20261004004550795-A031-threat-vdhwq",
+  "agent": "A031",
+  "kind": "threat",
+  "submittedAt": "2026-10-04T00:45:50.796Z",
+  "note": "A031 E1 vs 2024-live FF1FCCCC searchers (same spec as A026 fz8gf)",
+  "asmA": "agent2/night/scratch/A031/E1_A.asm",
+  "threats": [
+   {
+    "name": "PastRAMa24L",
+    "binA": "repos/corewars8086-survivors/cgx2024/03-live/BZV_PastRAMa1",
+    "binB": "repos/corewars8086-survivors/cgx2024/03-live/BZV_PastRAMa2"
+   },
+   {
+    "name": "ATO24L",
+    "binA": "repos/corewars8086-survivors/cgx2024/03-live/TOM_ATO1",
+    "binB": "repos/corewars8086-survivors/cgx2024/03-live/TOM_ATO2"
+   },
+   {
+    "name": "JMP2HELL24L",
+    "binA": "repos/corewars8086-survivors/cgx2024/03-live/HRZ_JMP2HELL1",
+    "binB": "repos/corewars8086-survivors/cgx2024/03-live/HRZ_JMP2HELL2"
+   },
+   {
+    "name": "segfault24L",
+    "binA": "repos/corewars8086-survivors/cgx2024/03-live/HLS_segment_fault1",
+    "binB": "repos/corewars8086-survivors/cgx2024/03-live/HLS_segment_fault2"
+   }
+  ],
+  "copies": 1,
+  "cohortsPerThreat": 6
+ },
+ "ok": true,
+ "finishedAt": "2026-10-04T00:46:37.754Z",
+ "seconds": 8.92,
+ "result": {
+  "candidate": {
+   "A": "agent2/night/cand-build/20261004004550795-A031-threat-vdhwq/candA",
+   "B": "agent2/night/revisions/rev0/B",
+   "sizeA": 198,
+   "sizeB": 202,
+   "shaA": "40db225b01c5d9e6a5cf1a2ac23bd679335e23d0910fcfc5e6c873da308b3a68",
+   "shaB": "8579e2c2212d72a413a6daacfe3b91ceb72be648bfc085bfeed9430eeaf6657a"
+  },
+  "baseRevision": 0,
+  "specKey": "cb0c2ae55eee",
+  "battlesPerArm": 480,
+  "candMean": 0.6781,
+  "baseMean": 0.625,
+  "all": {
+   "n": 24,
+   "diff": 0.05312,
+   "lo": 0.01637,
+   "hi": 0.08988,
+   "wins": 12,
+   "losses": 4
+  },
+  "byThreat": {
+   "PastRAMa24L": {
+    "n": 6,
+    "diff": 0.04583,
+    "lo": -0.0022,
+    "hi": 0.09387,
+    "wins": 3,
+    "losses": 1
+   },
+   "ATO24L": {
+    "n": 6,
+    "diff": -0.02083,
+    "lo": -0.06167,
+    "hi": 0.02,
+    "wins": 1,
+    "losses": 3
+   },
+   "JMP2HELL24L": {
+    "n": 6,
+    "diff": 0.12917,
+    "lo": 0.03584,
+    "hi": 0.2225,
+    "wins": 4,
+    "losses": 0
+   },
+   "segfault24L": {
+    "n": 6,
+    "diff": 0.05833,
+    "lo": -0.00056,
+    "hi": 0.11722,
+    "wins": 4,
+    "losses": 0
+   }
+  },
+  "threatFirstTeamScore": {
+   "vsCand": {
+    "PastRAMa24L": 0.0583,
+    "ATO24L": 0.2819,
+    "JMP2HELL24L": 0.0458,
+    "segfault24L": 0.1917
+   },
+   "vsBase": {
+    "PastRAMa24L": 0.0667,
+    "ATO24L": 0.275,
+    "JMP2HELL24L": 0.1,
+    "segfault24L": 0.2083
+   }
+  },
+  "threatHashes": [
+   {
+    "label": "PastRAMa24L",
+    "warriors": [
+     "repos/corewars8086-survivors/cgx2024/03-live/BZV_PastRAMa1",
+     "repos/corewars8086-survivors/cgx2024/03-live/BZV_PastRAMa2"
+    ],
+    "hashes": [
+     "2b65bfc68cf05ee0bd5b3eef49fc67fd16abcc87cf26ec8cade2a3fff0b177f1",
+     "146aeed0535cda8da3c787c0d94f50edfcaa9d5aceb69d09ed7aa8b7c3f83071"
+    ]
+   },
+   {
+    "label": "ATO24L",
+    "warriors": [
+     "repos/corewars8086-survivors/cgx2024/03-live/TOM_ATO1",
+     "repos/corewars8086-survivors/cgx2024/03-live/TOM_ATO2"
+    ],
+    "hashes": [
+     "2142affbecf19b8c6ed7295d392b1b8120df19ed93b60a9abb82d9f1b42efb6c",
+     "051d33e47921fda63f11229d34659a7373671b8d30707f7c1e33046fae9415f3"
+    ]
+   },
+   {
+    "label": "JMP2HELL24L",
+    "warriors": [
+     "repos/corewars8086-survivors/cgx2024/03-live/HRZ_JMP2HELL1",
+     "repos/corewars8086-survivors/cgx2024/03-live/HRZ_JMP2HELL2"
+    ],
+    "hashes": [
+     "ace77c08a46478565dabc401afef2e75b8698d5763990c3538fceb229213e8f3",
+     "a3c2b03117407eed9969e2372f43bb55b4c08ba240ef5737c2c438ef36dde954"
+    ]
+   },
+   {
+    "label": "segfault24L",
+    "warriors": [
+     "repos/corewars8086-survivors/cgx2024/03-live/HLS_segment_fault1",
+     "repos/corewars8086-survivors/cgx2024/03-live/HLS_segment_fault2"
+    ],
+    "hashes": [
+     "6500cf5c4c08cbf95a9f61941e1b35dab02a5362b2c67108d2b62bfba0224a5f",
+     "192d67de007685b3829b04323900a2a48eb7d26a5fa84a1cd1cde22f8df29c10"
+    ]
+   }
+  ]
+ }
+}

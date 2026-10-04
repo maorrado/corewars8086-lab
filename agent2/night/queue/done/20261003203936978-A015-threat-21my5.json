@@ -1,0 +1,170 @@
+{
+ "job": {
+  "id": "20261003203936978-A015-threat-21my5",
+  "agent": "A015",
+  "kind": "threat",
+  "submittedAt": "2026-10-03T20:39:36.981Z",
+  "note": "A015: A_t800 (A trail 800h) independent check of screen threat-group gain (MOVSW) and lead_V6 loss",
+  "asmA": "agent2/night/scratch/A015/A_t800.asm",
+  "threats": [
+   {
+    "key": "movsw_cgx123123"
+   },
+   {
+    "key": "movsw_CodeKiller"
+   },
+   {
+    "key": "movsw_Baltika9"
+   },
+   {
+    "key": "lead_V6"
+   },
+   {
+    "key": "lead_V6Guard"
+   },
+   {
+    "key": "lead_zrl03"
+   }
+  ],
+  "copies": 1,
+  "cohortsPerThreat": 4
+ },
+ "ok": true,
+ "finishedAt": "2026-10-03T20:48:28.086Z",
+ "seconds": 78.065,
+ "result": {
+  "candidate": {
+   "A": "agent2/night/cand-build/20261003203936978-A015-threat-21my5/candA",
+   "B": "agent2/night/revisions/rev0/B",
+   "sizeA": 194,
+   "sizeB": 202,
+   "shaA": "4bf226d9f0ce1063528de62c57ee71a7f6cbc7f09abfc20c05e3f492730a6c82",
+   "shaB": "8579e2c2212d72a413a6daacfe3b91ceb72be648bfc085bfeed9430eeaf6657a"
+  },
+  "baseRevision": 0,
+  "specKey": "6354a1a05683",
+  "battlesPerArm": 480,
+  "candMean": 0.5819,
+  "baseMean": 0.5316,
+  "all": {
+   "n": 24,
+   "diff": 0.05035,
+   "lo": 0.00322,
+   "hi": 0.09747,
+   "wins": 15,
+   "losses": 6
+  },
+  "byThreat": {
+   "movsw_cgx123123": {
+    "n": 4,
+    "diff": 0.1625,
+    "lo": 0.089,
+    "hi": 0.236,
+    "wins": 4,
+    "losses": 0
+   },
+   "movsw_CodeKiller": {
+    "n": 4,
+    "diff": -0.04792,
+    "lo": -0.24396,
+    "hi": 0.14813,
+    "wins": 1,
+    "losses": 2
+   },
+   "movsw_Baltika9": {
+    "n": 4,
+    "diff": 0.0375,
+    "lo": -0.04618,
+    "hi": 0.12118,
+    "wins": 2,
+    "losses": 1
+   },
+   "lead_V6": {
+    "n": 4,
+    "diff": 0.01042,
+    "lo": -0.07789,
+    "hi": 0.09872,
+    "wins": 1,
+    "losses": 2
+   },
+   "lead_V6Guard": {
+    "n": 4,
+    "diff": 0.01458,
+    "lo": -0.00583,
+    "hi": 0.035,
+    "wins": 3,
+    "losses": 1
+   },
+   "lead_zrl03": {
+    "n": 4,
+    "diff": 0.125,
+    "lo": 0.06499,
+    "hi": 0.18501,
+    "wins": 4,
+    "losses": 0
+   }
+  },
+  "threatFirstTeamScore": {
+   "vsCand": {
+    "movsw_cgx123123": 0.2,
+    "movsw_CodeKiller": 0.0875,
+    "movsw_Baltika9": 0.1583,
+    "lead_V6": 0.3875,
+    "lead_V6Guard": 0.475,
+    "lead_zrl03": 0.3708
+   },
+   "vsBase": {
+    "movsw_cgx123123": 0.3125,
+    "movsw_CodeKiller": 0.1437,
+    "movsw_Baltika9": 0.175,
+    "lead_V6": 0.4229,
+    "lead_V6Guard": 0.4896,
+    "lead_zrl03": 0.4583
+   }
+  },
+  "threatHashes": [
+   {
+    "label": "movsw_cgx123123",
+    "warriors": [
+     "official-2025/survivors-online/IND_cgx1231231",
+     "official-2025/survivors-online/IND_cgx1231232"
+    ]
+   },
+   {
+    "label": "movsw_CodeKiller",
+    "warriors": [
+     "official-2025/survivors-online-young/TOM_Code_Killer1",
+     "official-2025/survivors-online-young/TOM_Code_Killer2"
+    ]
+   },
+   {
+    "label": "movsw_Baltika9",
+    "warriors": [
+     "official-2025/survivors-online/WAN_Baltika91",
+     "official-2025/survivors-online/WAN_Baltika92"
+    ]
+   },
+   {
+    "label": "lead_V6",
+    "warriors": [
+     "agent2/night/refs/V6/A",
+     "agent2/night/refs/V6/B"
+    ]
+   },
+   {
+    "label": "lead_V6Guard",
+    "warriors": [
+     "agent2/night/refs/V6Guard/A",
+     "agent2/night/refs/V6Guard/B"
+    ]
+   },
+   {
+    "label": "lead_zrl03",
+    "warriors": [
+     "agent2/frontier-20261003/arms/combo_zrl03/A",
+     "agent2/frontier-20261003/arms/combo_zrl03/B"
+    ]
+   }
+  ]
+ }
+}

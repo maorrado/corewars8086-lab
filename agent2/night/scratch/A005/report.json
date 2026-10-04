@@ -1,0 +1,37 @@
+{
+ "agentId": "A005",
+ "revisionUsed": 0,
+ "card": "A/B start synchronization: adjust startup lengths so A and B enter steady state in a controlled phase relation; measure partner interference.",
+ "jobs": ["20261003183133222-A005-trace-nd583", "20261003184815446-A005-screen-wmuvx", "20261003185356207-A005-screen-hs7k5", "20261003185939605-A005-threat-6igxq"],
+ "model": {
+  "file": "agent2/night/scratch/A005/phase-sim.mjs",
+  "what": "Abstract A/B stream model (no opponents/zombies): dwell pushes, rebuild schedule, partner push on anchor = early trigger, partner push on not-yet-executed worker bytes during rebuild = kill. All 25 (qA,qB) band combos, 200k rounds.",
+  "results": "rev0: A killed by B in 11/25 combos, B never killed by A (A's 400h trail touches only its own lattice point; B's 800h trail covers 2 lattice points, i.e. sweeps A's anchor+worker mid-trail). Startup delays of A or B (2..256 turns) only move the kill times (8-14/25 kills): phase relation drifts ~20 turns per B generation (A gen 275 turns, B gen 531), so startup sync cannot control it. B trail 400h (DX 2800h): 0/25 kills."
+ },
+ "candidates": [
+  {"label": "C1", "files": {"B": "agent2/night/scratch/A005/c1_B.asm"}, "shaB": "aab2aaf6936acff9febfb6de14a51f9b0b96dabd8217c7ff77736787e50e89fa", "sizeB": 202,
+   "change": "B phoenix DX 2400h -> 2800h (B and captured zombies: trail 800h -> 400h, step 2C00h kept)",
+   "screenJob": "20261003184815446-A005-screen-wmuvx", "all": {"diff": -0.00916, "lo": -0.03643, "hi": 0.0181}, "groups": {"2025": -0.02, "strong": 0.00746, "threat": 0.00993, "multi": -0.08472},
+   "notes": "lead_V6 -0.172, lead_zchain4 -0.106, smulti-mix -0.156", "promising": false},
+  {"label": "C2", "files": {"B": "agent2/night/scratch/A005/c2_B.asm"}, "shaB": "ec24a287f3bf6cfd0e7f1c3e12a8c1f14ba25340e47ff828399db2a9edf51ee0", "sizeB": 207,
+   "change": "B main stream DX 2800h (trail 400h), captured zombies keep DX 2400h; DX passed via BP (mov bp,2800h before jmp phoenix_init; mov bp,2400h on zombie path; phoenix_init mov dx,bp)",
+   "screenJob": "20261003185356207-A005-screen-hs7k5", "all": {"diff": 0.01159, "lo": -0.01265, "hi": 0.03584}, "groups": {"2025": 0.014, "strong": -0.0127, "threat": 0.03285, "multi": -0.10357},
+   "threatJob": "20261003185939605-A005-threat-6igxq", "threat": {"all": -0.1, "lead_V6": -0.07187, "lead_V4": -0.09271, "lead_V6Guard": -0.13542},
+   "notes": "Screen ALL +0.012 but multi group clearly negative (-0.104 [-0.173,-0.034], smulti-V6x3 -0.068, smulti-mix -0.139) and lead_V6 -0.194 in screen; dedicated threat job confirms -0.10 [-0.151,-0.049] vs V6-family leads (24 cohorts x 20). Not promising.", "promising": false}
+ ],
+ "threatFindings": [
+  {"threat": "Partner crossfire: B's 800h trail sweeps A's anchor/worker mid-trail and kills A when A is rebuilding", "classification": "verified-in-current",
+   "evidence": "Base trace (job 20261003183133222-A005-trace-nd583, duplicate of B051 trace): 4/161 deaths partner-attributed, all A (CAND1) killed by B (CAND2). Raw jsonl: sthreat-movsw_CodeKiller r65875 and sthreat-movsw_TrojanByte r984 = B trail bytes written over A's worker during rebuild (exact mechanism); CodeKiller r4980 = A already on misaligned anchor (arena =3 mod 4), B's trail FB 0F then fatal; s2025-1 r2071 = misattributed (YANDE wrote the fatal EE FF; the CAND2 bytes were B's identical template at a shared anchor). Abstract model reproduces the asymmetry (A killed 11/25, B 0/25).",
+   "impact": "~2 real partner kills per 160 trace battles (~1-2% of deaths); upper bound of gain from removing it ~0.004/battle"},
+  {"threat": "Startup timing (phase relation of A and B steady states) controls partner interference", "classification": "not-reproduced",
+   "evidence": "Model: delays 2..256 turns on A or B leave kills at 8-14/25 combos, only shifting kill rounds; A004's one-turn phase probes (screens yx4ug +0.0012, ujom1 -0.0021) are at noise.",
+   "impact": "none; do not spend effort on startup-phase sync"},
+  {"threat": "Shortening B's trail to 400h (partner-safe) loses badly vs V6-family opponents", "classification": "verified-in-current",
+   "evidence": "C2 threat job 20261003185939605-A005-threat-6igxq: -0.100 [-0.151,-0.049], lead_V6 -0.072, lead_V4 -0.093, lead_V6Guard -0.135; threat team scores rise to 0.53 from 0.45-0.49. Screens: lead_V6 -0.172 (C1) and -0.194 (C2).",
+   "impact": "Mechanism hypothesis: the same mid-trail sweep that kills our A is B's weapon against same-lattice (52h, 0FFBh) opponents' A streams; with 400h B only touches shared points. Also doubles B rebuild exposure."},
+  {"threat": "Captured zombies on 400h trails cost ~0.02 (C1 vs C2 differ only in zombie DX)", "classification": "hypothesis",
+   "evidence": "C1 ALL -0.009 vs C2 ALL +0.012 (2025: -0.020 vs +0.014); difference is within the chaotic-screen noise band; untested directly.",
+   "impact": "unknown"}
+ ],
+ "recommendation": "Do not promote C1 or C2. Partner interference is real but small (A killed by B's 800h trail ~1-2% of deaths) and cannot be controlled by startup phase (drift randomizes it). The structural fix (B trail 400h) removes B's offensive mid-trail sweep and loses ~0.10 vs V6-family leads. Keep B at DX 2400h. Partner-safe alternatives would need lockstep motion (A014) or a common 800h sublattice for both streams, with expected gain <= ~0.004."
+}

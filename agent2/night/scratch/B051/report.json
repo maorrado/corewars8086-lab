@@ -1,0 +1,36 @@
+{
+ "agentId": "B051",
+ "role": "wave 1, domain 1 (collision with other replicators), R1-verify, defense",
+ "revisionUsed": 0,
+ "jobs": ["20261003182659506-B051-trace-pkj3o", "20261003184835471-B051-threat-squ1s", "20261003185243078-B051-threat-pgt9t", "20261003185939219-B051-screen-f5g4d"],
+ "mechanism": {
+  "bytes": "rev0 anchor = FF 1F (call far [bx]) written by stosw AX=1FFFh at ES:DI=0FFBh:xxA2 (arena in-page 52h, residue 2 mod 4); while dwelling, DI=xxA3, DS=private 2 KiB segment. A MOVSW-family trail is laid in 4-byte blocks [A5, IPhi, CSlo, CShi] with A5 at residue 3. Moving downward, the first block that reaches us covers anchor+1..anchor+4, so the anchor becomes FF A5 IPhi CSlo = jmp near [di+(CSlo:IPhi)]. On our next turn that read goes to DS=private at EA=DI+d16, which is outside the 2 KiB region, and the engine raises a memory exception. A MOVSB trail puts A4 on the anchor instead, which only triggers our own rebuild.",
+  "examples": [
+   "sthreat-movsw_cgx123123 r7968 CAND2 0FFB:F8A2 bytes ff a5 f7 00 10 a5 f7 00 (A5 written by A_IND_cgx123123 in r7967), memory exception",
+   "sthreat-movsw_Baltika9 r198 CAND2 0FFB:C4A2 bytes ff a5 c3 f6 0f a5 c3 f6 (Baltika92 r197), memory exception",
+   "s2025-3 r266 CAND2 0FFB:C4A2 bytes ff a5 c1 06 10 a5 (A_OHS_TrojanByte r265)"
+  ],
+  "traceCounts": "161 CAND deaths in 160 battles (4 2025 + 4 MOVSW-threat cohorts). 80 were anchor FF A5 (first MOVSW push) and 2 were anchor ?? A5 (second push), all memory exceptions. Writers of the A5 byte: Y_TOM_Code_Killer 31, A_IND_cgx123123 22, A_WAN_Baltika9 13, A_OHS_TrojanByte 10, A_WHS_K0F1M_AL_T1L1M 5, zom20b 1. The other 79 deaths were not at the anchor or had a different anchor corruption.",
+  "analysisScript": "agent2/night/scratch/B051/anal.mjs (bytes[] window starts at the faulting instruction; d.ip is post-decode IP)"
+ },
+ "counterCodes": [
+  {"name": "B051_V6MOVSW53", "asmA": "agent2/night/scratch/B051/cMovswA.asm", "asmB": "agent2/night/scratch/B051/cMovswB.asm", "change": "rev0 with mov al,0A2h -> 0A3h (A once, B twice): MOVSW family, anchor in-page 53h", "sha": "A 138a4d7d..., B 27365f56...", "result": "12-cohort job: base team 0.339 (SE 0.036) vs this counter, threat team 0.547. MOVSB rev0-copy control: base 0.415 (SE 0.020), threat 0.494. Difference about -0.076 for base, about 1.8 SE, unpaired fillers. The 3-cohort job agrees: base 0.292 vs 0.378."},
+  {"name": "B051_V6MOVSW43", "asmA": "agent2/night/scratch/B051/cMovsw43A.asm", "asmB": "agent2/night/scratch/B051/cMovsw43B.asm", "change": "as above plus FAR_SEG 0FFAh (anchor in-page 43h)", "sha": "A 2b471e0e..., B 4a84fdf0...", "result": "3 cohorts: base 0.533, threat 0.408 (weaker than control)"}
+ ],
+ "threatScoresVsBase_3cohorts": {"movsw_cgx123123": {"base": 0.567, "threat": 0.267}, "movsw_CodeKiller": {"base": 0.817, "threat": 0.067}, "movsw_Baltika9": {"base": 0.367, "threat": 0.278}, "movsw_TrojanByte": {"base": 0.750, "threat": 0.067}, "lead_V6": {"base": 0.439, "threat": 0.494}},
+ "candidates": [
+  {"label": "B051-movsw43", "asmA": "agent2/night/scratch/B051/candA.asm", "asmB": "agent2/night/scratch/B051/candB.asm", "shaA": "2b471e0ef359e6157dcf30b9d4355835ff11601ced24f152746b5696785d1e8b", "shaB": "4a84fdf0f0fa9292500bebf718d1fb7eee8c6bee0f693529897644c929fee81d", "sizeA": 194, "sizeB": 202,
+   "change": "Both partners switched to the MOVSW family (target IP xxA3) and FAR_SEG 0FFBh -> 0FFAh (anchor in-page 43h, 0Fh below the V6 lattice)",
+   "screenJob": "20261003185939219-B051-screen-f5g4d", "screenAllDiff": -0.05079, "screenAllLo": -0.09448, "screenAllHi": -0.00711,
+   "groups": {"2025": -0.02067, "strong": -0.26603, "threat": -0.00569, "multi": -0.03472},
+   "perThreat": {"movsw_Baltika9": 0.1167, "movsw_cgx123123": 0.1333, "movsw_CodeKiller": 0.0667, "movsw_TrojanByte": -0.1833, "movsw_LowKey": -0.0667, "movsw_BinaryBandits": -0.05, "lead_V6": -0.1056, "lead_V6Guard": -0.1078, "lead_zchain4": -0.1056, "zomb_callfart": -0.2722},
+   "promising": false, "isDefenseFix": true}
+ ],
+ "threatFindings": [
+  {"threat": "MOVSW-family trail turns our FF 1F anchor into FF A5 (jmp [di+d16]), causing a memory exception", "classification": "verified-in-current", "evidence": "trace 20261003182659506-B051-trace-pkj3o: 80 of 161 deaths (82 counting the second-push case); bytes and writers listed above"},
+  {"threat": "MOVSB-family trails are harmless at our anchor (A4 lands on it and triggers our rebuild)", "classification": "verified-in-current", "evidence": "no anchor deaths with A4 at the anchor in the trace; follows from the block layout"},
+  {"threat": "A MOVSW twin of rev0 (1-byte change) takes more from base than a MOVSB copy of rev0", "classification": "hypothesis", "evidence": "threat jobs squ1s and pgt9t: base 0.339 vs 0.415 (12 cohorts, about 1.8 SE), 0.292 vs 0.378 (3 cohorts)"},
+  {"threat": "Switching our family to MOVSW removes the weakness at acceptable cost", "classification": "not-reproduced", "evidence": "screen f5g4d: ALL -0.051, strong -0.266; it helps only vs Baltika9/cgx/CodeKiller"}
+ ],
+ "recommendation": "Do not promote B051-movsw43. The MOVSW anchor kill is verified and is the largest single cause of death in this trace. No byte-level fix looks feasible: the jmp [di+d16] reads outside the private 2 KiB or into arbitrary data, and the A5 residue is tied to the trigger byte. Switching family moves the weakness onto the V6/Chimera MOVSB crowd, which costs more. Add B051_V6MOVSW53 to the threat library as a cheap anti-rev0 counter."
+}

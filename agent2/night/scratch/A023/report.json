@@ -1,0 +1,12 @@
+{
+ "agentId": "A023",
+ "revisionUsed": 0,
+ "jobs": [],
+ "candidates": [],
+ "threatFindings": [
+  {"threat": "Foreign trails crossing the anchor+1..+22 worker window during rebuild are a major death cause", "classification": "verified-in-current", "evidence": "Re-analysis of existing base trace pkj3o (scratch/_trace/nightTR-6861894f3c-8579e2c221) with scratch/A023/win2.cjs, counting only deaths with SP at the anchor or anchor-DX: 19/161 deaths (12%) are true rebuild-window deaths (6 opp, 7 opp+self, 4 self, 2 partner). Typical case: an OpcodeHunter2 MOVSB trail overwrites F3 A5 at anchor+2 mid-copy.", "impact": "ceiling about 12% of deaths; realistic gain from any layout change well below that"},
+  {"threat": "Moving or splitting the worker inside the own 400h trail reduces overlap with incoming trails", "classification": "hypothesis", "evidence": "Static reasoning only: every byte of [P,P+400h) is covered by trails of streams anchored in (P-400h,P), so any position in the own trail is equally exposed; positions below P are foreign territory and would need pre-planted code exposed for the whole dwell. No job run.", "impact": "no layout found that lowers exposure without lengthening it"}
+ ],
+ "recommendation": "Do not promote anything from A023. No candidate was screened: the only levers for this window (copy count, reorder, period) were already tested by A004/A019/A020 and were neutral or negative. Rebuild-window deaths are about 12% of base deaths in trace pkj3o.",
+ "notes": "Helpers: agent2/night/scratch/A023/win.cjs, win2.cjs, win3.cjs (rebuild-window death classifiers on existing trace dirs). Session stopped early; 4 jobs unused."
+}

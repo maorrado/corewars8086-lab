@@ -1,14 +1,16 @@
 {
- "revision": 0,
- "candidateId": "V6nohunt",
- "description": "Good_Test V6 (friend-provided) with warrior A's [7A00h] redirect patch removed (agent2, 2026-10-03).",
- "provenance": "V6 original: friend-provided binaries study-notes/good-test-v6/original-binaries; label-form source agent2/src/v6/. Change by agent2.",
- "sources": {"A": "agent2/night/revisions/rev0/A.asm", "B": "agent2/night/revisions/rev0/B.asm"},
- "binaries": {"A": "agent2/night/revisions/rev0/A", "B": "agent2/night/revisions/rev0/B"},
- "sizes": {"A": 194, "B": 202},
- "sha256": {"A": "6861894f3c1992cd6c6baa5b2a746178082f5b4b0a1d9969b9a326fe03d86c89", "B": "8579e2c2212d72a413a6daacfe3b91ceb72be648bfc085bfeed9430eeaf6657a"},
- "confirmation": "holdout 4 and 5 (agent2/protocols): +0.0050 and +0.0082 vs Good_Test V6 pooled; holdout 6: tie with V6Guard (-0.0015 n.s.)",
- "validity": "2023-2025 archived fields with the 2025 zom20 Zombie pack; no claim about 2026 field or Zombies",
- "limitations": "Below zchain4 on the plain 2025 field (~-0.017 pooled); hidden regressions vs specific opponents possible",
- "history": []
+ "revision": 1,
+ "candidateId": "KPHL",
+ "description": "KPHL = KP (A031 K: E1 A-own INT86 FF1FCCCC block + A022 SD template edits + A026 Z1 zombie INT86 blocks; B084 p0f13 b/d search 0F EB F9 CC + [0CC13h] steal) + B089 h34 (CX=0 zombie path mov bp,3400h -> 7000h) + A038/B082 locpatA (A zom20a capture: location start DI = 15*[1243h], window F2 81 C3 E1 -> FF 26 17 4A). A = B092 KL_A unchanged, B = B099 KPH_B unchanged. Combined by the night combination coordinator (agent2, 2026-10-04).",
+ "provenance": "V6 original: friend-provided binaries study-notes/good-test-v6/original-binaries; label-form source agent2/src/v6/. V6nohunt and all night edits by agent2 roles (A022, A026, A031, A038, B064, B082, B084, B089, B092, B094, B099); combination built in agent2/night/scratch/COMBINE/.",
+ "sources": {"A": "agent2/night/revisions/rev1/A.asm", "B": "agent2/night/revisions/rev1/B.asm"},
+ "binaries": {"A": "agent2/night/revisions/rev1/A", "B": "agent2/night/revisions/rev1/B"},
+ "sizes": {"A": 214, "B": 222},
+ "sha256": {"A": "1e9efbcb54cb79f1da0ecaaf41f84418043ff97c93bdef2c1f2eba9a430d262a", "B": "dd73fad407df01a6890dbab26b895320bc1a81ff4c3ed35b9a3a584b2daee1c7"},
+ "confirmation": "screen 20261004040302742-COMBINE-screen-z6qq9 ALL +0.0564 [0.0248,0.0881]; confirm 20261004040436817-COORD-combine-confirm-d93vd (salt agent2-night-confirm-combine-1, 7680 battles/arm, base rev0): pooled(2025+strong+2024live) +0.0328 [+0.0053,+0.0604] (z=2.5) 57/44; 2025 +0.0257; strong +0.0665; 2024live +0.0211; threat +0.0495 [0.0187,0.0802]; multi +0.0221; nozombie +0.0065. Vs V6Guard pooled +0.0329 [0.0064,0.0593]; vs V6 +0.0346 [0.0081,0.0610]; vs zchain4 +0.0366 [0.0000,0.0732].",
+ "validity": "2023-2025 archived fields with the 2025 zom20 Zombie pack, local CoreWars8086 v6 simulator; no claim about the 2026 field or Zombies; no absolute-immunity claim",
+ "limitations": "Single confirm that clears z=2.5 by a small margin (lo +0.005) and was selected as the best of 3 screens (winner's curse). By-threat losses on the confirm: BinaryBandits -0.069, IND_BRA -0.067, lead_V6Guard -0.054; 2024live and multi intervals include 0; vs zchain4 nozombie -0.013 and 2025 +0.015 n.s. Known open holes: MOVSW FF A5 anchor kill, page-lattice 52h bomber, template/backward signature counters (dA not included), far-call trail hunter, [4A17h] poisoners.",
+ "history": [
+  {"revision": 0, "candidateId": "V6nohunt", "sha256": {"A": "6861894f3c1992cd6c6baa5b2a746178082f5b4b0a1d9969b9a326fe03d86c89", "B": "8579e2c2212d72a413a6daacfe3b91ceb72be648bfc085bfeed9430eeaf6657a"}, "sources": {"A": "agent2/night/revisions/rev0/A.asm", "B": "agent2/night/revisions/rev0/B.asm"}, "replacedAt": "2026-10-04", "replacedBy": "KPHL (confirm 20261004040436817-COORD-combine-confirm-d93vd)"}
+ ]
 }

@@ -1,0 +1,11 @@
+const fs=require("fs"); const P="agent2/night/scratch/B067/";
+const rep=(s,a,b)=>{ if(!s.includes(a)) throw new Error("missing: "+a); return s.replace(a,b); };
+let a=fs.readFileSync("agent2/night/revisions/rev0/A.asm","utf8");
+a=rep(a,"; agent2 variant: removed the [7A00h] redirect patch (ablation)\n","; agent2 variant: removed the [7A00h] redirect patch (ablation)\n; B067 hz: A publishes its (formerly dead) zombie_scan entry in arena cell [4A19h] so B can route\n; captured b/d zombies into it; the hunter now spares our own FAR_SEG 0FFBh instead of 0FFCh.\n");
+a=rep(a,"start:\n    mov si, ax\n","start:\n    mov si, ax\n    lea dx, [word si + zombie_entry - start]\n    mov [4A19h], dx\n");
+a=rep(a,"    cmp si, 0FFCh\n","    cmp si, 0FFBh\n");
+fs.writeFileSync(P+"hzA.asm",a);
+let b=fs.readFileSync("agent2/night/revisions/rev0/B.asm","utf8");
+b=rep(b,"; offsets replaced by label arithmetic with the original operand widths.\n","; offsets replaced by label arithmetic with the original operand widths.\n; B067 hz: a captured b/d zombie (CX=0 path), after its counter-bomb INT 87h, jumps to warrior A's\n; trail hunter (V6 zombie_scan, entry published by A in [4A19h]) instead of starting a phoenix.\n");
+b=rep(b,"    mov bl, 0CCh\n\nzombie_search:","    mov bl, 0CCh\n    int 087h\n    cld\n    jmp [4A19h]\n\nzombie_search:");
+fs.writeFileSync(P+"hzB.asm",b);

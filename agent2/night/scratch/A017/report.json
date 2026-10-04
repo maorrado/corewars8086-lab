@@ -1,0 +1,51 @@
+{
+ "agentId": "A017",
+ "revisionUsed": 0,
+ "card": "Anchor encoding FF 1F vs FF 18 vs FF 1C: which ModRM byte opponents' writes/searches turn benign or fatal",
+ "jobs": ["20261003215324069-A017-screen-12ks2", "20261003215325057-A017-threat-1i4j6", "20261003220227029-A017-screen-snvrv", "20261003220809501-A017-threat-v9fo1"],
+ "analysis": [
+  "With a 2-byte anchor at addr = 2 (mod 4) the ModRM sits at 3 (mod 4), exactly where MOVSW-family trails put A5, so the ModRM is always overwritten before FF in a descending trail: the ModRM choice cannot fix the MOVSW kill (FF A5 = jmp [di+d16]). MOVSB-family words replace both bytes, so ModRM is irrelevant there too.",
+  "Usable 2-byte encodings with a stable DS pointer: FF 1F [bx] and FF 18 [bx+si] (si=0 in the dwell). FF 1C [si] would need si = cell, but si is the template source for the movsb rebuild (conflict); FF 19/1D (di-based) need a per-generation pointer; FF 1A/1B are SS (arena) based. 3-byte forms move the anchor residue (family switch, already rejected).",
+  "So the ModRM only matters for byte-exact INT 87h signature searches. Static scan (scratch/A017/scan87.mjs, immscan.mjs): FF 1F CC CC searched by OpcodeHunter1, 2B2Team1/2 (2025) and PastRAMa, ATO1, JMP2HELL2, segment_fault1 (2024 live); FF 18 CC CC by EmoMutants2 (2025); CC CC FF 18 / CC CC FF 1C by segment_fault (2024 live and final). OpcodeHunter2/ATO2 merely use FF 18 as their own anchor."
+ ],
+ "candidates": [
+  {
+   "label": "c18",
+   "sources": {"A": "agent2/night/scratch/A017/c18A.asm", "B": "agent2/night/scratch/A017/c18B.asm"},
+   "sizeA": 194, "sizeB": 202,
+   "shaA": "90f4ab2cbbd28a25e1b3b9bde030c68637b138413340fe1ed0378a8e9c4665f8",
+   "shaB": "26a3b772a7f8e2000f58fd73121c799a66fe93cc53fd946f0e85a879b7fd335e",
+   "change": "A and B: phoenix_init mov ax,01FFFh -> 018FFh, so the live anchor written by stosw is FF 18 (call far [bx+si], si=0) instead of FF 1F. One byte per warrior (A offset 0x68, B offset 0xB4: 1Fh -> 18h). Worker's own call far [bx] unchanged.",
+   "screenJob": "20261003215324069-A017-screen-12ks2",
+   "screen": {"cand": 0.6593, "base": 0.6456, "ALL": [0.01367, -0.0124, 0.03973], "WL": "3/1", "2025": [0.02667, -0.02546, 0.0788], "strong": 0, "threat": 0.00104, "multi": 0},
+   "changedCohorts": {"s2025-10 (OpcodeHunter)": 0.2333, "s2025-15 (2B2Team)": 0.6, "s2025-22 (EmoMutants)": -0.1667, "sthreat-movsw_CodeKiller (contains OpcodeHunter)": 0.0167, "other 46 cohorts": "bit-identical (diff 0)"},
+   "threatJobs": {
+    "20261003215325057-A017-threat-1i4j6": {"ALL": [0.09479, 0.02376, 0.16582], "WL": "15/4", "OpcodeHunter": 0.05417, "2B2Team": 0.26667, "EmoMutants": -0.05, "PastRAMa24": 0.10833},
+    "20261003220809501-A017-threat-v9fo1": {"ALL": [0.02882, -0.02054, 0.07818], "WL": "7/7", "ATO24live": 0.10833, "JMP2HELL24live": 0, "segfault24live": 0.05833, "segfaultF24": -0.05139}
+   },
+   "promising": true,
+   "notes": "Zero-size change; deterministic: only cohorts containing an anchor-signature searcher change. Gains vs FF1FCCCC searchers, losses vs FF18 searchers (EmoMutants, segment_fault final). Pooled CI includes 0; value scales with how often those teams appear."
+  },
+  {
+   "label": "c18x",
+   "sources": {"A": "agent2/night/scratch/A017/c18xA.asm", "B": "agent2/night/scratch/A017/c18xB.asm"},
+   "sizeA": 198, "sizeB": 206,
+   "shaA": "2def21ff98571ad001dc73dcafef8c8dfcb52c620512362819511bd655700a94",
+   "shaB": "094ab4591802984c58e1cd590e783e3e44c914623eb9d4bf3d0be6e53060bd05",
+   "change": "c18 plus a guard byte: stosw; stosb; dec di; dec di (anchor reads FF 18 FF xx, matching neither FF 18 CC CC nor FF 1F CC CC); template copy 9 -> 10 words. +2 instructions per generation and at startup.",
+   "screenJob": "20261003220227029-A017-screen-snvrv",
+   "screen": {"cand": 0.6491, "base": 0.6456, "ALL": [0.00349, -0.0294, 0.03638], "WL": "22/19", "2025": 0.01044, "strong": [-0.03825, -0.06145, -0.01506], "threat": 0.00889, "multi": 0.01944},
+   "notes": "Keeps the 2B2Team gain (+0.567) and removes the EmoMutants loss (+0.033), but the timing shift perturbs every cohort; strong -0.038 (W/L 1/6), lead_V6 -0.15. Rejected.",
+   "promising": false
+  }
+ ],
+ "threatFindings": [
+  {"threat": "INT 87h FF 1F CC CC searchers (OpcodeHunter, 2B2Team, PastRAMa 2024, ATO 2024 live, segment_fault 2024 live) hit rev0's live anchor", "classification": "verified-in-current", "evidence": "screen 12ks2: switching the anchor to FF 18 changes only searcher cohorts (2B2Team +0.600, OpcodeHunter +0.233); threat 1i4j6: OpcodeHunter +0.054 5/0, 2B2Team +0.267 5/0, PastRAMa24 +0.108 4/0; v9fo1: ATO24live +0.108 3/0, segfault24live +0.058"},
+  {"threat": "FF 18 CC CC / CC CC FF 18 searchers (EmoMutants2, segment_fault 2024 final) would hit an FF 18 anchor", "classification": "verified-in-other", "evidence": "c18 loses: screen 12ks2 s2025-22 -0.167; threat 1i4j6 EmoMutants -0.050 1/4; v9fo1 segfaultF24 -0.051 1/5"},
+  {"threat": "Any ModRM choice fixes the MOVSW-family anchor kill", "classification": "not-reproduced", "evidence": "analysis: ModRM byte at 3 (mod 4) is the byte A5 overwrites first; screen 12ks2 movsw cohorts unchanged (diff 0)"},
+  {"threat": "Partial overwrites (FF byte only) behave differently for FF 1F vs FF 18 in the field", "classification": "not-reproduced", "evidence": "screen 12ks2: 46 of 50 cohorts bit-identical; the 4 changed cohorts all contain a signature searcher"},
+  {"threat": "Guard byte after the anchor evades both signature families without other cost", "classification": "hypothesis", "evidence": "screen snvrv: searcher cohorts behave as expected (2B2 +0.567, Emo +0.033) but the +2 turns/generation give strong -0.038 [-0.061,-0.015]; mechanism and timing effect confounded"}
+ ],
+ "counterCodes": [],
+ "recommendation": "promote-candidate c18 (zero-byte, deterministic add-on; combine with zph / fix2steal / A003 C1). Expect its pooled effect to be small and tied to the frequency of FF 1F CC CC searchers (2025 OpcodeHunter, 2B2Team; 2024 PastRAMa, ATO, segment_fault live) versus FF 18 searchers (EmoMutants, segment_fault final). Do not promote c18x."
+}

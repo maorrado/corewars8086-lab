@@ -1,0 +1,96 @@
+{
+ "job": {
+  "id": "20261003231053818-B072-threat-mw9zq",
+  "agent": "B072",
+  "kind": "threat",
+  "submittedAt": "2026-10-03T23:10:53.821Z",
+  "note": "B072 counter zdeny (zchain4 + zom20a steal at instr 8) vs control zchain4; cand fixA (zom20a INT87 at instr 6)",
+  "asmA": "agent2/night/scratch/B072/fixA.asm",
+  "threats": [
+   {
+    "name": "B072_zdeny",
+    "asmA": "agent2/night/scratch/B072/counterA.asm",
+    "asmB": "agent2/night/scratch/B072/counterB.asm"
+   },
+   {
+    "key": "lead_zchain4"
+   }
+  ],
+  "copies": 1,
+  "cohortsPerThreat": 12
+ },
+ "ok": true,
+ "finishedAt": "2026-10-03T23:14:34.048Z",
+ "seconds": 85.103,
+ "result": {
+  "candidate": {
+   "A": "agent2/night/cand-build/20261003231053818-B072-threat-mw9zq/candA",
+   "B": "agent2/night/revisions/rev0/B",
+   "sizeA": 198,
+   "sizeB": 202,
+   "shaA": "2af9bf68a298a3b6d274afcdb96d8a6e47eb48936d5bd4827eebd06bf31526eb",
+   "shaB": "8579e2c2212d72a413a6daacfe3b91ceb72be648bfc085bfeed9430eeaf6657a"
+  },
+  "baseRevision": 0,
+  "specKey": "473f00b42f2c",
+  "battlesPerArm": 480,
+  "candMean": 0.6429,
+  "baseMean": 0.5858,
+  "all": {
+   "n": 24,
+   "diff": 0.05712,
+   "lo": 0.0126,
+   "hi": 0.10164,
+   "wins": 16,
+   "losses": 8
+  },
+  "byThreat": {
+   "B072_zdeny": {
+    "n": 12,
+    "diff": 0.11424,
+    "lo": 0.05192,
+    "hi": 0.17655,
+    "wins": 9,
+    "losses": 3
+   },
+   "lead_zchain4": {
+    "n": 12,
+    "diff": 0,
+    "lo": -0.04611,
+    "hi": 0.04611,
+    "wins": 7,
+    "losses": 5
+   }
+  },
+  "threatFirstTeamScore": {
+   "vsCand": {
+    "B072_zdeny": 0.2764,
+    "lead_zchain4": 0.3149
+   },
+   "vsBase": {
+    "B072_zdeny": 0.3892,
+    "lead_zchain4": 0.3108
+   }
+  },
+  "threatHashes": [
+   {
+    "label": "B072_zdeny",
+    "warriors": [
+     "agent2/night/cand-build/20261003231053818-B072-threat-mw9zq/threat-0/tA",
+     "agent2/night/cand-build/20261003231053818-B072-threat-mw9zq/threat-0/tB"
+    ],
+    "hashes": [
+     "b3927f67096266bb90a783fd63fa6f2c943b448f32a07c9e7f4423827836b22f",
+     "2fb8f41228b5ded8b7bd6b511c5002f5e646955f2eab8c48a73f358c128c286e"
+    ]
+   },
+   {
+    "label": "lead_zchain4",
+    "warriors": [
+     "agent2/night/refs/zchain4/A",
+     "agent2/night/refs/zchain4/B"
+    ]
+   }
+  ]
+ }
+}

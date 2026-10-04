@@ -1,0 +1,64 @@
+{
+ "agentId": "B092",
+ "role": "wave 9, domain 2 (zombie competition / mimics), R5-cost: audit fixes, combination screen, recommendation",
+ "revisionUsed": 0,
+ "jobs": [
+  "20261004023009941-B092-screen-r6jx0",
+  "20261004023010016-B092-threat-yuexx",
+  "20261004023017007-B092-threat-s5vq3",
+  "20261004023017753-B092-threat-j041y"
+ ],
+ "audit": {
+  "fixesReviewed": {
+   "B052-fixB": "screen 0raq9 +0.0035, no effect",
+   "B072 fixA (early INT87)": "screen lsu16 +0.0004; answers early stealer only",
+   "B082 locA2 (location start DI=15*[1243h])": "screen wtaw2 +0.0057; Grindo +0.146, B052 planter +0.275 (2r899); no callfart fix",
+   "A038 patA (window only)": "screen 4ojix +0.0016; lead_V6 -0.028",
+   "A036 loc9": "screen 4be1b +0.0017",
+   "A038 locpatA (locA2 + window F2 81 C3 E1)": "screen 2lrd7 +0.0062; zz0ny +0.047 (callfart +0.081, Grindo +0.111); confirm cn666 pooled +0.0045, Grindo +0.100, callfart +0.135, 2024live -0.019 (0/9)"
+  },
+  "picked": "A038 locpatA: the only fix that covers both Grindo (all windows copied) and callfart (E2F281C3 mimics + [1243h] poison), and its defense replicated on a fresh confirm field.",
+  "confirm2024liveAnalysis": "In confirm w8-2 (cn666) the base arm was unusually high on 2024live: V6Guard -0.0175 and V6 -0.0248 below base on the same 15 cohorts (both differ from rev0 only in A), the largest base-over-family gap of all 13 confirms (mean over confirms base-V6Guard ~+0.002, SD ~0.009). Per cohort V6Guard was 1/9 vs base, like locpatA 0/9. About half of locpatA's -0.019 is a lucky base draw. Script scratch/B092/l24.cjs."
+ },
+ "candidates": [
+  {
+   "label": "KL (K + locpatA)",
+   "sources": {"A": "agent2/night/scratch/B092/KL_A.asm", "B": "agent2/night/scratch/B092/KL_B.asm"},
+   "sizeA": 214, "shaA": "1e9efbcb54cb79f1da0ecaaf41f84418043ff97c93bdef2c1f2eba9a430d262a",
+   "sizeB": 212, "shaB": "c71fe517807d7703a00269a30273b407a24904049cbc1bce21097b87de4fc695",
+   "change": "A = A031 K_A with its startup replaced by A038 locpatA's (mov ax,[1243h]; mul word [k15]; xchg ax,di; les ax,[81F2h,1000h]; mov dx,0E1C3h; INT87 at instr 11, replacement FF 26 17 4A) followed by E1's INT86 block (mov di,0FF80h; mov ax,1FFFh; mov dx,0CCCCh; int 86h, instr 12-15) and band math with a memory divisor (mov ax,si; xor dx,dx; div word [kq]; mul word [kq]; add ax,2CA2h; same AX, one instruction fewer than div cx), so phoenix_init still starts at turn 22. Data (81F2h,1000h; 15; 3C00h) moved behind the dead tail, no jmp. phoenix_init/worker = K (SD: mov cx,10, dead mov dx dropped, db CC CC). B = A031 K_B (Z1 + SD) byte-identical.",
+   "screenJob": "20261004023009941-B092-screen-r6jx0",
+   "screen": {"cand": 0.671, "base": 0.6456, "ALL": [0.02542, 0.00108, 0.04975], "WL": "24/14", "2025": 0.03356, "strong": -0.00254, "threat": 0.02361, "multi": 0.03611, "zomb_Grindo": 0.1333, "zomb_callfart": 0.1389, "zomb_AnotherBit": 0},
+   "pairedOnFieldS": {
+    "KL_minus_K(nwqyk)": {"ALL": [0.00903, -0.00276, 0.02083], "WL": "18/12", "2025": 0.0051, "strong": -0.0129, "threat": [0.0254, 0.0036, 0.0471], "multi": 0.0042, "note": "Grindo +0.100, callfart +0.089, BinaryBandits +0.100; sstrong-3 (F24 ATO/Lucas/R_JS) -0.150"},
+    "KL_minus_locpatA(2lrd7)": {"ALL": [0.01926, -0.00145, 0.03996], "2025": 0.0298, "strong": 0.0094, "threat": 0.0101}
+   },
+   "threatJobs": {
+    "yuexx (zz0ny spec)": {"ALL": [0.05556, 0.0247, 0.08641], "WL": "16/4", "callfart": 0.0806, "Grindo": 0.1194, "AnotherBit": 0.0083, "lead_V6": 0.0139, "pairedVsLocpatA": 0.0083},
+    "j041y (A026 fz8gf spec, 2024 live searchers)": {"ALL": [0.02604, -0.02174, 0.07383], "WL": "9/8", "PastRAMa": 0.1125, "ATO": -0.0333, "JMP2HELL": -0.0417, "segfault": 0.0667, "pairedVsE1(vdhwq)": -0.0271, "pairedVsE1_JMP2HELL": [-0.1708, -0.2925, -0.0492], "pairedVsZ1(fz8gf)": -0.0156, "pairedVsLocpatA(s5vq3)": 0.0427}
+   },
+   "promising": true,
+   "isDefenseFix": false
+  },
+  {
+   "label": "locpatA (A038, re-tested for cost only)",
+   "sources": {"A": "agent2/night/scratch/A038/locpatA.asm"},
+   "sizeA": 204, "shaA": "6e9af3cea038ab9fd98eb364ecf94e9ab07540e2a6817461d87e1b2941df5b1a",
+   "change": "unchanged A038 binary; tested against the 2024 live searcher spec (A026 fz8gf / A031 vdhwq) to locate the confirm's 2024live loss",
+   "threatJob": "20261004023017007-B092-threat-s5vq3",
+   "threat": {"ALL": [-0.01667, -0.03616, 0.00282], "WL": "4/8", "PastRAMa": -0.0208, "ATO": -0.0125, "JMP2HELL": -0.0167, "segfault": -0.0167},
+   "promising": false,
+   "isDefenseFix": true
+  }
+ ],
+ "threatFindings": [
+  {"threat": "Grindo/callfart zom20a mimics absorb A's single INT87 (and callfart poisons [1243h]); locpatA answers both", "classification": "verified-in-current", "evidence": "yuexx: KL vs base Grindo +0.119 6/0, callfart +0.081 5/1; screen r6jx0 Grindo +0.133, callfart +0.139"},
+  {"threat": "locpatA defense survives combination with K (E1+SD+Z1)", "classification": "verified-in-current", "evidence": "yuexx vs zz0ny same cohorts: KL - locpatA +0.008 (callfart 0, Grindo +0.008); r6jx0 vs nwqyk threat group +0.025 [0.004,0.047]"},
+  {"threat": "locpatA's confirm 2024live loss (-0.019, 0/9) is a locpatA defect", "classification": "hypothesis", "evidence": "About half is a high base draw (V6Guard -0.0175, V6 -0.025 vs base on the same cohorts in cn666). s5vq3 on 2024 live searcher cohorts: -0.0167 [-0.036,+0.003] 4/8, all four threats negative, so a small real cost (~-0.01) is possible but not significant"},
+  {"threat": "The window change F2 81 C3 E1 (not the location start) costs vs the F24 ATO/Lucas/R_JS cohort", "classification": "hypothesis", "evidence": "sstrong-3 only (one cohort/seed): locpatA -0.117, KL - K -0.150, locA2 (same location start, old window) -0.017; Lucas takes +3-4 battles. Static: R_JS INT87 81 C3 74 01 backward (no match with zom20a); no mechanism found"},
+  {"threat": "KL gives back E1's JMP2HELL gain", "classification": "verified-in-current", "evidence": "j041y vs vdhwq same cohorts: JMP2HELL -0.171 [-0.29,-0.05] 1/5. Mechanism unknown: JMP2HELL2's INT87 (forward from 0, FF1FCCCC) runs late (after a mul chain and a far call), so the block's 1-turn delay should not matter; may be chaos on a high-variance opponent"},
+  {"threat": "AnotherBitInTheWall acts as a zom20a decoy", "classification": "not-reproduced", "evidence": "yuexx AnotherBit +0.008 n.s.; screen r6jx0 AnotherBit 0"}
+ ],
+ "recommendation": "promote-candidate (send to confirmation): KL = K + locpatA. Screen r6jx0 ALL +0.0254 [0.0011,0.0498], the first lo > 0 among the combinations, no clearly negative group (strong -0.003). Paired vs K: +0.009, of which the threat group adds +0.025 (Grindo/callfart). The defense is intact (yuexx +0.056). Watch 2024live and strong in the confirm: locpatA alone runs about -0.017 on 2024 live searcher cohorts (s5vq3), and KL loses E1's JMP2HELL gain (j041y). If the confirm's 2024live falls below -0.01, the fallback is the same merge with B082 locA2's old window (E2 F2 81 C3; keeps the Grindo/planter fix, drops callfart) to test whether the window change causes the sstrong-3 / 2024 losses. Do not promote locpatA alone. Expected confirm size is below the screen (K: +0.016 screen -> +0.0087 confirm).",
+ "helpers": ["agent2/night/scratch/B092/l24.cjs", "agent2/night/scratch/B092/pairS.cjs", "agent2/night/scratch/B092/pairT.cjs"]
+}

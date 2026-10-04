@@ -1,0 +1,91 @@
+{
+ "agentId": "A014",
+ "revisionUsed": 0,
+ "card": "A/B lockstep separation: same step for A and B with a fixed relative offset (e.g. 8000h) using team-shared memory to coordinate the band; measure partner collisions and score.",
+ "jobs": [
+  "20261003203928294-A014-screen-jasvo",
+  "20261003203928650-A014-screen-yinzl",
+  "20261003204923681-A014-threat-mf5ee",
+  "20261003205638800-A014-screen-lqqx9"
+ ],
+ "model": {
+  "file": "agent2/night/scratch/A014/lock-sim.mjs",
+  "what": "A005 phase-sim.mjs extended with modes (no opponents/zombies, 25 band combos, 200k rounds). Partner kills / early anchor triggers.",
+  "results": "mode0 rev0: A killed by B 9/25, early triggers A 235 B 215. mode1 L0 (A=B step 2C00h/2400h, own bands): 0 kills, A early triggers 377, B 0; robust to A startup delays 7/50/150. mode2 L1 (same step + A band = B band + 8000h): 0 kills, 0 early triggers. mode4 L4 (A 4400h/3C00h, 800h trail, not lockstep): 0 kills at delay 0 but 25/25 B kills at A delay 50 (phase-dependent)."
+ },
+ "candidates": [
+  {
+   "label": "L0",
+   "files": {"A": "agent2/night/scratch/A014/L0_A.asm"},
+   "shaA": "cc1f23a2536e56bb425f3e7e20441fa3acc26f0455913cb575013f1d2a877d3b",
+   "sizeA": 194,
+   "change": "A only: phoenix mov dx,4000h -> 2400h and mov bp,4400h -> 2C00h (A uses B's step 2C00h and 800h trail; own band, no coordination). Same-step lockstep without shared memory. B = base.",
+   "screenJob": "20261003203928650-A014-screen-yinzl",
+   "all": {"diff": 0.00701, "lo": -0.01568, "hi": 0.02969, "wins": 26, "losses": 20},
+   "groups": {"2025": -0.01956, "2025_ci": [-0.04987, 0.01076], "strong": 0.05873, "threat": 0.01997, "multi": 0.05417},
+   "threatJob": "20261003204923681-A014-threat-mf5ee",
+   "threat": {"all": 0.07934, "ci": [0.04286, 0.11582], "W/L": "19/5", "lead_V6": 0.10208, "lead_V4": 0.1375, "lead_V6Guard": 0.16875, "lead_zchain4": 0.04271, "lead_zrl03": 0.01458, "lead_ah02": 0.01042},
+   "notes": "Gains concentrated on the V6 family (threat job: V6/V4/V6Guard all 4/0 with CI above 0; threat team scores fall from 0.43-0.48 to 0.31-0.34). Regression risk on the plain 2025 field (-0.020, not significant). Screen ALL is only just over the bar; A-step edits are chaotic (A007), so treat as a candidate for confirmation only.",
+   "promising": true
+  },
+  {
+   "label": "L1",
+   "files": {"A": "agent2/night/scratch/A014/L1_A.asm", "B": "agent2/night/scratch/A014/L1_B.asm"},
+   "shaA": "fa54ffbd9856806d654b4257af4c5f71d3ee20a168b7c1d9b42fd7aa6de6b59c",
+   "shaB": "a74ece42e93bb7f64d1499320bfda90563790d5e80f14880e4e75fcbe880b865",
+   "sizeA": 199,
+   "sizeB": 203,
+   "change": "L0 plus explicit coordination: B stosw at entry stores its load address in team-shared ES:[0] (DI then 2 for B's INT 87h); A pushes ES at entry, after its INT 87h pops it into DS, reads [0], restores DS, and quantizes B's load with phase 90h (= B phase 10h + 80h), so A's band = B's band + 8000h. +4 A startup turns, +1 B startup turn.",
+   "screenJob": "20261003203928294-A014-screen-jasvo",
+   "all": {"diff": -0.01273, "lo": -0.04611, "hi": 0.02065, "wins": 21, "losses": 23},
+   "groups": {"2025": -0.00622, "strong": -0.1073, "threat": 0.01181, "multi": 0.04056},
+   "notes": "Versus L0 on the same seeds: ALL -0.020, strong -0.166 (6/7 strong cohorts worse), bomb_IND_BRA -0.167, 2025 +0.013. The fixed 8000h offset moves A's first anchor away from its own (safe) load region and costs startup turns; no benefit over same-step alone.",
+   "promising": false
+  },
+  {
+   "label": "L4",
+   "files": {"A": "agent2/night/scratch/A014/L4_A.asm"},
+   "shaA": "4bf226d9f0ce1063528de62c57ee71a7f6cbc7f09abfc20c05e3f492730a6c82",
+   "sizeA": 194,
+   "change": "A only: mov dx,4000h -> 3C00h (800h trail, own step 4400h kept; not lockstep). Non-lockstep control for L0.",
+   "screenJob": "20261003205638800-A014-screen-lqqx9 (DUPLICATE of 20261003203637269-A015-screen-q84cd, identical binary)",
+   "all": {"diff": 0.01563, "lo": -0.0132, "hi": 0.04447, "wins": 27, "losses": 18},
+   "groups": {"2025": 0.01533, "strong": -0.0681, "threat": 0.05212, "multi": 0.02056},
+   "notes": "Opposite trade to L0 (2025 +, strong -; lead_V6 -0.128). Owned by A015 (same binary); not claimed here.",
+   "promising": false
+  }
+ ],
+ "threatFindings": [
+  {
+   "threat": "Partner crossfire (B's 800h trail killing A mid-rebuild) is removed by giving A and B the same step",
+   "classification": "hypothesis",
+   "evidence": "Model lock-sim.mjs only: rev0 9/25 A kills, same-step L0 0/25 for all tested startup delays, L1 0/25 and 0 early triggers. Not measured in battles (effect size ~1-2% of deaths per A005, below screen resolution).",
+   "impact": "<= ~0.004/battle"
+  },
+  {
+   "threat": "Explicit team-shared-memory offset (A band = B band + 8000h) improves on same-step alone",
+   "classification": "not-reproduced",
+   "evidence": "L1 jasvo vs L0 yinzl on identical seeds: ALL -0.020, strong -0.166 (6/7 cohorts worse).",
+   "impact": "Do not coordinate the band via shared memory; placing A far from its own load region costs on the strong field."
+  },
+  {
+   "threat": "A on B's step with an 800h trail beats V6-family leads (same 52h lattice A streams swept mid-trail)",
+   "classification": "verified-in-current",
+   "evidence": "threat mf5ee (independent seeds, 1 copy + 2 2025 fillers): lead_V6 +0.102 [0.039,0.165], lead_V4 +0.138 [0.081,0.194], lead_V6Guard +0.169 [0.137,0.201], all 4/0; screen yinzl multi +0.054, lead_V4 +0.178, lead_V6Guard +0.103.",
+   "impact": "+0.10-0.17 per battle vs V6-family cohorts"
+  },
+  {
+   "threat": "The leader gain comes from the 800h trail alone, independent of the shared step",
+   "classification": "not-reproduced",
+   "evidence": "L4 (800h trail, step 4400h) screen lqqx9/q84cd: lead_V6 -0.128, strong -0.068; single screen, confounded by step chaos.",
+   "impact": "Suggests the shared 2C00h step matters; unresolved."
+  },
+  {
+   "threat": "L0 regresses on the plain 2025 field",
+   "classification": "hypothesis",
+   "evidence": "screen yinzl 2025 -0.0196 [-0.050,0.011] W/L 10/13; A008 saw a similar 2025-vs-strong trade for B step edits.",
+   "impact": "Up to ~-0.02 on 2025; needs fresh-field confirmation"
+  }
+ ],
+ "recommendation": "Send L0 (A only: DX 2400h, BP 2C00h; sha cc1f23a2) to confirmation as a promising candidate. Its screen ALL (+0.0070) is just over the bar, but a follow-up threat job on independent seeds shows a large, consistent gain against the V6 family (+0.079 overall vs leaders). Watch the 2025 partitions (screen -0.020). Reject L1: shared-memory 8000h coordination costs about 0.02 compared with L0. Same-step lockstep removes partner kills only in the model."
+}

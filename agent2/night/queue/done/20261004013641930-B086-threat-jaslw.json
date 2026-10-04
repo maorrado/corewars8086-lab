@@ -1,0 +1,206 @@
+{
+ "job": {
+  "id": "20261004013641930-B086-threat-jaslw",
+  "agent": "B086",
+  "kind": "threat",
+  "submittedAt": "2026-10-04T01:36:41.932Z",
+  "note": "B086 dA vs initializer-signature INT87 counters",
+  "asmA": "agent2/night/scratch/B086/dA.asm",
+  "threats": [
+   {
+    "name": "nbsig",
+    "asmA": "agent2/night/scratch/B056/nbsigA.asm",
+    "asmB": "agent2/night/scratch/B056/nbsigB.asm"
+   },
+   {
+    "name": "nbkill",
+    "asmA": "agent2/night/scratch/B056/nbkillA.asm",
+    "asmB": "agent2/night/scratch/B056/nbkillB.asm"
+   },
+   {
+    "name": "nbsig2",
+    "asmA": "agent2/night/scratch/B056/nbsig2A.asm",
+    "asmB": "agent2/night/scratch/B056/nbsig2B.asm"
+   },
+   {
+    "name": "tplsig",
+    "asmA": "agent2/night/scratch/B076/counterA.asm",
+    "asmB": "agent2/night/scratch/B076/counterB.asm"
+   },
+   {
+    "name": "dsig",
+    "asmA": "agent2/night/scratch/B086/counterA.asm",
+    "asmB": "agent2/night/scratch/B086/counterB.asm"
+   },
+   {
+    "name": "aware",
+    "asmA": "agent2/night/scratch/B086/awareA.asm",
+    "asmB": "agent2/night/scratch/B086/counterB.asm"
+   }
+  ],
+  "copies": 1,
+  "cohortsPerThreat": 4
+ },
+ "ok": true,
+ "finishedAt": "2026-10-04T01:38:42.096Z",
+ "seconds": 27.678,
+ "result": {
+  "candidate": {
+   "A": "agent2/night/cand-build/20261004013641930-B086-threat-jaslw/candA",
+   "B": "agent2/night/revisions/rev0/B",
+   "sizeA": 255,
+   "sizeB": 202,
+   "shaA": "c0995aedf6942269f51843ef676359bef762c39ea96089ca8aa20610efb60287",
+   "shaB": "8579e2c2212d72a413a6daacfe3b91ceb72be648bfc085bfeed9430eeaf6657a"
+  },
+  "baseRevision": 0,
+  "specKey": "cd3731381d18",
+  "battlesPerArm": 480,
+  "candMean": 0.1337,
+  "baseMean": 0,
+  "all": {
+   "n": 24,
+   "diff": 0.13368,
+   "lo": 0.09787,
+   "hi": 0.16949,
+   "wins": 20,
+   "losses": 0
+  },
+  "byThreat": {
+   "nbsig": {
+    "n": 4,
+    "diff": 0.18125,
+    "lo": 0.10689,
+    "hi": 0.25561,
+    "wins": 4,
+    "losses": 0
+   },
+   "nbkill": {
+    "n": 4,
+    "diff": 0.13542,
+    "lo": 0.07601,
+    "hi": 0.19482,
+    "wins": 4,
+    "losses": 0
+   },
+   "nbsig2": {
+    "n": 4,
+    "diff": 0.13333,
+    "lo": 0.11023,
+    "hi": 0.15643,
+    "wins": 4,
+    "losses": 0
+   },
+   "tplsig": {
+    "n": 4,
+    "diff": 0.14792,
+    "lo": 0.04094,
+    "hi": 0.25489,
+    "wins": 4,
+    "losses": 0
+   },
+   "dsig": {
+    "n": 4,
+    "diff": 0.20417,
+    "lo": 0.12976,
+    "hi": 0.27857,
+    "wins": 4,
+    "losses": 0
+   },
+   "aware": {
+    "n": 4,
+    "diff": 0,
+    "lo": 0,
+    "hi": 0,
+    "wins": 0,
+    "losses": 0
+   }
+  },
+  "threatFirstTeamScore": {
+   "vsCand": {
+    "nbsig": 0.4937,
+    "nbkill": 0.6771,
+    "nbsig2": 0.6125,
+    "tplsig": 0.5354,
+    "dsig": 0.6833,
+    "aware": 0.7875
+   },
+   "vsBase": {
+    "nbsig": 0.5375,
+    "nbkill": 0.7208,
+    "nbsig2": 0.6375,
+    "tplsig": 0.6417,
+    "dsig": 0.8,
+    "aware": 0.7875
+   }
+  },
+  "threatHashes": [
+   {
+    "label": "nbsig",
+    "warriors": [
+     "agent2/night/cand-build/20261004013641930-B086-threat-jaslw/threat-0/tA",
+     "agent2/night/cand-build/20261004013641930-B086-threat-jaslw/threat-0/tB"
+    ],
+    "hashes": [
+     "1253954b6ddadfc824a2183ed126a7ff739113b94c3842f43ea5bdd8193b388e",
+     "84427d5597475d9c7bfb5e9e4feadc974ed092116228681e90b2baa4ebbc19d1"
+    ]
+   },
+   {
+    "label": "nbkill",
+    "warriors": [
+     "agent2/night/cand-build/20261004013641930-B086-threat-jaslw/threat-1/tA",
+     "agent2/night/cand-build/20261004013641930-B086-threat-jaslw/threat-1/tB"
+    ],
+    "hashes": [
+     "6003a4d17fa36fa0196544391f3c0643530b6c690cd186a299e8f30f126740cc",
+     "8cd6834d39f83f706bb1d094d860ec29b49a35cd05a5ee5c3236cc1798b9f590"
+    ]
+   },
+   {
+    "label": "nbsig2",
+    "warriors": [
+     "agent2/night/cand-build/20261004013641930-B086-threat-jaslw/threat-2/tA",
+     "agent2/night/cand-build/20261004013641930-B086-threat-jaslw/threat-2/tB"
+    ],
+    "hashes": [
+     "931955c273ffb1fbb7ff98726ac064c37d7e6d49214310a8d18a579f62d6b06f",
+     "8b2a7d95bf5c6baea3b019e3fa7945899b7c3d4471cc66e6fbebab8aa28e9417"
+    ]
+   },
+   {
+    "label": "tplsig",
+    "warriors": [
+     "agent2/night/cand-build/20261004013641930-B086-threat-jaslw/threat-3/tA",
+     "agent2/night/cand-build/20261004013641930-B086-threat-jaslw/threat-3/tB"
+    ],
+    "hashes": [
+     "6098599c6b67d06986eb431bfc34d8010152f207a0ed68ce85bc7991016604bf",
+     "5aac73bf59d628b1e7bc96d1d4e6a12b0bc9404e54b1aef61249b6324a7f5ae9"
+    ]
+   },
+   {
+    "label": "dsig",
+    "warriors": [
+     "agent2/night/cand-build/20261004013641930-B086-threat-jaslw/threat-4/tA",
+     "agent2/night/cand-build/20261004013641930-B086-threat-jaslw/threat-4/tB"
+    ],
+    "hashes": [
+     "f086dfc8cf18839034da26ac6233bd2b949725403246a78717e10427e1f574fa",
+     "c8a8edfe0793c743d6025c00f3312a9083b383bc3c296b28554f9f99fc6bbcd9"
+    ]
+   },
+   {
+    "label": "aware",
+    "warriors": [
+     "agent2/night/cand-build/20261004013641930-B086-threat-jaslw/threat-5/tA",
+     "agent2/night/cand-build/20261004013641930-B086-threat-jaslw/threat-5/tB"
+    ],
+    "hashes": [
+     "fecec3a521939d2cf9dfe3cd1bd2c80acd337d3a96dc5c8f5a8498109dbbbc78",
+     "c8a8edfe0793c743d6025c00f3312a9083b383bc3c296b28554f9f99fc6bbcd9"
+    ]
+   }
+  ]
+ }
+}

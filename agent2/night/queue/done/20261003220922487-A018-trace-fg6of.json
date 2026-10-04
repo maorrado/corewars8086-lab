@@ -1,0 +1,28 @@
+{
+ "job": {
+  "id": "20261003220922487-A018-trace-fg6of",
+  "agent": "A018",
+  "kind": "trace",
+  "submittedAt": "2026-10-03T22:09:22.490Z",
+  "note": "A018 rwt trace: check rebuild/self-harm with recovery word, compare to base pkj3o (161 deaths)",
+  "asmA": "agent2/night/scratch/A018/rwt_A.asm",
+  "asmB": "agent2/night/scratch/A018/rwt_B.asm"
+ },
+ "ok": true,
+ "finishedAt": "2026-10-03T22:13:01.310Z",
+ "seconds": 22.929,
+ "result": {
+  "candidate": {
+   "A": "agent2/night/cand-build/20261003220922487-A018-trace-fg6of/candA",
+   "B": "agent2/night/cand-build/20261003220922487-A018-trace-fg6of/candB",
+   "sizeA": 200,
+   "sizeB": 208,
+   "shaA": "ca956095317aa223ddfe67371d35a5c0fc8d215b90ac1b6f5d1c9a5eb6b530f2",
+   "shaB": "77a343c1ec151526273da12abd05236cecf21c288227f0e2f3fd39c84adca65c"
+  },
+  "traceDir": "agent2/night/scratch/_trace/nightTR-ca95609531-77a343c1ec",
+  "battles": 160,
+  "summary": "deaths 163\n  92 wild-cs          memory exception opp\n  25 wild-cs          CPU exception    opp\n  10 wild-cs          CPU exception    untouched\n   9 wild-cs          CPU exception    self-only\n   8 wild-cs          memory exception self-only\n   4 startup(cs1000)  CPU exception    opp\n   4 startup(cs1000)  memory exception zombie\n   3 wild-cs          CPU exception    partner\n   2 wild-cs          CPU exception    zombie\n   2 wild-cs          memory exception zombie\n   1 startup(cs1000)  memory exception opp\n   1 wild-cs          CPU exception    load\n   1 startup(cs1000)  CPU exception    load\n   1 startup(cs1000)  memory exception load\ntop opponent killers: Y_TOM_Code_Killer=35 A_IND_cgx123123=26 A_WAN_Baltika9=14 A_GSA_GhostBytes_0x=12 A_OHS_TrojanByte=9 A_WHS_K0F1M_AL_T1L1M=5 A_KOB_KosherCode=4 A_HRZ_Underflow=4 A_GGN_OpcodeHunter=4 A_HRZ_fisherEXE=3 A_RZL_YANDE=2 Y_ELD_FriendlyFire=2\n",
+  "note": "phase 'wild-cs' = any CS other than 0FFC/1000 (V6 family uses FAR_SEG 0FFB); examples.json not produced by sum-trace2; raw jsonl in traceDir"
+ }
+}

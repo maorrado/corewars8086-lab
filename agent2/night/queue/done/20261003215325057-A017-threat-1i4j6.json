@@ -1,0 +1,155 @@
+{
+ "job": {
+  "id": "20261003215325057-A017-threat-1i4j6",
+  "agent": "A017",
+  "kind": "threat",
+  "submittedAt": "2026-10-03T21:53:25.060Z",
+  "note": "A017 c18 vs FF1FCCCC searchers (OpcodeHunter, 2B2Team, PastRAMa24) and FF18CCCC searcher (EmoMutants)",
+  "asmA": "agent2/night/scratch/A017/c18A.asm",
+  "asmB": "agent2/night/scratch/A017/c18B.asm",
+  "threats": [
+   {
+    "name": "OpcodeHunter",
+    "binA": "official-2025/survivors-online/GGN_OpcodeHunter1",
+    "binB": "official-2025/survivors-online/GGN_OpcodeHunter2"
+   },
+   {
+    "name": "2B2Team",
+    "binA": "official-2025/survivors-online/TOM_2B2Team1",
+    "binB": "official-2025/survivors-online/TOM_2B2Team2"
+   },
+   {
+    "name": "EmoMutants",
+    "binA": "official-2025/survivors-online/HLS_EmoMutants1",
+    "binB": "official-2025/survivors-online/HLS_EmoMutants2"
+   },
+   {
+    "name": "PastRAMa24",
+    "binA": "repos/corewars8086-survivors/cgx2024/03-live/BZV_PastRAMa1",
+    "binB": "repos/corewars8086-survivors/cgx2024/03-live/BZV_PastRAMa2"
+   }
+  ],
+  "copies": 1,
+  "cohortsPerThreat": 6
+ },
+ "ok": true,
+ "finishedAt": "2026-10-03T22:01:39.219Z",
+ "seconds": 72.344,
+ "result": {
+  "candidate": {
+   "A": "agent2/night/cand-build/20261003215325057-A017-threat-1i4j6/candA",
+   "B": "agent2/night/cand-build/20261003215325057-A017-threat-1i4j6/candB",
+   "sizeA": 194,
+   "sizeB": 202,
+   "shaA": "90f4ab2cbbd28a25e1b3b9bde030c68637b138413340fe1ed0378a8e9c4665f8",
+   "shaB": "26a3b772a7f8e2000f58fd73121c799a66fe93cc53fd946f0e85a879b7fd335e"
+  },
+  "baseRevision": 0,
+  "specKey": "7f74e197d37e",
+  "battlesPerArm": 480,
+  "candMean": 0.6608,
+  "baseMean": 0.566,
+  "all": {
+   "n": 24,
+   "diff": 0.09479,
+   "lo": 0.02376,
+   "hi": 0.16582,
+   "wins": 15,
+   "losses": 4
+  },
+  "byThreat": {
+   "OpcodeHunter": {
+    "n": 6,
+    "diff": 0.05417,
+    "lo": 0.02758,
+    "hi": 0.08076,
+    "wins": 5,
+    "losses": 0
+   },
+   "2B2Team": {
+    "n": 6,
+    "diff": 0.26667,
+    "lo": 0.06162,
+    "hi": 0.47171,
+    "wins": 5,
+    "losses": 0
+   },
+   "EmoMutants": {
+    "n": 6,
+    "diff": -0.05,
+    "lo": -0.10658,
+    "hi": 0.00658,
+    "wins": 1,
+    "losses": 4
+   },
+   "PastRAMa24": {
+    "n": 6,
+    "diff": 0.10833,
+    "lo": 0.02667,
+    "hi": 0.19,
+    "wins": 4,
+    "losses": 0
+   }
+  },
+  "threatFirstTeamScore": {
+   "vsCand": {
+    "OpcodeHunter": 0.1528,
+    "2B2Team": 0.1333,
+    "EmoMutants": 0.2833,
+    "PastRAMa24": 0.025
+   },
+   "vsBase": {
+    "OpcodeHunter": 0.2083,
+    "2B2Team": 0.3125,
+    "EmoMutants": 0.2583,
+    "PastRAMa24": 0.0583
+   }
+  },
+  "threatHashes": [
+   {
+    "label": "OpcodeHunter",
+    "warriors": [
+     "official-2025/survivors-online/GGN_OpcodeHunter1",
+     "official-2025/survivors-online/GGN_OpcodeHunter2"
+    ],
+    "hashes": [
+     "d5992bdc307b070ad91e1737a8777125970912b286a392ed6d9a6456d87ed3af",
+     "0ced8fc1ec650a032604e2e149458b54202be7ecabb447999f143659d6ea46b6"
+    ]
+   },
+   {
+    "label": "2B2Team",
+    "warriors": [
+     "official-2025/survivors-online/TOM_2B2Team1",
+     "official-2025/survivors-online/TOM_2B2Team2"
+    ],
+    "hashes": [
+     "bcc371f9a6c803da24ca9b207cc669f3ad303b115c7b6d27afdaafc1f48d0cb5",
+     "bd1a1687a4f99d4a0bb60ae23cb09a505d87c77042de95a27957b1c524df4ab0"
+    ]
+   },
+   {
+    "label": "EmoMutants",
+    "warriors": [
+     "official-2025/survivors-online/HLS_EmoMutants1",
+     "official-2025/survivors-online/HLS_EmoMutants2"
+    ],
+    "hashes": [
+     "629b28dbff281ca175493f1f40492e52afdf6f9f3c2f8a7e06a8df08a5580711",
+     "36c6a4f23a988920ed0e2e7a128bd706b5f82871935b6c0dfc5d3c2cbbd65aa0"
+    ]
+   },
+   {
+    "label": "PastRAMa24",
+    "warriors": [
+     "repos/corewars8086-survivors/cgx2024/03-live/BZV_PastRAMa1",
+     "repos/corewars8086-survivors/cgx2024/03-live/BZV_PastRAMa2"
+    ],
+    "hashes": [
+     "2b65bfc68cf05ee0bd5b3eef49fc67fd16abcc87cf26ec8cade2a3fff0b177f1",
+     "146aeed0535cda8da3c787c0d94f50edfcaa9d5aceb69d09ed7aa8b7c3f83071"
+    ]
+   }
+  ]
+ }
+}

@@ -1,0 +1,180 @@
+{
+ "job": {
+  "id": "20261003222425935-B069-threat-vwuoq",
+  "agent": "B069",
+  "kind": "threat",
+  "submittedAt": "2026-10-03T22:24:25.936Z",
+  "note": "B069 R2: E2 (A016) vs base, same 2-copy router cohorts",
+  "asmB": "agent2/night/scratch/B069/E2B.asm",
+  "threats": [
+   {
+    "name": "m050",
+    "binA": "agent2/build/ref/ChimeraA",
+    "binB": "agent2/build/ref/ChimeraB"
+   },
+   {
+    "name": "b01d",
+    "binA": "agent2/build/ref/b01dA",
+    "binB": "agent2/build/ref/b01dB"
+   },
+   {
+    "name": "e1p4",
+    "binA": "agent2/build/ref/e1p4A",
+    "binB": "agent2/build/ref/e1p4B"
+   },
+   {
+    "name": "FixedToggle",
+    "binA": "agent2/build/counter/FTA",
+    "binB": "agent2/build/counter/FTB"
+   },
+   {
+    "name": "Synthesis",
+    "binA": "agent2/build/counter/SYA",
+    "binB": "agent2/build/counter/SYB"
+   }
+  ],
+  "copies": 2,
+  "cohortsPerThreat": 4
+ },
+ "ok": true,
+ "finishedAt": "2026-10-03T22:25:15.395Z",
+ "seconds": 14.519,
+ "result": {
+  "candidate": {
+   "A": "agent2/night/revisions/rev0/A",
+   "B": "agent2/night/cand-build/20261003222425935-B069-threat-vwuoq/candB",
+   "sizeA": 194,
+   "sizeB": 202,
+   "shaA": "6861894f3c1992cd6c6baa5b2a746178082f5b4b0a1d9969b9a326fe03d86c89",
+   "shaB": "229e158820f2afc7cfb05eec4072cd2b0f4008f1a5c11e11a3e00feb1940f109"
+  },
+  "baseRevision": 0,
+  "specKey": "4f230eb4f697",
+  "battlesPerArm": 400,
+  "candMean": 0.7384,
+  "baseMean": 0.6691,
+  "all": {
+   "n": 20,
+   "diff": 0.06929,
+   "lo": 0.01774,
+   "hi": 0.12085,
+   "wins": 16,
+   "losses": 3
+  },
+  "byThreat": {
+   "m050": {
+    "n": 4,
+    "diff": 0.18333,
+    "lo": 0.10672,
+    "hi": 0.25994,
+    "wins": 4,
+    "losses": 0
+   },
+   "b01d": {
+    "n": 4,
+    "diff": 0.02604,
+    "lo": -0.09917,
+    "hi": 0.15125,
+    "wins": 2,
+    "losses": 2
+   },
+   "e1p4": {
+    "n": 4,
+    "diff": 0.04271,
+    "lo": -0.00232,
+    "hi": 0.08773,
+    "wins": 3,
+    "losses": 0
+   },
+   "FixedToggle": {
+    "n": 4,
+    "diff": -0.00833,
+    "lo": -0.16753,
+    "hi": 0.15086,
+    "wins": 3,
+    "losses": 1
+   },
+   "Synthesis": {
+    "n": 4,
+    "diff": 0.10271,
+    "lo": 0.02431,
+    "hi": 0.18111,
+    "wins": 4,
+    "losses": 0
+   }
+  },
+  "threatFirstTeamScore": {
+   "vsCand": {
+    "m050": 0.0313,
+    "b01d": 0.0733,
+    "e1p4": 0.1365,
+    "FixedToggle": 0.1771,
+    "Synthesis": 0.0896
+   },
+   "vsBase": {
+    "m050": 0.1167,
+    "b01d": 0.1067,
+    "e1p4": 0.1156,
+    "FixedToggle": 0.1042,
+    "Synthesis": 0.1185
+   }
+  },
+  "threatHashes": [
+   {
+    "label": "m050",
+    "warriors": [
+     "agent2/build/ref/ChimeraA",
+     "agent2/build/ref/ChimeraB"
+    ],
+    "hashes": [
+     "0268ce4f301bf2ada8566f4e608180a0670a335a80b9c2b93b67aee2b632bd44",
+     "06b5a1ff7bac4b146620de6d1de512dfedf3f28366d6435bf61d49869d971782"
+    ]
+   },
+   {
+    "label": "b01d",
+    "warriors": [
+     "agent2/build/ref/b01dA",
+     "agent2/build/ref/b01dB"
+    ],
+    "hashes": [
+     "775080226ca8f9e9a5aac584094c9066bd2c55365ee8cea1e18db26440d9315e",
+     "884b4d52e4ef1e57db85c88083d0a8667a6bd252a25728da7f5fdedefa6f33c7"
+    ]
+   },
+   {
+    "label": "e1p4",
+    "warriors": [
+     "agent2/build/ref/e1p4A",
+     "agent2/build/ref/e1p4B"
+    ],
+    "hashes": [
+     "99192c673e5af394ed8194932b52b4f18f092804384f38d1bb2828b189c76b93",
+     "d307b92097ac68ce6073adc1e34917b2f51c0c396235c918dfc913cee7393354"
+    ]
+   },
+   {
+    "label": "FixedToggle",
+    "warriors": [
+     "agent2/build/counter/FTA",
+     "agent2/build/counter/FTB"
+    ],
+    "hashes": [
+     "bea990bbf2c60cb4c39d80dd5b533f83a1eb62f1ad202020c6d4e93cbebc2747",
+     "9761054288100948cfcf3610c8d989f16eba68f0f501b90c21b7de9ead380c8f"
+    ]
+   },
+   {
+    "label": "Synthesis",
+    "warriors": [
+     "agent2/build/counter/SYA",
+     "agent2/build/counter/SYB"
+    ],
+    "hashes": [
+     "3875482b4d57a8d29f474215ed9dd41249bc17c46b1a662c4906554b5d859b9c",
+     "99055d82958f813de2067a17dde8ea361c749bd4dc916095a4dad1ad8e13ce2b"
+    ]
+   }
+  ]
+ }
+}

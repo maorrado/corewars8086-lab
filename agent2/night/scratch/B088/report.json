@@ -1,0 +1,53 @@
+{
+ "agentId": "B088",
+ "role": "wave 8, domain 8 (dense/sparse CC bombers, early INT86 heavy bombs), R4-fix",
+ "revisionUsed": 0,
+ "base": "rev0 = V6nohunt (A 194 B sha 6861894f, B 202 B sha 8579e2c2)",
+ "jobs": [
+  "20261004014256116-B088-screen-irh7d",
+  "20261004014256392-B088-threat-52phq",
+  "20261004014534049-B088-threat-wfvlw",
+  "20261004015047110-B088-threat-mvmvo"
+ ],
+ "idea": "The only verified dangerous bomber in domain 8 is a page-lattice CC bomber tuned to the fixed anchor in-page offset 52h (B058 pg52: base 0.025). Every fixed lattice shift only moves the hole and costs on the field (B055/A011/B085). Fix tested here: a per-battle mixed lattice at zero bytes and zero turns. phoenix_init already does mov dx,[4A17h] followed by and dx,0 / or dx,0FFBh, so changing the immediates to and dx,3 / or dx,0FF8h makes FAR_SEG = 0FF8h..0FFBh from the low 2 bits of [4A17h]. That cell holds our B zombie_entry address (random per battle) and is read by A, B and captured zombies after round ~25, so the whole team picks the same lattice (22h/32h/42h/52h, p = 1/4 each). Geometry check: first-generation SP - anchor = gap + (10000h - 10h*FAR_SEG) = gap + 50h..80h stays = 0 mod 4 for all four values, so the A4 trigger still lands on the anchor; after generation 1, SP - anchor = 400h as before.",
+ "candidates": [
+  {
+   "label": "mix4 (per-battle mixed anchor lattice 22/32/42/52h)",
+   "asmA": "agent2/night/scratch/B088/mix4_A.asm",
+   "asmB": "agent2/night/scratch/B088/mix4_B.asm",
+   "shaA": "45d08fff9ae8f110917eab81b673c75f0f45904fe96f9b9c21c634eeb5ec2ef9",
+   "shaB": "61e71c47d161cbe6bf05d67cbe159adc89c9d22a6a40c85574b2b219d7c7d9b1",
+   "sizeA": 194,
+   "sizeB": 202,
+   "change": "A and B phoenix_init: and dx,0 -> and dx,3; or dx,0FFBh -> or dx,0FF8h (2 bytes changed per warrior). Zero bytes, zero turns.",
+   "screenJob": "20261004014256116-B088-screen-irh7d",
+   "screenAllDiff": -0.00205,
+   "screenAllLo": -0.02311,
+   "screenAllHi": 0.01901,
+   "screen": "cand 0.6436 vs base 0.6456, ALL -0.0021 [-0.0231,+0.0190] W/L 19/19; 2025 -0.0058 [-0.0275,+0.0159] 9/10; strong -0.0452 [-0.1417,+0.0512] 2/5; threat +0.0096 [-0.0171,+0.0362] 7/3; multi +0.1028 [-0.1204,+0.3260] (smulti-V6x3 +0.217, smulti-mix -0.011). Per threat cohort: lead_V6Guard +0.097, lead_zrl03 +0.061, lead_V6 +0.050, callfart -0.122, CodeKiller -0.083, bomb_IND_BRA 0.",
+   "threatJobs": {
+    "20261004014256392-B088-threat-52phq (1 copy, 8 cohorts/threat)": "ALL +0.161 [0.021,0.302]; B058_pg52 +0.615 [0.542,0.687] 8/0 (bomber team 0.044 vs cand, 0.166 vs base); B058_pg22 -0.175 [-0.249,-0.101] 0/7; B058_pgall16 +0.044 [0.005,0.083] 5/1.",
+    "20261004014534049-B088-threat-wfvlw (1 copy, 6 cohorts/threat)": "ALL +0.010 [-0.034,+0.053]; lead_V6 +0.049 [-0.055,+0.153] 4/2; lead_V6Guard +0.103 [0.049,0.156] 6/0; lead_zchain4 -0.076 [-0.144,-0.009] 1/4; lead_zrl03 -0.036 [-0.072,-0.0004] 2/4.",
+    "20261004015047110-B088-threat-mvmvo (1 copy, 8 cohorts/threat)": "ALL -0.188 [-0.305,-0.070]; B088_pgadapt -0.547 [-0.701,-0.393] 0/8 (bomber team 0.141 vs cand, 0.041 vs base); R1DDLE -0.016 [-0.079,+0.048] 2/4; tson_el_akod 0.000 [-0.041,+0.041] 2/2."
+   },
+   "promising": false,
+   "isDefenseFix": true,
+   "notes": "Works exactly as a mixed strategy: vs the static 52h bomber it recovers ~3/4 of the loss (+0.615), vs a static bomber on one of the new offsets it gives back ~1/4 (pg22 -0.175), and vs the all-offset bomber it changes little (+0.044). General cost on field S is not resolved (-0.002 +- 0.021); vs lattice-sensitive leaders it trades holes like the fixed shifts did (V6Guard +0.10, zchain4 -0.08, zrl03 -0.04). Main limitation: the coin is public. A 58-byte bomber that reads [4A17h] and bombs 22h+10h*([4A17h]&3) wipes mix4 (-0.547 vs base). So the worst case vs an informed attacker is unchanged. Not proposed for promotion: the threat it fixes does not exist in any field, and the general-cost interval is too wide."
+  }
+ ],
+ "counterCodes": [
+  {"name": "B088_pgadapt", "asmA": "agent2/night/scratch/B088/pgadaptA.asm", "asmB": "agent2/night/scratch/B088/pgadaptB.asm", "size": "A 58 B sha 24c66cf9, B 59 B sha 58f3614b", "what": "B058 pg52 with an adaptive offset: waits ~10 rounds, reads [4A17h], bombs CCCCh at in-page 22h + 10h*([4A17h] and 3) of every page (partner 8000h later).", "strength": "vs mix4: candidate loses -0.547 vs base (mvmvo, 0/8); against rev0 it hits only 1/4 of battles. Use it against any future base that derives its lattice from a public cell."}
+ ],
+ "threatFindings": [
+  {"threat": "A static page-lattice CC bomber tuned to in-page 52h wipes rev0; a per-battle mixed lattice (zero bytes) recovers most of it", "classification": "verified-in-current", "evidence": "52phq: B058_pg52 +0.615 [0.542,0.687] 8/0 for mix4 vs rev0; bomber team score drops 0.166 -> 0.044.", "impact": "Large vs this purpose-built probe only; no field warrior targets 52h (B058, B068)."},
+  {"threat": "The mixed lattice opens holes at the other offsets (mixed-strategy trade)", "classification": "verified-in-current", "evidence": "52phq: B058_pg22 -0.175 [-0.249,-0.101] 0/7, about 1/4 of the fixed-22h loss (-0.819 in B058 ktxof).", "impact": "Any single-offset static bomber now gets ~1/4 of its maximum; same total exposure, spread out."},
+  {"threat": "The all-offset (2 mod 10h) bomber still hurts with a mixed lattice", "classification": "verified-in-current", "evidence": "52phq: B058_pgall16 only +0.044 [0.005,0.083] for mix4.", "impact": "The architectural hole (1-byte critical anchor dwelling 256/512 rounds) stays; only lattice-specific attackers are affected."},
+  {"threat": "An adaptive bomber that reads the public [4A17h] cell defeats the mixed lattice", "classification": "verified-in-current", "evidence": "mvmvo: B088_pgadapt -0.547 [-0.701,-0.393] 0/8 for mix4 vs rev0 (rev0 at fixed 52h is hit in only 1/4 of battles).", "impact": "Worst case vs an informed attacker is not improved. A private coin (team-shared memory: B stosw at instr 1; A push es ... pop ds; mov dx,[0]) would cost 2-3 turns and is untested; a trail-scanning bomber (domain 7) could still find the lattice."},
+  {"threat": "Lattice choice changes results vs lattice-sensitive leaders", "classification": "verified-in-current", "evidence": "wfvlw: lead_V6Guard +0.103 [0.049,0.156] 6/0, lead_zchain4 -0.076 [-0.144,-0.009] 1/4, lead_zrl03 -0.036 [-0.072,-0.0004]; screen strong -0.045 n.s.", "impact": "Net about 0 over the four leaders (+0.010), but cohort-level trades like the fixed shifts (B055, A011)."},
+  {"threat": "Real 2025 CC bombers (R1DDLE dense sweep, tson 13-step) depend on our lattice", "classification": "not-reproduced", "evidence": "mvmvo: R1DDLE -0.016 [-0.079,+0.048], tson_el_akod 0.000 [-0.041,+0.041]; screen bomb_IND_BRA 0.", "impact": "None; these bombers are lattice-blind, as expected from their stride."},
+  {"threat": "A late [4A17h] writer splits A and B (or captured zombies) onto different lattices under mix4", "classification": "hypothesis", "evidence": "Static: all known writers (V6 family, B073/B083 poisoners) write before round 5; A and B read it around rounds 30-35. Not tested.", "impact": "Probably rare; would add partner crossfire in those battles."},
+  {"threat": "Early INT86 heavy bombs before we leave the load image", "classification": "verified-in-other", "evidence": "Not re-tested here; B058 trace pkj3o and B068 ogq11 (~-0.007 per bomb). Bombs land at turns 5-8, before any startup can finish; only image size matters (C2/stripA already shrink A).", "impact": "No defense bytes justified; no job spent."}
+ ],
+ "recommendation": "Do not promote mix4. It is a working zero-byte, zero-turn defense against a static 52h page-lattice bomber (+0.615) with no measurable field cost on the screen (-0.002 +- 0.021), but it only spreads the exposure (pg22 -0.175), leaves the all-offset bomber in place (+0.044), trades leader cohorts (V6Guard +0.10 vs zchain4 -0.08), and a 58-byte bomber reading the public [4A17h] cell defeats it (-0.547). The threat it answers does not exist in any field. Keep it documented as a cheap option if a 52h-targeting opponent appears; if pursued, use a private team-shared coin and re-test vs B088_pgadapt and B058_pgall16.",
+ "notes": "The coin reuses the dead mov dx,[4A17h] in phoenix_init, so it conflicts with A022 SD/SDd and K (which delete that read). Captured zombies read the same cell in B's phoenix_init and so share the lattice."
+}

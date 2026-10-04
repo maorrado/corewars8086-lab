@@ -1,0 +1,91 @@
+{
+ "job": {
+  "id": "20261004021852456-B091-threat-yrx3b",
+  "agent": "B091",
+  "kind": "threat",
+  "submittedAt": "2026-10-04T02:18:52.458Z",
+  "note": "B091 KT on B070 1a8ek spec (distinct MOVSW crowd; paired with A_t800 +0.1875)",
+  "asmA": "agent2/night/scratch/B091/KT_A.asm",
+  "asmB": "agent2/night/scratch/B091/KT_B.asm",
+  "threats": [
+   {
+    "key": "movsw_cgx123123"
+   },
+   {
+    "key": "movsw_Baltika9"
+   },
+   {
+    "key": "movsw_TrojanByte"
+   }
+  ],
+  "cohortsPerThreat": 12,
+  "mixAll": true
+ },
+ "ok": true,
+ "finishedAt": "2026-10-04T02:20:17.370Z",
+ "seconds": 7.954,
+ "result": {
+  "candidate": {
+   "A": "agent2/night/cand-build/20261004021852456-B091-threat-yrx3b/candA",
+   "B": "agent2/night/cand-build/20261004021852456-B091-threat-yrx3b/candB",
+   "sizeA": 196,
+   "sizeB": 212,
+   "shaA": "af3bf51a322b7c98007c8ef08c5423799aa0f55c849ca50d122f104dd93295e5",
+   "shaB": "c71fe517807d7703a00269a30273b407a24904049cbc1bce21097b87de4fc695"
+  },
+  "baseRevision": 0,
+  "specKey": "80a4176f7a9f",
+  "battlesPerArm": 240,
+  "candMean": 0.5354,
+  "baseMean": 0.3542,
+  "all": {
+   "n": 12,
+   "diff": 0.18125,
+   "lo": 0.10517,
+   "hi": 0.25733,
+   "wins": 11,
+   "losses": 0
+  },
+  "byThreat": {
+   "mix": {
+    "n": 12,
+    "diff": 0.18125,
+    "lo": 0.10517,
+    "hi": 0.25733,
+    "wins": 11,
+    "losses": 0
+   }
+  },
+  "threatFirstTeamScore": {
+   "vsCand": {
+    "mix": 0.2722
+   },
+   "vsBase": {
+    "mix": 0.4385
+   }
+  },
+  "threatHashes": [
+   {
+    "label": "movsw_cgx123123",
+    "warriors": [
+     "official-2025/survivors-online/IND_cgx1231231",
+     "official-2025/survivors-online/IND_cgx1231232"
+    ]
+   },
+   {
+    "label": "movsw_Baltika9",
+    "warriors": [
+     "official-2025/survivors-online/WAN_Baltika91",
+     "official-2025/survivors-online/WAN_Baltika92"
+    ]
+   },
+   {
+    "label": "movsw_TrojanByte",
+    "warriors": [
+     "official-2025/survivors-online/OHS_TrojanByte1",
+     "official-2025/survivors-online/OHS_TrojanByte2"
+    ]
+   }
+  ]
+ }
+}

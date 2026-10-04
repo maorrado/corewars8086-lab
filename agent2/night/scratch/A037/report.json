@@ -1,0 +1,24 @@
+{
+ "agentId": "A037",
+ "revisionUsed": 0,
+ "jobs": ["20261004013315716-A037-screen-qrbo8", "20261004013316014-A037-threat-6vw1o", "20261004013630141-A037-threat-8c6hg", "20261004013755974-A037-threat-lwnbx"],
+ "candidates": [
+  {"label": "D1 double pointer (private cell 0B6E9h + late [4A17h] steal)",
+   "asmA": "agent2/night/scratch/A037/d1A.asm", "asmB": "agent2/night/scratch/A037/d1B.asm",
+   "sizeA": 204, "sizeB": 202,
+   "shaA": "a24d3b07ce59e7d9e4190245917e10b7b26b4e074fc2c94c21e7f9f30550bb66",
+   "shaB": "9befc8279a8a7bc1323ccb7f86a74d86fa781216f16963f225f1e38ad167002e",
+   "change": "B: mov [4A17h],bx (instr 3) -> mov [0B6E9h],bx; both mov cx,04A17h (startup b/d INT87 and zombie_entry b/d search) -> mov cx,0B6E9h, so all our own captures jump through the private cell [0B6E9h] (cell from B053; static scan finds no pool warrior containing E9 B6). A: push cs/pop es/mov ax,0F2E2h -> les ax,[si+zdata] (dw 0F2E2h,1000h appended at the end of A); mov ax,[4A17h]/mov [9769h],ax -> mov bp,[0B6E9h] (instr 4)/mov [9769h],bp (instr 5, as in rev0); INT87 replacement CX 0B6E9h; nop; mov [4A17h],bp at instr 9 = late write of our entry to the V6-family cell (steals their zom20a/b/d captures and any [4A17h] poisoner's); INT87 stays instr 10, phoenix_init stays turn 22; rest identical to rev0.",
+   "screenJob": "20261004013315716-A037-screen-qrbo8", "screenAllDiff": 0.00062, "screenAllLo": -0.00622, "screenAllHi": 0.00747,
+   "groupNotes": "Screen qrbo8: cand 0.6462 vs base 0.6456, W/L 8/13; 2025 +0.0013, strong +0.0016, threat -0.0007, multi -0.0014 (all n.s.). Threat 6vw1o (1 copy, 4 cohorts x 20): ALL +0.0629 [0.0192,0.1066] 15/5; B073poison +0.1375 [0.123,0.152] 4/0; B083poisonE +0.144 [0.034,0.254] 4/0; lead_V4 +0.042 [0.018,0.066] 4/0; lead_V6 +0.019 n.s.; lead_V6Guard -0.027 n.s. Threat 8c6hg (2 copies, 8 cohorts): ALL +0.0156 n.s.; V6 +0.013, V4 +0.056 [-0.011,0.123], V6Guard -0.022. Threat lwnbx (1 copy, 12 fresh cohorts): V6Guard -0.0493 [-0.0918,-0.0068] W/L 1/11; V6 +0.0257 [-0.021,0.073] 7/3.",
+   "isDefenseFix": true, "promising": false}
+ ],
+ "threatFindings": [
+  {"threat": "Purpose-built [4A17h] poisoners (B073poison, B083poisonE) steal rev0's captured Zombies", "classification": "verified-in-current", "evidence": "6vw1o: D1 minus base +0.1375 (4/0) and +0.144 (4/0); poisoner team scores drop 0.675->0.575 and 0.619->0.450. Fixed by construction (private cell + later write).", "impact": "~+0.14 per battle in poisoner cohorts; no such poisoner in the 2023-2025 fields."},
+  {"threat": "[4A17h] race with V6-family leaders (lead_V6, lead_V4) costs rev0 captures", "classification": "verified-in-current", "evidence": "lead_V4 +0.042 [0.018,0.066] 4/0 (6vw1o), +0.056 n.s. (8c6hg); lead_V6 +0.019/+0.013/+0.026, all n.s. but same sign in three jobs.", "impact": "small, about +0.02 to +0.05 in V4/V6 cohorts"},
+  {"threat": "D1 regresses vs V6Guard", "classification": "verified-in-current", "evidence": "lwnbx -0.0493 [-0.0918,-0.0068] W/L 1/11 on 12 fresh cohorts; same sign in 6vw1o (-0.027) and 8c6hg (-0.022, 2 copies); screen qrbo8 single V6Guard cohort +0.106 (n=1). Not seen for B053 reloc (+0.007/+0.035) or A003 C1 (+0.078/+0.026/-0.024). Mechanism (A layout +10 bytes, steal at A instr 9, or extra captures crowding our lattice) is a hypothesis; not traced.", "impact": "about -0.04 per battle in V6Guard cohorts"},
+  {"threat": "A poisoner that knows the private cell 0B6E9h (adaptive counter)", "classification": "hypothesis", "evidence": "Static only: any fixed cell can be poisoned once it is known; D1 only moves the target. Body cells (B073/B083) are the only structural answer.", "impact": "unknown"}
+ ],
+ "recommendation": "Do not promote D1. Screen ALL +0.0006 (no field gain), it is a working defense against [4A17h] poisoners (+0.14) and helps vs V4/V6 a little, but it lost to V6Guard in 3 of 3 threat jobs (-0.049 significant on 12 fresh cohorts). If someone picks this up: run ablations to find where the V6Guard loss comes from: (a) B-side private cell only (= B053 reloc), (b) D1 without the A les/layout change (steal after INT87 instead), (c) D1 with the steal at instr 5-6. Add the cell change to a combination only if the V6Guard loss disappears.",
+ "notes": "All jobs on base revision 0. Helper mk.cjs regenerates d1A/d1B from rev0."
+}

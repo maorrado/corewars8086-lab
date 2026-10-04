@@ -1,0 +1,155 @@
+{
+ "job": {
+  "id": "20261003230749602-A022-threat-a6imo",
+  "agent": "A022",
+  "kind": "threat",
+  "submittedAt": "2026-10-03T23:07:49.604Z",
+  "note": "A022 SD vs FF1FCCCC INT87 searchers (2025 2B2Team/OpcodeHunter, 2024live PastRAMa/JMP2HELL)",
+  "asmA": "agent2/night/scratch/A022/SD_A.asm",
+  "asmB": "agent2/night/scratch/A022/SD_B.asm",
+  "threats": [
+   {
+    "name": "TB_real",
+    "binA": "official-2025/survivors-online/TOM_2B2Team1",
+    "binB": "official-2025/survivors-online/TOM_2B2Team2"
+   },
+   {
+    "name": "OH_real",
+    "binA": "official-2025/survivors-online/GGN_OpcodeHunter1",
+    "binB": "official-2025/survivors-online/GGN_OpcodeHunter2"
+   },
+   {
+    "name": "PastRAMa",
+    "binA": "agent2/runs/h1-H2-persistent/b01d__p01-c08__a2-3953c70f2ae8bead/survivors/L24_BZV_PastRAMa1",
+    "binB": "agent2/runs/h1-H2-persistent/b01d__p01-c08__a2-3953c70f2ae8bead/survivors/L24_BZV_PastRAMa2"
+   },
+   {
+    "name": "JMP2HELL",
+    "binA": "agent2/runs/h1-H2-persistent/b01d__p01-c13__a2-41568183528f4292/survivors/L24_HRZ_JMP2HELL1",
+    "binB": "agent2/runs/h1-H2-persistent/b01d__p01-c13__a2-41568183528f4292/survivors/L24_HRZ_JMP2HELL2"
+   }
+  ],
+  "copies": 1,
+  "cohortsPerThreat": 6
+ },
+ "ok": true,
+ "finishedAt": "2026-10-03T23:11:09.812Z",
+ "seconds": 34.379,
+ "result": {
+  "candidate": {
+   "A": "agent2/night/cand-build/20261003230749602-A022-threat-a6imo/candA",
+   "B": "agent2/night/cand-build/20261003230749602-A022-threat-a6imo/candB",
+   "sizeA": 192,
+   "sizeB": 200,
+   "shaA": "255f0fb28079ab42371a557d06351d13e43e85fb71afb73794175bdf33958937",
+   "shaB": "36e78a91706665bf33a2c320062a2f7684bed2b94fd5cd53f97edfe555eb1086"
+  },
+  "baseRevision": 0,
+  "specKey": "7df4e14e7265",
+  "battlesPerArm": 480,
+  "candMean": 0.6042,
+  "baseMean": 0.533,
+  "all": {
+   "n": 24,
+   "diff": 0.07118,
+   "lo": 0.03069,
+   "hi": 0.11167,
+   "wins": 17,
+   "losses": 2
+  },
+  "byThreat": {
+   "TB_real": {
+    "n": 6,
+    "diff": 0.1625,
+    "lo": 0.07507,
+    "hi": 0.24993,
+    "wins": 5,
+    "losses": 0
+   },
+   "OH_real": {
+    "n": 6,
+    "diff": 0.04167,
+    "lo": 0.009,
+    "hi": 0.07433,
+    "wins": 4,
+    "losses": 0
+   },
+   "PastRAMa": {
+    "n": 6,
+    "diff": 0.07222,
+    "lo": 0.02628,
+    "hi": 0.11816,
+    "wins": 5,
+    "losses": 0
+   },
+   "JMP2HELL": {
+    "n": 6,
+    "diff": 0.00833,
+    "lo": -0.08774,
+    "hi": 0.10441,
+    "wins": 3,
+    "losses": 2
+   }
+  },
+  "threatFirstTeamScore": {
+   "vsCand": {
+    "TB_real": 0.15,
+    "OH_real": 0.1889,
+    "PastRAMa": 0.0917,
+    "JMP2HELL": 0.2875
+   },
+   "vsBase": {
+    "TB_real": 0.225,
+    "OH_real": 0.2,
+    "PastRAMa": 0.0958,
+    "JMP2HELL": 0.2236
+   }
+  },
+  "threatHashes": [
+   {
+    "label": "TB_real",
+    "warriors": [
+     "official-2025/survivors-online/TOM_2B2Team1",
+     "official-2025/survivors-online/TOM_2B2Team2"
+    ],
+    "hashes": [
+     "bcc371f9a6c803da24ca9b207cc669f3ad303b115c7b6d27afdaafc1f48d0cb5",
+     "bd1a1687a4f99d4a0bb60ae23cb09a505d87c77042de95a27957b1c524df4ab0"
+    ]
+   },
+   {
+    "label": "OH_real",
+    "warriors": [
+     "official-2025/survivors-online/GGN_OpcodeHunter1",
+     "official-2025/survivors-online/GGN_OpcodeHunter2"
+    ],
+    "hashes": [
+     "d5992bdc307b070ad91e1737a8777125970912b286a392ed6d9a6456d87ed3af",
+     "0ced8fc1ec650a032604e2e149458b54202be7ecabb447999f143659d6ea46b6"
+    ]
+   },
+   {
+    "label": "PastRAMa",
+    "warriors": [
+     "agent2/runs/h1-H2-persistent/b01d__p01-c08__a2-3953c70f2ae8bead/survivors/L24_BZV_PastRAMa1",
+     "agent2/runs/h1-H2-persistent/b01d__p01-c08__a2-3953c70f2ae8bead/survivors/L24_BZV_PastRAMa2"
+    ],
+    "hashes": [
+     "2b65bfc68cf05ee0bd5b3eef49fc67fd16abcc87cf26ec8cade2a3fff0b177f1",
+     "146aeed0535cda8da3c787c0d94f50edfcaa9d5aceb69d09ed7aa8b7c3f83071"
+    ]
+   },
+   {
+    "label": "JMP2HELL",
+    "warriors": [
+     "agent2/runs/h1-H2-persistent/b01d__p01-c13__a2-41568183528f4292/survivors/L24_HRZ_JMP2HELL1",
+     "agent2/runs/h1-H2-persistent/b01d__p01-c13__a2-41568183528f4292/survivors/L24_HRZ_JMP2HELL2"
+    ],
+    "hashes": [
+     "ace77c08a46478565dabc401afef2e75b8698d5763990c3538fceb229213e8f3",
+     "a3c2b03117407eed9969e2372f43bb55b4c08ba240ef5737c2c438ef36dde954"
+    ]
+   }
+  ]
+ }
+}

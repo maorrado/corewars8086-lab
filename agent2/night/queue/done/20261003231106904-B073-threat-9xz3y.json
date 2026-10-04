@@ -1,0 +1,103 @@
+{
+ "job": {
+  "id": "20261003231106904-B073-threat-9xz3y",
+  "agent": "B073",
+  "kind": "threat",
+  "submittedAt": "2026-10-03T23:11:06.906Z",
+  "note": "B073 [4A17h] poisoner (MOVSW twin, B writes [4A17h] at instr 5) vs ctl (same, no steal); cand = B053 reloc cell 0B6E9h; copies 1",
+  "asmA": "agent2/night/scratch/B073/relocA.asm",
+  "asmB": "agent2/night/scratch/B073/relocB.asm",
+  "threats": [
+   {
+    "name": "B073ctl",
+    "asmA": "agent2/night/scratch/B073/ctlA.asm",
+    "asmB": "agent2/night/scratch/B073/ctlB.asm"
+   },
+   {
+    "name": "B073poison",
+    "asmA": "agent2/night/scratch/B073/counterA.asm",
+    "asmB": "agent2/night/scratch/B073/counterB.asm"
+   }
+  ],
+  "copies": 1,
+  "cohortsPerThreat": 12
+ },
+ "ok": true,
+ "finishedAt": "2026-10-03T23:17:31.841Z",
+ "seconds": 42.797,
+ "result": {
+  "candidate": {
+   "A": "agent2/night/cand-build/20261003231106904-B073-threat-9xz3y/candA",
+   "B": "agent2/night/cand-build/20261003231106904-B073-threat-9xz3y/candB",
+   "sizeA": 194,
+   "sizeB": 202,
+   "shaA": "659e1e70b0173cd16c724cd6c5ced05d35a48cc350dc3a1b364a89eb33a5da6b",
+   "shaB": "3fab1e5b898cd5a2a82b293418cc6cc9464c13dc1354718de955741e5cf483f3"
+  },
+  "baseRevision": 0,
+  "specKey": "e29c5e934b47",
+  "battlesPerArm": 480,
+  "candMean": 0.2847,
+  "baseMean": 0.2337,
+  "all": {
+   "n": 24,
+   "diff": 0.05104,
+   "lo": 0.01897,
+   "hi": 0.08312,
+   "wins": 11,
+   "losses": 4
+  },
+  "byThreat": {
+   "B073ctl": {
+    "n": 12,
+    "diff": 0.00625,
+    "lo": -0.006,
+    "hi": 0.0185,
+    "wins": 2,
+    "losses": 1
+   },
+   "B073poison": {
+    "n": 12,
+    "diff": 0.09583,
+    "lo": 0.04339,
+    "hi": 0.14828,
+    "wins": 9,
+    "losses": 3
+   }
+  },
+  "threatFirstTeamScore": {
+   "vsCand": {
+    "B073ctl": 0.4632,
+    "B073poison": 0.4937
+   },
+   "vsBase": {
+    "B073ctl": 0.4674,
+    "B073poison": 0.6333
+   }
+  },
+  "threatHashes": [
+   {
+    "label": "B073ctl",
+    "warriors": [
+     "agent2/night/cand-build/20261003231106904-B073-threat-9xz3y/threat-0/tA",
+     "agent2/night/cand-build/20261003231106904-B073-threat-9xz3y/threat-0/tB"
+    ],
+    "hashes": [
+     "f34ea6bc8318bdc448934fe3e0bcf5a94f04b38eea2df9919d624da056325c1a",
+     "755cac3f4610a05940343e10cd1c701248909faaad1a5179f82eb82a32171716"
+    ]
+   },
+   {
+    "label": "B073poison",
+    "warriors": [
+     "agent2/night/cand-build/20261003231106904-B073-threat-9xz3y/threat-1/tA",
+     "agent2/night/cand-build/20261003231106904-B073-threat-9xz3y/threat-1/tB"
+    ],
+    "hashes": [
+     "f34ea6bc8318bdc448934fe3e0bcf5a94f04b38eea2df9919d624da056325c1a",
+     "26790237bb9071901fdc10f7ceafdb0e2edf0ad62897b82a2c779806ccfaf3c6"
+    ]
+   }
+  ]
+ }
+}

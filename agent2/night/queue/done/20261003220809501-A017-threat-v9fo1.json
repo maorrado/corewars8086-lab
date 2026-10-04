@@ -1,0 +1,155 @@
+{
+ "job": {
+  "id": "20261003220809501-A017-threat-v9fo1",
+  "agent": "A017",
+  "kind": "threat",
+  "submittedAt": "2026-10-03T22:08:09.505Z",
+  "note": "A017 c18 vs 2024 anchor-signature searchers (FF1FCCCC: ATO1, JMP2HELL2, segfault live; FF18/CCCCFF18: segfault live+final)",
+  "asmA": "agent2/night/scratch/A017/c18A.asm",
+  "asmB": "agent2/night/scratch/A017/c18B.asm",
+  "threats": [
+   {
+    "name": "ATO24live",
+    "binA": "repos/corewars8086-survivors/cgx2024/03-live/TOM_ATO1",
+    "binB": "repos/corewars8086-survivors/cgx2024/03-live/TOM_ATO2"
+   },
+   {
+    "name": "JMP2HELL24live",
+    "binA": "repos/corewars8086-survivors/cgx2024/03-live/HRZ_JMP2HELL1",
+    "binB": "repos/corewars8086-survivors/cgx2024/03-live/HRZ_JMP2HELL2"
+   },
+   {
+    "name": "segfault24live",
+    "binA": "repos/corewars8086-survivors/cgx2024/03-live/HLS_segment_fault1",
+    "binB": "repos/corewars8086-survivors/cgx2024/03-live/HLS_segment_fault2"
+   },
+   {
+    "name": "segfaultF24",
+    "binA": "repos/corewars8086-survivors/cgx2024/05-final2/HLS_segment_fault1",
+    "binB": "repos/corewars8086-survivors/cgx2024/05-final2/HLS_segment_fault2"
+   }
+  ],
+  "copies": 1,
+  "cohortsPerThreat": 6
+ },
+ "ok": true,
+ "finishedAt": "2026-10-03T22:12:04.575Z",
+ "seconds": 26.259,
+ "result": {
+  "candidate": {
+   "A": "agent2/night/cand-build/20261003220809501-A017-threat-v9fo1/candA",
+   "B": "agent2/night/cand-build/20261003220809501-A017-threat-v9fo1/candB",
+   "sizeA": 194,
+   "sizeB": 202,
+   "shaA": "90f4ab2cbbd28a25e1b3b9bde030c68637b138413340fe1ed0378a8e9c4665f8",
+   "shaB": "26a3b772a7f8e2000f58fd73121c799a66fe93cc53fd946f0e85a879b7fd335e"
+  },
+  "baseRevision": 0,
+  "specKey": "2df62ec89f31",
+  "battlesPerArm": 480,
+  "candMean": 0.616,
+  "baseMean": 0.5872,
+  "all": {
+   "n": 24,
+   "diff": 0.02882,
+   "lo": -0.02054,
+   "hi": 0.07818,
+   "wins": 7,
+   "losses": 7
+  },
+  "byThreat": {
+   "ATO24live": {
+    "n": 6,
+    "diff": 0.10833,
+    "lo": -0.01147,
+    "hi": 0.22814,
+    "wins": 3,
+    "losses": 0
+   },
+   "JMP2HELL24live": {
+    "n": 6,
+    "diff": 0,
+    "lo": 0,
+    "hi": 0,
+    "wins": 0,
+    "losses": 0
+   },
+   "segfault24live": {
+    "n": 6,
+    "diff": 0.05833,
+    "lo": -0.03774,
+    "hi": 0.15441,
+    "wins": 3,
+    "losses": 2
+   },
+   "segfaultF24": {
+    "n": 6,
+    "diff": -0.05139,
+    "lo": -0.15211,
+    "hi": 0.04933,
+    "wins": 1,
+    "losses": 5
+   }
+  },
+  "threatFirstTeamScore": {
+   "vsCand": {
+    "ATO24live": 0.3167,
+    "JMP2HELL24live": 0.1528,
+    "segfault24live": 0.2556,
+    "segfaultF24": 0.1444
+   },
+   "vsBase": {
+    "ATO24live": 0.3583,
+    "JMP2HELL24live": 0.1528,
+    "segfault24live": 0.2972,
+    "segfaultF24": 0.1333
+   }
+  },
+  "threatHashes": [
+   {
+    "label": "ATO24live",
+    "warriors": [
+     "repos/corewars8086-survivors/cgx2024/03-live/TOM_ATO1",
+     "repos/corewars8086-survivors/cgx2024/03-live/TOM_ATO2"
+    ],
+    "hashes": [
+     "2142affbecf19b8c6ed7295d392b1b8120df19ed93b60a9abb82d9f1b42efb6c",
+     "051d33e47921fda63f11229d34659a7373671b8d30707f7c1e33046fae9415f3"
+    ]
+   },
+   {
+    "label": "JMP2HELL24live",
+    "warriors": [
+     "repos/corewars8086-survivors/cgx2024/03-live/HRZ_JMP2HELL1",
+     "repos/corewars8086-survivors/cgx2024/03-live/HRZ_JMP2HELL2"
+    ],
+    "hashes": [
+     "ace77c08a46478565dabc401afef2e75b8698d5763990c3538fceb229213e8f3",
+     "a3c2b03117407eed9969e2372f43bb55b4c08ba240ef5737c2c438ef36dde954"
+    ]
+   },
+   {
+    "label": "segfault24live",
+    "warriors": [
+     "repos/corewars8086-survivors/cgx2024/03-live/HLS_segment_fault1",
+     "repos/corewars8086-survivors/cgx2024/03-live/HLS_segment_fault2"
+    ],
+    "hashes": [
+     "6500cf5c4c08cbf95a9f61941e1b35dab02a5362b2c67108d2b62bfba0224a5f",
+     "192d67de007685b3829b04323900a2a48eb7d26a5fa84a1cd1cde22f8df29c10"
+    ]
+   },
+   {
+    "label": "segfaultF24",
+    "warriors": [
+     "repos/corewars8086-survivors/cgx2024/05-final2/HLS_segment_fault1",
+     "repos/corewars8086-survivors/cgx2024/05-final2/HLS_segment_fault2"
+    ],
+    "hashes": [
+     "267dbe82e9af96b3a8531afbf32ab08281cdae0bc86c4e340f2008e8ec1c3cc2",
+     "028054edfcdc11162402200d9aa7af823a02f14ff06afe5e786cfecbcb21e931"
+    ]
+   }
+  ]
+ }
+}

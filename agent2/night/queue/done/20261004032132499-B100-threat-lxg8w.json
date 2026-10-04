@@ -1,0 +1,111 @@
+{
+ "job": {
+  "id": "20261004032132499-B100-threat-lxg8w",
+  "agent": "B100",
+  "kind": "threat",
+  "submittedAt": "2026-10-04T03:21:32.501Z",
+  "note": "B100 KPT vs 2 copies of V6-family leaders; same spec as A049 daxm6 (KP control) for pairing",
+  "asmA": "agent2/night/scratch/B100/KPT_A.asm",
+  "asmB": "agent2/night/scratch/B100/KPT_B.asm",
+  "threats": [
+   {
+    "key": "lead_V6"
+   },
+   {
+    "key": "lead_V4"
+   },
+   {
+    "key": "lead_V6Guard"
+   }
+  ],
+  "copies": 2,
+  "cohortsPerThreat": 8
+ },
+ "ok": true,
+ "finishedAt": "2026-10-04T03:25:25.302Z",
+ "seconds": 33.658,
+ "result": {
+  "candidate": {
+   "A": "agent2/night/cand-build/20261004032132499-B100-threat-lxg8w/candA",
+   "B": "agent2/night/cand-build/20261004032132499-B100-threat-lxg8w/candB",
+   "sizeA": 196,
+   "sizeB": 222,
+   "shaA": "af3bf51a322b7c98007c8ef08c5423799aa0f55c849ca50d122f104dd93295e5",
+   "shaB": "b275310b903e4c1d026f2c0f8082dba9976b1b12cc5b5fb16561f7045e4a0b62"
+  },
+  "baseRevision": 0,
+  "specKey": "ac770ec1c5fc",
+  "battlesPerArm": 480,
+  "candMean": 0.3095,
+  "baseMean": 0.3014,
+  "all": {
+   "n": 24,
+   "diff": 0.00813,
+   "lo": -0.02327,
+   "hi": 0.03952,
+   "wins": 15,
+   "losses": 9
+  },
+  "byThreat": {
+   "lead_V6": {
+    "n": 8,
+    "diff": -0.02771,
+    "lo": -0.10039,
+    "hi": 0.04498,
+    "wins": 4,
+    "losses": 4
+   },
+   "lead_V4": {
+    "n": 8,
+    "diff": 0.03542,
+    "lo": -0.0114,
+    "hi": 0.08223,
+    "wins": 5,
+    "losses": 3
+   },
+   "lead_V6Guard": {
+    "n": 8,
+    "diff": 0.01667,
+    "lo": -0.01629,
+    "hi": 0.04962,
+    "wins": 6,
+    "losses": 2
+   }
+  },
+  "threatFirstTeamScore": {
+   "vsCand": {
+    "lead_V6": 0.3702,
+    "lead_V4": 0.2974,
+    "lead_V6Guard": 0.3667
+   },
+   "vsBase": {
+    "lead_V6": 0.3328,
+    "lead_V4": 0.3224,
+    "lead_V6Guard": 0.3427
+   }
+  },
+  "threatHashes": [
+   {
+    "label": "lead_V6",
+    "warriors": [
+     "agent2/night/refs/V6/A",
+     "agent2/night/refs/V6/B"
+    ]
+   },
+   {
+    "label": "lead_V4",
+    "warriors": [
+     "agent2/night/refs/V4/A",
+     "agent2/night/refs/V4/B"
+    ]
+   },
+   {
+    "label": "lead_V6Guard",
+    "warriors": [
+     "agent2/night/refs/V6Guard/A",
+     "agent2/night/refs/V6Guard/B"
+    ]
+   }
+  ]
+ }
+}

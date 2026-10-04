@@ -1,0 +1,129 @@
+{
+ "job": {
+  "id": "20261003211159431-B065-threat-f2kqk",
+  "agent": "B065",
+  "kind": "threat",
+  "submittedAt": "2026-10-03T21:11:59.433Z",
+  "note": "R2 lattice measure, paired test of direction vs OpcodeHunter2: cand = probe FAR_SEG 0FFCh (62h) vs base 52h against OH forced to 52h/62h/82h",
+  "asmA": "agent2/night/scratch/B065/probe_lat62_A.asm",
+  "asmB": "agent2/night/scratch/B065/probe_lat62_B.asm",
+  "threats": [
+   {
+    "name": "OH_lat52",
+    "binA": "agent2/night/scratch/B065/bin/OH1",
+    "binB": "agent2/night/scratch/B065/bin/OH2_lat52"
+   },
+   {
+    "name": "OH_lat62",
+    "binA": "agent2/night/scratch/B065/bin/OH1",
+    "binB": "agent2/night/scratch/B065/bin/OH2_lat62"
+   },
+   {
+    "name": "OH_lat82",
+    "binA": "agent2/night/scratch/B065/bin/OH1",
+    "binB": "agent2/night/scratch/B065/bin/OH2_lat82"
+   }
+  ],
+  "copies": 1,
+  "cohortsPerThreat": 8
+ },
+ "ok": true,
+ "finishedAt": "2026-10-03T21:13:06.224Z",
+ "seconds": 64.022,
+ "result": {
+  "candidate": {
+   "A": "agent2/night/cand-build/20261003211159431-B065-threat-f2kqk/candA",
+   "B": "agent2/night/cand-build/20261003211159431-B065-threat-f2kqk/candB",
+   "sizeA": 194,
+   "sizeB": 202,
+   "shaA": "7a5a74458b40b994cac0d6aba92713b0fd6a517e1f647509141dcbc9b9b59f6c",
+   "shaB": "5f7edd4d1b7d24e388f830fb5fe373953748d8b7bc2b3e7ef444b1da5116c8af"
+  },
+  "baseRevision": 0,
+  "specKey": "64aff6dfc7e3",
+  "battlesPerArm": 480,
+  "candMean": 0.5889,
+  "baseMean": 0.5929,
+  "all": {
+   "n": 24,
+   "diff": -0.00399,
+   "lo": -0.05734,
+   "hi": 0.04935,
+   "wins": 14,
+   "losses": 9
+  },
+  "byThreat": {
+   "OH_lat52": {
+    "n": 8,
+    "diff": -0.03854,
+    "lo": -0.17782,
+    "hi": 0.10073,
+    "wins": 4,
+    "losses": 4
+   },
+   "OH_lat62": {
+    "n": 8,
+    "diff": -0.0026,
+    "lo": -0.07402,
+    "hi": 0.06881,
+    "wins": 5,
+    "losses": 3
+   },
+   "OH_lat82": {
+    "n": 8,
+    "diff": 0.02917,
+    "lo": -0.01875,
+    "hi": 0.07709,
+    "wins": 5,
+    "losses": 2
+   }
+  },
+  "threatFirstTeamScore": {
+   "vsCand": {
+    "OH_lat52": 0.1948,
+    "OH_lat62": 0.1606,
+    "OH_lat82": 0.2438
+   },
+   "vsBase": {
+    "OH_lat52": 0.2375,
+    "OH_lat62": 0.1783,
+    "OH_lat82": 0.2531
+   }
+  },
+  "threatHashes": [
+   {
+    "label": "OH_lat52",
+    "warriors": [
+     "agent2/night/scratch/B065/bin/OH1",
+     "agent2/night/scratch/B065/bin/OH2_lat52"
+    ],
+    "hashes": [
+     "d5992bdc307b070ad91e1737a8777125970912b286a392ed6d9a6456d87ed3af",
+     "f43ba2b77d819322d7ccff3b99bd5ec682145c6e29d4f148d23233d66adc806f"
+    ]
+   },
+   {
+    "label": "OH_lat62",
+    "warriors": [
+     "agent2/night/scratch/B065/bin/OH1",
+     "agent2/night/scratch/B065/bin/OH2_lat62"
+    ],
+    "hashes": [
+     "d5992bdc307b070ad91e1737a8777125970912b286a392ed6d9a6456d87ed3af",
+     "9a05f82110bcb672a920f8ca464e2bf8158d5fa77f2deb04e5b78d60591c5819"
+    ]
+   },
+   {
+    "label": "OH_lat82",
+    "warriors": [
+     "agent2/night/scratch/B065/bin/OH1",
+     "agent2/night/scratch/B065/bin/OH2_lat82"
+    ],
+    "hashes": [
+     "d5992bdc307b070ad91e1737a8777125970912b286a392ed6d9a6456d87ed3af",
+     "f621d61ae905b8102eb1486d8a9791956e74a96f293576e0cc6a1e46ae6d077d"
+    ]
+   }
+  ]
+ }
+}

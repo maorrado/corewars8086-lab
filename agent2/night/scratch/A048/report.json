@@ -1,0 +1,38 @@
+{
+ "agentId": "A048",
+ "revisionUsed": 0,
+ "jobs": ["20261004031246693-A048-screen-kaa3g", "20261004031248327-A048-threat-vr230", "20261004031249562-A048-threat-hufbo", "20261004031635145-A048-threat-hecn5"],
+ "candidates": [
+  {"label": "Q (A cell CC13 + p0f13 B)", "asmA": "agent2/night/scratch/A048/Q_A.asm", "asmB": "agent2/night/scratch/A048/Q_B.asm",
+   "shaA": "b4f6d22fb23db692e5053c82b32cdf9be485429bef1d8cf441a9090951bac2f4", "shaB": "9936114735ca8c6dbd5926b6bc6d76dcc02d7d397d76afb91822810a045239d9", "sizeA": 194, "sizeB": 211,
+   "change": "A: rev0 with the zom20a INT87 replacement CX 04A17h -> 0CC13h (patched loop = FF 26 13 CC = jmp [0CC13h], the zrl03 CC-high-byte cell; zero bytes, zero turns). B = B084 p0f13 unchanged (0F EB F9 CC window on both b/d searches, mov [0CC13h],bx at instr 5). So all captures (zom20a and b/d) go through [0CC13h], which only we (instr 5) and zrl03/ah02/zchain4 (instr 3) write; nothing of ours uses the V6-family cell [4A17h] except the [9769h] copy.",
+   "screenJob": "20261004031246693-A048-screen-kaa3g", "screenAllDiff": 0.01823, "screenAllLo": 0.00033, "screenAllHi": 0.03612,
+   "groupNotes": "cand 0.6639 base 0.6456, W/L 18/12; 2025 +0.0042 [-0.0125,+0.0209]; strong +0.0566 [-0.0246,+0.1378]; threat +0.0279 [-0.0053,+0.0610] (zrl03 +0.156, ah02 +0.222, lead_V6 -0.044); multi -0.0181 [-0.053,+0.017] (smulti-V6x3 -0.036). Paired vs p0f13 screen tcluu (same field): Q - p0f13 = +0.0005 (se 0.002), only 6/50 cohorts differ: s2025-21 +0.067, sstrong-2 +0.028, V6Guard +0.024, zrl03 -0.011, smulti-V6x3 -0.028, lead_V6 -0.056. The screen gain is p0f13's, not the A edit's. Threat vr230 vs base (2 copies x 4 cohorts): ALL +0.0099; V6 -0.031 (0/4), V6Guard -0.013, V4 +0.102, zrl03 -0.072 (0/4), B073poison +0.044, B083poisonE +0.029. Paired vs p0f13 control hufbo (same spec/cohorts): V6 -0.025, V6Guard -0.038, V4 +0.062, zrl03 0, B073poison +0.056, B083poisonE +0.029.",
+   "isDefenseFix": false, "promising": false},
+  {"label": "QH (Q + B089 h34)", "asmA": "agent2/night/scratch/A048/Q_A.asm", "asmB": "agent2/night/scratch/A048/QH_B.asm",
+   "shaA": "b4f6d22fb23db692e5053c82b32cdf9be485429bef1d8cf441a9090951bac2f4", "shaB": "e94c80a7e2228b30c9057251855ec8e3bc6552e7cd9a1f2e38ed6fd9dd9cba69", "sizeA": 194, "sizeB": 211,
+   "change": "Q with one more B byte: zombie_entry CX=0 path mov bp,3400h -> 7000h (B089 h34; binary offset 47h, 34h -> 70h). QH_B = p0f13 + h34.",
+   "screenJob": "", 
+   "groupNotes": "Not screened (job budget). Threat hecn5 (same spec as vr230/hufbo): ALL +0.0567 [0.0054,0.1081] 14/6; zrl03 x2 +0.242 [0.102,0.383] 4/0 (vs -0.072 0/4 for both Q and p0f13 -> paired +0.314); V4 +0.107 4/0; B073poison +0.056 3/0; B083poisonE +0.025; V6 -0.043 n.s.; V6Guard -0.048 n.s.",
+   "isDefenseFix": true, "promising": false}
+ ],
+ "threatFindings": [
+  {"threat": "p0f13's [0CC13h] steal makes rev0 lose against 2 copies of combo_zrl03: two zrl03 B searches put the live tail of the upper b/d zombie on jmp [0CC13h] (stolen by us) while our own startup + captured-zom20a searches still capture a second b/d, so two b/d zombies run our CX=0 path on the same 3400h phase (the B069/B089 router self-kill).",
+   "classification": "verified-in-current",
+   "evidence": "hufbo (p0f13, rev0 A) and vr230 (Q): lead_zrl03 x2 -0.0719 [-0.155,+0.011] 0/4 in both (contrast: 1 copy +0.17 in B084 qpbgf/tcluu). hecn5 (same cohorts, only h34 added): +0.2423 [0.102,0.383] 4/0, zrl03 team score 0.185 -> 0.116. The loss and the h34 fix are measured; the 'two b/d on one phase' mechanism is inferred from B089/B093 (not traced here).",
+   "impact": "about -0.07/battle in 2-copy zrl03/ah02-type cohorts for any p0f13-based B (KP included); h34 converts it to about +0.24. Possibly related to KP's multiMix-1 (LowKey/Baltika9/ah02) -0.129 in the w9 confirm (hypothesis)."},
+  {"threat": "Fixed-cell [4A17h] poisoners (B073 counter, B083 poisonE) take rev0's captured zom20a; routing A's zom20a capture through [0CC13h] avoids them.",
+   "classification": "verified-in-current",
+   "evidence": "2 copies each: Q - p0f13 paired B073poison +0.056, B083poisonE +0.029 (vr230 vs hufbo); QH vs base B073poison +0.056 3/0. Small n (4 cohorts each).",
+   "impact": "+0.03..+0.06 in poisoner cohorts; no 2025 field team does this"},
+  {"threat": "V6-family [4A17h] race for zom20a: moving A's zom20a capture to the private-ish [0CC13h] should gain against V6/V6Guard (our A INT87 at instr 10 beats V6 A at 17, and V6 B can no longer receive our zom20a).",
+   "classification": "not-reproduced",
+   "evidence": "Q - p0f13 paired: threat V6 x2 -0.025, V6Guard x2 -0.038 (vr230 vs hufbo); screen lead_V6 -0.056, smulti-V6x3 -0.028, lead_V6Guard +0.024 (kaa3g vs tcluu). V4 x2 +0.062 is the only V6-family gain. All n.s. but the sign is mostly negative; consistent with B053/A037 (private cells about 0, D1 lost vs V6Guard).",
+   "impact": "no gain; possibly -0.02..-0.03 vs V6/V6Guard copies (hypothesis-level), so the A cell edit is not worth carrying"},
+  {"threat": "Decoy-immune 0F EB F9 CC capture + CC-high-byte cell (combo_zrl03 idea) grafted onto rev0 without decoys",
+   "classification": "verified-in-other",
+   "evidence": "Already done as B064 p0f / B084 p0f13 and in KP (B094); confirmed +0.0044 (p0f13) / +0.021 (KP) pooled. Q screen kaa3g reproduces p0f13's field-S value (+0.0182 vs +0.0178).",
+   "impact": "see B084/B094; this role adds only the 2-copy zrl03 weakness and its h34 fix"}
+ ],
+ "recommendation": "Do not promote Q: its screen value (+0.0182) is p0f13's (paired A-edit effect +0.0005) and the A cell edit leans negative vs V6/V6Guard. Main result for the coordinator: any p0f13-based B (KP) should carry B089 h34: p0f13 alone/with Q loses to 2 copies of zrl03 (-0.072, 0/4) and h34 turns that into +0.242 (4/0) on the same cohorts. Recommended next test: KP + h34 (K_A + KP_B with CX=0 mov bp,3400h -> 7000h), or rev0 A + agent2/night/scratch/A048/QH_B.asm (p0f13+h34), screened, with a 2-copy zrl03/ah02 cohort and the multiMix-1 composition in the confirm; QH itself was not screened."
+}

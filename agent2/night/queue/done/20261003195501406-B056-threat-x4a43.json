@@ -1,0 +1,77 @@
+{
+ "job": {
+  "id": "20261003195501406-B056-threat-x4a43",
+  "agent": "B056",
+  "kind": "threat",
+  "submittedAt": "2026-10-03T19:55:01.412Z",
+  "note": "B056: counter retargeted to 17 89 07 83 (present in both rev0 and the reorder fix) - shows the fix is signature-specific",
+  "asmA": "agent2/night/scratch/B056/fixA.asm",
+  "asmB": "agent2/night/scratch/B056/fixB.asm",
+  "threats": [
+   {
+    "name": "NB_sig17890783",
+    "asmA": "agent2/night/scratch/B056/nbsig2A.asm",
+    "asmB": "agent2/night/scratch/B056/nbsig2B.asm"
+   }
+  ],
+  "copies": 1,
+  "cohortsPerThreat": 8
+ },
+ "ok": true,
+ "finishedAt": "2026-10-03T19:58:57.863Z",
+ "seconds": 13.744,
+ "result": {
+  "candidate": {
+   "A": "agent2/night/cand-build/20261003195501406-B056-threat-x4a43/candA",
+   "B": "agent2/night/cand-build/20261003195501406-B056-threat-x4a43/candB",
+   "sizeA": 194,
+   "sizeB": 202,
+   "shaA": "549d8219eb7956f5b3b07d65732e0dc1ab96b033d12f54f266f4912fee7be637",
+   "shaB": "405730f42d426429961ef27487b7125ffd3b165008935d0288a776a295545bc0"
+  },
+  "baseRevision": 0,
+  "specKey": "bedebb0d9e34",
+  "battlesPerArm": 160,
+  "candMean": 0.0063,
+  "baseMean": 0.0063,
+  "all": {
+   "n": 8,
+   "diff": 0,
+   "lo": 0,
+   "hi": 0,
+   "wins": 0,
+   "losses": 0
+  },
+  "byThreat": {
+   "NB_sig17890783": {
+    "n": 8,
+    "diff": 0,
+    "lo": 0,
+    "hi": 0,
+    "wins": 0,
+    "losses": 0
+   }
+  },
+  "threatFirstTeamScore": {
+   "vsCand": {
+    "NB_sig17890783": 0.6875
+   },
+   "vsBase": {
+    "NB_sig17890783": 0.6875
+   }
+  },
+  "threatHashes": [
+   {
+    "label": "NB_sig17890783",
+    "warriors": [
+     "agent2/night/cand-build/20261003195501406-B056-threat-x4a43/threat-0/tA",
+     "agent2/night/cand-build/20261003195501406-B056-threat-x4a43/threat-0/tB"
+    ],
+    "hashes": [
+     "931955c273ffb1fbb7ff98726ac064c37d7e6d49214310a8d18a579f62d6b06f",
+     "8b2a7d95bf5c6baea3b019e3fa7945899b7c3d4471cc66e6fbebab8aa28e9417"
+    ]
+   }
+  ]
+ }
+}

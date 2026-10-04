@@ -1,0 +1,37 @@
+{
+ "agentId": "B055",
+ "revisionUsed": 0,
+ "jobs": ["20261003185750373-B055-threat-ppsmg", "20261003190333199-B055-screen-oauc2", "20261003190334755-B055-threat-3mty0", "20261003190926085-B055-threat-7rw7q"],
+ "mechanism": "Lattice point = in-page arena offset of every anchor = (IP low byte A2h) - 16*(1000h - FAR_SEG). Bytes: A 0029 'B0 A2' (mov al,A2h) + A 004A '81 CA FB 0F' (or dx,0FFBh); B 0031/0077 'B0 A2' + B 0096 '81 CA FB 0F'. FAR_SEG 0FFBh -> in-page 52h for A, B and captured zombies. Steps 4400h/2C00h are multiples of 100h so the in-page offset never changes. AL cannot be changed (pushed IP low byte A4 = MOVSB rebuild trigger), so FAR_SEG is the only knob; each -1 in FAR_SEG lowers the lattice by 10h.",
+ "counters": "rev0 clones differing only in FAR_SEG: lat_p00 (0FFBh, identical to base, control), lat_m10 (0FFAh, 42h), lat_m30 (0FF8h, 22h), lat_m50 (0FF6h, 02h), lat_p10 (0FFCh, 62h), lat_m60 (0FF5h, BROKEN: page-00 IP wraps below the arena), lat_x1005 (01005h, F2h; trail CS word 05 10 instead of FB 0F, less lethal).",
+ "verificationTable_job_ppsmg_base_vs_clone_4x20_battles_each": {
+  "lat_p00 (same lattice)": {"base": 0.4562, "threat": 0.4563},
+  "lat_m10 (10h below)": {"base": 0.3896, "threat": 0.5542},
+  "lat_m30 (30h below)": {"base": 0.3542, "threat": 0.5917},
+  "lat_m50 (50h below)": {"base": 0.4188, "threat": 0.5437},
+  "lat_p10 (10h above)": {"base": 0.5396, "threat": 0.3292}
+ },
+ "relativeCheck_job_7rw7q_6x20_each": {
+  "lat_m10 vs base (10h below base)": {"base": 0.3333, "threat": 0.5701},
+  "lat_m10 vs FF8 candidate (20h above cand)": {"cand": 0.5250, "threat": 0.3646},
+  "lat_m50 vs base (50h below)": {"base": 0.4486, "threat": 0.5264},
+  "lat_m50 vs FF8 cand (20h below)": {"cand": 0.4375, "threat": 0.5458},
+  "lat_x1005 vs base (60h below)": {"base": 0.4660, "threat": 0.4743},
+  "lat_x1005 vs FF8 cand (30h below)": {"cand": 0.4382, "threat": 0.5049}
+ },
+ "candidates": [
+  {"label": "lat_m30 (FAR_SEG 0FF8h both warriors)", "asmA": "agent2/night/scratch/B055/lat_m30_A.asm", "asmB": "agent2/night/scratch/B055/lat_m30_B.asm",
+   "shaA": "45d913530e7e9c73b595d2034068cabff0a412c2f34a6b59bca9091703a224f6", "shaB": "6b4b07dea599dad9e67d2a2be097d43d963eeedddb758dbe27757a1fded7dc60", "sizeA": 194, "sizeB": 202,
+   "change": "or dx,0FFBh -> or dx,0FF8h in A and B (lattice 52h -> 22h; also applies to captured zombies)",
+   "screen": {"job": "20261003190333199-B055-screen-oauc2", "ALL": -0.0105, "lo": -0.03386, "hi": 0.01286, "2025": -0.02644, "2025CI": [-0.05115, -0.00174], "strong": -0.05, "threat": 0.02656, "multi": 0.03056},
+   "threatJob": {"job": "20261003190334755-B055-threat-3mty0", "lead_V6": 0.0583, "lead_V6Guard": 0.0667, "lead_zchain4": -0.0667, "lead_zrl03": 0.1083},
+   "promising": false}
+ ],
+ "threatFindings": [
+  {"threat": "Replicator of the same family whose lattice is 10h-50h below ours (undercut)", "classification": "verified-in-current"},
+  {"threat": "Base (52h) undercuts a clone 10h above (62h, Chimera/m050 lattice)", "classification": "verified-in-current"},
+  {"threat": "Shifting the lattice only moves the vulnerability (no immunity)", "classification": "verified-in-other (FF8 candidate)"},
+  {"threat": "Undercut by 60h still strong", "classification": "not-reproduced (lat_x1005 vs base ~even; confounded by weaker CS word)"}
+ ],
+ "recommendation": "Do not promote lat_m30 (FF8). Mechanism verified in rev0. Lattice shifting is a field-composition bet, not a fix: it moves the hole, and the FF8 shift cost -0.026 on the 2025 group and lost to zchain4."
+}

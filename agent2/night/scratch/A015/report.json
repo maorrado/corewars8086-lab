@@ -1,0 +1,31 @@
+{
+ "agentId": "A015",
+ "revisionUsed": 0,
+ "card": "Trail length per generation (BP-DX=400h): test 300h/500h/800h variants (keep coverage), anchor dwell exposure vs rebuild overhead.",
+ "jobs": ["20261003203637269-A015-screen-q84cd", "20261003203637561-A015-screen-uq7c2", "20261003203638333-A015-screen-mxo2j", "20261003203936978-A015-threat-21my5"],
+ "model": {"file": "agent2/night/scratch/A005/phase-sim.mjs (A005, run with DXA param)", "results": "Partner kills of A by B over 25 band combos: 400h 11/25, 300h 4/25, 500h 15/25, 800h 0/25; B never killed by A. Chaotic, at most ~0.004/battle per A005; not decisive."},
+ "candidates": [
+  {"label": "A_t800", "file": "agent2/night/scratch/A015/A_t800.asm", "change": "A only: phoenix mov dx,04000h -> 03C00h (trail per generation 800h, BP 4400h step and 52h lattice kept, full coverage kept; B = base)", "sizeA": 194, "shaA": "4bf226d9f0ce1063528de62c57ee71a7f6cbc7f09abfc20c05e3f492730a6c82",
+   "screenJob": "20261003203637269-A015-screen-q84cd", "all": {"diff": 0.01563, "lo": -0.0132, "hi": 0.04447, "WL": "27/18"},
+   "groups": {"2025": 0.01533, "strong": -0.0681, "strong_ci": [-0.18481, 0.04862], "strong_WL": "2/5", "threat": 0.05212, "threat_ci": [0.01159, 0.09265], "multi": 0.02056},
+   "threatJob": "20261003203936978-A015-threat-21my5", "threat": {"all": 0.05035, "lo": 0.00322, "hi": 0.09747, "WL": "15/6", "movsw_cgx123123": 0.1625, "movsw_CodeKiller": -0.04792, "movsw_Baltika9": 0.0375, "lead_V6": 0.01042, "lead_V6Guard": 0.01458, "lead_zrl03": 0.125},
+   "notes": "Screen helped: MOVSW threats (cgx123123 +0.2, CodeKiller +0.17, Baltika9 +0.1), lead_zrl03 +0.11, lead_ah02 +0.10, zchain4 +0.07. Regressed: strong group -0.068 (not significant, 2/5), lead_V6 -0.128 in screen but +0.010 in the independent threat job. Threat job (fresh seeds/fills) replicates cgx123123 (+0.16, 4/0) and zrl03 (+0.125, 4/0). Neighbours 500h and 300h are clearly negative, so the response to trail length is non-monotonic/chaotic; 800h result could partly be screen luck.", "promising": true},
+  {"label": "A_t500", "file": "agent2/night/scratch/A015/A_t500.asm", "change": "A only: mov dx,04000h -> 03F00h (trail 500h)", "sizeA": 194, "shaA": "68a858f7c8f7c2847cae8d5b6ed18c0dae0061a4c76cb8a4218634f0119932b1",
+   "screenJob": "20261003203637561-A015-screen-uq7c2", "all": {"diff": -0.03307, "lo": -0.05922, "hi": -0.00691, "WL": "17/28"},
+   "groups": {"2025": -0.02889, "strong": -0.11286, "strong_ci": [-0.17427, -0.05144], "threat": -0.00708, "multi": -0.01389},
+   "notes": "Strong 0/6; lead_zrl03 -0.2, ah02 -0.117, lead_V6 -0.128. Rejected.", "promising": false},
+  {"label": "A_t300", "file": "agent2/night/scratch/A015/A_t300.asm", "change": "A only: mov dx,04000h -> 04100h (trail 300h; leaves 1/4 of every 400h cell uncovered - coverage cannot be kept without leaving the 52h lattice)", "sizeA": 194, "shaA": "c2c6b60fe2dcef174c0337fde42441182bb07d9002a7a7b11980c545061a87a4",
+   "screenJob": "20261003203638333-A015-screen-mxo2j", "all": {"diff": -0.03068, "lo": -0.05318, "hi": -0.00819, "WL": "14/29"},
+   "groups": {"2025": -0.02133, "strong": -0.05333, "threat": -0.04128, "threat_ci": [-0.07769, -0.00488], "multi": 0.01667},
+   "notes": "Loses on MOVSW threats (LowKey -0.15, CodeKiller -0.1), zrl03 -0.139. Rejected.", "promising": false}
+ ],
+ "threatFindings": [
+  {"threat": "Shorter A trail (300h) reduces dwell exposure enough to pay for the extra rebuilds and lost coverage", "classification": "not-reproduced", "evidence": "screen mxo2j ALL -0.031 [-0.053,-0.008], threat group -0.041 [-0.078,-0.005]."},
+  {"threat": "Trail length is a monotonic dwell-vs-rebuild trade-off", "classification": "not-reproduced", "evidence": "300h -0.031, 500h -0.033 (strong -0.113 [-0.174,-0.051]), 800h +0.016 around the 400h base: non-monotonic; 500h is clearly worse than both 400h and 800h, so geometry (where the trail end lands relative to the next lattice point, 400h-800h above anchor) matters more than dwell/rebuild ratio."},
+  {"threat": "A 800h trail (sweeping the next 52h-lattice point and the 400h above it) helps vs MOVSW-family cgx123123 and vs combo_zrl03", "classification": "verified-in-current", "evidence": "screen q84cd cgx123123 +0.2, lead_zrl03 +0.111; independent threat 21my5 cgx123123 +0.1625 [0.089,0.236] 4/0 (cgx team score 0.200 vs 0.3125), lead_zrl03 +0.125 [0.065,0.185] 4/0 (zrl03 score 0.371 vs 0.458).", "impact": "+0.05 on the threat subset; mechanism (which bytes kill them) untraced = hypothesis"},
+  {"threat": "800h A trail loses vs V6 (lead_V6 -0.128 in screen)", "classification": "not-reproduced", "evidence": "threat 21my5 lead_V6 +0.010 [-0.078,+0.099], lead_V6Guard +0.015; smulti-V6x3 in screen +0.036."},
+  {"threat": "800h A trail loses on the strong field (2024 final/counters/Chimera peers)", "classification": "hypothesis", "evidence": "screen q84cd strong -0.068 [-0.185,+0.049] W/L 2/5; not tested beyond the 7 screen cohorts (threat library has no strong-field keys).", "impact": "main risk for confirmation"},
+  {"threat": "Lengthening A's trail adds A->B partner crossfire", "classification": "not-reproduced", "evidence": "A005 phase-sim with DXA=3C00h: 0/25 kills either way (base 11/25 A killed by B); engine screens show no multi-group loss (+0.021)."}
+ ],
+ "recommendation": "Send A_t800 (A only, mov dx,03C00h, A sha 4bf226d9, B = base) to confirmation as a promising candidate: screen ALL +0.0156 [-0.013,+0.044], 2025 +0.015, threat +0.052 with an independent threat job +0.050 [0.003,0.097]. Watch the strong group (-0.068 in screen, n.s.). It is a one-immediate change and should combine with B059 zph / B054 fix2steal (both B-only). Do not pursue 300h/500h."
+}

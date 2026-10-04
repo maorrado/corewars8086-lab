@@ -1,0 +1,41 @@
+{
+ "agentId": "B100",
+ "role": "Domain 10 (combined attacks / multi-copy fields), R5-cost: audit fixes, test general cost and combination, recommend",
+ "revisionUsed": 0,
+ "jobs": [
+  "20261004032130505-B100-screen-f1635",
+  "20261004032131417-B100-threat-9xvn5",
+  "20261004032131932-B100-threat-f2ewx",
+  "20261004032132499-B100-threat-lxg8w"
+ ],
+ "audit": "Fixes proposed so far for multi-copy / combined-attack weaknesses: A_t800 (A015; MOVSW crowds, replicated in 1a8ek +0.188, yrx3b +0.181, confirm hi50u threat +0.028 lo>0), lattice undercut fa/f9/mix4 (trade holes, plain-field cost), LS lockstep (multi -0.062), zph/h34 (router self-kill only; field ~0, h34 did not replicate twice), bodycell/D1 (poisoners only), dA (signature counters only). Picked A_t800 as the best-replicated multi-crowd fix and combined it with KP (the only candidate whose confirm passed the pooled gate; it failed only multi -0.013, driven by multiMix-1 = LowKey+Baltika9+ah02 -0.129).",
+ "candidates": [
+  {
+   "label": "KPT",
+   "change": "KP (A031 K_A + B094 KP_B) plus A015 A_t800: A phoenix_init mov dx,04000h -> 03C00h (1 byte at offset 62h, 40h -> 3Ch; A trail 800h). KPT_A = B091 KT_A byte-identical; KPT_B = B094 KP_B byte-identical.",
+   "asmA": "agent2/night/scratch/B100/KPT_A.asm",
+   "asmB": "agent2/night/scratch/B100/KPT_B.asm",
+   "sizeA": 196, "sizeB": 222,
+   "shaA": "af3bf51a322b7c98007c8ef08c5423799aa0f55c849ca50d122f104dd93295e5",
+   "shaB": "b275310b903e4c1d026f2c0f8082dba9976b1b12cc5b5fb16561f7045e4a0b62",
+   "screenJob": "20261004032130505-B100-screen-f1635",
+   "screenAllDiff": 0.04006, "screenAllLo": 0.00524, "screenAllHi": 0.07487,
+   "screen": "cand 0.6857 vs base 0.6456; ALL +0.0401 [0.0052,0.0749] 30/14; 2025 +0.0291 [-0.0155,0.0737] 14/7; strong +0.0230 [-0.1205,0.1665] 3/4; threat +0.0677 [0.0086,0.1269] 11/3; multi +0.015 2/0",
+   "pairedOnFieldS": "KPT-KP (c08bm) ALL +0.0105 [-0.0152,0.0363] 24/19 (2025 +0.012, strong -0.034 2/5, threat +0.031, multi -0.017); KPT-KT (l64tb) +0.0149 (strong +0.083); KPT-K (nwqyk) +0.0237 (threat +0.0695 lo>0); additivity residual KPT-(KP+A_t800 q84cd) -0.0051 [-0.019,+0.009] (strong +0.034, threat -0.021, multi -0.038 on 2 cohorts).",
+   "threatJobs": "Mixed crowd LowKey+Baltika9+ah02 (mixAll, 12 cohorts): KPT 9xvn5 +0.2194 [0.148,0.291] 12/0; KP control f2ewx +0.0854 [0.021,0.149] 8/4; paired KPT-KP +0.1340 [0.080,0.188] 10/2. V6/V4/V6Guard x2 copies (A049 daxm6 spec): KPT lxg8w +0.0081 [-0.023,0.040]; KP daxm6 -0.0082; paired KPT-KP +0.0163 [-0.008,0.040] (V6 -0.007, V4 +0.023, V6Guard +0.033 lo>0).",
+   "regressions": "Same-seed cohorts where A_t800 always loses: sstrong-5 (KPT -0.189 vs KP +0.046), sthreat-lead_V6 single copy (-0.128 vs -0.022), sstrong-3/7 (~-0.08 vs KP). These repeat across q84cd/l64tb/f1635 on identical seeds, so they are one draw, not independent replications. A_t800's earlier confirm (hi50u) had nozombie -0.050 [-0.110,+0.010] W/L 9/15; no queue job can test nozombie.",
+   "isDefenseFix": true,
+   "promising": true
+  }
+ ],
+ "threatFindings": [
+  {"threat": "KP loses vs the mixed LowKey+Baltika9+ah02 crowd (its confirm multiMix-1 -0.129)", "classification": "not-reproduced", "evidence": "f2ewx: KP vs base on 12 fresh mixAll cohorts of exactly that composition +0.0854 [0.021,0.149] 8/4. The confirm value was one 40-battle cohort."},
+  {"threat": "A_t800 answers MOVSW-containing mixed crowds inside KP", "classification": "verified-in-current", "evidence": "9xvn5 KPT +0.2194 12/0 vs base; paired KPT-KP +0.1340 [0.080,0.188] 10/2. First team (LowKey) score 0.0625 vs KPT, 0.0979 vs KP, 0.0729 vs base."},
+  {"threat": "A_t800 (faster A sweep) costs against 2-copy V6-family crowds", "classification": "not-reproduced", "evidence": "lxg8w vs daxm6 (same cohorts): KPT-KP +0.0163 [-0.008,0.040]; lead_V6 -0.007 n.s.; V6Guard +0.033 lo>0."},
+  {"threat": "A_t800 costs vs single-copy lead_V6 and some strong cohorts (sstrong-5/3/7)", "classification": "hypothesis", "evidence": "f1635 per-cohort: lead_V6 -0.128, sstrong-5 -0.189; same sign on the same seeds in q84cd and l64tb (not independent). A_t800's confirm hi50u strong +0.002, so it did not replicate on fresh strong partitions."},
+  {"threat": "KP and A_t800 interact negatively (overlap)", "classification": "not-reproduced", "evidence": "f1635 additivity residual vs c08bm + q84cd: ALL -0.0051 [-0.019,+0.009]; on the mixed crowd the A_t800 gain is kept (+0.134 over KP)."},
+  {"threat": "A_t800 costs on a no-Zombie field", "classification": "hypothesis", "evidence": "Only COORD-w3 confirm hi50u (nozombie -0.050, n.s., 9/15); not testable with screen/threat jobs (all use z2025)."}
+ ],
+ "recommendation": "promote-candidate: send KPT (A af3bf51a / B b275310b) to confirmation in place of a KP re-confirm. KP passed the pooled gate in ubyb2 and failed only multi (-0.013); KPT keeps KP's field gains (screen +0.040, highest so far; +0.0105 over KP paired) and fixes the composition behind the multi failure (+0.134 over KP, 10/2) without losing vs 2-copy V6-family crowds. Gate risks to check in the confirm: nozombie (A_t800 -0.050 in hi50u) and the strong group (A_t800 same-seed losses on sstrong-5/lead_V6). If nozombie fails, KP alone stays the fallback.",
+ "notes": "Helper agent2/night/scratch/B100/tpair.cjs pairs two threat jobs on the same spec using per-cohort results. Screen pairings used agent2/night/scratch/B091/pair.cjs read-only."
+}

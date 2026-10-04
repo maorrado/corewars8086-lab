@@ -1,0 +1,40 @@
+{
+ "agentId": "A010",
+ "revisionUsed": 0,
+ "card": "Quantization: divisor 3Ch on the load high byte; try other band schemes (different divisor, mask) that spread A, B and zombies better.",
+ "jobs": ["20261003193426591-A010-screen-82nv3", "20261003193426832-A010-screen-yvvpq", "20261003193736606-A010-threat-3vrga", "20261003193947263-A010-threat-7wyhs"],
+ "model": {
+  "file": "agent2/night/scratch/A010/band-sim.mjs",
+  "what": "A005 phase-sim (partner crossfire only, no opponents/zombies) generalized to any band divisor; all 64x64 (hA,hB) load pages (step 4), 200k rounds. Env DIV, PA, PB.",
+  "results": "Combos with A killed by B (of 4096): 3Ch 1650, 40h 0, 20h 0, 10h 1536, 30h 1392, 50h 1040. With divisor 40h or 20h the A-B anchor offset is always 1Ch + k*20h pages, which in the model never puts B's 800h trail across A's rebuilding worker. Real engine: partner deaths are only ~1-2% of deaths (A005 trace nd583), so the possible gain is <=~0.004 and not visible in screens."
+ },
+ "candidates": [
+  {"label": "d40", "files": {"A": "agent2/night/scratch/A010/d40_A.asm", "B": "agent2/night/scratch/A010/d40_B.asm"},
+   "shaA": "55a7d24d3d1d9f46fd709031fb1e3142b8b8843ab1f0b84935e7bb13a72bdf1b", "sizeA": 194,
+   "shaB": "2dacadc8fcedf9f797afaea54ebd475c329bbffea79beaedede24afe699125d6", "sizeB": 202,
+   "change": "mov ch,03Ch -> mov ch,040h in all three quantizations (A startup, B startup, B zombie path). Same bytes count and timing. A targets 2C/6C/AC/EC pages, B 10/50/90/D0.",
+   "screenJob": "20261003193426591-A010-screen-82nv3", "all": {"diff": -0.00011, "lo": -0.03931, "hi": 0.03909},
+   "groups": {"2025": -0.00711, "strong": 0.00476, "threat": 0.01059, "multi": -0.01528},
+   "threatJob": "20261003193947263-A010-threat-7wyhs", "threat": {"all": -0.09618, "lo": -0.18424, "hi": -0.00812, "movsw_LowKey": -0.375, "movsw_LowKey_ci": [-0.53653, -0.21347], "movsw_cgx123123": -0.025, "lead_zchain4": -0.01389, "lead_V6": 0.02917},
+   "notes": "Screen neutral; placement changes decorrelate pairing so the screen CI is ~+-0.039 (5x wider than for timing edits). Clearly loses vs LowKey (0/6 cohorts won; LowKey team 0.43 vs 0.17).", "promising": false},
+  {"label": "d20", "files": {"A": "agent2/night/scratch/A010/d20_A.asm", "B": "agent2/night/scratch/A010/d20_B.asm"},
+   "shaA": "2f61ee05e7e58353327f639d6f2d584d22d10290a468e619d8a0d0aedc8798a0", "sizeA": 194,
+   "shaB": "0eddd8363ebc515b07884bd464f922a0beb909e04e44193a123aa4fa33eaff35", "sizeB": 202,
+   "change": "mov ch,03Ch -> mov ch,020h in all three quantizations (8 bands; A target always 0Dh..2Ch pages above own load page). Timing identical.",
+   "screenJob": "20261003193426832-A010-screen-yvvpq", "all": {"diff": 0.00657, "lo": -0.0267, "hi": 0.03983},
+   "groups": {"2025": -0.00622, "strong": 0.025, "threat": 0.02521, "multi": -0.04722},
+   "threatJob": "20261003193736606-A010-threat-3vrga", "threat": {"all": 0.00295, "lo": -0.05718, "hi": 0.06309, "movsw_LowKey": -0.1375, "movsw_LowKey_ci": [-0.26456, -0.01044], "movsw_cgx123123": 0.1125, "movsw_cgx123123_ci": [0.04121, 0.18379], "zomb_callfart": -0.06389, "lead_zchain4": 0.10069, "lead_zchain4_ci": [0.00989, 0.1915]},
+   "notes": "Screen ALL +0.0066 is far inside noise (CI +-0.033), 2025 group slightly negative, multi -0.047 (fails coordinator multi gate -0.02). Threat job: real opponent-specific trade-off (cgx +0.11 and zchain4 +0.10 vs LowKey -0.14, callfart -0.06), net ~0.", "promising": false}
+ ],
+ "threatFindings": [
+  {"threat": "Band divisor choice changes outcomes vs specific opponents (opponent-specific placement effects, not a uniform gain)", "classification": "verified-in-other",
+   "evidence": "threat 3vrga (d20): LowKey -0.138 [-0.265,-0.010], cgx123123 +0.113 [0.041,0.184], zchain4 +0.101 [0.010,0.192], callfart -0.064 [-0.108,-0.020]; threat 7wyhs (d40): LowKey -0.375 [-0.537,-0.213], cgx/zchain4/V6 n.s."},
+  {"threat": "movsw_LowKey benefits when we leave divisor 3Ch: rev0's 3Ch band scheme is (by luck or design) favourable vs LowKey", "classification": "verified-in-other",
+   "evidence": "Both non-3Ch schemes lose vs LowKey: screen cohorts -0.52 (d40) / -0.40 (d20); threat 7wyhs -0.375, threat 3vrga -0.138. Mechanism not traced (no budget left)."},
+  {"threat": "Partner crossfire depends on band divisor (3Ch lets B's 800h trail kill A; 40h/20h never in the model)", "classification": "hypothesis",
+   "evidence": "band-sim.mjs only (3Ch 1650/4096 combos vs 0 for 40h/20h); real-engine partner deaths ~1-2% (A005 nd583); not measurable in screens 82nv3/yvvpq."},
+  {"threat": "Screen field S cannot resolve band-scheme changes: placement edits decorrelate the paired arms", "classification": "verified-in-current",
+   "evidence": "Screen CI half-width 0.039 (82nv3) and 0.033 (yvvpq) vs ~0.01-0.016 for timing-only edits (A004 yx4ug/ujom1). Cohort-level screen effects that looked consistent across both screens (callfart +0.17/+0.24) did not replicate in an independent threat job (3vrga callfart -0.064)."}
+ ],
+ "recommendation": "Do not promote. Keep divisor 3Ch. Band divisor 40h/20h is net neutral on the screen and trades opponents (d20: +cgx123123/+zchain4 vs -LowKey; d40: strongly -LowKey). Any further band-scheme work needs much larger, placement-robust evaluation (screen CI ~+-0.035) and a trace vs LowKey to understand why 3Ch is favourable there."
+}

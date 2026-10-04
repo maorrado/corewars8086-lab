@@ -1,0 +1,129 @@
+{
+ "job": {
+  "id": "20261004015047110-B088-threat-mvmvo",
+  "agent": "B088",
+  "kind": "threat",
+  "submittedAt": "2026-10-04T01:50:47.112Z",
+  "note": "B088 mix4 vs adaptive [4A17h]-reading page bomber + real 2025 CC bombers (R1DDLE, tson)",
+  "asmA": "agent2/night/scratch/B088/mix4_A.asm",
+  "asmB": "agent2/night/scratch/B088/mix4_B.asm",
+  "threats": [
+   {
+    "name": "B088_pgadapt",
+    "asmA": "agent2/night/scratch/B088/pgadaptA.asm",
+    "asmB": "agent2/night/scratch/B088/pgadaptB.asm"
+   },
+   {
+    "name": "R1DDLE",
+    "binA": "official-2025/survivors-online/ATL_R1DDLE1",
+    "binB": "official-2025/survivors-online/ATL_R1DDLE2"
+   },
+   {
+    "name": "tson_el_akod",
+    "binA": "official-2025/survivors-online/TOM_tson_el_akod1",
+    "binB": "official-2025/survivors-online/TOM_tson_el_akod2"
+   }
+  ],
+  "copies": 1,
+  "cohortsPerThreat": 8
+ },
+ "ok": true,
+ "finishedAt": "2026-10-04T01:51:06.064Z",
+ "seconds": 17.622,
+ "result": {
+  "candidate": {
+   "A": "agent2/night/cand-build/20261004015047110-B088-threat-mvmvo/candA",
+   "B": "agent2/night/cand-build/20261004015047110-B088-threat-mvmvo/candB",
+   "sizeA": 194,
+   "sizeB": 202,
+   "shaA": "45d08fff9ae8f110917eab81b673c75f0f45904fe96f9b9c21c634eeb5ec2ef9",
+   "shaB": "61e71c47d161cbe6bf05d67cbe159adc89c9d22a6a40c85574b2b219d7c7d9b1"
+  },
+  "baseRevision": 0,
+  "specKey": "d9d181484cec",
+  "battlesPerArm": 480,
+  "candMean": 0.5038,
+  "baseMean": 0.6913,
+  "all": {
+   "n": 24,
+   "diff": -0.1875,
+   "lo": -0.30493,
+   "hi": -0.07007,
+   "wins": 4,
+   "losses": 14
+  },
+  "byThreat": {
+   "B088_pgadapt": {
+    "n": 8,
+    "diff": -0.54688,
+    "lo": -0.70115,
+    "hi": -0.3926,
+    "wins": 0,
+    "losses": 8
+   },
+   "R1DDLE": {
+    "n": 8,
+    "diff": -0.01563,
+    "lo": -0.07907,
+    "hi": 0.04782,
+    "wins": 2,
+    "losses": 4
+   },
+   "tson_el_akod": {
+    "n": 8,
+    "diff": 0,
+    "lo": -0.04141,
+    "hi": 0.04141,
+    "wins": 2,
+    "losses": 2
+   }
+  },
+  "threatFirstTeamScore": {
+   "vsCand": {
+    "B088_pgadapt": 0.1406,
+    "R1DDLE": 0.075,
+    "tson_el_akod": 0.025
+   },
+   "vsBase": {
+    "B088_pgadapt": 0.0406,
+    "R1DDLE": 0.0625,
+    "tson_el_akod": 0.0375
+   }
+  },
+  "threatHashes": [
+   {
+    "label": "B088_pgadapt",
+    "warriors": [
+     "agent2/night/cand-build/20261004015047110-B088-threat-mvmvo/threat-0/tA",
+     "agent2/night/cand-build/20261004015047110-B088-threat-mvmvo/threat-0/tB"
+    ],
+    "hashes": [
+     "24c66cf9909be6f14f5562747f0e172b14af45d4edc9da7e8fe0e2c688f69489",
+     "58f3614b044dcfd32e23b7d77a1bd0ea5433aa494b2e3cb75481e0507bc80a5c"
+    ]
+   },
+   {
+    "label": "R1DDLE",
+    "warriors": [
+     "official-2025/survivors-online/ATL_R1DDLE1",
+     "official-2025/survivors-online/ATL_R1DDLE2"
+    ],
+    "hashes": [
+     "dc1e7b81a57cc7fb13be0a4b32036342b7a7b2c65614bccc28998bec70111803",
+     "dc1e7b81a57cc7fb13be0a4b32036342b7a7b2c65614bccc28998bec70111803"
+    ]
+   },
+   {
+    "label": "tson_el_akod",
+    "warriors": [
+     "official-2025/survivors-online/TOM_tson_el_akod1",
+     "official-2025/survivors-online/TOM_tson_el_akod2"
+    ],
+    "hashes": [
+     "9198ae7381e5449f42b5f2cb80e0ec1788c4b2bd25b9ec9ed0096383c4c2085c",
+     "9198ae7381e5449f42b5f2cb80e0ec1788c4b2bd25b9ec9ed0096383c4c2085c"
+    ]
+   }
+  ]
+ }
+}

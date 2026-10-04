@@ -1,0 +1,111 @@
+{
+ "job": {
+  "id": "20261004040337030-COORD-recheck-threat-g1t3s",
+  "agent": "COORD-recheck",
+  "kind": "threat",
+  "submittedAt": "2026-10-04T04:03:37.032Z",
+  "note": "recheck KPT multi-copy",
+  "asmA": "agent2/night/scratch/B100/KPT_A.asm",
+  "asmB": "agent2/night/scratch/B094/KP_B.asm",
+  "threats": [
+   {
+    "key": "lead_V6"
+   },
+   {
+    "key": "lead_V4"
+   },
+   {
+    "key": "movsw_cgx123123"
+   }
+  ],
+  "copies": 3,
+  "cohortsPerThreat": 8
+ },
+ "ok": true,
+ "finishedAt": "2026-10-04T04:26:07.797Z",
+ "seconds": 23.879,
+ "result": {
+  "candidate": {
+   "A": "agent2/night/cand-build/20261004040337030-COORD-recheck-threat-g1t3s/candA",
+   "B": "agent2/night/cand-build/20261004040337030-COORD-recheck-threat-g1t3s/candB",
+   "sizeA": 196,
+   "sizeB": 222,
+   "shaA": "af3bf51a322b7c98007c8ef08c5423799aa0f55c849ca50d122f104dd93295e5",
+   "shaB": "b275310b903e4c1d026f2c0f8082dba9976b1b12cc5b5fb16561f7045e4a0b62"
+  },
+  "baseRevision": 0,
+  "specKey": "74a08071e493",
+  "battlesPerArm": 480,
+  "candMean": 0.4358,
+  "baseMean": 0.3664,
+  "all": {
+   "n": 24,
+   "diff": 0.06941,
+   "lo": 0.01793,
+   "hi": 0.12089,
+   "wins": 16,
+   "losses": 8
+  },
+  "byThreat": {
+   "lead_V6": {
+    "n": 8,
+    "diff": -0.00573,
+    "lo": -0.04397,
+    "hi": 0.03251,
+    "wins": 4,
+    "losses": 4
+   },
+   "lead_V4": {
+    "n": 8,
+    "diff": -0.00479,
+    "lo": -0.04797,
+    "hi": 0.03839,
+    "wins": 4,
+    "losses": 4
+   },
+   "movsw_cgx123123": {
+    "n": 8,
+    "diff": 0.21875,
+    "lo": 0.15213,
+    "hi": 0.28537,
+    "wins": 8,
+    "losses": 0
+   }
+  },
+  "threatFirstTeamScore": {
+   "vsCand": {
+    "lead_V6": 0.2484,
+    "lead_V4": 0.2763,
+    "movsw_cgx123123": 0.0292
+   },
+   "vsBase": {
+    "lead_V6": 0.2422,
+    "lead_V4": 0.266,
+    "movsw_cgx123123": 0.0687
+   }
+  },
+  "threatHashes": [
+   {
+    "label": "lead_V6",
+    "warriors": [
+     "agent2/night/refs/V6/A",
+     "agent2/night/refs/V6/B"
+    ]
+   },
+   {
+    "label": "lead_V4",
+    "warriors": [
+     "agent2/night/refs/V4/A",
+     "agent2/night/refs/V4/B"
+    ]
+   },
+   {
+    "label": "movsw_cgx123123",
+    "warriors": [
+     "official-2025/survivors-online/IND_cgx1231231",
+     "official-2025/survivors-online/IND_cgx1231232"
+    ]
+   }
+  ]
+ }
+}

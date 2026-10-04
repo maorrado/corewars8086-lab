@@ -1,0 +1,102 @@
+{
+ "job": {
+  "id": "20261003214943443-B066-threat-asd0g",
+  "agent": "B066",
+  "kind": "threat",
+  "submittedAt": "2026-10-03T21:49:43.445Z",
+  "note": "control: padB vs OpcodeHunter/2B2Team with INT87 signature neutered (DX CCCC->CCCD)",
+  "asmB": "agent2/night/scratch/B066/padB.asm",
+  "threats": [
+   {
+    "name": "OH_neut",
+    "binA": "agent2/night/scratch/B066/bin/OHn1",
+    "binB": "agent2/night/scratch/B066/bin/OHn2"
+   },
+   {
+    "name": "TB_neut",
+    "binA": "agent2/night/scratch/B066/bin/TBn1",
+    "binB": "agent2/night/scratch/B066/bin/TBn2"
+   }
+  ],
+  "copies": 1,
+  "cohortsPerThreat": 12
+ },
+ "ok": true,
+ "finishedAt": "2026-10-03T21:53:39.611Z",
+ "seconds": 63.214,
+ "result": {
+  "candidate": {
+   "A": "agent2/night/revisions/rev0/A",
+   "B": "agent2/night/cand-build/20261003214943443-B066-threat-asd0g/candB",
+   "sizeA": 194,
+   "sizeB": 203,
+   "shaA": "6861894f3c1992cd6c6baa5b2a746178082f5b4b0a1d9969b9a326fe03d86c89",
+   "shaB": "3ad7fc704d2a4b59394b46d80acca8030a9060d3ab6ee09925d71aca393fe56e"
+  },
+  "baseRevision": 0,
+  "specKey": "3ac39aafd929",
+  "battlesPerArm": 480,
+  "candMean": 0.7236,
+  "baseMean": 0.7347,
+  "all": {
+   "n": 24,
+   "diff": -0.01111,
+   "lo": -0.02353,
+   "hi": 0.00131,
+   "wins": 0,
+   "losses": 3
+  },
+  "byThreat": {
+   "OH_neut": {
+    "n": 12,
+    "diff": -0.00486,
+    "lo": -0.01439,
+    "hi": 0.00467,
+    "wins": 0,
+    "losses": 1
+   },
+   "TB_neut": {
+    "n": 12,
+    "diff": -0.01736,
+    "lo": -0.04032,
+    "hi": 0.0056,
+    "wins": 0,
+    "losses": 2
+   }
+  },
+  "threatFirstTeamScore": {
+   "vsCand": {
+    "OH_neut": 0.1826,
+    "TB_neut": 0.0708
+   },
+   "vsBase": {
+    "OH_neut": 0.1799,
+    "TB_neut": 0.0667
+   }
+  },
+  "threatHashes": [
+   {
+    "label": "OH_neut",
+    "warriors": [
+     "agent2/night/scratch/B066/bin/OHn1",
+     "agent2/night/scratch/B066/bin/OHn2"
+    ],
+    "hashes": [
+     "956802f1499a158bad1ddc9dee983cfeeefefc2323b8f132315f3f8c3143bd4f",
+     "0ced8fc1ec650a032604e2e149458b54202be7ecabb447999f143659d6ea46b6"
+    ]
+   },
+   {
+    "label": "TB_neut",
+    "warriors": [
+     "agent2/night/scratch/B066/bin/TBn1",
+     "agent2/night/scratch/B066/bin/TBn2"
+    ],
+    "hashes": [
+     "d774d6846ca4c6dbeb7ae082df2152384f4b84b851355390b9c12f64753fe27a",
+     "d8c3796abb6c08260bc3f2257f448957ff5d4cfdad5c03564096c63762f1768c"
+    ]
+   }
+  ]
+ }
+}

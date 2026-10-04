@@ -1,0 +1,142 @@
+{
+ "job": {
+  "id": "20261004005055516-B082-threat-tmbm1",
+  "agent": "B082",
+  "kind": "threat",
+  "submittedAt": "2026-10-04T00:50:55.518Z",
+  "note": "B082 locA vs zom20a mimics/planters",
+  "asmA": "agent2/night/scratch/B082/locA.asm",
+  "threats": [
+   {
+    "key": "zomb_Grindo"
+   },
+   {
+    "key": "zomb_callfart"
+   },
+   {
+    "name": "B052plant",
+    "asmA": "agent2/night/scratch/B052/plantA.asm",
+    "asmB": "agent2/night/scratch/B052/plantB.asm"
+   },
+   {
+    "name": "B074planter",
+    "asmA": "agent2/night/scratch/B074/counterA.asm",
+    "asmB": "agent2/night/scratch/B074/counterB.asm"
+   }
+  ],
+  "copies": 1,
+  "cohortsPerThreat": 6
+ },
+ "ok": true,
+ "finishedAt": "2026-10-04T00:52:28.111Z",
+ "seconds": 45.77,
+ "result": {
+  "candidate": {
+   "A": "agent2/night/cand-build/20261004005055516-B082-threat-tmbm1/candA",
+   "B": "agent2/night/revisions/rev0/B",
+   "sizeA": 205,
+   "sizeB": 202,
+   "shaA": "d8e18c34298052391bc11e1e71a84495e29aaca51a900746c136f889dd07ffbc",
+   "shaB": "8579e2c2212d72a413a6daacfe3b91ceb72be648bfc085bfeed9430eeaf6657a"
+  },
+  "baseRevision": 0,
+  "specKey": "a027e1277648",
+  "battlesPerArm": 480,
+  "candMean": 0.6457,
+  "baseMean": 0.5597,
+  "all": {
+   "n": 24,
+   "diff": 0.08594,
+   "lo": 0.03433,
+   "hi": 0.13754,
+   "wins": 18,
+   "losses": 3
+  },
+  "byThreat": {
+   "zomb_Grindo": {
+    "n": 6,
+    "diff": 0.15,
+    "lo": 0.08802,
+    "hi": 0.21198,
+    "wins": 6,
+    "losses": 0
+   },
+   "zomb_callfart": {
+    "n": 6,
+    "diff": -0.01458,
+    "lo": -0.08514,
+    "hi": 0.05598,
+    "wins": 2,
+    "losses": 1
+   },
+   "B052plant": {
+    "n": 6,
+    "diff": 0.15,
+    "lo": 0.01374,
+    "hi": 0.28626,
+    "wins": 5,
+    "losses": 1
+   },
+   "B074planter": {
+    "n": 6,
+    "diff": 0.05833,
+    "lo": -0.02506,
+    "hi": 0.14172,
+    "wins": 5,
+    "losses": 1
+   }
+  },
+  "threatFirstTeamScore": {
+   "vsCand": {
+    "zomb_Grindo": 0.2917,
+    "zomb_callfart": 0.2312,
+    "B052plant": 0.0333,
+    "B074planter": 0.3486
+   },
+   "vsBase": {
+    "zomb_Grindo": 0.45,
+    "zomb_callfart": 0.2528,
+    "B052plant": 0.0167,
+    "B074planter": 0.3792
+   }
+  },
+  "threatHashes": [
+   {
+    "label": "zomb_Grindo",
+    "warriors": [
+     "official-2025/survivors-online/HRZ_Grindo_Holics1",
+     "official-2025/survivors-online/HRZ_Grindo_Holics2"
+    ]
+   },
+   {
+    "label": "zomb_callfart",
+    "warriors": [
+     "official-2025/survivors-online/GSA_callfart1",
+     "official-2025/survivors-online/GSA_callfart2"
+    ]
+   },
+   {
+    "label": "B052plant",
+    "warriors": [
+     "agent2/night/cand-build/20261004005055516-B082-threat-tmbm1/threat-2/tA",
+     "agent2/night/cand-build/20261004005055516-B082-threat-tmbm1/threat-2/tB"
+    ],
+    "hashes": [
+     "516e6a03b19a837ce15ff5021393b2b9aab11082154f953342b292184cdc4574",
+     "516e6a03b19a837ce15ff5021393b2b9aab11082154f953342b292184cdc4574"
+    ]
+   },
+   {
+    "label": "B074planter",
+    "warriors": [
+     "agent2/night/cand-build/20261004005055516-B082-threat-tmbm1/threat-3/tA",
+     "agent2/night/cand-build/20261004005055516-B082-threat-tmbm1/threat-3/tB"
+    ],
+    "hashes": [
+     "23b54d56da93a8beee947c7961af4a0cecc1d39f7ecec58c290166abf7467fd4",
+     "8c19f4f53cdfd9d943b8ff93c2e8c9808c38da514a32d27a87bb6372964c3b06"
+    ]
+   }
+  ]
+ }
+}

@@ -1,0 +1,131 @@
+{
+ "job": {
+  "id": "20261003193736606-A010-threat-3vrga",
+  "agent": "A010",
+  "kind": "threat",
+  "submittedAt": "2026-10-03T19:37:36.611Z",
+  "note": "d20 (band divisor 20h): verify consistent screen cohort effects LowKey(-0.4) cgx(+0.23) callfart(+0.24) zchain4(+0.16)",
+  "asmA": "agent2/night/scratch/A010/d20_A.asm",
+  "asmB": "agent2/night/scratch/A010/d20_B.asm",
+  "threats": [
+   {
+    "key": "movsw_LowKey"
+   },
+   {
+    "key": "movsw_cgx123123"
+   },
+   {
+    "key": "zomb_callfart"
+   },
+   {
+    "key": "lead_zchain4"
+   }
+  ],
+  "copies": 1,
+  "cohortsPerThreat": 6
+ },
+ "ok": true,
+ "finishedAt": "2026-10-03T19:38:40.755Z",
+ "seconds": 62.683,
+ "result": {
+  "candidate": {
+   "A": "agent2/night/cand-build/20261003193736606-A010-threat-3vrga/candA",
+   "B": "agent2/night/cand-build/20261003193736606-A010-threat-3vrga/candB",
+   "sizeA": 194,
+   "sizeB": 202,
+   "shaA": "2f61ee05e7e58353327f639d6f2d584d22d10290a468e619d8a0d0aedc8798a0",
+   "shaB": "0eddd8363ebc515b07884bd464f922a0beb909e04e44193a123aa4fa33eaff35"
+  },
+  "baseRevision": 0,
+  "specKey": "0e072ff491ea",
+  "battlesPerArm": 480,
+  "candMean": 0.5684,
+  "baseMean": 0.5655,
+  "all": {
+   "n": 24,
+   "diff": 0.00295,
+   "lo": -0.05718,
+   "hi": 0.06309,
+   "wins": 12,
+   "losses": 11
+  },
+  "byThreat": {
+   "movsw_LowKey": {
+    "n": 6,
+    "diff": -0.1375,
+    "lo": -0.26456,
+    "hi": -0.01044,
+    "wins": 1,
+    "losses": 5
+   },
+   "movsw_cgx123123": {
+    "n": 6,
+    "diff": 0.1125,
+    "lo": 0.04121,
+    "hi": 0.18379,
+    "wins": 5,
+    "losses": 0
+   },
+   "zomb_callfart": {
+    "n": 6,
+    "diff": -0.06389,
+    "lo": -0.10765,
+    "hi": -0.02013,
+    "wins": 1,
+    "losses": 5
+   },
+   "lead_zchain4": {
+    "n": 6,
+    "diff": 0.10069,
+    "lo": 0.00989,
+    "hi": 0.1915,
+    "wins": 5,
+    "losses": 1
+   }
+  },
+  "threatFirstTeamScore": {
+   "vsCand": {
+    "movsw_LowKey": 0.275,
+    "movsw_cgx123123": 0.1667,
+    "zomb_callfart": 0.3597,
+    "lead_zchain4": 0.2236
+   },
+   "vsBase": {
+    "movsw_LowKey": 0.175,
+    "movsw_cgx123123": 0.2583,
+    "zomb_callfart": 0.275,
+    "lead_zchain4": 0.3222
+   }
+  },
+  "threatHashes": [
+   {
+    "label": "movsw_LowKey",
+    "warriors": [
+     "official-2025/survivors-online/HRZ_LowKey_WBB1",
+     "official-2025/survivors-online/HRZ_LowKey_WBB2"
+    ]
+   },
+   {
+    "label": "movsw_cgx123123",
+    "warriors": [
+     "official-2025/survivors-online/IND_cgx1231231",
+     "official-2025/survivors-online/IND_cgx1231232"
+    ]
+   },
+   {
+    "label": "zomb_callfart",
+    "warriors": [
+     "official-2025/survivors-online/GSA_callfart1",
+     "official-2025/survivors-online/GSA_callfart2"
+    ]
+   },
+   {
+    "label": "lead_zchain4",
+    "warriors": [
+     "agent2/night/refs/zchain4/A",
+     "agent2/night/refs/zchain4/B"
+    ]
+   }
+  ]
+ }
+}

@@ -1,0 +1,30 @@
+{
+ "agentId": "A047",
+ "revisionUsed": 0,
+ "jobs": ["20261004031311511-A047-screen-2vvu6", "20261004031319775-A047-threat-csc8c", "20261004031734418-A047-trace-u6s3z", "20261004032323397-A047-screen-t15f3"],
+ "charge_budget_analysis": "rev0 already spends all four INT87 charges in a chain: B startup INT87 converts the dead top b/d tail (+165h); A INT87 captures zom20a (E2F281C3 at +2Bh) at round 10; captured zom20a INT87 captures the live b/d tail (+14Ch); captured b/d INT87 runs the 0E070E17 counter-bomb. Grafting zchain4's order (A+B take the top two b/d tails at rounds 10/12, captured b/d captures zom20a) only permutes these charges. It frees no charge: the counter-bomb moves to the zom20a path, and zom20a is captured about 7 rounds later (round ~17 instead of 10).",
+ "candidates": [
+  {"label": "G13", "files": ["agent2/night/scratch/A047/G13_A.asm", "agent2/night/scratch/A047/G13_B.asm"],
+   "sizeA": 200, "shaA": "9db4b94bcf3f9d3ab0e0df67e0b7da336ff01438f28afb73be44da93f958c480",
+   "sizeB": 211, "shaB": "22875e513071af11ee8ac8adcd50800780941650d4ca86805b64998d6c2c74e5",
+   "change": "A: zom20a INT87 replaced by a 0F EB F9 CC backward search from DI=0 -> 0F FF 26 13 (jmp [0CC13h]); push cs/pop es -> les di; std added; no-op jmp -> cld (INT87 stays instr 10, phoenix_init turn unchanged); dead zombie tail kept. B: p0f13 B (B084) with zombie paths swapped: CX=0 (captured b/d) searches 41 93 E2 F2 -> FF 26 17 4A forward from 0 (zchain4 chain); CX!=0 (zom20a) runs the 0E070E17 counter-bomb. Phases 3400h/2000h unchanged.",
+   "screen": {"job": "20261004031311511-A047-screen-2vvu6", "cand": 0.6128, "base": 0.6456, "all": [-0.03278, -0.05974, -0.00582], "wl": "14/30", "g2025": -0.03778, "strong": -0.06365, "threat": -0.01385, "multi": -0.01389, "pairedVsP0f13_tcluu": -0.05},
+   "threat": {"job": "20261004031319775-A047-threat-csc8c", "all": [0.03854, -0.02867, 0.10576], "Grindo": 0.152, "callfart": 0.100, "AnotherBit": -0.1875, "zchain4": -0.008, "zrl03": 0.142, "V6": 0.033},
+   "trace": {"job": "20261004031734418-A047-trace-u6s3z", "deaths": 177, "baseDeaths_pkj3o": 161, "zom20aDeathsBeforeRound60": 67, "base_zom20aDeathsBeforeRound60": 15},
+   "promising": false},
+  {"label": "G13s", "files": ["agent2/night/scratch/A047/G13_A.asm", "agent2/night/scratch/A047/G13s_B.asm"],
+   "sizeA": 200, "shaA": "9db4b94bcf3f9d3ab0e0df67e0b7da336ff01438f28afb73be44da93f958c480",
+   "sizeB": 211, "shaB": "d3c89d0ff6899e8b866e802cd03ca167332ded1df2275b06898238d2846ca071",
+   "change": "G13 with the captured-b/d zom20a window changed to F2 81 C3 E1 -> FF 26 17 4A (patch at zom20a+2Ch, loop E2 F2 -> E2 FF; IP-safe; window absent from AnotherBit/callfart). 4 bytes differ from G13_B.",
+   "screen": {"job": "20261004032323397-A047-screen-t15f3", "cand": 0.6371, "base": 0.6456, "all": [-0.00856, -0.03233, 0.01521], "wl": "19/24", "g2025": -0.00844, "strong": -0.06127, "threat": 0.01497, "multi": -0.01389, "pairedVsP0f13_tcluu": {"all": -0.0263, "se": 0.0122, "strong": -0.114, "sstrong-1": -0.278, "sstrong-5": -0.325}},
+   "promising": false}
+ ],
+ "threatFindings": [
+  {"threat": "zchain4's 41 93 E2 F2 zom20a window kills zom20a in about 1/3 of captures: the patch covers zom20a+2Ah/2Bh, and when zom20a's IP is there it executes 17 4A (pop ss) and gets a CPU exception", "classification": "verified-in-current", "evidence": "trace u6s3z: 67 zom20a deaths before round 60 vs 15 in base trace pkj3o (160 battles each); a sample death record shows IP=load+2Bh with FF 26 17 4A written by the captured zom20b one round earlier. Fixing the window (G13s) moves the screen from -0.033 to -0.0086."},
+  {"threat": "AnotherBit carries 41 93 E2 F2 (but not E2 F2 81 C3 or F2 81 C3 E1), so it absorbs a forward 41 93 E2 F2 search", "classification": "verified-in-current", "evidence": "static scan (AVI_AnotherBitInTheWall1 @11Ch, 2 @108h); threat csc8c AnotherBit -0.1875 [-0.296,-0.079] 0/4 for G13; G13s screen AnotherBit cohort +0.033"},
+  {"threat": "Independent b/d capture (A+B take the top two 0F EBF9CC tails) keeps the b/d when zom20a mimics (Grindo/callfart) absorb the zom20a search; in rev0 the b/d chain breaks with zom20a", "classification": "verified-in-current", "evidence": "threat csc8c: Grindo +0.152 [0.004,0.300] 3/0, callfart +0.100 (n.s.); screens: callfart cohort +0.183 (G13) / +0.117 (G13s), Grindo +0.033 / +0.067"},
+  {"threat": "A later zom20a capture (round ~17 by the captured b/d instead of round 10 by A) loses the zom20a race to the b01d/e1p4/m050-lineage capturers in the strong group", "classification": "hypothesis", "evidence": "G13s vs p0f13 (tcluu), paired on field S: strong -0.114 (se 0.052), concentrated in sstrong-1 (b01d, e1p4) -0.278 and sstrong-5 (m050, Synthesis) -0.325. Not traced: the job budget was used up."},
+  {"threat": "The chain frees an INT87 charge in rev0", "classification": "not-reproduced", "evidence": "static charge accounting (see charge_budget_analysis): the graft only permutes rev0's four charges"}
+ ],
+ "recommendation": "Do not promote G13 or G13s. Close the card: in rev0 the zombie chain frees no charge, and moving the zom20a capture from A (round 10) to the captured b/d (round ~17) costs about -0.026 vs p0f13 on field S (strong -0.11). Reusable lessons: (1) never use 41 93 E2 F2 as the zom20a patch window (IP-unsafe, and AnotherBit carries it); E2 F2 81 C3 at +2Bh and F2 81 C3 E1 at +2Ch are IP-safe. (2) An independent b/d capture helps against Grindo/callfart, but only if zom20a is still captured early by A, which needs an extra charge that rev0 does not have."
+}

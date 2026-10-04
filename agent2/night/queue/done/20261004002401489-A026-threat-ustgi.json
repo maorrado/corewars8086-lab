@@ -1,0 +1,130 @@
+{
+ "job": {
+  "id": "20261004002401489-A026-threat-ustgi",
+  "agent": "A026",
+  "kind": "threat",
+  "submittedAt": "2026-10-04T00:24:01.490Z",
+  "note": "Z1 re-check of the 4 screen-negative non-searcher threat cohorts (expected ~0: zombie decoys only touch FF1FCCCC searchers)",
+  "asmB": "agent2/night/scratch/A026/Z1_B.asm",
+  "threats": [
+   {
+    "key": "movsw_TrojanByte"
+   },
+   {
+    "key": "movsw_BinaryBandits"
+   },
+   {
+    "key": "bomb_IND_BRA"
+   },
+   {
+    "key": "lead_zchain4"
+   }
+  ],
+  "copies": 1,
+  "cohortsPerThreat": 6
+ },
+ "ok": true,
+ "finishedAt": "2026-10-04T00:24:28.943Z",
+ "seconds": 26.776,
+ "result": {
+  "candidate": {
+   "A": "agent2/night/revisions/rev0/A",
+   "B": "agent2/night/cand-build/20261004002401489-A026-threat-ustgi/candB",
+   "sizeA": 194,
+   "sizeB": 214,
+   "shaA": "6861894f3c1992cd6c6baa5b2a746178082f5b4b0a1d9969b9a326fe03d86c89",
+   "shaB": "16be94ae0f6f0ed28a73ca40e5ebf5dd04bd452f6bd69a07cb6b467e43083293"
+  },
+  "baseRevision": 0,
+  "specKey": "f38c8dbcdb5a",
+  "battlesPerArm": 480,
+  "candMean": 0.681,
+  "baseMean": 0.6751,
+  "all": {
+   "n": 24,
+   "diff": 0.0059,
+   "lo": -0.01142,
+   "hi": 0.02323,
+   "wins": 5,
+   "losses": 3
+  },
+  "byThreat": {
+   "movsw_TrojanByte": {
+    "n": 6,
+    "diff": 0,
+    "lo": -0.01265,
+    "hi": 0.01265,
+    "wins": 1,
+    "losses": 1
+   },
+   "movsw_BinaryBandits": {
+    "n": 6,
+    "diff": -0.00833,
+    "lo": -0.02467,
+    "hi": 0.008,
+    "wins": 0,
+    "losses": 1
+   },
+   "bomb_IND_BRA": {
+    "n": 6,
+    "diff": -0.00833,
+    "lo": -0.02467,
+    "hi": 0.008,
+    "wins": 0,
+    "losses": 1
+   },
+   "lead_zchain4": {
+    "n": 6,
+    "diff": 0.04028,
+    "lo": -0.01957,
+    "hi": 0.10013,
+    "wins": 4,
+    "losses": 0
+   }
+  },
+  "threatFirstTeamScore": {
+   "vsCand": {
+    "movsw_TrojanByte": 0.075,
+    "movsw_BinaryBandits": 0.1417,
+    "bomb_IND_BRA": 0.0083,
+    "lead_zchain4": 0.3394
+   },
+   "vsBase": {
+    "movsw_TrojanByte": 0.0917,
+    "movsw_BinaryBandits": 0.1417,
+    "bomb_IND_BRA": 0,
+    "lead_zchain4": 0.3658
+   }
+  },
+  "threatHashes": [
+   {
+    "label": "movsw_TrojanByte",
+    "warriors": [
+     "official-2025/survivors-online/OHS_TrojanByte1",
+     "official-2025/survivors-online/OHS_TrojanByte2"
+    ]
+   },
+   {
+    "label": "movsw_BinaryBandits",
+    "warriors": [
+     "official-2025/survivors-online/HRZ_BinaryBandits1",
+     "official-2025/survivors-online/HRZ_BinaryBandits2"
+    ]
+   },
+   {
+    "label": "bomb_IND_BRA",
+    "warriors": [
+     "official-2025/survivors-online/IND_BRA1",
+     "official-2025/survivors-online/IND_BRA2"
+    ]
+   },
+   {
+    "label": "lead_zchain4",
+    "warriors": [
+     "agent2/night/refs/zchain4/A",
+     "agent2/night/refs/zchain4/B"
+    ]
+   }
+  ]
+ }
+}

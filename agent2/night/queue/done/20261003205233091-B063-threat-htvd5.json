@@ -1,0 +1,129 @@
+{
+ "job": {
+  "id": "20261003205233091-B063-threat-htvd5",
+  "agent": "B063",
+  "kind": "threat",
+  "submittedAt": "2026-10-03T20:52:33.095Z",
+  "note": "B063 notheft ablation vs hook-cell users 9769h (Registered_Winners) and 5D13h (m050, b01d)",
+  "asmA": "agent2/night/scratch/B063/notheftA.asm",
+  "asmB": "agent2/night/scratch/B063/notheftB.asm",
+  "threats": [
+   {
+    "name": "RegWinners",
+    "binA": "official-2025/survivors-online/HRZ_Registered_Winners1",
+    "binB": "official-2025/survivors-online/HRZ_Registered_Winners2"
+   },
+   {
+    "name": "m050",
+    "binA": "agent2/build/ref/ChimeraA",
+    "binB": "agent2/build/ref/ChimeraB"
+   },
+   {
+    "name": "b01d",
+    "binA": "agent2/build/ref/b01dA",
+    "binB": "agent2/build/ref/b01dB"
+   }
+  ],
+  "copies": 1,
+  "cohortsPerThreat": 8
+ },
+ "ok": true,
+ "finishedAt": "2026-10-03T20:58:11.478Z",
+ "seconds": 47.006,
+ "result": {
+  "candidate": {
+   "A": "agent2/night/cand-build/20261003205233091-B063-threat-htvd5/candA",
+   "B": "agent2/night/cand-build/20261003205233091-B063-threat-htvd5/candB",
+   "sizeA": 194,
+   "sizeB": 202,
+   "shaA": "09fcf3c877190c4fbd80dda6fee2f3b76b62ffe0a9a6c0da176c5c168d52e99f",
+   "shaB": "e1daea1ea3ca3c8c6a46717ccd5760f37b390fade065b7c9dbf715367b23c060"
+  },
+  "baseRevision": 0,
+  "specKey": "d7d42c343f84",
+  "battlesPerArm": 480,
+  "candMean": 0.6951,
+  "baseMean": 0.7785,
+  "all": {
+   "n": 24,
+   "diff": -0.08333,
+   "lo": -0.12466,
+   "hi": -0.04201,
+   "wins": 3,
+   "losses": 18
+  },
+  "byThreat": {
+   "RegWinners": {
+    "n": 8,
+    "diff": -0.11458,
+    "lo": -0.17021,
+    "hi": -0.05896,
+    "wins": 0,
+    "losses": 7
+   },
+   "m050": {
+    "n": 8,
+    "diff": -0.01458,
+    "lo": -0.08489,
+    "hi": 0.05572,
+    "wins": 2,
+    "losses": 5
+   },
+   "b01d": {
+    "n": 8,
+    "diff": -0.12083,
+    "lo": -0.19081,
+    "hi": -0.05085,
+    "wins": 1,
+    "losses": 6
+   }
+  },
+  "threatFirstTeamScore": {
+   "vsCand": {
+    "RegWinners": 0.2396,
+    "m050": 0.1354,
+    "b01d": 0.2245
+   },
+   "vsBase": {
+    "RegWinners": 0.1,
+    "m050": 0.1208,
+    "b01d": 0.101
+   }
+  },
+  "threatHashes": [
+   {
+    "label": "RegWinners",
+    "warriors": [
+     "official-2025/survivors-online/HRZ_Registered_Winners1",
+     "official-2025/survivors-online/HRZ_Registered_Winners2"
+    ],
+    "hashes": [
+     "1645436c2465df7ac0def9182eb12506e7aa9ca6b719635d2192eab4e38ce70d",
+     "6a489e8f28e3cbe8e370b8382679938c7635a46fcbbd5f4c263024e2e8dcabab"
+    ]
+   },
+   {
+    "label": "m050",
+    "warriors": [
+     "agent2/build/ref/ChimeraA",
+     "agent2/build/ref/ChimeraB"
+    ],
+    "hashes": [
+     "0268ce4f301bf2ada8566f4e608180a0670a335a80b9c2b93b67aee2b632bd44",
+     "06b5a1ff7bac4b146620de6d1de512dfedf3f28366d6435bf61d49869d971782"
+    ]
+   },
+   {
+    "label": "b01d",
+    "warriors": [
+     "agent2/build/ref/b01dA",
+     "agent2/build/ref/b01dB"
+    ],
+    "hashes": [
+     "775080226ca8f9e9a5aac584094c9066bd2c55365ee8cea1e18db26440d9315e",
+     "884b4d52e4ef1e57db85c88083d0a8667a6bd252a25728da7f5fdedefa6f33c7"
+    ]
+   }
+  ]
+ }
+}

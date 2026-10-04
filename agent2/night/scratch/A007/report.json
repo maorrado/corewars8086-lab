@@ -1,0 +1,32 @@
+{
+ "agentId": "A007",
+ "revisionUsed": 0,
+ "card": "A's step/stack motion (BP 4400h / DX 4000h): alternatives with full 64-position coverage (BP = odd multiple of 400h) and trail 400h (BP-DX = 400h).",
+ "jobs": ["20261003194423493-A007-screen-ryqef", "20261003194424569-A007-screen-vwr14", "20261003194426458-A007-screen-sgjgr", "20261003195625970-A007-threat-asnxm"],
+ "model": {
+  "file": "agent2/night/scratch/A007/msim.mjs",
+  "what": "Multi-stream crossfire model extending A005 phase-sim: our A (candidate step) + our B (rev0) vs 1 or 3 rev0 teams; random load bands; counts partner/enemy rebuild kills only (no zombies, no other opponents). Swept all 32 odd k (BP=k*400h, DX=BP-400h).",
+  "results": "Baseline 4400h: own-partner kills 0.16-0.20/battle, our share 0.504 (1 enemy team) / 0.250 (3 teams). Best in model: 6C00h (share 0.517/0.277, own kills 0.105), 0F400h (upward C00h; 0.519/0.275), 3400h (0.516/0.275). 2C00h (= B's step) minimizes partner crossfire (0.04) but also kills fewer enemies (neutral share). Model gains were NOT reproduced by the engine (see screens/threat)."
+ },
+ "candidates": [
+  {"label": "A_s27", "file": "agent2/night/scratch/A007/A_s27.asm", "change": "A phoenix: mov dx,6800h / mov bp,6C00h (k=27 down)", "sizeA": 194, "shaA": "2f3901193cb4b6a3cf6718e30f605b0d41e98978707ce1f88d46446385e0b6cc",
+   "screenJob": "20261003194423493-A007-screen-ryqef", "all": {"diff": -0.01907, "lo": -0.04247, "hi": 0.00433}, "groups": {"2025": -0.03311, "strong": 0.0119, "threat": -0.01177, "multi": -0.01028},
+   "notes": "lead_V6 -0.094, movsw_LowKey -0.217, lead_zrl03 -0.10", "promising": false},
+  {"label": "A_sm3", "file": "agent2/night/scratch/A007/A_sm3.asm", "change": "A phoenix: mov dx,0F000h / mov bp,0F400h (moves UP C00h per generation, trail 400h)", "sizeA": 194, "shaA": "9b16cdb2f7b66a28b7964cd3b0b06cc3a7f631657343c23b48e0c372b5668fc8",
+   "screenJob": "20261003194424569-A007-screen-vwr14", "all": {"diff": -0.01721, "lo": -0.04229, "hi": 0.00787}, "groups": {"2025": -0.02378, "strong": -0.04921, "threat": 0.01184, "multi": -0.05556},
+   "notes": "smulti-mix -0.111, lead_V6 -0.089; lead_V6Guard +0.123, lead_V4 +0.111", "promising": false},
+  {"label": "A_s13", "file": "agent2/night/scratch/A007/A_s13.asm", "change": "A phoenix: mov dx,3000h / mov bp,3400h (k=13 down)", "sizeA": 194, "shaA": "a2766e0afb577a9b9ebd17164854e7f7b8360d5d71c3f28a56a39458695ef3c5",
+   "screenJob": "20261003194426458-A007-screen-sgjgr", "all": {"diff": 0.00739, "lo": -0.01771, "hi": 0.0325}, "groups": {"2025": -0.00778, "strong": 0.02659, "threat": 0.02573, "multi": -0.01667},
+   "threatJob": "20261003195625970-A007-threat-asnxm", "threat": {"all": -0.02344, "lo": -0.05185, "hi": 0.00497, "lead_V6": 0.01667, "lead_V6Guard": -0.01042, "lead_V4": -0.03542, "lead_V4_ci": [-0.06887, -0.00196], "lead_zchain4": -0.06458},
+   "notes": "Screen ALL +0.0074 just over the bar but CI wide, 2025 group -0.008; the dedicated 2-copy V6-family threat job (480 battles/arm) is -0.023 with lead_V4 clearly negative and zchain4 -0.065. Best of 3 noisy draws (mean of the 3 step screens -0.010): treat as noise. Not promising.", "promising": false}
+ ],
+ "threatFindings": [
+  {"threat": "Partner crossfire (B's trail killing A mid-rebuild) depends on A's step; model says 6C00h/F400h/3400h cut it and help vs V6-family crowds", "classification": "not-reproduced",
+   "evidence": "msim.mjs predicts +0.012..+0.027 share vs 1-3 V6 teams; engine: screens ryqef/vwr14 lead_V6 -0.09 and smulti-mix -0.06/-0.11; threat asnxm (A_s13 vs V6/V6Guard/V4/zchain4 x2) -0.023 [-0.052,+0.005]."},
+  {"threat": "A's step is a sensitive, chaotic parameter: changing it reshuffles per-cohort outcomes by +-0.1 with no systematic gain", "classification": "verified-in-current",
+   "evidence": "Three full-coverage steps screened: -0.019, -0.017, +0.007 (CI half-widths ~0.025, about 3x the ~1-turn-edit noise seen in A004)."},
+  {"threat": "Sharing the 4400h step with V6-family opponents (lockstep relative positions) is a weakness", "classification": "not-reproduced",
+   "evidence": "Different steps did not improve vs lead_V6/V6Guard/V4/zchain4 (asnxm -0.023; ryqef lead_V6 -0.094; vwr14 lead_V6 -0.089)."}
+ ],
+ "recommendation": "Do not promote. Keep A's step 4400h/4000h. No full-coverage alternative showed a gain; the abstract crossfire model is not predictive for this parameter. Do not spend more jobs on A's step unless combined with a lattice/family change."
+}

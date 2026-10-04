@@ -1,0 +1,37 @@
+{
+ "agentId": "B054",
+ "revisionUsed": 0,
+ "jobs": ["20261003190112878-B054-threat-ojb8m", "20261003190113345-B054-threat-selrj", "20261003190148139-B054-screen-fqy6n", "20261003190743905-B054-screen-yolqz"],
+ "candidates": [
+  {"label": "fix2steal (B only)", "asmB": "agent2/night/scratch/B054/fix2stealB.asm", "sizeB": 212, "shaB": "e0afe47d2d159710c124e05ea23bf71d59a86ce044b0d5229be58be9923481b6",
+   "change": "rev0 B: (1) push cs/pop es replaced by les di,[si+decoy_skip] (dw 0FFE0h,1000h) so the startup EB F9 CC CC backward INT87 starts at DI=FFE0h (INT87 is still the 12th instruction); zombie_entry xor di,di -> mov di,0FFE0h; (2) mov [0CC13h],bx writes zombie_entry into the combo_zrl03/ah02 captured-zombie hook cell (written at our instr 5, after their instr 3).",
+   "screenJob": "20261003190743905-B054-screen-yolqz", "screenAllDiff": 0.00998, "screenAllLo": -0.00414, "screenAllHi": 0.0241,
+   "groupNotes": "2025 -0.00378 [-0.0163,+0.0087] W/L 4/8; strong +0.0201 [-0.024,+0.064]; threat +0.0267 [-0.007,+0.060] (lead_zrl03 +0.167, lead_ah02 +0.222, others within +-0.033); multi +0.0125. Threat job selrj (same B except timing: stealB, 210 B, int87 13th instr): zrl03 +0.051 n.s., decoy-only +0.146 [0.069,0.223], zrl03 nodecoy +0.080 n.s.; zrl03 team score vs us 0.435->0.370.",
+   "isDefenseFix": true, "promising": true},
+  {"label": "fixB (B only)", "asmB": "agent2/night/scratch/B054/fixB.asm", "sizeB": 206, "shaB": "ac30183866d8f0a4d78a842c05c45caea30dc44f5153b1a0e4539cc35f918592",
+   "change": "rev0 B: mov di,0FFE0h before startup INT87 (+1 instruction, INT87 becomes 13th) and zombie_entry xor di,di -> mov di,0FFE0h.",
+   "screenJob": "20261003190148139-B054-screen-fqy6n", "screenAllDiff": 0.00729, "screenAllLo": -0.00179, "screenAllHi": 0.01636,
+   "groupNotes": "2025 +0.008; strong -0.0143 [-0.041,+0.013]; threat +0.0198 [0.002,0.038]; multi -0.0264 (n=2, both cohorts negative, incl. smulti-V6x3 -0.025, possibly from the 1-instruction later search vs same-family searchers). Threat job ojb8m: decoy-only zrl03 +0.150 [0.070,0.230] W/L 7/0; real zrl03 -0.020 [-0.049,+0.010]; zrl03 nodecoy +0.0125 n.s. Superseded by fix2steal.",
+   "isDefenseFix": true, "promising": false}
+ ],
+ "threatFindings": [
+  {"threat": "EB F9 decoys planted by combo_zrl03/combo_ah02 (A: mov word [FFECh],F9EBh at A+08h; B: mov word [FFE8h],F9EBh at B+02h; arena CC fill completes EB F9 CC CC) absorb both rev0 B backward INT87 searches (startup INT87 at B+13h with AX=F9EBh DX=CCCCh from DI=0, and zombie_entry search at B+2Eh/B+3Ah region from xor di,di), so the b/d zombie capture chain is lost.",
+   "classification": "verified-in-current",
+   "evidence": "Threat job 20261003190112878-B054-threat-ojb8m, threat zrl03_nosearch_decoyonly (zrl03 with both INT87 replaced by mov ax,ax, decoys kept): fixB (searches start at FFE0h) minus base = +0.150 [0.070,0.230], W/L 7/0, n=8x20; decoy team score vs base 0.299 -> vs fix 0.187. Control zrl03_nodecoy: +0.0125 n.s.",
+   "impact": "about 0.15 points/battle when a decoy planter is present and nobody else consumes the zombie tails"},
+  {"threat": "Real combo_zrl03 decoys cost rev0 points.",
+   "classification": "not-reproduced",
+   "evidence": "Same job, lead_zrl03: fixB - base = -0.020 [-0.049,+0.010]. Reason: zrl03 A/B search 0F EB F9 CC at their 8th instruction (before our B INT87 at the 12th): A overwrites the topmost dead tail with BX:CX=0, B patches the live tail into jmp [CC13h]; without the decoys our two searches would just eat the remaining dead tails, so the decoys are redundant against rev0.",
+   "impact": "none measurable vs real zrl03"},
+  {"threat": "Zombie mimic copies: zom20b/zom20d each have 4 identical EB F9 CC CC tails at +11Ah/+133h/+14Ch/+165h (preceded by 0F); the entry is jmp 0139h so the live tail is +14Ch = 2nd from the top (BRIEF says 3rd). rev0 relies on parity: B startup search eats the dead +165h, the captured-zom20a search eats the live +14Ch. Any odd number of earlier external consumptions/plants above shifts which search hits live. Static scan also finds EB F9 CC CC in GGN_OpcodeHunter2 (+1F5h) and TOM_Thefrogs1 (+22h).",
+   "classification": "hypothesis",
+   "evidence": "static disassembly (dis86) and agent2/night/scratch/B054/scan.mjs; no dedicated battle job for the field mimics",
+   "impact": "unknown; depends on load order"},
+  {"threat": "combo_zrl03/combo_ah02 hook their captured zombie through jmp [CC13h] and write [CC13h] only once at their instruction 3; a later write steals the captured zombie.",
+   "classification": "verified-in-other",
+   "evidence": "Threat job 20261003190113345-B054-threat-selrj (stealB): zrl03 team score vs us 0.4354 -> 0.3698 (lead_zrl03) and 0.4608 -> 0.3240 (nodecoy); our diff +0.051 and +0.080 (both n.s.). Screen 20261003190743905-B054-screen-yolqz: lead_zrl03 cohort +0.167, lead_ah02 cohort +0.222 (single cohorts).",
+   "impact": "counter against the frontier leaders zrl03/ah02; no effect when they are absent"}
+ ],
+ "recommendation": "promote-candidate for confirmation: fix2steal (B only, agent2/night/scratch/B054/fix2stealB.asm). Screen ALL +0.0100 [-0.0041,+0.0241], no clearly negative group (2025 -0.0038 n.s.); the decoy-skip part clearly fixes the verified decoy weakness (+0.15 vs decoy-only planter) and the [CC13h] steal hurts zrl03/ah02. Caveats: the 2025 group was slightly negative, the gain is concentrated in zrl03/ah02 cohorts, it assumes arena segment 1000h (les), and any fixed DI start can be countered by planting below FFE0h. fixB alone is superseded (its multi group was negative, probably because its INT87 moved one instruction later).",
+ "notes": "rev0 used throughout. zrl03 variants: agent2/night/scratch/B054/zrl/{nosearch,nodecoy}{A,B} (binary patches of combo_zrl03)."
+}

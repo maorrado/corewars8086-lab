@@ -1,0 +1,15 @@
+{
+  "agentId": "A030",
+  "revisionUsed": 0,
+  "jobs": [],
+  "candidates": [],
+  "threatFindings": [
+    {
+      "threat": "INT 87h smart-bomb on MOVSW-family anchors/workers using B's spare captured-zombie INT87 charge (CX=0 fallback path)",
+      "classification": "hypothesis",
+      "evidence": "No job run. Static reading only: rev0 B's CX=0 zombie path spends its INT87 on the 0E070E17 -> CC search, which B052 found worth nothing measurable, so that charge is the spare one. No target signature was checked against the binaries and nothing was built."
+    }
+  ],
+  "recommendation": "Do not promote; no candidate. Card still open (session stopped early; 0 of 4 jobs used).",
+  "notes": "Read BRIEF, shared-best (revision 0), NOTICES and FINDINGS through wave 5, then stopped before writing any candidate."
+}

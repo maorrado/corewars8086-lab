@@ -1,0 +1,147 @@
+{
+ "job": {
+  "id": "20261003200508622-B060-threat-fu9fg",
+  "agent": "B060",
+  "kind": "threat",
+  "submittedAt": "2026-10-03T20:05:08.624Z",
+  "note": "B060 R1: 3-copy same-family counters vs base (cand=base): rev0 copy control, lattice undercut m30, MOVSW twin, cgx123123",
+  "threats": [
+   {
+    "name": "ctrl_rev0copy",
+    "binA": "agent2/night/revisions/rev0/A",
+    "binB": "agent2/night/revisions/rev0/B"
+   },
+   {
+    "name": "lat_m30",
+    "asmA": "agent2/night/scratch/B060/lat_m30_A.asm",
+    "asmB": "agent2/night/scratch/B060/lat_m30_B.asm"
+   },
+   {
+    "name": "V6MOVSW53",
+    "asmA": "agent2/night/scratch/B060/movsw53_A.asm",
+    "asmB": "agent2/night/scratch/B060/movsw53_B.asm"
+   },
+   {
+    "key": "movsw_cgx123123"
+   }
+  ],
+  "copies": 3,
+  "cohortsPerThreat": 6
+ },
+ "ok": true,
+ "finishedAt": "2026-10-03T20:08:32.838Z",
+ "seconds": 106.987,
+ "result": {
+  "candidate": {
+   "A": "agent2/night/revisions/rev0/A",
+   "B": "agent2/night/revisions/rev0/B",
+   "sizeA": 194,
+   "sizeB": 202,
+   "shaA": "6861894f3c1992cd6c6baa5b2a746178082f5b4b0a1d9969b9a326fe03d86c89",
+   "shaB": "8579e2c2212d72a413a6daacfe3b91ceb72be648bfc085bfeed9430eeaf6657a"
+  },
+  "baseRevision": 0,
+  "specKey": "7cd008e6a547",
+  "battlesPerArm": 480,
+  "candMean": 0.2773,
+  "baseMean": 0.2773,
+  "all": {
+   "n": 24,
+   "diff": 0,
+   "lo": 0,
+   "hi": 0,
+   "wins": 0,
+   "losses": 0
+  },
+  "byThreat": {
+   "ctrl_rev0copy": {
+    "n": 6,
+    "diff": 0,
+    "lo": 0,
+    "hi": 0,
+    "wins": 0,
+    "losses": 0
+   },
+   "lat_m30": {
+    "n": 6,
+    "diff": 0,
+    "lo": 0,
+    "hi": 0,
+    "wins": 0,
+    "losses": 0
+   },
+   "V6MOVSW53": {
+    "n": 6,
+    "diff": 0,
+    "lo": 0,
+    "hi": 0,
+    "wins": 0,
+    "losses": 0
+   },
+   "movsw_cgx123123": {
+    "n": 6,
+    "diff": 0,
+    "lo": 0,
+    "hi": 0,
+    "wins": 0,
+    "losses": 0
+   }
+  },
+  "threatFirstTeamScore": {
+   "vsCand": {
+    "ctrl_rev0copy": 0.2799,
+    "lat_m30": 0.2458,
+    "V6MOVSW53": 0.2931,
+    "movsw_cgx123123": 0.0822
+   },
+   "vsBase": {
+    "ctrl_rev0copy": 0.2799,
+    "lat_m30": 0.2458,
+    "V6MOVSW53": 0.2931,
+    "movsw_cgx123123": 0.0822
+   }
+  },
+  "threatHashes": [
+   {
+    "label": "ctrl_rev0copy",
+    "warriors": [
+     "agent2/night/revisions/rev0/A",
+     "agent2/night/revisions/rev0/B"
+    ],
+    "hashes": [
+     "6861894f3c1992cd6c6baa5b2a746178082f5b4b0a1d9969b9a326fe03d86c89",
+     "8579e2c2212d72a413a6daacfe3b91ceb72be648bfc085bfeed9430eeaf6657a"
+    ]
+   },
+   {
+    "label": "lat_m30",
+    "warriors": [
+     "agent2/night/cand-build/20261003200508622-B060-threat-fu9fg/threat-1/tA",
+     "agent2/night/cand-build/20261003200508622-B060-threat-fu9fg/threat-1/tB"
+    ],
+    "hashes": [
+     "45d913530e7e9c73b595d2034068cabff0a412c2f34a6b59bca9091703a224f6",
+     "6b4b07dea599dad9e67d2a2be097d43d963eeedddb758dbe27757a1fded7dc60"
+    ]
+   },
+   {
+    "label": "V6MOVSW53",
+    "warriors": [
+     "agent2/night/cand-build/20261003200508622-B060-threat-fu9fg/threat-2/tA",
+     "agent2/night/cand-build/20261003200508622-B060-threat-fu9fg/threat-2/tB"
+    ],
+    "hashes": [
+     "138a4d7dae7fef40b108f5df07fd8dd57bae822c8264be4ef8c770992a83777a",
+     "27365f56ae01b9ed927167002cec80879c18aa84c3f15defbb03f3dcf479449e"
+    ]
+   },
+   {
+    "label": "movsw_cgx123123",
+    "warriors": [
+     "official-2025/survivors-online/IND_cgx1231231",
+     "official-2025/survivors-online/IND_cgx1231232"
+    ]
+   }
+  ]
+ }
+}

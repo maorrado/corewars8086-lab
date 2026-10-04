@@ -1,0 +1,80 @@
+{
+ "job": {
+  "id": "20261003221730895-B070-threat-g3tr7",
+  "agent": "B070",
+  "kind": "threat",
+  "submittedAt": "2026-10-03T22:17:30.897Z",
+  "note": "B070 same-lineage 32h undercut pair zrl03+ah02 + 1 random 2025 fill; cand = B054 fix2steal",
+  "asmB": "agent2/night/scratch/B070/fix2stealB.asm",
+  "threats": [
+   {
+    "key": "lead_zrl03"
+   },
+   {
+    "key": "lead_ah02"
+   }
+  ],
+  "cohortsPerThreat": 12,
+  "mixAll": true
+ },
+ "ok": true,
+ "finishedAt": "2026-10-03T22:19:28.648Z",
+ "seconds": 44.326,
+ "result": {
+  "candidate": {
+   "A": "agent2/night/revisions/rev0/A",
+   "B": "agent2/night/cand-build/20261003221730895-B070-threat-g3tr7/candB",
+   "sizeA": 194,
+   "sizeB": 212,
+   "shaA": "6861894f3c1992cd6c6baa5b2a746178082f5b4b0a1d9969b9a326fe03d86c89",
+   "shaB": "e0afe47d2d159710c124e05ea23bf71d59a86ce044b0d5229be58be9923481b6"
+  },
+  "baseRevision": 0,
+  "specKey": "ae9ac91bc032",
+  "battlesPerArm": 240,
+  "candMean": 0.3957,
+  "baseMean": 0.4198,
+  "all": {
+   "n": 12,
+   "diff": -0.0241,
+   "lo": -0.11494,
+   "hi": 0.06674,
+   "wins": 4,
+   "losses": 8
+  },
+  "byThreat": {
+   "mix": {
+    "n": 12,
+    "diff": -0.0241,
+    "lo": -0.11494,
+    "hi": 0.06674,
+    "wins": 4,
+    "losses": 8
+   }
+  },
+  "threatFirstTeamScore": {
+   "vsCand": {
+    "mix": 0.2283
+   },
+   "vsBase": {
+    "mix": 0.2851
+   }
+  },
+  "threatHashes": [
+   {
+    "label": "lead_zrl03",
+    "warriors": [
+     "agent2/frontier-20261003/arms/combo_zrl03/A",
+     "agent2/frontier-20261003/arms/combo_zrl03/B"
+    ]
+   },
+   {
+    "label": "lead_ah02",
+    "warriors": [
+     "agent2/frontier-20261003/arms/combo_ah02/A",
+     "agent2/frontier-20261003/arms/combo_ah02/B"
+    ]
+   }
+  ]
+ }
+}

@@ -1,0 +1,40 @@
+{
+ "agentId": "B074",
+ "revisionUsed": 0,
+ "jobs": ["20261003231613596-B074-threat-uj7ek", "20261003231614409-B074-threat-tpv8m", "20261003232620323-B074-threat-63r0q", "20261003232621341-B074-threat-b4dgp"],
+ "counterCodes": [
+  {"asmA": "agent2/night/scratch/B074/counterA.asm", "asmB": "agent2/night/scratch/B074/counterB.asm", "sizes": "A 248 B sha 23b54d56..., B 137 B sha 8c19f4f5...",
+   "strength": "zchain4 body (agent2 lineage of combo_zrl03/b01d) + INT 86h decoy blocks: A writes 64x E2 F2 81 C3 at 0000h-00FFh (instr 7), B writes 64x EB F9 CC CC at FF00h-FFFFh (instr 7). Own searches use 0F EB F9 CC / 41 93 E2 F2 and are immune. vs rev0: counter team score 0.426 (1 copy) / 0.286 (2 copies, first copy) vs identical-timing control 0.401 / 0.224. The tailored skip probe recovers +0.173 vs counter vs +0.053 vs control. Defeats B054 fix2steal (-0.005). Control (patterns broken, same bytes count/timing): agent2/night/scratch/B074/ctlA.asm, ctlB.asm (sha 505533bc..., af7367e7...)."}
+ ],
+ "candidates": [
+  {"label": "skip probe (tailored, measurement only)", "asmA": "agent2/night/scratch/B074/skipA.asm", "asmB": "agent2/night/scratch/B074/skipB.asm",
+   "shaA": "a270060ae7a4ba3a6486009fc58ed2909621cec7bf849dc2d14cb0a0bb766487", "shaB": "c167b90caac6fb96f288325108e21ed0bfb56f570e5f9af8e1fc839037170648", "sizeA": 200, "sizeB": 212,
+   "change": "A: push cs/pop es -> les di,[si+skip_ptr] (dw 0100h,1000h), so the zom20a INT 87h starts past the 0000h-00FFh block (INT87 becomes 9th instr). B: B054 fix2steal with DI start 0FEF0h instead of 0FFE0h (startup and zombie_entry), incl. the [0CC13h] steal.",
+   "screenJob": "", "groupNotes": "No screen (tailored to this counter; trivially countered by moving the blocks). Threat 63r0q: ALL +0.113 [0.069,0.158] 20/4; vs decoy counter +0.173 [0.116,0.230] 11/1 (counter team 0.426 -> 0.254); vs control +0.053 [0.003,0.103] 9/3 (control team 0.401 -> 0.329; gain from the [CC13h] steal, zchain4 shares zrl03's hook cell). Per warrior vs counter: A 0.201 -> 0.214, B 0.330 -> 0.490.",
+   "isDefenseFix": true, "promising": false},
+  {"label": "B054 fix2steal (re-test vs this counter)", "asmB": "agent2/night/scratch/B074/fix2stealB.asm", "shaB": "e0afe47d2d159710c124e05ea23bf71d59a86ce044b0d5229be58be9923481b6", "sizeB": 212,
+   "change": "Unchanged copy of B054 fix2steal (B only).",
+   "screenJob": "", "groupNotes": "Threat b4dgp: ALL +0.004 [-0.026,+0.033]; vs decoy counter -0.005 [-0.015,+0.005] 1/3 (defeated: the block extends below FFE0h); vs control +0.0125 [-0.047,+0.072].",
+   "isDefenseFix": true, "promising": false}
+ ],
+ "threatFindings": [
+  {"threat": "A counter that plants INT 86h blocks of both rev0 INT 87h patterns (E2 F2 81 C3 low, EB F9 CC CC high) early wastes A's single zom20a search and B's b/d searches, even when the counter itself also competes for the zombies (unlike zrl03, whose decoys are redundant vs rev0).",
+   "classification": "verified-in-current",
+   "evidence": "63r0q (paired, tailored skip probe minus base): +0.173 [0.116,0.230] 11/1 vs the decoy counter, +0.053 [0.003,0.103] vs the identical-timing control with broken patterns; difference about +0.12 (about 3 SE, different cohort sets). Counter team score drops 0.426 -> 0.254 when the probe skips the blocks.",
+   "impact": "about 0.12 points/battle in cohorts with such a planter; no 2025 field team plants these patterns dynamically, so field cost is ~0 today"},
+  {"threat": "Unpaired base score drop vs the decoy counter compared with its control (1 and 2 copies).",
+   "classification": "hypothesis",
+   "evidence": "uj7ek (1 copy): base 0.531 (se 0.017) vs decoy, 0.547 (se 0.027) vs control; counter team 0.426 vs 0.401. tpv8m (2 copies): base 0.416 (se 0.030) vs 0.449 (se 0.017); counter first copy 0.286 vs 0.224. Direction consistent, not significant (different fill cohorts).",
+   "impact": "-0.016 (1 copy) to -0.034 (2 copies) raw"},
+  {"threat": "Fixed-start skips (B054 fix2steal DI=FFE0h) are defeated by a decoy block placed below the skip start.",
+   "classification": "verified-in-current",
+   "evidence": "b4dgp: fix2steal minus base vs the decoy counter -0.005 [-0.015,+0.005] 1/3, while the same idea with the start moved below the block (63r0q) gives +0.173.",
+   "impact": "fix2steal gives no protection against a deliberate planter; any fixed start or fixed 4-byte pattern is counterable"},
+  {"threat": "B064 p0f (0F EB F9 CC search) is immune to EB F9 CC CC blocks (dword repetition never puts 0F before EB), but A's zom20a search stays exposed and a planter can write 0F EB F9 CC words individually.",
+   "classification": "hypothesis",
+   "evidence": "static only (byte pattern of the INT 86h block); not run",
+   "impact": "unknown"}
+ ],
+ "recommendation": "Do not promote anything from B074. Use counterA/counterB (with control ctlA/ctlB) as a domain-4 test case: the threat is real (~0.12/battle recoverable in its cohorts) but not present in the 2025 field. Known fixes (fix2steal, likely all fixed-start/fixed-pattern skips) do not generalize; the tailored skip probe works only because it knows the block address. A general defense would need location-checked capture (read-scan before patching), which earlier roles estimated at <= +0.01 field value, so keep priority low.",
+ "notes": "rev0 throughout. Generator agent2/night/scratch/B074/mk.cjs (zchain4 sources reassemble to the refs hashes). per.cjs summarizes per-threat base scores from agent2/night/results/nightT-<key>-*.json (spec keys bfcd5be7e6a6 = 1 copy, 93ef0c326556 = 2 copies)."
+}

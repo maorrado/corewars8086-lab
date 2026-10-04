@@ -1,0 +1,47 @@
+{
+ "agentId": "B095",
+ "role": "wave 9, domain 5 (lattice height/offset undercut by 10h-60h), R5-cost, defense",
+ "revisionUsed": 0,
+ "jobs": ["20261004023425579-B095-threat-n1i8c", "20261004023425662-B095-screen-f30mc", "20261004023425751-B095-threat-udjgk", "20261004023603042-B095-threat-dabce"],
+ "audit": "Domain-5 fixes so far: fixed lattice shifts lat_m30 22h (B055 oauc2 -0.0105), f9 32h (A011 pcyuz -0.0139), fa 42h (A011 l10ch -0.0188), F7 12h (A021 a0xw2 -0.0261): all lose on 2025/strong and trade V6-family gains for zrl03/ah02 losses. Split lattice SB/SA (B085 txodc -0.024, alu16 -0.035; strong -0.18/-0.10) answers the clones (d9exx +0.063, dua2j +0.041) at a large field cost. Per-battle mixed lattice mix4 (B088 irh7d -0.0021 [-0.023,+0.019], zero bytes, zero turns) has the smallest measured general cost but had never been tested against the domain-5 threat itself (undercut clones). Chosen: mix4. Combination partner: B084 p0f13 (B only, threat +0.035 lo>0 in confirm 6aetq, zrl03 +0.142 / zchain4 +0.110), because mix4's known losses are exactly zrl03 (-0.036) and zchain4 (-0.076) (wfvlw), and p0f13 keeps phoenix_init's mov dx,[4A17h] that mix4 uses as its coin (K/SD delete it, so K is incompatible).",
+ "candidates": [
+  {
+   "label": "mix4 (B088 binaries, re-tested on the domain-5 threat)",
+   "change": "A and B phoenix_init: and dx,0 -> and dx,3; or dx,0FFBh -> or dx,0FF8h (lattice 22h/32h/42h/52h per battle from [4A17h]&3). Copies of scratch/B088/mix4_A.asm / mix4_B.asm.",
+   "asmA": "agent2/night/scratch/B095/mix4_A.asm", "asmB": "agent2/night/scratch/B095/mix4_B.asm",
+   "sizeA": 194, "sizeB": 202,
+   "shaA": "45d08fff9ae8f110917eab81b673c75f0f45904fe96f9b9c21c634eeb5ec2ef9",
+   "shaB": "61e71c47d161cbe6bf05d67cbe159adc89c9d22a6a40c85574b2b219d7c7d9b1",
+   "screenJob": "20261004014256116-B088-screen-irh7d (B088's, not re-run)",
+   "screenAllDiff": -0.00205, "screenAllLo": -0.02311, "screenAllHi": 0.01901,
+   "groupNotes": "Field S (B088 irh7d): 2025 -0.006, strong -0.045 2/5, threat +0.010, multi +0.103. Threat n1i8c (B085 d9exx spec: 2 copies x 6 cohorts, paired with SA/SB): ALL +0.0698 [0.0103,0.1294] 15/9; clone42 (A011 fa, 10h below) +0.188 [0.042,0.334] 5/1; clone22 (B055 lat_m30, 30h below) +0.015 [-0.022,+0.052] 4/2; lead_zrl03 x2 -0.054 [-0.095,-0.013] 1/5; lead_V6 x2 +0.131 [0.015,0.246] 5/1. Same cohorts: SB +0.063 (clone22 +0.091, clone42 +0.135), SA +0.041.",
+   "isDefenseFix": true,
+   "promising": false
+  },
+  {
+   "label": "MP (mix4 + B084 p0f13)",
+   "change": "A = mix4_A (B088). B = B084 p0f13B.asm (0F EB F9 CC b/d window, [0CC13h] hook-cell steal, les di,[si+es_ptr]) with the same mix4 edit in phoenix_init (and dx,3 / or dx,0FF8h). Zero extra bytes/turns over p0f13.",
+   "asmA": "agent2/night/scratch/B095/mix4_A.asm", "asmB": "agent2/night/scratch/B095/MP_B.asm",
+   "sizeA": 194, "sizeB": 211,
+   "shaA": "45d08fff9ae8f110917eab81b673c75f0f45904fe96f9b9c21c634eeb5ec2ef9",
+   "shaB": "34f1b566db1518abb8b4b8fc9a161da13041c1302b91d5f9eb08f07337ea382a",
+   "screenJob": "20261004023425662-B095-screen-f30mc",
+   "screenAllDiff": 0.00212, "screenAllLo": -0.0191, "screenAllHi": 0.02334,
+   "groupNotes": "cand 0.6477 vs base 0.6456, W/L 23/21. 2025 -0.0213 [-0.0433,+0.0006] 8/13; strong -0.0306 [-0.0809,+0.0198] 2/5; threat +0.0450 [0.0016,0.0884] 11/3 (zrl03 +0.200, ah02 +0.256, V6Guard +0.125, V4 +0.072, zchain4 +0.072, BinaryBandits -0.100); multi +0.067 2/0. Paired on field S (pair.cjs): MP - p0f13 (tcluu) ALL -0.0156 [-0.0358,+0.0045], 2025 -0.0229 [-0.0369,-0.0088], strong -0.083; MP - mix4 (irh7d) ALL +0.0042, threat +0.035; additivity residual MP-(mix4+p0f13) ALL -0.0136 [-0.0337,+0.0065]. Threat udjgk (wfvlw spec, 1 copy x 6): ALL +0.1052 [0.0591,0.1513] 19/4; V6 +0.069, V6Guard +0.089 [0.032,0.146], zchain4 +0.086 [0.008,0.164], zrl03 +0.176 [0.088,0.265] 5/0; paired vs mix4 (wfvlw) +0.0955 [0.039,0.152], zchain4 +0.163, zrl03 +0.213. Threat dabce (d9exx spec): ALL +0.0998 [0.0427,0.1569] 21/3; clone22 +0.081 [0.047,0.114] 6/0; clone42 +0.216 [0.103,0.329] 6/0; zrl03 x2 -0.024 [-0.168,+0.121] 3/3; V6 x2 +0.126 [0.078,0.175] 6/0; paired vs mix4 (n1i8c) ALL +0.030 n.s., clone22 +0.066 [0.041,0.091] 6/0.",
+   "isDefenseFix": true,
+   "promising": false
+  }
+ ],
+ "threatFindings": [
+  {"threat": "Same-family clone 10h below (42h, A011 fa, 2 copies) takes points from rev0; the mixed lattice answers it", "classification": "verified-in-current", "evidence": "n1i8c clone42 +0.188 [0.042,0.334] 5/1 (clone team 0.336 -> 0.267); dabce (MP) +0.216 6/0. Larger than SB/SA on the same cohorts (+0.135/+0.101).", "impact": "~+0.19/battle in cohorts with 2 copies of a 10h-undercut clone; no such team exists in the archived fields"},
+  {"threat": "Clone 30h below (22h, B055 lat_m30) answered by the mixed lattice", "classification": "not-reproduced", "evidence": "n1i8c clone22 +0.015 [-0.022,+0.052] 4/2: as expected geometrically, a 22h clone still undercuts 3 of 4 lattices. MP gets +0.081 6/0 (dabce; paired vs mix4 +0.066 6/0), so the gain there comes from p0f13 (mechanism untraced; likely b/d capture competition with the clones' rev0 searches).", "impact": "mixed lattice only covers undercuts of 10h-20h; deeper undercuts stay open"},
+  {"threat": "2+ copies of the V6 leader take points from rev0; mixed lattice helps", "classification": "verified-in-current", "evidence": "n1i8c lead_V6 x2 +0.131 [0.015,0.246]; dabce +0.126 6/0; field S smulti-V6x3 +0.217 (mix4) / +0.128 (MP).", "impact": "multi-copy V6-family crowds"},
+  {"threat": "zrl03 (32h lattice) undercuts the mixed lattice more often than rev0's 52h", "classification": "verified-in-current", "evidence": "n1i8c lead_zrl03 x2 -0.054 [-0.095,-0.013] 1/5 (also B088 wfvlw 1 copy -0.036). p0f13 repairs the 1-copy case (udjgk zrl03 +0.176 5/0, paired vs mix4 +0.213) but the 2-copy case only to -0.024 n.s. (dabce).", "impact": "real 2025-era leader; ~-0.04/battle for mix4 alone"},
+  {"threat": "mix4's zchain4 loss is repaired by p0f13", "classification": "verified-in-current", "evidence": "udjgk zchain4 +0.086 [0.008,0.164] vs mix4 alone -0.076 (wfvlw); paired +0.163 [0.066,0.259] 5/1.", "impact": "combination is non-negative against all four leaders (+0.105 ALL)"},
+  {"threat": "The mixed lattice costs on the plain 2025 field (like every fixed shift below 52h)", "classification": "hypothesis", "evidence": "MP - p0f13 on the 25 field-S 2025 cohorts -0.0229 [-0.0369,-0.0088]; mix4 alone -0.006 n.s.; fixed shifts 22h/32h/42h -0.026/-0.022/-0.015. Same fixed cohorts each time and placement edits are chaotic (+-0.02), so not decided without a fresh field.", "impact": "if real (~-0.01 to -0.02 on 2025) it cancels the threat gains at field level"},
+  {"threat": "mix4 and p0f13 gains add", "classification": "not-reproduced", "evidence": "Field S residual MP-(mix4+p0f13) -0.0136 [-0.034,+0.007] (2025 -0.017); on the threat group they add (residual +0.005). Threat jobs: p0f13 adds +0.10 on leaders over mix4.", "impact": "complementary on threats, sub-additive on the plain field"},
+  {"threat": "Adaptive bomber reading the public [4A17h] coin defeats the mixed lattice", "classification": "verified-in-other", "evidence": "B088 mvmvo pgadapt -0.547 vs mix4; not re-run (MP uses the same coin).", "impact": "worst case vs an informed attacker unchanged"}
+ ],
+ "recommendation": "Do not promote MP or mix4. The best domain-5 fix (mix4, mixed lattice) clearly helps its threat when the undercut is 10h (clone42 +0.19) and against 2-copy V6 crowds (+0.13), and with p0f13 it becomes non-negative against all four leaders (udjgk +0.105) and both clones (dabce +0.100). But the combination screens only +0.0021 on field S (below the +0.006 bar), with 2025 -0.021 and strong -0.031, and it is 0.016 below p0f13 alone (2025 -0.023, lo<0). The domain-5 threat is a probe (no archived team undercuts 52h by 10h-20h, B065), so its value does not pay for a likely plain-field cost. Keep p0f13 without the lattice coin for combinations; keep MP (scratch/B095/mix4_A.asm + MP_B.asm) documented as the domain-5 defense to use only if a 52h-undercutting crowd appears. A confirm with a 2025 effect target would be needed before any lattice edit is promoted.",
+ "notes": "Helpers: scratch/B095/pair.cjs (field-S per-cohort pairing of f30mc/irh7d/tcluu), scratch/B095/tpair.cjs (pair two candidates on one threat spec from agent2/night/results). Mixed coin uses phoenix_init's mov dx,[4A17h], so it conflicts with A022 SD / A031 K."
+}

@@ -1,0 +1,868 @@
+{
+ "job": {
+  "id": "20261004002950293-COORD-w6-confirm-013sr",
+  "agent": "COORD-w6",
+  "kind": "confirm",
+  "submittedAt": "2026-10-04T00:29:50.294Z",
+  "note": "wave6 confirm A026-Z1 (B only)",
+  "asmB": "agent2/night/scratch/A026/Z1_B.asm",
+  "salt": "agent2-night-confirm-w6-1"
+ },
+ "ok": true,
+ "finishedAt": "2026-10-04T00:40:03.946Z",
+ "seconds": 611.209,
+ "result": {
+  "candidate": {
+   "A": "agent2/night/revisions/rev0/A",
+   "B": "agent2/night/cand-build/20261004002950293-COORD-w6-confirm-013sr/candB",
+   "sizeA": 194,
+   "sizeB": 214,
+   "shaA": "6861894f3c1992cd6c6baa5b2a746178082f5b4b0a1d9969b9a326fe03d86c89",
+   "shaB": "16be94ae0f6f0ed28a73ca40e5ebf5dd04bd452f6bd69a07cb6b467e43083293"
+  },
+  "baseRevision": 0,
+  "salt": "agent2-night-confirm-w6-1",
+  "battlesPerArm": 7680,
+  "arms": [
+   {
+    "id": "cand",
+    "hashes": [
+     "6861894f3c1992cd6c6baa5b2a746178082f5b4b0a1d9969b9a326fe03d86c89",
+     "16be94ae0f6f0ed28a73ca40e5ebf5dd04bd452f6bd69a07cb6b467e43083293"
+    ]
+   },
+   {
+    "id": "base",
+    "hashes": [
+     "6861894f3c1992cd6c6baa5b2a746178082f5b4b0a1d9969b9a326fe03d86c89",
+     "8579e2c2212d72a413a6daacfe3b91ceb72be648bfc085bfeed9430eeaf6657a"
+    ]
+   },
+   {
+    "id": "V6Guard",
+    "hashes": [
+     "71164c8d7308766cd14d64ac6d1342cd1631afce98278fe9dca4d4ab14a3b3f3",
+     "8579e2c2212d72a413a6daacfe3b91ceb72be648bfc085bfeed9430eeaf6657a"
+    ]
+   },
+   {
+    "id": "zchain4",
+    "hashes": [
+     "07c238b2d276824f23e54c4d2c74fb9d229e42419b3ff74302447b47bb9fbc49",
+     "2fb8f41228b5ded8b7bd6b511c5002f5e646955f2eab8c48a73f358c128c286e"
+    ]
+   },
+   {
+    "id": "V6",
+    "hashes": [
+     "3fa67bed880413901ad618b4f7b248e5782d98de93318271ac540ad1690ca2b7",
+     "8579e2c2212d72a413a6daacfe3b91ceb72be648bfc085bfeed9430eeaf6657a"
+    ]
+   }
+  ],
+  "means": {
+   "cand": {
+    "2025": 0.7554,
+    "strong": 0.6518,
+    "2024live": 0.7111,
+    "threat": 0.6296,
+    "multi": 0.3078,
+    "nozombie": 0.5477
+   },
+   "base": {
+    "2025": 0.7413,
+    "strong": 0.6538,
+    "2024live": 0.7117,
+    "threat": 0.6195,
+    "multi": 0.3059,
+    "nozombie": 0.5467
+   },
+   "V6Guard": {
+    "2025": 0.7374,
+    "strong": 0.6655,
+    "2024live": 0.7161,
+    "threat": 0.6174,
+    "multi": 0.2995,
+    "nozombie": 0.5477
+   },
+   "zchain4": {
+    "2025": 0.7519,
+    "strong": 0.5052,
+    "2024live": 0.6994,
+    "threat": 0.5507,
+    "multi": 0.1905,
+    "nozombie": 0.565
+   },
+   "V6": {
+    "2025": 0.7329,
+    "strong": 0.651,
+    "2024live": 0.7025,
+    "threat": 0.6063,
+    "multi": 0.3117,
+    "nozombie": 0.547
+   }
+  },
+  "compare": {
+   "base": {
+    "pooled_2025_strong_2024live_z2_5": {
+     "n": 111,
+     "diff": 0.00908,
+     "lo": -0.00224,
+     "hi": 0.02041,
+     "wins": 35,
+     "losses": 26
+    },
+    "groups": {
+     "2025": {
+      "n": 75,
+      "diff": 0.01411,
+      "lo": 0.00143,
+      "hi": 0.02679,
+      "wins": 28,
+      "losses": 15
+     },
+     "strong": {
+      "n": 21,
+      "diff": -0.00198,
+      "lo": -0.00979,
+      "hi": 0.00582,
+      "wins": 4,
+      "losses": 5
+     },
+     "2024live": {
+      "n": 15,
+      "diff": -0.00056,
+      "lo": -0.01103,
+      "hi": 0.00992,
+      "wins": 3,
+      "losses": 6
+     },
+     "threat": {
+      "n": 48,
+      "diff": 0.01016,
+      "lo": -0.00313,
+      "hi": 0.02344,
+      "wins": 16,
+      "losses": 8
+     },
+     "multi": {
+      "n": 8,
+      "diff": 0.00182,
+      "lo": -0.00755,
+      "hi": 0.01119,
+      "wins": 1,
+      "losses": 2
+     },
+     "nozombie": {
+      "n": 25,
+      "diff": 0.001,
+      "lo": -0.00096,
+      "hi": 0.00296,
+      "wins": 1,
+      "losses": 0
+     }
+    },
+    "byThreat": {
+     "movsw_Baltika9": {
+      "n": 3,
+      "diff": 0,
+      "lo": 0,
+      "hi": 0,
+      "wins": 0,
+      "losses": 0
+     },
+     "movsw_TrojanByte": {
+      "n": 3,
+      "diff": 0.03333,
+      "lo": -0.00988,
+      "hi": 0.07655,
+      "wins": 2,
+      "losses": 0
+     },
+     "movsw_cgx123123": {
+      "n": 3,
+      "diff": 0.0125,
+      "lo": -0.00165,
+      "hi": 0.02665,
+      "wins": 2,
+      "losses": 0
+     },
+     "movsw_CodeKiller": {
+      "n": 3,
+      "diff": -0.00833,
+      "lo": -0.041,
+      "hi": 0.02433,
+      "wins": 1,
+      "losses": 2
+     },
+     "movsw_LowKey": {
+      "n": 3,
+      "diff": 0.08333,
+      "lo": -0.10503,
+      "hi": 0.2717,
+      "wins": 1,
+      "losses": 1
+     },
+     "movsw_BinaryBandits": {
+      "n": 3,
+      "diff": -0.01806,
+      "lo": -0.0576,
+      "hi": 0.02149,
+      "wins": 1,
+      "losses": 1
+     },
+     "zomb_Grindo": {
+      "n": 3,
+      "diff": 0,
+      "lo": 0,
+      "hi": 0,
+      "wins": 0,
+      "losses": 0
+     },
+     "zomb_callfart": {
+      "n": 3,
+      "diff": 0.02222,
+      "lo": 0.01678,
+      "hi": 0.02767,
+      "wins": 3,
+      "losses": 0
+     },
+     "zomb_AnotherBit": {
+      "n": 3,
+      "diff": 0,
+      "lo": 0,
+      "hi": 0,
+      "wins": 0,
+      "losses": 0
+     },
+     "bomb_IND_BRA": {
+      "n": 3,
+      "diff": 0.01667,
+      "lo": 0.00033,
+      "hi": 0.033,
+      "wins": 2,
+      "losses": 0
+     },
+     "lead_V6": {
+      "n": 3,
+      "diff": 0.00833,
+      "lo": -0.008,
+      "hi": 0.02467,
+      "wins": 1,
+      "losses": 0
+     },
+     "lead_V4": {
+      "n": 3,
+      "diff": -0.01667,
+      "lo": -0.04933,
+      "hi": 0.016,
+      "wins": 0,
+      "losses": 1
+     },
+     "lead_V6Guard": {
+      "n": 3,
+      "diff": 0.00139,
+      "lo": -0.00133,
+      "hi": 0.00411,
+      "wins": 1,
+      "losses": 0
+     },
+     "lead_zchain4": {
+      "n": 3,
+      "diff": -0.00833,
+      "lo": -0.0165,
+      "hi": -0.00017,
+      "wins": 0,
+      "losses": 2
+     },
+     "lead_zrl03": {
+      "n": 3,
+      "diff": 0.04028,
+      "lo": -0.03462,
+      "hi": 0.11518,
+      "wins": 2,
+      "losses": 0
+     },
+     "lead_ah02": {
+      "n": 3,
+      "diff": -0.00417,
+      "lo": -0.01233,
+      "hi": 0.004,
+      "wins": 0,
+      "losses": 1
+     }
+    }
+   },
+   "V6Guard": {
+    "pooled_2025_strong_2024live_z2_5": {
+     "n": 111,
+     "diff": 0.0089,
+     "lo": -0.00408,
+     "hi": 0.02187,
+     "wins": 47,
+     "losses": 38
+    },
+    "groups": {
+     "2025": {
+      "n": 75,
+      "diff": 0.018,
+      "lo": 0.00461,
+      "hi": 0.03139,
+      "wins": 38,
+      "losses": 19
+     },
+     "strong": {
+      "n": 21,
+      "diff": -0.01369,
+      "lo": -0.03022,
+      "hi": 0.00284,
+      "wins": 4,
+      "losses": 10
+     },
+     "2024live": {
+      "n": 15,
+      "diff": -0.005,
+      "lo": -0.02421,
+      "hi": 0.01421,
+      "wins": 5,
+      "losses": 9
+     },
+     "threat": {
+      "n": 48,
+      "diff": 0.01224,
+      "lo": -0.00374,
+      "hi": 0.02822,
+      "wins": 21,
+      "losses": 15
+     },
+     "multi": {
+      "n": 8,
+      "diff": 0.00823,
+      "lo": -0.0096,
+      "hi": 0.02606,
+      "wins": 4,
+      "losses": 3
+     },
+     "nozombie": {
+      "n": 25,
+      "diff": 0,
+      "lo": -0.0098,
+      "hi": 0.0098,
+      "wins": 7,
+      "losses": 6
+     }
+    },
+    "byThreat": {
+     "movsw_Baltika9": {
+      "n": 3,
+      "diff": -0.00556,
+      "lo": -0.01644,
+      "hi": 0.00533,
+      "wins": 0,
+      "losses": 1
+     },
+     "movsw_TrojanByte": {
+      "n": 3,
+      "diff": 0.025,
+      "lo": -0.024,
+      "hi": 0.074,
+      "wins": 1,
+      "losses": 0
+     },
+     "movsw_cgx123123": {
+      "n": 3,
+      "diff": 0.02083,
+      "lo": -0.04894,
+      "hi": 0.09061,
+      "wins": 2,
+      "losses": 1
+     },
+     "movsw_CodeKiller": {
+      "n": 3,
+      "diff": -0.02917,
+      "lo": -0.06476,
+      "hi": 0.00643,
+      "wins": 0,
+      "losses": 2
+     },
+     "movsw_LowKey": {
+      "n": 3,
+      "diff": 0.08611,
+      "lo": -0.09996,
+      "hi": 0.27218,
+      "wins": 2,
+      "losses": 1
+     },
+     "movsw_BinaryBandits": {
+      "n": 3,
+      "diff": -0.02778,
+      "lo": -0.0743,
+      "hi": 0.01874,
+      "wins": 0,
+      "losses": 2
+     },
+     "zomb_Grindo": {
+      "n": 3,
+      "diff": 0,
+      "lo": -0.02829,
+      "hi": 0.02829,
+      "wins": 1,
+      "losses": 1
+     },
+     "zomb_callfart": {
+      "n": 3,
+      "diff": 0.03889,
+      "lo": 0.02448,
+      "hi": 0.05329,
+      "wins": 3,
+      "losses": 0
+     },
+     "zomb_AnotherBit": {
+      "n": 3,
+      "diff": -0.00833,
+      "lo": -0.02467,
+      "hi": 0.008,
+      "wins": 0,
+      "losses": 1
+     },
+     "bomb_IND_BRA": {
+      "n": 3,
+      "diff": 0,
+      "lo": -0.02829,
+      "hi": 0.02829,
+      "wins": 1,
+      "losses": 1
+     },
+     "lead_V6": {
+      "n": 3,
+      "diff": 0.05139,
+      "lo": -0.02261,
+      "hi": 0.12539,
+      "wins": 2,
+      "losses": 0
+     },
+     "lead_V4": {
+      "n": 3,
+      "diff": 0.02917,
+      "lo": 0.00422,
+      "hi": 0.05412,
+      "wins": 3,
+      "losses": 0
+     },
+     "lead_V6Guard": {
+      "n": 3,
+      "diff": -0.00417,
+      "lo": -0.03285,
+      "hi": 0.02451,
+      "wins": 2,
+      "losses": 1
+     },
+     "lead_zchain4": {
+      "n": 3,
+      "diff": -0.01111,
+      "lo": -0.03953,
+      "hi": 0.01731,
+      "wins": 1,
+      "losses": 2
+     },
+     "lead_zrl03": {
+      "n": 3,
+      "diff": 0.03472,
+      "lo": -0.08119,
+      "hi": 0.15063,
+      "wins": 2,
+      "losses": 1
+     },
+     "lead_ah02": {
+      "n": 3,
+      "diff": -0.00417,
+      "lo": -0.01664,
+      "hi": 0.00831,
+      "wins": 1,
+      "losses": 1
+     }
+    }
+   },
+   "zchain4": {
+    "pooled_2025_strong_2024live_z2_5": {
+     "n": 111,
+     "diff": 0.03168,
+     "lo": -0.00772,
+     "hi": 0.07108,
+     "wins": 62,
+     "losses": 43
+    },
+    "groups": {
+     "2025": {
+      "n": 75,
+      "diff": 0.0035,
+      "lo": -0.02995,
+      "hi": 0.03695,
+      "wins": 34,
+      "losses": 35
+     },
+     "strong": {
+      "n": 21,
+      "diff": 0.14663,
+      "lo": 0.08248,
+      "hi": 0.21078,
+      "wins": 18,
+      "losses": 3
+     },
+     "2024live": {
+      "n": 15,
+      "diff": 0.01167,
+      "lo": -0.09508,
+      "hi": 0.11841,
+      "wins": 10,
+      "losses": 5
+     },
+     "threat": {
+      "n": 48,
+      "diff": 0.07899,
+      "lo": 0.03887,
+      "hi": 0.11911,
+      "wins": 33,
+      "losses": 15
+     },
+     "multi": {
+      "n": 8,
+      "diff": 0.11729,
+      "lo": 0.0717,
+      "hi": 0.16289,
+      "wins": 8,
+      "losses": 0
+     },
+     "nozombie": {
+      "n": 25,
+      "diff": -0.01733,
+      "lo": -0.08504,
+      "hi": 0.05037,
+      "wins": 12,
+      "losses": 12
+     }
+    },
+    "byThreat": {
+     "movsw_Baltika9": {
+      "n": 3,
+      "diff": 0,
+      "lo": -0.12331,
+      "hi": 0.12331,
+      "wins": 1,
+      "losses": 2
+     },
+     "movsw_TrojanByte": {
+      "n": 3,
+      "diff": 0.06528,
+      "lo": -0.1176,
+      "hi": 0.24815,
+      "wins": 1,
+      "losses": 2
+     },
+     "movsw_cgx123123": {
+      "n": 3,
+      "diff": -0.10694,
+      "lo": -0.31814,
+      "hi": 0.10425,
+      "wins": 1,
+      "losses": 2
+     },
+     "movsw_CodeKiller": {
+      "n": 3,
+      "diff": 0.06667,
+      "lo": -0.10386,
+      "hi": 0.23719,
+      "wins": 2,
+      "losses": 1
+     },
+     "movsw_LowKey": {
+      "n": 3,
+      "diff": -0.05694,
+      "lo": -0.14133,
+      "hi": 0.02744,
+      "wins": 1,
+      "losses": 2
+     },
+     "movsw_BinaryBandits": {
+      "n": 3,
+      "diff": 0.00694,
+      "lo": -0.152,
+      "hi": 0.16589,
+      "wins": 2,
+      "losses": 1
+     },
+     "zomb_Grindo": {
+      "n": 3,
+      "diff": -0.11667,
+      "lo": -0.19833,
+      "hi": -0.035,
+      "wins": 0,
+      "losses": 3
+     },
+     "zomb_callfart": {
+      "n": 3,
+      "diff": 0.01806,
+      "lo": -0.16213,
+      "hi": 0.19824,
+      "wins": 1,
+      "losses": 2
+     },
+     "zomb_AnotherBit": {
+      "n": 3,
+      "diff": 0.08333,
+      "lo": 0.05067,
+      "hi": 0.116,
+      "wins": 3,
+      "losses": 0
+     },
+     "bomb_IND_BRA": {
+      "n": 3,
+      "diff": 0.11667,
+      "lo": 0.00956,
+      "hi": 0.22377,
+      "wins": 3,
+      "losses": 0
+     },
+     "lead_V6": {
+      "n": 3,
+      "diff": 0.21667,
+      "lo": 0.17984,
+      "hi": 0.25349,
+      "wins": 3,
+      "losses": 0
+     },
+     "lead_V4": {
+      "n": 3,
+      "diff": 0.19375,
+      "lo": 0.09877,
+      "hi": 0.28873,
+      "wins": 3,
+      "losses": 0
+     },
+     "lead_V6Guard": {
+      "n": 3,
+      "diff": 0.18194,
+      "lo": 0.15966,
+      "hi": 0.20423,
+      "wins": 3,
+      "losses": 0
+     },
+     "lead_zchain4": {
+      "n": 3,
+      "diff": 0.23542,
+      "lo": 0.18048,
+      "hi": 0.29035,
+      "wins": 3,
+      "losses": 0
+     },
+     "lead_zrl03": {
+      "n": 3,
+      "diff": 0.15278,
+      "lo": 0.10462,
+      "hi": 0.20094,
+      "wins": 3,
+      "losses": 0
+     },
+     "lead_ah02": {
+      "n": 3,
+      "diff": 0.20694,
+      "lo": 0.14559,
+      "hi": 0.2683,
+      "wins": 3,
+      "losses": 0
+     }
+    }
+   },
+   "V6": {
+    "pooled_2025_strong_2024live_z2_5": {
+     "n": 111,
+     "diff": 0.01652,
+     "lo": 0.00298,
+     "hi": 0.03005,
+     "wins": 57,
+     "losses": 38
+    },
+    "groups": {
+     "2025": {
+      "n": 75,
+      "diff": 0.0225,
+      "lo": 0.0083,
+      "hi": 0.0367,
+      "wins": 41,
+      "losses": 21
+     },
+     "strong": {
+      "n": 21,
+      "diff": 0.00079,
+      "lo": -0.01532,
+      "hi": 0.01691,
+      "wins": 10,
+      "losses": 9
+     },
+     "2024live": {
+      "n": 15,
+      "diff": 0.00861,
+      "lo": -0.01458,
+      "hi": 0.0318,
+      "wins": 6,
+      "losses": 8
+     },
+     "threat": {
+      "n": 48,
+      "diff": 0.02339,
+      "lo": 0.00586,
+      "hi": 0.04093,
+      "wins": 24,
+      "losses": 12
+     },
+     "multi": {
+      "n": 8,
+      "diff": -0.00391,
+      "lo": -0.03862,
+      "hi": 0.03081,
+      "wins": 3,
+      "losses": 4
+     },
+     "nozombie": {
+      "n": 25,
+      "diff": 0.00067,
+      "lo": -0.01381,
+      "hi": 0.01514,
+      "wins": 8,
+      "losses": 9
+     }
+    },
+    "byThreat": {
+     "movsw_Baltika9": {
+      "n": 3,
+      "diff": -0.00833,
+      "lo": -0.05155,
+      "hi": 0.03488,
+      "wins": 1,
+      "losses": 1
+     },
+     "movsw_TrojanByte": {
+      "n": 3,
+      "diff": 0.00833,
+      "lo": -0.057,
+      "hi": 0.07367,
+      "wins": 1,
+      "losses": 2
+     },
+     "movsw_cgx123123": {
+      "n": 3,
+      "diff": 0.06389,
+      "lo": -0.00689,
+      "hi": 0.13467,
+      "wins": 2,
+      "losses": 0
+     },
+     "movsw_CodeKiller": {
+      "n": 3,
+      "diff": -0.01667,
+      "lo": -0.04933,
+      "hi": 0.016,
+      "wins": 0,
+      "losses": 1
+     },
+     "movsw_LowKey": {
+      "n": 3,
+      "diff": 0.10417,
+      "lo": -0.08788,
+      "hi": 0.29621,
+      "wins": 2,
+      "losses": 0
+     },
+     "movsw_BinaryBandits": {
+      "n": 3,
+      "diff": -0.02083,
+      "lo": -0.05384,
+      "hi": 0.01217,
+      "wins": 0,
+      "losses": 2
+     },
+     "zomb_Grindo": {
+      "n": 3,
+      "diff": 0.025,
+      "lo": -0.03158,
+      "hi": 0.08158,
+      "wins": 2,
+      "losses": 1
+     },
+     "zomb_callfart": {
+      "n": 3,
+      "diff": 0.05139,
+      "lo": -0.00161,
+      "hi": 0.10438,
+      "wins": 2,
+      "losses": 0
+     },
+     "zomb_AnotherBit": {
+      "n": 3,
+      "diff": 0,
+      "lo": -0.02829,
+      "hi": 0.02829,
+      "wins": 1,
+      "losses": 1
+     },
+     "bomb_IND_BRA": {
+      "n": 3,
+      "diff": 0.025,
+      "lo": -0.00329,
+      "hi": 0.05329,
+      "wins": 2,
+      "losses": 0
+     },
+     "lead_V6": {
+      "n": 3,
+      "diff": 0.05833,
+      "lo": 0.0489,
+      "hi": 0.06776,
+      "wins": 3,
+      "losses": 0
+     },
+     "lead_V4": {
+      "n": 3,
+      "diff": 0.07708,
+      "lo": 0.00727,
+      "hi": 0.1469,
+      "wins": 3,
+      "losses": 0
+     },
+     "lead_V6Guard": {
+      "n": 3,
+      "diff": -0.00694,
+      "lo": -0.0248,
+      "hi": 0.01091,
+      "wins": 1,
+      "losses": 1
+     },
+     "lead_zchain4": {
+      "n": 3,
+      "diff": -0.01389,
+      "lo": -0.03808,
+      "hi": 0.01031,
+      "wins": 1,
+      "losses": 2
+     },
+     "lead_zrl03": {
+      "n": 3,
+      "diff": 0.0125,
+      "lo": -0.09429,
+      "hi": 0.11929,
+      "wins": 1,
+      "losses": 1
+     },
+     "lead_ah02": {
+      "n": 3,
+      "diff": 0.01528,
+      "lo": -0.00378,
+      "hi": 0.03433,
+      "wins": 2,
+      "losses": 0
+     }
+    }
+   }
+  }
+ }
+}

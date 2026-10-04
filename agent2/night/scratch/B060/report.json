@@ -1,0 +1,33 @@
+{
+ "agentId": "B060",
+ "revisionUsed": 0,
+ "jobs": ["20261003200508622-B060-threat-fu9fg", "20261003200509527-B060-threat-xqlui", "20261003201000464-B060-threat-3zlpf", "20261003201000567-B060-threat-02rhx"],
+ "doseResponse_base_score": {
+  "note": "rev0 team score per battle; control = identical rev0 copies (same lattice 52h, MOVSB). 1-copy numbers from earlier jobs pgt9t (B051) and ppsmg (B055), different fill opponents.",
+  "1copy": {"ctrl": 0.415, "V6MOVSW53": 0.339, "ctrl_ppsmg": 0.456, "lat_m30": 0.354},
+  "2copies_3zlpf_n8x20": {"ctrl": 0.301, "lat_m30": 0.272, "V6MOVSW53": 0.177, "eachCopy": {"ctrl": 0.337, "lat_m30": 0.364, "V6MOVSW53": 0.375}},
+  "3copies_fu9fg_n6x20": {"ctrl": 0.242, "lat_m30": 0.199, "V6MOVSW53": 0.060, "movsw_cgx123123": 0.608, "eachCopy": {"ctrl": 0.253, "lat_m30": 0.267, "V6MOVSW53": 0.313, "cgx123123": 0.083}},
+  "mix_xqlui_n12x20": {"base": 0.232, "lat_m30": 0.228, "V6MOVSW53": 0.302, "cgx123123": 0.240}
+ },
+ "mechanism": "rev0 anchor = bytes FF 1F (call far [bx]) at arena in-page 52h/53h, written by A 0066-006B (mov ax,1FFFh; stosw; dec di; call far [bx]) at DI=xxA2 in ES=FAR_SEG 0FFBh (A 0029 'B0 A2', A 004A '81 CA FB 0F'; B 0031/0077 'B0 A2', B 0096). The MOVSW twin (counter in scratch/B060/movsw53_A/B.asm = B051 cMovsw: only 'B0 A2' -> 'B0 A3' in A and B) pushes 'A5 hh FB 0F' with A5 at addresses = 3 mod 4. When its trail crosses our anchor it writes A5 at 53h -> FF A5 d16 = jmp [di+d16] (memory exception, B051 trace pkj3o), and the next push writes 0F at 52h. The anchor residue (=2 mod 4) is fixed by AL=A2 (the pushed IP low byte A4 must land on the anchor as the rebuild trigger), so no lattice or FAR_SEG choice in the MOVSB design avoids it. Each extra twin adds another lethal trail over our anchor: losses compound (rev0 keeps 82% / 59% / 25% of the control score with 1/2/3 twins), while the twins themselves rise above fair share (0.31-0.38).",
+ "candidates": [
+  {
+   "label": "lat_m30 as defense (FAR_SEG 0FFBh -> 0FF8h in A and B; B055's counter reused as a candidate)",
+   "asmA": "agent2/night/scratch/B060/lat_m30_A.asm", "asmB": "agent2/night/scratch/B060/lat_m30_B.asm",
+   "shaA": "45d913530e7e9c73b595d2034068cabff0a412c2f34a6b59bca9091703a224f6", "shaB": "6b4b07dea599dad9e67d2a2be097d43d963eeedddb758dbe27757a1fded7dc60",
+   "sizeA": 194, "sizeB": 202,
+   "threatJob": "20261003201000567-B060-threat-02rhx",
+   "threat3copies": {"ALL": 0.02375, "lo": -0.02007, "hi": 0.06757, "ctrl_rev0copy": 0.07625, "lat_m30": 0.05417, "V6MOVSW53": 0.08125, "V6MOVSW53_CI": [0.01658, 0.14592], "movsw_cgx123123": -0.11667, "movsw_cgx123123_CI": [-0.14933, -0.084]},
+   "screen": "not re-screened; B055 screen oauc2 ALL -0.0105 (2025 -0.026)",
+   "promising": false
+  }
+ ],
+ "threatFindings": [
+  {"threat": "Several copies (2-3) of a MOVSW-family V6 twin compound the anchor kill", "classification": "verified-in-current", "evidence": "fu9fg 3 copies: base 0.060 vs 0.242 vs rev0-copy control (each twin 0.313); 3zlpf 2 copies: 0.177 vs 0.301; 1 copy (pgt9t): 0.339 vs 0.415", "impact": "-0.18/battle at 3 copies, -0.12 at 2, -0.08 at 1"},
+  {"threat": "Several copies of a lattice-undercut clone (30h below) compound", "classification": "not-reproduced", "evidence": "fu9fg 0.199 vs 0.242 (3 copies), 3zlpf 0.272 vs 0.301 (2 copies), ppsmg 0.354 vs 0.456 (1 copy): relative loss 10-22%, no growth with copies", "impact": "-0.03 to -0.10/battle; the single-copy undercut itself stays verified (B055)"},
+  {"threat": "Combined attack (undercut clone + MOVSW twin + cgx123123 in one field) is super-additive", "classification": "not-reproduced", "evidence": "xqlui mixAll n=12: base 0.232 (fair share 0.25), close to the 3x rev0-copy control 0.242; the counters hurt each other (cgx 0.240 here vs 0.083 in a 3x cgx field)", "impact": "none beyond the single components"},
+  {"threat": "A crowd of real 2025 MOVSW warriors (3x cgx123123)", "classification": "not-reproduced", "evidence": "fu9fg: base 0.608, each cgx copy 0.083", "impact": "none; real 2025 MOVSW codes are too weak to exploit the anchor hole"},
+  {"threat": "Lattice undercut as a defense against a MOVSW-twin crowd", "classification": "verified-in-other", "evidence": "02rhx (candidate lat_m30): +0.081 [0.017,0.146] vs 3x MOVSW twin but -0.117 [-0.149,-0.084] vs 3x cgx123123; screen oauc2 -0.0105", "impact": "trades one hole for another; not a fix"}
+ ],
+ "recommendation": "No promotion candidate. The only multi-copy threat that compounds is a crowd of strong MOVSW-family replicators (a V6 twin with AL=A3h): 3 copies leave rev0 at 0.06/battle. It is structural (anchor residue fixed by the A4 rebuild trigger) and has no cheap fix: lattice shift helps partially (+0.08) but loses -0.12 vs a cgx crowd and -0.01 on the screen. Prevalence in the 2025/2024 pools is nil (real MOVSW codes are weak), so treat it as a 2026 risk only if published V6-like code gets a MOVSW variant. Undercut clones and mixed counter fields do not compound."
+}

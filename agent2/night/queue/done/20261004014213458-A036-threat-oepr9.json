@@ -1,0 +1,111 @@
+{
+ "job": {
+  "id": "20261004014213458-A036-threat-oepr9",
+  "agent": "A036",
+  "kind": "threat",
+  "submittedAt": "2026-10-04T01:42:13.469Z",
+  "note": "A036 loc9 regression check on screen-negative leader cohorts (zrl03 -0.12, V6Guard -0.05, ah02 -0.02 in screen 4be1b)",
+  "asmA": "agent2/night/scratch/A036/loc9A.asm",
+  "asmB": "agent2/night/scratch/A036/loc9B.asm",
+  "threats": [
+   {
+    "key": "lead_zrl03"
+   },
+   {
+    "key": "lead_V6Guard"
+   },
+   {
+    "key": "lead_ah02"
+   }
+  ],
+  "copies": 1,
+  "cohortsPerThreat": 8
+ },
+ "ok": true,
+ "finishedAt": "2026-10-04T01:43:53.399Z",
+ "seconds": 47.473,
+ "result": {
+  "candidate": {
+   "A": "agent2/night/cand-build/20261004014213458-A036-threat-oepr9/candA",
+   "B": "agent2/night/cand-build/20261004014213458-A036-threat-oepr9/candB",
+   "sizeA": 200,
+   "sizeB": 209,
+   "shaA": "6efa388b80716b5f103d141fb941340b0d88ae4808ee277250c6d7255f3f38f8",
+   "shaB": "a43aa78a512928d987f0c0b5505b9463da7385fc5fcb8867f95713fb95512a3f"
+  },
+  "baseRevision": 0,
+  "specKey": "c8b34f87080d",
+  "battlesPerArm": 480,
+  "candMean": 0.5095,
+  "baseMean": 0.5161,
+  "all": {
+   "n": 24,
+   "diff": -0.0066,
+   "lo": -0.02571,
+   "hi": 0.01252,
+   "wins": 8,
+   "losses": 10
+  },
+  "byThreat": {
+   "lead_zrl03": {
+    "n": 8,
+    "diff": 0.01562,
+    "lo": -0.01324,
+    "hi": 0.04449,
+    "wins": 4,
+    "losses": 1
+   },
+   "lead_V6Guard": {
+    "n": 8,
+    "diff": -0.02187,
+    "lo": -0.05511,
+    "hi": 0.01136,
+    "wins": 2,
+    "losses": 5
+   },
+   "lead_ah02": {
+    "n": 8,
+    "diff": -0.01354,
+    "lo": -0.04873,
+    "hi": 0.02164,
+    "wins": 2,
+    "losses": 4
+   }
+  },
+  "threatFirstTeamScore": {
+   "vsCand": {
+    "lead_zrl03": 0.4531,
+    "lead_V6Guard": 0.4661,
+    "lead_ah02": 0.4104
+   },
+   "vsBase": {
+    "lead_zrl03": 0.4677,
+    "lead_V6Guard": 0.4568,
+    "lead_ah02": 0.4
+   }
+  },
+  "threatHashes": [
+   {
+    "label": "lead_zrl03",
+    "warriors": [
+     "agent2/frontier-20261003/arms/combo_zrl03/A",
+     "agent2/frontier-20261003/arms/combo_zrl03/B"
+    ]
+   },
+   {
+    "label": "lead_V6Guard",
+    "warriors": [
+     "agent2/night/refs/V6Guard/A",
+     "agent2/night/refs/V6Guard/B"
+    ]
+   },
+   {
+    "label": "lead_ah02",
+    "warriors": [
+     "agent2/frontier-20261003/arms/combo_ah02/A",
+     "agent2/frontier-20261003/arms/combo_ah02/B"
+    ]
+   }
+  ]
+ }
+}

@@ -1,0 +1,121 @@
+{
+ "job": {
+  "id": "20261003195916559-B058-threat-foy12",
+  "agent": "B058",
+  "kind": "threat",
+  "submittedAt": "2026-10-03T19:59:16.593Z",
+  "note": "B058 R1-verify domain8: base vs IND_BRA, page-lattice CC bomber at anchor in-page 52h, control at 12h",
+  "threats": [
+   {
+    "key": "bomb_IND_BRA"
+   },
+   {
+    "name": "B058_pg52",
+    "asmA": "agent2/night/scratch/B058/pg52A.asm",
+    "asmB": "agent2/night/scratch/B058/pg52B.asm"
+   },
+   {
+    "name": "B058_pg12ctl",
+    "asmA": "agent2/night/scratch/B058/pg12A.asm",
+    "asmB": "agent2/night/scratch/B058/pg12B.asm"
+   }
+  ],
+  "copies": 1,
+  "cohortsPerThreat": 8
+ },
+ "ok": true,
+ "finishedAt": "2026-10-03T20:01:23.983Z",
+ "seconds": 35.691,
+ "result": {
+  "candidate": {
+   "A": "agent2/night/revisions/rev0/A",
+   "B": "agent2/night/revisions/rev0/B",
+   "sizeA": 194,
+   "sizeB": 202,
+   "shaA": "6861894f3c1992cd6c6baa5b2a746178082f5b4b0a1d9969b9a326fe03d86c89",
+   "shaB": "8579e2c2212d72a413a6daacfe3b91ceb72be648bfc085bfeed9430eeaf6657a"
+  },
+  "baseRevision": 0,
+  "specKey": "8a531b1d8ad6",
+  "battlesPerArm": 480,
+  "candMean": 0.5646,
+  "baseMean": 0.5646,
+  "all": {
+   "n": 24,
+   "diff": 0,
+   "lo": 0,
+   "hi": 0,
+   "wins": 0,
+   "losses": 0
+  },
+  "byThreat": {
+   "bomb_IND_BRA": {
+    "n": 8,
+    "diff": 0,
+    "lo": 0,
+    "hi": 0,
+    "wins": 0,
+    "losses": 0
+   },
+   "B058_pg52": {
+    "n": 8,
+    "diff": 0,
+    "lo": 0,
+    "hi": 0,
+    "wins": 0,
+    "losses": 0
+   },
+   "B058_pg12ctl": {
+    "n": 8,
+    "diff": 0,
+    "lo": 0,
+    "hi": 0,
+    "wins": 0,
+    "losses": 0
+   }
+  },
+  "threatFirstTeamScore": {
+   "vsCand": {
+    "bomb_IND_BRA": 0,
+    "B058_pg52": 0.1792,
+    "B058_pg12ctl": 0.0188
+   },
+   "vsBase": {
+    "bomb_IND_BRA": 0,
+    "B058_pg52": 0.1792,
+    "B058_pg12ctl": 0.0188
+   }
+  },
+  "threatHashes": [
+   {
+    "label": "bomb_IND_BRA",
+    "warriors": [
+     "official-2025/survivors-online/IND_BRA1",
+     "official-2025/survivors-online/IND_BRA2"
+    ]
+   },
+   {
+    "label": "B058_pg52",
+    "warriors": [
+     "agent2/night/cand-build/20261003195916559-B058-threat-foy12/threat-1/tA",
+     "agent2/night/cand-build/20261003195916559-B058-threat-foy12/threat-1/tB"
+    ],
+    "hashes": [
+     "7f42eaeb180772e8bbc3c614578c1c7791659ff3040d7e825b8fab4e10cbb08c",
+     "8aff0736e87dc85f47aea6c1acdee935ff5749acea9ee542d85c839ac96d0e84"
+    ]
+   },
+   {
+    "label": "B058_pg12ctl",
+    "warriors": [
+     "agent2/night/cand-build/20261003195916559-B058-threat-foy12/threat-2/tA",
+     "agent2/night/cand-build/20261003195916559-B058-threat-foy12/threat-2/tB"
+    ],
+    "hashes": [
+     "7d65685b266be5ea652e51c5f0f27f0490e2bcbb7ce20b0a8c2acda2c7944864",
+     "79e67255932c8d164466a3ac43a02dd4f5645d4226f4a74d787b8e9f4317b624"
+    ]
+   }
+  ]
+ }
+}

@@ -1,0 +1,49 @@
+{
+ "agentId": "A003",
+ "revisionUsed": 0,
+ "jobs": ["20261003183042020-A003-screen-u1meu", "20261003183104832-A003-threat-19llx", "20261003184906991-A003-threat-5hja6"],
+ "candidates": [
+  {
+   "label": "C1 int87-first + late 4A17 write",
+   "change": "A: INT87 zom20a capture moved before the [4A17h]->[9769h] cell copy (INT87 at A instruction 8 instead of 10; copy read at instruction 9). B: [5D13h] write kept at instruction 5, [4A17h] write moved from instruction 3 to 6 (push cs/pop es moved up). Same bytes, same sizes; only order changes. Purpose: win the [4A17h] hook-cell race against V6-family opponents (V6/V4/V6Guard write it at B instruction 3), while A still copies our own entry into [9769h].",
+   "asmA": "agent2/night/scratch/A003/c1A.asm",
+   "asmB": "agent2/night/scratch/A003/c1B.asm",
+   "sizeA": 194, "sizeB": 202,
+   "shaA": "20ab6af2caf1c8a4f2dc2a1d6c4b498ad62bd81965067b9faf14ae6eaf2b4c63",
+   "shaB": "142eeac85d3b8e62079661f4bb9affc1de9eb52ddc087f3f6a54b7050681e97a",
+   "screenJob": "20261003183042020-A003-screen-u1meu",
+   "screenAllDiff": 0.00462, "screenAllLo": -0.00261, "screenAllHi": 0.01185,
+   "groupNotes": "screen: 2025 +0.0047 [-0.0020,0.0113]; strong +0.0103 [-0.0137,0.0344]; threat +0.0028 [-0.0149,0.0205]; multi -0.0014. 30 of 50 cohorts identical. V6-family cohorts in screen mixed (lead_V6 -0.039, lead_V4 -0.022, lead_V6Guard +0.078, sstrong-2 +0.039, sstrong-7 -0.033, V6x3 +0.008, mix -0.011); lead_zrl03 -0.089 (single 30-battle cohort, mechanism unclear, likely chaos). Threat job copies 2 (8 cohorts each): ALL +0.0142 [0.0000,0.0284]; V6 +0.003, V4 +0.038, V6Guard +0.026; zomb_Grindo exactly 0; callfart +0.004. Threat job copies 3: ALL +0.0151 [-0.0149,0.0451]; V6 +0.025, V4 +0.045, V6Guard -0.024. Threat teams' own scores unchanged.",
+   "isDefenseFix": true,
+   "promising": false
+  }
+ ],
+ "threatFindings": [
+  {
+   "threat": "[4A17h] hook-cell race vs V6-family opponents: base B writes [4A17h] at instruction 3, exactly like V6/V4/V6Guard, so execution order decides who receives zombies captured through jmp [4A17h] (zom20a via A's patch, b/d via B's patch).",
+   "classification": "verified-in-current",
+   "evidence": "Static: dis86 of rev0 B and refs V6/V4/V6Guard B (mov [4A17h],bx at offset 8, instruction 3 in all). Moving our write to instruction 6 (C1): threat 20261003183104832-A003-threat-19llx copies 2 ALL +0.0142 [0.0000,0.0284]; 20261003184906991-A003-threat-5hja6 copies 3 ALL +0.0151 [-0.0149,0.0451]; screen V6-family cohorts about +0.003 on average.",
+   "impact": "Small: roughly +0.015 to +0.02 per battle in V6-family-heavy fields, near zero elsewhere. Captured zombies do not score; the gain is denial of the opponent's zombies only."
+  },
+  {
+   "threat": "Losing the zom20a INT87 race to other 2025 capturers (AVI_Fishandpoultry2 and HDS_YOY2 replace 41 93 E2 F2 with FF 26 <own cell>).",
+   "classification": "not-reproduced",
+   "evidence": "Static: Fishandpoultry2 runs INT87 at its instruction 15, HDS_YOY2 at instruction 22; base A at instruction 10 (C1: 8). Base already patches first, and after our patch the live bytes 41 93 FF 26 no longer match their pattern. Same-pattern V6-family A's tie on INT87, but they write identical bytes, so only the cell race matters. Moving INT87 earlier gives no benefit; moving it later than instruction 15 would lose this race in cohorts with Fishandpoultry/YOY.",
+   "impact": "None in the current base."
+  },
+  {
+   "threat": "zom20a mimic decoys: A's forward search from DI=0 patches the first E2 F2 81 C3, which may be dead decoy code in HRZ_Grindo_Holics1 (offset 33h, behind jmp 56h), Grindo_Holics2 (45h, 1C5h) or GSA_callfart1/2 (46h / 4h) when those load below zom20a.",
+   "classification": "hypothesis",
+   "evidence": "Static byte scan (agent2/night/scratch/A003/scan.mjs). Timing cannot help: the decoys sit in the carriers' load images and persist. zomb_Grindo threat cohorts gave exactly 0 difference for C1 (20261003183104832-A003-threat-19llx), so INT87 timing does not interact with this threat. Fix belongs to a search-start or pattern change (card A038).",
+   "impact": "Not measured here."
+  },
+  {
+   "threat": "Theft of the [9769h] (Registered_Winners) and [5D13h] (m050/b01d) hook cells through write timing.",
+   "classification": "not-reproduced",
+   "evidence": "Static: Registered_Winners1 writes [9769h] at instruction 3 (base A copies at instruction 5, C1 at 10, both later, so we keep the cell); ChimeraA/b01dA write [5D13h] at instruction 3-4, base and C1 B at instruction 5. No field opponent writes these cells later.",
+   "impact": "None found; C1 keeps both cells after their competitors' writes."
+  }
+ ],
+ "recommendation": "Do not promote on this evidence alone. C1 is a zero-byte-cost reordering: screen ALL +0.0046 [-0.0026,0.0119] (below the +0.006 bar, no group clearly negative), with a consistent but small V6-family gain in two threat jobs (+0.014 and +0.015). Treat it as a free low-risk add-on: include it in a combination screen with any other promoted change. Moving zom20a's INT87 earlier or later on its own has no lever: base A already wins the INT87 race against every 2025 zom20a capturer.",
+ "notes": "Card A003: INT87 timing. Static analysis shows the zom20a INT87 race is already won (A at instruction 10, competitors at 15 and 22). The only real race is the [4A17h] cell race against V6-family opponents, which A's reorder makes possible: A must read [4A17h] after B's later write. A 'later INT87' variant was not run: by static analysis it can only lose (to Fishandpoultry2 if past instruction 15). Screen outcomes are identical in 30 of 50 cohorts; the rest are chaotic divergences of 1-3 battles."
+}
