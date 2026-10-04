@@ -1,0 +1,27 @@
+{
+ "id": "20261004164544005-E5-threat-08xx6",
+ "agent": "E5",
+ "kind": "threat",
+ "submittedAt": "2026-10-04T16:45:44.006Z",
+ "note": "E5 C1 risk check: 2 copies of each instr-4 [5D13h] router (multi-router self-kill), 8 cohorts each",
+ "asmB": "agent2/day2/scratch/E5/C1_B.asm",
+ "threats": [
+  {
+   "name": "m050",
+   "binA": "agent2/build/ref/ChimeraA",
+   "binB": "agent2/build/ref/ChimeraB"
+  },
+  {
+   "name": "FixedToggle",
+   "binA": "agent2/build/counter/FTA",
+   "binB": "agent2/build/counter/FTB"
+  },
+  {
+   "name": "Synthesis",
+   "binA": "agent2/build/counter/SYA",
+   "binB": "agent2/build/counter/SYB"
+  }
+ ],
+ "copies": 2,
+ "cohortsPerThreat": 8
+}

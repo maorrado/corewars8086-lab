@@ -1,0 +1,109 @@
+{
+ "job": {
+  "id": "20261004164607191-E2-threat-w79sr",
+  "agent": "E2",
+  "kind": "threat",
+  "submittedAt": "2026-10-04T16:46:07.193Z",
+  "note": "E2 CF: does the l24-0 trio gain (+0.37 in llf27) replicate on fresh seeds?",
+  "asmA": "agent2/day2/scratch/E2/CF_A.asm",
+  "asmB": "agent2/day2/scratch/E2/CF_B.asm",
+  "threats": [
+   {
+    "name": "Code_Killers24",
+    "binA": "repos/corewars8086-survivors/cgx2024/03-live/HRZ_Code_Killers1",
+    "binB": "repos/corewars8086-survivors/cgx2024/03-live/HRZ_Code_Killers2"
+   },
+   {
+    "name": "S3gm3ntati0n24",
+    "binA": "repos/corewars8086-survivors/cgx2024/03-live/HRZ_S3gm3ntati0n_cu1t1",
+    "binB": "repos/corewars8086-survivors/cgx2024/03-live/HRZ_S3gm3ntati0n_cu1t2"
+   },
+   {
+    "name": "JMP2HELL24",
+    "binA": "repos/corewars8086-survivors/cgx2024/03-live/HRZ_JMP2HELL1",
+    "binB": "repos/corewars8086-survivors/cgx2024/03-live/HRZ_JMP2HELL2"
+   }
+  ],
+  "cohortsPerThreat": 12,
+  "mixAll": true
+ },
+ "ok": true,
+ "finishedAt": "2026-10-04T16:48:48.338Z",
+ "seconds": 25.064,
+ "result": {
+  "candidate": {
+   "A": "agent2/day2/q/cand-build/20261004164607191-E2-threat-w79sr/candA",
+   "B": "agent2/day2/q/cand-build/20261004164607191-E2-threat-w79sr/candB",
+   "sizeA": 216,
+   "sizeB": 235,
+   "shaA": "8c9c4f3469f3b51e0d6c88fa1a3a24e38fa20274e20ba72c5d9adb92a0979853",
+   "shaB": "e29758d47b9fc339cd4486365a80c1f87b1d06bc4fec36aeff7bb74c63fed7bd"
+  },
+  "baseRevision": 2,
+  "specKey": "f23166212a91",
+  "battlesPerArm": 240,
+  "candMean": 0.6625,
+  "baseMean": 0.4542,
+  "all": {
+   "n": 12,
+   "diff": 0.20833,
+   "lo": 0.15069,
+   "hi": 0.26598,
+   "wins": 12,
+   "losses": 0
+  },
+  "byThreat": {
+   "mix": {
+    "n": 12,
+    "diff": 0.20833,
+    "lo": 0.15069,
+    "hi": 0.26598,
+    "wins": 12,
+    "losses": 0
+   }
+  },
+  "threatFirstTeamScore": {
+   "vsCand": {
+    "mix": 0.0833
+   },
+   "vsBase": {
+    "mix": 0.1458
+   }
+  },
+  "threatHashes": [
+   {
+    "label": "Code_Killers24",
+    "warriors": [
+     "repos/corewars8086-survivors/cgx2024/03-live/HRZ_Code_Killers1",
+     "repos/corewars8086-survivors/cgx2024/03-live/HRZ_Code_Killers2"
+    ],
+    "hashes": [
+     "35af865168820349a19a179133ecc25d5946e01e6953666f6b3e2ea6fd6cab49",
+     "35af865168820349a19a179133ecc25d5946e01e6953666f6b3e2ea6fd6cab49"
+    ]
+   },
+   {
+    "label": "S3gm3ntati0n24",
+    "warriors": [
+     "repos/corewars8086-survivors/cgx2024/03-live/HRZ_S3gm3ntati0n_cu1t1",
+     "repos/corewars8086-survivors/cgx2024/03-live/HRZ_S3gm3ntati0n_cu1t2"
+    ],
+    "hashes": [
+     "69133cb3a25e76b32a24fed42d81e0d2c1b6d752659c5ba9879620ec8a156b31",
+     "484610ddecfeff1f768c0918bda653d6fd9e23fd2025c0c942d83ea699d02a13"
+    ]
+   },
+   {
+    "label": "JMP2HELL24",
+    "warriors": [
+     "repos/corewars8086-survivors/cgx2024/03-live/HRZ_JMP2HELL1",
+     "repos/corewars8086-survivors/cgx2024/03-live/HRZ_JMP2HELL2"
+    ],
+    "hashes": [
+     "ace77c08a46478565dabc401afef2e75b8698d5763990c3538fceb229213e8f3",
+     "a3c2b03117407eed9969e2372f43bb55b4c08ba240ef5737c2c438ef36dde954"
+    ]
+   }
+  ]
+ }
+}

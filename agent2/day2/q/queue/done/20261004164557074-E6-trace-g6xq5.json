@@ -1,0 +1,27 @@
+{
+ "job": {
+  "id": "20261004164557074-E6-trace-g6xq5",
+  "agent": "E6",
+  "kind": "trace",
+  "submittedAt": "2026-10-04T16:45:57.076Z",
+  "note": "trace T8 (A trail 800h) to check A rebuild-window deaths vs DET2 trace c360q",
+  "asmA": "agent2/day2/scratch/E6/T8_A.asm"
+ },
+ "ok": true,
+ "finishedAt": "2026-10-04T16:47:21.987Z",
+ "seconds": 35.96,
+ "result": {
+  "candidate": {
+   "A": "agent2/day2/q/cand-build/20261004164557074-E6-trace-g6xq5/candA",
+   "B": "agent2/day2/q/revisions/rev2/B",
+   "sizeA": 214,
+   "sizeB": 233,
+   "shaA": "1860b94250a3a045a7fe768474787b990fb7836a9a056fa281ef757bb8666434",
+   "shaB": "15f5c4dabec14a62af067a9593e3ce6f207167c78b4b6f8e5c89fc4e3e8de8a1"
+  },
+  "traceDir": "agent2/day2/q/scratch/_trace/day2TR-1860b94250-15f5c4dabe",
+  "battles": 260,
+  "summary": "deaths 214\n 122 wild-cs          CPU exception    opp\n  22 wild-cs          CPU exception    zombie\n  17 wild-cs          memory exception opp\n   9 wild-cs          memory exception self-only\n   9 startup(cs1000)  memory exception load\n   6 startup(cs1000)  memory exception zombie\n   6 wild-cs          CPU exception    self-only\n   5 startup(cs1000)  CPU exception    zombie\n   5 wild-cs          CPU exception    ourZombie\n   4 wild-cs          memory exception zombie\n   3 wild-cs          CPU exception    partner\n   2 wild-cs          CPU exception    untouched\n   2 startup(cs1000)  CPU exception    partner\n   1 startup(cs1000)  CPU exception    load\n   1 startup(cs1000)  memory exception opp\ntop opponent killers: T_zrl03=33 T_ah02=14 A_TOM_BitBenders=11 Y_GSA_LVS_FIT=10 Y_GSA_3Plate_Benchers=8 A_HRZ_Underflow=6 A_HRZ_L=5 A_RZL_YANDE=5 T_V6=5 A_HLS_EmoMutants=5 A_OHS_BatteringRAM=5 A_TOM_tson_el_akod=4\n",
+  "note": "phase 'wild-cs' = any CS other than 0FFC/1000 (V6 family uses FAR_SEG 0FFB); examples.json not produced by sum-trace2; raw jsonl in traceDir"
+ }
+}

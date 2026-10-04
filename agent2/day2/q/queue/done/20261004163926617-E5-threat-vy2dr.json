@@ -1,0 +1,206 @@
+{
+ "job": {
+  "id": "20261004163926617-E5-threat-vy2dr",
+  "agent": "E5",
+  "kind": "threat",
+  "submittedAt": "2026-10-04T16:39:26.619Z",
+  "note": "E5 C1 mechanism check: hook-cell routers ([5D13h] x5, [9769h] RW), 1 copy, 4 cohorts each",
+  "asmB": "agent2/day2/scratch/E5/C1_B.asm",
+  "threats": [
+   {
+    "name": "m050",
+    "binA": "agent2/build/ref/ChimeraA",
+    "binB": "agent2/build/ref/ChimeraB"
+   },
+   {
+    "name": "FixedToggle",
+    "binA": "agent2/build/counter/FTA",
+    "binB": "agent2/build/counter/FTB"
+   },
+   {
+    "name": "Synthesis",
+    "binA": "agent2/build/counter/SYA",
+    "binB": "agent2/build/counter/SYB"
+   },
+   {
+    "name": "b01d",
+    "binA": "agent2/build/ref/b01dA",
+    "binB": "agent2/build/ref/b01dB"
+   },
+   {
+    "name": "e1p4",
+    "binA": "agent2/build/ref/e1p4A",
+    "binB": "agent2/build/ref/e1p4B"
+   },
+   {
+    "name": "RegWinners",
+    "binA": "official-2025/survivors-online/HRZ_Registered_Winners1",
+    "binB": "official-2025/survivors-online/HRZ_Registered_Winners2"
+   }
+  ],
+  "copies": 1,
+  "cohortsPerThreat": 4
+ },
+ "ok": true,
+ "finishedAt": "2026-10-04T16:42:23.506Z",
+ "seconds": 42.6,
+ "result": {
+  "candidate": {
+   "A": "agent2/day2/q/revisions/rev2/A",
+   "B": "agent2/day2/q/cand-build/20261004163926617-E5-threat-vy2dr/candB",
+   "sizeA": 214,
+   "sizeB": 233,
+   "shaA": "2153532daca9095acc71f0a2bdc7560024fc81972171c02f1b7f8cc41d1b1ce4",
+   "shaB": "f8eb1cd29a65fd693f8fbf4758d7cf4f3248bfdf56523962e93fdf51060439f2"
+  },
+  "baseRevision": 2,
+  "specKey": "c1a2043f4011",
+  "battlesPerArm": 480,
+  "candMean": 0.7935,
+  "baseMean": 0.7765,
+  "all": {
+   "n": 24,
+   "diff": 0.01701,
+   "lo": 0.00008,
+   "hi": 0.03394,
+   "wins": 8,
+   "losses": 2
+  },
+  "byThreat": {
+   "m050": {
+    "n": 4,
+    "diff": 0.08125,
+    "lo": 0.04698,
+    "hi": 0.11552,
+    "wins": 4,
+    "losses": 0
+   },
+   "FixedToggle": {
+    "n": 4,
+    "diff": 0,
+    "lo": -0.04001,
+    "hi": 0.04001,
+    "wins": 1,
+    "losses": 1
+   },
+   "Synthesis": {
+    "n": 4,
+    "diff": 0.02917,
+    "lo": -0.01775,
+    "hi": 0.07608,
+    "wins": 2,
+    "losses": 0
+   },
+   "b01d": {
+    "n": 4,
+    "diff": 0.00417,
+    "lo": -0.004,
+    "hi": 0.01233,
+    "wins": 1,
+    "losses": 0
+   },
+   "e1p4": {
+    "n": 4,
+    "diff": -0.0125,
+    "lo": -0.037,
+    "hi": 0.012,
+    "wins": 0,
+    "losses": 1
+   },
+   "RegWinners": {
+    "n": 4,
+    "diff": 0,
+    "lo": 0,
+    "hi": 0,
+    "wins": 0,
+    "losses": 0
+   }
+  },
+  "threatFirstTeamScore": {
+   "vsCand": {
+    "m050": 0.0675,
+    "FixedToggle": 0.175,
+    "Synthesis": 0.0625,
+    "b01d": 0.1104,
+    "e1p4": 0.0583,
+    "RegWinners": 0.0875
+   },
+   "vsBase": {
+    "m050": 0.1467,
+    "FixedToggle": 0.2125,
+    "Synthesis": 0.1167,
+    "b01d": 0.1271,
+    "e1p4": 0.0583,
+    "RegWinners": 0.0875
+   }
+  },
+  "threatHashes": [
+   {
+    "label": "m050",
+    "warriors": [
+     "agent2/build/ref/ChimeraA",
+     "agent2/build/ref/ChimeraB"
+    ],
+    "hashes": [
+     "0268ce4f301bf2ada8566f4e608180a0670a335a80b9c2b93b67aee2b632bd44",
+     "06b5a1ff7bac4b146620de6d1de512dfedf3f28366d6435bf61d49869d971782"
+    ]
+   },
+   {
+    "label": "FixedToggle",
+    "warriors": [
+     "agent2/build/counter/FTA",
+     "agent2/build/counter/FTB"
+    ],
+    "hashes": [
+     "bea990bbf2c60cb4c39d80dd5b533f83a1eb62f1ad202020c6d4e93cbebc2747",
+     "9761054288100948cfcf3610c8d989f16eba68f0f501b90c21b7de9ead380c8f"
+    ]
+   },
+   {
+    "label": "Synthesis",
+    "warriors": [
+     "agent2/build/counter/SYA",
+     "agent2/build/counter/SYB"
+    ],
+    "hashes": [
+     "3875482b4d57a8d29f474215ed9dd41249bc17c46b1a662c4906554b5d859b9c",
+     "99055d82958f813de2067a17dde8ea361c749bd4dc916095a4dad1ad8e13ce2b"
+    ]
+   },
+   {
+    "label": "b01d",
+    "warriors": [
+     "agent2/build/ref/b01dA",
+     "agent2/build/ref/b01dB"
+    ],
+    "hashes": [
+     "775080226ca8f9e9a5aac584094c9066bd2c55365ee8cea1e18db26440d9315e",
+     "884b4d52e4ef1e57db85c88083d0a8667a6bd252a25728da7f5fdedefa6f33c7"
+    ]
+   },
+   {
+    "label": "e1p4",
+    "warriors": [
+     "agent2/build/ref/e1p4A",
+     "agent2/build/ref/e1p4B"
+    ],
+    "hashes": [
+     "99192c673e5af394ed8194932b52b4f18f092804384f38d1bb2828b189c76b93",
+     "d307b92097ac68ce6073adc1e34917b2f51c0c396235c918dfc913cee7393354"
+    ]
+   },
+   {
+    "label": "RegWinners",
+    "warriors": [
+     "official-2025/survivors-online/HRZ_Registered_Winners1",
+     "official-2025/survivors-online/HRZ_Registered_Winners2"
+    ],
+    "hashes": [
+     "1645436c2465df7ac0def9182eb12506e7aa9ca6b719635d2192eab4e38ce70d",
+     "6a489e8f28e3cbe8e370b8382679938c7635a46fcbbd5f4c263024e2e8dcabab"
+    ]
+   }
+  ]
+ }
+}

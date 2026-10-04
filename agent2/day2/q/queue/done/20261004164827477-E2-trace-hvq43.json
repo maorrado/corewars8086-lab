@@ -1,0 +1,28 @@
+{
+ "job": {
+  "id": "20261004164827477-E2-trace-hvq43",
+  "agent": "E2",
+  "kind": "trace",
+  "submittedAt": "2026-10-04T16:48:27.480Z",
+  "note": "E2 CF trace: expect foreign (T_) deaths at CS:IP 0000:0000 (memory exception) after running our worker copies; compare with DET2 trace c360q",
+  "asmA": "agent2/day2/scratch/E2/CF_A.asm",
+  "asmB": "agent2/day2/scratch/E2/CF_B.asm"
+ },
+ "ok": true,
+ "finishedAt": "2026-10-04T16:49:40.954Z",
+ "seconds": 52.597,
+ "result": {
+  "candidate": {
+   "A": "agent2/day2/q/cand-build/20261004164827477-E2-trace-hvq43/candA",
+   "B": "agent2/day2/q/cand-build/20261004164827477-E2-trace-hvq43/candB",
+   "sizeA": 216,
+   "sizeB": 235,
+   "shaA": "8c9c4f3469f3b51e0d6c88fa1a3a24e38fa20274e20ba72c5d9adb92a0979853",
+   "shaB": "e29758d47b9fc339cd4486365a80c1f87b1d06bc4fec36aeff7bb74c63fed7bd"
+  },
+  "traceDir": "agent2/day2/q/scratch/_trace/day2TR-8c9c4f3469-e29758d47b",
+  "battles": 260,
+  "summary": "deaths 201\n 107 wild-cs          CPU exception    opp\n  20 wild-cs          CPU exception    zombie\n  18 wild-cs          memory exception opp\n  12 wild-cs          memory exception self-only\n   9 startup(cs1000)  memory exception load\n   8 wild-cs          CPU exception    ourZombie\n   7 wild-cs          CPU exception    self-only\n   6 startup(cs1000)  memory exception zombie\n   5 startup(cs1000)  CPU exception    zombie\n   3 wild-cs          CPU exception    partner\n   2 wild-cs          CPU exception    untouched\n   2 startup(cs1000)  CPU exception    partner\n   1 startup(cs1000)  CPU exception    load\n   1 startup(cs1000)  memory exception opp\ntop opponent killers: T_zrl03=22 T_ah02=10 A_TOM_BitBenders=10 Y_GSA_3Plate_Benchers=9 A_HLS_EmoMutants=8 Y_GSA_LVS_FIT=7 A_AVI_Fishandpoultry=7 A_HRZ_L=6 A_RZL_YANDE=5 A_OHS_BatteringRAM=5 A_HRZ_Underflow=5 A_GSA_B33=4\n",
+  "note": "phase 'wild-cs' = any CS other than 0FFC/1000 (V6 family uses FAR_SEG 0FFB); examples.json not produced by sum-trace2; raw jsonl in traceDir"
+ }
+}

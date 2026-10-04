@@ -1,0 +1,645 @@
+--- L1-ah02-1.jsonl w7 r71382 CAND1 other CPU exception killer=partner(CAND2) cs 0ffb ip 14ae sp d452 di 14b9 si 0016 es 0ffb bx 02c0
+   bytes a4:B@71378 48:B@71378 fb:B@71378 [0f:B@71378] a4:B@71377 48:B@71377 fb:B@71377 0f:B@71377 a4:B@71376 48:B@71376
+   capt   hist:
+     r71371 0ffb:14a4 sp=1452 di=14ae si=000b cx=0005 dx=4000 f3a529d4
+     r71372 0ffb:14a4 sp=1452 di=14b0 si=000d cx=0004 dx=4000 f3a529d4
+     r71373 0ffb:14a4 sp=1452 di=14b2 si=000f cx=0003 dx=4000 f3a529d4
+     r71374 0ffb:14a4 sp=1452 di=14b4 si=0011 cx=0002 dx=4000 f3a529d4
+     r71375 0ffb:14a4 sp=1452 di=14b6 si=0013 cx=0001 dx=4000 f3a529d4
+     r71376 0ffb:14a4 sp=1452 di=14b8 si=0015 cx=0000 dx=4000 f3a529d4
+     r71377 0ffb:14a6 sp=1452 di=14b8 si=0015 cx=0000 dx=4000 29d4292f
+     r71378 0ffb:14a8 sp=d452 di=14b8 si=0015 cx=0000 dx=4000 292f8b3f
+     r71379 0ffb:14aa sp=d452 di=14b8 si=0015 cx=0000 dx=4000 a448fb0f
+     r71380 0ffb:14ab sp=d452 di=14b9 si=0016 cx=0000 dx=4000 48fb0fa4
+     r71381 0ffb:14ac sp=d452 di=14b9 si=0016 cx=0000 dx=4000 fb0fa448
+     r71382 0ffb:14ad sp=d452 di=14b9 si=0016 cx=0000 dx=4000 0fa448fb
+--- L1-ah02-1.jsonl w9 r57 CAND1 other memory exception killer=self() cs 0ffb ip 0001 sp 08fc di 0015 si 0000 es 2040 bx 02c0
+   bytes oob oob oob [oob] oob oob oob oob oob oob
+   capt   hist:
+     r46 1000:4da4 sp=0800 di=0014 si=0000 cx=0000 dx=0ffb 89283dc2
+     r47 1000:4da6 sp=0800 di=0014 si=0000 cx=0000 dx=0ffb 3dc289fc
+     r48 1000:4da9 sp=0800 di=0014 si=0000 cx=0000 dx=0ffb fc81c400
+     r49 1000:4daa sp=0800 di=0014 si=0000 cx=0000 dx=0ffb 81c40001
+     r50 1000:4dae sp=0900 di=0014 si=0000 cx=0000 dx=0ffb b90900ba
+     r51 1000:4db1 sp=0900 di=0014 si=0000 cx=0009 dx=0ffb ba0040bd
+     r52 1000:4db4 sp=0900 di=0014 si=0000 cx=0009 dx=4000 bd0044b8
+     r53 1000:4db7 sp=0900 di=0014 si=0000 cx=0009 dx=4000 b8ff1fab
+     r54 1000:4dba sp=0900 di=0014 si=0000 cx=0009 dx=4000 ab4fff1f
+     r55 1000:4dbb sp=0900 di=0016 si=0000 cx=0009 dx=4000 4fff1fa5
+     r56 1000:4dbc sp=0900 di=0015 si=0000 cx=0009 dx=4000 ff1fa5f3
+     r57 0ffb:0000 sp=08fc di=0015 si=0000 cx=0009 dx=4000 --------
+--- L1-ah02-1.jsonl w12 r473 CAND2 other memory exception killer=self() cs 0ffb ip c4a8 sp c452 di c4b6 si 0013 es 0ffb bx 0280
+   bytes 10:A_GSA_B331@472 a5:B@464 29:B@465 [d4:B@465] 29:B@466 2f:B@466 8b:B@467 a5:A_GSA_B331@470 bd:A_GSA_B331@470 02:A_GSA_B331@470
+   capt   hist:
+     r462 0ffb:c4a2 sp=c456 di=c4a3 si=0000 cx=0008 dx=2400 ff1fcccc
+     r463 0ffb:c4a2 sp=c452 di=c4a3 si=0000 cx=0008 dx=2400 a4c4fb0f
+     r464 0ffb:c4a3 sp=c452 di=c4a4 si=0001 cx=0008 dx=2400 a5fb0fa4
+     r465 0ffb:c4a4 sp=c452 di=c4a6 si=0003 cx=0008 dx=2400 f3a5a4c4
+     r466 0ffb:c4a4 sp=c452 di=c4a8 si=0005 cx=0007 dx=2400 f3a529d4
+     r467 0ffb:c4a4 sp=c452 di=c4aa si=0007 cx=0006 dx=2400 f3a529d4
+     r468 0ffb:c4a4 sp=c452 di=c4ac si=0009 cx=0005 dx=2400 f3a529d4
+     r469 0ffb:c4a4 sp=c452 di=c4ae si=000b cx=0004 dx=2400 f3a529d4
+     r470 0ffb:c4a4 sp=c452 di=c4b0 si=000d cx=0003 dx=2400 f3a529d4
+     r471 0ffb:c4a4 sp=c452 di=c4b2 si=000f cx=0002 dx=2400 f3a529d4
+     r472 0ffb:c4a4 sp=c452 di=c4b4 si=0011 cx=0001 dx=2400 f3a529d4
+     r473 0ffb:c4a4 sp=c452 di=c4b6 si=0013 cx=0000 dx=2400 10a529d4
+--- L1-ah02-1.jsonl w15 r1526 CAND2 dwell CPU exception killer=self() cs 0ffb ip 6ca6 sp 6c52 di 6ca4 si 0001 es 0ffb bx 8280
+   bytes a4:B@1523 [02:B@1524 fb:B@1523 0f:B@1523] a4:B@1522 6c:B@1522 fb:B@1522 0f:B@1522 a4:B@1521 6c:B@1521
+   capt   hist:
+     r1515 0ffb:6ca2 sp=6c76 di=6ca3 si=0000 cx=0009 dx=2400 ff1fcccc
+     r1516 0ffb:6ca2 sp=6c72 di=6ca3 si=0000 cx=0009 dx=2400 ff1fcccc
+     r1517 0ffb:6ca2 sp=6c6e di=6ca3 si=0000 cx=0009 dx=2400 ff1fcccc
+     r1518 0ffb:6ca2 sp=6c6a di=6ca3 si=0000 cx=0009 dx=2400 ff1fcccc
+     r1519 0ffb:6ca2 sp=6c66 di=6ca3 si=0000 cx=0009 dx=2400 ff1fcccc
+     r1520 0ffb:6ca2 sp=6c62 di=6ca3 si=0000 cx=0009 dx=2400 ff1fcccc
+     r1521 0ffb:6ca2 sp=6c5e di=6ca3 si=0000 cx=0009 dx=2400 ff1fcccc
+     r1522 0ffb:6ca2 sp=6c5a di=6ca3 si=0000 cx=0009 dx=2400 ff1fcccc
+     r1523 0ffb:6ca2 sp=6c56 di=6ca3 si=0000 cx=0009 dx=2400 ff1fcccc
+     r1524 0ffb:6ca2 sp=6c52 di=6ca3 si=0000 cx=0009 dx=2400 a46cfb0f
+     r1525 0ffb:6ca3 sp=6c52 di=6ca4 si=0001 cx=0009 dx=2400 02fb0fa4
+     r1526 0ffb:6ca5 sp=6c52 di=6ca4 si=0001 cx=0009 dx=2400 0fa46cfb
+--- L1-V4-1.jsonl w0 r14 CAND1 startup CPU exception killer=partner(CAND2) cs 1000 ip 4a18 sp 0800 di ff80 si 49ec es 1000 bx 26ff
+   bytes cc:load@0 cc:load@0 cd:load@0 [2e:B@8] 6c:B@8 f0:load@0 31:load@0 d2:load@0 f7:load@0 b4:load@0
+   capt   hist:
+     r3 1000:49f4 sp=0800 di=0000 si=49ec cx=4a17 dx=0000 a143128b
+     r4 1000:49f7 sp=0800 di=0000 si=49ec cx=4a17 dx=0000 8b2e174a
+     r5 1000:49fb sp=0800 di=0000 si=49ec cx=4a17 dx=0000 81f5cccc
+     r6 1000:49ff sp=0800 di=0000 si=49ec cx=4a17 dx=0000 f7a4d200
+     r7 1000:4a03 sp=0800 di=0000 si=49ec cx=4a17 dx=0000 97c484ce
+     r8 1000:4a04 sp=0800 di=15ae si=49ec cx=4a17 dx=0000 c484ce00
+     r9 1000:4a08 sp=0800 di=15ae si=49ec cx=4a17 dx=0000 bac3e1cd
+     r10 1000:4a0b sp=0800 di=15ae si=49ec cx=4a17 dx=e1c3 cd87bf80
+     r11 1000:4a0d sp=0800 di=15ae si=49ec cx=4a17 dx=e1c3 bf80ffb8
+     r12 1000:4a10 sp=0800 di=ff80 si=49ec cx=4a17 dx=e1c3 b8ff1fba
+     r13 1000:4a13 sp=0800 di=ff80 si=49ec cx=4a17 dx=e1c3 bacccccd
+     r14 1000:4a16 sp=0800 di=ff80 si=49ec cx=4a17 dx=cccc cd2e6cf0
+--- L1-V4-1.jsonl w5 r2721 CAND1 other CPU exception killer=self() cs 0ffa ip 7e36 sp 7dd2 di 7ca4 si 0001 es 0ffa bx 02c0
+   bytes a4:A@2518 7c:A@2518 fa:A@2518 [0f:A@2518] a4:A@2517 7c:A@2517 fa:A@2517 0f:A@2517 a4:A@2516 7c:A@2516
+   capt   hist:
+     r2710 0ffa:7e20 sp=7dd2 di=7ca3 si=0000 cx=00e0 dx=4000 10f170a5
+     r2711 0ffa:7e22 sp=7dd2 di=7ca3 si=0000 cx=0020 dx=4000 70a510f1
+     r2712 0ffa:7e24 sp=7dd2 di=7ca3 si=0000 cx=0020 dx=4000 10f170a5
+     r2713 0ffa:7e26 sp=7dd2 di=7ca3 si=0000 cx=0061 dx=4000 70a510f1
+     r2714 0ffa:7e28 sp=7dd2 di=7ca3 si=0000 cx=0061 dx=4000 10f170a5
+     r2715 0ffa:7e2a sp=7dd2 di=7ca3 si=0000 cx=00a1 dx=4000 70a510f1
+     r2716 0ffa:7e2c sp=7dd2 di=7ca3 si=0000 cx=00a1 dx=4000 10f170a5
+     r2717 0ffa:7e2e sp=7dd2 di=7ca3 si=0000 cx=00e1 dx=4000 70a510f1
+     r2718 0ffa:7e30 sp=7dd2 di=7ca3 si=0000 cx=00e1 dx=4000 10f1a47c
+     r2719 0ffa:7e32 sp=7dd2 di=7ca3 si=0000 cx=0021 dx=4000 a47cfa0f
+     r2720 0ffa:7e33 sp=7dd2 di=7ca4 si=0001 cx=0021 dx=4000 7cfa0fa4
+     r2721 0ffa:7e35 sp=7dd2 di=7ca4 si=0001 cx=0021 dx=4000 0fa47cfa
+--- L1-V4-1.jsonl w6 r469 CAND2 other memory exception killer=self() cs 0ffa ip 8925 sp 88c2 di 88a4 si 0000 es 0ffa bx 0280
+   bytes 10:Y_GSA_LVS_FIT1@405 a4:B@435 88:B@435 [fa:B@435] 0f:B@435 a4:B@434 88:B@434 fa:B@434 0f:B@434 a4:B@433
+   capt   hist:
+     r458 0ffa:88f5 sp=88c2 di=88a4 si=0000 cx=0008 dx=2400 10ae7ba5
+     r459 0ffa:88f9 sp=88c2 di=88a4 si=0000 cx=0008 dx=2400 10ae7ba5
+     r460 0ffa:88fd sp=88c2 di=88a4 si=0000 cx=0008 dx=2400 10ae7ba5
+     r461 0ffa:8901 sp=88c2 di=88a4 si=0000 cx=0008 dx=2400 10ae7ba5
+     r462 0ffa:8905 sp=88c2 di=88a4 si=0000 cx=0008 dx=2400 10ae7ba5
+     r463 0ffa:8909 sp=88c2 di=88a4 si=0000 cx=0008 dx=2400 10ae7ba5
+     r464 0ffa:890d sp=88c2 di=88a4 si=0000 cx=0008 dx=2400 10ae7ba5
+     r465 0ffa:8911 sp=88c2 di=88a4 si=0000 cx=0008 dx=2400 10ae7ba5
+     r466 0ffa:8915 sp=88c2 di=88a4 si=0000 cx=0008 dx=2400 10ae7ba5
+     r467 0ffa:8919 sp=88c2 di=88a4 si=0000 cx=0008 dx=2400 10ae7ba5
+     r468 0ffa:891d sp=88c2 di=88a4 si=0000 cx=0008 dx=2400 10ae7ba5
+     r469 0ffa:8921 sp=88c2 di=88a4 si=0000 cx=0008 dx=2400 10a488fa
+--- L1-V6-0.jsonl w3 r2004 CAND1 other memory exception killer=self() cs 0000 ip 0001 sp 054a di 04a3 si 0000 es 0ffa bx 02c0
+   bytes oob oob oob [oob] oob oob oob oob oob oob
+   capt   hist:
+     r1993 0ffa:04a2 sp=0572 di=04a3 si=0000 cx=0009 dx=4000 ff1fcccc
+     r1994 0ffa:04a2 sp=056e di=04a3 si=0000 cx=0009 dx=4000 ff1fcccc
+     r1995 0ffa:04a2 sp=056a di=04a3 si=0000 cx=0009 dx=4000 ff1fcccc
+     r1996 0ffa:04a2 sp=0566 di=04a3 si=0000 cx=0009 dx=4000 ff1fcccc
+     r1997 0ffa:04a2 sp=0562 di=04a3 si=0000 cx=0009 dx=4000 ff1fcccc
+     r1998 0ffa:04a2 sp=055e di=04a3 si=0000 cx=0009 dx=4000 ff1fcccc
+     r1999 0ffa:04a2 sp=055a di=04a3 si=0000 cx=0009 dx=4000 ff1fcccc
+     r2000 0ffa:04a2 sp=0556 di=04a3 si=0000 cx=0009 dx=4000 ff1fcccc
+     r2001 0ffa:04a2 sp=0552 di=04a3 si=0000 cx=0009 dx=4000 ff1fcccc
+     r2002 0ffa:04a2 sp=054e di=04a3 si=0000 cx=0009 dx=4000 ff1fcccc
+     r2003 0ffa:04a2 sp=054a di=04a3 si=0000 cx=0009 dx=4000 ff1fcccc
+     r2004 0000:0000 sp=054a di=04a3 si=0000 cx=0009 dx=4000 --------
+--- L1-V6-0.jsonl w7 r3023 CAND2 other memory exception killer=self() cs ea10 ip 008e sp 71d6 di 70a3 si 0000 es 0ffa bx 0280
+   bytes oob oob oob [oob] oob oob oob oob oob oob
+   capt   hist:
+     r3012 0ffa:70a2 sp=71fa di=70a3 si=0000 cx=0009 dx=2400 ff1fcccc
+     r3013 0ffa:70a2 sp=71f6 di=70a3 si=0000 cx=0009 dx=2400 ff1fcccc
+     r3014 0ffa:70a2 sp=71f2 di=70a3 si=0000 cx=0009 dx=2400 ff1fcccc
+     r3015 0ffa:70a2 sp=71ee di=70a3 si=0000 cx=0009 dx=2400 ff1fcccc
+     r3016 0ffa:70a2 sp=71ea di=70a3 si=0000 cx=0009 dx=2400 ff1fcccc
+     r3017 0ffa:70a2 sp=71e6 di=70a3 si=0000 cx=0009 dx=2400 ff1fcccc
+     r3018 0ffa:70a2 sp=71e2 di=70a3 si=0000 cx=0009 dx=2400 ff1fcccc
+     r3019 0ffa:70a2 sp=71de di=70a3 si=0000 cx=0009 dx=2400 ff1fcccc
+     r3020 0ffa:70a2 sp=71da di=70a3 si=0000 cx=0009 dx=2400 ff1fcccc
+     r3021 0ffa:70a2 sp=71d6 di=70a3 si=0000 cx=0009 dx=2400 ff1fea8d
+     r3022 0ffa:70a4 sp=71d6 di=70a3 si=0000 cx=0009 dx=2400 ea8d0010
+     r3023 ea10:008d sp=71d6 di=70a3 si=0000 cx=0009 dx=2400 --------
+--- L1-V6-0.jsonl w8 r36455 CAND1 other CPU exception killer=partner(CAND2) cs 0ffa ip 1ca6 sp 1c42 di 1cb6 si 0013 es 0ffa bx 02c0
+   bytes a4:B@36453 20:B@36453 fa:B@36453 [0f:B@36453] a4:B@36452 20:B@36452 fa:B@36452 0f:B@36452 a4:B@36451 20:B@36451
+   capt zom20d  hist:
+     r36444 0ffa:1ca2 sp=1c42 di=1ca3 si=0000 cx=0009 dx=4000 a41cfa0f
+     r36445 0ffa:1ca3 sp=1c42 di=1ca4 si=0001 cx=0009 dx=4000 a5fa0fa4
+     r36446 0ffa:1ca4 sp=1c42 di=1ca6 si=0003 cx=0009 dx=4000 f3a5a41c
+     r36447 0ffa:1ca4 sp=1c42 di=1ca8 si=0005 cx=0008 dx=4000 f3a529d4
+     r36448 0ffa:1ca4 sp=1c42 di=1caa si=0007 cx=0007 dx=4000 f3a529d4
+     r36449 0ffa:1ca4 sp=1c42 di=1cac si=0009 cx=0006 dx=4000 f3a529d4
+     r36450 0ffa:1ca4 sp=1c42 di=1cae si=000b cx=0005 dx=4000 f3a529d4
+     r36451 0ffa:1ca4 sp=1c42 di=1cb0 si=000d cx=0004 dx=4000 f3a529d4
+     r36452 0ffa:1ca4 sp=1c42 di=1cb2 si=000f cx=0003 dx=4000 f3a529d4
+     r36453 0ffa:1ca4 sp=1c42 di=1cb4 si=0011 cx=0002 dx=4000 f3a5a420
+     r36454 0ffa:1ca4 sp=1c42 di=1cb6 si=0013 cx=0001 dx=4000 fa0fa420
+     r36455 0ffa:1ca5 sp=1c42 di=1cb6 si=0013 cx=0001 dx=4000 0fa420fa
+--- L1-V6nohunt-0.jsonl w10 r4775 CAND2 other CPU exception killer=self() cs 0ffa ip fcaa sp 03d6 di fcb8 si 0015 es 0ffa bx 0280
+   bytes f8:A_OHS_BatteringRAM1@4771 02:A_OHS_BatteringRAM1@4771 10:A_OHS_BatteringRAM1@4771 [2f:B@4764] 8b:B@4765 3f:B@4765 b1:B@4766 09:B@4766 31:B@4767 f6:B@4767
+   capt   hist:
+     r4764 0ffa:fca4 sp=03d6 di=fca8 si=0005 cx=0008 dx=2400 f3a529d4
+     r4765 0ffa:fca4 sp=03d6 di=fcaa si=0007 cx=0007 dx=2400 f3a529d4
+     r4766 0ffa:fca4 sp=03d6 di=fcac si=0009 cx=0006 dx=2400 f3a529d4
+     r4767 0ffa:fca4 sp=03d6 di=fcae si=000b cx=0005 dx=2400 f3a529d4
+     r4768 0ffa:fca4 sp=03d6 di=fcb0 si=000d cx=0004 dx=2400 f3a529d4
+     r4769 0ffa:fca4 sp=03d6 di=fcb2 si=000f cx=0003 dx=2400 f3a529d4
+     r4770 0ffa:fca4 sp=03d6 di=fcb4 si=0011 cx=0002 dx=2400 f3a529d4
+     r4771 0ffa:fca4 sp=03d6 di=fcb6 si=0013 cx=0001 dx=2400 f3a529d4
+     r4772 0ffa:fca4 sp=03d6 di=fcb8 si=0015 cx=0000 dx=2400 f3a5f802
+     r4773 0ffa:fca6 sp=03d6 di=fcb8 si=0015 cx=0000 dx=2400 f802102f
+     r4774 0ffa:fca7 sp=03d6 di=fcb8 si=0015 cx=0000 dx=2400 02102f8b
+     r4775 0ffa:fca9 sp=03d6 di=fcb8 si=0015 cx=0000 dx=2400 2f8b3fb1
+--- L1-V6nohunt-0.jsonl w16 r883 CAND1 startup CPU exception killer=partner(CAND2) cs 1000 ip e616 sp 0800 di 06b2 si ecf7 es 2640 bx 26ff
+   bytes a4:B@881 e4:B@881 fa:B@881 [0f:B@881] a4:B@880 e4:B@880 fa:B@880 0f:B@880 a4:B@879 e4:B@879
+   capt   hist:
+     r872 1000:e614 sp=0800 di=069e si=ece3 cx=c7c1 dx=0000 f3a5161f
+     r873 1000:e614 sp=0800 di=06a0 si=ece5 cx=c7c0 dx=0000 f3a5161f
+     r874 1000:e614 sp=0800 di=06a2 si=ece7 cx=c7bf dx=0000 f3a5161f
+     r875 1000:e614 sp=0800 di=06a4 si=ece9 cx=c7be dx=0000 f3a5161f
+     r876 1000:e614 sp=0800 di=06a6 si=eceb cx=c7bd dx=0000 f3a5161f
+     r877 1000:e614 sp=0800 di=06a8 si=eced cx=c7bc dx=0000 f3a5161f
+     r878 1000:e614 sp=0800 di=06aa si=ecef cx=c7bb dx=0000 f3a5161f
+     r879 1000:e614 sp=0800 di=06ac si=ecf1 cx=c7ba dx=0000 f3a5161f
+     r880 1000:e614 sp=0800 di=06ae si=ecf3 cx=c7b9 dx=0000 f3a5161f
+     r881 1000:e614 sp=0800 di=06b0 si=ecf5 cx=c7b8 dx=0000 f3a5a4e4
+     r882 1000:e614 sp=0800 di=06b2 si=ecf7 cx=c7b7 dx=0000 fa0fa4e4
+     r883 1000:e615 sp=0800 di=06b2 si=ecf7 cx=c7b7 dx=0000 0fa4e4fa
+--- L1-zchain4-1.jsonl w0 r872 CAND1 other memory exception killer=self() cs 29a5 ip f3a6 sp 15c6 di 14a3 si 0000 es 0ffb bx 02c0
+   bytes oob oob oob [oob] oob oob oob oob oob oob
+   capt   hist:
+     r861 0ffb:14a2 sp=15f2 di=14a3 si=0000 cx=0009 dx=4000 ff1ffb0f
+     r862 0ffb:14a2 sp=15ee di=14a3 si=0000 cx=0009 dx=4000 ff1ffb0f
+     r863 0ffb:14a2 sp=15ea di=14a3 si=0000 cx=0009 dx=4000 ff1ffb0f
+     r864 0ffb:14a2 sp=15e6 di=14a3 si=0000 cx=0009 dx=4000 ff1ffb0f
+     r865 0ffb:14a2 sp=15e2 di=14a3 si=0000 cx=0009 dx=4000 ff1ffb0f
+     r866 0ffb:14a2 sp=15de di=14a3 si=0000 cx=0009 dx=4000 ff1ffb0f
+     r867 0ffb:14a2 sp=15da di=14a3 si=0000 cx=0009 dx=4000 ff1ffb0f
+     r868 0ffb:14a2 sp=15d6 di=14a3 si=0000 cx=0009 dx=4000 ff1ffb0f
+     r869 0ffb:14a2 sp=15d2 di=14a3 si=0000 cx=0009 dx=4000 ff1ffb0f
+     r870 0ffb:14a2 sp=15ce di=14a3 si=0000 cx=0009 dx=4000 ff1ffb0f
+     r871 0ffb:14a2 sp=15ca di=14a3 si=0000 cx=0009 dx=4000 ff1cfb0f
+     r872 29a5:f3a5 sp=15c6 di=14a3 si=0000 cx=0009 dx=4000 --------
+--- L1-zchain4-1.jsonl w3 r465 CAND2 dwell CPU exception killer=self() cs 0ffb ip 88a6 sp 8852 di 88a4 si 0001 es 0ffb bx 0282
+   bytes a4:B@462 [00:B@463 fb:B@462 0f:B@462] a4:B@461 88:B@461 fb:B@461 0f:B@461 a4:B@460 88:B@460
+   capt   hist:
+     r454 0ffb:88a2 sp=8876 di=88a3 si=0000 cx=0008 dx=2400 ff18cccc
+     r455 0ffb:88a2 sp=8872 di=88a3 si=0000 cx=0008 dx=2400 ff18cccc
+     r456 0ffb:88a2 sp=886e di=88a3 si=0000 cx=0008 dx=2400 ff18cccc
+     r457 0ffb:88a2 sp=886a di=88a3 si=0000 cx=0008 dx=2400 ff18cccc
+     r458 0ffb:88a2 sp=8866 di=88a3 si=0000 cx=0008 dx=2400 ff18cccc
+     r459 0ffb:88a2 sp=8862 di=88a3 si=0000 cx=0008 dx=2400 ff18cccc
+     r460 0ffb:88a2 sp=885e di=88a3 si=0000 cx=0008 dx=2400 ff18cccc
+     r461 0ffb:88a2 sp=885a di=88a3 si=0000 cx=0008 dx=2400 ff18cccc
+     r462 0ffb:88a2 sp=8856 di=88a3 si=0000 cx=0008 dx=2400 ff18cccc
+     r463 0ffb:88a2 sp=8852 di=88a3 si=0000 cx=0008 dx=2400 a4a5fb0f
+     r464 0ffb:88a3 sp=8852 di=88a4 si=0001 cx=0008 dx=2400 00fb0fa4
+     r465 0ffb:88a5 sp=8852 di=88a4 si=0001 cx=0008 dx=2400 0fa488fb
+--- L1-zchain4-1.jsonl w3 r2576 CAND1 other memory exception killer=self() cs 29a5 ip f3a6 sp c53a di c0a3 si 0000 es 0ffb bx 02c0
+   bytes oob oob oob [oob] oob oob oob oob oob oob
+   capt   hist:
+     r2565 0ffb:c0a2 sp=c566 di=c0a3 si=0000 cx=0009 dx=4000 ff18cccc
+     r2566 0ffb:c0a2 sp=c562 di=c0a3 si=0000 cx=0009 dx=4000 ff18cccc
+     r2567 0ffb:c0a2 sp=c55e di=c0a3 si=0000 cx=0009 dx=4000 ff18cccc
+     r2568 0ffb:c0a2 sp=c55a di=c0a3 si=0000 cx=0009 dx=4000 ff18cccc
+     r2569 0ffb:c0a2 sp=c556 di=c0a3 si=0000 cx=0009 dx=4000 ff18cccc
+     r2570 0ffb:c0a2 sp=c552 di=c0a3 si=0000 cx=0009 dx=4000 ff18cccc
+     r2571 0ffb:c0a2 sp=c54e di=c0a3 si=0000 cx=0009 dx=4000 ff18cccc
+     r2572 0ffb:c0a2 sp=c54a di=c0a3 si=0000 cx=0009 dx=4000 ff18cccc
+     r2573 0ffb:c0a2 sp=c546 di=c0a3 si=0000 cx=0009 dx=4000 ff18cccc
+     r2574 0ffb:c0a2 sp=c542 di=c0a3 si=0000 cx=0009 dx=4000 ff18cccc
+     r2575 0ffb:c0a2 sp=c53e di=c0a3 si=0000 cx=0009 dx=4000 ff1ccccc
+     r2576 29a5:f3a5 sp=c53a di=c0a3 si=0000 cx=0009 dx=4000 --------
+--- L1-zchain4-1.jsonl w4 r5805 CAND2 dwell CPU exception killer=self() cs 0ffb ip 0c26 sp 0bd2 di 0c23 si 0000 es 0ffb bx 0280
+   bytes [24:B@5802 0c:B@5802 fb:B@5802 0f:B@5802] 24:B@5801 0c:B@5801 fb:B@5801 0f:B@5801 24:B@5800 0c:B@5800
+   capt   hist:
+     r5794 0ffb:0c22 sp=0bf6 di=0c23 si=0000 cx=0009 dx=2400 ff1fcccc
+     r5795 0ffb:0c22 sp=0bf2 di=0c23 si=0000 cx=0009 dx=2400 ff1fcccc
+     r5796 0ffb:0c22 sp=0bee di=0c23 si=0000 cx=0009 dx=2400 ff1fcccc
+     r5797 0ffb:0c22 sp=0bea di=0c23 si=0000 cx=0009 dx=2400 ff1fcccc
+     r5798 0ffb:0c22 sp=0be6 di=0c23 si=0000 cx=0009 dx=2400 ff1fcccc
+     r5799 0ffb:0c22 sp=0be2 di=0c23 si=0000 cx=0009 dx=2400 ff1fcccc
+     r5800 0ffb:0c22 sp=0bde di=0c23 si=0000 cx=0009 dx=2400 ff1fcccc
+     r5801 0ffb:0c22 sp=0bda di=0c23 si=0000 cx=0009 dx=2400 ff1fcccc
+     r5802 0ffb:0c22 sp=0bd6 di=0c23 si=0000 cx=0009 dx=2400 ff1fcccc
+     r5803 0ffb:0c22 sp=0bd2 di=0c23 si=0000 cx=0009 dx=2400 240cfb0f
+     r5804 0ffb:0c24 sp=0bd2 di=0c23 si=0000 cx=0009 dx=2400 fb0f240c
+     r5805 0ffb:0c25 sp=0bd2 di=0c23 si=0000 cx=0009 dx=2400 0f240cfb
+--- L1-zchain4-1.jsonl w8 r743 CAND1 other memory exception killer=self() cs 29a5 ip f3a6 sp 63ca di 60a3 si 0000 es 0ffb bx 02c0
+   bytes oob oob oob [oob] oob oob oob oob oob oob
+   capt   hist:
+     r732 0ffb:60a2 sp=63f6 di=60a3 si=0000 cx=0009 dx=4000 ff1ffb0f
+     r733 0ffb:60a2 sp=63f2 di=60a3 si=0000 cx=0009 dx=4000 ff1ffb0f
+     r734 0ffb:60a2 sp=63ee di=60a3 si=0000 cx=0009 dx=4000 ff1ffb0f
+     r735 0ffb:60a2 sp=63ea di=60a3 si=0000 cx=0009 dx=4000 ff1ffb0f
+     r736 0ffb:60a2 sp=63e6 di=60a3 si=0000 cx=0009 dx=4000 ff1ffb0f
+     r737 0ffb:60a2 sp=63e2 di=60a3 si=0000 cx=0009 dx=4000 ff1ffb0f
+     r738 0ffb:60a2 sp=63de di=60a3 si=0000 cx=0009 dx=4000 ff1ffb0f
+     r739 0ffb:60a2 sp=63da di=60a3 si=0000 cx=0009 dx=4000 ff1ffb0f
+     r740 0ffb:60a2 sp=63d6 di=60a3 si=0000 cx=0009 dx=4000 ff1ffb0f
+     r741 0ffb:60a2 sp=63d2 di=60a3 si=0000 cx=0009 dx=4000 ff1ffb0f
+     r742 0ffb:60a2 sp=63ce di=60a3 si=0000 cx=0009 dx=4000 ff1ffb0f
+     r743 29a5:f3a5 sp=63ca di=60a3 si=0000 cx=0009 dx=4000 --------
+--- L1-zchain4-1.jsonl w9 r1000 CAND1 other memory exception killer=self() cs 29a5 ip f3a6 sp d412 di d0a3 si 0000 es 0ffb bx 02c0
+   bytes oob oob oob [oob] oob oob oob oob oob oob
+   capt   hist:
+     r989 0ffb:d0a2 sp=d43e di=d0a3 si=0000 cx=0009 dx=4000 ff1fcccc
+     r990 0ffb:d0a2 sp=d43a di=d0a3 si=0000 cx=0009 dx=4000 ff1fcccc
+     r991 0ffb:d0a2 sp=d436 di=d0a3 si=0000 cx=0009 dx=4000 ff1fcccc
+     r992 0ffb:d0a2 sp=d432 di=d0a3 si=0000 cx=0009 dx=4000 ff1fcccc
+     r993 0ffb:d0a2 sp=d42e di=d0a3 si=0000 cx=0009 dx=4000 ff1fcccc
+     r994 0ffb:d0a2 sp=d42a di=d0a3 si=0000 cx=0009 dx=4000 ff1fcccc
+     r995 0ffb:d0a2 sp=d426 di=d0a3 si=0000 cx=0009 dx=4000 ff1fcccc
+     r996 0ffb:d0a2 sp=d422 di=d0a3 si=0000 cx=0009 dx=4000 ff1fcccc
+     r997 0ffb:d0a2 sp=d41e di=d0a3 si=0000 cx=0009 dx=4000 ff1fcccc
+     r998 0ffb:d0a2 sp=d41a di=d0a3 si=0000 cx=0009 dx=4000 ff1fcccc
+     r999 0ffb:d0a2 sp=d416 di=d0a3 si=0000 cx=0009 dx=4000 ff1ccccc
+     r1000 29a5:f3a5 sp=d412 di=d0a3 si=0000 cx=0009 dx=4000 --------
+--- L1-zchain4-1.jsonl w11 r552 CAND2 other memory exception killer=self() cs 29a5 ip f3a6 sp db36 di d4a3 si 0000 es 0ffb bx 0280
+   bytes oob oob oob [oob] oob oob oob oob oob oob
+   capt   hist:
+     r541 0ffb:d4a2 sp=db62 di=d4a3 si=0000 cx=0009 dx=2400 ff1fcccc
+     r542 0ffb:d4a2 sp=db5e di=d4a3 si=0000 cx=0009 dx=2400 ff1fcccc
+     r543 0ffb:d4a2 sp=db5a di=d4a3 si=0000 cx=0009 dx=2400 ff1fcccc
+     r544 0ffb:d4a2 sp=db56 di=d4a3 si=0000 cx=0009 dx=2400 ff1fcccc
+     r545 0ffb:d4a2 sp=db52 di=d4a3 si=0000 cx=0009 dx=2400 ff1fcccc
+     r546 0ffb:d4a2 sp=db4e di=d4a3 si=0000 cx=0009 dx=2400 ff1fcccc
+     r547 0ffb:d4a2 sp=db4a di=d4a3 si=0000 cx=0009 dx=2400 ff1fcccc
+     r548 0ffb:d4a2 sp=db46 di=d4a3 si=0000 cx=0009 dx=2400 ff1fcccc
+     r549 0ffb:d4a2 sp=db42 di=d4a3 si=0000 cx=0009 dx=2400 ff1fcccc
+     r550 0ffb:d4a2 sp=db3e di=d4a3 si=0000 cx=0009 dx=2400 ff1fcccc
+     r551 0ffb:d4a2 sp=db3a di=d4a3 si=0000 cx=0009 dx=2400 ff1ccccc
+     r552 29a5:f3a5 sp=db36 di=d4a3 si=0000 cx=0009 dx=2400 --------
+--- L1-zchain4-1.jsonl w13 r38375 CAND1 other CPU exception killer=partner(CAND2) cs 0ffb ip 7ca6 sp 7c52 di 7cb4 si 0011 es 0ffb bx 02c0
+   bytes a4:B@38373 64:B@38373 fb:B@38373 [0f:B@38373] a4:B@38372 64:B@38372 fb:B@38372 0f:B@38372 a4:B@38371 64:B@38371
+   capt zom20b  hist:
+     r38364 0ffb:7ca2 sp=7c56 di=7ca3 si=0000 cx=0009 dx=4000 ff1ff3a5
+     r38365 0ffb:7ca2 sp=7c52 di=7ca3 si=0000 cx=0009 dx=4000 a47cfb0f
+     r38366 0ffb:7ca3 sp=7c52 di=7ca4 si=0001 cx=0009 dx=4000 a5fb0fa4
+     r38367 0ffb:7ca4 sp=7c52 di=7ca6 si=0003 cx=0009 dx=4000 f3a5a47c
+     r38368 0ffb:7ca4 sp=7c52 di=7ca8 si=0005 cx=0008 dx=4000 f3a529d4
+     r38369 0ffb:7ca4 sp=7c52 di=7caa si=0007 cx=0007 dx=4000 f3a529d4
+     r38370 0ffb:7ca4 sp=7c52 di=7cac si=0009 cx=0006 dx=4000 f3a529d4
+     r38371 0ffb:7ca4 sp=7c52 di=7cae si=000b cx=0005 dx=4000 f3a529d4
+     r38372 0ffb:7ca4 sp=7c52 di=7cb0 si=000d cx=0004 dx=4000 f3a529d4
+     r38373 0ffb:7ca4 sp=7c52 di=7cb2 si=000f cx=0003 dx=4000 f3a5a464
+     r38374 0ffb:7ca4 sp=7c52 di=7cb4 si=0011 cx=0002 dx=4000 fb0fa464
+     r38375 0ffb:7ca5 sp=7c52 di=7cb4 si=0011 cx=0002 dx=4000 0fa464fb
+--- L1-zchain4-1.jsonl w15 r36450 CAND1 other CPU exception killer=partner(CAND2) cs 0ffb ip 58a6 sp 5852 di 58b4 si 0011 es 0ffb bx 02c0
+   bytes a4:B@36448 5c:B@36448 fb:B@36448 [0f:B@36448] a4:B@36447 5c:B@36447 fb:B@36447 0f:B@36447 a4:B@36446 5c:B@36446
+   capt zom20d  hist:
+     r36439 0ffb:58a2 sp=5856 di=58a3 si=0000 cx=0009 dx=4000 ff1ff3a5
+     r36440 0ffb:58a2 sp=5852 di=58a3 si=0000 cx=0009 dx=4000 a458fb0f
+     r36441 0ffb:58a3 sp=5852 di=58a4 si=0001 cx=0009 dx=4000 a5fb0fa4
+     r36442 0ffb:58a4 sp=5852 di=58a6 si=0003 cx=0009 dx=4000 f3a5a458
+     r36443 0ffb:58a4 sp=5852 di=58a8 si=0005 cx=0008 dx=4000 f3a529d4
+     r36444 0ffb:58a4 sp=5852 di=58aa si=0007 cx=0007 dx=4000 f3a529d4
+     r36445 0ffb:58a4 sp=5852 di=58ac si=0009 cx=0006 dx=4000 f3a529d4
+     r36446 0ffb:58a4 sp=5852 di=58ae si=000b cx=0005 dx=4000 f3a529d4
+     r36447 0ffb:58a4 sp=5852 di=58b0 si=000d cx=0004 dx=4000 f3a529d4
+     r36448 0ffb:58a4 sp=5852 di=58b2 si=000f cx=0003 dx=4000 f3a5a45c
+     r36449 0ffb:58a4 sp=5852 di=58b4 si=0011 cx=0002 dx=4000 fb0fa45c
+     r36450 0ffb:58a5 sp=5852 di=58b4 si=0011 cx=0002 dx=4000 0fa45cfb
+--- L1-zchain4-1.jsonl w16 r16925 CAND1 other CPU exception killer=partner(CAND2) cs 0ffb ip aca6 sp ac52 di acb4 si 0011 es 0ffb bx 02c0
+   bytes a4:B@16923 cc:B@16923 fb:B@16923 [0f:B@16923] a4:B@16922 cc:B@16922 fb:B@16922 0f:B@16922 a4:B@16921 cc:B@16921
+   capt   hist:
+     r16914 0ffb:aca2 sp=ac56 di=aca3 si=0000 cx=0009 dx=4000 ff1ffb0f
+     r16915 0ffb:aca2 sp=ac52 di=aca3 si=0000 cx=0009 dx=4000 a4acfb0f
+     r16916 0ffb:aca3 sp=ac52 di=aca4 si=0001 cx=0009 dx=4000 a5fb0fa4
+     r16917 0ffb:aca4 sp=ac52 di=aca6 si=0003 cx=0009 dx=4000 f3a5a4ac
+     r16918 0ffb:aca4 sp=ac52 di=aca8 si=0005 cx=0008 dx=4000 f3a529d4
+     r16919 0ffb:aca4 sp=ac52 di=acaa si=0007 cx=0007 dx=4000 f3a529d4
+     r16920 0ffb:aca4 sp=ac52 di=acac si=0009 cx=0006 dx=4000 f3a529d4
+     r16921 0ffb:aca4 sp=ac52 di=acae si=000b cx=0005 dx=4000 f3a529d4
+     r16922 0ffb:aca4 sp=ac52 di=acb0 si=000d cx=0004 dx=4000 f3a529d4
+     r16923 0ffb:aca4 sp=ac52 di=acb2 si=000f cx=0003 dx=4000 f3a5a4cc
+     r16924 0ffb:aca4 sp=ac52 di=acb4 si=0011 cx=0002 dx=4000 fb0fa4cc
+     r16925 0ffb:aca5 sp=ac52 di=acb4 si=0011 cx=0002 dx=4000 0fa4ccfb
+--- L1-zrl03-0.jsonl w4 r40305 CAND1 other CPU exception killer=partner(CAND2) cs 0ffa ip 64a6 sp 6442 di 64b6 si 0013 es 0ffa bx 02c0
+   bytes a4:B@40303 30:B@40303 fa:B@40303 [0f:B@40303] a4:B@40302 30:B@40302 fa:B@40302 0f:B@40302 a4:B@40301 30:B@40301
+   capt zom20d  hist:
+     r40294 0ffa:64a2 sp=6442 di=64a3 si=0000 cx=0009 dx=4000 a464fa0f
+     r40295 0ffa:64a3 sp=6442 di=64a4 si=0001 cx=0009 dx=4000 a5fa0fa4
+     r40296 0ffa:64a4 sp=6442 di=64a6 si=0003 cx=0009 dx=4000 f3a5a464
+     r40297 0ffa:64a4 sp=6442 di=64a8 si=0005 cx=0008 dx=4000 f3a529d4
+     r40298 0ffa:64a4 sp=6442 di=64aa si=0007 cx=0007 dx=4000 f3a529d4
+     r40299 0ffa:64a4 sp=6442 di=64ac si=0009 cx=0006 dx=4000 f3a529d4
+     r40300 0ffa:64a4 sp=6442 di=64ae si=000b cx=0005 dx=4000 f3a529d4
+     r40301 0ffa:64a4 sp=6442 di=64b0 si=000d cx=0004 dx=4000 f3a529d4
+     r40302 0ffa:64a4 sp=6442 di=64b2 si=000f cx=0003 dx=4000 f3a529d4
+     r40303 0ffa:64a4 sp=6442 di=64b4 si=0011 cx=0002 dx=4000 f3a5a430
+     r40304 0ffa:64a4 sp=6442 di=64b6 si=0013 cx=0001 dx=4000 fa0fa430
+     r40305 0ffa:64a5 sp=6442 di=64b6 si=0013 cx=0001 dx=4000 0fa430fa
+--- L1-zrl03-0.jsonl w10 r476 CAND2 other CPU exception killer=self() cs 0ffb ip 4caa sp 2850 di 4cb6 si 0013 es 0ffb bx 0280
+   bytes 29:B@465 d4:B@465 9c:B@466 [d4:B@466] 8b:B@467 3f:B@467 b1:B@468 09:B@468 31:B@469 f6:B@469
+   capt   hist:
+     r465 0ffb:4ca4 sp=4c52 di=4ca6 si=0003 cx=0008 dx=2400 f3a5a44c
+     r466 0ffb:4ca4 sp=4c52 di=4ca8 si=0005 cx=0007 dx=2400 f3a529d4
+     r467 0ffb:4ca4 sp=4c52 di=4caa si=0007 cx=0006 dx=2400 f3a529d4
+     r468 0ffb:4ca4 sp=4c52 di=4cac si=0009 cx=0005 dx=2400 f3a529d4
+     r469 0ffb:4ca4 sp=4c52 di=4cae si=000b cx=0004 dx=2400 f3a529d4
+     r470 0ffb:4ca4 sp=4c52 di=4cb0 si=000d cx=0003 dx=2400 f3a529d4
+     r471 0ffb:4ca4 sp=4c52 di=4cb2 si=000f cx=0002 dx=2400 f3a529d4
+     r472 0ffb:4ca4 sp=4c52 di=4cb4 si=0011 cx=0001 dx=2400 f3a529d4
+     r473 0ffb:4ca4 sp=4c52 di=4cb6 si=0013 cx=0000 dx=2400 f3a529d4
+     r474 0ffb:4ca6 sp=4c52 di=4cb6 si=0013 cx=0000 dx=2400 29d49cd4
+     r475 0ffb:4ca8 sp=2852 di=4cb6 si=0013 cx=0000 dx=2400 9cd48b3f
+     r476 0ffb:4ca9 sp=2850 di=4cb6 si=0013 cx=0000 dx=2400 d48b3fb1
+--- L2-ah02-zchain4-2.jsonl w8 r50713 CAND1 dwell CPU exception killer=partner(CAND2) cs 0ffb ip 44a6 sp 4912 di 44a3 si 0000 es 0ffb bx 02c0
+   bytes [b4:B@50710 b4:B@50710 fb:B@50710 0f:B@50710] a4:zom20a@48172 40:zom20a@48172 fb:zom20a@48172 0f:zom20a@48172 a4:zom20a@48172 40:zom20a@48172
+   capt zom20a  hist:
+     r50702 0ffb:44a2 sp=4936 di=44a3 si=0000 cx=0009 dx=4000 ff18fb0f
+     r50703 0ffb:44a2 sp=4932 di=44a3 si=0000 cx=0009 dx=4000 ff18fb0f
+     r50704 0ffb:44a2 sp=492e di=44a3 si=0000 cx=0009 dx=4000 ff18fb0f
+     r50705 0ffb:44a2 sp=492a di=44a3 si=0000 cx=0009 dx=4000 ff18fb0f
+     r50706 0ffb:44a2 sp=4926 di=44a3 si=0000 cx=0009 dx=4000 ff18fb0f
+     r50707 0ffb:44a2 sp=4922 di=44a3 si=0000 cx=0009 dx=4000 ff18fb0f
+     r50708 0ffb:44a2 sp=491e di=44a3 si=0000 cx=0009 dx=4000 ff18fb0f
+     r50709 0ffb:44a2 sp=491a di=44a3 si=0000 cx=0009 dx=4000 ff18fb0f
+     r50710 0ffb:44a2 sp=4916 di=44a3 si=0000 cx=0009 dx=4000 ff18fb0f
+     r50711 0ffb:44a2 sp=4912 di=44a3 si=0000 cx=0009 dx=4000 b4b4fb0f
+     r50712 0ffb:44a4 sp=4912 di=44a3 si=0000 cx=0009 dx=4000 fb0fa440
+     r50713 0ffb:44a5 sp=4912 di=44a3 si=0000 cx=0009 dx=4000 0fa440fb
+--- L2-ah02-zchain4-2.jsonl w14 r34525 CAND1 other CPU exception killer=partner(CAND2) cs 0ffb ip aca6 sp ac52 di acb4 si 0011 es 0ffb bx 02c0
+   bytes a4:B@34523 cc:B@34523 fb:B@34523 [0f:B@34523] a4:B@34522 cc:B@34522 fb:B@34522 0f:B@34522 a4:B@34521 cc:B@34521
+   capt zom20b  hist:
+     r34514 0ffb:aca2 sp=ac56 di=aca3 si=0000 cx=0009 dx=4000 ff1ffb0f
+     r34515 0ffb:aca2 sp=ac52 di=aca3 si=0000 cx=0009 dx=4000 a4acfb0f
+     r34516 0ffb:aca3 sp=ac52 di=aca4 si=0001 cx=0009 dx=4000 a5fb0fa4
+     r34517 0ffb:aca4 sp=ac52 di=aca6 si=0003 cx=0009 dx=4000 f3a5a4ac
+     r34518 0ffb:aca4 sp=ac52 di=aca8 si=0005 cx=0008 dx=4000 f3a529d4
+     r34519 0ffb:aca4 sp=ac52 di=acaa si=0007 cx=0007 dx=4000 f3a529d4
+     r34520 0ffb:aca4 sp=ac52 di=acac si=0009 cx=0006 dx=4000 f3a529d4
+     r34521 0ffb:aca4 sp=ac52 di=acae si=000b cx=0005 dx=4000 f3a529d4
+     r34522 0ffb:aca4 sp=ac52 di=acb0 si=000d cx=0004 dx=4000 f3a529d4
+     r34523 0ffb:aca4 sp=ac52 di=acb2 si=000f cx=0003 dx=4000 f3a5a4cc
+     r34524 0ffb:aca4 sp=ac52 di=acb4 si=0011 cx=0002 dx=4000 fb0fa4cc
+     r34525 0ffb:aca5 sp=ac52 di=acb4 si=0011 cx=0002 dx=4000 0fa4ccfb
+--- L2-ah02-zchain4-2.jsonl w15 r3175 CAND1 other CPU exception killer=partner(CAND2) cs 0ffb ip 7ca6 sp 7c52 di 7cb4 si 0011 es 0ffb bx 02c0
+   bytes a4:B@3173 64:B@3173 fb:B@3173 [0f:B@3173] a4:B@3172 64:B@3172 fb:B@3172 0f:B@3172 a4:B@3171 64:B@3171
+   capt   hist:
+     r3164 0ffb:7ca2 sp=7c56 di=7ca3 si=0000 cx=0009 dx=4000 ff18f086
+     r3165 0ffb:7ca2 sp=7c52 di=7ca3 si=0000 cx=0009 dx=4000 a47cfb0f
+     r3166 0ffb:7ca3 sp=7c52 di=7ca4 si=0001 cx=0009 dx=4000 a5fb0fa4
+     r3167 0ffb:7ca4 sp=7c52 di=7ca6 si=0003 cx=0009 dx=4000 f3a5a47c
+     r3168 0ffb:7ca4 sp=7c52 di=7ca8 si=0005 cx=0008 dx=4000 f3a529d4
+     r3169 0ffb:7ca4 sp=7c52 di=7caa si=0007 cx=0007 dx=4000 f3a529d4
+     r3170 0ffb:7ca4 sp=7c52 di=7cac si=0009 cx=0006 dx=4000 f3a529d4
+     r3171 0ffb:7ca4 sp=7c52 di=7cae si=000b cx=0005 dx=4000 f3a529d4
+     r3172 0ffb:7ca4 sp=7c52 di=7cb0 si=000d cx=0004 dx=4000 f3a529d4
+     r3173 0ffb:7ca4 sp=7c52 di=7cb2 si=000f cx=0003 dx=4000 f3a5a464
+     r3174 0ffb:7ca4 sp=7c52 di=7cb4 si=0011 cx=0002 dx=4000 fb0fa464
+     r3175 0ffb:7ca5 sp=7c52 di=7cb4 si=0011 cx=0002 dx=4000 0fa464fb
+--- L2-zrl03-V6-5.jsonl w15 r40305 CAND1 other CPU exception killer=partner(CAND2) cs 0ffa ip a0a6 sp a042 di a0b6 si 0013 es 0ffa bx 02c0
+   bytes a4:B@40303 6c:B@40303 fa:B@40303 [0f:B@40303] a4:B@40302 6c:B@40302 fa:B@40302 0f:B@40302 a4:B@40301 6c:B@40301
+   capt zom20b  hist:
+     r40294 0ffa:a0a2 sp=a042 di=a0a3 si=0000 cx=0009 dx=4000 a4a0fa0f
+     r40295 0ffa:a0a3 sp=a042 di=a0a4 si=0001 cx=0009 dx=4000 a5fa0fa4
+     r40296 0ffa:a0a4 sp=a042 di=a0a6 si=0003 cx=0009 dx=4000 f3a5a4a0
+     r40297 0ffa:a0a4 sp=a042 di=a0a8 si=0005 cx=0008 dx=4000 f3a529d4
+     r40298 0ffa:a0a4 sp=a042 di=a0aa si=0007 cx=0007 dx=4000 f3a529d4
+     r40299 0ffa:a0a4 sp=a042 di=a0ac si=0009 cx=0006 dx=4000 f3a529d4
+     r40300 0ffa:a0a4 sp=a042 di=a0ae si=000b cx=0005 dx=4000 f3a529d4
+     r40301 0ffa:a0a4 sp=a042 di=a0b0 si=000d cx=0004 dx=4000 f3a529d4
+     r40302 0ffa:a0a4 sp=a042 di=a0b2 si=000f cx=0003 dx=4000 f3a529d4
+     r40303 0ffa:a0a4 sp=a042 di=a0b4 si=0011 cx=0002 dx=4000 f3a5a46c
+     r40304 0ffa:a0a4 sp=a042 di=a0b6 si=0013 cx=0001 dx=4000 fa0fa46c
+     r40305 0ffa:a0a5 sp=a042 di=a0b6 si=0013 cx=0001 dx=4000 0fa46cfa
+--- L3-zrl03-zchain4-V6nohunt-2.jsonl w2 r36455 CAND1 other CPU exception killer=partner(CAND2) cs 0ffa ip 58a6 sp 5842 di 58b6 si 0013 es 0ffa bx 02c0
+   bytes a4:B@36453 5c:B@36453 fa:B@36453 [0f:B@36453] a4:B@36452 5c:B@36452 fa:B@36452 0f:B@36452 a4:B@36451 5c:B@36451
+   capt zom20b  hist:
+     r36444 0ffa:58a2 sp=5842 di=58a3 si=0000 cx=0009 dx=4000 a458fa0f
+     r36445 0ffa:58a3 sp=5842 di=58a4 si=0001 cx=0009 dx=4000 a5fa0fa4
+     r36446 0ffa:58a4 sp=5842 di=58a6 si=0003 cx=0009 dx=4000 f3a5a458
+     r36447 0ffa:58a4 sp=5842 di=58a8 si=0005 cx=0008 dx=4000 f3a529d4
+     r36448 0ffa:58a4 sp=5842 di=58aa si=0007 cx=0007 dx=4000 f3a529d4
+     r36449 0ffa:58a4 sp=5842 di=58ac si=0009 cx=0006 dx=4000 f3a529d4
+     r36450 0ffa:58a4 sp=5842 di=58ae si=000b cx=0005 dx=4000 f3a529d4
+     r36451 0ffa:58a4 sp=5842 di=58b0 si=000d cx=0004 dx=4000 f3a529d4
+     r36452 0ffa:58a4 sp=5842 di=58b2 si=000f cx=0003 dx=4000 f3a529d4
+     r36453 0ffa:58a4 sp=5842 di=58b4 si=0011 cx=0002 dx=4000 f3a5a45c
+     r36454 0ffa:58a4 sp=5842 di=58b6 si=0013 cx=0001 dx=4000 fa0fa45c
+     r36455 0ffa:58a5 sp=5842 di=58b6 si=0013 cx=0001 dx=4000 0fa45cfa
+--- L3-zrl03-zchain4-V6nohunt-2.jsonl w5 r3180 CAND1 other CPU exception killer=partner(CAND2) cs 0ffa ip 40a6 sp 4042 di 40b6 si 0013 es 0ffa bx 02c0
+   bytes a4:B@3178 28:B@3178 fa:B@3178 [0f:B@3178] a4:B@3177 28:B@3177 fa:B@3177 0f:B@3177 a4:B@3176 28:B@3176
+   capt   hist:
+     r3169 0ffa:40a2 sp=4042 di=40a3 si=0000 cx=0009 dx=4000 a440fa0f
+     r3170 0ffa:40a3 sp=4042 di=40a4 si=0001 cx=0009 dx=4000 a5fa0fa4
+     r3171 0ffa:40a4 sp=4042 di=40a6 si=0003 cx=0009 dx=4000 f3a5a440
+     r3172 0ffa:40a4 sp=4042 di=40a8 si=0005 cx=0008 dx=4000 f3a529d4
+     r3173 0ffa:40a4 sp=4042 di=40aa si=0007 cx=0007 dx=4000 f3a529d4
+     r3174 0ffa:40a4 sp=4042 di=40ac si=0009 cx=0006 dx=4000 f3a529d4
+     r3175 0ffa:40a4 sp=4042 di=40ae si=000b cx=0005 dx=4000 f3a529d4
+     r3176 0ffa:40a4 sp=4042 di=40b0 si=000d cx=0004 dx=4000 f3a529d4
+     r3177 0ffa:40a4 sp=4042 di=40b2 si=000f cx=0003 dx=4000 f3a529d4
+     r3178 0ffa:40a4 sp=4042 di=40b4 si=0011 cx=0002 dx=4000 f3a5a428
+     r3179 0ffa:40a4 sp=4042 di=40b6 si=0013 cx=0001 dx=4000 fa0fa428
+     r3180 0ffa:40a5 sp=4042 di=40b6 si=0013 cx=0001 dx=4000 0fa428fa
+--- p2025-0-0.jsonl w8 r2590 CAND2 other CPU exception killer=self() cs 0ffb ip 1a76 sp 1a22 di 14a3 si 0000 es 0ffb bx 0031
+   bytes a4:B@2213 14:B@2213 fb:B@2213 [0f:B@2213] a4:B@2212 14:B@2212 fb:B@2212 0f:B@2212 a4:B@2211 14:B@2211
+   capt   hist:
+     r2579 0ffb:1a4c sp=1a22 di=14a3 si=0000 cx=0009 dx=2400 10bb3100
+     r2580 0ffb:1a50 sp=1a22 di=14a3 si=0000 cx=0009 dx=2400 10bb3100
+     r2581 0ffb:1a54 sp=1a22 di=14a3 si=0000 cx=0009 dx=2400 10bb3100
+     r2582 0ffb:1a58 sp=1a22 di=14a3 si=0000 cx=0009 dx=2400 10bb3100
+     r2583 0ffb:1a5c sp=1a22 di=14a3 si=0000 cx=0009 dx=2400 10bb3100
+     r2584 0ffb:1a60 sp=1a22 di=14a3 si=0000 cx=0009 dx=2400 10bb3100
+     r2585 0ffb:1a64 sp=1a22 di=14a3 si=0000 cx=0009 dx=2400 10bb3100
+     r2586 0ffb:1a68 sp=1a22 di=14a3 si=0000 cx=0009 dx=2400 10bb3100
+     r2587 0ffb:1a6c sp=1a22 di=14a3 si=0000 cx=0009 dx=2400 10bb3100
+     r2588 0ffb:1a70 sp=1a22 di=14a3 si=0000 cx=0009 dx=2400 10bba414
+     r2589 0ffb:1a74 sp=1a22 di=14a3 si=0000 cx=0009 dx=2400 fb0fa414
+     r2590 0ffb:1a75 sp=1a22 di=14a3 si=0000 cx=0009 dx=2400 0fa414fb
+--- p2025-0-0.jsonl w9 r23309 CAND1 other CPU exception killer=self() cs 0ffb ip 54f6 sp 1430 di 10b3 si 0011 es 0ffb bx 02c0
+   bytes a4:A@23219 54:A@23219 fb:A@23219 [0f:A@23219] a4:A@23218 54:A@23218 fb:A@23218 0f:A@23218 a4:A@23217 54:A@23217
+   capt   hist:
+     r23298 0ffb:54e7 sp=1438 di=10b0 si=000e cx=0009 dx=4000 510010a4
+     r23299 0ffb:54e8 sp=1436 di=10b0 si=000e cx=0009 dx=4000 0010a451
+     r23300 0ffb:54ea sp=1436 di=10b0 si=000e cx=0009 dx=4000 a4510010
+     r23301 0ffb:54eb sp=1436 di=10b1 si=000f cx=0009 dx=4000 510010a4
+     r23302 0ffb:54ec sp=1434 di=10b1 si=000f cx=0009 dx=4000 0010a451
+     r23303 0ffb:54ee sp=1434 di=10b1 si=000f cx=0009 dx=4000 a4510010
+     r23304 0ffb:54ef sp=1434 di=10b2 si=0010 cx=0009 dx=4000 510010a4
+     r23305 0ffb:54f0 sp=1432 di=10b2 si=0010 cx=0009 dx=4000 0010a454
+     r23306 0ffb:54f2 sp=1432 di=10b2 si=0010 cx=0009 dx=4000 a454fb0f
+     r23307 0ffb:54f3 sp=1432 di=10b3 si=0011 cx=0009 dx=4000 54fb0fa4
+     r23308 0ffb:54f4 sp=1430 di=10b3 si=0011 cx=0009 dx=4000 fb0fa454
+     r23309 0ffb:54f5 sp=1430 di=10b3 si=0011 cx=0009 dx=4000 0fa454fb
+--- p2025-0-0.jsonl w10 r46605 CAND1 other CPU exception killer=self() cs 0ffb ip 84aa sp 8486 di 84a5 si 0002 es 0ffb bx 02c0
+   bytes 02:Y_GSA_3Plate_Benchers2@40660 10:Y_GSA_3Plate_Benchers2@40660 29:A@29018 [2f:A@29018] a5:Y_GSA_3Plate_Benchers2@46600 7f:Y_GSA_3Plate_Benchers2@46600 02:Y_GSA_3Plate_Benchers2@46600 10:Y_GSA_3Plate_Benchers2@46600 31:A@29021 a5:Y_GSA_3Plate_Benchers2@40658
+   capt   hist:
+     r46594 0ffb:84a2 sp=84a6 di=84a3 si=0000 cx=0009 dx=4000 ff1fa57d
+     r46595 0ffb:84a2 sp=84a2 di=84a3 si=0000 cx=0009 dx=4000 ff1fa57d
+     r46596 0ffb:84a2 sp=849e di=84a3 si=0000 cx=0009 dx=4000 ff1fa57d
+     r46597 0ffb:84a2 sp=849a di=84a3 si=0000 cx=0009 dx=4000 ff1fa57d
+     r46598 0ffb:84a2 sp=8496 di=84a3 si=0000 cx=0009 dx=4000 ff1fa57d
+     r46599 0ffb:84a2 sp=8492 di=84a3 si=0000 cx=0009 dx=4000 ff1fa57d
+     r46600 0ffb:84a2 sp=848e di=84a3 si=0000 cx=0009 dx=4000 ff1fa57d
+     r46601 0ffb:84a2 sp=848a di=84a3 si=0000 cx=0009 dx=4000 ff1fa57d
+     r46602 0ffb:84a2 sp=8486 di=84a3 si=0000 cx=0009 dx=4000 ff1fa57d
+     r46603 0ffb:84a4 sp=8486 di=84a3 si=0000 cx=0009 dx=4000 a57d0210
+     r46604 0ffb:84a5 sp=8486 di=84a5 si=0002 cx=0009 dx=4000 7d021029
+     r46605 0ffb:84a9 sp=8486 di=84a5 si=0002 cx=0009 dx=4000 2fa57f02
+--- p2025-0-0.jsonl w11 r6315 CAND2 other memory exception killer=self() cs 0ffb ip 68aa sp 6852 di 68b8 si 0015 es 0ffb bx 0280
+   bytes 29:B@6305 a5:Y_GSA_3Plate_Benchers2@6306 29:B@6306 [2f:B@6306] 8b:B@6307 3f:B@6307 b1:B@6308 09:B@6308 31:B@6309 f6:B@6309
+   capt   hist:
+     r6304 0ffb:68a3 sp=6852 di=68a4 si=0001 cx=0009 dx=2400 a5f3a5a4
+     r6305 0ffb:68a4 sp=6852 di=68a6 si=0003 cx=0009 dx=2400 f3a529d4
+     r6306 0ffb:68a4 sp=6852 di=68a8 si=0005 cx=0008 dx=2400 f3a529d4
+     r6307 0ffb:68a4 sp=6852 di=68aa si=0007 cx=0007 dx=2400 f3a529a5
+     r6308 0ffb:68a4 sp=6852 di=68ac si=0009 cx=0006 dx=2400 f3a529a5
+     r6309 0ffb:68a4 sp=6852 di=68ae si=000b cx=0005 dx=2400 f3a529a5
+     r6310 0ffb:68a4 sp=6852 di=68b0 si=000d cx=0004 dx=2400 f3a529a5
+     r6311 0ffb:68a4 sp=6852 di=68b2 si=000f cx=0003 dx=2400 f3a529a5
+     r6312 0ffb:68a4 sp=6852 di=68b4 si=0011 cx=0002 dx=2400 f3a529a5
+     r6313 0ffb:68a4 sp=6852 di=68b6 si=0013 cx=0001 dx=2400 f3a529a5
+     r6314 0ffb:68a4 sp=6852 di=68b8 si=0015 cx=0000 dx=2400 f3a529a5
+     r6315 0ffb:68a6 sp=6852 di=68b8 si=0015 cx=0000 dx=2400 29a5292f
+--- p2025-0-2.jsonl w2 r466 CAND1 other CPU exception killer=self() cs 0ffb ip 256a sp 2516 di 24a4 si 0001 es 0ffb bx 02c0
+   bytes a4:A@365 24:A@365 fb:A@365 [0f:A@365] a4:A@364 24:A@364 fb:A@364 0f:A@364 a4:A@363 24:A@363
+   capt   hist:
+     r455 0ffb:2554 sp=2516 di=24a3 si=0000 cx=000f dx=4000 10e92900
+     r456 0ffb:2556 sp=2516 di=24a3 si=0000 cx=000f dx=4000 290010e9
+     r457 0ffb:2558 sp=2516 di=24a3 si=0000 cx=000f dx=4000 10e92900
+     r458 0ffb:255a sp=2516 di=24a3 si=0000 cx=000f dx=4000 290010e9
+     r459 0ffb:255c sp=2516 di=24a3 si=0000 cx=000f dx=4000 10e92900
+     r460 0ffb:255e sp=2516 di=24a3 si=0000 cx=000f dx=4000 290010e9
+     r461 0ffb:2560 sp=2516 di=24a3 si=0000 cx=000f dx=4000 10e92900
+     r462 0ffb:2562 sp=2516 di=24a3 si=0000 cx=000f dx=4000 290010e9
+     r463 0ffb:2564 sp=2516 di=24a3 si=0000 cx=000f dx=4000 10e9a424
+     r464 0ffb:2566 sp=2516 di=24a3 si=0000 cx=000f dx=4000 a424fb0f
+     r465 0ffb:2567 sp=2516 di=24a4 si=0001 cx=000f dx=4000 24fb0fa4
+     r466 0ffb:2569 sp=2516 di=24a4 si=0001 cx=000f dx=4000 0fa424fb
+--- p2025-0-2.jsonl w16 r780 CAND1 other memory exception killer=self() cs 0000 ip 0001 sp 1736 di 14a3 si 0000 es 0ffb bx 02c0
+   bytes oob oob oob [oob] oob oob oob oob oob oob
+   capt   hist:
+     r769 0ffb:14a2 sp=1762 di=14a3 si=0000 cx=0009 dx=4000 ff1fcccc
+     r770 0ffb:14a2 sp=175e di=14a3 si=0000 cx=0009 dx=4000 ff1fcccc
+     r771 0ffb:14a2 sp=175a di=14a3 si=0000 cx=0009 dx=4000 ff1fcccc
+     r772 0ffb:14a2 sp=1756 di=14a3 si=0000 cx=0009 dx=4000 ff1fcccc
+     r773 0ffb:14a2 sp=1752 di=14a3 si=0000 cx=0009 dx=4000 ff1fcccc
+     r774 0ffb:14a2 sp=174e di=14a3 si=0000 cx=0009 dx=4000 ff1fcccc
+     r775 0ffb:14a2 sp=174a di=14a3 si=0000 cx=0009 dx=4000 ff1fcccc
+     r776 0ffb:14a2 sp=1746 di=14a3 si=0000 cx=0009 dx=4000 ff1fcccc
+     r777 0ffb:14a2 sp=1742 di=14a3 si=0000 cx=0009 dx=4000 ff1fcccc
+     r778 0ffb:14a2 sp=173e di=14a3 si=0000 cx=0009 dx=4000 ff1fcccc
+     r779 0ffb:14a2 sp=173a di=14a3 si=0000 cx=0009 dx=4000 ff5f2000
+     r780 0000:0000 sp=1736 di=14a3 si=0000 cx=0009 dx=4000 --------
+--- p2025-0-2.jsonl w16 r1804 CAND2 other memory exception killer=self() cs 0000 ip 0001 sp 083e di 04a3 si 0000 es 0ffb bx 0280
+   bytes oob oob oob [oob] oob oob oob oob oob oob
+   capt   hist:
+     r1793 0ffb:04a2 sp=086a di=04a3 si=0000 cx=0009 dx=2400 ff1fcccc
+     r1794 0ffb:04a2 sp=0866 di=04a3 si=0000 cx=0009 dx=2400 ff1fcccc
+     r1795 0ffb:04a2 sp=0862 di=04a3 si=0000 cx=0009 dx=2400 ff1fcccc
+     r1796 0ffb:04a2 sp=085e di=04a3 si=0000 cx=0009 dx=2400 ff1fcccc
+     r1797 0ffb:04a2 sp=085a di=04a3 si=0000 cx=0009 dx=2400 ff1fcccc
+     r1798 0ffb:04a2 sp=0856 di=04a3 si=0000 cx=0009 dx=2400 ff1fcccc
+     r1799 0ffb:04a2 sp=0852 di=04a3 si=0000 cx=0009 dx=2400 ff1fcccc
+     r1800 0ffb:04a2 sp=084e di=04a3 si=0000 cx=0009 dx=2400 ff1fcccc
+     r1801 0ffb:04a2 sp=084a di=04a3 si=0000 cx=0009 dx=2400 ff1fcccc
+     r1802 0ffb:04a2 sp=0846 di=04a3 si=0000 cx=0009 dx=2400 ff1fcccc
+     r1803 0ffb:04a2 sp=0842 di=04a3 si=0000 cx=0009 dx=2400 ff5f2000
+     r1804 0000:0000 sp=083e di=04a3 si=0000 cx=0009 dx=2400 --------
+--- p2025-0-3.jsonl w2 r11932 CAND1 dwell memory exception killer=self() cs 0ffb ip 0685 sp 0632 di 0683 si 0000 es 0ffb bx 02c0
+   bytes 00:A@11929 [1f:A@11928 00:A@11927 09:A@11925] 00:A@11925 09:A@11923 00:A@11923 09:A@11921 00:A@11921 09:A@11919
+   capt   hist:
+     r11921 0ffb:0677 sp=063a di=067b si=0000 cx=0009 dx=4000 51abff1f
+     r11922 0ffb:0678 sp=0638 di=067b si=0000 cx=0009 dx=4000 abff1fcc
+     r11923 0ffb:0679 sp=0638 di=067d si=0000 cx=0009 dx=4000 51abff1f
+     r11924 0ffb:067a sp=0636 di=067d si=0000 cx=0009 dx=4000 abff1fcc
+     r11925 0ffb:067b sp=0636 di=067f si=0000 cx=0009 dx=4000 51abff1f
+     r11926 0ffb:067c sp=0634 di=067f si=0000 cx=0009 dx=4000 abff1fcc
+     r11927 0ffb:067d sp=0634 di=0681 si=0000 cx=0009 dx=4000 51abff1f
+     r11928 0ffb:067e sp=0632 di=0681 si=0000 cx=0009 dx=4000 abff1fcc
+     r11929 0ffb:067f sp=0632 di=0683 si=0000 cx=0009 dx=4000 51abff1f
+     r11930 0ffb:0680 sp=0630 di=0683 si=0000 cx=0009 dx=4000 09001f00
+     r11931 0ffb:0682 sp=0630 di=0683 si=0000 cx=0009 dx=4000 1f000900
+     r11932 0ffb:0683 sp=0632 di=0683 si=0000 cx=0009 dx=4000 00090009
+--- p2025-0-3.jsonl w10 r2515 CAND1 other memory exception killer=self() cs 0ffb ip 0001 sp 05e6 di 04a3 si 0000 es 0ffb bx 02c0
+   bytes oob oob oob [oob] oob oob oob oob oob oob
+   capt   hist:
+     r2504 0ffb:04a2 sp=060e di=04a3 si=0000 cx=0009 dx=4000 ff1f10ff
+     r2505 0ffb:04a2 sp=060a di=04a3 si=0000 cx=0009 dx=4000 ff1f10ff
+     r2506 0ffb:04a2 sp=0606 di=04a3 si=0000 cx=0009 dx=4000 ff1f10ff
+     r2507 0ffb:04a2 sp=0602 di=04a3 si=0000 cx=0009 dx=4000 ff1f10ff
+     r2508 0ffb:04a2 sp=05fe di=04a3 si=0000 cx=0009 dx=4000 ff1f10ff
+     r2509 0ffb:04a2 sp=05fa di=04a3 si=0000 cx=0009 dx=4000 ff1f10ff
+     r2510 0ffb:04a2 sp=05f6 di=04a3 si=0000 cx=0009 dx=4000 ff1f10ff
+     r2511 0ffb:04a2 sp=05f2 di=04a3 si=0000 cx=0009 dx=4000 ff1f10ff
+     r2512 0ffb:04a2 sp=05ee di=04a3 si=0000 cx=0009 dx=4000 ff1f10ff
+     r2513 0ffb:04a2 sp=05ea di=04a3 si=0000 cx=0009 dx=4000 ff1f10ff
+     r2514 0ffb:04a2 sp=05e6 di=04a3 si=0000 cx=0009 dx=4000 ffa510ff
+     r2515 0ffb:0000 sp=05e6 di=04a3 si=0000 cx=0009 dx=4000 --------
+--- p2025-0-3.jsonl w10 r2515 CAND2 other CPU exception killer=self() cs 0ffb ip 0bce sp 0b7a di 04a4 si 0001 es 0ffb bx 0080
+   bytes a4:B@1596 04:B@1596 fb:B@1596 [0f:B@1596] a4:B@1595 04:B@1595 fb:B@1595 0f:B@1595 a4:B@1594 04:B@1594
+   capt   hist:
+     r2504 0ffb:0bb8 sp=0b7a di=04a3 si=0000 cx=0009 dx=2400 10ff1c00
+     r2505 0ffb:0bba sp=0b7a di=04a3 si=0000 cx=0009 dx=2400 1c0010ff
+     r2506 0ffb:0bbc sp=0b7a di=04a3 si=0000 cx=0009 dx=2400 10ff1c00
+     r2507 0ffb:0bbe sp=0b7a di=04a3 si=0000 cx=0009 dx=2400 1c0010ff
+     r2508 0ffb:0bc0 sp=0b7a di=04a3 si=0000 cx=0009 dx=2400 10ff1c00
+     r2509 0ffb:0bc2 sp=0b7a di=04a3 si=0000 cx=0009 dx=2400 1c0010ff
+     r2510 0ffb:0bc4 sp=0b7a di=04a3 si=0000 cx=0009 dx=2400 10ff1c00
+     r2511 0ffb:0bc6 sp=0b7a di=04a3 si=0000 cx=0009 dx=2400 1c0010ff
+     r2512 0ffb:0bc8 sp=0b7a di=04a3 si=0000 cx=0009 dx=2400 10ffa404
+     r2513 0ffb:0bca sp=0b7a di=04a3 si=0000 cx=0009 dx=2400 a404fb0f
+     r2514 0ffb:0bcb sp=0b7a di=04a4 si=0001 cx=0009 dx=2400 04fb0fa4
+     r2515 0ffb:0bcd sp=0b7a di=04a4 si=0001 cx=0009 dx=2400 0fa404fb
+--- p2025-0-3.jsonl w11 r2472 CAND1 dwell memory exception killer=self() cs 0ffb ip 85a9 sp 8556 di 85a7 si 0000 es 0ffb bx 02c0
+   bytes 00:A@2469 [1f:A@2468 00:A@2467 09:A@2465] 00:A@2465 09:A@2463 00:A@2463 09:A@2461 00:A@2461 09:A@2459
+   capt   hist:
+     r2461 0ffb:859b sp=855e di=859f si=0000 cx=0009 dx=4000 51abff1f
+     r2462 0ffb:859c sp=855c di=859f si=0000 cx=0009 dx=4000 abff1f00
+     r2463 0ffb:859d sp=855c di=85a1 si=0000 cx=0009 dx=4000 51abff1f
+     r2464 0ffb:859e sp=855a di=85a1 si=0000 cx=0009 dx=4000 abff1f00
+     r2465 0ffb:859f sp=855a di=85a3 si=0000 cx=0009 dx=4000 51abff1f
+     r2466 0ffb:85a0 sp=8558 di=85a3 si=0000 cx=0009 dx=4000 abff1fbd
+     r2467 0ffb:85a1 sp=8558 di=85a5 si=0000 cx=0009 dx=4000 51abff1f
+     r2468 0ffb:85a2 sp=8556 di=85a5 si=0000 cx=0009 dx=4000 abff1f44
+     r2469 0ffb:85a3 sp=8556 di=85a7 si=0000 cx=0009 dx=4000 51abff1f
+     r2470 0ffb:85a4 sp=8554 di=85a7 si=0000 cx=0009 dx=4000 09001f00
+     r2471 0ffb:85a6 sp=8554 di=85a7 si=0000 cx=0009 dx=4000 1f000900
+     r2472 0ffb:85a7 sp=8556 di=85a7 si=0000 cx=0009 dx=4000 00090009
+--- p2025-0-3.jsonl w13 r1260 CAND1 other CPU exception killer=self() cs 0ffb ip d0b5 sp 9054 di 8ca4 si 0000 es 0ffb bx 04c0
+   bytes 10:A_HRZ_Underflow2@1257 ff:A@1248 1f:A@1248 [cc:A@1249] cc:A@1249 89:A@1250 22:A_HRZ_Underflow2@1255 e6:A_HRZ_Underflow2@1255 00:A_HRZ_Underflow2@1255 10:A_HRZ_Underflow2@1255
+   capt   hist:
+     r1249 0ffb:d0a4 sp=d052 di=d0b4 si=0011 cx=0002 dx=4000 f3a529d4
+     r1250 0ffb:d0a4 sp=d052 di=d0b6 si=0013 cx=0001 dx=4000 f3a529d4
+     r1251 0ffb:d0a4 sp=d052 di=d0b8 si=0015 cx=0000 dx=4000 f3a529d4
+     r1252 0ffb:d0a6 sp=d052 di=d0b8 si=0015 cx=0000 dx=4000 29d4292f
+     r1253 0ffb:d0a8 sp=9052 di=d0b8 si=0015 cx=0000 dx=4000 292f8b3f
+     r1254 0ffb:d0aa sp=9052 di=d0b8 si=0015 cx=0000 dx=4000 8b3fb109
+     r1255 0ffb:d0ac sp=9052 di=8ca2 si=0015 cx=0000 dx=4000 b10931f6
+     r1256 0ffb:d0ae sp=9052 di=8ca2 si=0015 cx=0009 dx=4000 31f6ab4f
+     r1257 0ffb:d0b0 sp=9052 di=8ca2 si=0000 cx=0009 dx=4000 ab4fff1f
+     r1258 0ffb:d0b1 sp=9052 di=8ca4 si=0000 cx=0009 dx=4000 10ff1fcc
+     r1259 0ffb:d0b3 sp=9052 di=8ca4 si=0000 cx=0009 dx=4000 1fcccc89
+     r1260 0ffb:d0b4 sp=9054 di=8ca4 si=0000 cx=0009 dx=4000 cccc8922
+--- p2025-0-3.jsonl w17 r3662 CAND2 other CPU exception killer=self() cs 0ffb ip bcac sp bc52 di bcb8 si 0015 es 0ffb bx 0280
+   bytes 7c:A_HRZ_Underflow1@3655 00:A_HRZ_Underflow1@3655 10:A_HRZ_Underflow1@3655 [3f:B@3652] b1:B@3653 09:B@3653 31:B@3654 f6:B@3654 7e:A_HRZ_Underflow1@3657 7c:A_HRZ_Underflow1@3657
+   capt   hist:
+     r3651 0ffb:bca4 sp=bc52 di=bca8 si=0005 cx=0008 dx=2400 f3a529d4
+     r3652 0ffb:bca4 sp=bc52 di=bcaa si=0007 cx=0007 dx=2400 f3a529d4
+     r3653 0ffb:bca4 sp=bc52 di=bcac si=0009 cx=0006 dx=2400 f3a529d4
+     r3654 0ffb:bca4 sp=bc52 di=bcae si=000b cx=0005 dx=2400 f3a529d4
+     r3655 0ffb:bca4 sp=bc52 di=bcb0 si=000d cx=0004 dx=2400 f3a529d4
+     r3656 0ffb:bca4 sp=bc52 di=bcb2 si=000f cx=0003 dx=2400 f3a5297e
+     r3657 0ffb:bca4 sp=bc52 di=bcb4 si=0011 cx=0002 dx=2400 f3a5297e
+     r3658 0ffb:bca4 sp=bc52 di=bcb6 si=0013 cx=0001 dx=2400 f3a5297e
+     r3659 0ffb:bca4 sp=bc52 di=bcb8 si=0015 cx=0000 dx=2400 f3a5297e
+     r3660 0ffb:bca6 sp=bc52 di=bcb8 si=0015 cx=0000 dx=2400 297e7c00
+     r3661 0ffb:bca9 sp=bc52 di=bcb8 si=0015 cx=0000 dx=2400 00103fb1
+     r3662 0ffb:bcab sp=bc52 di=bcb8 si=0015 cx=0000 dx=2400 3fb10931

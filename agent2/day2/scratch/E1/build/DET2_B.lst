@@ -1,0 +1,157 @@
+     1                                  ; D4 DET2: DET with B's [5D13h]/[0CC13h] writes back at instr 4/5 (rev1 rounds). DET's instr-3 [0CC13h]
+     2                                  ; write tied with the zchain/zrl03/ah02 A write (instr 3) and lost the p0f13 hook half the time (screen n6sgd).
+     3                                  ; D4 DET (day2, base rev1 KPHL): adaptive whole-team lattice. If a V6-family team is present (its B writes
+     4                                  ; [4A17h] at instr 3; no other team in our fields writes that cell), every stream of ours (A, B, captured zombies)
+     5                                  ; uses FAR_SEG 0FFAh = lattice 42h (10h below the V6-family 52h lattice, measured +0.28/+0.24 on leader2/3 cohorts
+     6                                  ; in D4 W42 screen 0b3hc); otherwise FAR_SEG 0FFBh = 52h as in rev1 (W42's plain 2025/strong cost avoided).
+     7                                  ; Detection: our B now writes [4A17h] late (instr 7), so at A's instr 5 and B's instr 5 the cell is still CCCCh
+     8                                  ; unless a V6-family B wrote it at instr 3. A keeps the bit in BP; B patches the low byte of its own phoenix
+     9                                  ; 'or dx,0FFBh' immediate (dec -> 0FAh) before any captured zombie can reach phoenix_init.
+    10                                  ; Good_Test V6 is friend-provided code (see the provenance comments below); DET edits by agent2 day2 role D4.
+    11                                  ; COMBINE (night combination coordinator, 2026-10-04, base rev0): KPHL = KP + h34 (B099 KPH_B) + locpatA (B092 KL_A). A = KL_A unchanged; B = B099 KPH_B.
+    12                                  ; Good_Test V6 is friend-provided code; V6nohunt and all night edits by agent2 roles (see FINDINGS.md).
+    13                                  ; B099 (wave 10, domain 9 R5-cost): KPH = B094 KP + B089 h34 (CX=0 zombie path mov bp,3400h -> 7000h, 1 byte).
+    14                                  ; Good_Test V6 is friend-provided; V6nohunt by agent2; K by A031 (E1+SD+Z1 by A031/A022/A026); p0f13 by B064/B084; KP by B094; h34 by B089.
+    15                                  ; B094 (wave 9, domain 4 R5-cost): KP = A031 K (E1+SD+Z1) + B084 p0f13 B edits ported onto K_B (Z1+SD).
+    16                                  ; Good_Test V6 is friend-provided; V6nohunt by agent2; Z1 by A026, SD by A022, E1/K by A031; p0f by B064, p0f13 by B084.
+    17                                  ; p0f13 edits: startup push cs/pop es -> mov [0CC13h],bx + les di,[si+es_ptr] (INT87 stays instr 12); both b/d searches
+    18                                  ;   (startup and zom20a path) use window 0F EB F9 CC -> 0F FF 26 13 (patched tail = jmp [0CC13h]).
+    19                                  ; Port note: in the zom20a path DX is now 0CCF9h after INT87, so Z1's int 86h there would write FF 1F F9 CC junk
+    20                                  ;   over E1's A block (0FF80h..007Fh). It is replaced by mov dx,0CCCCh (same instruction count, no INT86 there);
+    21                                  ;   E1's A block already covers 0FF80h..007Fh. The b/d (CX=0) path INT86 block is unchanged.
+    22                                  bits 16
+    23                                  
+    24                                  ; Good_Test V6 warrior 2 (friend-provided; reconstructed source in
+    25                                  ; study-notes/good-test-v6/source/). agent2 label form: hard-coded internal
+    26                                  ; offsets replaced by label arithmetic with the original operand widths.
+    27                                  ; agent2 night A026 variant Z1 (base rev0 = V6nohunt B): captured zombies spend
+    28                                  ; their own INT 86h charge (2 per zombie, unused before) on FF 1F CC CC decoy
+    29                                  ; blocks for the FF1FCCCC INT87 searchers.
+    30                                  ;  - zom20a path (CX!=0): after its b/d INT87, mov ax,1FFFh; int 86h with
+    31                                  ;    DI=0, DF=1, DX=CCCCh -> block 0FF04h..0003h (no code is ever loaded below
+    32                                  ;    400h or above FC00h; page FFh and 00h:00-03 hold no anchor of our 400h
+    33                                  ;    lattice at 52h).
+    34                                  ;  - b/d path (CX=0): the worthless 0E070E17 CC counter-bomb INT87 is replaced
+    35                                  ;    by a block next to the zombie's own body (BX = own load address + 3):
+    36                                  ;    [X+68h, X+168h), X = (BX and FC00h). Inside the zombie's MIN_GAP zone
+    37                                  ;    and on pages 4k / 4k+1 outside in-page 52h-67h of pages 4k, so it can
+    38                                  ;    hit neither loaded code nor any anchor/worker of our lattice.
+    39                                  ;  - zombie band math uses 16-bit DIV (same AX, 2 instructions fewer), so both
+    40                                  ;    zombie paths reach phoenix_init on the same turn as in rev0.
+    41                                  ; B's own startup is unchanged.
+    42                                  
+    43                                  ; A031 K = A026 Z1 (zombie INT86 blocks) + A022 SD (phoenix_init mov cx,10; dead mov dx,[4A17h] dropped; db 0CCh,0CCh after the worker). B startup unchanged.
+    44                                  
+    45                                  start:
+    46 00000000 89C6                        mov si, ax                                      ; 1
+    47 00000002 8DAC4D00                    lea bp, [word si + zombie_entry - start]        ; 2  D4 DET: entry kept in BP (BX is the INT87 replacement)
+    48 00000006 C47C49                      les di, [si + es_ptr - start]                   ; 3  (moved up; ES:DI for the INT87 below)
+    49 00000009 892E135D                    mov [5D13h], bp                                 ; 4  as rev1
+    50 0000000D 892E13CC                    mov [0CC13h], bp                                ; 5  as rev1 (after the zchain/zrl03/ah02 instr-3 write)
+    51 00000011 813E174ACCCC                cmp word [4A17h], 0CCCCh                        ; 6  D4 DET: V6-family B wrote [4A17h] at instr 3?
+    52 00000017 7404                        je short .lat52                                 ; 7
+    53 00000019 FE8CB500                    dec byte [si + phx_far - start + 2]             ; 8  D4 DET: patch own phoenix 'or dx,0FFBh' -> 0FFAh (B + zombies)
+    54                                  .lat52:
+    55 0000001D 892E174A                    mov [4A17h], bp                                 ; 8/9 D4 DET: late write (after A's instr-5 read, before A's INT87 at instr 11)
+    56 00000021 892E6997                    mov [9769h], bp                                 ; 9/10 D4 DET: Registered_Winners hook cell (moved from A; after V6 A's [9769h] write)
+    57 00000025 B80FEB                      mov ax, 0EB0Fh
+    58 00000028 BAF9CC                      mov dx, 0CCF9h
+    59 0000002B BB0FFF                      mov bx, 0FF0Fh
+    60 0000002E B92613                      mov cx, 01326h
+    61 00000031 FD                          std
+    62 00000032 CD87                        int 087h
+    63 00000034 FC                          cld
+    64 00000035 89F0                        mov ax, si                      ; D4 DET: 16-bit band math (same AX = floor(si/3C00h)*3C00h + 10A2h,
+    65 00000037 31D2                        xor dx, dx                      ;   3 instructions fewer; pays for the detection so phoenix_init still
+    66 00000039 B9003C                      mov cx, 03C00h                  ;   starts at instr 25 when no V6-family team is present)
+    67 0000003C F7F1                        div cx
+    68 0000003E F7E1                        mul cx
+    69 00000040 05A210                      add ax, 010A2h
+    70 00000043 81C6D600                    add si, strict word worker - start
+    71 00000047 EB55                        jmp short phoenix_init
+    72                                  
+    73                                  es_ptr:
+    74 00000049 00000010                    dw 0000h, 01000h
+    75                                  
+    76                                  zombie_entry:
+    77 0000004D 31FF                        xor di, di
+    78 0000004F FD                          std
+    79 00000050 BD0070                      mov bp, 7000h            ; B099: B089 h34 (CX=0 captured-b/d phase 34h -> 70h)
+    80 00000053 E31B                        jcxz zombie_fallback
+    81 00000055 BD0020                      mov bp, 2000h
+    82 00000058 0E                          push cs
+    83 00000059 07                          pop es
+    84 0000005A B80FEB                      mov ax, 0EB0Fh
+    85 0000005D BAF9CC                      mov dx, 0CCF9h
+    86 00000060 BB0FFF                      mov bx, 0FF0Fh
+    87 00000063 B92613                      mov cx, 01326h
+    88 00000066 CD87                        int 087h
+    89 00000068 B8FF1F                      mov ax, 01FFFh
+    90 0000006B BACCCC                      mov dx, 0CCCCh          ; B094: was int 086h (DX would be 0CCF9h); keeps the instruction count
+    91 0000006E EB12                        jmp short zombie_common
+    92                                  
+    93                                  zombie_fallback:
+    94 00000070 89DF                        mov di, bx
+    95 00000072 81E700FC                    and di, 0FC00h
+    96 00000076 81C76401                    add di, 0164h
+    97 0000007A B8FF1F                      mov ax, 01FFFh
+    98 0000007D BACCCC                      mov dx, 0CCCCh
+    99 00000080 CD86                        int 086h
+   100                                  
+   101                                  zombie_common:
+   102 00000082 FC                          cld
+   103 00000083 E80000                      call get_ip
+   104                                  
+   105                                  get_ip:
+   106 00000086 5E                          pop si
+   107 00000087 81EE8600                    sub si, strict word get_ip - start
+   108 0000008B 89F0                        mov ax, si
+   109 0000008D 31D2                        xor dx, dx
+   110 0000008F B9003C                      mov cx, 03C00h
+   111 00000092 F7F1                        div cx
+   112 00000094 F7E1                        mul cx
+   113 00000096 01E8                        add ax, bp
+   114 00000098 B0A2                        mov al, 0A2h
+   115 0000009A 81C6D600                    add si, strict word worker - start
+   116                                  
+   117                                  phoenix_init:
+   118 0000009E 16                          push ss
+   119 0000009F 07                          pop es
+   120 000000A0 31FF                        xor di, di
+   121 000000A2 B90A00                      mov cx, 10
+   122 000000A5 F3A5                        rep movsw
+   123 000000A7 16                          push ss
+   124 000000A8 1F                          pop ds
+   125 000000A9 BB8002                      mov bx, 0280h
+   126 000000AC 0E                          push cs
+   127 000000AD 17                          pop ss
+   128 000000AE 8907                        mov [bx], ax
+   129 000000B0 83E200                      and dx, 0
+   130                                  phx_far:
+   131 000000B3 81CAFB0F                    or dx, strict word 0FFBh        ; D4 DET: low byte patched to 0FAh by B's startup when a V6-family team is present
+   132 000000B7 895702                      mov [bx + 2], dx
+   133 000000BA 31F6                        xor si, si
+   134 000000BC 89C7                        mov di, ax
+   135 000000BE 8EC2                        mov es, dx
+   136 000000C0 89FC                        mov sp, di
+   137 000000C2 81C40006                    add sp, 00600h
+   138 000000C6 B90800                      mov cx, 8
+   139 000000C9 BA0024                      mov dx, 02400h
+   140 000000CC BD002C                      mov bp, 02C00h
+   141 000000CF B8FF1F                      mov ax, 01FFFh
+   142 000000D2 AB                          stosw
+   143 000000D3 4F                          dec di
+   144 000000D4 FF1F                        call far [bx]
+   145                                  
+   146                                  worker:
+   147 000000D6 A5                          movsw
+   148 000000D7 F3A5                        rep movsw
+   149 000000D9 29D4                        sub sp, dx
+   150 000000DB 292F                        sub [bx], bp
+   151 000000DD 8B3F                        mov di, [bx]
+   152 000000DF B109                        mov cl, 9
+   153 000000E1 31F6                        xor si, si
+   154 000000E3 AB                          stosw
+   155 000000E4 4F                          dec di
+   156 000000E5 FF1F                        call far [bx]
+   157 000000E7 CCCC                        db 0CCh, 0CCh

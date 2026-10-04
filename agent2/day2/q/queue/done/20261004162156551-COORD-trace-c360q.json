@@ -1,0 +1,26 @@
+{
+ "job": {
+  "id": "20261004162156551-COORD-trace-c360q",
+  "agent": "COORD",
+  "kind": "trace",
+  "submittedAt": "2026-10-04T16:21:56.552Z",
+  "note": "DET2 baseline trace on L2"
+ },
+ "ok": true,
+ "finishedAt": "2026-10-04T16:22:21.877Z",
+ "seconds": 23.356,
+ "result": {
+  "candidate": {
+   "A": "agent2/day2/q/revisions/rev2/A",
+   "B": "agent2/day2/q/revisions/rev2/B",
+   "sizeA": 214,
+   "sizeB": 233,
+   "shaA": "2153532daca9095acc71f0a2bdc7560024fc81972171c02f1b7f8cc41d1b1ce4",
+   "shaB": "15f5c4dabec14a62af067a9593e3ce6f207167c78b4b6f8e5c89fc4e3e8de8a1"
+  },
+  "traceDir": "agent2/day2/q/scratch/_trace/day2TR-2153532dac-15f5c4dabe",
+  "battles": 260,
+  "summary": "deaths 209\n 112 wild-cs          CPU exception    opp\n  21 wild-cs          CPU exception    zombie\n  15 wild-cs          memory exception opp\n  11 wild-cs          memory exception self-only\n  11 wild-cs          CPU exception    ourZombie\n   9 startup(cs1000)  memory exception load\n   8 wild-cs          CPU exception    self-only\n   6 startup(cs1000)  memory exception zombie\n   5 startup(cs1000)  CPU exception    zombie\n   5 wild-cs          CPU exception    partner\n   2 wild-cs          CPU exception    untouched\n   2 startup(cs1000)  CPU exception    partner\n   1 startup(cs1000)  CPU exception    load\n   1 startup(cs1000)  memory exception opp\ntop opponent killers: T_zrl03=21 T_ah02=10 A_TOM_BitBenders=10 Y_GSA_3Plate_Benchers=9 A_HLS_EmoMutants=8 Y_GSA_LVS_FIT=7 A_AVI_Fishandpoultry=7 A_HRZ_L=6 A_RZL_YANDE=5 A_OHS_BatteringRAM=5 A_HRZ_Underflow=5 A_GSA_B33=4\n",
+  "note": "phase 'wild-cs' = any CS other than 0FFC/1000 (V6 family uses FAR_SEG 0FFB); examples.json not produced by sum-trace2; raw jsonl in traceDir"
+ }
+}

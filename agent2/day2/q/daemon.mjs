@@ -83,9 +83,9 @@ function compare(cand, base, cohorts, z) {
 
 function screen(job, cand) {
   const base = currentBase();
-  const basePlan = `nightS-base-rev${base.rev}`;
+  const basePlan = `d2S-base-rev${base.rev}`;
   const baseRes = fs.existsSync(`${N}/results/${basePlan}.json`) ? readJ(`${N}/results/${basePlan}.json`) : runPlan(basePlan, [{ id: "base", warriors: [base.A, base.B] }], S.cohorts, S.battles, S.zombies);
-  const candPlan = `nightS-${cand.shaA.slice(0, 10)}-${cand.shaB.slice(0, 10)}`;
+  const candPlan = `d2S-${cand.shaA.slice(0, 10)}-${cand.shaB.slice(0, 10)}`;
   const candRes = fs.existsSync(`${N}/results/${candPlan}.json`) ? readJ(`${N}/results/${candPlan}.json`) : runPlan(candPlan, [{ id: "cand", warriors: [cand.A, cand.B] }], S.cohorts, S.battles, S.zombies);
   const c = compare(scores(candRes, "cand"), scores(baseRes, "base"), S.cohorts);
   const meanOf = (res, arm) => { const s = Object.values(scores(res, arm)); return +(s.reduce((a, x) => a + x.v, 0) / s.length).toFixed(4); };
@@ -148,8 +148,8 @@ function threat(job, cand) {
 }
 
 function trace(job, cand) {
-  const cohorts = S.cohorts.filter((c) => c.group === "2025").slice(0, 3).concat(S.cohorts.filter((c) => c.group.startsWith("leader")).filter((c, i) => i % 3 === 0));
-  const pid = `dayTR-${cand.shaA.slice(0, 10)}-${cand.shaB.slice(0, 10)}`;
+  const cohorts = S.cohorts.filter((c) => c.group === "2025").slice(0, 4).concat(S.cohorts.filter((c) => c.group.startsWith("leader")).filter((c, i) => i % 3 === 0));
+  const pid = `day2TR-${cand.shaA.slice(0, 10)}-${cand.shaB.slice(0, 10)}`;
   const res = fs.existsSync(`${N}/results/${pid}.json`) ? readJ(`${N}/results/${pid}.json`) : runPlan(pid, [{ id: "cand", warriors: [cand.A, cand.B] }], cohorts, 20, "z2025", true);
   // bench wrote telemetry under agent2/runs/<pid>-persistent; trace-runs expects the result path
   const tmp = `agent2/results/${pid}-persistent.json`; fs.copyFileSync(`${N}/results/${pid}.json`, tmp);

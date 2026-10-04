@@ -1,0 +1,128 @@
+{
+ "job": {
+  "id": "20261004164544005-E5-threat-08xx6",
+  "agent": "E5",
+  "kind": "threat",
+  "submittedAt": "2026-10-04T16:45:44.006Z",
+  "note": "E5 C1 risk check: 2 copies of each instr-4 [5D13h] router (multi-router self-kill), 8 cohorts each",
+  "asmB": "agent2/day2/scratch/E5/C1_B.asm",
+  "threats": [
+   {
+    "name": "m050",
+    "binA": "agent2/build/ref/ChimeraA",
+    "binB": "agent2/build/ref/ChimeraB"
+   },
+   {
+    "name": "FixedToggle",
+    "binA": "agent2/build/counter/FTA",
+    "binB": "agent2/build/counter/FTB"
+   },
+   {
+    "name": "Synthesis",
+    "binA": "agent2/build/counter/SYA",
+    "binB": "agent2/build/counter/SYB"
+   }
+  ],
+  "copies": 2,
+  "cohortsPerThreat": 8
+ },
+ "ok": true,
+ "finishedAt": "2026-10-04T16:46:46.020Z",
+ "seconds": 23.395,
+ "result": {
+  "candidate": {
+   "A": "agent2/day2/q/revisions/rev2/A",
+   "B": "agent2/day2/q/cand-build/20261004164544005-E5-threat-08xx6/candB",
+   "sizeA": 214,
+   "sizeB": 233,
+   "shaA": "2153532daca9095acc71f0a2bdc7560024fc81972171c02f1b7f8cc41d1b1ce4",
+   "shaB": "f8eb1cd29a65fd693f8fbf4758d7cf4f3248bfdf56523962e93fdf51060439f2"
+  },
+  "baseRevision": 2,
+  "specKey": "1c3cd5b72827",
+  "battlesPerArm": 480,
+  "candMean": 0.7641,
+  "baseMean": 0.7626,
+  "all": {
+   "n": 24,
+   "diff": 0.00149,
+   "lo": -0.03083,
+   "hi": 0.03381,
+   "wins": 13,
+   "losses": 11
+  },
+  "byThreat": {
+   "m050": {
+    "n": 8,
+    "diff": 0.00146,
+    "lo": -0.05849,
+    "hi": 0.06141,
+    "wins": 5,
+    "losses": 3
+   },
+   "FixedToggle": {
+    "n": 8,
+    "diff": -0.02604,
+    "lo": -0.08366,
+    "hi": 0.03158,
+    "wins": 4,
+    "losses": 4
+   },
+   "Synthesis": {
+    "n": 8,
+    "diff": 0.02906,
+    "lo": -0.02142,
+    "hi": 0.07955,
+    "wins": 4,
+    "losses": 4
+   }
+  },
+  "threatFirstTeamScore": {
+   "vsCand": {
+    "m050": 0.0581,
+    "FixedToggle": 0.1302,
+    "Synthesis": 0.0616
+   },
+   "vsBase": {
+    "m050": 0.0708,
+    "FixedToggle": 0.1323,
+    "Synthesis": 0.0915
+   }
+  },
+  "threatHashes": [
+   {
+    "label": "m050",
+    "warriors": [
+     "agent2/build/ref/ChimeraA",
+     "agent2/build/ref/ChimeraB"
+    ],
+    "hashes": [
+     "0268ce4f301bf2ada8566f4e608180a0670a335a80b9c2b93b67aee2b632bd44",
+     "06b5a1ff7bac4b146620de6d1de512dfedf3f28366d6435bf61d49869d971782"
+    ]
+   },
+   {
+    "label": "FixedToggle",
+    "warriors": [
+     "agent2/build/counter/FTA",
+     "agent2/build/counter/FTB"
+    ],
+    "hashes": [
+     "bea990bbf2c60cb4c39d80dd5b533f83a1eb62f1ad202020c6d4e93cbebc2747",
+     "9761054288100948cfcf3610c8d989f16eba68f0f501b90c21b7de9ead380c8f"
+    ]
+   },
+   {
+    "label": "Synthesis",
+    "warriors": [
+     "agent2/build/counter/SYA",
+     "agent2/build/counter/SYB"
+    ],
+    "hashes": [
+     "3875482b4d57a8d29f474215ed9dd41249bc17c46b1a662c4906554b5d859b9c",
+     "99055d82958f813de2067a17dde8ea361c749bd4dc916095a4dad1ad8e13ce2b"
+    ]
+   }
+  ]
+ }
+}
